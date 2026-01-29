@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c47774xsx4ej2"]
 
-[ext_resource type="Texture2D" uid="uid://c37nx7gifwpqr" path="res://assets/sprites/FullKeyboardWithNumbers.png" id="1_yk2u2"]
+[ext_resource type="Texture2D" uid="uid://0ts8n6m43hkh" path="res://assets/sprites/FullKeyboardWithNumbers.png" id="1_yk2u2"]
 
 [node name="Key" type="Node2D" unique_id=1531063233]
 
