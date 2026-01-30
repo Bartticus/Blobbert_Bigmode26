@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqv7arqnxah"
-path="res://.godot/imported/softbody2d_inner.png-e2625d89145bfeb0ae2fe91c33efc8ce.ctex"
+uid="uid://lnhmxn32d64v"
+path="res://.godot/imported/Butter.png-b0b5291bf6dc8116d03f96b1cb6bb616.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://samples/softbody2d/softbody2d_inner.png"
-dest_files=["res://.godot/imported/softbody2d_inner.png-e2625d89145bfeb0ae2fe91c33efc8ce.ctex"]
+source_file="res://Assets/samples/softbody2d/Butter.png"
+dest_files=["res://.godot/imported/Butter.png-b0b5291bf6dc8116d03f96b1cb6bb616.ctex"]
 
 [params]
 

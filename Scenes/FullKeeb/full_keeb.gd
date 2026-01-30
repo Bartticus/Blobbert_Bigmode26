@@ -19,10 +19,13 @@ extends Node2D
 
 func set_key_positions():
 	var all_rows = [number_row, q_row, a_row, z_row]
+
 	for i in all_rows.size():
 		var row = all_rows[i]
-		var row_keys = row.get_children()
+		if !(row is Node2D):
+			continue
 
+		var row_keys = row.get_children()
 		for j in row_keys.size():
 			var key: Node2D = row_keys[j]
 			key.position.x = x_spacing * j + x_offset

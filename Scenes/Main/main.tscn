@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddbspoikww4hd"]
 
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="2_lixft"]
-[ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/Keyboard/full_keeb.tscn" id="3_qw60k"]
+[ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/FullKeeb/full_keeb.tscn" id="3_qw60k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_amr5s"]
 

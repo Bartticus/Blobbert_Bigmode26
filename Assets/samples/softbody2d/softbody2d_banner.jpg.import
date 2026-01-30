@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cub75ej2ixqhq"
-path="res://.godot/imported/softbody2d.png-34eebb6b593155f3cca6d915a9549869.ctex"
+uid="uid://cs678xa60f7xy"
+path="res://.godot/imported/softbody2d_banner.jpg-40de4bfe2a6e425162eb5a61715f1303.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://samples/softbody2d/softbody2d.png"
-dest_files=["res://.godot/imported/softbody2d.png-34eebb6b593155f3cca6d915a9549869.ctex"]
+source_file="res://Assets/samples/softbody2d/softbody2d_banner.jpg"
+dest_files=["res://.godot/imported/softbody2d_banner.jpg-40de4bfe2a6e425162eb5a61715f1303.ctex"]
 
 [params]
 

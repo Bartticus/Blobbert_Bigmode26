@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://di2kw33bow2ko"]
 
-[ext_resource type="Script" uid="uid://b60dkqnc6d2d7" path="res://Scripts/Keyboard/full_row.gd" id="1_glxqx"]
-[ext_resource type="PackedScene" uid="uid://c47774xsx4ej2" path="res://Scenes/Keyboard/key.tscn" id="2_2p85f"]
+[ext_resource type="Script" uid="uid://b60dkqnc6d2d7" path="res://Scenes/KeyboardRows/full_row.gd" id="1_glxqx"]
+[ext_resource type="PackedScene" uid="uid://c47774xsx4ej2" path="res://Scenes/Key/key.tscn" id="2_2p85f"]
 
 [node name="NumberRow" type="Node2D" unique_id=1030793946]
 script = ExtResource("1_glxqx")

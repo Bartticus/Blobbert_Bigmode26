@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mqvnelnju5d8"
-path="res://.godot/imported/Asparagus.png-78e237ef3752f2aa66bc31f389f3c86f.ctex"
+uid="uid://chhqv7arqnxah"
+path="res://.godot/imported/softbody2d_inner.png-eb8b92b133645877c11e262b75ad0234.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://samples/softbody2d/Asparagus.png"
-dest_files=["res://.godot/imported/Asparagus.png-78e237ef3752f2aa66bc31f389f3c86f.ctex"]
+source_file="res://Assets/samples/softbody2d/softbody2d_inner.png"
+dest_files=["res://.godot/imported/softbody2d_inner.png-eb8b92b133645877c11e262b75ad0234.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dam4acfx4sb8a"
-path="res://.godot/imported/Boiled_Egg_Half.png-b78e4b9de0db8181db954491fe911786.ctex"
+uid="uid://cub75ej2ixqhq"
+path="res://.godot/imported/softbody2d.png-582d167cc0c23a4bb5a68b4dccfd58f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://samples/softbody2d/Boiled_Egg_Half.png"
-dest_files=["res://.godot/imported/Boiled_Egg_Half.png-b78e4b9de0db8181db954491fe911786.ctex"]
+source_file="res://Assets/samples/softbody2d/softbody2d.png"
+dest_files=["res://.godot/imported/softbody2d.png-582d167cc0c23a4bb5a68b4dccfd58f7.ctex"]
 
 [params]
 

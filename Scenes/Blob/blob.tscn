@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cr42tlugxlrv2"]
 
 [ext_resource type="Script" uid="uid://bf75the2m1kad" path="res://Scenes/Blob/blob.gd" id="1_u3aeq"]
-[ext_resource type="Texture2D" uid="uid://dam4acfx4sb8a" path="res://samples/softbody2d/Boiled_Egg_Half.png" id="2_47mic"]
+[ext_resource type="Texture2D" uid="uid://dam4acfx4sb8a" path="res://Assets/samples/softbody2d/Boiled_Egg_Half.png" id="2_47mic"]
 [ext_resource type="Script" uid="uid://kol6k5y6rb8a" path="res://addons/softbody2d/softbody2d.gd" id="2_hkw75"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_47mic"]
