@@ -2,6 +2,600 @@
 
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="1_a3d8c"]
 [ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/FullKeeb/full_keeb.tscn" id="2_xpcdj"]
+[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_xpcdj"]
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_xpcdj"]
+resource_local_to_scene = true
+bone_index = 0
+bone2d_node = NodePath("Bone-0")
+target_nodepath = NodePath("Bone-10")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_mtuoh"]
+resource_local_to_scene = true
+bone_index = 1
+bone2d_node = NodePath("Bone-1")
+target_nodepath = NodePath("Bone-12")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_htcer"]
+resource_local_to_scene = true
+bone_index = 10
+bone2d_node = NodePath("Bone-10")
+target_nodepath = NodePath("Bone-12")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_dd0ac"]
+resource_local_to_scene = true
+bone_index = 11
+bone2d_node = NodePath("Bone-11")
+target_nodepath = NodePath("Bone-12")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0u5uq"]
+resource_local_to_scene = true
+bone_index = 12
+bone2d_node = NodePath("Bone-12")
+target_nodepath = NodePath("Bone-14")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_jlvik"]
+resource_local_to_scene = true
+bone_index = 13
+bone2d_node = NodePath("Bone-13")
+target_nodepath = NodePath("Bone-14")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_gk6dx"]
+resource_local_to_scene = true
+bone_index = 14
+bone2d_node = NodePath("Bone-14")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_jhyir"]
+resource_local_to_scene = true
+bone_index = 15
+bone2d_node = NodePath("Bone-15")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_74mp2"]
+resource_local_to_scene = true
+bone_index = 16
+bone2d_node = NodePath("Bone-16")
+target_nodepath = NodePath("Bone-18")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_oikmp"]
+resource_local_to_scene = true
+bone_index = 17
+bone2d_node = NodePath("Bone-17")
+target_nodepath = NodePath("Bone-18")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_06tpx"]
+resource_local_to_scene = true
+bone_index = 18
+bone2d_node = NodePath("Bone-18")
+target_nodepath = NodePath("Bone-20")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_7g0yx"]
+resource_local_to_scene = true
+bone_index = 19
+bone2d_node = NodePath("Bone-19")
+target_nodepath = NodePath("Bone-20")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_dey5f"]
+resource_local_to_scene = true
+bone_index = 2
+bone2d_node = NodePath("Bone-2")
+target_nodepath = NodePath("Bone-14")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_r5xpd"]
+resource_local_to_scene = true
+bone_index = 20
+bone2d_node = NodePath("Bone-20")
+target_nodepath = NodePath("Bone-18")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ks1b7"]
+resource_local_to_scene = true
+bone_index = 21
+bone2d_node = NodePath("Bone-21")
+target_nodepath = NodePath("Bone-19")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_hnuln"]
+resource_local_to_scene = true
+bone_index = 22
+bone2d_node = NodePath("Bone-22")
+target_nodepath = NodePath("Bone-24")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_aqm4k"]
+resource_local_to_scene = true
+bone_index = 23
+bone2d_node = NodePath("Bone-23")
+target_nodepath = NodePath("Bone-22")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rcvs5"]
+resource_local_to_scene = true
+bone_index = 24
+bone2d_node = NodePath("Bone-24")
+target_nodepath = NodePath("Bone-26")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_h8ma5"]
+resource_local_to_scene = true
+bone_index = 25
+bone2d_node = NodePath("Bone-25")
+target_nodepath = NodePath("Bone-26")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_eksi1"]
+resource_local_to_scene = true
+bone_index = 26
+bone2d_node = NodePath("Bone-26")
+target_nodepath = NodePath("Bone-28")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_jincj"]
+resource_local_to_scene = true
+bone_index = 27
+bone2d_node = NodePath("Bone-27")
+target_nodepath = NodePath("Bone-28")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rqdc0"]
+resource_local_to_scene = true
+bone_index = 28
+bone2d_node = NodePath("Bone-28")
+target_nodepath = NodePath("Bone-30")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_qr1w5"]
+resource_local_to_scene = true
+bone_index = 29
+bone2d_node = NodePath("Bone-29")
+target_nodepath = NodePath("Bone-30")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ythyg"]
+resource_local_to_scene = true
+bone_index = 3
+bone2d_node = NodePath("Bone-3")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_bmb2s"]
+resource_local_to_scene = true
+bone_index = 30
+bone2d_node = NodePath("Bone-30")
+target_nodepath = NodePath("Bone-32")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ur3l4"]
+resource_local_to_scene = true
+bone_index = 31
+bone2d_node = NodePath("Bone-31")
+target_nodepath = NodePath("Bone-32")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_2ahak"]
+resource_local_to_scene = true
+bone_index = 32
+bone2d_node = NodePath("Bone-32")
+target_nodepath = NodePath("Bone-34")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rukb4"]
+resource_local_to_scene = true
+bone_index = 33
+bone2d_node = NodePath("Bone-33")
+target_nodepath = NodePath("Bone-34")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4no11"]
+resource_local_to_scene = true
+bone_index = 34
+bone2d_node = NodePath("Bone-34")
+target_nodepath = NodePath("Bone-36")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_fcwna"]
+resource_local_to_scene = true
+bone_index = 35
+bone2d_node = NodePath("Bone-35")
+target_nodepath = NodePath("Bone-36")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_1agin"]
+resource_local_to_scene = true
+bone_index = 36
+bone2d_node = NodePath("Bone-36")
+target_nodepath = NodePath("Bone-38")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_2jnj1"]
+resource_local_to_scene = true
+bone_index = 37
+bone2d_node = NodePath("Bone-37")
+target_nodepath = NodePath("Bone-36")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_enij7"]
+resource_local_to_scene = true
+bone_index = 38
+bone2d_node = NodePath("Bone-38")
+target_nodepath = NodePath("Bone-36")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_mwii3"]
+resource_local_to_scene = true
+bone_index = 39
+bone2d_node = NodePath("Bone-39")
+target_nodepath = NodePath("Bone-27")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_2aanf"]
+resource_local_to_scene = true
+bone_index = 4
+bone2d_node = NodePath("Bone-4")
+target_nodepath = NodePath("Bone-5")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_m6ahd"]
+resource_local_to_scene = true
+bone_index = 40
+bone2d_node = NodePath("Bone-40")
+target_nodepath = NodePath("Bone-29")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ogmfp"]
+resource_local_to_scene = true
+bone_index = 41
+bone2d_node = NodePath("Bone-41")
+target_nodepath = NodePath("Bone-42")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ixrbb"]
+resource_local_to_scene = true
+bone_index = 42
+bone2d_node = NodePath("Bone-42")
+target_nodepath = NodePath("Bone-44")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ei2r2"]
+resource_local_to_scene = true
+bone_index = 43
+bone2d_node = NodePath("Bone-43")
+target_nodepath = NodePath("Bone-44")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_j6uq4"]
+resource_local_to_scene = true
+bone_index = 44
+bone2d_node = NodePath("Bone-44")
+target_nodepath = NodePath("Bone-46")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_h5u0x"]
+resource_local_to_scene = true
+bone_index = 45
+bone2d_node = NodePath("Bone-45")
+target_nodepath = NodePath("Bone-46")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_po18e"]
+resource_local_to_scene = true
+bone_index = 46
+bone2d_node = NodePath("Bone-46")
+target_nodepath = NodePath("Bone-48")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_v37cr"]
+resource_local_to_scene = true
+bone_index = 47
+bone2d_node = NodePath("Bone-47")
+target_nodepath = NodePath("Bone-46")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_8d028"]
+resource_local_to_scene = true
+bone_index = 48
+bone2d_node = NodePath("Bone-48")
+target_nodepath = NodePath("Bone-37")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0liok"]
+resource_local_to_scene = true
+bone_index = 5
+bone2d_node = NodePath("Bone-5")
+target_nodepath = NodePath("Bone-4")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_gyc8k"]
+resource_local_to_scene = true
+bone_index = 6
+bone2d_node = NodePath("Bone-6")
+target_nodepath = NodePath("Bone-18")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_qflxp"]
+resource_local_to_scene = true
+bone_index = 7
+bone2d_node = NodePath("Bone-7")
+target_nodepath = NodePath("Bone-9")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0pk7v"]
+resource_local_to_scene = true
+bone_index = 8
+bone2d_node = NodePath("Bone-8")
+target_nodepath = NodePath("Bone-7")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rblve"]
+resource_local_to_scene = true
+bone_index = 9
+bone2d_node = NodePath("Bone-9")
+target_nodepath = NodePath("Bone-10")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_fn4qh"]
+resource_local_to_scene = true
+enabled = true
+modification_count = 49
+modifications/0 = SubResource("SkeletonModification2DLookAt_xpcdj")
+modifications/1 = SubResource("SkeletonModification2DLookAt_mtuoh")
+modifications/2 = SubResource("SkeletonModification2DLookAt_dey5f")
+modifications/3 = SubResource("SkeletonModification2DLookAt_ythyg")
+modifications/4 = SubResource("SkeletonModification2DLookAt_2aanf")
+modifications/5 = SubResource("SkeletonModification2DLookAt_0liok")
+modifications/6 = SubResource("SkeletonModification2DLookAt_gyc8k")
+modifications/7 = SubResource("SkeletonModification2DLookAt_qflxp")
+modifications/8 = SubResource("SkeletonModification2DLookAt_0pk7v")
+modifications/9 = SubResource("SkeletonModification2DLookAt_rblve")
+modifications/10 = SubResource("SkeletonModification2DLookAt_htcer")
+modifications/11 = SubResource("SkeletonModification2DLookAt_dd0ac")
+modifications/12 = SubResource("SkeletonModification2DLookAt_0u5uq")
+modifications/13 = SubResource("SkeletonModification2DLookAt_jlvik")
+modifications/14 = SubResource("SkeletonModification2DLookAt_gk6dx")
+modifications/15 = SubResource("SkeletonModification2DLookAt_jhyir")
+modifications/16 = SubResource("SkeletonModification2DLookAt_74mp2")
+modifications/17 = SubResource("SkeletonModification2DLookAt_oikmp")
+modifications/18 = SubResource("SkeletonModification2DLookAt_06tpx")
+modifications/19 = SubResource("SkeletonModification2DLookAt_7g0yx")
+modifications/20 = SubResource("SkeletonModification2DLookAt_r5xpd")
+modifications/21 = SubResource("SkeletonModification2DLookAt_ks1b7")
+modifications/22 = SubResource("SkeletonModification2DLookAt_hnuln")
+modifications/23 = SubResource("SkeletonModification2DLookAt_aqm4k")
+modifications/24 = SubResource("SkeletonModification2DLookAt_rcvs5")
+modifications/25 = SubResource("SkeletonModification2DLookAt_h8ma5")
+modifications/26 = SubResource("SkeletonModification2DLookAt_eksi1")
+modifications/27 = SubResource("SkeletonModification2DLookAt_jincj")
+modifications/28 = SubResource("SkeletonModification2DLookAt_rqdc0")
+modifications/29 = SubResource("SkeletonModification2DLookAt_qr1w5")
+modifications/30 = SubResource("SkeletonModification2DLookAt_bmb2s")
+modifications/31 = SubResource("SkeletonModification2DLookAt_ur3l4")
+modifications/32 = SubResource("SkeletonModification2DLookAt_2ahak")
+modifications/33 = SubResource("SkeletonModification2DLookAt_rukb4")
+modifications/34 = SubResource("SkeletonModification2DLookAt_4no11")
+modifications/35 = SubResource("SkeletonModification2DLookAt_fcwna")
+modifications/36 = SubResource("SkeletonModification2DLookAt_1agin")
+modifications/37 = SubResource("SkeletonModification2DLookAt_2jnj1")
+modifications/38 = SubResource("SkeletonModification2DLookAt_enij7")
+modifications/39 = SubResource("SkeletonModification2DLookAt_mwii3")
+modifications/40 = SubResource("SkeletonModification2DLookAt_m6ahd")
+modifications/41 = SubResource("SkeletonModification2DLookAt_ogmfp")
+modifications/42 = SubResource("SkeletonModification2DLookAt_ixrbb")
+modifications/43 = SubResource("SkeletonModification2DLookAt_ei2r2")
+modifications/44 = SubResource("SkeletonModification2DLookAt_j6uq4")
+modifications/45 = SubResource("SkeletonModification2DLookAt_h5u0x")
+modifications/46 = SubResource("SkeletonModification2DLookAt_po18e")
+modifications/47 = SubResource("SkeletonModification2DLookAt_v37cr")
+modifications/48 = SubResource("SkeletonModification2DLookAt_8d028")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5omc3"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pcwjh"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejxfg"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_huyyu"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m5eiq"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8g0gh"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0a2xn"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grehw"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vn8q6"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vj0r"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j7g5o"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ckdd2"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37mva"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwcno"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8s58"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4a23"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlqkp"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbwwl"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbngi"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_geihd"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gs43p"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oshob"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4h47k"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mcfd4"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4of5"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l7e3"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hn678"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hadm"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q0h8a"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mvmwy"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wb8kq"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oh6x4"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qc6x1"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfk3i"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hdl7r"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mw4px"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8rr78"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvvwm"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnhd0"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awspn"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_47nv5"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ml2j2"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plnq1"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1wx2"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmbrt"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6a86w"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_22q81"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_81gu5"]
+resource_local_to_scene = true
+radius = 12.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pf3rq"]
+resource_local_to_scene = true
+radius = 12.5
 
 [node name="Player" type="Node2D" unique_id=1532672995]
 
@@ -9,9 +603,288 @@
 rotation = 1.5707964
 scale = Vector2(3.22, 3.22)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Blob" unique_id=759139147]
-remote_path = NodePath("../../FullKeeb")
-update_rotation = false
-update_scale = false
+[node name="Skeleton2D" parent="Blob/Egg" parent_id_path=PackedInt32Array(104221436, 1952859083) index="0" unique_id=1418385449]
+modification_stack = SubResource("SkeletonModificationStack2D_fn4qh")
 
-[node name="FullKeeb" parent="." unique_id=339941415 instance=ExtResource("2_xpcdj")]
+[node name="Bone-0" parent="Blob/Egg/Skeleton2D" index="0" unique_id=170245215]
+position = Vector2(33.436348, 61.67753)
+
+[node name="Bone-2" parent="Blob/Egg/Skeleton2D" index="2" unique_id=2098673419]
+position = Vector2(26.444786, 117.90276)
+
+[node name="Bone-3" parent="Blob/Egg/Skeleton2D" index="3" unique_id=315124034]
+position = Vector2(25.150627, 143.30373)
+
+[node name="Bone-4" parent="Blob/Egg/Skeleton2D" index="4" unique_id=1386453632]
+position = Vector2(12.160255, 164.26692)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Bone-5" parent="Blob/Egg/Skeleton2D" index="5" unique_id=1221320633]
+position = Vector2(26.404015, 181.30902)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bone-6" parent="Blob/Egg/Skeleton2D" index="6" unique_id=763052589]
+position = Vector2(29.55513, 209.25204)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Bone-7" parent="Blob/Egg/Skeleton2D" index="7" unique_id=792975463]
+position = Vector2(73.13139, 27.500008)
+
+[node name="Bone-8" parent="Blob/Egg/Skeleton2D" index="8" unique_id=2068415113]
+scale = Vector2(1, 1)
+
+[node name="Bone-9" parent="Blob/Egg/Skeleton2D" index="9" unique_id=1196924727]
+position = Vector2(77.942276, 60.000008)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-10" parent="Blob/Egg/Skeleton2D" index="10" unique_id=408757044]
+position = Vector2(51.96152, 75)
+
+[node name="Bone-11" parent="Blob/Egg/Skeleton2D" index="11" unique_id=259473428]
+position = Vector2(77.942276, 90)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-13" parent="Blob/Egg/Skeleton2D" index="13" unique_id=1241484287]
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-14" parent="Blob/Egg/Skeleton2D" index="14" unique_id=1791565013]
+position = Vector2(51.961525, 135.00002)
+
+[node name="Bone-15" parent="Blob/Egg/Skeleton2D" index="15" unique_id=339488378]
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-16" parent="Blob/Egg/Skeleton2D" index="16" unique_id=811276211]
+position = Vector2(51.96152, 165)
+
+[node name="Bone-17" parent="Blob/Egg/Skeleton2D" index="17" unique_id=768028528]
+position = Vector2(77.942276, 180)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-18" parent="Blob/Egg/Skeleton2D" index="18" unique_id=999635119]
+position = Vector2(51.961525, 195.00002)
+scale = Vector2(0.99997306, 0.99997306)
+
+[node name="Bone-20" parent="Blob/Egg/Skeleton2D" index="20" unique_id=1393099061]
+scale = Vector2(0.99997175, 0.99997175)
+
+[node name="Bone-22" parent="Blob/Egg/Skeleton2D" index="22" unique_id=1444622133]
+position = Vector2(102.95604, 20.000015)
+
+[node name="Bone-23" parent="Blob/Egg/Skeleton2D" index="23" unique_id=705744567]
+position = Vector2(127.101364, 31.67492)
+
+[node name="Bone-25" parent="Blob/Egg/Skeleton2D" index="25" unique_id=935538599]
+position = Vector2(133.59164, 57.353973)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Bone-26" parent="Blob/Egg/Skeleton2D" index="26" unique_id=695700665]
+position = Vector2(103.92306, 75.00001)
+
+[node name="Bone-27" parent="Blob/Egg/Skeleton2D" index="27" unique_id=1583130055]
+position = Vector2(129.90381, 90.00001)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-28" parent="Blob/Egg/Skeleton2D" index="28" unique_id=816371310]
+position = Vector2(103.92306, 105)
+
+[node name="Bone-29" parent="Blob/Egg/Skeleton2D" index="29" unique_id=2121759293]
+position = Vector2(129.90381, 120.00001)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-31" parent="Blob/Egg/Skeleton2D" index="31" unique_id=1063130005]
+position = Vector2(129.90381, 150.00002)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-34" parent="Blob/Egg/Skeleton2D" index="34" unique_id=1588980300]
+position = Vector2(103.92305, 195.00002)
+
+[node name="Bone-35" parent="Blob/Egg/Skeleton2D" index="35" unique_id=717771053]
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-39" parent="Blob/Egg/Skeleton2D" index="39" unique_id=943378754]
+position = Vector2(152.85455, 75.00001)
+
+[node name="Bone-40" parent="Blob/Egg/Skeleton2D" index="40" unique_id=1760095856]
+position = Vector2(156.28204, 102.74812)
+
+[node name="Bone-41" parent="Blob/Egg/Skeleton2D" index="41" unique_id=1756842997]
+position = Vector2(172.43909, 120.00001)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-42" parent="Blob/Egg/Skeleton2D" index="42" unique_id=953740473]
+position = Vector2(155.88455, 135.00002)
+
+[node name="Bone-43" parent="Blob/Egg/Skeleton2D" index="43" unique_id=2014598562]
+position = Vector2(173.55502, 150.00002)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bone-44" parent="Blob/Egg/Skeleton2D" index="44" unique_id=1605685460]
+position = Vector2(155.88455, 165)
+
+[node name="Bone-45" parent="Blob/Egg/Skeleton2D" index="45" unique_id=1418228267]
+scale = Vector2(1.0000002, 1.0000002)
+
+[node name="Bone-47" parent="Blob/Egg/Skeleton2D" index="47" unique_id=608714273]
+position = Vector2(172.40285, 206.73967)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Bone-48" parent="Blob/Egg/Skeleton2D" index="48" unique_id=173762219]
+position = Vector2(154.00221, 223.80734)
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-0" parent_id_path=PackedInt32Array(104221436, 632847631) index="0" unique_id=2088411379]
+shape = SubResource("CircleShape2D_5omc3")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-1" parent_id_path=PackedInt32Array(104221436, 1623711359) index="0" unique_id=315130902]
+shape = SubResource("CircleShape2D_pcwjh")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-2" parent_id_path=PackedInt32Array(104221436, 178084771) index="0" unique_id=1205466292]
+shape = SubResource("CircleShape2D_ejxfg")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-3" parent_id_path=PackedInt32Array(104221436, 1924782790) index="0" unique_id=1711378277]
+shape = SubResource("CircleShape2D_huyyu")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-4" parent_id_path=PackedInt32Array(104221436, 369070694) index="0" unique_id=1644496550]
+shape = SubResource("CircleShape2D_m5eiq")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-5" parent_id_path=PackedInt32Array(104221436, 423318991) index="0" unique_id=2096001196]
+shape = SubResource("CircleShape2D_8g0gh")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-6" parent_id_path=PackedInt32Array(104221436, 982723317) index="0" unique_id=1996486056]
+shape = SubResource("CircleShape2D_0a2xn")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-7" parent_id_path=PackedInt32Array(104221436, 708690206) index="0" unique_id=803049596]
+shape = SubResource("CircleShape2D_grehw")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-8" parent_id_path=PackedInt32Array(104221436, 1125591935) index="0" unique_id=59172477]
+shape = SubResource("CircleShape2D_vn8q6")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-9" parent_id_path=PackedInt32Array(104221436, 1341482582) index="0" unique_id=712275082]
+shape = SubResource("CircleShape2D_8vj0r")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-10" parent_id_path=PackedInt32Array(104221436, 1923504377) index="0" unique_id=1615167520]
+shape = SubResource("CircleShape2D_j7g5o")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-11" parent_id_path=PackedInt32Array(104221436, 2031975557) index="0" unique_id=725837750]
+shape = SubResource("CircleShape2D_ckdd2")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-12" parent_id_path=PackedInt32Array(104221436, 1985131439) index="0" unique_id=890273032]
+shape = SubResource("CircleShape2D_37mva")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-13" parent_id_path=PackedInt32Array(104221436, 597073796) index="0" unique_id=2000782017]
+shape = SubResource("CircleShape2D_vwcno")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-14" parent_id_path=PackedInt32Array(104221436, 572983177) index="0" unique_id=695768316]
+shape = SubResource("CircleShape2D_u8s58")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-15" parent_id_path=PackedInt32Array(104221436, 1927323228) index="0" unique_id=2058749589]
+shape = SubResource("CircleShape2D_d4a23")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-16" parent_id_path=PackedInt32Array(104221436, 800730067) index="0" unique_id=230266072]
+shape = SubResource("CircleShape2D_hlqkp")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-17" parent_id_path=PackedInt32Array(104221436, 1295413669) index="0" unique_id=314302591]
+shape = SubResource("CircleShape2D_rbwwl")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-18" parent_id_path=PackedInt32Array(104221436, 1385118831) index="0" unique_id=1994768132]
+shape = SubResource("CircleShape2D_dbngi")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-19" parent_id_path=PackedInt32Array(104221436, 1459393483) index="0" unique_id=1358412272]
+shape = SubResource("CircleShape2D_geihd")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-20" parent_id_path=PackedInt32Array(104221436, 8830077) index="0" unique_id=1022743290]
+shape = SubResource("CircleShape2D_gs43p")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-21" parent_id_path=PackedInt32Array(104221436, 43342237) index="0" unique_id=1623676770]
+shape = SubResource("CircleShape2D_oshob")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-22" parent_id_path=PackedInt32Array(104221436, 907937287) index="0" unique_id=589355551]
+shape = SubResource("CircleShape2D_4h47k")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-23" parent_id_path=PackedInt32Array(104221436, 906300415) index="0" unique_id=764184135]
+shape = SubResource("CircleShape2D_mcfd4")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-24" parent_id_path=PackedInt32Array(104221436, 1113505859) index="0" unique_id=325755400]
+shape = SubResource("CircleShape2D_f4of5")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-25" parent_id_path=PackedInt32Array(104221436, 452842039) index="0" unique_id=1906525542]
+shape = SubResource("CircleShape2D_8l7e3")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-26" parent_id_path=PackedInt32Array(104221436, 224410148) index="0" unique_id=1047871360]
+shape = SubResource("CircleShape2D_hn678")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-27" parent_id_path=PackedInt32Array(104221436, 987662837) index="0" unique_id=822971836]
+shape = SubResource("CircleShape2D_4hadm")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-28" parent_id_path=PackedInt32Array(104221436, 210623927) index="0" unique_id=359174429]
+shape = SubResource("CircleShape2D_q0h8a")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-29" parent_id_path=PackedInt32Array(104221436, 247995443) index="0" unique_id=1939905154]
+shape = SubResource("CircleShape2D_mvmwy")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-30" parent_id_path=PackedInt32Array(104221436, 725486085) index="0" unique_id=226315515]
+shape = SubResource("CircleShape2D_wb8kq")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-31" parent_id_path=PackedInt32Array(104221436, 1303243555) index="0" unique_id=276913602]
+shape = SubResource("CircleShape2D_oh6x4")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-32" parent_id_path=PackedInt32Array(104221436, 207070078) index="0" unique_id=454623794]
+shape = SubResource("CircleShape2D_qc6x1")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-33" parent_id_path=PackedInt32Array(104221436, 1416790623) index="0" unique_id=31686271]
+shape = SubResource("CircleShape2D_bfk3i")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-34" parent_id_path=PackedInt32Array(104221436, 1154520621) index="0" unique_id=430654437]
+shape = SubResource("CircleShape2D_hdl7r")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-35" parent_id_path=PackedInt32Array(104221436, 2119582166) index="0" unique_id=2073654836]
+shape = SubResource("CircleShape2D_mw4px")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-36" parent_id_path=PackedInt32Array(104221436, 1321500334) index="0" unique_id=779450465]
+shape = SubResource("CircleShape2D_8rr78")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-37" parent_id_path=PackedInt32Array(104221436, 1552412530) index="0" unique_id=2051696029]
+shape = SubResource("CircleShape2D_cvvwm")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-38" parent_id_path=PackedInt32Array(104221436, 940048960) index="0" unique_id=1327745657]
+shape = SubResource("CircleShape2D_gnhd0")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-39" parent_id_path=PackedInt32Array(104221436, 440873239) index="0" unique_id=520375934]
+shape = SubResource("CircleShape2D_awspn")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-40" parent_id_path=PackedInt32Array(104221436, 1623125756) index="0" unique_id=792943886]
+shape = SubResource("CircleShape2D_47nv5")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-41" parent_id_path=PackedInt32Array(104221436, 641908831) index="0" unique_id=489780831]
+shape = SubResource("CircleShape2D_ml2j2")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-42" parent_id_path=PackedInt32Array(104221436, 1699080968) index="0" unique_id=1840014669]
+shape = SubResource("CircleShape2D_plnq1")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-43" parent_id_path=PackedInt32Array(104221436, 1981370765) index="0" unique_id=1932333832]
+shape = SubResource("CircleShape2D_i1wx2")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-44" parent_id_path=PackedInt32Array(104221436, 935612520) index="0" unique_id=1553790980]
+shape = SubResource("CircleShape2D_jmbrt")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-45" parent_id_path=PackedInt32Array(104221436, 2099329011) index="0" unique_id=1133390594]
+shape = SubResource("CircleShape2D_6a86w")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-46" parent_id_path=PackedInt32Array(104221436, 196481849) index="0" unique_id=2047593998]
+shape = SubResource("CircleShape2D_22q81")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-47" parent_id_path=PackedInt32Array(104221436, 1854745706) index="0" unique_id=850271697]
+shape = SubResource("CircleShape2D_81gu5")
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-48" parent_id_path=PackedInt32Array(104221436, 1022298199) index="0" unique_id=340571017]
+shape = SubResource("CircleShape2D_pf3rq")
+
+[node name="FullKeeb" parent="Blob/Egg" parent_id_path=PackedInt32Array(104221436, 1952859083) index="50" unique_id=339941415 instance=ExtResource("2_xpcdj")]
+position = Vector2(-71.45962, 442.86334)
+rotation = -1.5707964
+scale = Vector2(0.310559, 0.310559)
+
+[node name="Sprite2D" type="Sprite2D" parent="Blob/Egg" parent_id_path=PackedInt32Array(104221436, 1952859083) index="51" unique_id=1645835457]
+position = Vector2(94.99999, 141)
+texture = ExtResource("3_xpcdj")
+
+[editable path="Blob"]

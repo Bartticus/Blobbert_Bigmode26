@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtahe43j4wv5o" path="res://Scenes/KeyboardRows/q_row.tscn" id="3_j7e5w"]
 [ext_resource type="PackedScene" uid="uid://26rt0dqvuupo" path="res://Scenes/KeyboardRows/a_row.tscn" id="4_pmbh6"]
 [ext_resource type="PackedScene" uid="uid://taej6wdaex46" path="res://Scenes/KeyboardRows/z_row.tscn" id="5_4v8e2"]
+[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="6_nj12u"]
 
 [node name="FullKeeb" type="Node2D" unique_id=339941415]
 script = ExtResource("1_pfsk0")
@@ -25,3 +26,8 @@ unique_name_in_owner = true
 
 [node name="ZRow" parent="." unique_id=553454933 instance=ExtResource("5_4v8e2")]
 unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1717967662]
+position = Vector2(982, 523)
+scale = Vector2(9.59375, 6.9375)
+texture = ExtResource("6_nj12u")
