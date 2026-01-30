@@ -599,300 +599,315 @@ radius = 12.5
 [node name="Player" type="Node2D" unique_id=1532672995]
 
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("1_a3d8c")]
+position = Vector2(-3, -0.9999962)
 rotation = 1.5707964
 scale = Vector2(3.22, 3.22)
 
-[node name="Skeleton2D" parent="Blob/Egg" parent_id_path=PackedInt32Array(104221436, 1952859083) index="0" unique_id=648248684]
+[node name="Skeleton2D" parent="Blob/Egg" parent_id_path=PackedInt32Array(104221436, 1952859083) index="0" unique_id=1849082171]
 modification_stack = SubResource("SkeletonModificationStack2D_rblve")
 
-[node name="Bone-0" parent="Blob/Egg/Skeleton2D" index="0" unique_id=2030634093]
-position = Vector2(33.436348, 61.67753)
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Bone-2" parent="Blob/Egg/Skeleton2D" index="2" unique_id=1316525941]
-position = Vector2(26.444786, 117.90276)
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Bone-3" parent="Blob/Egg/Skeleton2D" index="3" unique_id=1628763351]
-position = Vector2(25.150627, 143.30373)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Bone-4" parent="Blob/Egg/Skeleton2D" index="4" unique_id=918945171]
-position = Vector2(12.160255, 164.26692)
-scale = Vector2(1.0000002, 1.0000002)
-
-[node name="Bone-5" parent="Blob/Egg/Skeleton2D" index="5" unique_id=1201782775]
-position = Vector2(26.404015, 181.30902)
-scale = Vector2(1.0000002, 1.0000002)
-
-[node name="Bone-6" parent="Blob/Egg/Skeleton2D" index="6" unique_id=1538029642]
-position = Vector2(29.55513, 209.25204)
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Bone-7" parent="Blob/Egg/Skeleton2D" index="7" unique_id=922443537]
-position = Vector2(73.13139, 27.500008)
-
-[node name="Bone-9" parent="Blob/Egg/Skeleton2D" index="9" unique_id=327296538]
-position = Vector2(77.942276, 60.000008)
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-10" parent="Blob/Egg/Skeleton2D" index="10" unique_id=1764701794]
-position = Vector2(51.96152, 75)
-
-[node name="Bone-11" parent="Blob/Egg/Skeleton2D" index="11" unique_id=2060370726]
-position = Vector2(77.942276, 90)
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-13" parent="Blob/Egg/Skeleton2D" index="13" unique_id=1214104415]
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-14" parent="Blob/Egg/Skeleton2D" index="14" unique_id=609913383]
-position = Vector2(51.961525, 135.00002)
-
-[node name="Bone-15" parent="Blob/Egg/Skeleton2D" index="15" unique_id=745299005]
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-16" parent="Blob/Egg/Skeleton2D" index="16" unique_id=600202097]
-position = Vector2(51.96152, 165)
-
-[node name="Bone-17" parent="Blob/Egg/Skeleton2D" index="17" unique_id=1563082341]
-position = Vector2(77.942276, 180)
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-18" parent="Blob/Egg/Skeleton2D" index="18" unique_id=1216592727]
-position = Vector2(51.961525, 195.00002)
-scale = Vector2(0.9999715, 0.9999715)
-
-[node name="Bone-20" parent="Blob/Egg/Skeleton2D" index="20" unique_id=1747948449]
-scale = Vector2(0.99997026, 0.99997026)
-
-[node name="Bone-22" parent="Blob/Egg/Skeleton2D" index="22" unique_id=1757935181]
-position = Vector2(102.95604, 20.000015)
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Bone-23" parent="Blob/Egg/Skeleton2D" index="23" unique_id=1379714694]
-position = Vector2(127.101364, 31.67492)
-
-[node name="Bone-25" parent="Blob/Egg/Skeleton2D" index="25" unique_id=2075967300]
-position = Vector2(133.59164, 57.353973)
-
-[node name="Bone-26" parent="Blob/Egg/Skeleton2D" index="26" unique_id=579172067]
-position = Vector2(103.92306, 75.00001)
-
-[node name="Bone-27" parent="Blob/Egg/Skeleton2D" index="27" unique_id=1161005822]
-position = Vector2(129.90381, 90.00001)
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-28" parent="Blob/Egg/Skeleton2D" index="28" unique_id=2143164114]
-position = Vector2(103.92306, 105)
-
-[node name="Bone-29" parent="Blob/Egg/Skeleton2D" index="29" unique_id=463958011]
-position = Vector2(129.90381, 120.00001)
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-31" parent="Blob/Egg/Skeleton2D" index="31" unique_id=127894942]
-position = Vector2(129.90381, 150.00002)
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-33" parent="Blob/Egg/Skeleton2D" index="33" unique_id=1349806422]
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-34" parent="Blob/Egg/Skeleton2D" index="34" unique_id=1900423674]
-position = Vector2(103.92305, 195.00002)
-
-[node name="Bone-35" parent="Blob/Egg/Skeleton2D" index="35" unique_id=494392327]
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="Bone-36" parent="Blob/Egg/Skeleton2D" index="36" unique_id=1994109746]
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Bone-38" parent="Blob/Egg/Skeleton2D" index="38" unique_id=993582791]
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Bone-39" parent="Blob/Egg/Skeleton2D" index="39" unique_id=2052142152]
-position = Vector2(152.85455, 75.00001)
-
-[node name="Bone-40" parent="Blob/Egg/Skeleton2D" index="40" unique_id=342557414]
-position = Vector2(156.28204, 102.74812)
-
-[node name="Bone-41" parent="Blob/Egg/Skeleton2D" index="41" unique_id=1725650866]
-position = Vector2(172.43909, 120.00001)
-scale = Vector2(1.0000008, 1.0000008)
-
-[node name="Bone-42" parent="Blob/Egg/Skeleton2D" index="42" unique_id=1515503465]
-position = Vector2(155.88455, 135.00002)
-
-[node name="Bone-43" parent="Blob/Egg/Skeleton2D" index="43" unique_id=1961834275]
-position = Vector2(173.55502, 150.00002)
-scale = Vector2(1.0000005, 1.0000005)
-
-[node name="Bone-44" parent="Blob/Egg/Skeleton2D" index="44" unique_id=2053595805]
-position = Vector2(155.88455, 165)
-
-[node name="Bone-45" parent="Blob/Egg/Skeleton2D" index="45" unique_id=1580281448]
-scale = Vector2(1.0000005, 1.0000005)
-
-[node name="Bone-46" parent="Blob/Egg/Skeleton2D" index="46" unique_id=1523340602]
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Bone-47" parent="Blob/Egg/Skeleton2D" index="47" unique_id=386809611]
-position = Vector2(172.40285, 206.73967)
+[node name="Bone-0" parent="Blob/Egg/Skeleton2D" index="0" unique_id=160608750]
+position = Vector2(33.43635, 61.67752)
 scale = Vector2(0.9999998, 0.9999998)
 
-[node name="Bone-48" parent="Blob/Egg/Skeleton2D" index="48" unique_id=164003228]
-position = Vector2(154.00221, 223.80734)
-scale = Vector2(0.99999994, 0.99999994)
+[node name="Bone-1" parent="Blob/Egg/Skeleton2D" index="1" unique_id=732818418]
+scale = Vector2(0.9999994, 0.9999994)
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-0" parent_id_path=PackedInt32Array(104221436, 592285263) index="0" unique_id=1653861706]
+[node name="Bone-2" parent="Blob/Egg/Skeleton2D" index="2" unique_id=1430956975]
+position = Vector2(26.444786, 117.902756)
+
+[node name="Bone-3" parent="Blob/Egg/Skeleton2D" index="3" unique_id=367600315]
+scale = Vector2(0.9999912, 0.9999912)
+
+[node name="Bone-4" parent="Blob/Egg/Skeleton2D" index="4" unique_id=20577276]
+scale = Vector2(1.0000005, 1.0000005)
+
+[node name="Bone-5" parent="Blob/Egg/Skeleton2D" index="5" unique_id=812452193]
+scale = Vector2(1.0000004, 1.0000004)
+
+[node name="Bone-6" parent="Blob/Egg/Skeleton2D" index="6" unique_id=113378146]
+position = Vector2(29.555138, 209.25203)
+
+[node name="Bone-7" parent="Blob/Egg/Skeleton2D" index="7" unique_id=1170151944]
+scale = Vector2(0.9999995, 0.9999995)
+
+[node name="Bone-8" parent="Blob/Egg/Skeleton2D" index="8" unique_id=514388933]
+position = Vector2(52.930046, 44.999992)
+scale = Vector2(1.000001, 1.000001)
+
+[node name="Bone-9" parent="Blob/Egg/Skeleton2D" index="9" unique_id=1236395507]
+scale = Vector2(1.0000002, 1.0000002)
+
+[node name="Bone-10" parent="Blob/Egg/Skeleton2D" index="10" unique_id=742466439]
+position = Vector2(51.961525, 74.99999)
+
+[node name="Bone-11" parent="Blob/Egg/Skeleton2D" index="11" unique_id=2027647473]
+position = Vector2(77.94228, 89.99999)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-12" parent="Blob/Egg/Skeleton2D" index="12" unique_id=1536705300]
+position = Vector2(51.96153, 105)
+
+[node name="Bone-13" parent="Blob/Egg/Skeleton2D" index="13" unique_id=483159445]
+position = Vector2(77.94228, 119.99999)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-14" parent="Blob/Egg/Skeleton2D" index="14" unique_id=1005047054]
+position = Vector2(51.96153, 135)
+
+[node name="Bone-15" parent="Blob/Egg/Skeleton2D" index="15" unique_id=1263749023]
+scale = Vector2(1.0000002, 1.0000002)
+
+[node name="Bone-17" parent="Blob/Egg/Skeleton2D" index="17" unique_id=341175156]
+position = Vector2(77.94228, 179.99998)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-18" parent="Blob/Egg/Skeleton2D" index="18" unique_id=1152566694]
+position = Vector2(51.96153, 195)
+scale = Vector2(0.99992335, 0.99992335)
+
+[node name="Bone-19" parent="Blob/Egg/Skeleton2D" index="19" unique_id=797590342]
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Bone-22" parent="Blob/Egg/Skeleton2D" index="22" unique_id=1008302067]
+position = Vector2(102.95605, 20)
+scale = Vector2(0.9999944, 0.9999944)
+
+[node name="Bone-24" parent="Blob/Egg/Skeleton2D" index="24" unique_id=1058322812]
+position = Vector2(103.92306, 44.999992)
+
+[node name="Bone-25" parent="Blob/Egg/Skeleton2D" index="25" unique_id=1946275842]
+position = Vector2(133.59164, 57.353966)
+
+[node name="Bone-26" parent="Blob/Egg/Skeleton2D" index="26" unique_id=1687860038]
+position = Vector2(103.92306, 75)
+
+[node name="Bone-27" parent="Blob/Egg/Skeleton2D" index="27" unique_id=101421160]
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-28" parent="Blob/Egg/Skeleton2D" index="28" unique_id=1275904337]
+position = Vector2(103.92306, 105)
+rotation = 1.7997423
+scale = Vector2(0.9999988, 0.9999988)
+
+[node name="Bone-29" parent="Blob/Egg/Skeleton2D" index="29" unique_id=44377643]
+rotation = 2.630793
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-30" parent="Blob/Egg/Skeleton2D" index="30" unique_id=1746064706]
+position = Vector2(95.999985, 139)
+rotation = 1.2750024
+scale = Vector2(0.9999992, 0.9999992)
+
+[node name="Bone-31" parent="Blob/Egg/Skeleton2D" index="31" unique_id=290793967]
+scale = Vector2(1.0000002, 1.0000002)
+
+[node name="Bone-32" parent="Blob/Egg/Skeleton2D" index="32" unique_id=679254887]
+position = Vector2(103.92305, 164.99998)
+
+[node name="Bone-33" parent="Blob/Egg/Skeleton2D" index="33" unique_id=1539839001]
+position = Vector2(129.90381, 179.99998)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-35" parent="Blob/Egg/Skeleton2D" index="35" unique_id=1520014154]
+scale = Vector2(1.0000002, 1.0000002)
+
+[node name="Bone-36" parent="Blob/Egg/Skeleton2D" index="36" unique_id=1509865379]
+position = Vector2(103.92306, 225)
+scale = Vector2(0.9999801, 0.9999801)
+
+[node name="Bone-37" parent="Blob/Egg/Skeleton2D" index="37" unique_id=1577502568]
+position = Vector2(129.21521, 235.99998)
+
+[node name="Bone-38" parent="Blob/Egg/Skeleton2D" index="38" unique_id=143521298]
+position = Vector2(103.3457, 244.49998)
+scale = Vector2(0.9999807, 0.9999807)
+
+[node name="Bone-39" parent="Blob/Egg/Skeleton2D" index="39" unique_id=718452654]
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Bone-40" parent="Blob/Egg/Skeleton2D" index="40" unique_id=904312970]
+position = Vector2(156.28204, 102.748116)
+
+[node name="Bone-41" parent="Blob/Egg/Skeleton2D" index="41" unique_id=2098414740]
+scale = Vector2(1.0000015, 1.0000015)
+
+[node name="Bone-43" parent="Blob/Egg/Skeleton2D" index="43" unique_id=1972586441]
+scale = Vector2(1.0000013, 1.0000013)
+
+[node name="Bone-44" parent="Blob/Egg/Skeleton2D" index="44" unique_id=1801393857]
+position = Vector2(155.88457, 164.99998)
+
+[node name="Bone-45" parent="Blob/Egg/Skeleton2D" index="45" unique_id=1487301106]
+position = Vector2(173.7724, 179.99998)
+scale = Vector2(1.0000012, 1.0000012)
+
+[node name="Bone-46" parent="Blob/Egg/Skeleton2D" index="46" unique_id=140191979]
+scale = Vector2(0.9999861, 0.9999861)
+
+[node name="Bone-47" parent="Blob/Egg/Skeleton2D" index="47" unique_id=1605889922]
+position = Vector2(172.40285, 206.73965)
+scale = Vector2(0.9999992, 0.9999992)
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-0" parent_id_path=PackedInt32Array(104221436, 1461065494) index="0" unique_id=2039551666]
 shape = SubResource("CircleShape2D_fn4qh")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-1" parent_id_path=PackedInt32Array(104221436, 63753960) index="0" unique_id=1835683234]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-1" parent_id_path=PackedInt32Array(104221436, 1027482554) index="0" unique_id=1782260306]
 shape = SubResource("CircleShape2D_5omc3")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-2" parent_id_path=PackedInt32Array(104221436, 1715908952) index="0" unique_id=194810199]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-2" parent_id_path=PackedInt32Array(104221436, 730936598) index="0" unique_id=1663892222]
 shape = SubResource("CircleShape2D_pcwjh")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-3" parent_id_path=PackedInt32Array(104221436, 1912858585) index="0" unique_id=1974227810]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-3" parent_id_path=PackedInt32Array(104221436, 1409252227) index="0" unique_id=199591063]
 shape = SubResource("CircleShape2D_ejxfg")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-4" parent_id_path=PackedInt32Array(104221436, 1369393330) index="0" unique_id=1210714812]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-4" parent_id_path=PackedInt32Array(104221436, 867262299) index="0" unique_id=1701713525]
 shape = SubResource("CircleShape2D_huyyu")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-5" parent_id_path=PackedInt32Array(104221436, 1674565154) index="0" unique_id=1754863333]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-5" parent_id_path=PackedInt32Array(104221436, 1594017253) index="0" unique_id=1011240947]
 shape = SubResource("CircleShape2D_m5eiq")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-6" parent_id_path=PackedInt32Array(104221436, 2005336615) index="0" unique_id=1888814496]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-6" parent_id_path=PackedInt32Array(104221436, 2033691348) index="0" unique_id=991345535]
 shape = SubResource("CircleShape2D_8g0gh")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-7" parent_id_path=PackedInt32Array(104221436, 839960829) index="0" unique_id=705883531]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-7" parent_id_path=PackedInt32Array(104221436, 646538122) index="0" unique_id=1750114106]
 shape = SubResource("CircleShape2D_0a2xn")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-8" parent_id_path=PackedInt32Array(104221436, 1875458920) index="0" unique_id=973753884]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-8" parent_id_path=PackedInt32Array(104221436, 1671753039) index="0" unique_id=1410829280]
 shape = SubResource("CircleShape2D_grehw")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-9" parent_id_path=PackedInt32Array(104221436, 1806013710) index="0" unique_id=359572922]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-9" parent_id_path=PackedInt32Array(104221436, 1475244881) index="0" unique_id=491793881]
 shape = SubResource("CircleShape2D_vn8q6")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-10" parent_id_path=PackedInt32Array(104221436, 972212033) index="0" unique_id=1205374194]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-10" parent_id_path=PackedInt32Array(104221436, 590699655) index="0" unique_id=1151011629]
 shape = SubResource("CircleShape2D_8vj0r")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-11" parent_id_path=PackedInt32Array(104221436, 1595020656) index="0" unique_id=1281207379]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-11" parent_id_path=PackedInt32Array(104221436, 1706573344) index="0" unique_id=947857299]
 shape = SubResource("CircleShape2D_j7g5o")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-12" parent_id_path=PackedInt32Array(104221436, 886546727) index="0" unique_id=1409518152]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-12" parent_id_path=PackedInt32Array(104221436, 1652450264) index="0" unique_id=688255787]
 shape = SubResource("CircleShape2D_ckdd2")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-13" parent_id_path=PackedInt32Array(104221436, 1740611843) index="0" unique_id=1373046381]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-13" parent_id_path=PackedInt32Array(104221436, 1116975342) index="0" unique_id=882417009]
 shape = SubResource("CircleShape2D_37mva")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-14" parent_id_path=PackedInt32Array(104221436, 1312944733) index="0" unique_id=967680996]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-14" parent_id_path=PackedInt32Array(104221436, 1018796251) index="0" unique_id=1935442890]
 shape = SubResource("CircleShape2D_vwcno")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-15" parent_id_path=PackedInt32Array(104221436, 210546161) index="0" unique_id=869481942]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-15" parent_id_path=PackedInt32Array(104221436, 965786401) index="0" unique_id=360210502]
 shape = SubResource("CircleShape2D_u8s58")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-16" parent_id_path=PackedInt32Array(104221436, 460461505) index="0" unique_id=1594527574]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-16" parent_id_path=PackedInt32Array(104221436, 1117498292) index="0" unique_id=813164910]
 shape = SubResource("CircleShape2D_d4a23")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-17" parent_id_path=PackedInt32Array(104221436, 373060647) index="0" unique_id=596058267]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-17" parent_id_path=PackedInt32Array(104221436, 299851169) index="0" unique_id=1280075155]
 shape = SubResource("CircleShape2D_hlqkp")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-18" parent_id_path=PackedInt32Array(104221436, 844760278) index="0" unique_id=1381581203]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-18" parent_id_path=PackedInt32Array(104221436, 68273498) index="0" unique_id=39213295]
 shape = SubResource("CircleShape2D_rbwwl")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-19" parent_id_path=PackedInt32Array(104221436, 150666586) index="0" unique_id=11387616]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-19" parent_id_path=PackedInt32Array(104221436, 1000333010) index="0" unique_id=1506463789]
 shape = SubResource("CircleShape2D_dbngi")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-20" parent_id_path=PackedInt32Array(104221436, 597325802) index="0" unique_id=303973726]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-20" parent_id_path=PackedInt32Array(104221436, 757502392) index="0" unique_id=838737248]
 shape = SubResource("CircleShape2D_geihd")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-21" parent_id_path=PackedInt32Array(104221436, 1563490154) index="0" unique_id=579876064]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-21" parent_id_path=PackedInt32Array(104221436, 174802192) index="0" unique_id=1813225840]
 shape = SubResource("CircleShape2D_gs43p")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-22" parent_id_path=PackedInt32Array(104221436, 692383299) index="0" unique_id=693512845]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-22" parent_id_path=PackedInt32Array(104221436, 1744796795) index="0" unique_id=282668816]
 shape = SubResource("CircleShape2D_oshob")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-23" parent_id_path=PackedInt32Array(104221436, 1091884441) index="0" unique_id=862900538]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-23" parent_id_path=PackedInt32Array(104221436, 352150553) index="0" unique_id=1014125334]
 shape = SubResource("CircleShape2D_4h47k")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-24" parent_id_path=PackedInt32Array(104221436, 213566998) index="0" unique_id=1864246108]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-24" parent_id_path=PackedInt32Array(104221436, 1330876698) index="0" unique_id=1612155152]
 shape = SubResource("CircleShape2D_mcfd4")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-25" parent_id_path=PackedInt32Array(104221436, 878404430) index="0" unique_id=480569583]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-25" parent_id_path=PackedInt32Array(104221436, 1188483575) index="0" unique_id=1007176281]
 shape = SubResource("CircleShape2D_f4of5")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-26" parent_id_path=PackedInt32Array(104221436, 1440254722) index="0" unique_id=1627640069]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-26" parent_id_path=PackedInt32Array(104221436, 992016345) index="0" unique_id=631721109]
 shape = SubResource("CircleShape2D_8l7e3")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-27" parent_id_path=PackedInt32Array(104221436, 1295889491) index="0" unique_id=1872531587]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-27" parent_id_path=PackedInt32Array(104221436, 1156846183) index="0" unique_id=788825733]
 shape = SubResource("CircleShape2D_hn678")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-28" parent_id_path=PackedInt32Array(104221436, 1786354060) index="0" unique_id=461574813]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-28" parent_id_path=PackedInt32Array(104221436, 2108890082) index="0" unique_id=205498801]
 shape = SubResource("CircleShape2D_4hadm")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-29" parent_id_path=PackedInt32Array(104221436, 255057741) index="0" unique_id=603232443]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-29" parent_id_path=PackedInt32Array(104221436, 1000468124) index="0" unique_id=70775648]
 shape = SubResource("CircleShape2D_q0h8a")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-30" parent_id_path=PackedInt32Array(104221436, 1869225320) index="0" unique_id=197918864]
+[node name="Bone-30" parent="Blob/Egg" parent_id_path=PackedInt32Array(104221436, 1952859083) index="31" unique_id=982666661]
+position = Vector2(95.99999, 139)
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-30" index="0" unique_id=39891007]
 shape = SubResource("CircleShape2D_mvmwy")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-31" parent_id_path=PackedInt32Array(104221436, 910926818) index="0" unique_id=1903891381]
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Blob/Egg/Bone-30" index="7" unique_id=766635201]
+remote_path = NodePath("../../../../KeebPivot")
+update_rotation = false
+update_scale = false
+
+[node name="CircleShape2D" parent="Blob/Egg/Bone-31" parent_id_path=PackedInt32Array(104221436, 105474553) index="0" unique_id=2132142317]
 shape = SubResource("CircleShape2D_wb8kq")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-32" parent_id_path=PackedInt32Array(104221436, 1307050607) index="0" unique_id=1684391555]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-32" parent_id_path=PackedInt32Array(104221436, 1786737922) index="0" unique_id=134430967]
 shape = SubResource("CircleShape2D_oh6x4")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-33" parent_id_path=PackedInt32Array(104221436, 1527291847) index="0" unique_id=598457154]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-33" parent_id_path=PackedInt32Array(104221436, 907493667) index="0" unique_id=149527591]
 shape = SubResource("CircleShape2D_qc6x1")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-34" parent_id_path=PackedInt32Array(104221436, 1775217923) index="0" unique_id=2113105260]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-34" parent_id_path=PackedInt32Array(104221436, 1028664536) index="0" unique_id=704642914]
 shape = SubResource("CircleShape2D_bfk3i")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-35" parent_id_path=PackedInt32Array(104221436, 1805631351) index="0" unique_id=534268804]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-35" parent_id_path=PackedInt32Array(104221436, 2048727061) index="0" unique_id=457423980]
 shape = SubResource("CircleShape2D_hdl7r")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-36" parent_id_path=PackedInt32Array(104221436, 707795743) index="0" unique_id=788651189]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-36" parent_id_path=PackedInt32Array(104221436, 1855040210) index="0" unique_id=1244185053]
 shape = SubResource("CircleShape2D_mw4px")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-37" parent_id_path=PackedInt32Array(104221436, 277173125) index="0" unique_id=619801781]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-37" parent_id_path=PackedInt32Array(104221436, 164780848) index="0" unique_id=785994233]
 shape = SubResource("CircleShape2D_8rr78")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-38" parent_id_path=PackedInt32Array(104221436, 59670475) index="0" unique_id=984018059]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-38" parent_id_path=PackedInt32Array(104221436, 506940889) index="0" unique_id=1161113417]
 shape = SubResource("CircleShape2D_cvvwm")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-39" parent_id_path=PackedInt32Array(104221436, 519215297) index="0" unique_id=270075559]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-39" parent_id_path=PackedInt32Array(104221436, 101797840) index="0" unique_id=55865370]
 shape = SubResource("CircleShape2D_gnhd0")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-40" parent_id_path=PackedInt32Array(104221436, 853560502) index="0" unique_id=615267515]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-40" parent_id_path=PackedInt32Array(104221436, 1457086933) index="0" unique_id=1341876805]
 shape = SubResource("CircleShape2D_awspn")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-41" parent_id_path=PackedInt32Array(104221436, 1310418811) index="0" unique_id=1739260031]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-41" parent_id_path=PackedInt32Array(104221436, 470763654) index="0" unique_id=988958029]
 shape = SubResource("CircleShape2D_47nv5")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-42" parent_id_path=PackedInt32Array(104221436, 1348345780) index="0" unique_id=1086536052]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-42" parent_id_path=PackedInt32Array(104221436, 1997319689) index="0" unique_id=1510883815]
 shape = SubResource("CircleShape2D_ml2j2")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-43" parent_id_path=PackedInt32Array(104221436, 2028961516) index="0" unique_id=1974028944]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-43" parent_id_path=PackedInt32Array(104221436, 221228981) index="0" unique_id=147611862]
 shape = SubResource("CircleShape2D_plnq1")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-44" parent_id_path=PackedInt32Array(104221436, 36778606) index="0" unique_id=961693222]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-44" parent_id_path=PackedInt32Array(104221436, 189215718) index="0" unique_id=315206542]
 shape = SubResource("CircleShape2D_i1wx2")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-45" parent_id_path=PackedInt32Array(104221436, 782550228) index="0" unique_id=2059475488]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-45" parent_id_path=PackedInt32Array(104221436, 481132212) index="0" unique_id=1610466726]
 shape = SubResource("CircleShape2D_jmbrt")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-46" parent_id_path=PackedInt32Array(104221436, 1356460103) index="0" unique_id=1191330926]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-46" parent_id_path=PackedInt32Array(104221436, 1765682212) index="0" unique_id=1905680767]
 shape = SubResource("CircleShape2D_6a86w")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-47" parent_id_path=PackedInt32Array(104221436, 280821639) index="0" unique_id=928996607]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-47" parent_id_path=PackedInt32Array(104221436, 1281779895) index="0" unique_id=1666010480]
 shape = SubResource("CircleShape2D_22q81")
 
-[node name="CircleShape2D" parent="Blob/Egg/Bone-48" parent_id_path=PackedInt32Array(104221436, 1526020928) index="0" unique_id=856404182]
+[node name="CircleShape2D" parent="Blob/Egg/Bone-48" parent_id_path=PackedInt32Array(104221436, 1080342380) index="0" unique_id=997403958]
 shape = SubResource("CircleShape2D_81gu5")
 
-[node name="FullKeeb" parent="Blob/Egg/Bone-48" parent_id_path=PackedInt32Array(104221436, 1526020928) index="6" unique_id=339941415 instance=ExtResource("2_xpcdj")]
-position = Vector2(-225.46182, 219.056)
-rotation = -1.5707964
-scale = Vector2(0.310559, 0.310559)
+[node name="KeebPivot" type="Node2D" parent="." unique_id=384201426]
+position = Vector2(3.439972, 2.2199707)
+
+[node name="FullKeeb" parent="KeebPivot" unique_id=339941415 instance=ExtResource("2_xpcdj")]
+position = Vector2(-971.43994, -535.22)
 
 [editable path="Blob"]

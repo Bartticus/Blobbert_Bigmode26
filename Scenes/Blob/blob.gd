@@ -11,5 +11,5 @@ func _ready() -> void:
 		if child is RigidBody2D:
 			bodies.append(child)
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	print($"Egg/Bone-0".global_position)
