@@ -70,26 +70,26 @@ func find_closest_body() -> void:
 	current_body = closest_body
 	dist_to_current_body = shortest_dist
 
-var force_applied: Vector2
-func find_and_tug_target() -> void:
-	find_closest_body()
-	
-	var new_force: Vector2 = current_body.global_position.direction_to(global_position) * calculate_tugging_power()
-	var weight: float = dist_to_current_body / max_tug_distance
-	force_applied = force_applied.lerp(new_force, weight)
-	current_body.apply_force(force_applied)
-func move_target() -> void:
-	var force = current_body.global_position.direction_to(global_position) * calculate_tugging_power()
-	if status == Status.SNAPPING:
-		force = -(force * calculate_snap_multiplier())
-	current_body.apply_force(force)
-
-func calculate_snap_multiplier() -> float:
-	return (max_snap_multiplier * ((snap_timer.wait_time - snap_timer.time_left) / snap_timer.wait_time))
 
 func find_and_tug_target() -> void:
 	find_closest_body()
 	move_target()
+	
+
+var force_applied: Vector2
+func move_target():
+	var new_force: Vector2 = current_body.global_position.direction_to(global_position) * calculate_tugging_power()
+	var weight: float = dist_to_current_body / max_tug_distance
+	match status:
+		Status.SNAPPING:
+			force_applied = -(force_applied * calculate_snap_multiplier())
+		Status.TUGGING:
+			force_applied = force_applied.lerp(new_force, weight)
+	current_body.apply_force(force_applied)
+
+
+func calculate_snap_multiplier() -> float:
+	return (max_snap_multiplier * ((snap_timer.wait_time - snap_timer.time_left) / snap_timer.wait_time))
 
 func snap_away() -> void:
 	move_target()
