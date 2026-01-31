@@ -475,7 +475,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-3" type="Bone2D" parent="Egg/Skeleton2D" unique_id=367600315]
 position = Vector2(25.150635, 143.30371)
 rotation = 0.6803466
-scale = Vector2(0.9999999, 0.9999999)
+scale = Vector2(0.9999998, 0.9999998)
 rest = Transform2D(0.77735496, 0.62906224, -0.62906224, 0.77735496, 25.150635, 143.30371)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -1173,7 +1173,7 @@ node_b = NodePath("../../Bone-10")
 length = 0.0
 stiffness = 10.0
 damping = 0.01
-metadata/joint_distance = 27.34314
+metadata/joint_distance = 27.343139999999998
 
 [node name="Joint2D-Bone-1-Bone-12" type="DampedSpringJoint2D" parent="Egg/Bone-1" unique_id=163694277]
 visible = false
@@ -1184,7 +1184,7 @@ node_b = NodePath("../../Bone-12")
 length = 0.0
 stiffness = 10.0
 damping = 0.01
-metadata/joint_distance = 27.34314
+metadata/joint_distance = 27.343139999999998
 
 [node name="Joint2D-Bone-1-Bone-2" type="DampedSpringJoint2D" parent="Egg/Bone-1" unique_id=1143742550]
 visible = false
@@ -1725,7 +1725,7 @@ node_b = NodePath("../../Bone-1")
 length = 0.0
 stiffness = 10.0
 damping = 0.01
-metadata/joint_distance = 27.34314
+metadata/joint_distance = 27.343139999999998
 
 [node name="Joint2D-Bone-10-Bone-12" type="DampedSpringJoint2D" parent="Egg/Bone-10" unique_id=241342832]
 visible = false
@@ -1863,7 +1863,7 @@ node_b = NodePath("../../Bone-1")
 length = 0.0
 stiffness = 10.0
 damping = 0.01
-metadata/joint_distance = 27.34314
+metadata/joint_distance = 27.343139999999998
 
 [node name="Joint2D-Bone-12-Bone-10" type="DampedSpringJoint2D" parent="Egg/Bone-12" unique_id=198390929]
 visible = false

@@ -10,12 +10,18 @@ script = ExtResource("1_b7qx2")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=726858926]
 scale = Vector2(3, 3)
 texture = ExtResource("2_75pei")
-centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 13, 12)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1584370002]
+unique_name_in_owner = true
 position = Vector2(20, 15)
 enabled = false
 energy = 4.8
 texture = ExtResource("3_ckgvi")
+
+[node name="SnapTimer" type="Timer" parent="." unique_id=1163911104]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.5
+one_shot = true
