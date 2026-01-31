@@ -416,7 +416,7 @@ modification_stack = SubResource("SkeletonModificationStack2D_rblve")
 
 [node name="Bone-0" parent="Blob/Egg/Skeleton2D" index="0" unique_id=1285093882]
 position = Vector2(37.469044, 66.120186)
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.9999999, 0.9999999)
 
 [node name="Bone-1" parent="Blob/Egg/Skeleton2D" index="1" unique_id=1613004548]
 scale = Vector2(0.99999976, 0.99999976)
@@ -426,30 +426,24 @@ position = Vector2(32.360733, 118.903534)
 scale = Vector2(0.99999976, 0.99999976)
 
 [node name="Bone-3" parent="Blob/Egg/Skeleton2D" index="3" unique_id=1625295891]
-rotation = 0.61814785
-scale = Vector2(0.9999994, 0.9999994)
+scale = Vector2(0.9999995, 0.9999995)
 
 [node name="Bone-4" parent="Blob/Egg/Skeleton2D" index="4" unique_id=1708042985]
-rotation = 1.4880422
-scale = Vector2(1.0000002, 1.0000002)
+scale = Vector2(1.0000004, 1.0000004)
 
 [node name="Bone-5" parent="Blob/Egg/Skeleton2D" index="5" unique_id=575930686]
-rotation = -1.6535506
-scale = Vector2(1.0000001, 1.0000001)
+scale = Vector2(1.0000002, 1.0000002)
 
 [node name="Bone-6" parent="Blob/Egg/Skeleton2D" index="6" unique_id=328124172]
-rotation = 1.6082307
 scale = Vector2(0.9999995, 0.9999995)
 
 [node name="Bone-7" parent="Blob/Egg/Skeleton2D" index="7" unique_id=260544438]
 position = Vector2(74.389206, 33.366676)
-rotation = 1.5643004
 scale = Vector2(0.99999946, 0.99999946)
 
 [node name="Bone-8" parent="Blob/Egg/Skeleton2D" index="8" unique_id=430953502]
 position = Vector2(55.604168, 50.37113)
-rotation = -0.5750383
-scale = Vector2(1.0000007, 1.0000007)
+scale = Vector2(1.0000008, 1.0000008)
 
 [node name="Bone-9" parent="Blob/Egg/Skeleton2D" index="9" unique_id=1182851558]
 scale = Vector2(1.0000001, 1.0000001)
@@ -485,41 +479,33 @@ scale = Vector2(1.0000001, 1.0000001)
 
 [node name="Bone-18" parent="Blob/Egg/Skeleton2D" index="18" unique_id=712912184]
 position = Vector2(55.25636, 189.9856)
-rotation = -1.2859921
 scale = Vector2(0.99999964, 0.99999964)
 
 [node name="Bone-19" parent="Blob/Egg/Skeleton2D" index="19" unique_id=2135564552]
 position = Vector2(79.18605, 204.13034)
-rotation = -1.4474136
-scale = Vector2(0.99999976, 0.99999976)
+scale = Vector2(0.9999997, 0.9999997)
 
 [node name="Bone-20" parent="Blob/Egg/Skeleton2D" index="20" unique_id=315273556]
-rotation = 1.8556005
-scale = Vector2(0.9999993, 0.9999993)
+scale = Vector2(0.99999934, 0.99999934)
 
 [node name="Bone-21" parent="Blob/Egg/Skeleton2D" index="21" unique_id=1707088816]
 position = Vector2(78.882576, 231.07413)
-rotation = 1.8230017
-scale = Vector2(0.9999997, 0.9999997)
+scale = Vector2(0.99999964, 0.99999964)
 
 [node name="Bone-22" parent="Blob/Egg/Skeleton2D" index="22" unique_id=186268293]
 position = Vector2(102.52125, 25.984222)
 scale = Vector2(0.9999998, 0.9999998)
-
-[node name="Bone-23" parent="Blob/Egg/Skeleton2D" index="23" unique_id=1066799070]
-rotation = -2.5751412
 
 [node name="Bone-24" parent="Blob/Egg/Skeleton2D" index="24" unique_id=921055342]
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Bone-25" parent="Blob/Egg/Skeleton2D" index="25" unique_id=2077249112]
 position = Vector2(130.76163, 62.644615)
-rotation = 2.57607
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.99999976, 0.99999976)
 
 [node name="Bone-26" parent="Blob/Egg/Skeleton2D" index="26" unique_id=1313671781]
 position = Vector2(102.95361, 80.92116)
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.9999996, 0.9999996)
 
 [node name="Bone-27" parent="Blob/Egg/Skeleton2D" index="27" unique_id=154519069]
 position = Vector2(125.93083, 94.496155)
@@ -540,27 +526,19 @@ position = Vector2(102.46043, 159.18098)
 scale = Vector2(0.99999964, 0.99999964)
 
 [node name="Bone-33" parent="Blob/Egg/Skeleton2D" index="33" unique_id=13451443]
-rotation = 2.751615
 scale = Vector2(1.0000001, 1.0000001)
 
 [node name="Bone-34" parent="Blob/Egg/Skeleton2D" index="34" unique_id=1631643087]
-rotation = -1.053394
-scale = Vector2(0.99999964, 0.99999964)
+scale = Vector2(0.99999934, 0.99999934)
 
 [node name="Bone-35" parent="Blob/Egg/Skeleton2D" index="35" unique_id=400640049]
-rotation = 1.5282267
 scale = Vector2(1.0000001, 1.0000001)
 
 [node name="Bone-36" parent="Blob/Egg/Skeleton2D" index="36" unique_id=1361831360]
-rotation = 1.5836989
 scale = Vector2(0.99999994, 0.99999994)
-
-[node name="Bone-37" parent="Blob/Egg/Skeleton2D" index="37" unique_id=701790089]
-rotation = -1.6041158
 
 [node name="Bone-38" parent="Blob/Egg/Skeleton2D" index="38" unique_id=61067024]
 position = Vector2(102.911415, 238.51575)
-rotation = -1.5578939
 scale = Vector2(0.9999998, 0.9999998)
 
 [node name="Bone-39" parent="Blob/Egg/Skeleton2D" index="39" unique_id=1695241914]
@@ -569,11 +547,18 @@ position = Vector2(148.48718, 79.11413)
 [node name="Bone-40" parent="Blob/Egg/Skeleton2D" index="40" unique_id=743192385]
 position = Vector2(150.78316, 105.14858)
 
+[node name="Bone-41" parent="Blob/Egg/Skeleton2D" index="41" unique_id=527030713]
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Bone-42" parent="Blob/Egg/Skeleton2D" index="42" unique_id=450955558]
+scale = Vector2(0.99999976, 0.99999976)
+
 [node name="Bone-43" parent="Blob/Egg/Skeleton2D" index="43" unique_id=290029243]
 position = Vector2(167.74947, 148.48495)
 
 [node name="Bone-45" parent="Blob/Egg/Skeleton2D" index="45" unique_id=962713978]
 position = Vector2(168.72127, 176.76176)
+scale = Vector2(0.9999999, 0.9999999)
 
 [node name="Bone-46" parent="Blob/Egg/Skeleton2D" index="46" unique_id=332413079]
 position = Vector2(151.79959, 190.60533)
