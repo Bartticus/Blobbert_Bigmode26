@@ -170,7 +170,7 @@ layer_0/tile_data = PackedInt32Array(-262128, 0, 0, -196592, 0, 1, -131056, 0, 2
 [node name="FullKeeb" parent="." unique_id=339941415 instance=ExtResource("3_3mqfk")]
 
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("2_4dpyx")]
-position = Vector2(159, -139)
+position = Vector2(263, 279)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1600863119]
 anchor_mode = 0
