@@ -11,6 +11,7 @@ extends Node2D
 
 var current_body: RigidBody2D
 var dist_to_current_body: float
+var force_applied: Vector2
 
 static var tugged_bodies: Array = [RigidBody2D]
 
@@ -28,7 +29,6 @@ func set_status(new_status) -> void:
 				tugged_bodies.erase(current_body)
 			current_body = null
 			snap_timer.stop()
-
 		Status.TUGGING:
 			point_light_2d.enabled = true
 			snap_timer.start(snap_timer_wait_time)
@@ -72,13 +72,10 @@ func find_closest_body() -> void:
 	current_body = closest_body
 	dist_to_current_body = shortest_dist
 
-
 func find_and_tug_target() -> void:
 	find_closest_body()
 	move_target()
-	
 
-var force_applied: Vector2
 func move_target():
 	var new_force: Vector2 = current_body.global_position.direction_to(global_position) * calculate_tugging_power()
 	var weight: float = dist_to_current_body / max_tug_distance
@@ -89,14 +86,13 @@ func move_target():
 			force_applied = force_applied.lerp(new_force, weight)
 	current_body.apply_force(force_applied)
 
-
 func calculate_snap_multiplier() -> float:
 	return (max_snap_multiplier * ((snap_timer.wait_time - snap_timer.time_left) / snap_timer.wait_time))
 
 func snap_away() -> void:
 	move_target()
 	status = Status.IDLE
-	
+
 # Tugging power drops off exponentially
 func calculate_tugging_power() -> float:
 	if (dist_to_current_body >= max_tug_distance):
@@ -104,13 +100,12 @@ func calculate_tugging_power() -> float:
 
 	var power_multiplier = dist_to_current_body / max_tug_distance
 	var tugging_power = max_tug_power * exp(-tug_decay * power_multiplier)
-	# print(tugging_power)
+	
 	return tugging_power
 
 func _physics_process(_delta: float) -> void:
 	match status:
 		Status.TUGGING:
 			find_and_tug_target()
-			print(tugged_bodies)
 		Status.SNAPPING:
 			snap_away()
