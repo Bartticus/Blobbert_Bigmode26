@@ -3,11 +3,32 @@
 [ext_resource type="Script" uid="uid://m5f1fqhqwv28" path="res://Scenes/Key/key.gd" id="1_b7qx2"]
 [ext_resource type="Texture2D" uid="uid://0ts8n6m43hkh" path="res://Assets/Sprites/FullKeyboardWithNumbers.png" id="2_75pei"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_ckgvi"]
-[ext_resource type="Script" path="res://Scenes/Key/debug_line.gd" id="4_75pei"]
+[ext_resource type="Script" uid="uid://s33vwyd1x08e" path="res://Scenes/Key/tug_rope.gd" id="4_75pei"]
+[ext_resource type="Shader" uid="uid://ddv75hdnifa2k" path="res://Scenes/Key/rope_shader.gdshader" id="4_ckgvi"]
 
 [sub_resource type="Curve" id="Curve_75pei"]
-_data = [Vector2(0.145, 0.94382024), 0.0, 0.0, 0, 0, Vector2(0.515, 0.75280905), 0.0, 0.0, 0, 0, Vector2(0.75, 0.17977536), 0.0, 0.0, 0, 0]
-point_count = 3
+_limits = [0.2, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ckgvi"]
+shader = ExtResource("4_ckgvi")
+shader_parameter/beams = 2
+shader_parameter/energy = 3.0
+shader_parameter/roughness = 3
+shader_parameter/frequency = 5
+shader_parameter/speed = 3.0
+shader_parameter/thickness = 0.006
+shader_parameter/outline_thickness = 0.03
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.5294118)
+shader_parameter/outline_color = Color(9.510636e-05, 0.4958126, 0.9504811, 0.6745098)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(4, 1)
 
 [node name="Key" type="Node2D" unique_id=1531063233]
 modulate = Color(1, 1, 1, 0.84313726)
@@ -33,8 +54,25 @@ process_callback = 0
 wait_time = 0.5
 one_shot = true
 
-[node name="DebugLine" type="Line2D" parent="." unique_id=300641417]
+[node name="TugRope" type="Line2D" parent="." unique_id=300641417]
 unique_name_in_owner = true
+show_behind_parent = true
+width = 0.0
 width_curve = SubResource("Curve_75pei")
-default_color = Color(0.48235294, 0.6431373, 1, 0.16078432)
+default_color = Color(0.53809893, 0.69831556, 1, 0.21568628)
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
 script = ExtResource("4_75pei")
+
+[node name="Beam" type="ColorRect" parent="TugRope" unique_id=492450127]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ckgvi")
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -24.5
+offset_right = 78.0
+offset_bottom = 25.5
+grow_vertical = 2
+pivot_offset = Vector2(0, 25)
