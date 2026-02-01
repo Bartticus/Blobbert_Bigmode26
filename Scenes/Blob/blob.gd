@@ -11,7 +11,7 @@ extends Node2D
 
 @export var face_pivot: Node2D
 @export var face_array: Array[Sprite2D]
-@onready var current_face: Sprite2D = $FacePivot/Neutral
+@onready var current_face: Sprite2D = $BlobCenter/FacePivot/Neutral
 
 func _ready() -> void:
 	Global.blob = self

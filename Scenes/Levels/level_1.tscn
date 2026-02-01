@@ -141,10 +141,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4dpyx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mqfk"]
-size = Vector2(254, 54)
+size = Vector2(1920, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iixi8"]
-size = Vector2(58, 254)
+size = Vector2(1920, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f3p6"]
+size = Vector2(1920, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyadu"]
 size = Vector2(1808, 464)
@@ -158,9 +161,12 @@ size = Vector2(760, 724)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5f3p6"]
 blend_mode = 1
 
-[node name="Level1" type="Node2D" unique_id=390618985 node_paths=PackedStringArray("camera")]
+[node name="Level1" type="Node2D" unique_id=390618985 node_paths=PackedStringArray("camera", "anchors", "camera_trans_areas", "current_anchor")]
 script = ExtResource("1_iixi8")
 camera = NodePath("Camera2D")
+anchors = [NodePath("Anchors/Anchor0"), NodePath("Anchors/Anchor1"), NodePath("Anchors/Anchor2")]
+camera_trans_areas = [NodePath("CameraTransitionAreas/Screen0"), NodePath("CameraTransitionAreas/Screen1"), NodePath("CameraTransitionAreas/Screen2")]
+current_anchor = NodePath("Anchors/Anchor0")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1881055401]
 tile_set = SubResource("TileSet_3mqfk")
@@ -182,30 +188,38 @@ update_scale = false
 
 [node name="CameraTransitionAreas" type="Node2D" parent="." unique_id=1275357427]
 
-[node name="Screen1-2" type="Area2D" parent="CameraTransitionAreas" unique_id=559521510]
-position = Vector2(1729, 1081)
-collision_layer = 0
+[node name="Screen0" type="Area2D" parent="CameraTransitionAreas" unique_id=559521510]
+position = Vector2(960, 540)
+collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitionAreas/Screen1-2" unique_id=1575571885]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitionAreas/Screen0" unique_id=1575571885]
 shape = SubResource("RectangleShape2D_3mqfk")
 
-[node name="Screen2-3" type="Area2D" parent="CameraTransitionAreas" unique_id=213921668]
-position = Vector2(1920, 1598)
-collision_layer = 0
+[node name="Screen1" type="Area2D" parent="CameraTransitionAreas" unique_id=213921668]
+position = Vector2(960, 1620)
+collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitionAreas/Screen2-3" unique_id=1742058765]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitionAreas/Screen1" unique_id=1742058765]
 shape = SubResource("RectangleShape2D_iixi8")
+
+[node name="Screen2" type="Area2D" parent="CameraTransitionAreas" unique_id=713386613]
+position = Vector2(2880, 1620)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraTransitionAreas/Screen2" unique_id=323589889]
+shape = SubResource("RectangleShape2D_5f3p6")
 
 [node name="Anchors" type="Node2D" parent="." unique_id=2005653820]
 
-[node name="Anchor1" type="Marker2D" parent="Anchors" unique_id=1343437036]
+[node name="Anchor0" type="Marker2D" parent="Anchors" unique_id=1343437036]
 
-[node name="Anchor2" type="Marker2D" parent="Anchors" unique_id=668616254]
+[node name="Anchor1" type="Marker2D" parent="Anchors" unique_id=668616254]
 position = Vector2(0, 1080)
 
-[node name="Anchor3" type="Marker2D" parent="Anchors" unique_id=1449818996]
+[node name="Anchor2" type="Marker2D" parent="Anchors" unique_id=1449818996]
 position = Vector2(1920, 1080)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=181660150]
@@ -238,6 +252,3 @@ shape = SubResource("RectangleShape2D_xgxfi")
 material = SubResource("CanvasItemMaterial_5f3p6")
 scale = Vector2(6.09375, 5.6875)
 texture = ExtResource("1_tlcug")
-
-[connection signal="body_entered" from="CameraTransitionAreas/Screen1-2" to="." method="_on_screen_12_body_entered"]
-[connection signal="body_entered" from="CameraTransitionAreas/Screen2-3" to="." method="_on_screen_23_body_entered"]
