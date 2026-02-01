@@ -3,9 +3,38 @@
 [ext_resource type="Script" uid="uid://cbjmb7cnld5l5" path="res://Scenes/GreasableObject/greasable_object.gd" id="1_7r7q3"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_qfkhn"]
 [ext_resource type="Texture2D" uid="uid://lnhmxn32d64v" path="res://Assets/samples/softbody2d/Butter.png" id="3_j5qlp"]
+[ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="4_qfkhn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rb0md"]
 size = Vector2(428, 90)
+
+[sub_resource type="Gradient" id="Gradient_qfkhn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ojx3w"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ebora"]
+width = 300
+height = 300
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_ojx3w")
+color_ramp = SubResource("Gradient_qfkhn")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjrr1"]
+shader = ExtResource("4_qfkhn")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.08627451, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv26f"]
 size = Vector2(446, 104)
@@ -13,12 +42,13 @@ size = Vector2(446, 104)
 [node name="GreasableObject" type="Node2D" unique_id=1867482040 node_paths=PackedStringArray("stain_sprite")]
 rotation = -1.5707964
 script = ExtResource("1_7r7q3")
-stain_sprite = NodePath("StaticBody2D/GreaseStain")
+stain_sprite = NodePath("StaticBody2D/ObjectShaded")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=481857584]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1424846631]
+visible = false
 shape = SubResource("RectangleShape2D_rb0md")
 
 [node name="Object" type="Sprite2D" parent="StaticBody2D" unique_id=1430799395]
@@ -31,11 +61,17 @@ position = Vector2(2.9999998, -29.999998)
 scale = Vector2(3.8833332, 0.36090225)
 texture = ExtResource("3_j5qlp")
 
+[node name="ObjectShaded" type="Sprite2D" parent="StaticBody2D" unique_id=1685847717]
+material = SubResource("ShaderMaterial_hjrr1")
+scale = Vector2(3.9333332, 1)
+texture = ExtResource("2_qfkhn")
+
 [node name="VelocityDetector" type="Area2D" parent="." unique_id=446853444]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VelocityDetector" unique_id=2097183210]
+visible = false
 shape = SubResource("RectangleShape2D_jv26f")
 
 [connection signal="body_entered" from="VelocityDetector" to="." method="_on_velocity_detector_body_entered"]
