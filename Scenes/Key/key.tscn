@@ -12,6 +12,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ckgvi"]
+resource_local_to_scene = true
 shader = ExtResource("4_ckgvi")
 shader_parameter/beams = 2
 shader_parameter/energy = 3.0
@@ -24,7 +25,7 @@ shader_parameter/beam_difference = 0.0
 shader_parameter/glow = 0.0
 shader_parameter/outline_glow = 0.0
 shader_parameter/color = Color(0.9098039, 1, 1, 0.5294118)
-shader_parameter/outline_color = Color(9.510636e-05, 0.4958126, 0.9504811, 0.6745098)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.41568628)
 shader_parameter/progress = 1.0
 shader_parameter/y_offset = 0.0
 shader_parameter/fixed_edge_size = 0.05
