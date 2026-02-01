@@ -3,9 +3,14 @@ extends Line2D
 @onready var beam: ColorRect = %Beam
 
 @export var min_thickness: float = 0.03
-@export var max_thickness: float = 0.06
-@export var min_outline_thickness: float = 0.05
-@export var max_outline_thickness: float = 0.18
+@export var max_thickness: float = 0.07
+@export var min_outline_thickness: float = 0.1
+@export var max_outline_thickness: float = 0.2
+@export var min_noise_scale_x: float = 1.0
+
+@export var min_beam_alpha: float = 0.2
+@export var max_beam_alpha: float = 0.9
+@export var default_beam_color: Vector4 = Vector4(0.91, 1.0, 1.0, max_beam_alpha)
 
 var parent_key: Key
 var target_position = null
@@ -36,15 +41,19 @@ func draw_line_to_bone() -> void:
 	var new_outline_thickness = [(max_outline_thickness * exponential_multiplier), min_outline_thickness].max()
 	beam.material.set_shader_parameter('thickness', new_thickness)
 	beam.material.set_shader_parameter('outline_thickness', new_outline_thickness)
-	# width = [(max_width * parent_key.calculate_exponential_multiplier()), min_width].max()
+	beam.material.set_shader_parameter('noise_scale', Vector2([(length / 100), min_noise_scale_x].max(), 1.0))
+
+	var new_beam_color = default_beam_color
+	new_beam_color[3] = [(exponential_multiplier * max_beam_alpha), min_beam_alpha].max()
+	beam.material.set_shader_parameter('color', new_beam_color)
 
 func _physics_process(_delta: float) -> void:
 	if (visible && parent_key.current_bone):
 		draw_line_to_bone()
 
 func enable() -> void:
-	visible = true
+	beam.visible = true
 	
 func disable() -> void:
-	visible = false
 	target_position = null
+	beam.visible = false
