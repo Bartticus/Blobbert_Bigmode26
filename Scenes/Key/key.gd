@@ -1,15 +1,15 @@
+class_name Key
 extends Node2D
 
 @onready var snap_timer: Timer = %SnapTimer
 @onready var point_light_2d: PointLight2D = %PointLight2D
-@onready var debug_line: Line2D = %DebugLine
+@onready var tug_rope: Line2D = %TugRope
 
 @export var max_tug_distance: float = 800
 @export var max_tug_power: float = 3000
 @export var tug_decay: float = 2.5
-@export var max_snap_multiplier: float = 2.0
-@export var snap_timer_wait_time: float = 1.5
-@export var debug_line_active: bool = true
+@export var max_snap_multiplier: float = 10.0
+@export var snap_timer_wait_time: float = 1.0
 
 var current_bone: Bone : set = set_current_bone
 var dist_to_current_bone: float
@@ -19,6 +19,9 @@ enum Status { IDLE, TUGGING, SNAPPING }
 # Every time the 'status' is set, set_status will run and perform any side effects for the new status
 var status: Status = Status.IDLE : set = set_status
 
+func _ready() -> void:
+	tug_rope.parent_key = self
+
 func set_status(new_status) -> void:
 	status = new_status
 	match status:
@@ -26,7 +29,8 @@ func set_status(new_status) -> void:
 			point_light_2d.enabled = false
 			current_bone = null
 			snap_timer.stop()
-			debug_line.clear_points()
+			tug_rope.disable()
+			force_applied = Vector2(0,0)
 		Status.TUGGING:
 			point_light_2d.enabled = true
 			snap_timer.start(snap_timer_wait_time)
@@ -86,9 +90,12 @@ func find_and_tug_target() -> void:
 	
 
 func move_bone() -> void:
-	if (current_bone is not Bone || dist_to_current_bone > max_tug_distance):
-		debug_line.clear_points()
+	if (current_bone is not Bone || status == Status.IDLE || dist_to_current_bone > max_tug_distance):
+		tug_rope.disable()
 		return
+	else:
+		tug_rope.enable()
+	
 	var new_force: Vector2 = current_bone.global_position.direction_to(global_position) * calculate_tugging_power()
 	var weight: float = dist_to_current_bone / max_tug_distance
 	match status:
@@ -97,8 +104,6 @@ func move_bone() -> void:
 		Status.TUGGING:
 			force_applied = force_applied.lerp(new_force, weight)
 	current_bone.apply_force(force_applied)
-	if debug_line_active:
-		debug_line.draw_line_to_bone(current_bone)
 
 
 func calculate_snap_multiplier() -> float:
@@ -110,14 +115,16 @@ func snap_away() -> void:
 	status = Status.IDLE
 
 
-# Tugging power drops off exponentially
 func calculate_tugging_power() -> float:
 	if (dist_to_current_bone >= max_tug_distance):
 		return 0
 
+	return max_tug_power * calculate_exponential_multiplier()
+
+# Tugging power and tug_rope width drop off exponentially
+func calculate_exponential_multiplier() -> float:
 	var power_multiplier = dist_to_current_bone / max_tug_distance
-	var tugging_power = max_tug_power * exp(-tug_decay * power_multiplier)
-	return tugging_power
+	return exp(-tug_decay * power_multiplier)
 
 
 func _physics_process(_delta: float) -> void:
