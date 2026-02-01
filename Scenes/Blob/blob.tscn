@@ -313,7 +313,6 @@ collision_mask = 3
 metadata/_custom_type_script = "uid://kol6k5y6rb8a"
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Softbody" unique_id=2050559159]
-visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_vqrje")
 
 [node name="Bone-0" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=109922513]
@@ -500,6 +499,11 @@ metadata/idx = 13
 metadata/connected_nodes_paths = [NodePath("Bone-11"), NodePath("Bone-22"), NodePath("Bone-12"), NodePath("Bone-14"), NodePath("Bone-24"), NodePath("Bone-15")]
 metadata/connected_nodes_idx = [11, 22, 12, 14, 24, 15]
 metadata/_local_pose_override_enabled_ = true
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Softbody/Skeleton2D/Bone-13" unique_id=98895757]
+rotation = -2.5651665
+remote_path = NodePath("../../../../FacePivot")
+update_scale = false
 
 [node name="Bone-14" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1211975368]
 position = Vector2(56.861084, 101.53672)
@@ -1696,10 +1700,6 @@ length = 0.0
 stiffness = 10.0
 damping = 0.01
 metadata/joint_distance = 28.862173
-
-[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Softbody/Bone-13" unique_id=98895757]
-remote_path = NodePath("../../../FacePivot")
-update_scale = false
 
 [node name="Bone-14" type="RigidBody2D" parent="Softbody" unique_id=462878200]
 position = Vector2(56.861084, 101.53672)
