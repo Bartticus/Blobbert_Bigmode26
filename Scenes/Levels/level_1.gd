@@ -8,6 +8,7 @@ extends Node2D
 		current_anchor = value
 		camera.global_position = current_anchor.global_position
 
+
 func _ready() -> void:
 	for area in camera_trans_areas:
 		area.connect("area_exited", _on_screen_area_exited)
