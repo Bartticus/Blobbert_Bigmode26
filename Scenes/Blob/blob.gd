@@ -4,11 +4,6 @@ extends Node2D
 @export var softbody: SoftBody2D
 @export var bodies: Array[Bone] = []
 
-@export var neutral_face: Sprite2D
-@export var argh_face: Sprite2D
-@export var whoa_face: Sprite2D
-@export var yikes_face: Sprite2D
-
 @export var face_pivot: Node2D
 @export var face_array: Array[Sprite2D]
 @onready var current_face: Sprite2D = $BlobCenter/FacePivot/Neutral
@@ -34,3 +29,5 @@ func _on_timer_timeout() -> void:
 	
 	current_face = new_face
 	current_face.show()
+	
+	$Timer.start(randf_range(0.5, 3.0))

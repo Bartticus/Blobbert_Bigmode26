@@ -4,6 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://b6gmhedvaxudm" path="res://Assets/Sprites/Bodybert.png" id="2_aocuh"]
 [ext_resource type="Script" uid="uid://kol6k5y6rb8a" path="res://addons/softbody2d/softbody2d.gd" id="2_hkw75"]
 [ext_resource type="Script" uid="uid://c0wp4bnwvy7ol" path="res://Scenes/Blob/bone.gd" id="4_47mic"]
+[ext_resource type="Texture2D" uid="uid://b2ggkqwuioqai" path="res://Assets/Sprites/AltFaces_gruntingangry.png" id="5_r0uah"]
+[ext_resource type="Texture2D" uid="uid://btalktlu6ca3" path="res://Assets/Sprites/AltFaces_heehee.png" id="6_qk7go"]
+[ext_resource type="Texture2D" uid="uid://cj7euetrddfkn" path="res://Assets/Sprites/AltFaces_Hi.png" id="7_qk7go"]
+[ext_resource type="Texture2D" uid="uid://bfhs7pihnwttu" path="res://Assets/Sprites/AltFaces_Huh.png" id="8_tfbt0"]
+[ext_resource type="Texture2D" uid="uid://mn50j3voto20" path="res://Assets/Sprites/AltFaces_sleepy.png" id="9_ac3sk"]
+[ext_resource type="Texture2D" uid="uid://d76b5dmhilcm" path="res://Assets/Sprites/AltFaces_yay.png" id="10_r8w85"]
+[ext_resource type="Texture2D" uid="uid://d0j753bkbmgfa" path="res://Assets/Sprites/AltFaces_smile.png" id="11_pcdmj"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_r0uah"]
 resource_local_to_scene = true
@@ -284,13 +291,9 @@ load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47mic"]
 
-[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "neutral_face", "argh_face", "whoa_face", "yikes_face", "face_pivot")]
+[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "face_pivot")]
 script = ExtResource("1_u3aeq")
 softbody = NodePath("Softbody")
-neutral_face = NodePath("BlobCenter/FacePivot/Neutral")
-argh_face = NodePath("BlobCenter/FacePivot/Argh")
-whoa_face = NodePath("BlobCenter/FacePivot/Whoa")
-yikes_face = NodePath("BlobCenter/FacePivot/Yikes")
 face_pivot = NodePath("BlobCenter/FacePivot")
 
 [node name="Softbody" type="Polygon2D" parent="." unique_id=1952859083]
@@ -315,6 +318,7 @@ collision_mask = 3
 metadata/_custom_type_script = "uid://kol6k5y6rb8a"
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Softbody" unique_id=2050559159]
+visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_vqrje")
 
 [node name="Bone-0" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=109922513]
@@ -2977,6 +2981,7 @@ metadata/joint_distance = 22.10659
 
 [node name="Timer" type="Timer" parent="." unique_id=252747397]
 wait_time = 2.0
+one_shot = true
 autostart = true
 
 [node name="BlobCenter" type="Marker2D" parent="." unique_id=1030619800]
@@ -3003,11 +3008,54 @@ texture = SubResource("CompressedTexture2D_r0uah")
 
 [node name="Yikes" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=1278610289]
 visible = false
-position = Vector2(1.9999999, 3)
-scale = Vector2(0.44768858, 0.44768855)
+position = Vector2(3.5080562, 3.2805178)
+scale = Vector2(0.49870986, 0.49870983)
 texture = SubResource("CompressedTexture2D_qk7go")
 
+[node name="Angry" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=1552133866]
+visible = false
+position = Vector2(4.5080566, 7.280517)
+scale = Vector2(0.14829789, 0.14829789)
+texture = ExtResource("5_r0uah")
+
+[node name="Laughing" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=257935742]
+visible = false
+position = Vector2(1.5080566, 1.2805176)
+scale = Vector2(0.09848951, 0.09848951)
+texture = ExtResource("6_qk7go")
+
+[node name="Hi" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=1261636006]
+visible = false
+position = Vector2(3.508057, 1.2805176)
+scale = Vector2(0.12094964, 0.12094964)
+texture = ExtResource("7_qk7go")
+
+[node name="Huh" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=416086205]
+visible = false
+position = Vector2(4.508056, -0.71948236)
+scale = Vector2(0.116168045, 0.116168045)
+texture = ExtResource("8_tfbt0")
+
+[node name="Sleepy" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=619282157]
+visible = false
+position = Vector2(1.5080566, 1.2805176)
+scale = Vector2(0.13230921, 0.13230921)
+texture = ExtResource("9_ac3sk")
+
+[node name="Yay" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=954113754]
+visible = false
+position = Vector2(2.5080566, 0.28051758)
+scale = Vector2(0.11822122, 0.11822122)
+texture = ExtResource("10_r8w85")
+
+[node name="Smile" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=238210926]
+visible = false
+position = Vector2(2.5080566, 1.2805176)
+scale = Vector2(0.12172271, 0.12172271)
+texture = ExtResource("11_pcdmj")
+
 [node name="LevelTransitionArea" type="Area2D" parent="BlobCenter" unique_id=490246114]
+visible = false
 collision_layer = 2
 collision_mask = 4
 

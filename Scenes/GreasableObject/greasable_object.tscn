@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cbjmb7cnld5l5" path="res://Scenes/GreasableObject/greasable_object.gd" id="1_7r7q3"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_qfkhn"]
-[ext_resource type="Texture2D" uid="uid://lnhmxn32d64v" path="res://Assets/samples/softbody2d/Butter.png" id="3_j5qlp"]
 [ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="4_qfkhn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rb0md"]
@@ -22,6 +21,7 @@ color_ramp = SubResource("Gradient_qfkhn")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hjrr1"]
+resource_local_to_scene = true
 shader = ExtResource("4_qfkhn")
 shader_parameter/sensitivity = 0.0
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
@@ -50,16 +50,6 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1424846631]
 visible = false
 shape = SubResource("RectangleShape2D_rb0md")
-
-[node name="Object" type="Sprite2D" parent="StaticBody2D" unique_id=1430799395]
-scale = Vector2(3.2968733, 0.671875)
-texture = ExtResource("2_qfkhn")
-
-[node name="GreaseStain" type="Sprite2D" parent="StaticBody2D" unique_id=581582009]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(2.9999998, -29.999998)
-scale = Vector2(3.8833332, 0.36090225)
-texture = ExtResource("3_j5qlp")
 
 [node name="ObjectShaded" type="Sprite2D" parent="StaticBody2D" unique_id=1685847717]
 material = SubResource("ShaderMaterial_hjrr1")
