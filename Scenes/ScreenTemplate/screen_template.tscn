@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4icp1ioly872" path="res://Scenes/ScreenTemplate/screen_template.gd" id="1_bxdfx"]
 [ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/FullKeeb/full_keeb.tscn" id="2_qubdk"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_qubdk"]
+[ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="4_eipx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwi3t"]
 size = Vector2(1920, 1080)
@@ -157,11 +158,13 @@ shape = SubResource("RectangleShape2D_gwi3t")
 
 [node name="ScreenFullKeeb" parent="." unique_id=339941415 instance=ExtResource("2_qubdk")]
 unique_name_in_owner = true
-process_mode = 4
-visible = false
 
 [node name="ScreenAnchor" type="Marker2D" parent="." unique_id=978106617]
 unique_name_in_owner = true
+
+[node name="ScreenBlob" parent="." unique_id=104221436 instance=ExtResource("4_eipx4")]
+unique_name_in_owner = true
+position = Vector2(150, 121)
 
 [node name="ScreenTileMapLayer" type="TileMapLayer" parent="." unique_id=2053691136]
 unique_name_in_owner = true

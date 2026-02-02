@@ -155,6 +155,7 @@ update_rotation = false
 update_scale = false
 
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("5_tvne3")]
+unique_name_in_owner = true
 position = Vector2(154, 114)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1761386012]

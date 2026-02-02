@@ -6,6 +6,7 @@ extends Node2D
 @onready var screen_collision_shape: CollisionShape2D = %ScreenCollisionShape
 @onready var screen_full_keeb: FullKeeb = %ScreenFullKeeb
 @onready var screen_anchor: Marker2D = %ScreenAnchor
+@onready var screen_blob: Blob = %ScreenBlob
 
 @export var parent_level : LevelScript
 @export var x_coordinate : int
@@ -21,8 +22,10 @@ extends Node2D
 func _ready() -> void:
 	add_to_group('screens')
 	set_screen_position()
-	screen_full_keeb.process_mode = Node.PROCESS_MODE_DISABLED
-	screen_full_keeb.visible = false
+
+func disable_screen_elements():
+	screen_full_keeb.queue_free()
+	screen_blob.queue_free()
 
 
 func set_screen_position():

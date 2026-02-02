@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dfsh6jigf71u1"]
+
+[ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_qwvl7"]
+
+[node name="VentScreen0" unique_id=1360540123 instance=ExtResource("1_qwvl7")]

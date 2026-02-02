@@ -2,4 +2,4 @@ extends Node
 
 
 var blob: Blob
-var level: LevelScript
+var level: LevelScript = null
