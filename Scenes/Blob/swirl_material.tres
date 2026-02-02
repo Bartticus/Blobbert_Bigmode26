@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://sbpm02fsabvw"]
+
+[ext_resource type="Shader" uid="uid://c0wkm36fwlr6n" path="res://Scenes/Blob/swirl.gdshader" id="1_oi2xo"]
+
+[resource]
+shader = ExtResource("1_oi2xo")
+shader_parameter/polar_coordinates = false
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 1.0
+shader_parameter/spin_rotation = 0.0
+shader_parameter/spin_speed = 2.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(2.0331757, 1.4432626, 1.4044524, 1)
+shader_parameter/colour_2 = Color(3.0825353, 8.596541, 7.639019, 1)
+shader_parameter/colour_3 = Color(0.13333334, 0.13333334, 0.23137255, 1)
+shader_parameter/contrast = 33.98
+shader_parameter/spin_amount = 0.36
+shader_parameter/pixel_filter = 10000.0

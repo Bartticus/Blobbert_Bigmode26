@@ -38,7 +38,6 @@ func set_status(new_status) -> void:
 			pass
 		Status.IDLE:
 			pass
-		
 
 func _on_rand_face_timer_timeout() -> void:
 	current_face.hide()
@@ -52,9 +51,8 @@ func _on_rand_face_timer_timeout() -> void:
 	
 	rand_face_timer.start(randf_range(0.5, 3.0))
 
-
 func _on_set_face_timer_timeout() -> void:
 	set_status(Status.DEFAULT)
 
 func _process(_delta: float) -> void:
-	%SwirlRect.global_position = %"Bone-13".global_position - Vector2(250,250)
+	%SwirlRect.global_position = %"Bone-13".global_position - Vector2(270+82,244+87)
