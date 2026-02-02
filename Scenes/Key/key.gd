@@ -5,17 +5,23 @@ extends Node2D
 @onready var point_light_2d: PointLight2D = %PointLight2D
 @onready var tug_rope: Line2D = %TugRope
 
-@export var max_tug_distance: float = 800
-@export var max_tug_power: float = 3000
-@export var tug_decay: float = 2.5
-@export var max_snap_multiplier: float = 10.0
+@export var max_tug_distance: float = 700
+@export var max_tug_power: float = 3500
+@export var tug_decay: float = 3.5
+@export var max_snap_multiplier: float = 12.0
 @export var snap_timer_wait_time: float = 1.0
+@export var max_tuggers: float = 20.0
 
 var current_bone: Bone : set = set_current_bone
 var dist_to_current_bone: float
 var force_applied: Vector2
 
 enum Status { IDLE, TUGGING, SNAPPING }
+const STATUS_GROUPS = {
+	Status.IDLE: 'idle_keys',
+	Status.TUGGING: 'tugging_keys',
+	Status.SNAPPING: 'snapping_keys'
+}
 # Every time the 'status' is set, set_status will run and perform any side effects for the new status
 var status: Status = Status.IDLE : set = set_status
 
@@ -24,6 +30,7 @@ func _ready() -> void:
 
 func set_status(new_status) -> void:
 	status = new_status
+	put_in_status_group()
 	match status:
 		Status.IDLE:
 			point_light_2d.enabled = false
@@ -35,6 +42,11 @@ func set_status(new_status) -> void:
 			point_light_2d.enabled = true
 			snap_timer.start(snap_timer_wait_time)
 
+# Remove from all other groups, and put in the group matching current status
+func put_in_status_group():
+	for group_name in STATUS_GROUPS.values():
+		remove_from_group(group_name)
+	add_to_group(STATUS_GROUPS.get(status, STATUS_GROUPS[Status.IDLE]))
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and !event.is_echo():
@@ -118,12 +130,18 @@ func snap_away() -> void:
 func calculate_tugging_power() -> float:
 	if (dist_to_current_bone >= max_tug_distance):
 		return 0
+	var number_of_tuggers = get_tree().get_nodes_in_group('tugging_keys').size()
+	var number_of_tuggers_ratio = (max_tuggers - number_of_tuggers) / max_tuggers
 
-	return max_tug_power * calculate_exponential_multiplier()
+	var tugging_power = max_tug_power * calculate_exponential_multiplier() * number_of_tuggers_ratio
+
+	print([tugging_power, 100].max())
+	return [tugging_power, 100].max()
 
 # Tugging power and tug_rope width drop off exponentially
 func calculate_exponential_multiplier() -> float:
-	var power_multiplier = dist_to_current_bone / max_tug_distance
+
+	var power_multiplier = (dist_to_current_bone / max_tug_distance)
 	return exp(-tug_decay * power_multiplier)
 
 

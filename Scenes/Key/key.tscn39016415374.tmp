@@ -65,6 +65,17 @@ texture_mode = 2
 joint_mode = 2
 begin_cap_mode = 2
 script = ExtResource("4_75pei")
+min_beam_progress = null
+max_beam_progress = null
+min_thickness = null
+max_thickness = null
+min_outline_thickness = null
+max_outline_thickness = null
+min_noise_scale_x = null
+min_beam_alpha = null
+max_beam_alpha = null
+min_beam_outline_alpha = null
+max_beam_outline_alpha = null
 
 [node name="Beam" type="ColorRect" parent="TugRope" unique_id=492450127]
 unique_name_in_owner = true
