@@ -1,4 +1,5 @@
 @tool
+class_name Screen
 extends Node2D
 
 @onready var screen_space: Area2D = %ScreenSpace

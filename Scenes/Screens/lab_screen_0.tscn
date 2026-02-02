@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2a4750wy0jqs"]
+
+[ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_ni8rx"]
+
+[node name="ScreenTemplate" unique_id=1360540123 instance=ExtResource("1_ni8rx")]
+
+[node name="ScreenFullKeeb" parent="." index="1" unique_id=339941415]
+process_mode = 4
