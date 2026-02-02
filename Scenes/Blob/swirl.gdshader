@@ -1,9 +1,7 @@
 shader_type canvas_item;
-//I DONT OWN THIS i just took it directly from balatros source code teehee
-//and then converted it into godots shader language myself
-//shoutouts localthunk, buy balatro
+render_mode blend_add;
 
-uniform bool polar_coordinates = false;  //cool polar coordinates effect
+uniform bool polar_coordinates = false;
 uniform vec2 polar_center = vec2(0.5);
 uniform float polar_zoom = 1.;
 uniform float polar_repeat = 1.;
