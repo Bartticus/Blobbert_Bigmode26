@@ -157,11 +157,12 @@ shape = SubResource("RectangleShape2D_gwi3t")
 
 [node name="ScreenFullKeeb" parent="." unique_id=339941415 instance=ExtResource("2_qubdk")]
 unique_name_in_owner = true
+process_mode = 4
+visible = false
 
 [node name="ScreenAnchor" type="Marker2D" parent="." unique_id=978106617]
 unique_name_in_owner = true
 
-[node name="ScreenTileMap" type="TileMap" parent="." unique_id=129136287]
+[node name="ScreenTileMapLayer" type="TileMapLayer" parent="." unique_id=2053691136]
 unique_name_in_owner = true
 tile_set = SubResource("TileSet_3ang3")
-format = 2
