@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c41mmvc526512"]
 
-[ext_resource type="Script" uid="uid://k6vqewnq4f15" path="res://Scenes/Levels/level_1.gd" id="1_iixi8"]
+[ext_resource type="Script" uid="uid://c8yd58eko85wi" path="res://Scenes/Levels/level_1.gd" id="1_iixi8"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="1_tlcug"]
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="2_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/FullKeeb/full_keeb.tscn" id="3_3mqfk"]
@@ -18,7 +18,7 @@ size = Vector2(760, 724)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5f3p6"]
 blend_mode = 1
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyadu"]
 texture = ExtResource("1_tlcug")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -151,7 +151,7 @@ texture = ExtResource("1_tlcug")
 
 [sub_resource type="TileSet" id="TileSet_3mqfk"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4dpyx")
+sources/0 = SubResource("TileSetAtlasSource_cyadu")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mqfk"]
 size = Vector2(1920, 1080)
@@ -162,10 +162,8 @@ size = Vector2(1920, 1080)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f3p6"]
 size = Vector2(1920, 1080)
 
-[node name="Level1" type="Node2D" unique_id=390618985 node_paths=PackedStringArray("camera", "current_anchor")]
+[node name="Level1" type="Node2D" unique_id=390618985]
 script = ExtResource("1_iixi8")
-camera = NodePath("Camera2D")
-current_anchor = NodePath("Anchors/Anchor0")
 
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("2_4dpyx")]
 position = Vector2(146, -131)

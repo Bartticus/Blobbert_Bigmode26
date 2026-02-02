@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bxtk2qidyab5v"]
+
+[ext_resource type="PackedScene" uid="uid://di7akthmm74ou" path="res://Scenes/LevelTemplate/level_template.tscn" id="1_ojicq"]
+[ext_resource type="PackedScene" uid="uid://bwvstltctsrg1" path="res://Scenes/Screens/test_screen_0.tscn" id="2_ojicq"]
+[ext_resource type="PackedScene" uid="uid://urc3m8cw7qdt" path="res://Scenes/Screens/test_screen_1.tscn" id="3_qkmes"]
+
+[node name="LevelTest" type="Node2D" unique_id=1587042681]
+
+[node name="LevelTemplate" parent="." unique_id=129905935 instance=ExtResource("1_ojicq")]
+
+[node name="Screen0" parent="." unique_id=268574932 instance=ExtResource("2_ojicq")]
+
+[node name="ScreenFullKeeb" parent="Screen0/ScreenTemplate" parent_id_path=PackedInt32Array(268574932, 1360540123) index="1" unique_id=339941415]
+visible = false
+
+[node name="Screen1" parent="." unique_id=67151301 instance=ExtResource("3_qkmes")]
+
+[node name="ScreenTemplate" parent="Screen1" index="0" unique_id=1360540123]
+position = Vector2(0, 1080)
+x_coordinate = 0
+y_coordinate = 1
+snap_screen_to_position = true
+
+[editable path="LevelTemplate"]
+[editable path="Screen0"]
+[editable path="Screen0/ScreenTemplate"]
+[editable path="Screen1"]
+[editable path="Screen1/ScreenTemplate"]

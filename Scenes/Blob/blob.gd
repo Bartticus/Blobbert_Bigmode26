@@ -9,6 +9,7 @@ extends Node2D
 @export var rand_face_timer: Timer
 @export var set_face_timer: Timer
 @onready var current_face: Sprite2D = %Neutral
+@onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 
 enum Status { DEFAULT, STRETCHED, FAST, HURT, IDLE }
 var status: Status = Status.IDLE: set = set_status
@@ -56,3 +57,10 @@ func _on_set_face_timer_timeout() -> void:
 
 func _process(_delta: float) -> void:
 	%SwirlRect.global_position = %"Bone-13".global_position - Vector2(270+82,244+87)
+
+
+func _on_blob_level_transition_area_area_exited(area: Area2D) -> void:
+	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
+		if overlapping_area.name == 'ScreenSpace':
+			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor
+

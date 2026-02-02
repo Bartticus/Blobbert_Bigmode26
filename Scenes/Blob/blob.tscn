@@ -3151,12 +3151,13 @@ position = Vector2(2.5080566, 1.2805176)
 scale = Vector2(0.12172271, 0.12172271)
 texture = ExtResource("11_pcdmj")
 
-[node name="LevelTransitionArea" type="Area2D" parent="BlobCenter" unique_id=490246114]
+[node name="BlobLevelTransitionArea" type="Area2D" parent="BlobCenter" unique_id=490246114]
+unique_name_in_owner = true
 visible = false
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BlobCenter/LevelTransitionArea" unique_id=879939699]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlobCenter/BlobLevelTransitionArea" unique_id=879939699]
 shape = SubResource("CircleShape2D_47mic")
 
 [node name="PointLight2D" type="PointLight2D" parent="BlobCenter" unique_id=1222972673]
@@ -3170,5 +3171,6 @@ autostart = true
 
 [node name="SetFaceTimer" type="Timer" parent="." unique_id=1275471261]
 
+[connection signal="area_exited" from="BlobCenter/BlobLevelTransitionArea" to="." method="_on_blob_level_transition_area_area_exited"]
 [connection signal="timeout" from="RandFaceTimer" to="." method="_on_rand_face_timer_timeout"]
 [connection signal="timeout" from="SetFaceTimer" to="." method="_on_set_face_timer_timeout"]
