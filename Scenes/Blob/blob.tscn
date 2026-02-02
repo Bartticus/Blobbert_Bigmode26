@@ -14,6 +14,30 @@
 [ext_resource type="Texture2D" uid="uid://d76b5dmhilcm" path="res://Assets/Sprites/AltFaces_yay.png" id="10_r8w85"]
 [ext_resource type="Texture2D" uid="uid://d0j753bkbmgfa" path="res://Assets/Sprites/AltFaces_smile.png" id="11_pcdmj"]
 
+[sub_resource type="Gradient" id="Gradient_hnblv"]
+offsets = PackedFloat32Array(0, 0.9939759)
+colors = PackedColorArray(0.059989728, 0.0772905, 0.13790575, 1, 0.101960786, 0.1254902, 0.20784314, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dp05e"]
+gradient = SubResource("Gradient_hnblv")
+width = 2
+height = 2
+fill_to = Vector2(0.99130434, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hnblv"]
+lifetime_randomness = 0.73
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 77.79
+angle_min = -99.99999
+angle_max = 100.000015
+inherit_velocity_ratio = -0.5
+direction = Vector3(1, 90, 0)
+spread = 180.0
+flatness = 1.0
+hue_variation_min = -0.43
+hue_variation_max = 0.42999998
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dp05e"]
 shader = ExtResource("2_hnblv")
 shader_parameter/polar_coordinates = true
@@ -23,9 +47,9 @@ shader_parameter/polar_repeat = 1.0
 shader_parameter/spin_rotation = 0.0
 shader_parameter/spin_speed = 10.0
 shader_parameter/offset = Vector2(0, 0)
-shader_parameter/colour_1 = Color(0.101960786, 0, 0, 0.5372549)
-shader_parameter/colour_2 = Color(0.26666668, 0.26666668, 0.26666668, 0.6117647)
-shader_parameter/colour_3 = Color(0.011764706, 0.07450981, 0.11372549, 0.68235296)
+shader_parameter/colour_1 = Color(0.13725491, 0, 0, 0.23921569)
+shader_parameter/colour_2 = Color(0.32156864, 0.32156864, 0.32156864, 0.54901963)
+shader_parameter/colour_3 = Color(0.09803922, 0.28627452, 0.39215687, 0.25882354)
 shader_parameter/contrast = 2.0
 shader_parameter/spin_amount = 0.36
 shader_parameter/pixel_filter = 700.0
@@ -316,6 +340,12 @@ face_pivot = NodePath("BlobCenter/FacePivot")
 rand_face_timer = NodePath("RandFaceTimer")
 set_face_timer = NodePath("SetFaceTimer")
 
+[node name="ParticleEmitter" type="GPUParticles2D" parent="." unique_id=62634141]
+unique_name_in_owner = true
+amount = 15
+texture = SubResource("GradientTexture2D_dp05e")
+process_material = SubResource("ParticleProcessMaterial_hnblv")
+
 [node name="Softbody" type="Polygon2D" parent="." unique_id=1952859083]
 clip_children = 2
 material = ExtResource("5_vn8df")
@@ -342,11 +372,18 @@ metadata/_custom_type_script = "uid://kol6k5y6rb8a"
 [node name="SwirlRect" type="ColorRect" parent="Softbody" unique_id=428050897]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_dp05e")
-offset_left = -270.0
-offset_top = -244.0
-offset_right = 436.0
-offset_bottom = 419.0
-size_flags_horizontal = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -264.0
+offset_right = 432.0
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(350, 350)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Softbody" unique_id=2050559159]
 visible = false
@@ -3043,7 +3080,9 @@ damping = 0.01
 metadata/joint_distance = 22.10659
 
 [node name="BlobCenter" type="Marker2D" parent="." unique_id=1030619800]
+unique_name_in_owner = true
 position = Vector2(-0.25402832, -0.6402588)
+scale = Vector2(0.9999973, 0.9999973)
 
 [node name="FacePivot" type="Node2D" parent="BlobCenter" unique_id=1412401453]
 position = Vector2(-0.25402832, -0.6402588)

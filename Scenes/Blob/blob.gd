@@ -1,6 +1,9 @@
 class_name Blob
 extends Node2D
 
+@onready var particle_emitter: GPUParticles2D = %ParticleEmitter
+@onready var blob_center: Marker2D = %BlobCenter
+
 @export var softbody: SoftBody2D
 @export var bodies: Array[Bone] = []
 
@@ -58,3 +61,4 @@ func _on_set_face_timer_timeout() -> void:
 
 func _process(_delta: float) -> void:
 	%SwirlRect.global_position = %"Bone-13".global_position - Vector2(250,250)
+	particle_emitter.global_position = blob_center.global_position
