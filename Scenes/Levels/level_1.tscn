@@ -170,7 +170,7 @@ camera_trans_areas = [NodePath("CameraTransitionAreas/Screen0"), NodePath("Camer
 current_anchor = NodePath("Anchors/Anchor0")
 
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("2_4dpyx")]
-position = Vector2(150, -177)
+position = Vector2(218, 284)
 
 [node name="WaterPool" type="Area2D" parent="." unique_id=181660150]
 position = Vector2(690, 776)

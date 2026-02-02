@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bf75the2m1kad" path="res://Scenes/Blob/blob.gd" id="1_u3aeq"]
 [ext_resource type="Texture2D" uid="uid://b6gmhedvaxudm" path="res://Assets/Sprites/Bodybert.png" id="2_aocuh"]
 [ext_resource type="Script" uid="uid://kol6k5y6rb8a" path="res://addons/softbody2d/softbody2d.gd" id="2_hkw75"]
+[ext_resource type="Shader" uid="uid://c0wkm36fwlr6n" path="res://Scenes/Blob/swirl.gdshader" id="2_hnblv"]
 [ext_resource type="Script" uid="uid://c0wp4bnwvy7ol" path="res://Scenes/Blob/bone.gd" id="4_47mic"]
 [ext_resource type="Texture2D" uid="uid://b2ggkqwuioqai" path="res://Assets/Sprites/AltFaces_gruntingangry.png" id="5_r0uah"]
 [ext_resource type="Material" uid="uid://uljbukkldo18" path="res://Scenes/Blob/squiggle_material.tres" id="5_vn8df"]
@@ -12,6 +13,22 @@
 [ext_resource type="Texture2D" uid="uid://mn50j3voto20" path="res://Assets/Sprites/AltFaces_sleepy.png" id="9_ac3sk"]
 [ext_resource type="Texture2D" uid="uid://d76b5dmhilcm" path="res://Assets/Sprites/AltFaces_yay.png" id="10_r8w85"]
 [ext_resource type="Texture2D" uid="uid://d0j753bkbmgfa" path="res://Assets/Sprites/AltFaces_smile.png" id="11_pcdmj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dp05e"]
+shader = ExtResource("2_hnblv")
+shader_parameter/polar_coordinates = true
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 1.0
+shader_parameter/spin_rotation = 0.0
+shader_parameter/spin_speed = 10.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.101960786, 0, 0, 0.5372549)
+shader_parameter/colour_2 = Color(0.26666668, 0.26666668, 0.26666668, 0.6117647)
+shader_parameter/colour_3 = Color(0.011764706, 0.07450981, 0.11372549, 0.68235296)
+shader_parameter/contrast = 2.0
+shader_parameter/spin_amount = 0.36
+shader_parameter/pixel_filter = 700.0
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_r0uah"]
 resource_local_to_scene = true
@@ -292,12 +309,15 @@ load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47mic"]
 
-[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "face_pivot")]
+[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "face_pivot", "rand_face_timer", "set_face_timer")]
 script = ExtResource("1_u3aeq")
 softbody = NodePath("Softbody")
 face_pivot = NodePath("BlobCenter/FacePivot")
+rand_face_timer = NodePath("RandFaceTimer")
+set_face_timer = NodePath("SetFaceTimer")
 
 [node name="Softbody" type="Polygon2D" parent="." unique_id=1952859083]
+clip_children = 2
 material = ExtResource("5_vn8df")
 position = Vector2(-82, -86)
 color = Color(0.37755278, 0.4608869, 0.6103966, 1)
@@ -318,6 +338,15 @@ mass = 0.05
 collision_layer = 2
 collision_mask = 3
 metadata/_custom_type_script = "uid://kol6k5y6rb8a"
+
+[node name="SwirlRect" type="ColorRect" parent="Softbody" unique_id=428050897]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_dp05e")
+offset_left = -270.0
+offset_top = -244.0
+offset_right = 436.0
+offset_bottom = 419.0
+size_flags_horizontal = 0
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Softbody" unique_id=2050559159]
 visible = false
@@ -497,8 +526,8 @@ metadata/connected_nodes_idx = [1, 10, 3, 14, 11, 13]
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-13" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1262513300]
+unique_name_in_owner = true
 position = Vector2(81.74597, 85.35974)
-rotation = 2.5651665
 rest = Transform2D(-0.83841586, 0.5450311, -0.5450311, -0.83841586, 81.74597, 85.35974)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3013,10 +3042,6 @@ stiffness = 10.0
 damping = 0.01
 metadata/joint_distance = 22.10659
 
-[node name="Timer" type="Timer" parent="." unique_id=252747397]
-wait_time = 2.0
-one_shot = true
-
 [node name="BlobCenter" type="Marker2D" parent="." unique_id=1030619800]
 position = Vector2(-0.25402832, -0.6402588)
 
@@ -3024,6 +3049,7 @@ position = Vector2(-0.25402832, -0.6402588)
 position = Vector2(-0.25402832, -0.6402588)
 
 [node name="Neutral" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=2004237043]
+unique_name_in_owner = true
 material = ExtResource("5_vn8df")
 position = Vector2(3.2540283, -3.3597412)
 scale = Vector2(0.4216071, 0.42160708)
@@ -3106,4 +3132,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlobCenter/LevelTransitionArea" unique_id=879939699]
 shape = SubResource("CircleShape2D_47mic")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="RandFaceTimer" type="Timer" parent="." unique_id=252747397]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SetFaceTimer" type="Timer" parent="." unique_id=1275471261]
+
+[connection signal="timeout" from="RandFaceTimer" to="." method="_on_rand_face_timer_timeout"]
+[connection signal="timeout" from="SetFaceTimer" to="." method="_on_set_face_timer_timeout"]

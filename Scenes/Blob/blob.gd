@@ -6,7 +6,13 @@ extends Node2D
 
 @export var face_pivot: Node2D
 @export var face_array: Array[Sprite2D]
-@onready var current_face: Sprite2D = $BlobCenter/FacePivot/Neutral
+@export var rand_face_timer: Timer
+@export var set_face_timer: Timer
+@onready var current_face: Sprite2D = %Neutral
+
+enum Status { DEFAULT, STRETCHED, FAST, HURT, IDLE }
+var status: Status = Status.IDLE: set = set_status
+
 
 func _ready() -> void:
 	Global.blob = self
@@ -19,8 +25,22 @@ func _ready() -> void:
 		if child is Sprite2D:
 			face_array.append(child)
 
+func set_status(new_status) -> void:
+	status = new_status
+	match status:
+		Status.DEFAULT:
+			rand_face_timer.start(randf_range(0.5, 3.0))
+		Status.STRETCHED:
+			pass
+		Status.FAST:
+			pass
+		Status.HURT:
+			pass
+		Status.IDLE:
+			pass
+		
 
-func _on_timer_timeout() -> void:
+func _on_rand_face_timer_timeout() -> void:
 	current_face.hide()
 	
 	var new_face: Sprite2D = face_array.pick_random()
@@ -30,4 +50,11 @@ func _on_timer_timeout() -> void:
 	current_face = new_face
 	current_face.show()
 	
-	$Timer.start(randf_range(0.5, 3.0))
+	rand_face_timer.start(randf_range(0.5, 3.0))
+
+
+func _on_set_face_timer_timeout() -> void:
+	set_status(Status.DEFAULT)
+
+func _process(_delta: float) -> void:
+	%SwirlRect.global_position = %"Bone-13".global_position - Vector2(250,250)
