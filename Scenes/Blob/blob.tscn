@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://kol6k5y6rb8a" path="res://addons/softbody2d/softbody2d.gd" id="2_hkw75"]
 [ext_resource type="Script" uid="uid://c0wp4bnwvy7ol" path="res://Scenes/Blob/bone.gd" id="4_47mic"]
 [ext_resource type="Texture2D" uid="uid://b2ggkqwuioqai" path="res://Assets/Sprites/AltFaces_gruntingangry.png" id="5_r0uah"]
+[ext_resource type="Material" uid="uid://uljbukkldo18" path="res://Scenes/Blob/squiggle_material.tres" id="5_vn8df"]
 [ext_resource type="Texture2D" uid="uid://btalktlu6ca3" path="res://Assets/Sprites/AltFaces_heehee.png" id="6_qk7go"]
 [ext_resource type="Texture2D" uid="uid://cj7euetrddfkn" path="res://Assets/Sprites/AltFaces_Hi.png" id="7_qk7go"]
 [ext_resource type="Texture2D" uid="uid://bfhs7pihnwttu" path="res://Assets/Sprites/AltFaces_Huh.png" id="8_tfbt0"]
@@ -297,6 +298,7 @@ softbody = NodePath("Softbody")
 face_pivot = NodePath("BlobCenter/FacePivot")
 
 [node name="Softbody" type="Polygon2D" parent="." unique_id=1952859083]
+material = ExtResource("5_vn8df")
 position = Vector2(-82, -86)
 color = Color(0.37755278, 0.4608869, 0.6103966, 1)
 texture = ExtResource("2_aocuh")
@@ -754,6 +756,7 @@ metadata/connected_nodes_idx = [23, 30, 25]
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-0" type="RigidBody2D" parent="Softbody" unique_id=428835352]
+visible = false
 position = Vector2(33.796516, 35.742577)
 collision_layer = 2
 collision_mask = 3
@@ -805,6 +808,7 @@ damping = 0.01
 metadata/joint_distance = 24.966545
 
 [node name="Bone-1" type="RigidBody2D" parent="Softbody" unique_id=1933586683]
+visible = false
 position = Vector2(31.543972, 60.6073)
 collision_layer = 2
 collision_mask = 3
@@ -878,6 +882,7 @@ damping = 0.01
 metadata/joint_distance = 21.050318
 
 [node name="Bone-2" type="RigidBody2D" parent="Softbody" unique_id=1067236010]
+visible = false
 position = Vector2(17.136238, 75.954384)
 collision_layer = 2
 collision_mask = 3
@@ -929,6 +934,7 @@ damping = 0.01
 metadata/joint_distance = 26.230757
 
 [node name="Bone-3" type="RigidBody2D" parent="Softbody" unique_id=814722213]
+visible = false
 position = Vector2(31.92547, 89.18732)
 collision_layer = 2
 collision_mask = 3
@@ -1013,6 +1019,7 @@ damping = 0.01
 metadata/joint_distance = 27.521526
 
 [node name="Bone-4" type="RigidBody2D" parent="Softbody" unique_id=133835167]
+visible = false
 position = Vector2(16.909386, 102.18416)
 collision_layer = 2
 collision_mask = 3
@@ -1064,6 +1071,7 @@ damping = 0.01
 metadata/joint_distance = 19.859522
 
 [node name="Bone-5" type="RigidBody2D" parent="Softbody" unique_id=463733942]
+visible = false
 position = Vector2(31.631039, 116.70727)
 collision_layer = 2
 collision_mask = 3
@@ -1137,6 +1145,7 @@ damping = 0.01
 metadata/joint_distance = 29.110342
 
 [node name="Bone-6" type="RigidBody2D" parent="Softbody" unique_id=1945871304]
+visible = false
 position = Vector2(35.556145, 139.0818)
 collision_layer = 2
 collision_mask = 3
@@ -1177,6 +1186,7 @@ damping = 0.01
 metadata/joint_distance = 19.977468
 
 [node name="Bone-7" type="RigidBody2D" parent="Softbody" unique_id=1245053135]
+visible = false
 position = Vector2(79.30493, 14.982054)
 collision_layer = 2
 collision_mask = 3
@@ -1228,6 +1238,7 @@ damping = 0.01
 metadata/joint_distance = 25.286957
 
 [node name="Bone-8" type="RigidBody2D" parent="Softbody" unique_id=2018886557]
+visible = false
 position = Vector2(55.610523, 23.81411)
 collision_layer = 2
 collision_mask = 3
@@ -1290,6 +1301,7 @@ damping = 0.01
 metadata/joint_distance = 26.079681
 
 [node name="Bone-9" type="RigidBody2D" parent="Softbody" unique_id=2140999914]
+visible = false
 position = Vector2(78.693, 35.95285)
 collision_layer = 2
 collision_mask = 3
@@ -1374,6 +1386,7 @@ damping = 0.01
 metadata/joint_distance = 29.812706
 
 [node name="Bone-10" type="RigidBody2D" parent="Softbody" unique_id=1291651970]
+visible = false
 position = Vector2(55.923813, 49.50558)
 collision_layer = 2
 collision_mask = 3
@@ -1458,6 +1471,7 @@ damping = 0.01
 metadata/joint_distance = 28.759493
 
 [node name="Bone-11" type="RigidBody2D" parent="Softbody" unique_id=1981842127]
+visible = false
 position = Vector2(79.65623, 65.74999)
 collision_layer = 2
 collision_mask = 3
@@ -1542,6 +1556,7 @@ damping = 0.01
 metadata/joint_distance = 19.720783
 
 [node name="Bone-12" type="RigidBody2D" parent="Softbody" unique_id=1422246592]
+visible = false
 position = Vector2(57.827324, 76.26191)
 collision_layer = 2
 collision_mask = 3
@@ -1626,6 +1641,7 @@ damping = 0.01
 metadata/joint_distance = 25.590471
 
 [node name="Bone-13" type="RigidBody2D" parent="Softbody" unique_id=1338854298]
+visible = false
 position = Vector2(81.74597, 85.35974)
 collision_layer = 2
 collision_mask = 3
@@ -1710,6 +1726,7 @@ damping = 0.01
 metadata/joint_distance = 28.862173
 
 [node name="Bone-14" type="RigidBody2D" parent="Softbody" unique_id=462878200]
+visible = false
 position = Vector2(56.861084, 101.53672)
 collision_layer = 2
 collision_mask = 3
@@ -1794,6 +1811,7 @@ damping = 0.01
 metadata/joint_distance = 25.416487
 
 [node name="Bone-15" type="RigidBody2D" parent="Softbody" unique_id=123685165]
+visible = false
 position = Vector2(78.96263, 114.087395)
 collision_layer = 2
 collision_mask = 3
@@ -1878,6 +1896,7 @@ damping = 0.01
 metadata/joint_distance = 27.945272
 
 [node name="Bone-16" type="RigidBody2D" parent="Softbody" unique_id=1045433660]
+visible = false
 position = Vector2(54.920765, 134.17154)
 collision_layer = 2
 collision_mask = 3
@@ -1951,6 +1970,7 @@ damping = 0.01
 metadata/joint_distance = 24.887804
 
 [node name="Bone-17" type="RigidBody2D" parent="Softbody" unique_id=1729357634]
+visible = false
 position = Vector2(78.53552, 142.0294)
 collision_layer = 2
 collision_mask = 3
@@ -2013,6 +2033,7 @@ damping = 0.01
 metadata/joint_distance = 24.887804
 
 [node name="Bone-18" type="RigidBody2D" parent="Softbody" unique_id=273495975]
+visible = false
 position = Vector2(102.20804, 22.632729)
 collision_layer = 2
 collision_mask = 3
@@ -2075,6 +2096,7 @@ damping = 0.01
 metadata/joint_distance = 27.700594
 
 [node name="Bone-19" type="RigidBody2D" parent="Softbody" unique_id=768235884]
+visible = false
 position = Vector2(125.18107, 31.557846)
 collision_layer = 2
 collision_mask = 3
@@ -2137,6 +2159,7 @@ damping = 0.01
 metadata/joint_distance = 31.065823
 
 [node name="Bone-20" type="RigidBody2D" parent="Softbody" unique_id=90553176]
+visible = false
 position = Vector2(101.13427, 50.312504)
 collision_layer = 2
 collision_mask = 3
@@ -2221,6 +2244,7 @@ damping = 0.01
 metadata/joint_distance = 26.410988
 
 [node name="Bone-21" type="RigidBody2D" parent="Softbody" unique_id=236941523]
+visible = false
 position = Vector2(124.50427, 62.616295)
 collision_layer = 2
 collision_mask = 3
@@ -2305,6 +2329,7 @@ damping = 0.01
 metadata/joint_distance = 26.347486
 
 [node name="Bone-22" type="RigidBody2D" parent="Softbody" unique_id=1904016638]
+visible = false
 position = Vector2(98.27844, 77.0343)
 collision_layer = 2
 collision_mask = 3
@@ -2389,6 +2414,7 @@ damping = 0.01
 metadata/joint_distance = 28.34656
 
 [node name="Bone-23" type="RigidBody2D" parent="Softbody" unique_id=662325064]
+visible = false
 position = Vector2(123.99483, 88.958855)
 collision_layer = 2
 collision_mask = 3
@@ -2473,6 +2499,7 @@ damping = 0.01
 metadata/joint_distance = 29.132725
 
 [node name="Bone-24" type="RigidBody2D" parent="Softbody" unique_id=54213631]
+visible = false
 position = Vector2(100.05187, 100.4159)
 collision_layer = 2
 collision_mask = 3
@@ -2557,6 +2584,7 @@ damping = 0.01
 metadata/joint_distance = 33.70776
 
 [node name="Bone-25" type="RigidBody2D" parent="Softbody" unique_id=1109202276]
+visible = false
 position = Vector2(129.01764, 117.65532)
 collision_layer = 2
 collision_mask = 3
@@ -2630,6 +2658,7 @@ damping = 0.01
 metadata/joint_distance = 22.676413
 
 [node name="Bone-26" type="RigidBody2D" parent="Softbody" unique_id=983754954]
+visible = false
 position = Vector2(101.85848, 129.3664)
 collision_layer = 2
 collision_mask = 3
@@ -2714,6 +2743,7 @@ damping = 0.01
 metadata/joint_distance = 23.499525
 
 [node name="Bone-27" type="RigidBody2D" parent="Softbody" unique_id=2036466475]
+visible = false
 position = Vector2(123.045815, 139.53127)
 collision_layer = 2
 collision_mask = 3
@@ -2765,6 +2795,7 @@ damping = 0.01
 metadata/joint_distance = 23.499525
 
 [node name="Bone-28" type="RigidBody2D" parent="Softbody" unique_id=1758117553]
+visible = false
 position = Vector2(101.04393, 148.67657)
 collision_layer = 2
 collision_mask = 3
@@ -2816,6 +2847,7 @@ damping = 0.01
 metadata/joint_distance = 19.327353
 
 [node name="Bone-29" type="RigidBody2D" parent="Softbody" unique_id=17074370]
+visible = false
 position = Vector2(142.76993, 49.573624)
 collision_layer = 2
 collision_mask = 3
@@ -2867,6 +2899,7 @@ damping = 0.01
 metadata/joint_distance = 26.148672
 
 [node name="Bone-30" type="RigidBody2D" parent="Softbody" unique_id=22060545]
+visible = false
 position = Vector2(144.98172, 75.628586)
 collision_layer = 2
 collision_mask = 3
@@ -2929,6 +2962,7 @@ damping = 0.01
 metadata/joint_distance = 27.424793
 
 [node name="Bone-31" type="RigidBody2D" parent="Softbody" unique_id=1150377938]
+visible = false
 position = Vector2(145.60905, 103.0462)
 collision_layer = 2
 collision_mask = 3
@@ -2982,7 +3016,6 @@ metadata/joint_distance = 22.10659
 [node name="Timer" type="Timer" parent="." unique_id=252747397]
 wait_time = 2.0
 one_shot = true
-autostart = true
 
 [node name="BlobCenter" type="Marker2D" parent="." unique_id=1030619800]
 position = Vector2(-0.25402832, -0.6402588)
@@ -2991,65 +3024,76 @@ position = Vector2(-0.25402832, -0.6402588)
 position = Vector2(-0.25402832, -0.6402588)
 
 [node name="Neutral" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=2004237043]
+material = ExtResource("5_vn8df")
 position = Vector2(3.2540283, -3.3597412)
 scale = Vector2(0.4216071, 0.42160708)
 texture = SubResource("CompressedTexture2D_47mic")
 
 [node name="Argh" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=648583681]
 visible = false
+material = ExtResource("5_vn8df")
 scale = Vector2(0.44768852, 0.44768855)
 texture = SubResource("CompressedTexture2D_aocuh")
 
 [node name="Whoa" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=807118157]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(3.2540283, 0.6402588)
 scale = Vector2(0.48661804, 0.48661798)
 texture = SubResource("CompressedTexture2D_r0uah")
 
 [node name="Yikes" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=1278610289]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(3.5080562, 3.2805178)
 scale = Vector2(0.49870986, 0.49870983)
 texture = SubResource("CompressedTexture2D_qk7go")
 
 [node name="Angry" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=1552133866]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(4.5080566, 7.280517)
 scale = Vector2(0.14829789, 0.14829789)
 texture = ExtResource("5_r0uah")
 
 [node name="Laughing" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=257935742]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(1.5080566, 1.2805176)
 scale = Vector2(0.09848951, 0.09848951)
 texture = ExtResource("6_qk7go")
 
 [node name="Hi" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=1261636006]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(3.508057, 1.2805176)
 scale = Vector2(0.12094964, 0.12094964)
 texture = ExtResource("7_qk7go")
 
 [node name="Huh" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=416086205]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(4.508056, -0.71948236)
 scale = Vector2(0.116168045, 0.116168045)
 texture = ExtResource("8_tfbt0")
 
 [node name="Sleepy" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=619282157]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(1.5080566, 1.2805176)
 scale = Vector2(0.13230921, 0.13230921)
 texture = ExtResource("9_ac3sk")
 
 [node name="Yay" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=954113754]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(2.5080566, 0.28051758)
 scale = Vector2(0.11822122, 0.11822122)
 texture = ExtResource("10_r8w85")
 
 [node name="Smile" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=238210926]
 visible = false
+material = ExtResource("5_vn8df")
 position = Vector2(2.5080566, 1.2805176)
 scale = Vector2(0.12172271, 0.12172271)
 texture = ExtResource("11_pcdmj")
