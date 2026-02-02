@@ -5,7 +5,7 @@ extends Node2D
 
 var max_grease: float = 2000000
 var grease_level: float = 0
-var splatter_speed: float = 0.01
+var splatter_speed: float = 0.05
 
 func _on_velocity_detector_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
