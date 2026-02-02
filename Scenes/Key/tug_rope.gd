@@ -2,7 +2,7 @@ extends Line2D
 
 @onready var beam: ColorRect = %Beam
 
-@export var min_thickness: float = 0.02
+@export var min_thickness: float = 0.02	
 @export var max_thickness: float = 0.2
 
 @export var min_outline_thickness: float = 0.075
