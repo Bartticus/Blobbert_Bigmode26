@@ -10,7 +10,7 @@ extends Node2D
 @export var tug_decay: float = 3.0
 @export var max_snap_multiplier: float = 12.0
 @export var snap_timer_wait_time: float = 1.0
-@export var max_tuggers: float = 20.0
+@export var max_tuggers: float = 25.0
 
 var current_bone: Bone : set = set_current_bone
 var dist_to_current_bone: float

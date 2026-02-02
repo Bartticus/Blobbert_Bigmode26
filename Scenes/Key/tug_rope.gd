@@ -3,19 +3,19 @@ extends Line2D
 @onready var beam: ColorRect = %Beam
 
 @export var min_thickness: float = 0.05
-@export var max_thickness: float = 0.25
+@export var max_thickness: float = 0.3
 
-@export var min_outline_thickness: float = 0.1
-@export var max_outline_thickness: float = 0.3
+@export var min_outline_thickness: float = 0.075
+@export var max_outline_thickness: float = 0.35
 
 @export var min_noise_scale_x: float = 1.0
 
 @export var min_beam_alpha: float = 0.0
-@export var max_beam_alpha: float = 0.95
+@export var max_beam_alpha: float = 0.85
 @export var default_beam_color: Vector4 = Vector4(0.91, 1.0, 1.0, max_beam_alpha)
 
 @export var min_beam_outline_alpha: float = 0.02
-@export var max_beam_outline_alpha: float = 0.5
+@export var max_beam_outline_alpha: float = 0.4
 @export var default_beam_outline_color: Vector4 = Vector4(0.0, 0.494, 0.949, max_beam_outline_alpha)
 
 @export var min_beam_energy: float = 6.0

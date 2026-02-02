@@ -69,12 +69,13 @@ script = ExtResource("4_75pei")
 [node name="Beam" type="ColorRect" parent="TugRope" unique_id=492450127]
 unique_name_in_owner = true
 visible = false
+z_index = -1
 material = SubResource("ShaderMaterial_ckgvi")
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -24.5
+offset_top = -24.0
 offset_right = 424.0
-offset_bottom = 25.5
+offset_bottom = 26.0
 grow_vertical = 2
 pivot_offset = Vector2(0, 25)
