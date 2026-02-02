@@ -5,9 +5,9 @@ extends Node2D
 @onready var point_light_2d: PointLight2D = %PointLight2D
 @onready var tug_rope: Line2D = %TugRope
 
-@export var max_tug_distance: float = 700
-@export var max_tug_power: float = 3500
-@export var tug_decay: float = 3.5
+@export var max_tug_distance: float = 750
+@export var max_tug_power: float = 4000
+@export var tug_decay: float = 3.0
 @export var max_snap_multiplier: float = 12.0
 @export var snap_timer_wait_time: float = 1.0
 @export var max_tuggers: float = 20.0
@@ -130,19 +130,17 @@ func snap_away() -> void:
 func calculate_tugging_power() -> float:
 	if (dist_to_current_bone >= max_tug_distance):
 		return 0
-	var number_of_tuggers = get_tree().get_nodes_in_group('tugging_keys').size()
-	var number_of_tuggers_ratio = (max_tuggers - number_of_tuggers) / max_tuggers
+	var tugging_power = max_tug_power * calculate_exponential_multiplier()
 
-	var tugging_power = max_tug_power * calculate_exponential_multiplier() * number_of_tuggers_ratio
-
-	print([tugging_power, 100].max())
 	return [tugging_power, 100].max()
 
 # Tugging power and tug_rope width drop off exponentially
 func calculate_exponential_multiplier() -> float:
+	var number_of_tuggers = get_tree().get_nodes_in_group('tugging_keys').size()
+	var number_of_tuggers_ratio = (max_tuggers - number_of_tuggers) / max_tuggers
 
 	var power_multiplier = (dist_to_current_bone / max_tug_distance)
-	return exp(-tug_decay * power_multiplier)
+	return exp(-tug_decay * power_multiplier) * number_of_tuggers_ratio
 
 
 func _physics_process(_delta: float) -> void:
