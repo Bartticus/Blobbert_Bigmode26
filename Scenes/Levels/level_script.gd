@@ -20,5 +20,6 @@ func _ready() -> void:
 	
 	if !starting_screen:
 		starting_screen = screens.get_children()[0]
-		current_anchor = starting_screen.screen_anchor
-		blob.global_position = starting_screen.screen_blob.global_position
+	
+	current_anchor = starting_screen.screen_anchor
+	blob.global_position = starting_screen.screen_blob.global_position

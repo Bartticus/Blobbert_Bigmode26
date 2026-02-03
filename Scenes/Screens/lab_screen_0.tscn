@@ -30,9 +30,6 @@ size = Vector2(1308, 81)
 
 [node name="LabScreen0" unique_id=1360540123 instance=ExtResource("1_ni8rx")]
 
-[node name="ScreenSpace" parent="." index="0" unique_id=1231027623]
-visible = false
-
 [node name="ScreenFullKeeb" parent="." index="1" unique_id=339941415]
 x_offset = 145.0
 
