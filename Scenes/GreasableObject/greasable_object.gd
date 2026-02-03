@@ -38,8 +38,6 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 			triggerable_object.trigger_action()
 		
 		if glass_pane && grease_level > 1.0:
-			#Glass breaks but waits a lil before disappearing so a collision can happen
-			await get_tree().create_timer(0.05).timeout
 			queue_free()
 
 func _process(_delta: float) -> void:

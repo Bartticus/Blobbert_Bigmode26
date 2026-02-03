@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_7kw27"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_rfvml"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t27o1"]
+friction = 0.5
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfvml"]
 size = Vector2(10, 267.18738)
 
@@ -22,6 +25,7 @@ rotation = 0.2617994
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card0" index="0" unique_id=1406118182]
 scale = Vector2(1.0000005, 1.0000005)
@@ -37,6 +41,7 @@ rotation = -0.2617994
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card1" index="0" unique_id=796978222]
 scale = Vector2(1.0000005, 1.0000005)
@@ -52,6 +57,7 @@ rotation = 0.2617994
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card2" index="0" unique_id=312442420]
 scale = Vector2(1.0000005, 1.0000005)
@@ -67,6 +73,7 @@ rotation = -0.2617994
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card3" index="0" unique_id=1430647152]
 scale = Vector2(1.0000005, 1.0000005)
@@ -82,6 +89,7 @@ rotation = 0.2617994
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card4" index="0" unique_id=1670790071]
 scale = Vector2(1.0000005, 1.0000005)
@@ -97,6 +105,7 @@ rotation = -0.2617994
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card5" index="0" unique_id=1855522254]
 scale = Vector2(1.0000005, 1.0000005)
@@ -112,6 +121,7 @@ rotation = -1.5707964
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card6" index="0" unique_id=1044866776]
 scale = Vector2(1.0000005, 1.0000005)
@@ -127,6 +137,7 @@ rotation = -1.5029199
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card7" index="0" unique_id=750284358]
 scale = Vector2(1.0000005, 1.0000005)
@@ -142,6 +153,7 @@ rotation = 0.26179937
 scale = Vector2(0.9999999, 0.9999999)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card8" index="0" unique_id=505757841]
 scale = Vector2(1.0000005, 1.0000005)
@@ -157,6 +169,7 @@ rotation = -0.26179937
 scale = Vector2(0.9999999, 0.9999999)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card9" index="0" unique_id=2100024314]
 scale = Vector2(1.0000005, 1.0000005)
@@ -172,6 +185,7 @@ rotation = 0.37420988
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card10" index="0" unique_id=721106936]
 scale = Vector2(1.0000005, 1.0000005)
@@ -187,6 +201,7 @@ rotation = -0.14938888
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card11" index="0" unique_id=1162432014]
 scale = Vector2(1.0000005, 1.0000005)
@@ -202,6 +217,7 @@ rotation = -1.6120653
 scale = Vector2(0.99999994, 0.99999994)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card12" index="0" unique_id=1626618143]
 scale = Vector2(1.0000005, 1.0000005)
@@ -217,6 +233,7 @@ rotation = 0.26179937
 scale = Vector2(0.9999999, 0.9999999)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card13" index="0" unique_id=515932600]
 scale = Vector2(1.0000005, 1.0000005)
@@ -232,6 +249,7 @@ rotation = -0.26179937
 scale = Vector2(0.9999999, 0.9999999)
 collision_mask = 3
 mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card14" index="0" unique_id=751044614]
 scale = Vector2(1.0000005, 1.0000005)

@@ -14,7 +14,7 @@ position = Vector2(873, 359.63)
 scale = Vector2(2, 0.5)
 destroy_on_greased = false
 triggerable_object = NodePath("../VentDoor")
-grease_level = 0.5
+grease_level = 0.2
 
 [node name="VentDoor" parent="." index="6" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
 position = Vector2(512, 480)
