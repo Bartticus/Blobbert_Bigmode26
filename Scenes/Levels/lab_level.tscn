@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://di7akthmm74ou" path="res://Scenes/LevelTemplate/level_template.tscn" id="1_0temy"]
 [ext_resource type="PackedScene" uid="uid://dfsh6jigf71u1" path="res://Scenes/Screens/vent_screen_0.tscn" id="2_dft8s"]
 [ext_resource type="PackedScene" uid="uid://d2a4750wy0jqs" path="res://Scenes/Screens/lab_screen_0.tscn" id="3_o8h5t"]
-[ext_resource type="PackedScene" path="res://Scenes/Screens/lab_screen_1.tscn" id="4_ctqrn"]
+[ext_resource type="PackedScene" uid="uid://fbsi0f5icws8" path="res://Scenes/Screens/lab_screen_2.tscn" id="4_bcnj0"]
+[ext_resource type="PackedScene" uid="uid://c0j2pni8utf8j" path="res://Scenes/Screens/lab_screen_1.tscn" id="4_ctqrn"]
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="5_c3lvc"]
 
 [node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
@@ -16,19 +17,25 @@ position = Vector2(963, 525)
 
 [node name="Screens" type="Node2D" parent="." index="4" unique_id=719492377]
 
-[node name="VentScreen0" parent="Screens" index="0" unique_id=1360540123 instance=ExtResource("2_dft8s")]
+[node name="LabScreen0" parent="Screens" index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
+
+[node name="LabScreen1" parent="Screens" index="1" unique_id=1360540123 instance=ExtResource("4_ctqrn")]
+position = Vector2(1920, 0)
+x_coordinate = 1
+snap_screen_to_position = true
+
+[node name="LabScreen2" parent="Screens" index="2" unique_id=1572078050 instance=ExtResource("4_bcnj0")]
 position = Vector2(3840, 0)
 x_coordinate = 2
 snap_screen_to_position = true
 
-[node name="LabScreen0" parent="Screens" index="1" unique_id=8731453 instance=ExtResource("3_o8h5t")]
+[node name="VentScreen0" parent="Screens" index="3" unique_id=1935169186 instance=ExtResource("2_dft8s")]
+position = Vector2(5760, 0)
+x_coordinate = 3
+snap_screen_to_position = true
 
-[node name="LabScreen1" parent="Screens" index="2" unique_id=1572078050 instance=ExtResource("4_ctqrn")]
-position = Vector2(1920, 0)
-x_coordinate = 1
-
-[node name="VentScreen1" parent="Screens" index="3" unique_id=1917700277 instance=ExtResource("5_c3lvc")]
-position = Vector2(3840, 1080)
-x_coordinate = 2
+[node name="VentScreen1" parent="Screens" index="4" unique_id=1917700277 instance=ExtResource("5_c3lvc")]
+position = Vector2(5760, 1080)
+x_coordinate = 3
 y_coordinate = 1
 snap_screen_to_position = true
