@@ -16,5 +16,5 @@ func _physics_process(delta: float) -> void:
 		move_door = false
 
 func tween_door() -> void:
-	var tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	var tween = get_tree().create_tween()
 	tween.tween_property(door_body, 'global_position', target_position.global_position, move_time)
