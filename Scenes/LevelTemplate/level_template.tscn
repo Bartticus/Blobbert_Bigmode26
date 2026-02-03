@@ -138,6 +138,8 @@ texture = ExtResource("4_fkjnc")
 
 [sub_resource type="TileSet" id="TileSet_xssm3"]
 physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Oil"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_346pk")
 
 [node name="LevelTemplate" type="Node2D" unique_id=129905935]
