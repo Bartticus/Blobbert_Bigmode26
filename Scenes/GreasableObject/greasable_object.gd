@@ -7,7 +7,7 @@ extends Node2D
 @export var grease_level: float = 0
 @export var glass_pane: bool
 
-var max_grease: float = 1000000
+var max_grease: float = 1000
 var splatter_speed: float = 0.05
 
 @onready var ungrease_timer: Timer = $UngreasableTimer
@@ -19,20 +19,17 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		return
 	
 	if body is RigidBody2D:
-		var relative_pos: Vector2 = (global_position - body.global_position).normalized()
 		var velocity: Vector2 = body.linear_velocity
+		var new_strength: float = velocity.length() / max_grease
 		
-		var direction_towards_object: float = relative_pos.dot(velocity)
-		var new_strength: float = direction_towards_object * velocity.length() / max_grease
-		
-		var one_third: float = 1.0 / 3.0
-		if new_strength > one_third and grease_level < one_third:
+		var one_half: float = 1.0 / 2.0
+		if new_strength > one_half and grease_level < one_half:
 			ungrease_timer.start()
-		if new_strength > (2 * one_third) and grease_level < (2 * one_third):
+		if new_strength > (2 * one_half) and grease_level < (2 * one_half):
 			ungrease_timer.start()
 			
-		if new_strength > grease_level + one_third: #Requires at least 3 hits
-			grease_level = grease_level + one_third
+		if new_strength > grease_level + one_half: #Requires at least 3 hits
+			grease_level = grease_level + one_half
 			ungrease_timer.start()
 		elif new_strength > grease_level:
 			grease_level = new_strength

@@ -43,30 +43,19 @@ snap_screen_to_position = true
 position = Vector2(7680, 0)
 x_coordinate = 4
 
-[node name="TankScreen0" parent="Screens" index="5" unique_id=309917375 instance=ExtResource("7_l487u")]
-position = Vector2(9600, 1080)
-x_coordinate = 5
-y_coordinate = 1
+[node name="LabScreen5" parent="Screens" index="5" unique_id=867458720 instance=ExtResource("9_p8jpb")]
+position = Vector2(7680, -1080)
+x_coordinate = 4
+y_coordinate = -1
 snap_screen_to_position = true
 
-[node name="TankScreen1" parent="Screens" index="6" unique_id=576487886 instance=ExtResource("8_blkfd")]
-position = Vector2(9600, 2160)
-x_coordinate = 5
-y_coordinate = 2
-snap_screen_to_position = true
-
-[node name="VentScreen0" parent="Screens" index="7" unique_id=1935169186 instance=ExtResource("2_dft8s")]
+[node name="VentScreen0" parent="Screens" index="6" unique_id=1935169186 instance=ExtResource("2_dft8s")]
 position = Vector2(9600, -1080)
 x_coordinate = 5
 y_coordinate = -1
 snap_screen_to_position = true
 
-[node name="VentScreen1" parent="Screens" index="8" unique_id=1917700277 instance=ExtResource("5_c3lvc")]
+[node name="VentScreen1" parent="Screens" index="7" unique_id=1917700277 instance=ExtResource("5_c3lvc")]
 position = Vector2(9600, 0)
 x_coordinate = 5
 snap_screen_to_position = true
-
-[node name="LabScreen5" parent="Screens" index="9" unique_id=867458720 instance=ExtResource("9_p8jpb")]
-position = Vector2(7680, -1080)
-x_coordinate = 4
-y_coordinate = -1

@@ -4,10 +4,10 @@ extends Node2D
 @onready var camera: Camera2D = %Camera
 @onready var blob: Blob = %Blob
 
-@export var current_anchor: Marker2D:
+@export var starting_level: Marker2D:
 	set(value):
-		current_anchor = value
-		camera.global_position = current_anchor.global_position
+		starting_level = value
+		#Global.blob._on_blob_level_transition_area_area_exited
 
 
 func _ready() -> void:
