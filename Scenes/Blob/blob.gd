@@ -8,6 +8,7 @@ extends Node2D
 @export var face_array: Array[Sprite2D]
 @export var rand_face_timer: Timer
 @export var set_face_timer: Timer
+
 @onready var current_face: Sprite2D = %Neutral
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 
@@ -25,6 +26,7 @@ func _ready() -> void:
 	for child in face_pivot.get_children():
 		if child is Sprite2D:
 			face_array.append(child)
+
 
 func set_status(new_status) -> void:
 	status = new_status
@@ -57,6 +59,8 @@ func _on_set_face_timer_timeout() -> void:
 
 func _process(_delta: float) -> void:
 	%SwirlRect.global_position = %"Bone-13".global_position - Vector2(270+82,244+87)
+	if Input.is_action_just_pressed('reset'):
+		get_tree().reload_current_scene()
 
 
 func _on_blob_level_transition_area_area_exited(area: Area2D) -> void:
