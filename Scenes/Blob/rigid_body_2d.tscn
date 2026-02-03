@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://y68772m0q0a4"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=702735613]
+continuous_cd = 2
