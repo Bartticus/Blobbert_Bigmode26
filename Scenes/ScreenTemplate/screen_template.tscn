@@ -164,7 +164,7 @@ unique_name_in_owner = true
 
 [node name="ScreenBlob" parent="." unique_id=104221436 instance=ExtResource("4_eipx4")]
 unique_name_in_owner = true
-position = Vector2(150, 121)
+position = Vector2(221, 167)
 
 [node name="ScreenTileMapLayer" type="TileMapLayer" parent="." unique_id=2053691136]
 unique_name_in_owner = true
