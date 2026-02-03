@@ -14,7 +14,7 @@ func _ready() -> void:
 	arrow.visible = false
 	visible = active
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if !active:
 		return
 	var power = start_location.direction_to(end_location) * wind_power
