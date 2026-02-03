@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://taej6wdaex46" path="res://Scenes/KeyboardRows/z_row.tscn" id="5_4v8e2"]
 
 [node name="FullKeeb" type="Node2D" unique_id=339941415]
+z_index = 1
 script = ExtResource("1_pfsk0")
 x_spacing = 180.0
 x_offset = 150.0

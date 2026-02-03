@@ -10,7 +10,7 @@ extends Node2D
 func trigger_action() -> void:
 	move_door = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if move_door:
 		tween_door()
 		move_door = false
