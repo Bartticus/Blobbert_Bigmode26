@@ -63,7 +63,7 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 
 
-func _on_blob_level_transition_area_area_exited(area: Area2D) -> void:
+func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
 		if overlapping_area.name == 'ScreenSpace':
 			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor

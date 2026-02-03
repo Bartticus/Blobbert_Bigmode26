@@ -4,11 +4,14 @@ extends Node2D
 @export var destroy_on_greased: bool = true
 @export var triggerable_object: Node2D
 @export var stain_sprite: Sprite2D
-@onready var ungrease_timer: Timer = $UngreasableTimer
-
 @export var grease_level: float = 0
+@export var glass_pane: bool
+
 var max_grease: float = 1000000
 var splatter_speed: float = 0.05
+
+@onready var ungrease_timer: Timer = $UngreasableTimer
+
 
 func _on_velocity_detector_body_entered(body: Node2D) -> void:
 	if not ungrease_timer.is_stopped(): return
@@ -22,10 +25,20 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		var direction_towards_object: float = relative_pos.dot(velocity)
 		var new_strength: float = direction_towards_object * velocity.length() / max_grease
 		
+		if not glass_pane:
+			if new_strength > grease_level:
+				grease_level = new_strength
+			return
+		
 		var one_third: float = 1.0 / 3.0
+		if new_strength > one_third and grease_level < one_third:
+			ungrease_timer.start()
+		if new_strength > (2 * one_third) and grease_level < (2 * one_third):
+			ungrease_timer.start()
+			
 		if new_strength > grease_level + one_third: #Requires at least 3 hits
 			grease_level = grease_level + one_third
-			ungrease_timer.start() #Ensures they don't all happen at once
+			ungrease_timer.start()
 		elif new_strength > grease_level:
 			grease_level = new_strength
 		
@@ -33,6 +46,8 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 			triggerable_object.trigger_action()
 		
 		if destroy_on_greased && grease_level > 1.0:
+			#Glass breaks but waits a lil before disappearing so a collision can happen
+			await get_tree().create_timer(0.05).timeout
 			queue_free()
 
 func _process(_delta: float) -> void:
