@@ -2,7 +2,7 @@ class_name GreasableObject
 extends Node2D
 
 @export var destroy_on_greased: bool = true
-@export var triggerable_object: Node2D
+@export var triggerable_objects: Array[Node2D] = []
 @export var stain_sprite: Sprite2D
 @export var grease_level: float = 0
 @export var glass_pane: bool
@@ -34,8 +34,9 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		elif new_strength > grease_level:
 			grease_level = new_strength
 		
-		if triggerable_object != null && triggerable_object.has_method('trigger_action') && grease_level > 1.0:
-			triggerable_object.trigger_action()
+		if grease_level > 1.0:
+			for trigger in triggerable_objects:
+				trigger.trigger_action()
 		
 		if glass_pane && grease_level > 1.0:
 			queue_free()

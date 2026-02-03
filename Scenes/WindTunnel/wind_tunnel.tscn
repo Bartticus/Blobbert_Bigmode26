@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dejbnjn8eioj7"]
+
+[ext_resource type="Script" uid="uid://b36yj4fsw22x6" path="res://Scenes/WindTunnel/wind_tunnel.gd" id="1_wwxdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou1ts"]
+size = Vector2(300, 100)
+
+[sub_resource type="Gradient" id="Gradient_wwxdv"]
+colors = PackedColorArray(0.92535293, 0.9253529, 0.9253527, 1, 0.641934, 0.641934, 0.641934, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2q2ec"]
+gradient = SubResource("Gradient_wwxdv")
+width = 1
+height = 5
+
+[sub_resource type="Curve" id="Curve_28fct"]
+_data = [Vector2(0, 0.1490537), 0.0, 0.0, 0, 0, Vector2(0.509434, 0.37460572), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_virxl"]
+curve = SubResource("Curve_28fct")
+
+[sub_resource type="Curve" id="Curve_2q2ec"]
+_limits = [0.0, 2.5, 0.0, 1.0]
+_data = [Vector2(0, 1.4423076), 0.0, 0.0, 0, 0, Vector2(1, 2.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wwxdv"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.0047317743), 0.0, 0.0, 0, 0, Vector2(0.2528302, 1), 0.0, 0.0, 0, 0, Vector2(0.5056604, -1), 0.0, 0.0, 0, 0, Vector2(0.75471705, 1), 0.0, 0.0, 0, 0, Vector2(1, -0.0047317743), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_virxl"]
+curve_x = SubResource("Curve_2q2ec")
+curve_y = SubResource("Curve_wwxdv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wwxdv"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 50, 1)
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+directional_velocity_min = 19.999983
+directional_velocity_max = 49.99998
+directional_velocity_curve = SubResource("CurveXYZTexture_virxl")
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_virxl")
+
+[node name="WindTunnel" type="Node2D" unique_id=1958283733]
+script = ExtResource("1_wwxdv")
+
+[node name="WindArea" type="Area2D" parent="." unique_id=617178764]
+unique_name_in_owner = true
+collision_mask = 2
+gravity_point_center = Vector2(0, 200)
+gravity_direction = Vector2(0, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindArea" unique_id=37032981]
+shape = SubResource("RectangleShape2D_ou1ts")
+
+[node name="Arrow" type="Polygon2D" parent="." unique_id=2026699081]
+unique_name_in_owner = true
+rotation = 1.5707964
+polygon = PackedVector2Array(-12, 24, -11, -20, -32, -21, 0, -64, 27, -21, 6, -21, 6, 25)
+
+[node name="StartLocation" type="Marker2D" parent="." unique_id=1996333394]
+unique_name_in_owner = true
+position = Vector2(-150, 0)
+
+[node name="EndLocation" type="Marker2D" parent="." unique_id=1418832498]
+unique_name_in_owner = true
+position = Vector2(150, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1271001847]
+position = Vector2(-50, 0)
+amount = 2
+texture = SubResource("GradientTexture2D_2q2ec")
+fixed_fps = 60
+interpolate = false
+local_coords = true
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_wwxdv")
+
+[connection signal="body_entered" from="WindArea" to="." method="_on_wind_area_body_entered"]
+[connection signal="body_exited" from="WindArea" to="." method="_on_wind_area_body_exited"]
