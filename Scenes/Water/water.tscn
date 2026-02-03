@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dm48sqokih0dm"]
+
+[ext_resource type="Shader" uid="uid://b2wtp2b846k3" path="res://Scenes/Water/water.gdshader" id="1_bor0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g56e2"]
+size = Vector2(1808, 464)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tm2kp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g56e2"]
+noise = SubResource("FastNoiseLite_tm2kp")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d2pyo"]
+seed = 756
+offset = Vector3(537.82, 305.01, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wux2k"]
+noise = SubResource("FastNoiseLite_d2pyo")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g56e2"]
+shader = ExtResource("1_bor0g")
+shader_parameter/offSet = 0.0
+shader_parameter/YDistortion = 1.0
+shader_parameter/waterNoise = SubResource("NoiseTexture2D_wux2k")
+shader_parameter/waterDistortionNoise = SubResource("NoiseTexture2D_g56e2")
+shader_parameter/waterColor = Color(0.117, 0.27, 0.58, 1)
+shader_parameter/colorCorection = 0.1999999955296
+shader_parameter/distortionForce = 0.01
+shader_parameter/WDBrightness = 1.5
+shader_parameter/WDFreq = 0.6
+shader_parameter/WDSize = 0.9
+shader_parameter/WDSpeed = 4.0
+shader_parameter/tiling = Vector2(2, 1)
+shader_parameter/offSetSpeed = Vector2(0.05, 0.1)
+shader_parameter/backGroundDirX = 0.01
+shader_parameter/backGroundDirY = 0.01
+
+[sub_resource type="Gradient" id="Gradient_tm2kp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g56e2"]
+gradient = SubResource("Gradient_tm2kp")
+width = 1810
+height = 463
+
+[node name="WaterPool" type="Area2D" unique_id=995540943]
+collision_mask = 2
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -0.2)
+gravity_direction = Vector2(0, -0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=155110086]
+shape = SubResource("RectangleShape2D_g56e2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=224309572]
+material = SubResource("ShaderMaterial_g56e2")
+texture = SubResource("GradientTexture2D_g56e2")
