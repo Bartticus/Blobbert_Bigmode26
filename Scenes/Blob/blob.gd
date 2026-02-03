@@ -22,7 +22,6 @@ func _ready() -> void:
 	for child in softbody.get_children():
 		if child is Bone:
 			bodies.append(child)
-	print(bodies)
 	
 	for child in face_pivot.get_children():
 		if child is Sprite2D:

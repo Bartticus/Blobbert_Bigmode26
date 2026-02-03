@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://byh3j81if5jct"]
+
+[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="1_2u84e"]
+[ext_resource type="Script" uid="uid://be67gtdp0dokl" path="res://Scenes/VentDoor/vent_door.gd" id="1_kf3g2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gxxi"]
+size = Vector2(128, 512)
+
+[node name="VentDoor" type="Node2D" unique_id=1445567170]
+script = ExtResource("1_kf3g2")
+move_door = null
+
+[node name="DoorBody" type="AnimatableBody2D" parent="." unique_id=1463673896]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorBody" unique_id=308200104]
+position = Vector2(64, 256)
+shape = SubResource("RectangleShape2D_3gxxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1097457276]
+modulate = Color(0.47788018, 0.47788012, 0.47788012, 1)
+scale = Vector2(1, 4.005)
+texture = ExtResource("1_2u84e")
+centered = false
+
+[node name="TargetPosition" type="Marker2D" parent="." unique_id=1100631167]
+unique_name_in_owner = true
+position = Vector2(0, -431)

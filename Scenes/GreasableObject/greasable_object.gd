@@ -1,6 +1,8 @@
 class_name GreasableObject
 extends Node2D
 
+@export var destroy_on_greased: bool = true
+@export var triggerable_object: Node2D
 @export var stain_sprite: Sprite2D
 @onready var ungrease_timer: Timer = $UngreasableTimer
 
@@ -10,6 +12,8 @@ var splatter_speed: float = 0.05
 
 func _on_velocity_detector_body_entered(body: Node2D) -> void:
 	if not ungrease_timer.is_stopped(): return
+	if grease_level > 1.0:
+		return
 	
 	if body is RigidBody2D:
 		var relative_pos: Vector2 = (global_position - body.global_position).normalized()
@@ -25,7 +29,10 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		elif new_strength > grease_level:
 			grease_level = new_strength
 		
-		if grease_level > 1.0:
+		if triggerable_object.has_method('trigger_action') && grease_level > 1.0:
+			triggerable_object.trigger_action()
+		
+		if destroy_on_greased && grease_level > 1.0:
 			queue_free()
 
 func _process(_delta: float) -> void:
