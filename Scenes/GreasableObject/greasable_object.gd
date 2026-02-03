@@ -42,7 +42,7 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		elif new_strength > grease_level:
 			grease_level = new_strength
 		
-		if triggerable_object.has_method('trigger_action') && grease_level > 1.0:
+		if triggerable_object != null && triggerable_object.has_method('trigger_action') && grease_level > 1.0:
 			triggerable_object.trigger_action()
 		
 		if destroy_on_greased && grease_level > 1.0:
