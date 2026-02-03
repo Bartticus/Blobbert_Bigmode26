@@ -2,13 +2,10 @@
 class_name Screen
 extends Node2D
 
-@onready var screen_space: Area2D = %ScreenSpace
-@onready var screen_collision_shape: CollisionShape2D = %ScreenCollisionShape
 @onready var screen_full_keeb: FullKeeb = %ScreenFullKeeb
 @onready var screen_anchor: Marker2D = %ScreenAnchor
 @onready var screen_blob: Blob = %ScreenBlob
 
-@export var parent_level : LevelScript
 @export var x_coordinate : int
 @export var y_coordinate : int
 
