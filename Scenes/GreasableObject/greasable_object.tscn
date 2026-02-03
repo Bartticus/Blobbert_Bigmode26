@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_qfkhn"]
 [ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="4_qfkhn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb0md"]
-size = Vector2(428, 90)
-
 [sub_resource type="Gradient" id="Gradient_qfkhn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ojx3w"]
@@ -23,7 +20,7 @@ seamless = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hjrr1"]
 resource_local_to_scene = true
 shader = ExtResource("4_qfkhn")
-shader_parameter/sensitivity = 0.55600002641
+shader_parameter/sensitivity = 0.0
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
 shader_parameter/noise_config_size = Vector2(128, 128)
 shader_parameter/noise_seed = 0.0
@@ -36,32 +33,35 @@ shader_parameter/edge_bias_strength = 0.5
 shader_parameter/edge_remap_min = 0.0
 shader_parameter/edge_remap_max = 1.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb0md"]
+size = Vector2(128, 128)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv26f"]
-size = Vector2(446, 104)
+size = Vector2(150, 150)
 
 [node name="GreasableObject" type="Node2D" unique_id=1867482040 node_paths=PackedStringArray("stain_sprite")]
-rotation = -1.5707964
 script = ExtResource("1_7r7q3")
-stain_sprite = NodePath("StaticBody2D/ObjectShaded")
+stain_sprite = NodePath("ObjectShaded")
+
+[node name="ObjectShaded" type="Sprite2D" parent="." unique_id=1685847717]
+material = SubResource("ShaderMaterial_hjrr1")
+texture = ExtResource("2_qfkhn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=481857584]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1424846631]
-visible = false
 shape = SubResource("RectangleShape2D_rb0md")
-
-[node name="ObjectShaded" type="Sprite2D" parent="StaticBody2D" unique_id=1685847717]
-material = SubResource("ShaderMaterial_hjrr1")
-scale = Vector2(3.9333332, 1)
-texture = ExtResource("2_qfkhn")
 
 [node name="VelocityDetector" type="Area2D" parent="." unique_id=446853444]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VelocityDetector" unique_id=2097183210]
-visible = false
 shape = SubResource("RectangleShape2D_jv26f")
+
+[node name="UngreasableTimer" type="Timer" parent="." unique_id=1926769009]
+wait_time = 0.25
+one_shot = true
 
 [connection signal="body_entered" from="VelocityDetector" to="." method="_on_velocity_detector_body_entered"]
