@@ -38,7 +38,6 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 			grease_level = new_strength
 		
 		if triggerable_object != null && triggerable_object.has_method('trigger_action') && grease_level > 1.0:
-			print('uh hello')
 			triggerable_object.trigger_action()
 		
 		if glass_pane && grease_level > 1.0:
