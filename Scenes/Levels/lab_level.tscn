@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfsh6jigf71u1" path="res://Scenes/Screens/vent_screen_0.tscn" id="2_dft8s"]
 [ext_resource type="PackedScene" uid="uid://d2a4750wy0jqs" path="res://Scenes/Screens/lab_screen_0.tscn" id="3_o8h5t"]
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="4_ctqrn"]
+[ext_resource type="PackedScene" uid="uid://fbsi0f5icws8" path="res://Scenes/Screens/lab_screen_1.tscn" id="4_ctqrn"]
 
 [node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
 
@@ -22,8 +23,11 @@ snap_screen_to_position = true
 
 [node name="LabScreen0" parent="Screens" index="1" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 
-[node name="VentScreen1" parent="Screens" index="2" unique_id=707931741 instance=ExtResource("4_ctqrn")]
+[node name="VentScreen1" parent="Screens" index="3" unique_id=707931741 instance=ExtResource("4_ctqrn")]
 position = Vector2(3840, 1080)
 x_coordinate = 2
 y_coordinate = 1
 snap_screen_to_position = true
+[node name="LabScreen1" parent="Screens" index="2" unique_id=1572078050 instance=ExtResource("4_ctqrn")]
+position = Vector2(1920, 0)
+x_coordinate = 1
