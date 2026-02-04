@@ -34,10 +34,13 @@ func _on_bone_collision(body_rid: RID, body: Node, _body_shape_index: int, _loca
 
 func set_tile_oil(body: TileMapLayer, body_rid: RID):
 	var collided_tile_coords = body.get_coords_for_body_rid(body_rid)
-	var tile_data = body.get_cell_tile_data(collided_tile_coords)
+	body.set_cell(
+		collided_tile_coords,
+		body.get_cell_source_id(collided_tile_coords),
+		body.get_cell_atlas_coords(collided_tile_coords),
+		1
+	)
 	
-	var tile_oiled = tile_data.get_custom_data("Oil")
-	print(tile_oiled)
 
 func set_status(new_status) -> void:
 	status = new_status
