@@ -614,7 +614,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1038449893]
 position = Vector2(101.13427, 50.312504)
 rotation = 1.6772648
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.9999997, 0.9999997)
 rest = Transform2D(-0.10626745, 0.99433756, -0.99433756, -0.10626745, 101.13427, 50.312504)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -667,7 +667,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-24" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=528477272]
 position = Vector2(100.05187, 100.4159)
 rotation = 1.5084738
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.9999997, 0.9999997)
 rest = Transform2D(0.062282234, 0.99805856, -0.99805856, 0.062282234, 100.05187, 100.4159)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -694,7 +694,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-26" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=726895156]
 position = Vector2(101.85848, 129.3664)
 rotation = 1.6129539
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.9999997, 0.9999997)
 rest = Transform2D(-0.04214509, 0.9991115, -0.9991115, -0.04214509, 101.85848, 129.3664)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3190,6 +3190,12 @@ shape = SubResource("CircleShape2D_47mic")
 energy = 0.7
 texture = ExtResource("14_dp05e")
 
+[node name="BlobVisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="BlobCenter" unique_id=38668849]
+unique_name_in_owner = true
+position = Vector2(0.13597956, -0.6752565)
+rotation = -2.5651665
+rect = Rect2(-5, -5, 10, 10)
+
 [node name="RandFaceTimer" type="Timer" parent="." unique_id=252747397]
 wait_time = 2.0
 one_shot = true
@@ -3200,6 +3206,10 @@ autostart = true
 [node name="OilCooldownTimer" type="Timer" parent="." unique_id=742599271]
 wait_time = 0.2
 one_shot = true
+
+[node name="ScreenFailSafe" type="Timer" parent="." unique_id=147159375]
+wait_time = 5.0
+autostart = true
 
 [connection signal="area_exited" from="BlobCenter/BlobLevelTransitionArea" to="." method="_on_blob_level_transition_area_area_exited"]
 [connection signal="timeout" from="RandFaceTimer" to="." method="_on_rand_face_timer_timeout"]

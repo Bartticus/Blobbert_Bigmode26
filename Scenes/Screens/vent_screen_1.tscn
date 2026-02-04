@@ -16,7 +16,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAI
 position = Vector2(873, 359.63)
 scale = Vector2(2, 0.5)
 destroy_on_greased = false
-triggerable_objects = [NodePath("../VentDoor"), NodePath("../WindTunnel"), NodePath("../WindTunnel2"), NodePath("../WindTunnel3"), NodePath("../WindTunnel4"), NodePath("../WindTunnel5"), NodePath("../WindTunnel6"), NodePath("../WindTunnel7"), NodePath("../WindTunnel8"), NodePath("../WindTunnel9"), NodePath("../WindTunnel10"), NodePath("../WindGustGroup")]
+triggerable_objects = [NodePath("../VentDoor"), NodePath("../WindTunnel"), NodePath("../WindTunnel2"), NodePath("../WindTunnel3"), NodePath("../WindTunnel4"), NodePath("../WindTunnel5"), NodePath("../WindTunnel6"), NodePath("../WindTunnel7"), NodePath("../WindTunnel8"), NodePath("../WindTunnel9"), NodePath("../WindTunnel10"), NodePath("../WindGustGroup"), NodePath("../WindGustGroup2")]
 grease_level = 0.2
 
 [node name="VentDoor" parent="." index="6" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
@@ -82,8 +82,9 @@ rotation = 1.5707964
 scale = Vector2(1.6, 1)
 active = false
 
+[node name="Oils" type="Node2D" parent="." index="17" unique_id=70454373]
+
 [node name="WindGustGroup" parent="." index="18" unique_id=1942551771 instance=ExtResource("5_3jp2c")]
-time_offset = 0.25
 auto_start = false
 
 [node name="WindGust3" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("6_am2jb")]
@@ -91,27 +92,30 @@ position = Vector2(1628, 819)
 rotation = 3.1023505
 scale = Vector2(0.3, 0.3)
 
-[node name="WindGust6" parent="WindGustGroup" index="1" unique_id=521127419 instance=ExtResource("6_am2jb")]
-position = Vector2(1602, 979)
-rotation = 3.1023505
-scale = Vector2(0.3, 0.3)
-
-[node name="WindGust4" parent="WindGustGroup" index="2" unique_id=1535240882 instance=ExtResource("6_am2jb")]
+[node name="WindGust4" parent="WindGustGroup" index="1" unique_id=1535240882 instance=ExtResource("6_am2jb")]
 position = Vector2(1043, 814.00006)
 rotation = 3.1023505
 scale = Vector2(0.3, 0.3)
 
-[node name="WindGust7" parent="WindGustGroup" index="3" unique_id=1112035788 instance=ExtResource("6_am2jb")]
-position = Vector2(1017, 974.00006)
-rotation = 3.1023505
-scale = Vector2(0.3, 0.3)
-
-[node name="WindGust5" parent="WindGustGroup" index="4" unique_id=1142455142 instance=ExtResource("6_am2jb")]
+[node name="WindGust5" parent="WindGustGroup" index="2" unique_id=1142455142 instance=ExtResource("6_am2jb")]
 position = Vector2(425.99997, 746)
 rotation = 2.3590355
 scale = Vector2(0.3, 0.3)
 
-[node name="WindGust8" parent="WindGustGroup" index="5" unique_id=363961915 instance=ExtResource("6_am2jb")]
+[node name="WindGustGroup2" parent="." index="19" unique_id=356277714 instance=ExtResource("5_3jp2c")]
+auto_start = false
+
+[node name="WindGust6" parent="WindGustGroup2" index="0" unique_id=521127419 instance=ExtResource("6_am2jb")]
+position = Vector2(1602, 979)
+rotation = 3.1023505
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust7" parent="WindGustGroup2" index="1" unique_id=1112035788 instance=ExtResource("6_am2jb")]
+position = Vector2(1017, 974.00006)
+rotation = 3.1023505
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust8" parent="WindGustGroup2" index="2" unique_id=363961915 instance=ExtResource("6_am2jb")]
 position = Vector2(400, 906)
 rotation = 2.3590355
 scale = Vector2(0.3, 0.3)

@@ -14,6 +14,7 @@ extends Node2D
 
 @onready var current_face: Sprite2D = %Neutral
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
+@onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 
 enum Status { DEFAULT, STRETCHED, FAST, HURT, IDLE }
 var status: Status = Status.IDLE: set = set_status
@@ -116,22 +117,15 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 
 func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
+	reset_screen()
+
+
+func reset_screen():
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
 		if overlapping_area.name == 'ScreenSpace':
 			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor
 
-func get_tile_oil() -> float:
-	var tilemap: TileMapLayer = get_tree().get_first_node_in_group("tilemap")
-	
-	if not tilemap:
-		return 1
-	
-	var cell := tilemap.local_to_map(position)
-	var data: TileData = tilemap.get_cell_tile_data(cell)
-	
-	if data:
-		var oil_level: float = data.get_custom_data("oil")
-		if oil_level > 0:
-			return oil_level
-	
-	return 1
+
+func _on_screen_fail_safe_timeout() -> void:
+	if !blob_visibility_notifier.is_on_screen():
+		reset_screen()
