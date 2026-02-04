@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://ctge4mf8iefuu" path="res://Scenes/Screens/lab_screen_3.tscn" id="5_746ry"]
 [ext_resource type="PackedScene" uid="uid://dfskkbwgsxie" path="res://Scenes/Screens/vent_screen_2.tscn" id="5_c3lvc"]
 [ext_resource type="PackedScene" uid="uid://cp4bv4ofrmst1" path="res://Scenes/Screens/lab_screen_4.tscn" id="6_4o0c8"]
-[ext_resource type="PackedScene" uid="uid://dnpc2r6ij4sva" path="res://Scenes/Screens/tank_screen_0.tscn" id="7_l487u"]
-[ext_resource type="PackedScene" uid="uid://caf8tywbfxynw" path="res://Scenes/Screens/tank_screen_1.tscn" id="8_blkfd"]
+[ext_resource type="PackedScene" uid="uid://b76gyboyj17lc" path="res://Scenes/Screens/tank_screen_0.tscn" id="7_l487u"]
+[ext_resource type="PackedScene" uid="uid://c0n6khaydc8d3" path="res://Scenes/Screens/tank_screen_1.tscn" id="8_blkfd"]
 [ext_resource type="PackedScene" uid="uid://ci6hjglcdc31b" path="res://Scenes/Screens/lab_screen_5.tscn" id="9_p8jpb"]
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="10_sp4yd"]
 
-[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
+[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
+starting_screen = NodePath("Screens/LabScreen3")
 
 [node name="FullKeeb" parent="." index="0" unique_id=1939036362]
 x_offset = 145.0

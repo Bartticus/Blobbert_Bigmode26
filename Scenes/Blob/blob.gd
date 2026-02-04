@@ -42,13 +42,13 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	
 	#instantiate
 	var oil: Oil = oil_scene.instantiate()
-	oils_parent.call_deferred("add_child", oil)
+	body.call_deferred("add_child", oil)
 	
 	#set position
 	var state = PhysicsServer2D.body_get_direct_state(bone.get_rid())
 	var coll_pos = state.get_contact_collider_position(0)
 	var coll_normal = state.get_contact_local_normal(0)
-	oil.global_position = coll_pos
+	oil.global_position = coll_pos - body.global_position
 	
 	#set scale
 	var bone_speed: float = bone.linear_velocity.length()
@@ -57,10 +57,9 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 		scale_ratio = 2.0
 	oil.scale = oil.scale * scale_ratio
 	
-	
 	#set rotation
 	oil.look_at(coll_pos + coll_normal)
-	oil.rotation_degrees += 90
+	#oil.rotation_degrees += 90
 	
 	#prevent more oils from spawning
 	bone.oil_areas_int += 1
