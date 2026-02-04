@@ -169,5 +169,3 @@ tile_set = SubResource("TileSet_xssm3")
 
 [node name="Screens" type="Node2D" parent="." unique_id=1130019440]
 unique_name_in_owner = true
-
-[node name="Oils" type="Node2D" parent="." unique_id=1563787913]
