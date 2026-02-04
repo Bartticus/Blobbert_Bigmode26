@@ -301,7 +301,7 @@ load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482
 [sub_resource type="CircleShape2D" id="CircleShape2D_47mic"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_074og"]
-radius = 87.005745
+radius = 83.02409
 
 [node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "oil_timer", "face_pivot", "rand_face_timer", "set_face_timer")]
 script = ExtResource("1_u3aeq")
@@ -536,6 +536,8 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Softbody/Skeleton2D/Bone-13" unique_id=1076792525]
 remote_path = NodePath("../../../../BlobCenter")
+update_position = false
+update_scale = false
 
 [node name="Bone-14" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1892583290]
 position = Vector2(56.861084, 101.53672)
@@ -619,7 +621,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1038449893]
 position = Vector2(101.13427, 50.312504)
 rotation = 1.6772648
-scale = Vector2(0.9999978, 0.9999978)
+scale = Vector2(0.99999774, 0.99999774)
 rest = Transform2D(-0.10626745, 0.99433756, -0.99433756, -0.10626745, 101.13427, 50.312504)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -699,7 +701,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-26" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=726895156]
 position = Vector2(101.85848, 129.3664)
 rotation = 1.6129539
-scale = Vector2(0.99999803, 0.99999803)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(-0.04214509, 0.9991115, -0.9991115, -0.04214509, 101.85848, 129.3664)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3100,6 +3102,7 @@ damping = 0.01
 metadata/joint_distance = 22.10659
 
 [node name="BlobCenter" type="Marker2D" parent="." unique_id=1030619800]
+unique_name_in_owner = true
 position = Vector2(-0.25402832, -0.6402588)
 rotation = 2.5651665
 
