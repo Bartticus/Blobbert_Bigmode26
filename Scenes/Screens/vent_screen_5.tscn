@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_o2y5c"]
 [ext_resource type="PackedScene" uid="uid://dejbnjn8eioj7" path="res://Scenes/WindTunnel/wind_tunnel.tscn" id="2_dnt7i"]
+[ext_resource type="PackedScene" uid="uid://ceybxmuaaxrkm" path="res://Scenes/WindGust/wind_gust_group.tscn" id="3_ygda8"]
+[ext_resource type="PackedScene" uid="uid://bf0j3ms2oh0ia" path="res://Scenes/WindGust/wind_gust.tscn" id="4_d20lq"]
 
 [node name="VentScreen5" unique_id=1360540123 instance=ExtResource("1_o2y5c")]
 
@@ -47,3 +49,24 @@ polygon = PackedVector2Array(0, 0, 0, 160, 1265, 160, 1264, -519, 1207, -652, 87
 [node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D5" index="1" unique_id=1875940828]
 color = Color(0.35686275, 0.35686275, 0.35686275, 1)
 polygon = PackedVector2Array(0, 0, 0, 160, 1265, 160, 1264, -519, 1207, -652, 873, -652)
+
+[node name="WindGustGroup" parent="." index="7" unique_id=1942551771 instance=ExtResource("3_ygda8")]
+
+[node name="WindGust3" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("4_d20lq")]
+position = Vector2(519.9999, 1168)
+rotation = -1.6622975
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust4" parent="WindGustGroup" index="1" unique_id=2071322125 instance=ExtResource("4_d20lq")]
+position = Vector2(813, 624)
+rotation = -0.7488798
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust5" parent="WindGustGroup" index="2" unique_id=1776250039 instance=ExtResource("4_d20lq")]
+position = Vector2(1333, 242)
+rotation = -0.5838055
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust6" parent="WindGustGroup" index="3" unique_id=1305784796 instance=ExtResource("4_d20lq")]
+position = Vector2(1866, 105)
+scale = Vector2(0.3, 0.3)

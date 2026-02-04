@@ -6,28 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://fbsi0f5icws8" path="res://Scenes/Screens/lab_screen_2.tscn" id="4_bcnj0"]
 [ext_resource type="PackedScene" uid="uid://c0j2pni8utf8j" path="res://Scenes/Screens/lab_screen_1.tscn" id="4_ctqrn"]
 [ext_resource type="PackedScene" uid="uid://ctge4mf8iefuu" path="res://Scenes/Screens/lab_screen_3.tscn" id="5_746ry"]
-[ext_resource type="PackedScene" uid="uid://dsh1pbd0dcmyc" path="res://Scenes/Screens/vent_screen_2.tscn" id="5_c3lvc"]
-[ext_resource type="PackedScene" uid="uid://cp4bv4ofrmst1" path="res://Scenes/Screens/lab_screen_4.tscn" id="6_4o0c8"]
-[ext_resource type="PackedScene" uid="uid://dnpc2r6ij4sva" path="res://Scenes/Screens/tank_screen_0.tscn" id="7_l487u"]
-[ext_resource type="PackedScene" uid="uid://caf8tywbfxynw" path="res://Scenes/Screens/tank_screen_1.tscn" id="8_blkfd"]
-[ext_resource type="PackedScene" uid="uid://dfskkbwgsxie" path="res://Scenes/Screens/vent_screen_2.tscn" id="5_c3lvc"]
 [ext_resource type="PackedScene" uid="uid://dqewqegb4q50d" path="res://Scenes/Screens/lab_screen_2a.tscn" id="5_ul0lq"]
 [ext_resource type="PackedScene" uid="uid://bo23wjbly5ckx" path="res://Scenes/Screens/lab_screen_2b.tscn" id="6_0k7vj"]
 [ext_resource type="PackedScene" uid="uid://cp4bv4ofrmst1" path="res://Scenes/Screens/lab_screen_4.tscn" id="6_4o0c8"]
 [ext_resource type="PackedScene" uid="uid://d3jcyrus5t5p" path="res://Scenes/Screens/lab_screen_2c.tscn" id="7_1043h"]
-[ext_resource type="PackedScene" uid="uid://b76gyboyj17lc" path="res://Scenes/Screens/tank_screen_0.tscn" id="7_l487u"]
-[ext_resource type="PackedScene" uid="uid://c0n6khaydc8d3" path="res://Scenes/Screens/tank_screen_1.tscn" id="8_blkfd"]
+[ext_resource type="PackedScene" uid="uid://dnpc2r6ij4sva" path="res://Scenes/Screens/tank_screen_0.tscn" id="7_l487u"]
+[ext_resource type="PackedScene" uid="uid://caf8tywbfxynw" path="res://Scenes/Screens/tank_screen_1.tscn" id="8_blkfd"]
 [ext_resource type="PackedScene" uid="uid://ci6hjglcdc31b" path="res://Scenes/Screens/lab_screen_5.tscn" id="9_p8jpb"]
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="10_sp4yd"]
 [ext_resource type="PackedScene" uid="uid://dfskkbwgsxie" path="res://Scenes/Screens/vent_screen_3.tscn" id="11_ul0lq"]
 [ext_resource type="PackedScene" uid="uid://t8wog3lisshy" path="res://Scenes/Screens/vent_screen_4.tscn" id="12_dm3ff"]
 [ext_resource type="PackedScene" uid="uid://d1ktnvve3etl4" path="res://Scenes/Screens/vent_screen_5.tscn" id="13_0k7vj"]
+[ext_resource type="PackedScene" uid="uid://dsh1pbd0dcmyc" path="res://Scenes/Screens/vent_screen_2.tscn" id="13_axdum"]
+[ext_resource type="PackedScene" uid="uid://bnq5k1xk7y6vw" path="res://Scenes/Screens/tank_screen_2.tscn" id="19_np4tc"]
+[ext_resource type="PackedScene" uid="uid://dnn0cojwsx0tk" path="res://Scenes/Screens/tank_screen_3.tscn" id="20_crsrk"]
 
 [node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-starting_screen = NodePath("Screens/LabScreen2")
-
-[node name="FullKeeb" parent="." index="0" unique_id=1939036362]
-x_offset = 145.0
+starting_screen = NodePath("Screens/VentScreen0")
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 
@@ -56,83 +51,77 @@ x_coordinate = 5
 snap_screen_to_position = true
 
 [node name="LabScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="6" unique_id=1269041260 instance=ExtResource("5_746ry")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
-y_coordinate = 3
-snap_screen_to_position = true
-
-[node name="LabScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=1003633205 instance=ExtResource("6_4o0c8")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
-y_coordinate = 3
-snap_screen_to_position = true
-
-[node name="LabScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="8" unique_id=867458720 instance=ExtResource("9_p8jpb")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
-y_coordinate = 3
-snap_screen_to_position = true
-
-[node name="VentScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="8" unique_id=219370521 instance=ExtResource("5_c3lvc")]
 position = Vector2(9600, 1080)
 x_coordinate = 5
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="VentScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=1185380728 instance=ExtResource("11_ul0lq")]
-position = Vector2(9600, 2160)
-x_coordinate = 5
-y_coordinate = 2
-snap_screen_to_position = true
-
-[node name="VentScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="10" unique_id=172263966 instance=ExtResource("12_dm3ff")]
-position = Vector2(11520, 2160)
-x_coordinate = 6
-y_coordinate = 2
-snap_screen_to_position = true
-
-[node name="VentScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="11" unique_id=277911350 instance=ExtResource("13_0k7vj")]
+[node name="LabScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=1003633205 instance=ExtResource("6_4o0c8")]
 position = Vector2(11520, 1080)
 x_coordinate = 6
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="TankScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="12" unique_id=1406921240 instance=ExtResource("7_l487u")]
+[node name="LabScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="8" unique_id=867458720 instance=ExtResource("9_p8jpb")]
+position = Vector2(11520, 0)
+x_coordinate = 6
+snap_screen_to_position = true
+
+[node name="VentScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=1089183794 instance=ExtResource("2_dft8s")]
+position = Vector2(13440, 0)
+x_coordinate = 7
+snap_screen_to_position = true
+
+[node name="VentScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="10" unique_id=54664977 instance=ExtResource("10_sp4yd")]
 position = Vector2(13440, 1080)
 x_coordinate = 7
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="TankScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="13" unique_id=58455881 instance=ExtResource("8_blkfd")]
+[node name="VentScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="11" unique_id=1993923944 instance=ExtResource("13_axdum")]
 position = Vector2(13440, 2160)
 x_coordinate = 7
 y_coordinate = 2
-[node name="VentScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=1935169186 instance=ExtResource("2_dft8s")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
+snap_screen_to_position = true
+
+[node name="VentScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="12" unique_id=74511387 instance=ExtResource("11_ul0lq")]
+position = Vector2(13440, 3240)
+x_coordinate = 7
 y_coordinate = 3
 snap_screen_to_position = true
 
-[node name="VentScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="10" unique_id=1917700277 instance=ExtResource("10_sp4yd")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
+[node name="VentScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="13" unique_id=1359278880 instance=ExtResource("12_dm3ff")]
+position = Vector2(15360, 3240)
+x_coordinate = 8
 y_coordinate = 3
 snap_screen_to_position = true
 
-[node name="VentScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="11" unique_id=1185380728 instance=ExtResource("5_c3lvc")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
+[node name="VentScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="14" unique_id=1557113961 instance=ExtResource("13_0k7vj")]
+position = Vector2(15360, 2160)
+x_coordinate = 8
+y_coordinate = 2
+snap_screen_to_position = true
+
+[node name="TankScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="15" unique_id=1869042808 instance=ExtResource("7_l487u")]
+position = Vector2(17280, 2160)
+x_coordinate = 9
+y_coordinate = 2
+snap_screen_to_position = true
+
+[node name="TankScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="16" unique_id=1227901653 instance=ExtResource("8_blkfd")]
+position = Vector2(17280, 3240)
+x_coordinate = 9
 y_coordinate = 3
 snap_screen_to_position = true
 
-[node name="TankScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="12" unique_id=1406921240 instance=ExtResource("7_l487u")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
-y_coordinate = 3
+[node name="TankScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="17" unique_id=941294562 instance=ExtResource("19_np4tc")]
+position = Vector2(19200, 2160)
+x_coordinate = 10
+y_coordinate = 2
 snap_screen_to_position = true
 
-[node name="TankScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="13" unique_id=58455881 instance=ExtResource("8_blkfd")]
-position = Vector2(7680, 3240)
-x_coordinate = 4
+[node name="TankScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="18" unique_id=18494149 instance=ExtResource("20_crsrk")]
+position = Vector2(19200, 3240)
+x_coordinate = 10
 y_coordinate = 3
 snap_screen_to_position = true
