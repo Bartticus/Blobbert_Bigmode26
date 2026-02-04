@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dejbnjn8eioj7" path="res://Scenes/WindTunnel/wind_tunnel.tscn" id="2_3gxxi"]
 [ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="3_d2pyo"]
 [ext_resource type="PackedScene" uid="uid://byh3j81if5jct" path="res://Scenes/VentDoor/vent_door.tscn" id="3_r0mnm"]
+[ext_resource type="PackedScene" uid="uid://bf0j3ms2oh0ia" path="res://Scenes/WindGust/wind_gust.tscn" id="5_wux2k"]
+[ext_resource type="PackedScene" uid="uid://ceybxmuaaxrkm" path="res://Scenes/WindGust/wind_gust_group.tscn" id="6_b7gho"]
 
 [node name="VentScreen2" unique_id=1360540123 instance=ExtResource("1_n84dt")]
 
@@ -48,82 +50,123 @@ polygon = PackedVector2Array(160.66656, -260, 161.33325, -314.00003, -188, -313.
 color = Color(0.43134022, 0.43134025, 0.43134025, 1)
 polygon = PackedVector2Array(160.66656, -260, 161.33325, -314.00003, -188, -313.99997, -188, -100.66666, 77.33331, -100)
 
-[node name="WindTunnel" parent="." index="8" unique_id=1958283733 instance=ExtResource("2_3gxxi")]
+[node name="GreasableObject" parent="." index="8" unique_id=1867482040 node_paths=PackedStringArray("triggerable_objects") instance=ExtResource("3_d2pyo")]
+position = Vector2(1842, 117)
+rotation = 0.7853982
+destroy_on_greased = false
+triggerable_objects = [NodePath("../WindTunnels/WindTunnel10"), NodePath("../WindTunnels/WindTunnel9"), NodePath("../WindTunnels/WindTunnel8"), NodePath("../WindTunnels/WindTunnel7"), NodePath("../WindTunnels/WindTunnel6"), NodePath("../VentDoor"), NodePath("../WindTunnels/WindTunnel11"), NodePath("../WindTunnels/WindTunnel12"), NodePath("../WindTunnels/WindTunnel13"), NodePath("../WindGustGroup/WindGust2"), NodePath("../WindGustGroup/WindGust6"), NodePath("../WindGustGroup/WindGust5"), NodePath("../WindGustGroup/WindGust7"), NodePath("../WindGustGroup")]
+grease_level = 0.2
+
+[node name="VentDoor" parent="." index="9" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
+position = Vector2(881, 960)
+rotation = -1.5707964
+
+[node name="WindTunnels" type="Node2D" parent="." index="11" unique_id=954798372]
+
+[node name="WindTunnel" parent="WindTunnels" index="0" unique_id=1958283733 instance=ExtResource("2_3gxxi")]
 position = Vector2(279, 650)
 scale = Vector2(1.7, 1.7)
 
-[node name="WindTunnel14" parent="." index="9" unique_id=1815601783 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel14" parent="WindTunnels" index="1" unique_id=1815601783 instance=ExtResource("2_3gxxi")]
 position = Vector2(580, 247.00006)
 rotation = -0.88763845
 scale = Vector2(1, 1.7)
 
-[node name="WindTunnel2" parent="." index="10" unique_id=251664602 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel2" parent="WindTunnels" index="2" unique_id=251664602 instance=ExtResource("2_3gxxi")]
 position = Vector2(168, 327)
 rotation = 1.5707964
 scale = Vector2(2, 2)
 
-[node name="WindTunnel3" parent="." index="11" unique_id=79831817 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel3" parent="WindTunnels" index="3" unique_id=79831817 instance=ExtResource("2_3gxxi")]
 position = Vector2(500.99994, 432.00003)
 rotation = -1.5707964
 scale = Vector2(2.1, 1.7)
 
-[node name="WindTunnel4" parent="." index="12" unique_id=1564793691 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel4" parent="WindTunnels" index="4" unique_id=1564793691 instance=ExtResource("2_3gxxi")]
 position = Vector2(617, 172.99995)
 scale = Vector2(1.3, 1.2)
 
-[node name="WindTunnel5" parent="." index="13" unique_id=959507755 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel5" parent="WindTunnels" index="5" unique_id=959507755 instance=ExtResource("2_3gxxi")]
 position = Vector2(891, 424)
 rotation = 1.0466845
 scale = Vector2(2, 2)
 
-[node name="WindTunnel6" parent="." index="14" unique_id=1471649837 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel6" parent="WindTunnels" index="6" unique_id=1471649837 instance=ExtResource("2_3gxxi")]
 position = Vector2(1150.0001, 690)
 scale = Vector2(1.2, 2.7)
 
-[node name="WindTunnel7" parent="." index="15" unique_id=2012885997 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel7" parent="WindTunnels" index="7" unique_id=2012885997 instance=ExtResource("2_3gxxi")]
 position = Vector2(1314.9999, 568.00006)
 rotation = -1.0911719
 scale = Vector2(1.7, 2)
 
-[node name="WindTunnel8" parent="." index="16" unique_id=12807880 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel8" parent="WindTunnels" index="8" unique_id=12807880 instance=ExtResource("2_3gxxi")]
 position = Vector2(1560, 409)
 scale = Vector2(1.3, 2)
 
-[node name="WindTunnel9" parent="." index="17" unique_id=965453758 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel9" parent="WindTunnels" index="9" unique_id=965453758 instance=ExtResource("2_3gxxi")]
 position = Vector2(1758, 312.99997)
 rotation = -1.5707964
 scale = Vector2(1.3, 2)
 
-[node name="WindTunnel10" parent="." index="18" unique_id=219422886 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel10" parent="WindTunnels" index="10" unique_id=219422886 instance=ExtResource("2_3gxxi")]
 position = Vector2(1356, 184)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(2, 1.3)
 wind_power = 80.0
 
-[node name="WindTunnel11" parent="." index="19" unique_id=1986627272 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel11" parent="WindTunnels" index="11" unique_id=1986627272 instance=ExtResource("2_3gxxi")]
 position = Vector2(1146.0001, 747)
 rotation = 1.5707964
 scale = Vector2(1, 3.75)
 active = false
 
-[node name="WindTunnel12" parent="." index="20" unique_id=1521023051 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel12" parent="WindTunnels" index="12" unique_id=1521023051 instance=ExtResource("2_3gxxi")]
 position = Vector2(1376, 897)
 scale = Vector2(3.2, 1.3)
 active = false
 
-[node name="WindTunnel13" parent="." index="21" unique_id=1929314721 instance=ExtResource("2_3gxxi")]
+[node name="WindTunnel13" parent="WindTunnels" index="13" unique_id=1929314721 instance=ExtResource("2_3gxxi")]
 position = Vector2(1729, 961)
 rotation = 1.5707964
 scale = Vector2(0.8, 2.5)
 active = false
 
-[node name="GreasableObject" parent="." index="22" unique_id=1867482040 node_paths=PackedStringArray("triggerable_objects") instance=ExtResource("3_d2pyo")]
-position = Vector2(1842, 117)
-rotation = 0.7853982
-destroy_on_greased = false
-triggerable_objects = [NodePath("../WindTunnel10"), NodePath("../WindTunnel9"), NodePath("../WindTunnel8"), NodePath("../WindTunnel7"), NodePath("../WindTunnel6"), NodePath("../VentDoor"), NodePath("../WindTunnel11"), NodePath("../WindTunnel12"), NodePath("../WindTunnel13")]
-grease_level = 0.2
+[node name="WindGustGroup" parent="." index="12" unique_id=1942551771 instance=ExtResource("6_b7gho")]
 
-[node name="VentDoor" parent="." index="23" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
-position = Vector2(881, 960)
-rotation = -1.5707964
+[node name="WindGust3" parent="WindGustGroup" index="0" unique_id=1850041282 instance=ExtResource("5_wux2k")]
+position = Vector2(236.99998, 151)
+rotation = 1.4740278
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust4" parent="WindGustGroup" index="1" unique_id=508913634 instance=ExtResource("5_wux2k")]
+position = Vector2(579.99994, 604.99994)
+rotation = -1.4919639
+scale = Vector2(0.3, -0.3)
+
+[node name="WindGust" parent="WindGustGroup" index="2" unique_id=384668559 instance=ExtResource("5_wux2k")]
+position = Vector2(878, 290)
+rotation = 0.848822
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust2" parent="WindGustGroup" index="3" unique_id=1542050757 instance=ExtResource("5_wux2k")]
+position = Vector2(1334, 608.00006)
+rotation = -0.5826618
+scale = Vector2(0.3, -0.3)
+
+[node name="WindGust6" parent="WindGustGroup" index="4" unique_id=1545277350 instance=ExtResource("5_wux2k")]
+position = Vector2(1510.0001, 118)
+rotation = -3.0072148
+scale = Vector2(0.3, -0.3)
+
+[node name="WindGust5" parent="WindGustGroup" index="5" unique_id=1411537859 instance=ExtResource("5_wux2k")]
+position = Vector2(1122, 766.0001)
+rotation = 0.16044907
+scale = Vector2(0.3, 0.3)
+active = false
+
+[node name="WindGust7" parent="WindGustGroup" index="6" unique_id=240787675 instance=ExtResource("5_wux2k")]
+position = Vector2(1810, 852.99994)
+rotation = 1.456087
+scale = Vector2(0.3, 0.3)
+active = false

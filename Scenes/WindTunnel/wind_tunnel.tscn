@@ -81,7 +81,7 @@ position = Vector2(150, 0)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1271001847]
 position = Vector2(-50, 0)
-amount = 4
+amount = 2
 texture = SubResource("GradientTexture2D_2q2ec")
 fixed_fps = 60
 interpolate = false

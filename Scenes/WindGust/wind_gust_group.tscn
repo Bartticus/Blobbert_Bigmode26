@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ceybxmuaaxrkm"]
+
+[ext_resource type="Script" uid="uid://pobmpkoj6n1j" path="res://Scenes/WindGust/wind_gust_group.gd" id="1_ta37h"]
+
+[node name="WindGustGroup" type="Node2D" unique_id=1942551771]
+script = ExtResource("1_ta37h")
