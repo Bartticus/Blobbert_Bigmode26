@@ -35,19 +35,23 @@ func _ready() -> void:
 
 func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#check if a new oil should spawn
-	var min_splat_speed: float = 500.0
+	if !oil_timer.is_stopped(): return
+	
+	var min_splat_speed: float = 0.0
 	if bone.in_oil_area or bone.linear_velocity.length() < min_splat_speed: return
 	
 	if body is CollisionObject2D:
 		if body.collision_layer != 1:
 			return
 	
-	if !oil_timer.is_stopped(): return
-	oil_timer.start()
+	#change softbody physics when an oil is created, reverted when that oil area is exited
+	softbody.physics_material_override.friction = 1.0
+	#softbody.mass = 0.2
 	
 	#instantiate
 	var oil: Oil = oil_scene.instantiate()
 	body.call_deferred("add_child", oil)
+	
 	
 	#set position
 	var state = PhysicsServer2D.body_get_direct_state(bone.get_rid())
@@ -58,14 +62,15 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#set scale
 	var bone_speed: float = bone.linear_velocity.length()
 	var scale_ratio: float = bone_speed / 1000
-	if scale_ratio > 2.0:
-		scale_ratio = 2.0
+	scale_ratio = clampf(scale_ratio, 0.3, 2.0)
 	oil.scale = oil.scale * scale_ratio
 	
 	#set rotation
 	oil.look_at(coll_pos + coll_normal)
 	oil.rotation_degrees += 90
-
+	
+	#cooldown period
+	oil_timer.start()
 
 func _on_bone_collision(body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
 	if body is TileMapLayer:
@@ -79,7 +84,6 @@ func set_tile_oil(body: TileMapLayer, body_rid: RID):
 		body.get_cell_atlas_coords(collided_tile_coords),
 		1
 	)
-	
 
 func set_status(new_status) -> void:
 	status = new_status
@@ -120,18 +124,7 @@ func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
 		if overlapping_area.name == 'ScreenSpace':
 			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor
 
-func get_tile_oil() -> float:
-	var tilemap: TileMapLayer = get_tree().get_first_node_in_group("tilemap")
-	
-	if not tilemap:
-		return 1
-	
-	var cell := tilemap.local_to_map(position)
-	var data: TileData = tilemap.get_cell_tile_data(cell)
-	
-	if data:
-		var oil_level: float = data.get_custom_data("oil")
-		if oil_level > 0:
-			return oil_level
-	
-	return 1
+func _on_oil_detector_area_exited(area: Area2D) -> void:
+	if area is Oil:
+		softbody.physics_material_override.friction = 0.2
+		#softbody.mass = 0.05
