@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_ni8rx"]
 [ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="2_b30rn"]
 [ext_resource type="Script" uid="uid://dxarn4g08ug8" path="res://Scenes/Screens/glass_panes.gd" id="2_vtyri"]
-[ext_resource type="Shader" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
+[ext_resource type="Shader" uid="uid://c0x8wa31e6iip" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
 [ext_resource type="Texture2D" uid="uid://dptauq5wft3cf" path="res://Assets/Sprites/Contained_v2.png" id="5_yco6c"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="6_yco6c"]
 
@@ -160,6 +160,8 @@ texture = ExtResource("5_yco6c")
 [node name="StaticBody2D" type="StaticBody2D" parent="ContainerSprite" index="0" unique_id=36267710]
 position = Vector2(-372.76822, -402.10254)
 scale = Vector2(0.32871976, 0.40371737)
+collision_layer = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContainerSprite/StaticBody2D" index="0" unique_id=1857934752]
 position = Vector2(1217.9293, -1885.8372)

@@ -5,7 +5,7 @@ extends Node2D
 @export var bodies: Array[Bone] = []
 
 @export var oil_scene: PackedScene
-@export var oils_parent: Node2D
+@export var oil_timer: Timer
 
 @export var face_pivot: Node2D
 @export var face_array: Array[Sprite2D]
@@ -35,12 +35,15 @@ func _ready() -> void:
 
 func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#check if a new oil should spawn
-	var min_speed: float = 100.0
-	if bone.in_oil_area or bone.linear_velocity.length() < min_speed: return
+	var min_splat_speed: float = 500.0
+	if bone.in_oil_area or bone.linear_velocity.length() < min_splat_speed: return
 	
 	if body is CollisionObject2D:
 		if body.collision_layer != 1:
 			return
+	
+	if !oil_timer.is_stopped(): return
+	oil_timer.start()
 	
 	#instantiate
 	var oil: Oil = oil_scene.instantiate()
@@ -48,9 +51,9 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	
 	#set position
 	var state = PhysicsServer2D.body_get_direct_state(bone.get_rid())
-	var coll_pos = state.get_contact_collider_position(0)
+	var coll_pos = state.get_contact_collider_position(0) - body.global_position
 	var coll_normal = state.get_contact_local_normal(0)
-	oil.global_position = coll_pos - body.global_position
+	oil.global_position = coll_pos
 	
 	#set scale
 	var bone_speed: float = bone.linear_velocity.length()
@@ -60,11 +63,9 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	oil.scale = oil.scale * scale_ratio
 	
 	#set rotation
-	oil.look_at(coll_pos - body.global_position + coll_normal)
+	oil.look_at(coll_pos + coll_normal)
 	oil.rotation_degrees += 90
-	
-	#prevent more oils from spawning
-	bone.oil_areas_int += 1
+
 
 func _on_bone_collision(body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
 	if body is TileMapLayer:

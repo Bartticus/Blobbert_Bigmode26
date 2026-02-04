@@ -1,13 +1,13 @@
 class_name Oil
 extends Area2D
 
-@onready var splatter_sprites: AnimatedSprite2D = $SplatterClipMask/Splatters
+@onready var splatter_sprites: AnimatedSprite2D = $Splatters
 @onready var fire_sprite: Sprite2D = $Fire
 @onready var adj_oil_checker: Area2D = $AdjacentOilChecker
 
 
 func _ready() -> void:
-	splatter_sprites.frame = randi_range(0,2)
+	splatter_sprites.frame = randi_range(0,3)
 
 func _on_timer_timeout() -> void:
 	for area in adj_oil_checker.get_overlapping_areas():

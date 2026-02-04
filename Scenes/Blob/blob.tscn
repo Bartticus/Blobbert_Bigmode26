@@ -300,10 +300,11 @@ load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47mic"]
 
-[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "face_pivot", "rand_face_timer", "set_face_timer")]
+[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "oil_timer", "face_pivot", "rand_face_timer", "set_face_timer")]
 script = ExtResource("1_u3aeq")
 softbody = NodePath("Softbody")
 oil_scene = ExtResource("2_074og")
+oil_timer = NodePath("OilCooldownTimer")
 face_pivot = NodePath("BlobCenter/FacePivot")
 rand_face_timer = NodePath("RandFaceTimer")
 set_face_timer = NodePath("SetFaceTimer")
@@ -328,7 +329,7 @@ shape_type = "Circle"
 margin_offset_edge = 6.0
 mass = 0.05
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 rigidbody_scene = ExtResource("5_hnblv")
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 metadata/_custom_type_script = "uid://kol6k5y6rb8a"
@@ -773,7 +774,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-0" parent="Softbody" unique_id=702735613 instance=ExtResource("5_hnblv")]
 position = Vector2(33.796516, 35.742577)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -827,7 +828,7 @@ metadata/joint_distance = 24.966547
 [node name="Bone-1" parent="Softbody" unique_id=992095520 instance=ExtResource("5_hnblv")]
 position = Vector2(31.543972, 60.6073)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -903,7 +904,7 @@ metadata/joint_distance = 21.050316
 [node name="Bone-2" parent="Softbody" unique_id=1684394582 instance=ExtResource("5_hnblv")]
 position = Vector2(17.136238, 75.954384)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -957,7 +958,7 @@ metadata/joint_distance = 26.230757
 [node name="Bone-3" parent="Softbody" unique_id=739216749 instance=ExtResource("5_hnblv")]
 position = Vector2(31.92547, 89.18732)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1044,7 +1045,7 @@ metadata/joint_distance = 27.521526
 [node name="Bone-4" parent="Softbody" unique_id=331243881 instance=ExtResource("5_hnblv")]
 position = Vector2(16.909386, 102.18416)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1098,7 +1099,7 @@ metadata/joint_distance = 19.859522
 [node name="Bone-5" parent="Softbody" unique_id=1331220246 instance=ExtResource("5_hnblv")]
 position = Vector2(31.631039, 116.70727)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1174,7 +1175,7 @@ metadata/joint_distance = 29.110344
 [node name="Bone-6" parent="Softbody" unique_id=1237344476 instance=ExtResource("5_hnblv")]
 position = Vector2(35.556145, 139.0818)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1217,7 +1218,7 @@ metadata/joint_distance = 19.977468
 [node name="Bone-7" parent="Softbody" unique_id=933337739 instance=ExtResource("5_hnblv")]
 position = Vector2(79.30493, 14.982054)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1271,7 +1272,7 @@ metadata/joint_distance = 25.286957
 [node name="Bone-8" parent="Softbody" unique_id=1190372847 instance=ExtResource("5_hnblv")]
 position = Vector2(55.610523, 23.81411)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1336,7 +1337,7 @@ metadata/joint_distance = 26.079681
 [node name="Bone-9" parent="Softbody" unique_id=1272047304 instance=ExtResource("5_hnblv")]
 position = Vector2(78.693, 35.95285)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1423,7 +1424,7 @@ metadata/joint_distance = 29.812706
 [node name="Bone-10" parent="Softbody" unique_id=1496941762 instance=ExtResource("5_hnblv")]
 position = Vector2(55.923813, 49.50558)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1510,7 +1511,7 @@ metadata/joint_distance = 28.759493
 [node name="Bone-11" parent="Softbody" unique_id=495641870 instance=ExtResource("5_hnblv")]
 position = Vector2(79.65623, 65.74999)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1597,7 +1598,7 @@ metadata/joint_distance = 19.720783
 [node name="Bone-12" parent="Softbody" unique_id=1499883698 instance=ExtResource("5_hnblv")]
 position = Vector2(57.827324, 76.26191)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1684,7 +1685,7 @@ metadata/joint_distance = 25.590471
 [node name="Bone-13" parent="Softbody" unique_id=618576727 instance=ExtResource("5_hnblv")]
 position = Vector2(81.74597, 85.35974)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1771,7 +1772,7 @@ metadata/joint_distance = 28.862173
 [node name="Bone-14" parent="Softbody" unique_id=517217496 instance=ExtResource("5_hnblv")]
 position = Vector2(56.861084, 101.53672)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1858,7 +1859,7 @@ metadata/joint_distance = 25.416487
 [node name="Bone-15" parent="Softbody" unique_id=761635410 instance=ExtResource("5_hnblv")]
 position = Vector2(78.96263, 114.087395)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -1945,7 +1946,7 @@ metadata/joint_distance = 27.945272
 [node name="Bone-16" parent="Softbody" unique_id=1750148080 instance=ExtResource("5_hnblv")]
 position = Vector2(54.920765, 134.17154)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2021,7 +2022,7 @@ metadata/joint_distance = 24.887804
 [node name="Bone-17" parent="Softbody" unique_id=497827085 instance=ExtResource("5_hnblv")]
 position = Vector2(78.53552, 142.0294)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2086,7 +2087,7 @@ metadata/joint_distance = 24.887804
 [node name="Bone-18" parent="Softbody" unique_id=1769509709 instance=ExtResource("5_hnblv")]
 position = Vector2(102.20804, 22.632729)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2151,7 +2152,7 @@ metadata/joint_distance = 27.700594
 [node name="Bone-19" parent="Softbody" unique_id=1883706201 instance=ExtResource("5_hnblv")]
 position = Vector2(125.18107, 31.557846)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2216,7 +2217,7 @@ metadata/joint_distance = 31.065823
 [node name="Bone-20" parent="Softbody" unique_id=772785505 instance=ExtResource("5_hnblv")]
 position = Vector2(101.13427, 50.312504)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2303,7 +2304,7 @@ metadata/joint_distance = 26.410988
 [node name="Bone-21" parent="Softbody" unique_id=597307048 instance=ExtResource("5_hnblv")]
 position = Vector2(124.50427, 62.616295)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2390,7 +2391,7 @@ metadata/joint_distance = 26.347486
 [node name="Bone-22" parent="Softbody" unique_id=756786834 instance=ExtResource("5_hnblv")]
 position = Vector2(98.27844, 77.0343)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2477,7 +2478,7 @@ metadata/joint_distance = 28.34656
 [node name="Bone-23" parent="Softbody" unique_id=795612949 instance=ExtResource("5_hnblv")]
 position = Vector2(123.99483, 88.958855)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2564,7 +2565,7 @@ metadata/joint_distance = 29.132725
 [node name="Bone-24" parent="Softbody" unique_id=1461270447 instance=ExtResource("5_hnblv")]
 position = Vector2(100.05187, 100.4159)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2651,7 +2652,7 @@ metadata/joint_distance = 33.70776
 [node name="Bone-25" parent="Softbody" unique_id=1336914349 instance=ExtResource("5_hnblv")]
 position = Vector2(129.01764, 117.65532)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2727,7 +2728,7 @@ metadata/joint_distance = 22.676413
 [node name="Bone-26" parent="Softbody" unique_id=1746417813 instance=ExtResource("5_hnblv")]
 position = Vector2(101.85848, 129.3664)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2814,7 +2815,7 @@ metadata/joint_distance = 23.499525
 [node name="Bone-27" parent="Softbody" unique_id=1209419564 instance=ExtResource("5_hnblv")]
 position = Vector2(123.045815, 139.53127)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2868,7 +2869,7 @@ metadata/joint_distance = 23.499525
 [node name="Bone-28" parent="Softbody" unique_id=1388792513 instance=ExtResource("5_hnblv")]
 position = Vector2(101.04393, 148.67657)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2922,7 +2923,7 @@ metadata/joint_distance = 19.327353
 [node name="Bone-29" parent="Softbody" unique_id=1196687588 instance=ExtResource("5_hnblv")]
 position = Vector2(142.76993, 49.573624)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -2976,7 +2977,7 @@ metadata/joint_distance = 26.148672
 [node name="Bone-30" parent="Softbody" unique_id=1673665612 instance=ExtResource("5_hnblv")]
 position = Vector2(144.98172, 75.628586)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -3041,7 +3042,7 @@ metadata/joint_distance = 27.424793
 [node name="Bone-31" parent="Softbody" unique_id=41525913 instance=ExtResource("5_hnblv")]
 position = Vector2(145.60905, 103.0462)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_dp05e")
 contact_monitor = true
@@ -3195,6 +3196,10 @@ one_shot = true
 autostart = true
 
 [node name="SetFaceTimer" type="Timer" parent="." unique_id=1275471261]
+
+[node name="OilCooldownTimer" type="Timer" parent="." unique_id=742599271]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="area_exited" from="BlobCenter/BlobLevelTransitionArea" to="." method="_on_blob_level_transition_area_area_exited"]
 [connection signal="timeout" from="RandFaceTimer" to="." method="_on_rand_face_timer_timeout"]

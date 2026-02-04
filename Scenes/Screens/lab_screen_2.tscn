@@ -21,17 +21,19 @@ tile_map_data = PackedByteArray("AAAAAD8AAAAEAAAAAAAAAEAAAAAEAAEAAAAAAEEAAAAEAAI
 
 [node name="Card0" type="RigidBody2D" parent="Cards" index="0" unique_id=458877334]
 position = Vector2(900, 877)
-rotation = 0.2617994
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card0" index="0" unique_id=1406118182]
+rotation = 0.2617994
 scale = Vector2(1.0000005, 1.0000005)
 shape = SubResource("RectangleShape2D_rfvml")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cards/Card0" index="1" unique_id=2042239770]
+rotation = 0.2617994
 scale = Vector2(0.0625, 2.0953314)
 texture = ExtResource("2_rfvml")
 
@@ -39,7 +41,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(978, 877.00006)
 rotation = -0.2617994
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -55,7 +58,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1127, 877.00006)
 rotation = 0.2617994
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -71,7 +75,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1205, 877.0001)
 rotation = -0.2617994
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -87,7 +92,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1347, 877.00006)
 rotation = 0.2617994
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -103,7 +109,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1425, 877.0001)
 rotation = -0.2617994
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -119,7 +126,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1048, 740.00006)
 rotation = -1.5707964
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -135,7 +143,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1279.0001, 731.00006)
 rotation = -1.5029199
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -151,7 +160,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1000, 603.00006)
 rotation = 0.26179937
 scale = Vector2(0.9999999, 0.9999999)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -167,7 +177,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1078, 603.00006)
 rotation = -0.26179937
 scale = Vector2(0.9999999, 0.9999999)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -183,7 +194,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1232, 594.00006)
 rotation = 0.37420988
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -199,7 +211,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1310, 594.00006)
 rotation = -0.14938888
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -215,7 +228,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1160.9999, 458.00006)
 rotation = -1.6120653
 scale = Vector2(0.99999994, 0.99999994)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -231,7 +245,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1123, 315)
 rotation = 0.26179937
 scale = Vector2(0.9999999, 0.9999999)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
@@ -247,7 +262,8 @@ texture = ExtResource("2_rfvml")
 position = Vector2(1201, 315.00006)
 rotation = -0.26179937
 scale = Vector2(0.9999999, 0.9999999)
-collision_mask = 3
+collision_layer = 16
+collision_mask = 19
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
