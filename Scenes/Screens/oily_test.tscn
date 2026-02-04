@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://ch3bv604w213f"]
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_k3qkj"]
+[ext_resource type="PackedScene" uid="uid://rqcw3dnc53r2" path="res://Scenes/Oil/oil.tscn" id="2_k3qkj"]
 
 [node name="OilyTest" unique_id=1360540123 instance=ExtResource("1_k3qkj")]
 
