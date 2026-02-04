@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://rqcw3dnc53r2"]
+
+[ext_resource type="Script" uid="uid://duhmxupd883qo" path="res://Scenes/Oil/oil.gd" id="1_0cryj"]
+[ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="1_g244k"]
+[ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="2_0cryj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nah6m"]
+size = Vector2(214, 84)
+
+[node name="Oil" type="Area2D" unique_id=317438472]
+z_index = 11
+collision_layer = 8
+collision_mask = 10
+script = ExtResource("1_0cryj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620871536]
+shape = SubResource("RectangleShape2D_nah6m")
+
+[node name="Splatter" type="Sprite2D" parent="." unique_id=677086347]
+position = Vector2(5, 21)
+scale = Vector2(0.45079374, 0.0990567)
+texture = ExtResource("1_g244k")
+
+[node name="Fire" type="Sprite2D" parent="." unique_id=784809416]
+visible = false
+texture = ExtResource("2_0cryj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1506223997]
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

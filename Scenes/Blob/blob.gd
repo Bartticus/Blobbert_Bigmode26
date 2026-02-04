@@ -4,6 +4,9 @@ extends Node2D
 @export var softbody: SoftBody2D
 @export var bodies: Array[Bone] = []
 
+@export var oil_scene: PackedScene
+@export var oils_parent: Node2D
+
 @export var face_pivot: Node2D
 @export var face_array: Array[Sprite2D]
 @export var rand_face_timer: Timer
@@ -22,10 +25,24 @@ func _ready() -> void:
 	for child in softbody.get_children():
 		if child is Bone:
 			bodies.append(child)
+			child.connect("body_entered", _on_bone_body_entered.bind(child))
 	
 	for child in face_pivot.get_children():
 		if child is Sprite2D:
 			face_array.append(child)
+
+func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
+	if bone.in_oil_area: return
+	
+	if body is CollisionObject2D:
+		if body.collision_layer != 1:
+			return
+	
+	var oil: Oil = oil_scene.instantiate()
+	oils_parent.call_deferred("add_child", oil)
+	oil.global_position = bone.global_position
+	
+	bone.oil_areas_int += 1
 
 
 func set_status(new_status) -> void:

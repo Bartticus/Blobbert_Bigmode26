@@ -163,12 +163,15 @@ z_index = 10
 [node name="ScreenAnchor" type="Marker2D" parent="." unique_id=978106617]
 unique_name_in_owner = true
 
-[node name="ScreenBlob" parent="." unique_id=104221436 instance=ExtResource("4_eipx4")]
+[node name="ScreenBlob" parent="." unique_id=104221436 node_paths=PackedStringArray("oils_parent") instance=ExtResource("4_eipx4")]
 unique_name_in_owner = true
 z_index = 3
 position = Vector2(221, 167)
+oils_parent = NodePath("../Oils")
 
 [node name="ScreenTileMapLayer" type="TileMapLayer" parent="." unique_id=2053691136]
 unique_name_in_owner = true
 z_index = 10
 tile_set = SubResource("TileSet_3ang3")
+
+[node name="Oils" type="Node2D" parent="." unique_id=70454373]
