@@ -58,8 +58,8 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	oil.scale = oil.scale * scale_ratio
 	
 	#set rotation
-	oil.look_at(coll_pos + coll_normal)
-	#oil.rotation_degrees += 90
+	oil.look_at(coll_pos - body.global_position + coll_normal)
+	oil.rotation_degrees += 90
 	
 	#prevent more oils from spawning
 	bone.oil_areas_int += 1
