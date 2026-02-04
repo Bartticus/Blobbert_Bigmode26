@@ -13,8 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ci6hjglcdc31b" path="res://Scenes/Screens/lab_screen_5.tscn" id="9_p8jpb"]
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="10_sp4yd"]
 
-[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-starting_screen = NodePath("Screens/LabScreen3")
+[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
 
 [node name="FullKeeb" parent="." index="0" unique_id=1939036362]
 x_offset = 145.0
