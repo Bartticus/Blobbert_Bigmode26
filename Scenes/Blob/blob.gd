@@ -26,7 +26,8 @@ func _ready() -> void:
 		if child is Bone:
 			bodies.append(child)
 			child.connect("body_entered", _on_bone_body_entered.bind(child))
-			child.connect("body_shape_entered", _on_bone_collision)
+			# Uncomment this to add oil to tilemap
+			# child.connect("body_shape_entered", _on_bone_collision)
 	
 	for child in face_pivot.get_children():
 		if child is Sprite2D:
@@ -64,6 +65,7 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	
 	#prevent more oils from spawning
 	bone.oil_areas_int += 1
+
 func _on_bone_collision(body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
 	if body is TileMapLayer:
 		set_tile_oil(body, body_rid)
