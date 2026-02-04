@@ -1,8 +1,7 @@
 class_name Oil
 extends Area2D
 
-@onready var splatter_sprites: AnimatedSprite2D = $Splatters
-@onready var splatter_sprite: Sprite2D = $Splatter
+@onready var splatter_sprites: AnimatedSprite2D = $SplatterClipMask/Splatters
 @onready var fire_sprite: Sprite2D = $Fire
 @onready var adj_oil_checker: Area2D = $AdjacentOilChecker
 
