@@ -33,45 +33,6 @@ func _ready() -> void:
 		if child is Sprite2D:
 			face_array.append(child)
 
-func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
-	#check if a new oil should spawn
-	if !oil_timer.is_stopped(): return
-	
-	var min_splat_speed: float = 0.0
-	if bone.in_oil_area or bone.linear_velocity.length() < min_splat_speed: return
-	
-	if body is CollisionObject2D:
-		if body.collision_layer != 1:
-			return
-	
-	#change softbody physics when an oil is created, reverted when that oil area is exited
-	softbody.physics_material_override.friction = 1.0
-	#softbody.mass = 0.2
-	
-	#instantiate
-	var oil: Oil = oil_scene.instantiate()
-	body.call_deferred("add_child", oil)
-	
-	
-	#set position
-	var state = PhysicsServer2D.body_get_direct_state(bone.get_rid())
-	var coll_pos = state.get_contact_collider_position(0) - body.global_position
-	var coll_normal = state.get_contact_local_normal(0)
-	oil.global_position = coll_pos
-	
-	#set scale
-	var bone_speed: float = bone.linear_velocity.length()
-	var scale_ratio: float = bone_speed / 1000
-	scale_ratio = clampf(scale_ratio, 0.3, 2.0)
-	oil.scale = oil.scale * scale_ratio
-	
-	#set rotation
-	oil.look_at(coll_pos + coll_normal)
-	oil.rotation_degrees += 90
-	
-	#cooldown period
-	oil_timer.start()
-
 func _on_bone_collision(body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
 	if body is TileMapLayer:
 		set_tile_oil(body, body_rid)
@@ -115,7 +76,10 @@ func _on_set_face_timer_timeout() -> void:
 	set_status(Status.DEFAULT)
 
 func _process(_delta: float) -> void:
-	%SwirlRect.global_position = %"Bone-13".global_position - Vector2(270+82,244+87)
+	var center_pos = softbody.get_bones_center_position()
+	%BlobCenter.global_position = center_pos
+	%SwirlRect.global_position = center_pos - Vector2(270+82,244+87)
+	
 	if Input.is_action_just_pressed('reset'):
 		get_tree().reload_current_scene()
 
@@ -123,8 +87,47 @@ func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
 		if overlapping_area.name == 'ScreenSpace':
 			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor
+var newly_spawned_oil: Oil
+func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
+	#check if a new oil should spawn
+	if !oil_timer.is_stopped(): return
+	
+	if bone.in_oil_area: return
+	
+	if body is CollisionObject2D:
+		if body.collision_layer != 1:
+			return
+	
+	#change softbody physics when an oil is created, reverted when that oil area is exited
+	softbody.physics_material_override.friction = 1.0
+	#softbody.mass = 0.2
+	
+	#instantiate
+	var oil: Oil = oil_scene.instantiate()
+	body.call_deferred("add_child", oil)
+	newly_spawned_oil = oil
+	
+	#set position
+	var state = PhysicsServer2D.body_get_direct_state(bone.get_rid())
+	var coll_pos = state.get_contact_collider_position(0) - body.global_position
+	var coll_normal = state.get_contact_local_normal(0)
+	oil.global_position = coll_pos
+	
+	#set scale
+	var bone_speed: float = bone.linear_velocity.length()
+	var scale_ratio: float = bone_speed / 1000
+	scale_ratio = clampf(scale_ratio, 0.3, 2.0)
+	oil.scale = oil.scale * scale_ratio
+	
+	#set rotation
+	oil.look_at(coll_pos + coll_normal)
+	oil.rotation_degrees += 90
+	
+	#cooldown period
+	oil_timer.start()
 
 func _on_oil_detector_area_exited(area: Area2D) -> void:
 	if area is Oil:
-		softbody.physics_material_override.friction = 0.2
-		#softbody.mass = 0.05
+		if area == newly_spawned_oil:
+			softbody.physics_material_override.friction = 0.2
+			#softbody.mass = 0.05
