@@ -120,7 +120,7 @@ shader_parameter/colour_1 = Color(0.357734, 0.37440592, 0.11599128, 1)
 shader_parameter/colour_2 = Color(0.117763855, 0.16614108, 0.5212294, 1)
 shader_parameter/colour_3 = Color(0, 0, 0.101960786, 1)
 shader_parameter/contrast = 2.0
-shader_parameter/spin_amount = 0.625
+shader_parameter/spin_amount = 0.855
 shader_parameter/pixel_filter = 10000.0
 
 [node name="Oil" type="Area2D" unique_id=317438472]
@@ -155,10 +155,10 @@ sprite_frames = SubResource("SpriteFrames_usf6k")
 [node name="SwirlRect" type="ColorRect" parent="Splatters" unique_id=1801660683]
 modulate = Color(1.8832343, 1.8832343, 1.8832343, 1)
 material = SubResource("ShaderMaterial_52bxo")
-offset_left = -1137.7776
-offset_top = -1202.0873
-offset_right = 761.90454
-offset_bottom = 1057.3915
+offset_left = -713.14276
+offset_top = -1024.0002
+offset_right = 446.9842
+offset_bottom = 1146.435
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
