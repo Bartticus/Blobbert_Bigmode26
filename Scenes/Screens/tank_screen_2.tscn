@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bnq5k1xk7y6vw"]
+
+[ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_cbu4q"]
+
+[node name="TankScreen2" unique_id=1360540123 instance=ExtResource("1_cbu4q")]

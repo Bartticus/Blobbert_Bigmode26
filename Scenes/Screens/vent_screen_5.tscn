@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d1ktnvve3etl4"]
+
+[ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_o2y5c"]
+[ext_resource type="PackedScene" uid="uid://dejbnjn8eioj7" path="res://Scenes/WindTunnel/wind_tunnel.tscn" id="2_dnt7i"]
+
+[node name="VentScreen5" unique_id=1360540123 instance=ExtResource("1_o2y5c")]
+
+[node name="ScreenBlob" parent="." index="3" unique_id=104221436]
+position = Vector2(592, 1036)
+
+[node name="WindTunnels" type="Node2D" parent="." index="5" unique_id=1881187196]
+
+[node name="WindTunnel" parent="WindTunnels" index="0" unique_id=1958283733 instance=ExtResource("2_dnt7i")]
+position = Vector2(590, 1155)
+rotation = -1.5707964
+scale = Vector2(2, 1.3)
+wind_power = 150.0
+
+[node name="WindTunnel6" parent="WindTunnels" index="1" unique_id=583511630 instance=ExtResource("2_dnt7i")]
+position = Vector2(1043, 547.99994)
+rotation = 5.641122
+scale = Vector2(4, 1.3)
+wind_power = 150.0
+
+[node name="WindTunnel2" parent="WindTunnels" index="2" unique_id=1209783209 instance=ExtResource("2_dnt7i")]
+position = Vector2(1785, 201)
+scale = Vector2(2, 1.3)
+wind_power = 200.0
+
+[node name="VentGeometry" type="Node2D" parent="." index="6" unique_id=1106560292]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="VentGeometry" index="0" unique_id=1769395857]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VentGeometry/StaticBody2D4" index="0" unique_id=20939785]
+polygon = PackedVector2Array(0, 0, -2, 1079, 524, 1079, 524, 854, 1488, 134, 1866, 134, 1920, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D4" index="1" unique_id=1764832351]
+color = Color(0.3553134, 0.35531363, 0.3553135, 1)
+polygon = PackedVector2Array(0, 0, -2, 1079, 524, 1079, 524, 854, 1488, 134, 1866, 134, 1920, 0)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="VentGeometry" index="1" unique_id=856548635]
+position = Vector2(656, 920)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VentGeometry/StaticBody2D5" index="0" unique_id=1289345580]
+polygon = PackedVector2Array(0, 0, 0, 160, 1265, 160, 1264, -519, 1207, -652, 873, -652)
+
+[node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D5" index="1" unique_id=1875940828]
+color = Color(0.35686275, 0.35686275, 0.35686275, 1)
+polygon = PackedVector2Array(0, 0, 0, 160, 1265, 160, 1264, -519, 1207, -652, 873, -652)
