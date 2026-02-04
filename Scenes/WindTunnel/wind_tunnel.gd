@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var wind_power: float = 80.0
+@export var wind_power: float = 100.0
 @export var active: bool = true
 
 @onready var start_location: Vector2 = %StartLocation.global_position

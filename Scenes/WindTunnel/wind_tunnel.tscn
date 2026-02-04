@@ -11,7 +11,7 @@ colors = PackedColorArray(0.92535293, 0.9253529, 0.9253527, 1, 0.641934, 0.64193
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2q2ec"]
 gradient = SubResource("Gradient_wwxdv")
 width = 1
-height = 5
+height = 8
 
 [sub_resource type="Curve" id="Curve_28fct"]
 _data = [Vector2(0, 0.1490537), 0.0, 0.0, 0, 0, Vector2(0.509434, 0.37460572), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -30,9 +30,14 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, -0.0047317743), 0.0, 0.0, 0, 0, Vector2(0.2528302, 1), 0.0, 0.0, 0, 0, Vector2(0.5056604, -1), 0.0, 0.0, 0, 0, Vector2(0.75471705, 1), 0.0, 0.0, 0, 0, Vector2(1, -0.0047317743), 0.0, 0.0, 0, 0]
 point_count = 5
 
+[sub_resource type="Curve" id="Curve_virxl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveXYZTexture" id="CurveXYZTexture_virxl"]
 curve_x = SubResource("Curve_2q2ec")
 curve_y = SubResource("Curve_wwxdv")
+curve_z = SubResource("Curve_virxl")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wwxdv"]
 particle_flag_align_y = true
@@ -76,7 +81,7 @@ position = Vector2(150, 0)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1271001847]
 position = Vector2(-50, 0)
-amount = 2
+amount = 4
 texture = SubResource("GradientTexture2D_2q2ec")
 fixed_fps = 60
 interpolate = false

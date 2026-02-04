@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://uljbukkldo18"]
 
-[ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="1_7b40t"]
+[ext_resource type="Shader" path="res://Scenes/Blob/squiggle.gdshader" id="1_7b40t"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
 
