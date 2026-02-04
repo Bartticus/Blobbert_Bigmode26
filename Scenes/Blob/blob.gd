@@ -26,6 +26,7 @@ func _ready() -> void:
 		if child is Bone:
 			bodies.append(child)
 			child.connect("body_entered", _on_bone_body_entered.bind(child))
+			child.connect("body_shape_entered", _on_bone_collision)
 	
 	for child in face_pivot.get_children():
 		if child is Sprite2D:
@@ -64,6 +65,19 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	
 	#prevent more oils from spawning
 	bone.oil_areas_int += 1
+func _on_bone_collision(body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
+	if body is TileMapLayer:
+		set_tile_oil(body, body_rid)
+
+func set_tile_oil(body: TileMapLayer, body_rid: RID):
+	var collided_tile_coords = body.get_coords_for_body_rid(body_rid)
+	body.set_cell(
+		collided_tile_coords,
+		body.get_cell_source_id(collided_tile_coords),
+		body.get_cell_atlas_coords(collided_tile_coords),
+		1
+	)
+	
 
 func set_status(new_status) -> void:
 	status = new_status
@@ -99,8 +113,23 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed('reset'):
 		get_tree().reload_current_scene()
 
-
 func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
 		if overlapping_area.name == 'ScreenSpace':
 			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor
+
+func get_tile_oil() -> float:
+	var tilemap: TileMapLayer = get_tree().get_first_node_in_group("tilemap")
+	
+	if not tilemap:
+		return 1
+	
+	var cell := tilemap.local_to_map(position)
+	var data: TileData = tilemap.get_cell_tile_data(cell)
+	
+	if data:
+		var oil_level: float = data.get_custom_data("oil")
+		if oil_level > 0:
+			return oil_level
+	
+	return 1
