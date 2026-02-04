@@ -32,18 +32,38 @@ func _ready() -> void:
 			face_array.append(child)
 
 func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
-	if bone.in_oil_area: return
+	#check if a new oil should spawn
+	var min_speed: float = 100.0
+	if bone.in_oil_area or bone.linear_velocity.length() < min_speed: return
 	
 	if body is CollisionObject2D:
 		if body.collision_layer != 1:
 			return
 	
+	#instantiate
 	var oil: Oil = oil_scene.instantiate()
 	oils_parent.call_deferred("add_child", oil)
-	oil.global_position = bone.global_position
 	
+	#set position
+	var state = PhysicsServer2D.body_get_direct_state(bone.get_rid())
+	var coll_pos = state.get_contact_collider_position(0)
+	var coll_normal = state.get_contact_local_normal(0)
+	oil.global_position = coll_pos
+	
+	#set scale
+	var bone_speed: float = bone.linear_velocity.length()
+	var scale_ratio: float = bone_speed / 1000
+	if scale_ratio > 2.0:
+		scale_ratio = 2.0
+	oil.scale = oil.scale * scale_ratio
+	
+	
+	#set rotation
+	oil.look_at(coll_pos + coll_normal)
+	oil.rotation_degrees += 90
+	
+	#prevent more oils from spawning
 	bone.oil_areas_int += 1
-
 
 func set_status(new_status) -> void:
 	status = new_status

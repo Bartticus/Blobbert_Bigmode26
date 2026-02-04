@@ -19,3 +19,7 @@ func set_status(new_status) -> void:
 	status = new_status
 	# match status:
 	# 	pass
+
+#func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	#var state = PhysicsServer2D.body_get_direct_state(get_rid())
+	#var normal = state.get_contact_local_normal(i)

@@ -3,20 +3,45 @@
 [ext_resource type="Script" uid="uid://duhmxupd883qo" path="res://Scenes/Oil/oil.gd" id="1_0cryj"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="1_g244k"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="2_0cryj"]
+[ext_resource type="Texture2D" uid="uid://ckx3a45lnxext" path="res://Assets/Sprites/splat02.png" id="4_52bxo"]
+[ext_resource type="Texture2D" uid="uid://c61eh81u1pd8p" path="res://Assets/Sprites/splat10.png" id="5_hxxqu"]
+[ext_resource type="Texture2D" uid="uid://cyeobqb6ndqb1" path="res://Assets/Sprites/splat35.png" id="6_33feg"]
+[ext_resource type="Material" uid="uid://sbpm02fsabvw" path="res://Scenes/Blob/swirl_material.tres" id="7_hxxqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nah6m"]
-size = Vector2(214, 84)
+size = Vector2(182, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cryj"]
+size = Vector2(314, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_usf6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_52bxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hxxqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_33feg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Oil" type="Area2D" unique_id=317438472]
 z_index = 11
-collision_layer = 8
-collision_mask = 10
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_0cryj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620871536]
 shape = SubResource("RectangleShape2D_nah6m")
 
 [node name="Splatter" type="Sprite2D" parent="." unique_id=677086347]
+visible = false
 position = Vector2(5, 21)
 scale = Vector2(0.45079374, 0.0990567)
 texture = ExtResource("1_g244k")
@@ -25,9 +50,31 @@ texture = ExtResource("1_g244k")
 visible = false
 texture = ExtResource("2_0cryj")
 
-[node name="Timer" type="Timer" parent="." unique_id=1506223997]
+[node name="IgnitionTimer" type="Timer" parent="." unique_id=1506223997]
 autostart = true
+
+[node name="AdjacentOilChecker" type="Area2D" parent="." unique_id=205327486]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AdjacentOilChecker" unique_id=1474430983]
+shape = SubResource("RectangleShape2D_0cryj")
+
+[node name="Splatters" type="AnimatedSprite2D" parent="." unique_id=2077985363]
+modulate = Color(0.06666667, 0.06666667, 0.12941177, 1)
+clip_children = 2
+position = Vector2(0, 13)
+scale = Vector2(0.4921875, 0.08984375)
+sprite_frames = SubResource("SpriteFrames_usf6k")
+frame = 2
+
+[node name="SwirlRect" type="ColorRect" parent="Splatters" unique_id=1801660683]
+material = ExtResource("7_hxxqu")
+offset_left = -459.1746
+offset_top = -244.86957
+offset_right = 246.82541
+offset_bottom = 418.13043
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IgnitionTimer" to="." method="_on_timer_timeout"]
