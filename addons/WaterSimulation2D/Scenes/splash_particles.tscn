@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cyh5sxfwlfphm"]
 
 [ext_resource type="Script" uid="uid://ce8k544yk0df1" path="res://addons/WaterSimulation2D/Scenes/splash_particles.gd" id="1_787io"]
+[ext_resource type="Texture2D" uid="uid://bga1tvf5m1l77" path="res://addons/WaterSimulation2D/Sprites/Water_particle_1.png" id="2_uu4d6"]
 
 [sub_resource type="Gradient" id="1"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -21,33 +22,15 @@ gravity = Vector3(0, 150, 0)
 scale_curve = SubResource("4")
 color_ramp = SubResource("2")
 
-[sub_resource type="Curve" id="6"]
-_data = [Vector2(0, 0.111364), 0.0, 0.0767676, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="7"]
-curve = SubResource("6")
-
-[sub_resource type="ParticleProcessMaterial" id="8"]
-direction = Vector3(0, -1, 0)
-gravity = Vector3(0, 90, 0)
-scale_curve = SubResource("7")
-color_ramp = SubResource("2")
-
 [node name="splash_particles" type="Node2D" unique_id=1593290184]
 script = ExtResource("1_787io")
 
 [node name="Particles2D" type="GPUParticles2D" parent="." unique_id=21724125]
 amount = 4
+texture = ExtResource("2_uu4d6")
 lifetime = 0.75
 explosiveness = 1.0
 process_material = SubResource("5")
-
-[node name="Particles2D2" type="GPUParticles2D" parent="." unique_id=1340058805]
-amount = 6
-lifetime = 0.75
-explosiveness = 1.0
-process_material = SubResource("8")
 
 [node name="Timer" type="Timer" parent="." unique_id=1627109155]
 one_shot = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dctk52n2i77y8"
-path="res://.godot/imported/MetalTile.png-be3dc246ff704eb3920c5a26cc0c2fe8.ctex"
+uid="uid://dbig3bxr4xu2c"
+path="res://.godot/imported/Studded.png-0023b931d5173f2ae7f5098d509d6941.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MetalTile.png"
-dest_files=["res://.godot/imported/MetalTile.png-be3dc246ff704eb3920c5a26cc0c2fe8.ctex"]
+source_file="res://Assets/Tiles/Studded.png"
+dest_files=["res://.godot/imported/Studded.png-0023b931d5173f2ae7f5098d509d6941.ctex"]
 
 [params]
 

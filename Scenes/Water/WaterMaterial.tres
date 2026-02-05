@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://m834wg0usvst"]
+
+[ext_resource type="Shader" uid="uid://dpy7ebti6t27p" path="res://Scenes/Water/water_2.gdshader" id="1_46h4t"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_41ao3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rlct0"]
+noise = SubResource("FastNoiseLite_41ao3")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rlct0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_41ao3"]
+noise = SubResource("FastNoiseLite_rlct0")
+seamless = true
+
+[resource]
+shader = ExtResource("1_46h4t")
+shader_parameter/offSet = 0.0
+shader_parameter/YDistortion = 1.0
+shader_parameter/waterNoise = SubResource("NoiseTexture2D_41ao3")
+shader_parameter/waterDistortionNoise = SubResource("NoiseTexture2D_rlct0")
+shader_parameter/waterColor = Color(0.38369632, 0.5713744, 0.93279475, 0.38039216)
+shader_parameter/colorCorection = 0.23999999463552
+shader_parameter/distortionForce = 0.0330000015675
+shader_parameter/WDBrightness = 0.55000000819566
+shader_parameter/WDFreq = 0.45000000670553
+shader_parameter/WDSize = 1.0000000298023402
+shader_parameter/WDSpeed = 4.0
+shader_parameter/tiling = Vector2(0.05, 0.2)
+shader_parameter/offSetSpeed = Vector2(0.05, 0.08)
+shader_parameter/backGroundDirX = 0.0020000033548800006
+shader_parameter/backGroundDirY = 0.0020000033548800006

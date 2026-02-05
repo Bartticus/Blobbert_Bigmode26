@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/FullKeeb/full_keeb.tscn" id="2_qubdk"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_qubdk"]
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="4_eipx4"]
-[ext_resource type="Texture2D" uid="uid://dctk52n2i77y8" path="res://Assets/Sprites/MetalTile.png" id="5_3ang3"]
-[ext_resource type="Texture2D" uid="uid://dh678aap5xpvd" path="res://Assets/Sprites/ScienceTexture.png" id="6_ook32"]
-[ext_resource type="Texture2D" uid="uid://bgxawluxoy5lk" path="res://Assets/Sprites/ScrewTiles.png" id="7_b8hnc"]
-[ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Sprites/Studded.png" id="8_e1wkp"]
+[ext_resource type="Texture2D" uid="uid://dctk52n2i77y8" path="res://Assets/Tiles/MetalTileSoft.png" id="5_3ang3"]
+[ext_resource type="Texture2D" uid="uid://dh678aap5xpvd" path="res://Assets/Tiles/ScienceTexture.png" id="6_ook32"]
+[ext_resource type="Texture2D" uid="uid://bgxawluxoy5lk" path="res://Assets/Tiles/ScrewTiles.png" id="7_b8hnc"]
+[ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="8_e1wkp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0w323"]
 texture = ExtResource("5_3ang3")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh678aap5xpvd"
-path="res://.godot/imported/ScienceTexture.png-0e2298ad332a64f6cd8893aa0b7e3a63.ctex"
+uid="uid://dctk52n2i77y8"
+path="res://.godot/imported/MetalTileSoft.png-f4e60cbd5b0022701311f560d21e36c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/ScienceTexture.png"
-dest_files=["res://.godot/imported/ScienceTexture.png-0e2298ad332a64f6cd8893aa0b7e3a63.ctex"]
+source_file="res://Assets/Tiles/MetalTileSoft.png"
+dest_files=["res://.godot/imported/MetalTileSoft.png-f4e60cbd5b0022701311f560d21e36c7.ctex"]
 
 [params]
 

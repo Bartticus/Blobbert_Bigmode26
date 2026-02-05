@@ -23,7 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://bnq5k1xk7y6vw" path="res://Scenes/Screens/tank_screen_2.tscn" id="19_np4tc"]
 [ext_resource type="PackedScene" uid="uid://dnn0cojwsx0tk" path="res://Scenes/Screens/tank_screen_3.tscn" id="20_crsrk"]
 
-[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
+[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
+starting_screen = NodePath("Screens/TankScreen0")
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 
@@ -115,25 +116,25 @@ x_coordinate = 8
 y_coordinate = 2
 snap_screen_to_position = true
 
-[node name="TankScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="17" unique_id=1869042808 instance=ExtResource("7_l487u")]
+[node name="TankScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="17" unique_id=2096507179 instance=ExtResource("7_l487u")]
 position = Vector2(17280, 2160)
 x_coordinate = 9
 y_coordinate = 2
 snap_screen_to_position = true
 
-[node name="TankScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="18" unique_id=1227901653 instance=ExtResource("8_blkfd")]
+[node name="TankScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="18" unique_id=927135736 instance=ExtResource("8_blkfd")]
 position = Vector2(17280, 3240)
 x_coordinate = 9
 y_coordinate = 3
 snap_screen_to_position = true
 
-[node name="TankScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="19" unique_id=941294562 instance=ExtResource("19_np4tc")]
+[node name="TankScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="19" unique_id=147475777 instance=ExtResource("19_np4tc")]
 position = Vector2(19200, 2160)
 x_coordinate = 10
 y_coordinate = 2
 snap_screen_to_position = true
 
-[node name="TankScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="20" unique_id=18494149 instance=ExtResource("20_crsrk")]
+[node name="TankScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="20" unique_id=909318530 instance=ExtResource("20_crsrk")]
 position = Vector2(19200, 3240)
 x_coordinate = 10
 y_coordinate = 3

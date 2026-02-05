@@ -24,7 +24,8 @@ var water_lenght = distance_between_springs * spring_number
 @onready var water_spring = preload("res://addons/WaterSimulation2D/Scenes/Water_Spring.tscn")
 
 #the body of water depth
-@export var depth = 1000
+@export var depth = 1450
+
 var target_height = global_position.y
 
 #the position of the bottom of our body of water
@@ -170,16 +171,23 @@ func splash(index, speed):
 		springs[index].velocity += speed
 	pass
 
-# func _on_Water_Body_Area_body_entered(body):
-# 	body.in_water()
+func _on_Water_Body_Area_body_entered(body):
+	spawn_particles(body)
+
+func spawn_particles(body):
+	# body.in_water()
 	
-# 	#creates a instace of the particle system
-# 	var s = splash_particle.instance()
+	#creates a instace of the particle system
+	var s = splash_particle.instantiate()
 	
-# 	#adds the particle to the scene
-# 	get_tree().current_scene.add_child(s)
+	#adds the particle to the scene
+	get_tree().current_scene.add_child(s)
 	
-# 	#sets the position of the particle to the same of the body
-# 	s.global_position = body.global_position
+	#sets the position of the particle to the same of the body
+	s.global_position = body.global_position
 	
-# 	pass # Replace with function body.
+	pass # Replace with function body.
+
+
+func _on_water_body_area_body_exited(body: Node2D) -> void:
+	spawn_particles(body)

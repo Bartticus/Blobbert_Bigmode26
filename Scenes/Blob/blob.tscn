@@ -621,7 +621,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1038449893]
 position = Vector2(101.13427, 50.312504)
 rotation = 1.6772648
-scale = Vector2(0.9999977, 0.9999977)
+scale = Vector2(0.9999976, 0.9999976)
 rest = Transform2D(-0.10626745, 0.99433756, -0.99433756, -0.10626745, 101.13427, 50.312504)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -701,7 +701,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-26" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=726895156]
 position = Vector2(101.85848, 129.3664)
 rotation = 1.6129539
-scale = Vector2(0.9999979, 0.9999979)
+scale = Vector2(0.99999785, 0.99999785)
 rest = Transform2D(-0.04214509, 0.9991115, -0.9991115, -0.04214509, 101.85848, 129.3664)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3208,7 +3208,7 @@ rect = Rect2(-5, -5, 10, 10)
 [node name="OilDetector" type="Area2D" parent="BlobCenter" unique_id=2050342350]
 position = Vector2(0.13597956, -0.6752565)
 rotation = -2.5651665
-collision_layer = 0
+collision_layer = 524288
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlobCenter/OilDetector" unique_id=1942926034]

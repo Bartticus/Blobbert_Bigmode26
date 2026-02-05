@@ -21,7 +21,7 @@ var target_height = 0
 var index = 0
 
 #how much an external object movement will affect this spring
-var motion_factor = 0.0005
+var motion_factor = 0.001
 
 #the last instance this spring collided with
 #we check so it won't collide twice
@@ -65,7 +65,7 @@ func initialize(x_position,id):
 func set_collision_width(value):
 	#this function will set the collision shape size of our springs
 	
-	var extents = collision.shape.get_size()
+	var extents = collision.shape.extents
 	
 	#the new extents will mantain the value on the y width
 	#the "value" variable is the space between springs, which we already have
