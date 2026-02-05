@@ -777,7 +777,6 @@ collision_layer = 2
 collision_mask = 19
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-continuous_cd = 2
 script = ExtResource("4_47mic")
 metadata/idx = 0
 metadata/bone_name = &"Bone-0"
