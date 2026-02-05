@@ -15,6 +15,7 @@ gradient = SubResource("Gradient_rlct0")
 [node name="Water_Body" type="Node2D" unique_id=1741917068]
 z_index = 5
 script = ExtResource("2")
+distance_between_springs = 190
 spring_number = 20
 
 [node name="Water_Polygon" type="Polygon2D" parent="." unique_id=1533279525]
