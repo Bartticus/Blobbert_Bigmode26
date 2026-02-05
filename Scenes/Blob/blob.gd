@@ -1,12 +1,16 @@
 class_name Blob
 extends Node2D
 
+@export_category("Bodies")
 @export var softbody: SoftBody2D
 @export var bodies: Array[Bone] = []
 
+@export_category("Oil")
 @export var oil_scene: PackedScene
 @export var oil_timer: Timer
+var newly_spawned_oil: Oil
 
+@export_category("Face")
 @export var face_pivot: Node2D
 @export var face_array: Array[Sprite2D]
 @export var rand_face_timer: Timer
@@ -15,6 +19,7 @@ extends Node2D
 @onready var current_face: Sprite2D = %Neutral
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
+
 
 enum Status { DEFAULT, STRETCHED, FAST, HURT, IDLE }
 var status: Status = Status.IDLE: set = set_status
@@ -87,12 +92,11 @@ func _process(_delta: float) -> void:
 func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
 	reset_screen()
 
-
 func reset_screen():
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
 		if overlapping_area.name == 'ScreenSpace':
 			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor
-var newly_spawned_oil: Oil
+
 func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#check if a new oil should spawn
 	if !oil_timer.is_stopped(): return
@@ -107,9 +111,13 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	softbody.physics_material_override.friction = 1.0
 	#softbody.mass = 0.2
 	
-	#instantiate
+	#add pivot point
+	var oil_pivot: Node2D = Node2D.new()
+	body.call_deferred("add_child", oil_pivot)
+	
+	#instantiate oil
 	var oil: Oil = oil_scene.instantiate()
-	body.call_deferred("add_child", oil)
+	oil_pivot.call_deferred("add_child", oil)
 	newly_spawned_oil = oil
 	
 	#set position
@@ -125,6 +133,7 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	oil.scale = oil.scale * scale_ratio
 	
 	#set rotation
+	oil_pivot.rotation -= body.rotation
 	oil.look_at(coll_pos + coll_normal)
 	oil.rotation_degrees += 90
 	

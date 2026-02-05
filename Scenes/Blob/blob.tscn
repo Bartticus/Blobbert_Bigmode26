@@ -284,7 +284,7 @@ modifications/31 = SubResource("SkeletonModification2DLookAt_oiqbe")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_be3n1"]
 resource_local_to_scene = true
-radius = 14.0
+radius = 12.5
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_47mic"]
 load_path = "res://.godot/imported/AltFaces_Vesuvius.png-2001970ccb695c327ebec564f35a128d.ctex"
@@ -327,7 +327,7 @@ script = ExtResource("2_hkw75")
 show_shapes = true
 joint_type = "spring"
 damping = 0.01
-radius = 28
+radius = 25
 shape_type = "Circle"
 margin_offset_edge = 6.0
 mass = 0.05
