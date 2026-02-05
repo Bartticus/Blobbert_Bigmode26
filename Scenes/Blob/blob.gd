@@ -21,7 +21,7 @@ var newly_spawned_oil: Oil
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 @onready var blob_center: Marker2D = %BlobCenter
-@onready var swirl_rect: TextureRect = %SwirlRect
+@onready var swirl_rect: ColorRect = %SwirlRect
 
 enum Status { DEFAULT, STRETCHED, FAST, HURT, IDLE }
 var status: Status = Status.IDLE: set = set_status
