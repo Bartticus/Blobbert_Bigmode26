@@ -47,7 +47,7 @@ var bottom = target_height + depth
 #initializes the spring array and all the springs
 func _ready():
 	water_border.width = border_thickness
-	water_border.spline_length = distance_between_springs/2 #This gives you a perfect curve instead of a twisted pretzle
+	# water_border.spline_length = distance_between_springs/2 #This gives you a perfect curve instead of a twisted pretzle
 	
 	spread = spread / 1000
 	
@@ -170,16 +170,16 @@ func splash(index, speed):
 		springs[index].velocity += speed
 	pass
 
-func _on_Water_Body_Area_body_entered(body):
-	body.in_water()
+# func _on_Water_Body_Area_body_entered(body):
+# 	body.in_water()
 	
-	#creates a instace of the particle system
-	var s = splash_particle.instance()
+# 	#creates a instace of the particle system
+# 	var s = splash_particle.instance()
 	
-	#adds the particle to the scene
-	get_tree().current_scene.add_child(s)
+# 	#adds the particle to the scene
+# 	get_tree().current_scene.add_child(s)
 	
-	#sets the position of the particle to the same of the body
-	s.global_position = body.global_position
+# 	#sets the position of the particle to the same of the body
+# 	s.global_position = body.global_position
 	
-	pass # Replace with function body.
+# 	pass # Replace with function body.

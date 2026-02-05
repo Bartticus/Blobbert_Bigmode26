@@ -7,6 +7,7 @@
 
 [node name="Water_Body" parent="." unique_id=1741917068 instance=ExtResource("1_uviet")]
 position = Vector2(476, 250)
+border_thickness = 1.0
 
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("1_yypfk")]
-position = Vector2(480, -46)
+position = Vector2(479, -46)
