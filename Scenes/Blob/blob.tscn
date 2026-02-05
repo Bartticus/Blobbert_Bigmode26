@@ -284,7 +284,7 @@ modifications/31 = SubResource("SkeletonModification2DLookAt_oiqbe")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_be3n1"]
 resource_local_to_scene = true
-radius = 14.0
+radius = 12.5
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_47mic"]
 load_path = "res://.godot/imported/AltFaces_Vesuvius.png-2001970ccb695c327ebec564f35a128d.ctex"
@@ -327,7 +327,7 @@ script = ExtResource("2_hkw75")
 show_shapes = true
 joint_type = "spring"
 damping = 0.01
-radius = 28
+radius = 25
 shape_type = "Circle"
 margin_offset_edge = 6.0
 mass = 0.05
@@ -621,7 +621,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1038449893]
 position = Vector2(101.13427, 50.312504)
 rotation = 1.6772648
-scale = Vector2(0.99999774, 0.99999774)
+scale = Vector2(0.9999977, 0.9999977)
 rest = Transform2D(-0.10626745, 0.99433756, -0.99433756, -0.10626745, 101.13427, 50.312504)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -701,7 +701,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-26" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=726895156]
 position = Vector2(101.85848, 129.3664)
 rotation = 1.6129539
-scale = Vector2(0.999998, 0.999998)
+scale = Vector2(0.9999979, 0.9999979)
 rest = Transform2D(-0.04214509, 0.9991115, -0.9991115, -0.04214509, 101.85848, 129.3664)
 auto_calculate_length_and_angle = false
 length = 30.0
