@@ -26,10 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://c6buq8yn35hjc" path="res://Scenes/Screens/tank_screen_5.tscn" id="24_q3eyr"]
 [ext_resource type="PackedScene" uid="uid://d3x2w60j3uq6y" path="res://Scenes/Screens/tank_screen_6.tscn" id="25_63ah0"]
 [ext_resource type="PackedScene" uid="uid://bmjtenyy4jmdk" path="res://Scenes/Screens/tank_screen_7.tscn" id="26_x5byv"]
-[ext_resource type="PackedScene" uid="uid://cs5n8erodmjq7" path="res://Scenes/Screens/bunsen_screen_0.tscn" id="27_b07p8"]
-[ext_resource type="PackedScene" uid="uid://clxrthxxdas0q" path="res://Scenes/Screens/bunsen_screen_1.tscn" id="28_iutey"]
+[ext_resource type="PackedScene" path="res://Scenes/Screens/bunsen_screen_0.tscn" id="27_b07p8"]
+[ext_resource type="PackedScene" path="res://Scenes/Screens/bunsen_screen_1.tscn" id="28_iutey"]
 
-[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
+[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
+starting_screen = NodePath("Screens/LabScreen1")
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 

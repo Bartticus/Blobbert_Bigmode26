@@ -2,3 +2,5 @@
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=702735613]
 continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 1
