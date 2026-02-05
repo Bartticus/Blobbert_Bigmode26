@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://2y666hmpqam6"]
-
-[ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_km6tx"]
-
-[node name="BurnerScreen0" unique_id=1360540123 instance=ExtResource("1_km6tx")]
