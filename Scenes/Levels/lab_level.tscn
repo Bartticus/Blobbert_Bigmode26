@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dnn0cojwsx0tk" path="res://Scenes/Screens/tank_screen_3.tscn" id="20_crsrk"]
 
 [node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-starting_screen = NodePath("Screens/VentScreen0")
+starting_screen = NodePath("Screens/LabScreen2a")
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 
@@ -41,19 +41,20 @@ position = Vector2(5760, 0)
 x_coordinate = 3
 
 [node name="LabScreen2b" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="4" unique_id=946490565 instance=ExtResource("6_0k7vj")]
-position = Vector2(7680, 0)
+position = Vector2(7680, 3240)
 x_coordinate = 4
+y_coordinate = 3
 snap_screen_to_position = true
 
 [node name="LabScreen2c" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="5" unique_id=456595252 instance=ExtResource("7_1043h")]
-position = Vector2(9600, 0)
+position = Vector2(9600, 3240)
 x_coordinate = 5
+y_coordinate = 3
 snap_screen_to_position = true
 
 [node name="LabScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="6" unique_id=1269041260 instance=ExtResource("5_746ry")]
-position = Vector2(9600, 1080)
-x_coordinate = 5
-y_coordinate = 1
+position = Vector2(7680, 0)
+x_coordinate = 4
 snap_screen_to_position = true
 
 [node name="LabScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=1003633205 instance=ExtResource("6_4o0c8")]
