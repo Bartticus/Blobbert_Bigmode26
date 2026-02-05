@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dnn0cojwsx0tk" path="res://Scenes/Screens/tank_screen_3.tscn" id="20_crsrk"]
 
 [node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-starting_screen = NodePath("Screens/VentScreen0")
+starting_screen = NodePath("Screens/VentScreen3")
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 

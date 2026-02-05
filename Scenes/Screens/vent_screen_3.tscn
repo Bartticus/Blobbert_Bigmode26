@@ -110,7 +110,7 @@ scale = Vector2(1.3, 2)
 position = Vector2(1356, 184)
 rotation = -3.1415925
 scale = Vector2(2, 1.3)
-wind_power = 80.0
+wind_power = 70.0
 
 [node name="WindTunnel11" parent="WindTunnels" index="11" unique_id=1986627272 instance=ExtResource("2_3gxxi")]
 position = Vector2(1146.0001, 747)
