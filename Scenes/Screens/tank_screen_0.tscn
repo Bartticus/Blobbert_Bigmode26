@@ -19,5 +19,5 @@ tile_map_data = PackedByteArray("AAB3AAAAAAAHAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABAAA
 [node name="Water_Body" parent="." index="7" unique_id=1741917068 instance=ExtResource("3_deen1")]
 position = Vector2(130, 617)
 distance_between_springs = 100
-spring_number = 19
-depth = 200
+spring_number = 38
+depth = 250

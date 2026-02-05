@@ -52,7 +52,6 @@ texture = SubResource("GradientTexture2D_41ao3")
 curve = SubResource("1")
 script = ExtResource("3")
 spline_length = 2.0
-_smooth = true
 color = Color(1, 1, 1, 0.396078)
 
 [node name="Water_Body_Area" type="Area2D" parent="." unique_id=1634076486]
