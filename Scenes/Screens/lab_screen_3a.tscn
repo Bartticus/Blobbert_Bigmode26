@@ -54,6 +54,7 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tubes/Tube1" index="2" unique_id=1505731652]
+visible = false
 scale = Vector2(0.90625, 6.453125)
 texture = ExtResource("2_1kq1j")
 
@@ -72,6 +73,7 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tubes/Tube2" index="2" unique_id=830845442]
+visible = false
 scale = Vector2(0.90625, 6.453125)
 texture = ExtResource("2_1kq1j")
 
@@ -90,6 +92,7 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Tubes/Tube3" index="2" unique_id=431939114]
+visible = false
 scale = Vector2(0.90625, 6.453125)
 texture = ExtResource("2_1kq1j")
 
@@ -108,6 +111,7 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Tubes/Tube4" index="2" unique_id=1243966217]
+visible = false
 scale = Vector2(0.90625, 6.453125)
 texture = ExtResource("2_1kq1j")
 
@@ -126,5 +130,6 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Tubes/Tube5" index="2" unique_id=1589907594]
+visible = false
 scale = Vector2(0.90625, 6.453125)
 texture = ExtResource("2_1kq1j")

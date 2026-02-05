@@ -4,6 +4,7 @@ extends Node2D
 @export_category("Bodies")
 @export var softbody: SoftBody2D
 @export var bodies: Array[Bone] = []
+var center_bone: Bone2D
 
 @export_category("Oil")
 @export var oil_scene: PackedScene
@@ -19,7 +20,8 @@ var newly_spawned_oil: Oil
 @onready var current_face: Sprite2D = %Neutral
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
-
+@onready var blob_center: Marker2D = %BlobCenter
+@onready var swirl_rect: TextureRect = %SwirlRect
 
 enum Status { DEFAULT, STRETCHED, FAST, HURT, IDLE }
 var status: Status = Status.IDLE: set = set_status
@@ -27,6 +29,7 @@ var status: Status = Status.IDLE: set = set_status
 
 func _ready() -> void:
 	Global.blob = self
+	center_bone = softbody.get_center_body().bone
 	
 	for child in softbody.get_children():
 		if child is Bone:
@@ -83,8 +86,11 @@ func _on_set_face_timer_timeout() -> void:
 
 func _process(_delta: float) -> void:
 	var center_pos = softbody.get_bones_center_position()
-	%BlobCenter.global_position = center_pos
-	%SwirlRect.global_position = center_pos - Vector2(270+82,244+87)
+	blob_center.global_position = center_pos
+	swirl_rect.global_position = center_pos - Vector2(270+82,244+87) #anchors, man
+	
+	var weight = 0.05
+	blob_center.rotation = lerp_angle(blob_center.rotation, center_bone.rotation, weight)
 	
 	if Input.is_action_just_pressed('reset'):
 		get_tree().reload_current_scene()
