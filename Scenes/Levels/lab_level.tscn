@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://caf8tywbfxynw" path="res://Scenes/Screens/tank_screen_1.tscn" id="8_blkfd"]
 [ext_resource type="PackedScene" uid="uid://ci6hjglcdc31b" path="res://Scenes/Screens/lab_screen_5.tscn" id="9_p8jpb"]
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="10_sp4yd"]
-[ext_resource type="PackedScene" uid="uid://dfskkbwgsxie" path="res://Scenes/Screens/vent_screen_3.tscn" id="11_ul0lq"]
+[ext_resource type="PackedScene" uid="uid://bg20h0iqh4jpt" path="res://Scenes/Screens/vent_screen_3.tscn" id="11_ul0lq"]
 [ext_resource type="PackedScene" uid="uid://t8wog3lisshy" path="res://Scenes/Screens/vent_screen_4.tscn" id="12_dm3ff"]
 [ext_resource type="PackedScene" uid="uid://d1ktnvve3etl4" path="res://Scenes/Screens/vent_screen_5.tscn" id="13_0k7vj"]
 [ext_resource type="PackedScene" uid="uid://dsh1pbd0dcmyc" path="res://Scenes/Screens/vent_screen_2.tscn" id="13_axdum"]

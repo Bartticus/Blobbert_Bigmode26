@@ -430,4 +430,3 @@ position = Vector2(221, 167)
 unique_name_in_owner = true
 z_index = 10
 tile_set = SubResource("TileSet_3ang3")
-physics_quadrant_size = 1
