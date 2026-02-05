@@ -22,6 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://dsh1pbd0dcmyc" path="res://Scenes/Screens/vent_screen_2.tscn" id="13_axdum"]
 [ext_resource type="PackedScene" uid="uid://bnq5k1xk7y6vw" path="res://Scenes/Screens/tank_screen_2.tscn" id="19_np4tc"]
 [ext_resource type="PackedScene" uid="uid://dnn0cojwsx0tk" path="res://Scenes/Screens/tank_screen_3.tscn" id="20_crsrk"]
+[ext_resource type="PackedScene" uid="uid://d327rl6xrouih" path="res://Scenes/Screens/tank_screen_4.tscn" id="23_or0mv"]
+[ext_resource type="PackedScene" uid="uid://c6buq8yn35hjc" path="res://Scenes/Screens/tank_screen_5.tscn" id="24_q3eyr"]
+[ext_resource type="PackedScene" uid="uid://d3x2w60j3uq6y" path="res://Scenes/Screens/tank_screen_6.tscn" id="25_63ah0"]
+[ext_resource type="PackedScene" uid="uid://bmjtenyy4jmdk" path="res://Scenes/Screens/tank_screen_7.tscn" id="26_x5byv"]
 
 [node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
 starting_screen = NodePath("Screens/TankScreen0")
@@ -138,4 +142,28 @@ snap_screen_to_position = true
 position = Vector2(19200, 3240)
 x_coordinate = 10
 y_coordinate = 3
+snap_screen_to_position = true
+
+[node name="TankScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="21" unique_id=272351518 instance=ExtResource("23_or0mv")]
+position = Vector2(21120, 2160)
+x_coordinate = 11
+y_coordinate = 2
+snap_screen_to_position = true
+
+[node name="TankScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="22" unique_id=816115548 instance=ExtResource("24_q3eyr")]
+position = Vector2(21120, 3240)
+x_coordinate = 11
+y_coordinate = 3
+snap_screen_to_position = true
+
+[node name="TankScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="23" unique_id=1479719864 instance=ExtResource("25_63ah0")]
+position = Vector2(23040, 3240)
+x_coordinate = 12
+y_coordinate = 3
+snap_screen_to_position = true
+
+[node name="TankScreen7" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="24" unique_id=405737534 instance=ExtResource("26_x5byv")]
+position = Vector2(23040, 2160)
+x_coordinate = 12
+y_coordinate = 2
 snap_screen_to_position = true

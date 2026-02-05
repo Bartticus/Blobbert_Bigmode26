@@ -20,7 +20,6 @@ spring_number = 20
 [node name="Water_Polygon" type="Polygon2D" parent="." unique_id=1533279525]
 material = ExtResource("2_rlct0")
 texture = SubResource("GradientTexture2D_41ao3")
-polygon = PackedVector2Array(0, 0, 4000, 0, 4000, 1450, 0, 1450)
 
 [node name="Water_Border" type="Path2D" parent="." unique_id=401514358]
 curve = SubResource("1")
