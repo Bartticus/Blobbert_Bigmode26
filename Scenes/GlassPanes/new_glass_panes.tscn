@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ix8ry0y5k1ar"]
 
-[ext_resource type="Script" uid="uid://dxarn4g08ug8" path="res://Scenes/GlassPanes/glass_panes.gd" id="1_dcqfx"]
+[ext_resource type="Script" uid="uid://dxarn4g08ug8" path="res://Scenes/GlassPanes/new_glass_panes.gd" id="1_dcqfx"]
 [ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="2_0he2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcqfx"]
