@@ -1,101 +1,55 @@
 [gd_scene format=3 uid="uid://ix8ry0y5k1ar"]
 
-[ext_resource type="Script" uid="uid://dxarn4g08ug8" path="res://Scenes/Screens/glass_panes.gd" id="1_dcqfx"]
+[ext_resource type="Script" uid="uid://dxarn4g08ug8" path="res://Scenes/GlassPanes/glass_panes.gd" id="1_dcqfx"]
 [ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="2_0he2g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b30rn"]
-size = Vector2(286, 954)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcqfx"]
+size = Vector2(0, 0)
 
-[node name="GlassPanes" type="Node2D" unique_id=936546553 node_paths=PackedStringArray("left_glass_panes", "right_glass_panes", "left_thick_wall", "right_thick_wall")]
+[node name="GlassPanes" type="Node2D" unique_id=936546553 node_paths=PackedStringArray("thick_wall")]
 z_index = 4
 script = ExtResource("1_dcqfx")
-left_glass_panes = [NodePath("Pane0"), NodePath("Pane1"), NodePath("Pane2"), NodePath("Pane3"), NodePath("Pane4"), NodePath("Pane5"), NodePath("Pane6")]
-right_glass_panes = [NodePath("Pane7"), NodePath("Pane8"), NodePath("Pane9"), NodePath("Pane10"), NodePath("Pane11"), NodePath("Pane12"), NodePath("Pane13")]
-left_thick_wall = NodePath("LeftThickWall")
-right_thick_wall = NodePath("RightThickWall")
-
-[node name="Pane0" parent="." unique_id=1867482040 instance=ExtResource("2_0he2g")]
-position = Vector2(410, 158)
-scale = Vector2(0.12, 1)
-glass_pane = true
-
-[node name="Pane1" parent="." unique_id=1680778797 instance=ExtResource("2_0he2g")]
-position = Vector2(410, 285)
-scale = Vector2(0.12, 1)
-glass_pane = true
-
-[node name="Pane2" parent="." unique_id=724799110 instance=ExtResource("2_0he2g")]
-position = Vector2(410, 412)
-scale = Vector2(0.12, 1)
-glass_pane = true
-
-[node name="Pane3" parent="." unique_id=1927793697 instance=ExtResource("2_0he2g")]
-position = Vector2(410, 539)
-scale = Vector2(0.12, 1)
-glass_pane = true
-
-[node name="Pane4" parent="." unique_id=1889416459 instance=ExtResource("2_0he2g")]
-position = Vector2(410, 664)
-scale = Vector2(0.12, 1)
-glass_pane = true
-
-[node name="Pane5" parent="." unique_id=1719713787 instance=ExtResource("2_0he2g")]
-position = Vector2(410, 791)
-scale = Vector2(0.12, 1)
-glass_pane = true
-
-[node name="Pane6" parent="." unique_id=672356723 instance=ExtResource("2_0he2g")]
-position = Vector2(410, 918)
-scale = Vector2(0.12, 1)
-glass_pane = true
+thick_wall = NodePath("ThickWall")
 
 [node name="Pane7" parent="." unique_id=25629605 instance=ExtResource("2_0he2g")]
-position = Vector2(1509, 158)
+position = Vector2(9, 75)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
 [node name="Pane8" parent="." unique_id=411575042 instance=ExtResource("2_0he2g")]
-position = Vector2(1509, 285)
+position = Vector2(9, 202)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
 [node name="Pane9" parent="." unique_id=673309130 instance=ExtResource("2_0he2g")]
-position = Vector2(1509, 412)
+position = Vector2(9, 329)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
 [node name="Pane10" parent="." unique_id=646006176 instance=ExtResource("2_0he2g")]
-position = Vector2(1509, 539)
+position = Vector2(9, 456)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
 [node name="Pane11" parent="." unique_id=1225190251 instance=ExtResource("2_0he2g")]
-position = Vector2(1509, 664)
+position = Vector2(9, 581)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
 [node name="Pane12" parent="." unique_id=39591560 instance=ExtResource("2_0he2g")]
-position = Vector2(1509, 791)
+position = Vector2(9, 708)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
 [node name="Pane13" parent="." unique_id=771282166 instance=ExtResource("2_0he2g")]
-position = Vector2(1509, 918)
+position = Vector2(9, 835)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
-[node name="LeftThickWall" type="StaticBody2D" parent="." unique_id=212683113]
-position = Vector2(269, 535)
+[node name="ThickWall" type="StaticBody2D" parent="." unique_id=89876878]
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftThickWall" unique_id=1570131098]
-shape = SubResource("RectangleShape2D_b30rn")
-
-[node name="RightThickWall" type="StaticBody2D" parent="." unique_id=89876878]
-position = Vector2(1653, 533)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="RightThickWall" unique_id=557544539]
-shape = SubResource("RectangleShape2D_b30rn")
+[node name="ThickWallShape" type="CollisionShape2D" parent="ThickWall" unique_id=557544539]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_dcqfx")
