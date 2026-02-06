@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_explosion_timer_timeout() -> void:
+	exploding = false
 	for o in objects_to_explode:
 		o.trigger_action()
 	queue_free()

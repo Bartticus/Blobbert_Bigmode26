@@ -20,6 +20,7 @@ func _on_timer_timeout() -> void:
 			area.owner.explode()
 
 func ignite() -> void:
+	ignited = true
 	fire_sprite.show()
 
 func _on_body_entered(body: Node2D) -> void:

@@ -41,6 +41,7 @@ func set_status(new_status) -> void:
 		Status.TUGGING:
 			point_light_2d.enabled = true
 			snap_timer.start(snap_timer_wait_time)
+			Global.iterate_key_count()
 
 # Remove from all other groups, and put in the group matching current status
 func put_in_status_group():
