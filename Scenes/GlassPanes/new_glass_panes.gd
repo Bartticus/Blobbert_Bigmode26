@@ -7,6 +7,8 @@ extends Node2D
 @export var thick_wall_dimensions: Vector2 = Vector2(286, 954)
 @export var destroy_all_at_once: bool = true
 
+@export var anim_player: AnimationPlayer
+
 
 func set_wall_thickness():
 	thick_wall_shape.shape.size = thick_wall_dimensions
@@ -29,3 +31,4 @@ func _on_pane_exiting(_pane: GreasableObject) -> void:
 		for pane in all_glass_panes:
 			if pane:
 				pane.queue_free()
+	anim_player.play("breach")

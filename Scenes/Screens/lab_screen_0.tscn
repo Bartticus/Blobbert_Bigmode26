@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://d2a4750wy0jqs"]
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_ni8rx"]
+[ext_resource type="PackedScene" uid="uid://ix8ry0y5k1ar" path="res://Scenes/GlassPanes/new_glass_panes.tscn" id="3_14qcb"]
 [ext_resource type="Shader" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
 [ext_resource type="Texture2D" uid="uid://dptauq5wft3cf" path="res://Assets/Sprites/Contained_v2.png" id="5_yco6c"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="6_yco6c"]
 [ext_resource type="Texture2D" uid="uid://bisaren6ebhve" path="res://Assets/Sprites/Breach.png" id="7_054od"]
-[ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="7_f60q8"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="8_f60q8"]
 [ext_resource type="Texture2D" uid="uid://c2cs4ijtokti6" path="res://Assets/Sprites/Glass_Break.png" id="8_fpj2h"]
 [ext_resource type="Texture2D" uid="uid://b88ivniwyect7" path="res://Assets/Sprites/trace_07.png" id="11_qi06u"]
@@ -15,232 +15,6 @@ shader = ExtResource("4_gyemt")
 shader_parameter/u_roundness = 0.0
 shader_parameter/u_distortion_intensity = 0.2
 shader_parameter/u_blur_intensity = 0.1
-
-[sub_resource type="Gradient" id="Gradient_qfkhn"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ojx3w"]
-noise_type = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ebora"]
-width = 300
-height = 300
-generate_mipmaps = false
-noise = SubResource("FastNoiseLite_ojx3w")
-color_ramp = SubResource("Gradient_qfkhn")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_14qcb"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hu1i"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgu2e"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sb6ea"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tt1go"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkxub"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_musjr"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_svp5e"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wum4a"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f60q8"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ins8w"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_trdi6"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqjmd"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qi06u"]
-shader = ExtResource("7_f60q8")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b30rn"]
-size = Vector2(286, 954)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyri"]
 size = Vector2(1116, 960)
@@ -504,187 +278,16 @@ offset_top = 85.0
 offset_right = 1502.0
 offset_bottom = 961.0
 
-[node name="GlassPanes" type="Node2D" parent="." index="7" unique_id=656650480 node_paths=PackedStringArray("left_glass_panes", "right_glass_panes", "left_thick_wall", "right_thick_wall", "anim_player")]
-z_index = 4
-position = Vector2(0, -47)
-script = ExtResource("2_vtyri")
-left_glass_panes = [NodePath("Pane0"), NodePath("Pane1"), NodePath("Pane2"), NodePath("Pane3"), NodePath("Pane4"), NodePath("Pane5"), NodePath("Pane6")]
-right_glass_panes = [NodePath("Pane7"), NodePath("Pane8"), NodePath("Pane9"), NodePath("Pane10"), NodePath("Pane11"), NodePath("Pane12"), NodePath("Pane13")]
-left_thick_wall = NodePath("LeftThickWall")
-right_thick_wall = NodePath("RightThickWall")
+[node name="GlassPanes" parent="." index="7" unique_id=936546553 node_paths=PackedStringArray("anim_player") instance=ExtResource("3_14qcb")]
+position = Vector2(1501, 66)
 anim_player = NodePath("../Breach/AnimationPlayer")
 
-[node name="Pane0" parent="GlassPanes" index="0" unique_id=1867482040 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(410, 158)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
+[node name="GlassPanes2" parent="." index="8" unique_id=269417865 node_paths=PackedStringArray("anim_player") instance=ExtResource("3_14qcb")]
+position = Vector2(420, 66)
+scale = Vector2(-1, 1)
+anim_player = NodePath("../Breach/AnimationPlayer")
 
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane0" index="4" unique_id=263630817]
-material = SubResource("ShaderMaterial_14qcb")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane1" parent="GlassPanes" index="1" unique_id=2021196316 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(410, 285)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane1" index="4" unique_id=1877224011]
-material = SubResource("ShaderMaterial_2hu1i")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane2" parent="GlassPanes" index="2" unique_id=744656820 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(410, 412)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane2" index="4" unique_id=1995975935]
-material = SubResource("ShaderMaterial_mgu2e")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane3" parent="GlassPanes" index="3" unique_id=2085079078 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(410, 539)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane3" index="4" unique_id=133036442]
-material = SubResource("ShaderMaterial_sb6ea")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane4" parent="GlassPanes" index="4" unique_id=1377131715 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(410, 664)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane4" index="4" unique_id=1003872615]
-material = SubResource("ShaderMaterial_tt1go")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane5" parent="GlassPanes" index="5" unique_id=1565838642 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(410, 791)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane5" index="4" unique_id=1010042278]
-material = SubResource("ShaderMaterial_kkxub")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane6" parent="GlassPanes" index="6" unique_id=358918159 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(410, 918)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane6" index="4" unique_id=1716277192]
-material = SubResource("ShaderMaterial_musjr")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane7" parent="GlassPanes" index="7" unique_id=1235762063 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(1509, 158)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane7" index="4" unique_id=496281993]
-material = SubResource("ShaderMaterial_svp5e")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane8" parent="GlassPanes" index="8" unique_id=988035381 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(1509, 285)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane8" index="4" unique_id=124199566]
-material = SubResource("ShaderMaterial_wum4a")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane9" parent="GlassPanes" index="9" unique_id=155577568 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(1509, 412)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane9" index="4" unique_id=782433002]
-material = SubResource("ShaderMaterial_f60q8")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane10" parent="GlassPanes" index="10" unique_id=1259451756 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(1509, 539)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane10" index="4" unique_id=713119624]
-material = SubResource("ShaderMaterial_ins8w")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane11" parent="GlassPanes" index="11" unique_id=1455255391 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(1509, 664)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane11" index="4" unique_id=1185974852]
-material = SubResource("ShaderMaterial_trdi6")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane12" parent="GlassPanes" index="12" unique_id=364109182 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(1509, 791)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane12" index="4" unique_id=1746112409]
-material = SubResource("ShaderMaterial_oqjmd")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="Pane13" parent="GlassPanes" index="13" unique_id=716976974 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_b30rn")]
-position = Vector2(1509, 918)
-scale = Vector2(0.12, 1)
-stain_sprite = NodePath("GlassEdgeSprite")
-glass_pane = true
-
-[node name="GlassEdgeSprite" type="Sprite2D" parent="GlassPanes/Pane13" index="4" unique_id=1251026444]
-material = SubResource("ShaderMaterial_qi06u")
-scale = Vector2(0.29100385, 0.30188677)
-texture = ExtResource("6_yco6c")
-
-[node name="LeftThickWall" type="StaticBody2D" parent="GlassPanes" index="14" unique_id=1911603930]
-position = Vector2(269, 535)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassPanes/LeftThickWall" index="0" unique_id=1089599333]
-shape = SubResource("RectangleShape2D_b30rn")
-
-[node name="RightThickWall" type="StaticBody2D" parent="GlassPanes" index="15" unique_id=1830099419]
-position = Vector2(1653, 533)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="GlassPanes/RightThickWall" index="0" unique_id=1397454182]
-shape = SubResource("RectangleShape2D_b30rn")
-
-[node name="AntiGrav" type="Area2D" parent="." index="8" unique_id=1168576705]
+[node name="AntiGrav" type="Area2D" parent="." index="9" unique_id=1168576705]
 position = Vector2(960, 540)
 collision_layer = 0
 collision_mask = 2
@@ -695,7 +298,7 @@ gravity_direction = Vector2(0, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AntiGrav" index="0" unique_id=479934878]
 shape = SubResource("RectangleShape2D_vtyri")
 
-[node name="ContainerSprite" type="Sprite2D" parent="." index="8" unique_id=459784128]
+[node name="ContainerSprite" type="Sprite2D" parent="." index="10" unique_id=459784128]
 show_behind_parent = true
 z_index = 5
 position = Vector2(935.00006, 997.04926)
@@ -720,31 +323,31 @@ shape = SubResource("RectangleShape2D_054od")
 position = Vector2(1173.2716, 1140.7253)
 shape = SubResource("RectangleShape2D_fpj2h")
 
-[node name="GlassSprite" type="Sprite2D" parent="." index="9" unique_id=1057729890]
+[node name="GlassSprite" type="Sprite2D" parent="." index="11" unique_id=1057729890]
 position = Vector2(984, 482.00006)
 scale = Vector2(2.2761908, 1.8655659)
 texture = ExtResource("6_yco6c")
 
-[node name="TopLight" type="PointLight2D" parent="." index="11" unique_id=573013363]
+[node name="TopLight" type="PointLight2D" parent="." index="12" unique_id=573013363]
 position = Vector2(960, 886)
 scale = Vector2(6.8945313, 2.8359373)
 range_z_max = 4
 texture = ExtResource("8_f60q8")
 
-[node name="BottomLight" type="PointLight2D" parent="." index="12" unique_id=1068991552]
+[node name="BottomLight" type="PointLight2D" parent="." index="13" unique_id=1068991552]
 position = Vector2(960, 85.00006)
 scale = Vector2(6.8945313, 2.8359373)
 range_z_max = 4
 texture = ExtResource("8_f60q8")
 
-[node name="ContainedLight" type="PointLight2D" parent="." index="13" unique_id=341909004]
+[node name="ContainedLight" type="PointLight2D" parent="." index="14" unique_id=341909004]
 position = Vector2(952, 943)
 rotation = -1.5707964
 scale = Vector2(1.9572463, 1.6838226)
 color = Color(0, 18.892157, 0, 1)
 texture = ExtResource("11_qi06u")
 
-[node name="Breach" type="Node2D" parent="." index="14" unique_id=1350780541]
+[node name="Breach" type="Node2D" parent="." index="15" unique_id=1350780541]
 position = Vector2(954, 946)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Breach" index="0" unique_id=197434859]
@@ -791,6 +394,6 @@ scale = Vector2(1, 0.8405794)
 texture = ExtResource("7_054od")
 
 [node name="CrackSprite" type="Sprite2D" parent="Breach/BreachSprite" index="0" unique_id=1344779436]
-position = Vector2(26, -569.84503)
-scale = Vector2(2.2857144, 2.2502444)
+position = Vector2(10.499967, -560.3279)
+scale = Vector2(1.9285716, 1.8654912)
 texture = ExtResource("8_fpj2h")

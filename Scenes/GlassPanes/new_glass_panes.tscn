@@ -2,8 +2,39 @@
 
 [ext_resource type="Script" uid="uid://dxarn4g08ug8" path="res://Scenes/GlassPanes/new_glass_panes.gd" id="1_dcqfx"]
 [ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="2_0he2g"]
+[ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="3_dctr4"]
+[ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="4_c5x56"]
+
+[sub_resource type="Gradient" id="Gradient_2neri"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tsfcu"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ebora"]
+width = 300
+height = 300
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_tsfcu")
+color_ramp = SubResource("Gradient_2neri")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kqptt"]
+shader = ExtResource("3_dctr4")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcqfx"]
+resource_local_to_scene = true
 size = Vector2(0, 0)
 
 [node name="GlassPanes" type="Node2D" unique_id=936546553 node_paths=PackedStringArray("thick_wall")]
@@ -16,35 +47,70 @@ position = Vector2(9, 75)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
+[node name="GlassEdgeSprite" type="Sprite2D" parent="Pane7" unique_id=1071639836]
+material = SubResource("ShaderMaterial_kqptt")
+scale = Vector2(0.29100385, 0.30188677)
+texture = ExtResource("4_c5x56")
+
 [node name="Pane8" parent="." unique_id=411575042 instance=ExtResource("2_0he2g")]
 position = Vector2(9, 202)
 scale = Vector2(0.12, 1)
 glass_pane = true
+
+[node name="GlassEdgeSprite" type="Sprite2D" parent="Pane8" unique_id=420983141]
+material = SubResource("ShaderMaterial_kqptt")
+scale = Vector2(0.29100385, 0.30188677)
+texture = ExtResource("4_c5x56")
 
 [node name="Pane9" parent="." unique_id=673309130 instance=ExtResource("2_0he2g")]
 position = Vector2(9, 329)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
+[node name="GlassEdgeSprite" type="Sprite2D" parent="Pane9" unique_id=2130541882]
+material = SubResource("ShaderMaterial_kqptt")
+scale = Vector2(0.29100385, 0.30188677)
+texture = ExtResource("4_c5x56")
+
 [node name="Pane10" parent="." unique_id=646006176 instance=ExtResource("2_0he2g")]
 position = Vector2(9, 456)
 scale = Vector2(0.12, 1)
 glass_pane = true
+
+[node name="GlassEdgeSprite" type="Sprite2D" parent="Pane10" unique_id=432052496]
+material = SubResource("ShaderMaterial_kqptt")
+scale = Vector2(0.29100385, 0.30188677)
+texture = ExtResource("4_c5x56")
 
 [node name="Pane11" parent="." unique_id=1225190251 instance=ExtResource("2_0he2g")]
 position = Vector2(9, 581)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
+[node name="GlassEdgeSprite" type="Sprite2D" parent="Pane11" unique_id=1485143105]
+material = SubResource("ShaderMaterial_kqptt")
+scale = Vector2(0.29100385, 0.30188677)
+texture = ExtResource("4_c5x56")
+
 [node name="Pane12" parent="." unique_id=39591560 instance=ExtResource("2_0he2g")]
 position = Vector2(9, 708)
 scale = Vector2(0.12, 1)
 glass_pane = true
 
+[node name="GlassEdgeSprite" type="Sprite2D" parent="Pane12" unique_id=1988800330]
+material = SubResource("ShaderMaterial_kqptt")
+scale = Vector2(0.29100385, 0.30188677)
+texture = ExtResource("4_c5x56")
+
 [node name="Pane13" parent="." unique_id=771282166 instance=ExtResource("2_0he2g")]
 position = Vector2(9, 835)
 scale = Vector2(0.12, 1)
 glass_pane = true
+
+[node name="GlassEdgeSprite" type="Sprite2D" parent="Pane13" unique_id=416385193]
+material = SubResource("ShaderMaterial_kqptt")
+scale = Vector2(0.29100385, 0.30188677)
+texture = ExtResource("4_c5x56")
 
 [node name="ThickWall" type="StaticBody2D" parent="." unique_id=89876878]
 collision_layer = 16
