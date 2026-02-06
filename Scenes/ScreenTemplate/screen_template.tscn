@@ -686,5 +686,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1119156389]
 shape = SubResource("RectangleShape2D_ook32")
 
+[node name="ScreenCamera" type="Camera2D" parent="." unique_id=179282167]
+unique_name_in_owner = true
+anchor_mode = 0
+process_callback = 0
+
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]

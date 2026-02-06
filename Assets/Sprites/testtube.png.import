@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgths6ben0r1p"
-path="res://.godot/imported/BoostJuice.png-5a5cf29199a9efdd9f94caa8c184fda0.ctex"
+uid="uid://drfdit7him4iy"
+path="res://.godot/imported/testtube.png-9a18ba8297df320e7db3b3dac39fdcd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/BoostJuice.png"
-dest_files=["res://.godot/imported/BoostJuice.png-5a5cf29199a9efdd9f94caa8c184fda0.ctex"]
+source_file="res://Assets/Sprites/testtube.png"
+dest_files=["res://.godot/imported/testtube.png-9a18ba8297df320e7db3b3dac39fdcd0.ctex"]
 
 [params]
 

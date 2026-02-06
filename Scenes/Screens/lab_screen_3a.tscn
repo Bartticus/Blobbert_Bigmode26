@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_y1fkm"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_1kq1j"]
+[ext_resource type="Texture2D" uid="uid://drfdit7him4iy" path="res://Assets/Sprites/testtube.png" id="3_pfj18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfj18"]
 size = Vector2(1172, 74)
@@ -11,7 +12,11 @@ bounce = 0.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kq1j"]
 radius = 61.0
-height = 836.0
+height = 830.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfj18"]
+radius = 26.0
+height = 156.0
 
 [node name="LabScreen3a" unique_id=1360540123 instance=ExtResource("1_y1fkm")]
 
@@ -46,90 +51,120 @@ collision_mask = 19
 physics_material_override = SubResource("PhysicsMaterial_1kq1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube1" index="0" unique_id=1397486651]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_1kq1j")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube1" index="1" unique_id=651199444]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tubes/Tube1" index="1" unique_id=842122881]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="TubeSprite" type="Sprite2D" parent="Tubes/Tube1" index="2" unique_id=238888683]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("3_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube1" index="3" unique_id=651199444]
 position = Vector2(1, -196)
 node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
-[node name="Sprite2D" type="Sprite2D" parent="Tubes/Tube1" index="2" unique_id=1505731652]
-visible = false
-scale = Vector2(0.90625, 6.453125)
-texture = ExtResource("2_1kq1j")
-
-[node name="Tube2" type="RigidBody2D" parent="Tubes" index="2" unique_id=784479060]
-position = Vector2(753, 614)
+[node name="Tube2" type="RigidBody2D" parent="Tubes" index="2" unique_id=1055428069]
+position = Vector2(741, 614)
 collision_layer = 16
 collision_mask = 19
 physics_material_override = SubResource("PhysicsMaterial_1kq1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube2" index="0" unique_id=53904007]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube2" index="0" unique_id=1459086826]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_1kq1j")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube2" index="1" unique_id=1948823404]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tubes/Tube2" index="1" unique_id=553140501]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="TubeSprite" type="Sprite2D" parent="Tubes/Tube2" index="2" unique_id=793877324]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("3_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube2" index="3" unique_id=1148004494]
 position = Vector2(1, -196)
 node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Tubes/Tube2" index="2" unique_id=830845442]
-visible = false
-scale = Vector2(0.90625, 6.453125)
-texture = ExtResource("2_1kq1j")
-
-[node name="Tube3" type="RigidBody2D" parent="Tubes" index="3" unique_id=978906393]
+[node name="Tube3" type="RigidBody2D" parent="Tubes" index="3" unique_id=1716407708]
 position = Vector2(960, 614)
 collision_layer = 16
 collision_mask = 19
 physics_material_override = SubResource("PhysicsMaterial_1kq1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube3" index="0" unique_id=1586823379]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube3" index="0" unique_id=357916372]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_1kq1j")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube3" index="1" unique_id=605143092]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tubes/Tube3" index="1" unique_id=1473917508]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube3" index="2" unique_id=1995778686]
 position = Vector2(1, -196)
 node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Tubes/Tube3" index="2" unique_id=431939114]
-visible = false
-scale = Vector2(0.90625, 6.453125)
-texture = ExtResource("2_1kq1j")
+[node name="TubeSprite" type="Sprite2D" parent="Tubes/Tube3" index="3" unique_id=24133767]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("3_pfj18")
 
-[node name="Tube4" type="RigidBody2D" parent="Tubes" index="4" unique_id=1330144780]
-position = Vector2(1185, 614)
+[node name="Tube4" type="RigidBody2D" parent="Tubes" index="4" unique_id=1507201542]
+position = Vector2(1181, 614)
 collision_layer = 16
 collision_mask = 19
 physics_material_override = SubResource("PhysicsMaterial_1kq1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube4" index="0" unique_id=601718364]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube4" index="0" unique_id=569946341]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_1kq1j")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube4" index="1" unique_id=1397812984]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tubes/Tube4" index="1" unique_id=469881155]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube4" index="2" unique_id=585741990]
 position = Vector2(1, -196)
 node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Tubes/Tube4" index="2" unique_id=1243966217]
-visible = false
-scale = Vector2(0.90625, 6.453125)
-texture = ExtResource("2_1kq1j")
+[node name="TubeSprite" type="Sprite2D" parent="Tubes/Tube4" index="3" unique_id=842811491]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("3_pfj18")
 
-[node name="Tube5" type="RigidBody2D" parent="Tubes" index="5" unique_id=1889679996]
-position = Vector2(1395, 614)
+[node name="Tube5" type="RigidBody2D" parent="Tubes" index="5" unique_id=1440074055]
+position = Vector2(1386, 614)
 collision_layer = 16
 collision_mask = 19
 physics_material_override = SubResource("PhysicsMaterial_1kq1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube5" index="0" unique_id=2074115263]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tubes/Tube5" index="0" unique_id=352430586]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_1kq1j")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube5" index="1" unique_id=1922886944]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tubes/Tube5" index="1" unique_id=2096466439]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tubes/Tube5" index="2" unique_id=1807604942]
 position = Vector2(1, -196)
 node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Tubes/Tube5" index="2" unique_id=1589907594]
-visible = false
-scale = Vector2(0.90625, 6.453125)
-texture = ExtResource("2_1kq1j")
+[node name="TubeSprite" type="Sprite2D" parent="Tubes/Tube5" index="3" unique_id=860899120]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("3_pfj18")
