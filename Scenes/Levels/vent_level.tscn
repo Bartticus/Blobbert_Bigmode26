@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c0rftul5k5wrg"]
+[gd_scene format=3 uid="uid://c0rftul5k5wrg"]
 
 [ext_resource type="PackedScene" uid="uid://di7akthmm74ou" path="res://Scenes/LevelTemplate/level_template.tscn" id="1_qbcej"]
 [ext_resource type="PackedScene" uid="uid://ckw00ti8a1el6" path="res://Scenes/Screens/vent_screen_6.tscn" id="2_cktbt"]
@@ -8,49 +8,79 @@
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="3_c05e2"]
 [ext_resource type="PackedScene" uid="uid://bg20h0iqh4jpt" path="res://Scenes/Screens/vent_screen_3.tscn" id="3_l3jr1"]
 [ext_resource type="PackedScene" uid="uid://d3jcyrus5t5p" path="res://Scenes/Screens/lab_screen_2c.tscn" id="4_03b2i"]
+[ext_resource type="Texture2D" uid="uid://b6gmhedvaxudm" path="res://Assets/Sprites/Bodybert.png" id="4_cbqsn"]
 [ext_resource type="PackedScene" uid="uid://t8wog3lisshy" path="res://Scenes/Screens/vent_screen_4.tscn" id="4_kbane"]
+[ext_resource type="PackedScene" uid="uid://ci6hjglcdc31b" path="res://Scenes/Screens/lab_screen_5.tscn" id="10_aiug0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
 [node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
-
-[node name="TileMapLayer" parent="." index="3" unique_id=1761386012]
-tile_map_data = PackedByteArray("AAD4/zj/AAAAAAAAAAD4/zn/AAAAAAEAAAD4/zr/AAAAAAIAAAD4/zv/AAAAAAMAAAD4/zz/AAAAAAQAAAD4/z3/AAAAAAUAAAD4/z7/AAAAAAYAAAD4/z//AAAAAAcAAAD5/zj/AAABAAAAAAD5/zn/AAABAAEAAAD5/zr/AAABAAIAAAD5/zv/AAABAAMAAAD5/zz/AAABAAQAAAD5/z3/AAABAAUAAAD5/z7/AAABAAYAAAD5/z//AAABAAcAAAD6/zj/AAACAAAAAAD6/zn/AAACAAEAAAD6/zr/AAACAAIAAAD6/zv/AAACAAMAAAD6/zz/AAACAAQAAAD6/z3/AAACAAUAAAD6/z7/AAACAAYAAAD6/z//AAACAAcAAAD7/zj/AAADAAAAAAD7/zn/AAADAAEAAAD7/zr/AAADAAIAAAD7/zv/AAADAAMAAAD7/zz/AAADAAQAAAD7/z3/AAADAAUAAAD7/z7/AAADAAYAAAD7/z//AAADAAcAAAD8/zj/AAAEAAAAAAD8/zn/AAAEAAEAAAD8/zr/AAAEAAIAAAD8/zv/AAAEAAMAAAD8/zz/AAAEAAQAAAD8/z3/AAAEAAUAAAD8/z7/AAAEAAYAAAD8/z//AAAEAAcAAAD9/zj/AAAFAAAAAAD9/zn/AAAFAAEAAAD9/zr/AAAFAAIAAAD9/zv/AAAFAAMAAAD9/zz/AAAFAAQAAAD9/z3/AAAFAAUAAAD9/z7/AAAFAAYAAAD9/z//AAAFAAcAAAD+/zj/AAAGAAAAAAD+/zn/AAAGAAEAAAD+/zr/AAAGAAIAAAD+/zv/AAAGAAMAAAD+/zz/AAAGAAQAAAD+/z3/AAAGAAUAAAD+/z7/AAAGAAYAAAD+/z//AAAGAAcAAAD//zj/AAAHAAAAAAD//zn/AAAHAAEAAAD//zr/AAAHAAIAAAD//zv/AAAHAAMAAAD//zz/AAAHAAQAAAD//z3/AAAHAAUAAAD//z7/AAAHAAYAAAD//z//AAAHAAcAAAD4/0D/AAAAAAAAAAD4/0H/AAAAAAEAAAD4/0L/AAAAAAIAAAD4/0P/AAAAAAMAAAD4/0T/AAAAAAQAAAD4/0X/AAAAAAUAAAD4/0b/AAAAAAYAAAD4/0f/AAAAAAcAAAD5/0D/AAABAAAAAAD5/0H/AAABAAEAAAD5/0L/AAABAAIAAAD5/0P/AAABAAMAAAD5/0T/AAABAAQAAAD5/0X/AAABAAUAAAD5/0b/AAABAAYAAAD5/0f/AAABAAcAAAD6/0D/AAACAAAAAAD6/0H/AAACAAEAAAD6/0L/AAACAAIAAAD6/0P/AAACAAMAAAD6/0T/AAACAAQAAAD6/0X/AAACAAUAAAD6/0b/AAACAAYAAAD6/0f/AAACAAcAAAD7/0D/AAADAAAAAAD7/0H/AAADAAEAAAD7/0L/AAADAAIAAAD7/0P/AAADAAMAAAD7/0T/AAADAAQAAAD7/0X/AAADAAUAAAD7/0b/AAADAAYAAAD7/0f/AAADAAcAAAD8/0D/AAAEAAAAAAD8/0H/AAAEAAEAAAD8/0L/AAAEAAIAAAD8/0P/AAAEAAMAAAD8/0T/AAAEAAQAAAD8/0X/AAAEAAUAAAD8/0b/AAAEAAYAAAD8/0f/AAAEAAcAAAD9/0D/AAAFAAAAAAD9/0H/AAAFAAEAAAD9/0L/AAAFAAIAAAD9/0P/AAAFAAMAAAD9/0T/AAAFAAQAAAD9/0X/AAAFAAUAAAD9/0b/AAAFAAYAAAD9/0f/AAAFAAcAAAD+/0D/AAAGAAAAAAD+/0H/AAAGAAEAAAD+/0L/AAAGAAIAAAD+/0P/AAAGAAMAAAD+/0T/AAAGAAQAAAD+/0X/AAAGAAUAAAD+/0b/AAAGAAYAAAD+/0f/AAAGAAcAAAD//0D/AAAHAAAAAAD//0H/AAAHAAEAAAD//0L/AAAHAAIAAAD//0P/AAAHAAMAAAD//0T/AAAHAAQAAAD//0X/AAAHAAUAAAD//0b/AAAHAAYAAAD//0f/AAAHAAcAAAD4/0j/AAAAAAAAAAD4/0n/AAAAAAEAAAD4/0r/AAAAAAIAAAD4/0v/AAAAAAMAAAD4/0z/AAAAAAQAAAD4/03/AAAAAAUAAAD4/07/AAAAAAYAAAD4/0//AAAAAAcAAAD5/0j/AAABAAAAAAD5/0n/AAABAAEAAAD5/0r/AAABAAIAAAD5/0v/AAABAAMAAAD5/0z/AAABAAQAAAD5/03/AAABAAUAAAD5/07/AAABAAYAAAD5/0//AAABAAcAAAD6/0j/AAACAAAAAAD6/0n/AAACAAEAAAD6/0r/AAACAAIAAAD6/0v/AAACAAMAAAD6/0z/AAACAAQAAAD6/03/AAACAAUAAAD6/07/AAACAAYAAAD6/0//AAACAAcAAAD7/0j/AAADAAAAAAD7/0n/AAADAAEAAAD7/0r/AAADAAIAAAD7/0v/AAADAAMAAAD7/0z/AAADAAQAAAD7/03/AAADAAUAAAD7/07/AAADAAYAAAD7/0//AAADAAcAAAD8/0j/AAAEAAAAAAD8/0n/AAAEAAEAAAD8/0r/AAAEAAIAAAD8/0v/AAAEAAMAAAD8/0z/AAAEAAQAAAD8/03/AAAEAAUAAAD8/07/AAAEAAYAAAD8/0//AAAEAAcAAAD9/0j/AAAFAAAAAAD9/0n/AAAFAAEAAAD9/0r/AAAFAAIAAAD9/0v/AAAFAAMAAAD9/0z/AAAFAAQAAAD9/03/AAAFAAUAAAD9/07/AAAFAAYAAAD9/0//AAAFAAcAAAD+/0j/AAAGAAAAAAD+/0n/AAAGAAEAAAD+/0r/AAAGAAIAAAD+/0v/AAAGAAMAAAD+/0z/AAAGAAQAAAD+/03/AAAGAAUAAAD+/07/AAAGAAYAAAD+/0//AAAGAAcAAAD//0j/AAAHAAAAAAD//0n/AAAHAAEAAAD//0r/AAAHAAIAAAD//0v/AAAHAAMAAAD//0z/AAAHAAQAAAD//03/AAAHAAUAAAD//07/AAAHAAYAAAD//0//AAAHAAcAAAD4/1D/AAAAAAAAAAD4/1H/AAAAAAEAAAD4/1L/AAAAAAIAAAD4/1P/AAAAAAMAAAD4/1T/AAAAAAQAAAD4/1X/AAAAAAUAAAD5/1D/AAABAAAAAAD5/1H/AAABAAEAAAD5/1L/AAABAAIAAAD5/1P/AAABAAMAAAD5/1T/AAABAAQAAAD5/1X/AAABAAUAAAD6/1D/AAACAAAAAAD6/1H/AAACAAEAAAD6/1L/AAACAAIAAAD6/1P/AAACAAMAAAD6/1T/AAACAAQAAAD6/1X/AAACAAUAAAD7/1D/AAADAAAAAAD7/1H/AAADAAEAAAD7/1L/AAADAAIAAAD7/1P/AAADAAMAAAD7/1T/AAADAAQAAAD7/1X/AAADAAUAAAD8/1D/AAAEAAAAAAD8/1H/AAAEAAEAAAD8/1L/AAAEAAIAAAD8/1P/AAAEAAMAAAD8/1T/AAAEAAQAAAD8/1X/AAAEAAUAAAD9/1D/AAAFAAAAAAD9/1H/AAAFAAEAAAD9/1L/AAAFAAIAAAD9/1P/AAAFAAMAAAD9/1T/AAAFAAQAAAD9/1X/AAAFAAUAAAD+/1D/AAAGAAAAAAD+/1H/AAAGAAEAAAD+/1L/AAAGAAIAAAD+/1P/AAAGAAMAAAD+/1T/AAAGAAQAAAD+/1X/AAAGAAUAAAD//1D/AAAHAAAAAAD//1H/AAAHAAEAAAD//1L/AAAHAAIAAAD//1P/AAAHAAMAAAD//1T/AAAHAAQAAAD//1X/AAAHAAUAAAD4/zf/AAAAAAAAAAD5/zf/AAABAAAAAAD6/zf/AAACAAAAAAD7/zf/AAADAAAAAAD8/zf/AAAEAAAAAAD9/zf/AAAFAAAAAAD+/zf/AAAGAAAAAAD//zf/AAAHAAAAAAD4/1b/AAAAAAAAAAD5/1b/AAABAAAAAAD6/1b/AAACAAAAAAD7/1b/AAADAAAAAAD8/1b/AAAEAAAAAAD9/1b/AAAFAAAAAAD+/1b/AAAGAAAAAAD//1b/AAAHAAAAAAA=")
 
 [node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_cktbt")]
 position = Vector2(0, -3240)
 y_coordinate = -3
 snap_screen_to_position = true
 
-[node name="LabScreen2b" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="1" unique_id=755592408 instance=ExtResource("3_7dgoj")]
+[node name="LabScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="1" unique_id=1128775686 instance=ExtResource("10_aiug0")]
+position = Vector2(-1920, -3240)
+x_coordinate = -1
+y_coordinate = -3
+snap_screen_to_position = true
+
+[node name="ScreenBlob" parent="Screens/LabScreen5" index="4" unique_id=104221436]
+position = Vector2(1660, 436)
+
+[node name="RigidBody2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="0" unique_id=94659899]
+position = Vector2(247, -57)
+rotation = -0.15358898
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="3" unique_id=931504344]
+position = Vector2(483, -66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screens/LabScreen5/Flap/StaticBody2D2" index="0" unique_id=625094102]
+shape = SubResource("CircleShape2D_e78n4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Screens/LabScreen5/Flap/StaticBody2D2" index="1" unique_id=1531036573]
+visible = false
+scale = Vector2(0.13173653, 0.13580246)
+texture = ExtResource("4_cbqsn")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="4" unique_id=1337415500]
+position = Vector2(483, -67)
+node_a = NodePath("../StaticBody2D2")
+node_b = NodePath("../RigidBody2D")
+
+[node name="LabScreen2b" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=755592408 instance=ExtResource("3_7dgoj")]
 position = Vector2(1920, -3240)
 x_coordinate = 1
 y_coordinate = -3
 snap_screen_to_position = true
 
-[node name="LabScreen2c" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=279734582 instance=ExtResource("4_03b2i")]
+[node name="LabScreen2c" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="3" unique_id=279734582 instance=ExtResource("4_03b2i")]
 position = Vector2(3840, -3240)
 x_coordinate = 2
 y_coordinate = -3
 snap_screen_to_position = true
 
-[node name="VentScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="3" unique_id=51965661 instance=ExtResource("2_kbane")]
+[node name="VentScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="4" unique_id=51965661 instance=ExtResource("2_kbane")]
 position = Vector2(0, -2160)
 y_coordinate = -2
 snap_screen_to_position = true
 
-[node name="VentScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="4" unique_id=10989606 instance=ExtResource("3_c05e2")]
+[node name="VentScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="5" unique_id=10989606 instance=ExtResource("3_c05e2")]
 position = Vector2(0, -1080)
 y_coordinate = -1
 snap_screen_to_position = true
 
-[node name="VentScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="5" unique_id=915208190 instance=ExtResource("2_qxvkm")]
+[node name="VentScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="6" unique_id=915208190 instance=ExtResource("2_qxvkm")]
 snap_screen_to_position = true
 
-[node name="VentScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="6" unique_id=922412605 instance=ExtResource("3_l3jr1")]
+[node name="VentScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=922412605 instance=ExtResource("3_l3jr1")]
 position = Vector2(0, 1080)
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="VentScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=871346489 instance=ExtResource("4_kbane")]
+[node name="VentScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="8" unique_id=871346489 instance=ExtResource("4_kbane")]
 position = Vector2(1920, 1080)
 x_coordinate = 1
 y_coordinate = 1
@@ -58,3 +88,5 @@ snap_screen_to_position = true
 
 [node name="LoadingZone" parent="." index="5" unique_id=1274508763]
 position = Vector2(2420, 451)
+
+[editable path="Screens/LabScreen5"]
