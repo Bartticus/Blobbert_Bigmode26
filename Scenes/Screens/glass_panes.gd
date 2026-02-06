@@ -6,6 +6,8 @@ extends Node2D
 @export var left_thick_wall: StaticBody2D
 @export var right_thick_wall: StaticBody2D
 
+@export var anim_player: AnimationPlayer
+
 func _ready() -> void:
 	for pane in left_glass_panes:
 		pane.connect("tree_exiting", _on_left_pane_exiting.bind(pane))
@@ -19,6 +21,9 @@ func _on_left_pane_exiting(_pane: GreasableObject) -> void:
 	for pane in left_glass_panes:
 		if pane:
 			pane.queue_free()
+			left_glass_panes.erase(pane)
+	
+	anim_player.play("breach")
 
 func _on_right_pane_exiting(_pane: GreasableObject) -> void:
 	if right_thick_wall:
@@ -27,3 +32,6 @@ func _on_right_pane_exiting(_pane: GreasableObject) -> void:
 	for pane in right_glass_panes:
 		if pane:
 			pane.queue_free()
+			right_glass_panes.erase(pane)
+	
+	anim_player.play("breach")
