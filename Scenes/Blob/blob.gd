@@ -140,6 +140,7 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	oil.scale = oil.scale * scale_ratio
 	
 	#set rotation
+	oil_pivot.rotation -= body.owner.rotation
 	oil_pivot.rotation -= body.rotation
 	oil.look_at(coll_pos + coll_normal)
 	oil.rotation_degrees += 90

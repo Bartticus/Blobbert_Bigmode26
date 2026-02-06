@@ -12,8 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dynmdxhcng4d3" path="res://Scenes/Screens/lab_screen_3b.tscn" id="10_or0mv"]
 [ext_resource type="PackedScene" uid="uid://ckw00ti8a1el6" path="res://Scenes/Screens/vent_screen_6.tscn" id="11_l487u"]
 
-[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-starting_screen = NodePath("Screens/LabScreen2")
+[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
 
 [node name="Camera" parent="." index="1" unique_id=1077410475]
 process_callback = 0
