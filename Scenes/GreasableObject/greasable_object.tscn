@@ -45,6 +45,7 @@ script = ExtResource("1_7r7q3")
 stain_sprite = NodePath("ObjectShaded")
 
 [node name="ObjectShaded" type="Sprite2D" parent="." unique_id=1685847717]
+visible = false
 material = SubResource("ShaderMaterial_hjrr1")
 texture = ExtResource("2_qfkhn")
 
