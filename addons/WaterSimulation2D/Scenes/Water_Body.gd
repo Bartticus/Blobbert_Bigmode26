@@ -172,10 +172,11 @@ func splash(index, speed):
 	pass
 
 func _on_Water_Body_Area_body_entered(body):
-	spawn_particles(body)
+	if body is Battery:
+		body.battery_wet()
+	# spawn_particles(body)
 
 func spawn_particles(body):
-	# body.in_water()
 	
 	#creates a instace of the particle system
 	var s = splash_particle.instantiate()
@@ -189,5 +190,5 @@ func spawn_particles(body):
 	pass # Replace with function body.
 
 
-func _on_water_body_area_body_exited(body: Node2D) -> void:
-	spawn_particles(body)
+# func _on_water_body_area_body_exited(body: Node2D) -> void:
+# 	spawn_particles(body)
