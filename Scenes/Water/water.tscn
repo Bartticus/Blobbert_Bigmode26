@@ -14,7 +14,8 @@ width = 1810
 height = 463
 
 [node name="WaterPool" type="Area2D" unique_id=995540943]
-collision_mask = 2
+collision_layer = 17
+collision_mask = 18
 gravity_space_override = 3
 gravity_point_center = Vector2(0, -0.2)
 gravity_direction = Vector2(0, -0.2)

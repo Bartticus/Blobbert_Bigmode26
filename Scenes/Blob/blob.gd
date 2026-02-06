@@ -96,7 +96,8 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 
 func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
-	reset_screen()
+	# reset_screen()
+	pass
 
 func reset_screen():
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
@@ -157,3 +158,7 @@ func _on_oil_detector_area_exited(area: Area2D) -> void:
 		if area == newly_spawned_oil:
 			softbody.physics_material_override.friction = 0.2
 			#softbody.mass = 0.05
+
+
+func _on_blob_visibility_notifier_screen_exited() -> void:
+	reset_screen()

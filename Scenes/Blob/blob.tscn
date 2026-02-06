@@ -298,6 +298,7 @@ load_path = "res://.godot/imported/AltFaces_Whoa.png-321c39bcb596d46764bbdbf254c
 load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482e3c06b.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47mic"]
+radius = 70.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_074og"]
 radius = 83.02409
@@ -403,7 +404,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.9999996, 0.9999996)
+scale = Vector2(0.99999946, 0.99999946)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -590,7 +591,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-18" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=375866809]
 position = Vector2(102.836876, 20.52452)
 rotation = 2.6445818
-scale = Vector2(0.99999976, 0.99999976)
+scale = Vector2(0.9999997, 0.9999997)
 rest = Transform2D(-0.8790117, 0.47680017, -0.47680017, -0.8790117, 102.836876, 20.524517)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -617,7 +618,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1360935816]
 position = Vector2(102.15682, 48.364586)
 rotation = 1.6354785
-scale = Vector2(0.9999996, 0.9999996)
+scale = Vector2(0.99999946, 0.99999946)
 rest = Transform2D(-0.06463696, 0.99790883, -0.99790883, -0.06463696, 102.15682, 48.364586)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -763,7 +764,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-31" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=485505377]
 position = Vector2(147.68915, 103.762596)
 rotation = -1.5891105
-scale = Vector2(0.9999996, 0.9999996)
+scale = Vector2(0.99999946, 0.99999946)
 rest = Transform2D(-0.018313143, -0.9998323, 0.9998323, -0.018313143, 147.68915, 103.762596)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3119,7 +3120,6 @@ texture = ExtResource("11_pcdmj")
 
 [node name="BlobLevelTransitionArea" type="Area2D" parent="BlobCenter" unique_id=490246114]
 unique_name_in_owner = true
-visible = false
 collision_layer = 2
 collision_mask = 4
 
@@ -3133,7 +3133,7 @@ texture = ExtResource("14_dp05e")
 [node name="BlobVisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="BlobCenter" unique_id=38668849]
 unique_name_in_owner = true
 rotation = -2.5651665
-rect = Rect2(-5, -5, 10, 10)
+rect = Rect2(-50, -50, 100, 100)
 
 [node name="OilDetector" type="Area2D" parent="BlobCenter" unique_id=2050342350]
 rotation = -2.5651665
@@ -3159,6 +3159,8 @@ wait_time = 5.0
 autostart = true
 
 [connection signal="area_exited" from="BlobCenter/BlobLevelTransitionArea" to="." method="_on_blob_level_transition_area_area_exited"]
+[connection signal="screen_exited" from="BlobCenter/BlobVisibilityNotifier" to="." method="_on_blob_visibility_notifier_screen_exited"]
 [connection signal="area_exited" from="BlobCenter/OilDetector" to="." method="_on_oil_detector_area_exited"]
 [connection signal="timeout" from="RandFaceTimer" to="." method="_on_rand_face_timer_timeout"]
 [connection signal="timeout" from="SetFaceTimer" to="." method="_on_set_face_timer_timeout"]
+[connection signal="timeout" from="ScreenFailSafe" to="." method="_on_screen_fail_safe_timeout"]

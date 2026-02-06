@@ -5,6 +5,7 @@ extends Node2D
 @onready var screen_full_keeb: FullKeeb = %ScreenFullKeeb
 @onready var screen_anchor: Marker2D = %ScreenAnchor
 @onready var screen_blob: Blob = %ScreenBlob
+@onready var process_detection_area: Area2D = %DetectionArea
 
 @export var x_coordinate : int
 @export var y_coordinate : int
@@ -28,3 +29,13 @@ func disable_screen_elements():
 func set_screen_position():
 	if x_coordinate is int && y_coordinate is int:
 		global_position = Vector2(1920 * x_coordinate, 1080 * y_coordinate)
+
+
+# func _on_detection_area_area_entered(area: Area2D) -> void:
+# 	if area.name == 'BlobLevelTransitionArea' && !Engine.is_editor_hint():
+# 		process_mode = Node.PROCESS_MODE_INHERIT
+
+
+# func _on_detection_area_area_exited(area: Area2D) -> void:
+# 	if area.name == 'BlobLevelTransitionArea' && !Engine.is_editor_hint():
+# 		process_mode = Node.PROCESS_MODE_DISABLED

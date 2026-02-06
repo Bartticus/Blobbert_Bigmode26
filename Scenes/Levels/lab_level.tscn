@@ -392,8 +392,7 @@ shader_parameter/edge_remap_max = 1.0
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-starting_screen = NodePath("Screens/LabScreen2")
+[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 
@@ -578,6 +577,11 @@ material = SubResource("ShaderMaterial_vo5kd")
 [node name="ThickWallShape" parent="Screens/TankScreen2/GlassPanes3/ThickWall" parent_id_path=PackedInt32Array(147475777, 1729898104, 89876878) index="0" unique_id=557544539]
 shape = SubResource("RectangleShape2D_0d25b")
 
+[node name="DetectionArea" parent="Screens/TankScreen2" index="11" unique_id=2074166705]
+disable_mode = 0
+collision_layer = 6
+collision_mask = 6
+
 [node name="TankScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="20" unique_id=909318530 instance=ExtResource("20_crsrk")]
 position = Vector2(19200, 3240)
 x_coordinate = 10
@@ -616,6 +620,14 @@ snap_screen_to_position = true
 
 [node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="5" unique_id=2053691136]
 navigation_enabled = true
+
+[node name="RigidBody2D" parent="Screens/TankScreen8/Battery" parent_id_path=PackedInt32Array(974739151, 1219371551) index="0" unique_id=1219371551 node_paths=PackedStringArray("blast_shield")]
+blast_shield = NodePath("../../../TankScreen2/VentDoor")
+
+[node name="DetectionArea" parent="Screens/TankScreen8" index="7" unique_id=2074166705]
+disable_mode = 0
+collision_layer = 6
+collision_mask = 6
 
 [node name="BunsenScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="26" unique_id=1353704759 instance=ExtResource("27_b07p8")]
 position = Vector2(24960, 3240)

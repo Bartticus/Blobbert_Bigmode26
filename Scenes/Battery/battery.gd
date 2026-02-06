@@ -15,5 +15,4 @@ func _physics_process(delta: float) -> void:
 	wire.points = PackedVector2Array([to_local(wire_origin.global_position), to_local(global_position)])
 
 func battery_wet():
-	print('wet')
 	blast_shield.trigger_action()

@@ -30,8 +30,8 @@ _smooth = true
 color = Color(1, 1, 1, 0.3882353)
 
 [node name="Water_Body_Area" type="Area2D" parent="." unique_id=1634076486]
-collision_layer = 524290
-collision_mask = 524290
+collision_layer = 65536
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water_Body_Area" unique_id=87242433]
 position = Vector2(28.5, 10)
