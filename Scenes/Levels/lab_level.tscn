@@ -616,9 +616,6 @@ snap_screen_to_position = true
 [node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="5" unique_id=2053691136]
 navigation_enabled = true
 
-[node name="GreasableObject" parent="Screens/TankScreen8" index="6" unique_id=1867482040 node_paths=PackedStringArray("triggerable_objects")]
-triggerable_objects = [NodePath("../../TankScreen2/VentDoor")]
-
 [node name="BunsenScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="26" unique_id=1353704759 instance=ExtResource("27_b07p8")]
 position = Vector2(24960, 3240)
 x_coordinate = 13
