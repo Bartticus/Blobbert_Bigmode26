@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dsh1pbd0dcmyc" path="res://Scenes/Screens/vent_screen_2.tscn" id="13_axdum"]
 [ext_resource type="PackedScene" uid="uid://bnq5k1xk7y6vw" path="res://Scenes/Screens/tank_screen_2.tscn" id="19_np4tc"]
 [ext_resource type="PackedScene" uid="uid://dnn0cojwsx0tk" path="res://Scenes/Screens/tank_screen_3.tscn" id="20_crsrk"]
+[ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="22_a81hi"]
 [ext_resource type="PackedScene" uid="uid://d327rl6xrouih" path="res://Scenes/Screens/tank_screen_4.tscn" id="23_or0mv"]
 [ext_resource type="PackedScene" uid="uid://c6buq8yn35hjc" path="res://Scenes/Screens/tank_screen_5.tscn" id="24_q3eyr"]
 [ext_resource type="PackedScene" uid="uid://d3x2w60j3uq6y" path="res://Scenes/Screens/tank_screen_6.tscn" id="25_63ah0"]
@@ -30,20 +31,368 @@
 [ext_resource type="PackedScene" uid="uid://ocnniotct3a0" path="res://Scenes/Screens/tank_screen_8.tscn" id="27_iutey"]
 [ext_resource type="PackedScene" uid="uid://clxrthxxdas0q" path="res://Scenes/Screens/bunsen_screen_1.tscn" id="28_iutey"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iutey"]
+[sub_resource type="Gradient" id="Gradient_2neri"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tsfcu"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ebora"]
+width = 300
+height = 300
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_tsfcu")
+color_ramp = SubResource("Gradient_2neri")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a81hi"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bmtt"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ga533"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y8jmv"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjooh"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8el4n"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fy0vq"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xdru"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a81hi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahnjo"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l6pjr"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddii0"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmyb6"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7k0n1"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7l1k"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj0g2"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcxx2"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bmtt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_naoli"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vdoyu"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5by52"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7gvm"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7uka7"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1o3b"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vo5kd"]
+resource_local_to_scene = true
+shader = ExtResource("22_a81hi")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d25b"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-starting_screen = NodePath("Screens/TankScreen0")
+[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 
@@ -153,14 +502,80 @@ x_coordinate = 10
 y_coordinate = 2
 snap_screen_to_position = true
 
+[node name="ScreenTileMapLayer" parent="Screens/TankScreen2" index="6" unique_id=2053691136]
+navigation_enabled = true
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes/Pane7" parent_id_path=PackedInt32Array(147475777, 936546553, 25629605) index="4" unique_id=1071639836]
+material = SubResource("ShaderMaterial_a81hi")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes/Pane8" parent_id_path=PackedInt32Array(147475777, 936546553, 411575042) index="4" unique_id=420983141]
+material = SubResource("ShaderMaterial_5bmtt")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes/Pane9" parent_id_path=PackedInt32Array(147475777, 936546553, 673309130) index="4" unique_id=2130541882]
+material = SubResource("ShaderMaterial_ga533")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes/Pane10" parent_id_path=PackedInt32Array(147475777, 936546553, 646006176) index="4" unique_id=432052496]
+material = SubResource("ShaderMaterial_y8jmv")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes/Pane11" parent_id_path=PackedInt32Array(147475777, 936546553, 1225190251) index="4" unique_id=1485143105]
+material = SubResource("ShaderMaterial_vjooh")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes/Pane12" parent_id_path=PackedInt32Array(147475777, 936546553, 39591560) index="4" unique_id=1988800330]
+material = SubResource("ShaderMaterial_8el4n")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes/Pane13" parent_id_path=PackedInt32Array(147475777, 936546553, 771282166) index="4" unique_id=416385193]
+material = SubResource("ShaderMaterial_fy0vq")
+
 [node name="ThickWallShape" parent="Screens/TankScreen2/GlassPanes/ThickWall" parent_id_path=PackedInt32Array(147475777, 936546553, 89876878) index="0" unique_id=557544539]
-shape = SubResource("RectangleShape2D_iutey")
+shape = SubResource("RectangleShape2D_2xdru")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes2/Pane7" parent_id_path=PackedInt32Array(147475777, 2102978081, 25629605) index="4" unique_id=1071639836]
+material = SubResource("ShaderMaterial_ahnjo")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes2/Pane8" parent_id_path=PackedInt32Array(147475777, 2102978081, 411575042) index="4" unique_id=420983141]
+material = SubResource("ShaderMaterial_l6pjr")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes2/Pane9" parent_id_path=PackedInt32Array(147475777, 2102978081, 673309130) index="4" unique_id=2130541882]
+material = SubResource("ShaderMaterial_ddii0")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes2/Pane10" parent_id_path=PackedInt32Array(147475777, 2102978081, 646006176) index="4" unique_id=432052496]
+material = SubResource("ShaderMaterial_cmyb6")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes2/Pane11" parent_id_path=PackedInt32Array(147475777, 2102978081, 1225190251) index="4" unique_id=1485143105]
+material = SubResource("ShaderMaterial_7k0n1")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes2/Pane12" parent_id_path=PackedInt32Array(147475777, 2102978081, 39591560) index="4" unique_id=1988800330]
+material = SubResource("ShaderMaterial_x7l1k")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes2/Pane13" parent_id_path=PackedInt32Array(147475777, 2102978081, 771282166) index="4" unique_id=416385193]
+material = SubResource("ShaderMaterial_kj0g2")
 
 [node name="ThickWallShape" parent="Screens/TankScreen2/GlassPanes2/ThickWall" parent_id_path=PackedInt32Array(147475777, 2102978081, 89876878) index="0" unique_id=557544539]
-shape = SubResource("RectangleShape2D_a81hi")
+shape = SubResource("RectangleShape2D_rcxx2")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes3/Pane7" parent_id_path=PackedInt32Array(147475777, 1729898104, 25629605) index="4" unique_id=1071639836]
+material = SubResource("ShaderMaterial_naoli")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes3/Pane8" parent_id_path=PackedInt32Array(147475777, 1729898104, 411575042) index="4" unique_id=420983141]
+material = SubResource("ShaderMaterial_vdoyu")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes3/Pane9" parent_id_path=PackedInt32Array(147475777, 1729898104, 673309130) index="4" unique_id=2130541882]
+material = SubResource("ShaderMaterial_5by52")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes3/Pane10" parent_id_path=PackedInt32Array(147475777, 1729898104, 646006176) index="4" unique_id=432052496]
+material = SubResource("ShaderMaterial_y7gvm")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes3/Pane11" parent_id_path=PackedInt32Array(147475777, 1729898104, 1225190251) index="4" unique_id=1485143105]
+material = SubResource("ShaderMaterial_7uka7")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes3/Pane12" parent_id_path=PackedInt32Array(147475777, 1729898104, 39591560) index="4" unique_id=1988800330]
+material = SubResource("ShaderMaterial_l1o3b")
+
+[node name="GlassEdgeSprite" parent="Screens/TankScreen2/GlassPanes3/Pane13" parent_id_path=PackedInt32Array(147475777, 1729898104, 771282166) index="4" unique_id=416385193]
+material = SubResource("ShaderMaterial_vo5kd")
 
 [node name="ThickWallShape" parent="Screens/TankScreen2/GlassPanes3/ThickWall" parent_id_path=PackedInt32Array(147475777, 1729898104, 89876878) index="0" unique_id=557544539]
-shape = SubResource("RectangleShape2D_5bmtt")
+shape = SubResource("RectangleShape2D_0d25b")
 
 [node name="TankScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="20" unique_id=909318530 instance=ExtResource("20_crsrk")]
 position = Vector2(19200, 3240)
@@ -198,8 +613,11 @@ x_coordinate = 9
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="RigidBody2D" parent="Screens/TankScreen8/Battery" parent_id_path=PackedInt32Array(974739151, 1219371551) index="0" unique_id=1219371551 node_paths=PackedStringArray("blast_shield")]
-blast_shield = NodePath("../../../TankScreen2/VentDoor")
+[node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="5" unique_id=2053691136]
+navigation_enabled = true
+
+[node name="GreasableObject" parent="Screens/TankScreen8" index="6" unique_id=1867482040 node_paths=PackedStringArray("triggerable_objects")]
+triggerable_objects = [NodePath("../../TankScreen2/VentDoor")]
 
 [node name="BunsenScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="26" unique_id=1353704759 instance=ExtResource("27_b07p8")]
 position = Vector2(24960, 3240)
