@@ -16,6 +16,7 @@ color_ramp = SubResource("Gradient_qfkhn")
 seamless = true
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_vwkh3")
 shader_parameter/sensitivity = 0.0
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")

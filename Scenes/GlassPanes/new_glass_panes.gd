@@ -31,4 +31,5 @@ func _on_pane_exiting(_pane: GreasableObject) -> void:
 		for pane in all_glass_panes:
 			if pane:
 				pane.queue_free()
-	anim_player.play("breach")
+	if anim_player:
+		anim_player.play("breach")

@@ -166,6 +166,8 @@ position = Vector2(154, 114)
 unique_name_in_owner = true
 z_index = 10
 tile_set = SubResource("TileSet_xssm3")
+physics_quadrant_size = 64
+navigation_enabled = false
 
 [node name="Screens" type="Node2D" parent="." unique_id=1130019440]
 unique_name_in_owner = true

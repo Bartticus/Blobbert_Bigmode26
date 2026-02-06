@@ -18,7 +18,104 @@ noise = SubResource("FastNoiseLite_tsfcu")
 color_ramp = SubResource("Gradient_2neri")
 seamless = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dctr4"]
+resource_local_to_scene = true
+shader = ExtResource("3_dctr4")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5x56"]
+resource_local_to_scene = true
+shader = ExtResource("3_dctr4")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2neri"]
+resource_local_to_scene = true
+shader = ExtResource("3_dctr4")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tsfcu"]
+resource_local_to_scene = true
+shader = ExtResource("3_dctr4")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bp8l"]
+resource_local_to_scene = true
+shader = ExtResource("3_dctr4")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_skg4y"]
+resource_local_to_scene = true
+shader = ExtResource("3_dctr4")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kqptt"]
+resource_local_to_scene = true
 shader = ExtResource("3_dctr4")
 shader_parameter/sensitivity = 0.0
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
@@ -42,69 +139,76 @@ z_index = 4
 script = ExtResource("1_dcqfx")
 thick_wall = NodePath("ThickWall")
 
-[node name="Pane7" parent="." unique_id=25629605 instance=ExtResource("2_0he2g")]
+[node name="Pane7" parent="." unique_id=25629605 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_0he2g")]
 position = Vector2(9, 75)
 scale = Vector2(0.12, 1)
+stain_sprite = NodePath("GlassEdgeSprite")
 glass_pane = true
 
 [node name="GlassEdgeSprite" type="Sprite2D" parent="Pane7" unique_id=1071639836]
-material = SubResource("ShaderMaterial_kqptt")
+material = SubResource("ShaderMaterial_dctr4")
 scale = Vector2(0.29100385, 0.30188677)
 texture = ExtResource("4_c5x56")
 
-[node name="Pane8" parent="." unique_id=411575042 instance=ExtResource("2_0he2g")]
+[node name="Pane8" parent="." unique_id=411575042 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_0he2g")]
 position = Vector2(9, 202)
 scale = Vector2(0.12, 1)
+stain_sprite = NodePath("GlassEdgeSprite")
 glass_pane = true
 
 [node name="GlassEdgeSprite" type="Sprite2D" parent="Pane8" unique_id=420983141]
-material = SubResource("ShaderMaterial_kqptt")
+material = SubResource("ShaderMaterial_c5x56")
 scale = Vector2(0.29100385, 0.30188677)
 texture = ExtResource("4_c5x56")
 
-[node name="Pane9" parent="." unique_id=673309130 instance=ExtResource("2_0he2g")]
+[node name="Pane9" parent="." unique_id=673309130 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_0he2g")]
 position = Vector2(9, 329)
 scale = Vector2(0.12, 1)
+stain_sprite = NodePath("GlassEdgeSprite")
 glass_pane = true
 
 [node name="GlassEdgeSprite" type="Sprite2D" parent="Pane9" unique_id=2130541882]
-material = SubResource("ShaderMaterial_kqptt")
+material = SubResource("ShaderMaterial_2neri")
 scale = Vector2(0.29100385, 0.30188677)
 texture = ExtResource("4_c5x56")
 
-[node name="Pane10" parent="." unique_id=646006176 instance=ExtResource("2_0he2g")]
+[node name="Pane10" parent="." unique_id=646006176 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_0he2g")]
 position = Vector2(9, 456)
 scale = Vector2(0.12, 1)
+stain_sprite = NodePath("GlassEdgeSprite")
 glass_pane = true
 
 [node name="GlassEdgeSprite" type="Sprite2D" parent="Pane10" unique_id=432052496]
-material = SubResource("ShaderMaterial_kqptt")
+material = SubResource("ShaderMaterial_tsfcu")
 scale = Vector2(0.29100385, 0.30188677)
 texture = ExtResource("4_c5x56")
 
-[node name="Pane11" parent="." unique_id=1225190251 instance=ExtResource("2_0he2g")]
+[node name="Pane11" parent="." unique_id=1225190251 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_0he2g")]
 position = Vector2(9, 581)
 scale = Vector2(0.12, 1)
+stain_sprite = NodePath("GlassEdgeSprite")
 glass_pane = true
 
 [node name="GlassEdgeSprite" type="Sprite2D" parent="Pane11" unique_id=1485143105]
-material = SubResource("ShaderMaterial_kqptt")
+material = SubResource("ShaderMaterial_4bp8l")
 scale = Vector2(0.29100385, 0.30188677)
 texture = ExtResource("4_c5x56")
 
-[node name="Pane12" parent="." unique_id=39591560 instance=ExtResource("2_0he2g")]
+[node name="Pane12" parent="." unique_id=39591560 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_0he2g")]
 position = Vector2(9, 708)
 scale = Vector2(0.12, 1)
+stain_sprite = NodePath("GlassEdgeSprite")
 glass_pane = true
 
 [node name="GlassEdgeSprite" type="Sprite2D" parent="Pane12" unique_id=1988800330]
-material = SubResource("ShaderMaterial_kqptt")
+material = SubResource("ShaderMaterial_skg4y")
 scale = Vector2(0.29100385, 0.30188677)
 texture = ExtResource("4_c5x56")
 
-[node name="Pane13" parent="." unique_id=771282166 instance=ExtResource("2_0he2g")]
+[node name="Pane13" parent="." unique_id=771282166 node_paths=PackedStringArray("stain_sprite") instance=ExtResource("2_0he2g")]
 position = Vector2(9, 835)
 scale = Vector2(0.12, 1)
+stain_sprite = NodePath("GlassEdgeSprite")
 glass_pane = true
 
 [node name="GlassEdgeSprite" type="Sprite2D" parent="Pane13" unique_id=416385193]

@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_ni8rx"]
 [ext_resource type="PackedScene" uid="uid://ix8ry0y5k1ar" path="res://Scenes/GlassPanes/new_glass_panes.tscn" id="3_14qcb"]
-[ext_resource type="Shader" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
+[ext_resource type="Shader" uid="uid://c0x8wa31e6iip" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
 [ext_resource type="Texture2D" uid="uid://dptauq5wft3cf" path="res://Assets/Sprites/Contained_v2.png" id="5_yco6c"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="6_yco6c"]
 [ext_resource type="Texture2D" uid="uid://bisaren6ebhve" path="res://Assets/Sprites/Breach.png" id="7_054od"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="8_f60q8"]
-[ext_resource type="Texture2D" uid="uid://c2cs4ijtokti6" path="res://Assets/Sprites/Glass_Break.png" id="8_fpj2h"]
+[ext_resource type="Texture2D" uid="uid://d0hdrlw0wkndq" path="res://Assets/Sprites/CrackAss.png" id="9_14qcb"]
 [ext_resource type="Texture2D" uid="uid://b88ivniwyect7" path="res://Assets/Sprites/trace_07.png" id="11_qi06u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r2yta"]
@@ -138,6 +138,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Breach/VignetteSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fpj2h"]
 resource_name = "breach"
@@ -176,7 +188,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(0.35355335, 2.297397, 0.35355335, 2.297397, 1),
+"transitions": PackedFloat32Array(0.45062515, 1.3660402, 0.51763237, 1.4142135, 1),
 "update": 0,
 "values": [16.0, 0.0, 16.0, 0.0, 16.0]
 }
@@ -188,7 +200,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(0.35355335, 2.297397, 0.35355335, 2.297397, 1),
+"transitions": PackedFloat32Array(0.45062515, 1.3660402, 0.51763237, 1.4142135, 1),
 "update": 0,
 "values": [16.0, 0.0, 16.0, 0.0, 16.0]
 }
@@ -200,7 +212,7 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(0.35355335, 2.297397, 0.35355335, 2.297397, 1),
+"transitions": PackedFloat32Array(0.45062515, 1.3660402, 0.51763237, 1.4142135, 1),
 "update": 0,
 "values": [16.0, 0.0, 16.0, 0.0, 16.0]
 }
@@ -212,7 +224,7 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(0.35355335, 2.297397, 0.35355335, 2.297397, 1),
+"transitions": PackedFloat32Array(0.45062515, 1.3660402, 0.51763237, 1.4142135, 1),
 "update": 0,
 "values": [16.0, 0.0, 16.0, 0.0, 16.0]
 }
@@ -248,9 +260,21 @@ tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(0.37892917, 2.6390157, 0.3535534, 2.2973971, 1),
+"transitions": PackedFloat32Array(0.53588676, 1.5691686, 0.5176325, 1.5691684, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Breach/VignetteSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_14qcb"]
@@ -279,7 +303,7 @@ offset_right = 1502.0
 offset_bottom = 961.0
 
 [node name="GlassPanes" parent="." index="7" unique_id=936546553 node_paths=PackedStringArray("anim_player") instance=ExtResource("3_14qcb")]
-position = Vector2(1501, 66)
+position = Vector2(1500, 67)
 anim_player = NodePath("../Breach/AnimationPlayer")
 
 [node name="GlassPanes2" parent="." index="8" unique_id=269417865 node_paths=PackedStringArray("anim_player") instance=ExtResource("3_14qcb")]
@@ -324,8 +348,8 @@ position = Vector2(1173.2716, 1140.7253)
 shape = SubResource("RectangleShape2D_fpj2h")
 
 [node name="GlassSprite" type="Sprite2D" parent="." index="11" unique_id=1057729890]
-position = Vector2(984, 482.00006)
-scale = Vector2(2.2761908, 1.8655659)
+position = Vector2(982, 483.00003)
+scale = Vector2(1.9365082, 1.8655659)
 texture = ExtResource("6_yco6c")
 
 [node name="TopLight" type="PointLight2D" parent="." index="12" unique_id=573013363]
@@ -348,6 +372,7 @@ color = Color(0, 18.892157, 0, 1)
 texture = ExtResource("11_qi06u")
 
 [node name="Breach" type="Node2D" parent="." index="15" unique_id=1350780541]
+z_index = 5
 position = Vector2(954, 946)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Breach" index="0" unique_id=197434859]
@@ -386,14 +411,21 @@ color = Color(18.892157, 0, 0, 1)
 energy = 16.0
 texture = ExtResource("11_qi06u")
 
-[node name="BreachSprite" type="Sprite2D" parent="Breach" index="2" unique_id=443666817]
+[node name="VignetteSprite" type="Sprite2D" parent="Breach" index="2" unique_id=1070406642]
 visible = false
-z_index = 5
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 4)
+rotation = -1.5707964
+scale = Vector2(2.3973534, 2.4421299)
+texture = ExtResource("11_qi06u")
+
+[node name="BreachSprite" type="Sprite2D" parent="Breach" index="3" unique_id=443666817]
+visible = false
 position = Vector2(4, 15.000061)
 scale = Vector2(1, 0.8405794)
 texture = ExtResource("7_054od")
 
-[node name="CrackSprite" type="Sprite2D" parent="Breach/BreachSprite" index="0" unique_id=1344779436]
-position = Vector2(10.499967, -560.3279)
-scale = Vector2(1.9285716, 1.8654912)
-texture = ExtResource("8_fpj2h")
+[node name="CrackSprite" type="Sprite2D" parent="Breach/BreachSprite" index="0" unique_id=438021159]
+position = Vector2(1.9999943, -559.1383)
+scale = Vector2(0.50439614, 0.4900874)
+texture = ExtResource("9_14qcb")

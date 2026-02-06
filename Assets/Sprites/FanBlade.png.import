@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2cs4ijtokti6"
-path="res://.godot/imported/Glass_Break.png-cde9c8078047b946d9e170991a169354.ctex"
+uid="uid://bh4apo28qkc44"
+path="res://.godot/imported/FanBlade.png-afaeeb6e583d4cf980db7fcabb50e80c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Glass_Break.png"
-dest_files=["res://.godot/imported/Glass_Break.png-cde9c8078047b946d9e170991a169354.ctex"]
+source_file="res://Assets/Sprites/FanBlade.png"
+dest_files=["res://.godot/imported/FanBlade.png-afaeeb6e583d4cf980db7fcabb50e80c.ctex"]
 
 [params]
 
