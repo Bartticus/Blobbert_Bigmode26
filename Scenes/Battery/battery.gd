@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	wire.points = PackedVector2Array([to_local(wire_origin.global_position), to_local(global_position)])
 
 func battery_wet():

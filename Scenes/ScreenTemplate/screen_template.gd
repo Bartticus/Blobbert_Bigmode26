@@ -6,6 +6,7 @@ extends Node2D
 @onready var screen_anchor: Marker2D = %ScreenAnchor
 @onready var screen_blob: Blob = %ScreenBlob
 @onready var process_detection_area: Area2D = %DetectionArea
+@onready var camera: Camera2D = %ScreenCamera
 
 @export var x_coordinate : int
 @export var y_coordinate : int
@@ -24,6 +25,7 @@ func _ready() -> void:
 func disable_screen_elements():
 	screen_full_keeb.queue_free()
 	screen_blob.queue_free()
+	camera.queue_free()
 
 
 func set_screen_position():
