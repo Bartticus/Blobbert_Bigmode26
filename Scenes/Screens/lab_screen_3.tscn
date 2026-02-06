@@ -10,6 +10,9 @@ bounce = 0.4
 
 [node name="LabScreen3" unique_id=1360540123 instance=ExtResource("1_1kkn2")]
 
+[node name="BackgroundTileMapLayer" parent="." index="0" unique_id=545612029]
+z_index = 11
+
 [node name="ScreenBlob" parent="." index="4" unique_id=104221436]
 position = Vector2(239, 176)
 
