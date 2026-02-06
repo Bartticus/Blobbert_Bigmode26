@@ -392,7 +392,8 @@ shader_parameter/edge_remap_max = 1.0
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
+[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
+starting_screen = NodePath("Screens/LabScreen2")
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 
