@@ -28,3 +28,4 @@ func _ready() -> void:
 	
 	current_anchor = starting_screen.screen_anchor
 	blob.global_position = starting_screen.screen_blob.global_position
+	Fade.fade_in(0.5)

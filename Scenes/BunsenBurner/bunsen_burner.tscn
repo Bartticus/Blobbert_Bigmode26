@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b8aevm7ktvaqu"]
+
+[ext_resource type="Script" uid="uid://b7s2jlfdhdi10" path="res://Scenes/BunsenBurner/bunsen_burner.gd" id="1_r4oiy"]
+[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_m5rdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt33f"]
+size = Vector2(200, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4oiy"]
+size = Vector2(270, 170)
+
+[node name="BunsenBurner" type="Node2D" unique_id=479197049]
+script = ExtResource("1_r4oiy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=24017709]
+collision_layer = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=167313570]
+shape = SubResource("RectangleShape2D_jt33f")
+
+[node name="FireDetection" type="Area2D" parent="." unique_id=79559465]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireDetection" unique_id=382422036]
+shape = SubResource("RectangleShape2D_r4oiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771459867]
+scale = Vector2(1.6, 0.8)
+texture = ExtResource("2_m5rdo")
+
+[connection signal="area_entered" from="FireDetection" to="." method="_on_fire_detection_area_entered"]

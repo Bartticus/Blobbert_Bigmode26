@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_hqqtq"]
 [ext_resource type="PackedScene" uid="uid://byh3j81if5jct" path="res://Scenes/VentDoor/vent_door.tscn" id="2_bnaxw"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_lf7uf"]
-[ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="4_6i8ix"]
 
 [node name="TankScreen6" unique_id=1360540123 instance=ExtResource("1_hqqtq")]
 
@@ -25,9 +24,5 @@ modulate = Color(1, 0, 0, 1)
 position = Vector2(64.4, 104.36894)
 scale = Vector2(1, 0.24271847)
 texture = ExtResource("3_lf7uf")
-
-[node name="GreasableObject" parent="." index="7" unique_id=1867482040 node_paths=PackedStringArray("triggerable_objects") instance=ExtResource("4_6i8ix")]
-position = Vector2(292, 467)
-triggerable_objects = [NodePath("../VentDoor")]
 
 [editable path="VentDoor"]

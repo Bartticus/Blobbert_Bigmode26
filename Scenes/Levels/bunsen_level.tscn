@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://0yfv65xv4oy5"]
+
+[ext_resource type="PackedScene" uid="uid://di7akthmm74ou" path="res://Scenes/LevelTemplate/level_template.tscn" id="1_28eey"]
+[ext_resource type="PackedScene" uid="uid://cs5n8erodmjq7" path="res://Scenes/Screens/bunsen_screen_0.tscn" id="2_bh3cb"]
+[ext_resource type="PackedScene" uid="uid://clxrthxxdas0q" path="res://Scenes/Screens/bunsen_screen_1.tscn" id="3_n6gti"]
+[ext_resource type="PackedScene" uid="uid://bqj6mts05ai7n" path="res://Scenes/Screens/bunsen_screen_2.tscn" id="4_v4art"]
+[ext_resource type="PackedScene" uid="uid://ceddy8vpvisq1" path="res://Scenes/Screens/bunsen_screen_3.tscn" id="5_x2tag"]
+[ext_resource type="PackedScene" uid="uid://d2pqgn1yo0a4k" path="res://Scenes/Screens/bunsen_screen_4.tscn" id="6_52o8f"]
+[ext_resource type="PackedScene" uid="uid://csyj676ruq6qq" path="res://Scenes/Screens/bunsen_screen_5.tscn" id="7_qjiku"]
+[ext_resource type="PackedScene" uid="uid://iscjuhc2wdpb" path="res://Scenes/Screens/bunsen_screen_6.tscn" id="8_r2r8b"]
+[ext_resource type="PackedScene" uid="uid://y1b1c2qdkono" path="res://Scenes/Screens/bunsen_screen_7.tscn" id="9_usdfu"]
+[ext_resource type="PackedScene" uid="uid://cdupimmdhu10y" path="res://Scenes/Screens/bunsen_screen_8.tscn" id="10_qjiku"]
+[ext_resource type="PackedScene" uid="uid://60kj5ltyqx82" path="res://Scenes/Screens/bunsen_screen_9.tscn" id="11_v63sp"]
+[ext_resource type="PackedScene" uid="uid://cg8eikmecesv4" path="res://Scenes/Screens/bunsen_screen_10.tscn" id="12_s03oc"]
+[ext_resource type="PackedScene" uid="uid://bfti1602q8a6l" path="res://Scenes/Screens/bunsen_screen_11.tscn" id="13_701ob"]
+
+[node name="BunsenLevel" unique_id=129905935 instance=ExtResource("1_28eey")]
+
+[node name="BunsenScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_bh3cb")]
+position = Vector2(0, 1080)
+y_coordinate = 1
+snap_screen_to_position = true
+
+[node name="BunsenScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="1" unique_id=846022317 instance=ExtResource("3_n6gti")]
+snap_screen_to_position = true
+
+[node name="BunsenScreen2" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=1519659622 instance=ExtResource("4_v4art")]
+position = Vector2(0, -1080)
+y_coordinate = -1
+snap_screen_to_position = true
+
+[node name="BunsenScreen3" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="3" unique_id=283908172 instance=ExtResource("5_x2tag")]
+position = Vector2(0, -2160)
+y_coordinate = -2
+snap_screen_to_position = true
+
+[node name="BunsenScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="4" unique_id=1676521602 instance=ExtResource("6_52o8f")]
+position = Vector2(1920, 1080)
+x_coordinate = 1
+y_coordinate = 1
+snap_screen_to_position = true
+
+[node name="BunsenScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="5" unique_id=7999201 instance=ExtResource("7_qjiku")]
+position = Vector2(1920, 0)
+x_coordinate = 1
+
+[node name="BunsenScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="6" unique_id=1580102288 instance=ExtResource("8_r2r8b")]
+position = Vector2(1920, -1080)
+x_coordinate = 1
+y_coordinate = -1
+snap_screen_to_position = true
+
+[node name="BunsenScreen7" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=1850074392 instance=ExtResource("9_usdfu")]
+position = Vector2(1920, -2160)
+x_coordinate = 1
+y_coordinate = -2
+snap_screen_to_position = true
+
+[node name="BunsenScreen8" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="8" unique_id=162164684 instance=ExtResource("10_qjiku")]
+position = Vector2(3840, 1080)
+x_coordinate = 2
+y_coordinate = 1
+snap_screen_to_position = true
+
+[node name="BunsenScreen9" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=1716462382 instance=ExtResource("11_v63sp")]
+position = Vector2(3840, 0)
+x_coordinate = 2
+snap_screen_to_position = true
+
+[node name="BunsenScreen10" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="10" unique_id=375251644 instance=ExtResource("12_s03oc")]
+position = Vector2(-1920, 0)
+x_coordinate = -1
+snap_screen_to_position = true
+
+[node name="BunsenScreen11" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="11" unique_id=1082678569 instance=ExtResource("13_701ob")]
+position = Vector2(-1920, -1080)
+x_coordinate = -1
+y_coordinate = -1
+snap_screen_to_position = true
+
+[node name="LoadingZone" parent="." index="5" unique_id=1274508763]
+position = Vector2(3837, -2141)

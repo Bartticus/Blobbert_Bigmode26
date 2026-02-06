@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://di7akthmm74ou"]
 
-[ext_resource type="Script" uid="uid://c4dijc2eik4dy" path="res://Scenes/Levels/level_script.gd" id="1_ebu0d"]
+[ext_resource type="Script" uid="uid://c4dijc2eik4dy" path="res://Scenes/LevelTemplate/level_script.gd" id="1_ebu0d"]
 [ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/FullKeeb/full_keeb.tscn" id="2_nqhii"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="4_fkjnc"]
+[ext_resource type="PackedScene" uid="uid://ngi34or8veka" path="res://Scenes/LoadingZone/loading_zone.tscn" id="5_346pk"]
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="5_tvne3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_346pk"]
@@ -171,3 +172,5 @@ navigation_enabled = false
 
 [node name="Screens" type="Node2D" parent="." unique_id=1130019440]
 unique_name_in_owner = true
+
+[node name="LoadingZone" parent="." unique_id=1274508763 instance=ExtResource("5_346pk")]

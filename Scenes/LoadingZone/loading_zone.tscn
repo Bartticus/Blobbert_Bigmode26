@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ngi34or8veka"]
+
+[ext_resource type="Script" uid="uid://c4o4a3kt866pe" path="res://Scenes/LoadingZone/loading_zone.gd" id="1_07vpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir2mg"]
+size = Vector2(1920, 1080)
+
+[node name="LoadingZone" type="Node2D" unique_id=1274508763]
+script = ExtResource("1_07vpk")
+
+[node name="LoadingArea" type="Area2D" parent="." unique_id=1007664667]
+unique_name_in_owner = true
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadingArea" unique_id=1201253864]
+position = Vector2(960, 540)
+shape = SubResource("RectangleShape2D_ir2mg")
+
+[connection signal="area_entered" from="LoadingArea" to="." method="_on_loading_area_area_entered"]

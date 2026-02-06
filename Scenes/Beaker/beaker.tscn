@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d4eb5vpni2j21"]
+
+[ext_resource type="Script" uid="uid://bfkx4m1118507" path="res://Scenes/Beaker/beaker.gd" id="1_18ua4"]
+[ext_resource type="Texture2D" uid="uid://pgr3e21cm7q8" path="res://Assets/Sprites/LiquidLunch.png" id="1_cdnhj"]
+[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_18ua4"]
+[ext_resource type="Material" uid="uid://h4mx1loryx85" path="res://Scenes/BunsenBurner/bunsen_burner.material" id="2_g6f45"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imnhf"]
+friction = 0.4
+bounce = 0.4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18ua4"]
+size = Vector2(450, 800)
+
+[node name="Beaker" type="RigidBody2D" unique_id=30536693]
+collision_mask = 3
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_imnhf")
+script = ExtResource("1_18ua4")
+
+[node name="BeakerPolygon" type="CollisionPolygon2D" parent="." unique_id=1465428861]
+unique_name_in_owner = true
+polygon = PackedVector2Array(-148, 327, 152, 327, 176, 304, 187, 265, 62, -112, 58, -207, 102, -215, 96, -260, 64, -266, 75, -325, -84, -317, -76, -261, -104, -242, -94, -210, -65, -207, -68, -107, -182, 272, -171, 304)
+
+[node name="BeakerSprite" type="Sprite2D" parent="." unique_id=1452955802]
+unique_name_in_owner = true
+material = ExtResource("2_g6f45")
+position = Vector2(-2, 80)
+scale = Vector2(0.33236435, 0.3960756)
+texture = ExtResource("1_cdnhj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1310723143]
+visible = false
+clip_children = 1
+texture_repeat = 2
+polygon = PackedVector2Array(-148, 327, 152, 327, 182, 276, 54, -156, 54, -323, -56, -323, -56, -156, -182, 272)
+uv = PackedVector2Array(-148, 327, 152, 327, 182, 276, 55, -156, 54, -330, -56, -330, -57, -155, -182, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="Polygon2D" unique_id=2048773700]
+scale = Vector2(2.8749993, 5.1562505)
+texture = ExtResource("2_18ua4")
+
+[node name="FlameCheck" type="Area2D" parent="." unique_id=207418067]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlameCheck" unique_id=1272044846]
+shape = SubResource("RectangleShape2D_18ua4")
+
+[node name="ExplosionTimer" type="Timer" parent="." unique_id=449813539]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="area_entered" from="FlameCheck" to="." method="_on_flame_check_area_entered"]
+[connection signal="timeout" from="ExplosionTimer" to="." method="_on_explosion_timer_timeout"]
