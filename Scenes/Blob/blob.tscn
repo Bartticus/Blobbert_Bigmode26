@@ -403,7 +403,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.9999994, 0.9999994)
+scale = Vector2(0.99999934, 0.99999934)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -617,7 +617,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1360935816]
 position = Vector2(102.15682, 48.364586)
 rotation = 1.6354785
-scale = Vector2(0.9999994, 0.9999994)
+scale = Vector2(0.99999934, 0.99999934)
 rest = Transform2D(-0.06463696, 0.99790883, -0.99790883, -0.06463696, 102.15682, 48.364586)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -763,7 +763,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-31" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=485505377]
 position = Vector2(147.68915, 103.762596)
 rotation = -1.5891105
-scale = Vector2(0.9999994, 0.9999994)
+scale = Vector2(0.99999934, 0.99999934)
 rest = Transform2D(-0.018313143, -0.9998323, 0.9998323, -0.018313143, 147.68915, 103.762596)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -775,6 +775,7 @@ metadata/connected_nodes_idx = [23, 30, 25]
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-0" parent="Softbody" unique_id=702735613 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(32.171257, 34.25983)
 collision_layer = 2
 collision_mask = 19
@@ -827,6 +828,7 @@ damping = 0.01
 metadata/joint_distance = 25.662407
 
 [node name="Bone-1" parent="Softbody" unique_id=1632438338 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(29.504128, 59.78326)
 collision_layer = 2
 collision_mask = 19
@@ -901,6 +903,7 @@ damping = 0.01
 metadata/joint_distance = 21.61367
 
 [node name="Bone-2" parent="Softbody" unique_id=735552098 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(14.945044, 75.75774)
 collision_layer = 2
 collision_mask = 19
@@ -953,6 +956,7 @@ damping = 0.01
 metadata/joint_distance = 27.056305
 
 [node name="Bone-3" parent="Softbody" unique_id=880128140 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(29.745743, 89.4853)
 collision_layer = 2
 collision_mask = 19
@@ -1038,6 +1042,7 @@ damping = 0.01
 metadata/joint_distance = 28.429344
 
 [node name="Bone-4" parent="Softbody" unique_id=538275186 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(14.801372, 102.81366)
 collision_layer = 2
 collision_mask = 19
@@ -1090,6 +1095,7 @@ damping = 0.01
 metadata/joint_distance = 20.024473
 
 [node name="Bone-5" parent="Softbody" unique_id=594221422 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(29.791924, 117.914604)
 collision_layer = 2
 collision_mask = 19
@@ -1164,6 +1170,7 @@ damping = 0.01
 metadata/joint_distance = 30.137672
 
 [node name="Bone-6" parent="Softbody" unique_id=1692126504 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(34.124126, 140.75192)
 collision_layer = 2
 collision_mask = 19
@@ -1205,6 +1212,7 @@ damping = 0.01
 metadata/joint_distance = 20.256443
 
 [node name="Bone-7" parent="Softbody" unique_id=796366436 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(79.1349, 12.788633)
 collision_layer = 2
 collision_mask = 19
@@ -1257,6 +1265,7 @@ damping = 0.01
 metadata/joint_distance = 26.12234
 
 [node name="Bone-8" parent="Softbody" unique_id=1691678269 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(54.63217, 21.843622)
 collision_layer = 2
 collision_mask = 19
@@ -1320,6 +1329,7 @@ damping = 0.01
 metadata/joint_distance = 26.60817
 
 [node name="Bone-9" parent="Softbody" unique_id=633470577 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(78.41773, 33.770138)
 collision_layer = 2
 collision_mask = 19
@@ -1405,6 +1415,7 @@ damping = 0.01
 metadata/joint_distance = 29.87775
 
 [node name="Bone-10" parent="Softbody" unique_id=976681936 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(54.470974, 47.853535)
 collision_layer = 2
 collision_mask = 19
@@ -1490,6 +1501,7 @@ damping = 0.01
 metadata/joint_distance = 29.19421
 
 [node name="Bone-11" parent="Softbody" unique_id=491479993 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(79.02779, 63.64166)
 collision_layer = 2
 collision_mask = 19
@@ -1575,6 +1587,7 @@ damping = 0.01
 metadata/joint_distance = 23.45688
 
 [node name="Bone-12" parent="Softbody" unique_id=1290178918 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(55.67653, 75.79921)
 collision_layer = 2
 collision_mask = 19
@@ -1660,6 +1673,7 @@ damping = 0.01
 metadata/joint_distance = 27.123339
 
 [node name="Bone-13" parent="Softbody" unique_id=1049192900 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(80.35129, 87.06117)
 collision_layer = 2
 collision_mask = 19
@@ -1745,6 +1759,7 @@ damping = 0.01
 metadata/joint_distance = 29.247347
 
 [node name="Bone-14" parent="Softbody" unique_id=46187058 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(55.06458, 102.80659)
 collision_layer = 2
 collision_mask = 19
@@ -1830,6 +1845,7 @@ damping = 0.01
 metadata/joint_distance = 27.096937
 
 [node name="Bone-15" parent="Softbody" unique_id=589796549 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(78.5885, 116.25535)
 collision_layer = 2
 collision_mask = 19
@@ -1915,6 +1931,7 @@ damping = 0.01
 metadata/joint_distance = 27.964573
 
 [node name="Bone-16" parent="Softbody" unique_id=1494543206 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(53.83571, 136.08534)
 collision_layer = 2
 collision_mask = 19
@@ -1989,6 +2006,7 @@ damping = 0.01
 metadata/joint_distance = 25.79792
 
 [node name="Bone-17" parent="Softbody" unique_id=1588850553 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(78.318, 144.21861)
 collision_layer = 2
 collision_mask = 19
@@ -2052,6 +2070,7 @@ damping = 0.01
 metadata/joint_distance = 25.79792
 
 [node name="Bone-18" parent="Softbody" unique_id=601220103 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(102.836876, 20.524517)
 collision_layer = 2
 collision_mask = 19
@@ -2115,6 +2134,7 @@ damping = 0.01
 metadata/joint_distance = 27.84837
 
 [node name="Bone-19" parent="Softbody" unique_id=546942901 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(126.562164, 29.84537)
 collision_layer = 2
 collision_mask = 19
@@ -2178,6 +2198,7 @@ damping = 0.01
 metadata/joint_distance = 31.811714
 
 [node name="Bone-20" parent="Softbody" unique_id=1271591776 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(102.15682, 48.364586)
 collision_layer = 2
 collision_mask = 19
@@ -2263,6 +2284,7 @@ damping = 0.01
 metadata/joint_distance = 27.721912
 
 [node name="Bone-21" parent="Softbody" unique_id=886472550 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(126.4841, 61.656986)
 collision_layer = 2
 collision_mask = 19
@@ -2348,6 +2370,7 @@ damping = 0.01
 metadata/joint_distance = 27.685501
 
 [node name="Bone-22" parent="Softbody" unique_id=797007160 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(100.34813, 76.28839)
 collision_layer = 2
 collision_mask = 19
@@ -2433,6 +2456,7 @@ damping = 0.01
 metadata/joint_distance = 28.92556
 
 [node name="Bone-23" parent="Softbody" unique_id=1237810849 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(126.16145, 89.34061)
 collision_layer = 2
 collision_mask = 19
@@ -2518,6 +2542,7 @@ damping = 0.01
 metadata/joint_distance = 30.040182
 
 [node name="Bone-24" parent="Softbody" unique_id=1072820302 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(101.4713, 102.09674)
 collision_layer = 2
 collision_mask = 19
@@ -2603,6 +2628,7 @@ damping = 0.01
 metadata/joint_distance = 33.809883
 
 [node name="Bone-25" parent="Softbody" unique_id=761609922 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(130.73479, 119.030624)
 collision_layer = 2
 collision_mask = 19
@@ -2677,6 +2703,7 @@ damping = 0.01
 metadata/joint_distance = 23.245274
 
 [node name="Bone-26" parent="Softbody" unique_id=780097487 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(102.61549, 131.43205)
 collision_layer = 2
 collision_mask = 19
@@ -2762,6 +2789,7 @@ damping = 0.01
 metadata/joint_distance = 23.821774
 
 [node name="Bone-27" parent="Softbody" unique_id=309386522 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(124.27037, 141.35895)
 collision_layer = 2
 collision_mask = 19
@@ -2814,6 +2842,7 @@ damping = 0.01
 metadata/joint_distance = 23.821774
 
 [node name="Bone-28" parent="Softbody" unique_id=506876040 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(101.57373, 150.81183)
 collision_layer = 2
 collision_mask = 19
@@ -2866,6 +2895,7 @@ damping = 0.01
 metadata/joint_distance = 19.407755
 
 [node name="Bone-29" parent="Softbody" unique_id=383813882 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(144.69232, 48.50384)
 collision_layer = 2
 collision_mask = 19
@@ -2918,6 +2948,7 @@ damping = 0.01
 metadata/joint_distance = 27.008121
 
 [node name="Bone-30" parent="Softbody" unique_id=1792511220 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(147.16962, 75.39811)
 collision_layer = 2
 collision_mask = 19
@@ -2981,6 +3012,7 @@ damping = 0.01
 metadata/joint_distance = 28.369244
 
 [node name="Bone-31" parent="Softbody" unique_id=2050010841 instance=ExtResource("5_hnblv")]
+visible = false
 position = Vector2(147.68915, 103.762596)
 collision_layer = 2
 collision_mask = 19
@@ -3136,6 +3168,7 @@ rotation = -2.5651665
 rect = Rect2(-50, -50, 100, 100)
 
 [node name="OilDetector" type="Area2D" parent="BlobCenter" unique_id=2050342350]
+visible = false
 rotation = -2.5651665
 collision_layer = 524288
 collision_mask = 8

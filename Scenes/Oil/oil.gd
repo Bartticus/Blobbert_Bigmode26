@@ -6,11 +6,16 @@ extends Area2D
 @onready var adj_oil_checker: Area2D = $AdjacentOilChecker
 @onready var ignited: bool = false
 
+@onready var particles: CPUParticles2D = $CPUParticles2D
+
 var camera: Camera2D
 var camera_shake_noise: FastNoiseLite
 
 func _ready() -> void:
 	splatter_sprites.frame = randi_range(0,3)
+	
+	particles.emitting = true
+	particles.scale_amount_max *= scale.length()
 	
 	start_camera_shake()
 
