@@ -94,6 +94,9 @@ func check_status() -> void:
 		just_hurt = false
 	
 	if new_status == Status.DEFAULT:
+		if number_of_tuggers >= 1:
+			start_time = Time.get_ticks_msec()
+		
 		var elapsed_time = Time.get_ticks_msec() - start_time
 		if elapsed_time > 15000:
 			new_status = Status.ASLEEP
