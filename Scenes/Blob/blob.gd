@@ -185,6 +185,7 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	oil.global_position = coll_pos
 	
 	#set scale
+	oil_pivot.scale = Vector2.ONE / body.scale
 	var bone_speed: float = bone.linear_velocity.length()
 	var scale_ratio: float = bone_speed / 1000
 	scale_ratio = clampf(scale_ratio, 0.3, 2.0)

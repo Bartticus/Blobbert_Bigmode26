@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://pgr3e21cm7q8" path="res://Assets/Sprites/LiquidLunch.png" id="1_cdnhj"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_18ua4"]
 [ext_resource type="Material" uid="uid://h4mx1loryx85" path="res://Scenes/BunsenBurner/bunsen_burner.material" id="2_g6f45"]
+[ext_resource type="Texture2D" uid="uid://lu1tskqwfk3d" path="res://Assets/Sprites/BOOM1.png" id="5_ihqxc"]
+[ext_resource type="Texture2D" uid="uid://y363y70s24ry" path="res://Assets/Sprites/BOOM2.png" id="6_qakos"]
+[ext_resource type="Texture2D" uid="uid://cps0r41gh8gme" path="res://Assets/Sprites/BOOM3.png" id="7_vk8a5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imnhf"]
 friction = 0.4
@@ -11,6 +14,211 @@ bounce = 0.4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18ua4"]
 size = Vector2(450, 800)
+
+[sub_resource type="Animation" id="Animation_whq7r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BoomAnim/Boom1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BoomAnim/Boom2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BoomAnim/Boom3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BoomAnim/Boom3:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.4634831, 1.4634831)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BoomAnim/Boom3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../BoomAnim/Boom2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.90476197, 0.9047618)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../BoomAnim/Boom1:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../BoomAnim/Boom2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5kxrw"]
+resource_name = "boom"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BoomAnim/Boom1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BoomAnim/Boom2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 2.1333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BoomAnim/Boom3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2666667, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BoomAnim/Boom3:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.7666667, 6),
+"transitions": PackedFloat32Array(0.5358867, 0.57434916, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(7.55, 7.55), Vector2(9.5, 9.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BoomAnim/Boom3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.1333333, 2.2, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../BoomAnim/Boom2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6666666, 2.1333334),
+"transitions": PackedFloat32Array(1.0352645, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(8, 8)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../BoomAnim/Boom1:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1.9318726, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../BoomAnim/Boom2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.6666666, 1.7666667, 2.1333337),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hgi1m"]
+_data = {
+&"RESET": SubResource("Animation_whq7r"),
+&"boom": SubResource("Animation_5kxrw")
+}
 
 [node name="Beaker" type="RigidBody2D" unique_id=30536693]
 collision_mask = 3
@@ -51,6 +259,28 @@ shape = SubResource("RectangleShape2D_18ua4")
 [node name="ExplosionTimer" type="Timer" parent="." unique_id=449813539]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="BoomAnim" type="Node2D" parent="." unique_id=89591176]
+
+[node name="Boom1" type="Sprite2D" parent="BoomAnim" unique_id=330231218]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_ihqxc")
+
+[node name="Boom2" type="Sprite2D" parent="BoomAnim" unique_id=1510486218]
+visible = false
+scale = Vector2(0.90476197, 0.9047618)
+texture = ExtResource("6_qakos")
+
+[node name="Boom3" type="Sprite2D" parent="BoomAnim" unique_id=1057641763]
+visible = false
+scale = Vector2(1.4634831, 1.4634831)
+texture = ExtResource("7_vk8a5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoomAnim" unique_id=778679572]
+libraries/ = SubResource("AnimationLibrary_hgi1m")
+autoplay = &"boom"
+speed_scale = 6.0
 
 [connection signal="area_entered" from="FlameCheck" to="." method="_on_flame_check_area_entered"]
 [connection signal="timeout" from="ExplosionTimer" to="." method="_on_explosion_timer_timeout"]
