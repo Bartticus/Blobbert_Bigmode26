@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://e22gobsgl87n"]
+
+[ext_resource type="Script" uid="uid://ykxh48ns1kyp" path="res://Scenes/SoundManager/sound_manager.gd" id="1_1ipep"]
+[ext_resource type="AudioStream" uid="uid://ok5iynhknrw0" path="res://Assets/SFX/stretched_01.wav" id="1_eb414"]
+
+[node name="SoundManager" type="Node2D" unique_id=269814558]
+script = ExtResource("1_1ipep")
+
+[node name="BlobAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1271041911]
+unique_name_in_owner = true
+stream = ExtResource("1_eb414")
+volume_db = 8.87

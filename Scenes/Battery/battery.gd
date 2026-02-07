@@ -20,4 +20,5 @@ func battery_wet():
 	if !wet:
 		wet = true
 		cutscene.trigger_action()
+		wire.visible = false
 

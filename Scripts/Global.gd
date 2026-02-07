@@ -10,6 +10,8 @@ var tug_power: float = 4000
 var current_level: String
 var should_transition: bool = false
 
+var audio_manager: Node2D
+
 var level_order = {
 	'res://Scenes/Levels/lab_level.tscn': 'res://Scenes/Levels/vent_level.tscn',
 	'res://Scenes/Levels/vent_level.tscn': 'res://Scenes/Levels/tank_level.tscn',

@@ -14,14 +14,11 @@ width = 1810
 height = 463
 
 [node name="WaterPool" type="Area2D" unique_id=995540943]
-collision_layer = 17
-collision_mask = 50
+collision_mask = 34
 gravity_space_override = 3
 gravity_point_center = Vector2(0, -0.2)
 gravity_direction = Vector2(0, -0.2)
-linear_damp_space_override = 1
 linear_damp = 1.0
-angular_damp_space_override = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=155110086]
 shape = SubResource("RectangleShape2D_g56e2")
@@ -30,3 +27,10 @@ shape = SubResource("RectangleShape2D_g56e2")
 visible = false
 material = ExtResource("1_bor0g")
 texture = SubResource("GradientTexture2D_g56e2")
+
+[node name="Dampen" type="Area2D" parent="." unique_id=686298203]
+collision_layer = 17
+collision_mask = 50
+linear_damp_space_override = 1
+linear_damp = 1.0
+angular_damp_space_override = 1
