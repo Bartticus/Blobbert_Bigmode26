@@ -95,8 +95,6 @@ x_coordinate = 1
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="VentScreen7" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=877726561 instance=ExtResource("2_cktbt")]
-
 [node name="LoadingZone" parent="." index="5" unique_id=1274508763]
 position = Vector2(2420, 451)
 
