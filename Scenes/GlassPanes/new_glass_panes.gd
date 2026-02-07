@@ -19,9 +19,11 @@ func set_wall_thickness():
 	thick_wall.position = thick_wall_dimensions / 2
 
 func _ready() -> void:
-	for child in get_children():
+	var children = get_children()
+	for i in children.size():
+		var child = children[i]
 		if child is GreasableObject:
-			if unbreakable:
+			if unbreakable && i > 2:
 				child.glass_pane = false
 			all_glass_panes.append(child)
 			child.connect("tree_exiting", _on_pane_exiting.bind(child))
@@ -35,7 +37,7 @@ func _on_pane_exiting(_pane: GreasableObject) -> void:
 	
 	if destroy_all_at_once:
 		for pane in all_glass_panes:
-			if pane:
+			if pane && pane.glass_pane:
 				pane.queue_free()
 		all_destroyed = true
 		if tank_glass:

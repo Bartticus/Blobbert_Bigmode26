@@ -34,9 +34,11 @@ position = Vector2(233, -127)
 texture = ExtResource("2_f24hr")
 
 [node name="WaterSpray" type="Node2D" parent="." index="8" unique_id=592518852]
+light_mask = 2
+visibility_layer = 2
+z_index = 5
 
 [node name="FastWater3" parent="WaterSpray" index="0" unique_id=241215555 instance=ExtResource("3_32c4s")]
-visible = true
 position = Vector2(530.99994, 490.99997)
 rotation = 1.3303642
 scale = Vector2(1.3, 1)
@@ -45,7 +47,6 @@ scale = Vector2(1.3, 1)
 polygon = PackedVector2Array(0, 0, 0, 100, 297.84354, 129.93777, 349.3259, 180.32393, 388.4349, 266.92142, 495.23215, -190.16656, 401.32193, -49.181946, 346.69095, 13.71582)
 
 [node name="FastWater2" parent="WaterSpray" index="1" unique_id=1414221962 instance=ExtResource("3_32c4s")]
-visible = true
 position = Vector2(595, 559)
 rotation = 2.1684954
 scale = Vector2(1.5, 0.99999994)
@@ -54,13 +55,12 @@ scale = Vector2(1.5, 0.99999994)
 polygon = PackedVector2Array(0, 0, 0, 100, 300, 100, 471.08932, 251.77863, 473.23587, 152.18628, 356.107, -179.29205, 321.63242, -82.05066, 241.89325, -15.239441)
 
 [node name="FastWater" parent="WaterSpray" index="2" unique_id=243952282 instance=ExtResource("3_32c4s")]
-visible = true
 position = Vector2(-87, 162)
 rotation = 0.4032749
 scale = Vector2(2, 1)
 
 [node name="Polygon2D" parent="WaterSpray/FastWater/Area2D" parent_id_path=PackedInt32Array(243952282, 1256834662) index="1" unique_id=1662518656]
-polygon = PackedVector2Array(-9.040987, -5.1032104, 12.778421, 110.864105, 174.50618, 81.580475, 253.60706, 95.623474, 316.53815, 133.24936, 350, 150, 423.8085, 223.27863, 382.28455, -63.104004, 370.6644, 17.480667, 300, 0, 252.5221, -24.131653, 161.93628, -43.595352)
+polygon = PackedVector2Array(-73.69194, -207.83405, -25.226515, 19.351807, 176.57863, 116.77734, 322.81708, 162.68231, 356.94077, 182.48865, 437.51315, 244.20074, 423.8085, 223.27863, 382.28455, -63.104004, 370.6644, 17.480667, 300, 0, 252.5221, -24.131653, 161.93628, -43.595352)
 
 [editable path="WaterSpray/FastWater3"]
 [editable path="WaterSpray/FastWater2"]
