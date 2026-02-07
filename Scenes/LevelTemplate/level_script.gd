@@ -6,6 +6,21 @@ extends Node2D
 @onready var screens: Node2D = %Screens
 @onready var full_keeb: FullKeeb = %FullKeeb
 
+@export var playing_cutscene: bool = false:
+	set(new_value):
+		playing_cutscene = new_value
+		match playing_cutscene:
+			true:
+				full_keeb.process_mode = Node.PROCESS_MODE_DISABLED
+				var tween = get_tree().create_tween()
+				tween.set_ignore_time_scale()
+				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 0.0), 0.2)
+			false:
+				full_keeb.process_mode = Node.PROCESS_MODE_INHERIT
+				var tween = get_tree().create_tween()
+				tween.set_ignore_time_scale()
+				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), 0.2)
+
 @export var is_multi_screen: bool = false
 @export var zoom_time: float = 0.25
 @export var screen_render_distance_x: int = 3
@@ -34,8 +49,11 @@ func _ready() -> void:
 	Fade.fade_in(0.5)
 
 func enter_multi_screen(multi_screen):
+	var is_in_cutscene = playing_cutscene
 	current_anchor = multi_screen.screens[0].screen_anchor
 	if !is_multi_screen:
+		if !is_in_cutscene:
+			playing_cutscene = true
 		Global.tug_power = Global.max_multi_screen_tug_power
 		Engine.time_scale = 0.3
 		var camera_zoom = Vector2(0.5, 0.5)
@@ -50,12 +68,17 @@ func enter_multi_screen(multi_screen):
 
 		await tween.finished
 		Engine.time_scale = 1.0
+		if !is_in_cutscene:
+			playing_cutscene = false
 	is_multi_screen = true
 
 func enter_single_screen(screen):
+	var is_in_cutscene = playing_cutscene
 	Global.tug_power = Global.max_tug_power
 	current_anchor = screen.screen_anchor
 	if is_multi_screen:
+		if !is_in_cutscene:
+			playing_cutscene = true
 		Engine.time_scale = 0.3
 		var standard_vector = Vector2(1.0, 1.0)
 		var tween = get_tree().create_tween()
@@ -68,4 +91,12 @@ func enter_single_screen(screen):
 
 		await tween.finished
 		Engine.time_scale = 1.0
+		if !is_in_cutscene:
+			playing_cutscene = false
 	is_multi_screen = false
+
+func tween_camera(property = 'position', target = Vector2(0,0), tween_time = 1.0, transition_type = Tween.TRANS_LINEAR, delay = 0.0):
+	var tween = get_tree().create_tween()
+	tween.set_ignore_time_scale()
+	tween.tween_property(camera, property, target, tween_time).set_trans(transition_type).set_delay(delay)
+	return tween
