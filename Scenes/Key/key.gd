@@ -48,6 +48,8 @@ func put_in_status_group():
 	for group_name in STATUS_GROUPS.values():
 		remove_from_group(group_name)
 	add_to_group(STATUS_GROUPS.get(status, STATUS_GROUPS[Status.IDLE]))
+	
+	Global.blob.check_status()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and !event.is_echo():
