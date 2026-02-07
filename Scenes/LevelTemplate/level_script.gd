@@ -20,6 +20,8 @@ extends Node2D
 func _ready() -> void:
 	Global.level = self
 	Global.blob = blob
+	if Global.should_transition:
+		starting_screen = null
 
 	if !starting_screen:
 		starting_screen = screens.get_children()[0]
@@ -32,22 +34,26 @@ func _ready() -> void:
 	Fade.fade_in(0.5)
 
 func enter_multi_screen(multi_screen):
-	is_multi_screen = true
-	Engine.time_scale = 0.3
-	var camera_zoom = Vector2(0.5, 0.5)
-	var keeb_scale = Vector2(2.0, 2.0)
-	var tween = get_tree().create_tween()
-	tween.set_parallel()
 	current_anchor = multi_screen.screens[0].screen_anchor
-	if camera.zoom != camera_zoom:
-		tween.tween_property(camera, 'zoom', camera_zoom, zoom_time)
-	if full_keeb.scale != keeb_scale:
-		tween.tween_property(full_keeb, 'scale', keeb_scale, zoom_time).set_delay(0.05)
-	
-	await tween.finished
-	Engine.time_scale = 1.0
+	if !is_multi_screen:
+		Global.tug_power = Global.max_multi_screen_tug_power
+		Engine.time_scale = 0.3
+		var camera_zoom = Vector2(0.5, 0.5)
+		var keeb_scale = Vector2(2.0, 2.0)
+		var tween = get_tree().create_tween()
+		tween.set_parallel()
+
+		if camera.zoom != camera_zoom:
+			tween.tween_property(camera, 'zoom', camera_zoom, zoom_time)
+		if full_keeb.scale != keeb_scale:
+			tween.tween_property(full_keeb, 'scale', keeb_scale, zoom_time).set_delay(0.05)
+
+		await tween.finished
+		Engine.time_scale = 1.0
+	is_multi_screen = true
 
 func enter_single_screen(screen):
+	Global.tug_power = Global.max_tug_power
 	current_anchor = screen.screen_anchor
 	if is_multi_screen:
 		Engine.time_scale = 0.3

@@ -14,7 +14,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
-[node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
+[node name="VentLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_qbcej")]
+starting_screen = NodePath("Screens/VentScreen4")
 
 [node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_cktbt")]
 position = Vector2(0, -3240)
