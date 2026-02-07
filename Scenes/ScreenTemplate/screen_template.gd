@@ -10,6 +10,7 @@ extends Node2D
 
 @export var x_coordinate : int
 @export var y_coordinate : int
+@export var multi_screen: MultiScreenTemplate
 
 @export var snap_screen_to_position: bool = false:
 	set(value):

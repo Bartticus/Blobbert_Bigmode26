@@ -147,6 +147,7 @@ sources/0 = SubResource("TileSetAtlasSource_346pk")
 script = ExtResource("1_ebu0d")
 
 [node name="FullKeeb" parent="." unique_id=1939036362 instance=ExtResource("2_nqhii")]
+unique_name_in_owner = true
 z_index = 10
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1077410475]

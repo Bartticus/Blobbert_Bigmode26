@@ -23,7 +23,7 @@ shape = ExtResource("3_botaw")
 [node name="NavAgent" type="NavigationAgent2D" parent="FishCharacterBody" unique_id=1004238404]
 unique_name_in_owner = true
 path_desired_distance = 50.0
-target_desired_distance = 50.0
+target_desired_distance = 100.0
 simplify_path = true
 avoidance_enabled = true
 

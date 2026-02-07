@@ -7,6 +7,9 @@
 [node name="CollisionShape2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="0" unique_id=1345632785]
 scale = Vector2(2, 2)
 
+[node name="NavAgent" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="1" unique_id=1004238404]
+target_desired_distance = 200.0
+
 [node name="Area2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="3" unique_id=1622709456]
 scale = Vector2(2, 2)
 

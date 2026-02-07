@@ -150,7 +150,10 @@ func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
 func reset_screen():
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
 		if overlapping_area.name == 'ScreenSpace':
-			Global.level.current_anchor = overlapping_area.get_owner().screen_anchor
+			if overlapping_area.get_owner().multi_screen:
+				Global.level.enter_multi_screen(overlapping_area.get_owner().multi_screen)
+			else:
+				Global.level.enter_single_screen(overlapping_area.get_owner())
 
 func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#check if a new oil should spawn

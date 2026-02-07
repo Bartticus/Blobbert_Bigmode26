@@ -85,4 +85,4 @@ func _on_bump_timer_timeout() -> void:
 
 
 func _on_wiggle_timer_timeout() -> void:
-	desired_angle = randf_range(-0.4, 0.4)
+	desired_angle = randf_range(-0.55, 0.55)
