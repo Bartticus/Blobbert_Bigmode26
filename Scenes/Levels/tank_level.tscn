@@ -1473,6 +1473,22 @@ noise = SubResource("FastNoiseLite_tsfcu")
 color_ramp = SubResource("Gradient_2neri")
 seamless = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2u67o"]
+resource_local_to_scene = true
+shader = ExtResource("5_iul6x")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k668k"]
 resource_local_to_scene = true
 shader = ExtResource("5_iul6x")
@@ -1569,7 +1585,11 @@ shader_parameter/edge_bias_strength = 0.5
 shader_parameter/edge_remap_min = 0.0
 shader_parameter/edge_remap_max = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qktgp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qktgp"]
+resource_local_to_scene = true
+size = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t07u1"]
 resource_local_to_scene = true
 shader = ExtResource("5_iul6x")
 shader_parameter/sensitivity = 0.0
@@ -1584,10 +1604,6 @@ shader_parameter/details_opacity = 0.1
 shader_parameter/edge_bias_strength = 0.5
 shader_parameter/edge_remap_min = 0.0
 shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t07u1"]
-resource_local_to_scene = true
-size = Vector2(0, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x02wp"]
 resource_local_to_scene = true
@@ -1685,7 +1701,11 @@ shader_parameter/edge_bias_strength = 0.5
 shader_parameter/edge_remap_min = 0.0
 shader_parameter/edge_remap_max = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fcsv3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcsv3"]
+resource_local_to_scene = true
+size = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejjfb"]
 resource_local_to_scene = true
 shader = ExtResource("5_iul6x")
 shader_parameter/sensitivity = 0.0
@@ -1700,10 +1720,6 @@ shader_parameter/details_opacity = 0.1
 shader_parameter/edge_bias_strength = 0.5
 shader_parameter/edge_remap_min = 0.0
 shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejjfb"]
-resource_local_to_scene = true
-size = Vector2(0, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f51ya"]
 resource_local_to_scene = true
@@ -1801,23 +1817,7 @@ shader_parameter/edge_bias_strength = 0.5
 shader_parameter/edge_remap_min = 0.0
 shader_parameter/edge_remap_max = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sohv1"]
-resource_local_to_scene = true
-shader = ExtResource("5_iul6x")
-shader_parameter/sensitivity = 0.0
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
-shader_parameter/noise_config_size = Vector2(128, 128)
-shader_parameter/noise_seed = 0.0
-shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
-shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/details_color = Color(1, 1, 1, 1)
-shader_parameter/details_opacity = 0.1
-shader_parameter/edge_bias_strength = 0.5
-shader_parameter/edge_remap_min = 0.0
-shader_parameter/edge_remap_max = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t513a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sohv1"]
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
@@ -1849,83 +1849,83 @@ position = Vector2(1920, 0)
 x_coordinate = 1
 snap_screen_to_position = true
 
-[node name="ScreenTileMapLayer" parent="Screens/Tank/TankScreen2" index="6" unique_id=2053691136]
+[node name="ScreenTileMapLayer" parent="Screens/Tank/TankScreen2" index="1" unique_id=2053691136]
 navigation_enabled = true
 
 [node name="TankGlass" parent="Screens/Tank/TankScreen2" index="7" unique_id=2026173093 node_paths=PackedStringArray("triggerable_objects")]
 triggerable_objects = [NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater3"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater2"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater"), NodePath("../../../DoorAndPanel/TankScreen6/VentDoor")]
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane7" parent_id_path=PackedInt32Array(1459908369, 936546553, 25629605) index="4" unique_id=1071639836]
-material = SubResource("ShaderMaterial_k668k")
+material = SubResource("ShaderMaterial_2u67o")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane8" parent_id_path=PackedInt32Array(1459908369, 936546553, 411575042) index="4" unique_id=420983141]
-material = SubResource("ShaderMaterial_uuq41")
+material = SubResource("ShaderMaterial_k668k")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane9" parent_id_path=PackedInt32Array(1459908369, 936546553, 673309130) index="4" unique_id=2130541882]
-material = SubResource("ShaderMaterial_jueku")
+material = SubResource("ShaderMaterial_uuq41")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane10" parent_id_path=PackedInt32Array(1459908369, 936546553, 646006176) index="4" unique_id=432052496]
-material = SubResource("ShaderMaterial_7ajio")
+material = SubResource("ShaderMaterial_jueku")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane11" parent_id_path=PackedInt32Array(1459908369, 936546553, 1225190251) index="4" unique_id=1485143105]
-material = SubResource("ShaderMaterial_itvda")
+material = SubResource("ShaderMaterial_7ajio")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane12" parent_id_path=PackedInt32Array(1459908369, 936546553, 39591560) index="4" unique_id=1988800330]
-material = SubResource("ShaderMaterial_yh6h0")
+material = SubResource("ShaderMaterial_itvda")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane13" parent_id_path=PackedInt32Array(1459908369, 936546553, 771282166) index="4" unique_id=416385193]
-material = SubResource("ShaderMaterial_qktgp")
+material = SubResource("ShaderMaterial_yh6h0")
 
 [node name="ThickWallShape" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/ThickWall" parent_id_path=PackedInt32Array(1459908369, 936546553, 89876878) index="0" unique_id=557544539]
-shape = SubResource("RectangleShape2D_t07u1")
+shape = SubResource("RectangleShape2D_qktgp")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/Pane7" parent_id_path=PackedInt32Array(1459908369, 2102978081, 25629605) index="4" unique_id=1071639836]
-material = SubResource("ShaderMaterial_x02wp")
+material = SubResource("ShaderMaterial_t07u1")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/Pane8" parent_id_path=PackedInt32Array(1459908369, 2102978081, 411575042) index="4" unique_id=420983141]
-material = SubResource("ShaderMaterial_uc7kt")
+material = SubResource("ShaderMaterial_x02wp")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/Pane9" parent_id_path=PackedInt32Array(1459908369, 2102978081, 673309130) index="4" unique_id=2130541882]
-material = SubResource("ShaderMaterial_krk1o")
+material = SubResource("ShaderMaterial_uc7kt")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/Pane10" parent_id_path=PackedInt32Array(1459908369, 2102978081, 646006176) index="4" unique_id=432052496]
-material = SubResource("ShaderMaterial_t52xm")
+material = SubResource("ShaderMaterial_krk1o")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/Pane11" parent_id_path=PackedInt32Array(1459908369, 2102978081, 1225190251) index="4" unique_id=1485143105]
-material = SubResource("ShaderMaterial_5aqko")
+material = SubResource("ShaderMaterial_t52xm")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/Pane12" parent_id_path=PackedInt32Array(1459908369, 2102978081, 39591560) index="4" unique_id=1988800330]
-material = SubResource("ShaderMaterial_0kx14")
+material = SubResource("ShaderMaterial_5aqko")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/Pane13" parent_id_path=PackedInt32Array(1459908369, 2102978081, 771282166) index="4" unique_id=416385193]
-material = SubResource("ShaderMaterial_fcsv3")
+material = SubResource("ShaderMaterial_0kx14")
 
 [node name="ThickWallShape" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes2/ThickWall" parent_id_path=PackedInt32Array(1459908369, 2102978081, 89876878) index="0" unique_id=557544539]
-shape = SubResource("RectangleShape2D_ejjfb")
+shape = SubResource("RectangleShape2D_fcsv3")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/Pane7" parent_id_path=PackedInt32Array(1459908369, 1729898104, 25629605) index="4" unique_id=1071639836]
-material = SubResource("ShaderMaterial_f51ya")
+material = SubResource("ShaderMaterial_ejjfb")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/Pane8" parent_id_path=PackedInt32Array(1459908369, 1729898104, 411575042) index="4" unique_id=420983141]
-material = SubResource("ShaderMaterial_ymoxj")
+material = SubResource("ShaderMaterial_f51ya")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/Pane9" parent_id_path=PackedInt32Array(1459908369, 1729898104, 673309130) index="4" unique_id=2130541882]
-material = SubResource("ShaderMaterial_gq25a")
+material = SubResource("ShaderMaterial_ymoxj")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/Pane10" parent_id_path=PackedInt32Array(1459908369, 1729898104, 646006176) index="4" unique_id=432052496]
-material = SubResource("ShaderMaterial_ul24k")
+material = SubResource("ShaderMaterial_gq25a")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/Pane11" parent_id_path=PackedInt32Array(1459908369, 1729898104, 1225190251) index="4" unique_id=1485143105]
-material = SubResource("ShaderMaterial_2akdg")
+material = SubResource("ShaderMaterial_ul24k")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/Pane12" parent_id_path=PackedInt32Array(1459908369, 1729898104, 39591560) index="4" unique_id=1988800330]
-material = SubResource("ShaderMaterial_up4tx")
+material = SubResource("ShaderMaterial_2akdg")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/Pane13" parent_id_path=PackedInt32Array(1459908369, 1729898104, 771282166) index="4" unique_id=416385193]
-material = SubResource("ShaderMaterial_sohv1")
+material = SubResource("ShaderMaterial_up4tx")
 
 [node name="ThickWallShape" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/ThickWall" parent_id_path=PackedInt32Array(1459908369, 1729898104, 89876878) index="0" unique_id=557544539]
-shape = SubResource("RectangleShape2D_t513a")
+shape = SubResource("RectangleShape2D_sohv1")
 
 [node name="TankScreen3" parent="Screens/Tank" index="3" unique_id=1596739180 instance=ExtResource("6_2qt28")]
 position = Vector2(1920, 1080)
@@ -1975,7 +1975,7 @@ position = Vector2(0, -1080)
 y_coordinate = -1
 snap_screen_to_position = true
 
-[node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="5" unique_id=2053691136]
+[node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="1" unique_id=2053691136]
 navigation_enabled = true
 
 [node name="RigidBody2D" parent="Screens/TankScreen8/Battery" parent_id_path=PackedInt32Array(879411036, 1219371551) index="0" unique_id=1219371551 node_paths=PackedStringArray("triggerable_objects")]

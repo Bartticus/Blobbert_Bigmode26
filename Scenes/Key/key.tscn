@@ -52,6 +52,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Key" type="Node2D" unique_id=1531063233]
 show_behind_parent = true
+light_mask = 0
 z_index = 20
 z_as_relative = false
 script = ExtResource("1_b7qx2")
