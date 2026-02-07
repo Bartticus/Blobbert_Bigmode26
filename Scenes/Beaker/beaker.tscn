@@ -279,7 +279,6 @@ texture = ExtResource("7_vk8a5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BoomAnim" unique_id=778679572]
 libraries/ = SubResource("AnimationLibrary_hgi1m")
-autoplay = &"boom"
 speed_scale = 6.0
 
 [connection signal="area_entered" from="FlameCheck" to="." method="_on_flame_check_area_entered"]
