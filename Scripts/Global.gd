@@ -4,19 +4,27 @@ extends Node
 var blob: Blob
 var level: LevelScript = null
 var key_count: int = 0
+var max_tug_power: float = 4000
+var max_multi_screen_tug_power: float = 5750
+var tug_power: float = 4000
+var current_level: String
+var should_transition: bool = false
 
-var level_order = ['res://Scenes/Levels/lab_level.tscn', 'res://Scenes/Levels/vent_level.tscn', 'res://Scenes/Levels/tank_level.tscn', 'res://Scenes/Levels/bunsen_level.tscn']
-var current_level = 0
+var level_order = {
+	'res://Scenes/Levels/lab_level.tscn': 'res://Scenes/Levels/vent_level.tscn',
+	'res://Scenes/Levels/vent_level.tscn': 'res://Scenes/Levels/tank_level.tscn',
+	'res://Scenes/Levels/tank_level.tscn': 'res://Scenes/Levels/bunsen_level.tscn',
+	'res://Scenes/Levels/bunsen_level.tscn': 'res://Scenes/Levels/loading_screen.tscn'
+	}
 
 func ready():
 	randomize()
 
-func iterate_level():
-	current_level += 1
 
 func load_next_scene():
-	iterate_level()
-	get_tree().change_scene_to_file(level_order[current_level])
+	should_transition = true
+	get_tree().change_scene_to_file(level_order.get(current_level))
+
 
 func iterate_key_count():
 	key_count += 1

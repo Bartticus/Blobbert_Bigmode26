@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c6se7fje3jolt"]
+
+[ext_resource type="Script" uid="uid://cbkymwb8kfisv" path="res://Scenes/Cutscene/battery_cutscene.gd" id="1_jbclc"]
+
+[node name="BatteryCutscene" type="Node2D" unique_id=731723262]
+script = ExtResource("1_jbclc")

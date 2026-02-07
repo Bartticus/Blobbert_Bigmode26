@@ -6,7 +6,8 @@ extends Node2D
 @onready var tug_rope: Line2D = %TugRope
 
 @export var max_tug_distance: float = 750
-@export var max_tug_power: float = 4000
+# Now stored in Global
+# @export var max_tug_power: float = 4000
 @export var tug_decay: float = 3.0
 @export var max_snap_multiplier: float = 12.0
 @export var snap_timer_wait_time: float = 1.0
@@ -133,7 +134,7 @@ func snap_away() -> void:
 func calculate_tugging_power() -> float:
 	if (dist_to_current_bone >= max_tug_distance):
 		return 0
-	var tugging_power = max_tug_power * calculate_exponential_multiplier()
+	var tugging_power = Global.tug_power * calculate_exponential_multiplier()
 
 	return [tugging_power, 100].max()
 

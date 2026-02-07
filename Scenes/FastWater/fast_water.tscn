@@ -11,6 +11,8 @@ gradient = SubResource("Gradient_tefor")
 
 [node name="FastWater" type="Node2D" unique_id=241215555]
 visible = false
+light_mask = 2
+visibility_layer = 2
 script = ExtResource("1_mw26j")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1256834662]
@@ -20,7 +22,6 @@ visible = false
 polygon = PackedVector2Array(0, 0, 0, 100, 300, 100, 350, 150, 375, 200, 375, -100, 350, -50, 300, 0)
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D" unique_id=1662518656]
-z_index = -1
 material = ExtResource("1_tefor")
 texture = SubResource("GradientTexture2D_mw26j")
 polygon = PackedVector2Array(0, 0, 0, 100, 300, 100, 350, 150, 375, 200, 375, -100, 350, -50, 300, 0)

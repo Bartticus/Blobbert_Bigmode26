@@ -17,6 +17,7 @@ collision_layer = 17
 collision_mask = 3
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_imnhf")
+constant_force = Vector2(0, -1)
 script = ExtResource("1_vrpf4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=93817458]
