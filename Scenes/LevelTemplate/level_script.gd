@@ -23,8 +23,6 @@ func _ready() -> void:
 
 	for screen in get_tree().get_nodes_in_group('screens'):
 		screen.disable_screen_elements()
-		# if abs(screen.x_coordinate - starting_screen.x_coordinate) > screen_render_distance_x:
-		# 	screen.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	current_anchor = starting_screen.screen_anchor
 	blob.global_position = starting_screen.screen_blob.global_position

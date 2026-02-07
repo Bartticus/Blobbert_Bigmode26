@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://cmh2wlvrkccht"]
 
+[ext_resource type="Script" uid="uid://c75n84rsk65ho" path="res://Scenes/MultiScreenTemplate/multi_screen_template.gd" id="1_amnkt"]
+
 [node name="MultiScreenTemplate" type="Node2D" unique_id=406454839]
+script = ExtResource("1_amnkt")
