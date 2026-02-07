@@ -16,6 +16,9 @@
 
 [node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
 
+[node name="FullKeeb" parent="Blob/Control" parent_id_path=PackedInt32Array(663537541) index="0" unique_id=1939036362]
+position = Vector2(-154, -114)
+
 [node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_cktbt")]
 position = Vector2(0, -3240)
 y_coordinate = -3
@@ -86,7 +89,7 @@ x_coordinate = 1
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="LoadingZone" parent="." index="5" unique_id=1274508763]
+[node name="LoadingZone" parent="." index="4" unique_id=1274508763]
 position = Vector2(2420, 451)
 
 [editable path="Screens/LabScreen5"]
