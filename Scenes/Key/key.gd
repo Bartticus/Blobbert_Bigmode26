@@ -1,6 +1,6 @@
 @tool
 class_name Key
-extends CanvasItem
+extends Node2D
 
 @onready var snap_timer: Timer = %SnapTimer
 @onready var point_light_2d: PointLight2D = %PointLight2D
