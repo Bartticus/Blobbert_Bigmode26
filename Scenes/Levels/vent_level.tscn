@@ -14,8 +14,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
-[node name="VentLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_qbcej")]
-starting_screen = NodePath("Screens/VentScreen4")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ook32"]
+size = Vector2(10000, 7000)
+
+[node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
 
 [node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_cktbt")]
 position = Vector2(0, -3240)
@@ -50,6 +52,18 @@ texture = ExtResource("4_cbqsn")
 position = Vector2(483, -67)
 node_a = NodePath("../StaticBody2D2")
 node_b = NodePath("../RigidBody2D")
+
+[node name="DetectionArea" parent="Screens/LabScreen5" index="7" unique_id=2074166705]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+position = Vector2(960, 540)
+disable_mode = 1
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Screens/LabScreen5/DetectionArea" index="0" unique_id=1119156389]
+shape = SubResource("RectangleShape2D_ook32")
 
 [node name="LabScreen2b" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=755592408 instance=ExtResource("3_7dgoj")]
 position = Vector2(1920, -3240)
@@ -89,5 +103,8 @@ snap_screen_to_position = true
 
 [node name="LoadingZone" parent="." index="5" unique_id=1274508763]
 position = Vector2(2420, 451)
+
+[connection signal="area_entered" from="Screens/LabScreen5/DetectionArea" to="Screens/LabScreen5" method="_on_detection_area_area_entered"]
+[connection signal="area_exited" from="Screens/LabScreen5/DetectionArea" to="Screens/LabScreen5" method="_on_detection_area_area_exited"]
 
 [editable path="Screens/LabScreen5"]
