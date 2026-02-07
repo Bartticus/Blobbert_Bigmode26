@@ -147,24 +147,36 @@ sources/0 = SubResource("TileSetAtlasSource_346pk")
 [node name="LevelTemplate" type="Node2D" unique_id=129905935]
 script = ExtResource("1_ebu0d")
 
-[node name="FullKeeb" parent="." unique_id=1939036362 instance=ExtResource("2_nqhii")]
-unique_name_in_owner = true
-z_index = 10
-
 [node name="Camera" type="Camera2D" parent="." unique_id=1077410475]
 unique_name_in_owner = true
 anchor_mode = 0
 process_callback = 0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Camera" unique_id=29114024]
-remote_path = NodePath("../../FullKeeb")
+remote_path = NodePath("../../Blob/Control/FullKeeb")
 update_rotation = false
 update_scale = false
 
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("5_tvne3")]
 unique_name_in_owner = true
+clip_children = 2
 z_index = 3
 position = Vector2(154, 114)
+
+[node name="Control" type="Control" parent="Blob" unique_id=663537541]
+show_behind_parent = true
+z_index = 20
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FullKeeb" parent="Blob/Control" unique_id=1939036362 instance=ExtResource("2_nqhii")]
+unique_name_in_owner = true
+show_behind_parent = true
+z_index = 200
+z_as_relative = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1761386012]
 unique_name_in_owner = true
