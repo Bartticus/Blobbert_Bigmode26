@@ -32,7 +32,6 @@ snap_screen_to_position = true
 
 [node name="ScreenTileMapLayerXs" parent="Screens/LabScreen5" index="1" unique_id=430490676]
 visible = false
-collision_enabled = true
 
 [node name="ScreenTileMapLayer" parent="Screens/LabScreen5" index="2" unique_id=2053691136]
 collision_enabled = true
