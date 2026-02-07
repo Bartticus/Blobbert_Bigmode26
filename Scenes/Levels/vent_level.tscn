@@ -16,8 +16,8 @@
 
 [node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
 
-[node name="FullKeeb" parent="Blob/Control" parent_id_path=PackedInt32Array(663537541) index="0" unique_id=1939036362]
-position = Vector2(-154, -114)
+[node name="Blob" parent="." index="1" unique_id=104221436]
+position = Vector2(189, -2838)
 
 [node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_cktbt")]
 position = Vector2(0, -3240)
@@ -29,6 +29,13 @@ position = Vector2(-1920, -3240)
 x_coordinate = -1
 y_coordinate = -3
 snap_screen_to_position = true
+
+[node name="ScreenTileMapLayerXs" parent="Screens/LabScreen5" index="1" unique_id=430490676]
+visible = false
+collision_enabled = true
+
+[node name="ScreenTileMapLayer" parent="Screens/LabScreen5" index="2" unique_id=2053691136]
+collision_enabled = true
 
 [node name="RigidBody2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="1" unique_id=94659899]
 position = Vector2(247, -57)
@@ -89,7 +96,9 @@ x_coordinate = 1
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="LoadingZone" parent="." index="4" unique_id=1274508763]
+[node name="VentScreen7" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=877726561 instance=ExtResource("2_cktbt")]
+
+[node name="LoadingZone" parent="." index="5" unique_id=1274508763]
 position = Vector2(2420, 451)
 
 [editable path="Screens/LabScreen5"]
