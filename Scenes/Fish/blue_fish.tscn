@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cvjjdd6xmk252"]
+
+[ext_resource type="PackedScene" uid="uid://bmhd2x0kfrwbt" path="res://Scenes/Fish/fish.tscn" id="1_nesio"]
+[ext_resource type="Texture2D" uid="uid://epo5e6iowy0g" path="res://Assets/Sprites/fishy4.png" id="2_rmbpu"]
+
+[node name="BlueFish" unique_id=805053468 instance=ExtResource("1_nesio")]
+
+[node name="CollisionShape2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="0" unique_id=1345632785]
+scale = Vector2(1.1, 1.1)
+
+[node name="Area2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="3" unique_id=1622709456]
+scale = Vector2(1.1, 1.1)
+
+[node name="CollisionShape2D" parent="FishBody" parent_id_path=PackedInt32Array(1104686461) index="0" unique_id=2032469092]
+scale = Vector2(1.1, 1.1)
+
+[node name="FishSprite" parent="FishBody" parent_id_path=PackedInt32Array(1104686461) index="1" unique_id=308704407]
+position = Vector2(1.9999999, -6.9999995)
+scale = Vector2(-0.2, 0.2)
+texture = ExtResource("2_rmbpu")

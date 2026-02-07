@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cosvrbysh65b0"]
+
+[ext_resource type="PackedScene" uid="uid://bmhd2x0kfrwbt" path="res://Scenes/Fish/fish.tscn" id="1_1qpju"]
+[ext_resource type="Texture2D" uid="uid://bud2x1nqhirog" path="res://Assets/Sprites/fishy2.png" id="2_spdip"]
+
+[node name="GreenFish" unique_id=805053468 instance=ExtResource("1_1qpju")]
+
+[node name="FishSprite" parent="FishBody" parent_id_path=PackedInt32Array(1104686461) index="1" unique_id=308704407]
+position = Vector2(-20, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_spdip")

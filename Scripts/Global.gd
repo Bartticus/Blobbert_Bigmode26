@@ -8,6 +8,9 @@ var key_count: int = 0
 var level_order = ['res://Scenes/Levels/lab_level.tscn', 'res://Scenes/Levels/vent_level.tscn', 'res://Scenes/Levels/tank_level.tscn', 'res://Scenes/Levels/bunsen_level.tscn']
 var current_level = 0
 
+func ready():
+	randomize()
+
 func iterate_level():
 	current_level += 1
 

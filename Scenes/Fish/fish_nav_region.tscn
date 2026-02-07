@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c7ey877il4wsr"]
+
+[ext_resource type="Script" uid="uid://dhkwwgd5j3neg" path="res://Scenes/Fish/fish_nav_region.gd" id="1_bk5wy"]
+[ext_resource type="PackedScene" uid="uid://dq3edscwhtm8u" path="res://Scenes/Fish/pink_fish.tscn" id="2_bk5wy"]
+[ext_resource type="PackedScene" uid="uid://cosvrbysh65b0" path="res://Scenes/Fish/green_fish.tscn" id="3_tufna"]
+[ext_resource type="PackedScene" uid="uid://bwquqwhjoggxs" path="res://Scenes/Fish/orange_fish.tscn" id="4_mg34d"]
+[ext_resource type="PackedScene" uid="uid://cvjjdd6xmk252" path="res://Scenes/Fish/blue_fish.tscn" id="5_crjfu"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4nytd"]
+vertices = PackedVector2Array(3559.9922, 1964.0234, 142.02344, 1971.9688, 145.96875, 644.97656, 3559, 639.0078)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(136, 635, 132, 1982, 3570, 1974, 3569, 629)])
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" unique_id=1180167866]
+navigation_polygon = SubResource("NavigationPolygon_4nytd")
+script = ExtResource("1_bk5wy")
+
+[node name="StartNav" type="Timer" parent="." unique_id=307346195]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[node name="PinkFish" parent="." unique_id=805053468 instance=ExtResource("2_bk5wy")]
+position = Vector2(891, 852)
+
+[node name="BlueFish" parent="." unique_id=1109176778 instance=ExtResource("5_crjfu")]
+position = Vector2(2998, 1677)
+
+[node name="GreenFish" parent="." unique_id=2020327147 instance=ExtResource("3_tufna")]
+position = Vector2(1347, 1716)
+
+[node name="OrangeFish" parent="." unique_id=1786349938 instance=ExtResource("4_mg34d")]
+position = Vector2(3024, 783)
+
+[connection signal="timeout" from="StartNav" to="." method="_on_start_nav_timeout"]

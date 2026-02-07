@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bmhd2x0kfrwbt"]
+
+[ext_resource type="Texture2D" uid="uid://bkvvb7y0xgogx" path="res://Assets/Sprites/Fishy1.png" id="1_le7t0"]
+[ext_resource type="Script" uid="uid://cxirysiqel7fe" path="res://Scenes/Fish/fish.gd" id="1_rrrj0"]
+[ext_resource type="Shape2D" uid="uid://dg4rrh1xdqj1t" path="res://Scenes/Fish/fish_body.tres" id="3_botaw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_botaw"]
+radius = 90.0
+height = 250.0
+
+[node name="Fish" type="Node2D" unique_id=805053468]
+script = ExtResource("1_rrrj0")
+
+[node name="FishCharacterBody" type="CharacterBody2D" parent="." unique_id=1051371588]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishCharacterBody" unique_id=1345632785]
+rotation = 1.5707964
+shape = ExtResource("3_botaw")
+
+[node name="NavAgent" type="NavigationAgent2D" parent="FishCharacterBody" unique_id=1004238404]
+unique_name_in_owner = true
+path_desired_distance = 50.0
+target_desired_distance = 50.0
+simplify_path = true
+avoidance_enabled = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FishCharacterBody" unique_id=1035254869]
+remote_path = NodePath("../../FishBody")
+update_scale = false
+
+[node name="Area2D" type="Area2D" parent="FishCharacterBody" unique_id=1622709456]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishCharacterBody/Area2D" unique_id=1708144788]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_botaw")
+
+[node name="FishBody" type="RigidBody2D" parent="." unique_id=1104686461]
+unique_name_in_owner = true
+collision_layer = 65568
+collision_mask = 51
+mass = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishBody" unique_id=2032469092]
+rotation = 1.5707964
+shape = ExtResource("3_botaw")
+
+[node name="FishSprite" type="Sprite2D" parent="FishBody" unique_id=308704407]
+unique_name_in_owner = true
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_le7t0")
+
+[node name="BumpTimer" type="Timer" parent="." unique_id=1015999283]
+unique_name_in_owner = true
+wait_time = 1.5
+one_shot = true
+
+[node name="WiggleTimer" type="Timer" parent="." unique_id=1175707518]
+wait_time = 0.2
+autostart = true
+
+[connection signal="body_entered" from="FishCharacterBody/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="BumpTimer" to="." method="_on_bump_timer_timeout"]
+[connection signal="timeout" from="WiggleTimer" to="." method="_on_wiggle_timer_timeout"]

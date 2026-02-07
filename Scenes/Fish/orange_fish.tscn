@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bwquqwhjoggxs"]
+
+[ext_resource type="PackedScene" uid="uid://bmhd2x0kfrwbt" path="res://Scenes/Fish/fish.tscn" id="1_u12b4"]
+[ext_resource type="Texture2D" uid="uid://co0jp5eisbfe0" path="res://Assets/Sprites/fishy3.png" id="2_rv4u6"]
+
+[node name="OrangeFish" unique_id=805053468 instance=ExtResource("1_u12b4")]
+
+[node name="CollisionShape2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="0" unique_id=1345632785]
+scale = Vector2(0.65, 0.65)
+
+[node name="Area2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="3" unique_id=1622709456]
+scale = Vector2(0.65, 0.65)
+
+[node name="CollisionShape2D" parent="FishBody" parent_id_path=PackedInt32Array(1104686461) index="0" unique_id=2032469092]
+scale = Vector2(0.65, 0.65)
+
+[node name="FishSprite" parent="FishBody" parent_id_path=PackedInt32Array(1104686461) index="1" unique_id=308704407]
+position = Vector2(-10, -11)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("2_rv4u6")

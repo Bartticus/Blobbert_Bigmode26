@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dq3edscwhtm8u"]
+
+[ext_resource type="PackedScene" uid="uid://bmhd2x0kfrwbt" path="res://Scenes/Fish/fish.tscn" id="1_conkk"]
+
+[node name="PinkFish" unique_id=805053468 instance=ExtResource("1_conkk")]
+
+[node name="CollisionShape2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="0" unique_id=1345632785]
+scale = Vector2(2, 2)
+
+[node name="Area2D" parent="FishCharacterBody" parent_id_path=PackedInt32Array(1051371588) index="3" unique_id=1622709456]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" parent="FishBody" parent_id_path=PackedInt32Array(1104686461) index="0" unique_id=2032469092]
+scale = Vector2(2, 2)
+
+[node name="FishSprite" parent="FishBody" parent_id_path=PackedInt32Array(1104686461) index="1" unique_id=308704407]
+position = Vector2(-13, -12)
+scale = Vector2(0.6, 0.6)
