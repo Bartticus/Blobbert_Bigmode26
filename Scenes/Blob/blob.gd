@@ -28,7 +28,7 @@ var face_dict: Dictionary = {}
 		current_face = value
 		current_face.show()
 
-enum Status { DEFAULT, STRETCHED, FAST, SLOWING, HURT, IDLE, ASLEEP }
+enum Status {DEFAULT, STRETCHED, FAST, SLOWING, HURT, IDLE, ASLEEP}
 var status: Status = Status.IDLE: set = set_status
 
 var start_time = Time.get_ticks_msec()
@@ -124,7 +124,7 @@ func _on_set_face_timer_timeout() -> void:
 func _physics_process(_delta: float) -> void:
 	var center_pos = softbody.get_bones_center_position()
 	blob_center.global_position = center_pos
-	swirl_rect.global_position = center_pos - Vector2(270+82,244+87) #anchors, man
+	swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
 	var weight = 0.05
 	blob_center.rotation = lerp_angle(blob_center.rotation, center_bone.rotation, weight)
 	
@@ -190,7 +190,7 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	scale_ratio = clampf(scale_ratio, 0.3, 2.0)
 	oil.scale = oil.scale * scale_ratio
 	
-	if oil.scale.length() > 2: #For angry face
+	if oil.scale.length() > 2: # For angry face
 		just_hurt = true
 		check_status()
 	
