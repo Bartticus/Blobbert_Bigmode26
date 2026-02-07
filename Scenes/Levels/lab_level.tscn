@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://t6j5hlf6y1hi"]
+[gd_scene format=3 uid="uid://t6j5hlf6y1hi"]
 
 [ext_resource type="PackedScene" uid="uid://di7akthmm74ou" path="res://Scenes/LevelTemplate/level_template.tscn" id="1_0temy"]
 [ext_resource type="PackedScene" uid="uid://d2a4750wy0jqs" path="res://Scenes/Screens/lab_screen_0.tscn" id="3_o8h5t"]
@@ -61,10 +61,10 @@ position = Vector2(11520, 0)
 x_coordinate = 6
 snap_screen_to_position = true
 
-[node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=1070881464 instance=ExtResource("11_l487u")]
+[node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=1088254593 instance=ExtResource("11_l487u")]
 position = Vector2(13440, 0)
 x_coordinate = 7
 snap_screen_to_position = true
 
 [node name="LoadingZone" parent="." index="5" unique_id=1274508763]
-position = Vector2(14464, -140)
+position = Vector2(13815, 0)

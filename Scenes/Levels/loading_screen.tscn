@@ -586,268 +586,268 @@ texture = ExtResource("1_8stx3")
 [sub_resource type="TileSet" id="TileSet_twuie"]
 sources/2 = SubResource("TileSetAtlasSource_jt311")
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_jt311"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_twuie"]
 resource_local_to_scene = true
 bone_index = 0
 bone2d_node = NodePath("Bone-0")
 target_nodepath = NodePath("Bone-10")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_twuie"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_bciov"]
 resource_local_to_scene = true
 bone_index = 1
 bone2d_node = NodePath("Bone-1")
 target_nodepath = NodePath("Bone-12")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_bciov"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ufvcu"]
 resource_local_to_scene = true
 bone_index = 10
 bone2d_node = NodePath("Bone-10")
 target_nodepath = NodePath("Bone-12")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ufvcu"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_crs6c"]
 resource_local_to_scene = true
 bone_index = 11
 bone2d_node = NodePath("Bone-11")
 target_nodepath = NodePath("Bone-12")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_crs6c"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_in1do"]
 resource_local_to_scene = true
 bone_index = 12
 bone2d_node = NodePath("Bone-12")
 target_nodepath = NodePath("Bone-14")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_in1do"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_upy7k"]
 resource_local_to_scene = true
 bone_index = 13
 bone2d_node = NodePath("Bone-13")
 target_nodepath = NodePath("Bone-14")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_upy7k"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_223en"]
 resource_local_to_scene = true
 bone_index = 14
 bone2d_node = NodePath("Bone-14")
 target_nodepath = NodePath("Bone-16")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_223en"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4lrdr"]
 resource_local_to_scene = true
 bone_index = 15
 bone2d_node = NodePath("Bone-15")
 target_nodepath = NodePath("Bone-16")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4lrdr"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_gpkyx"]
 resource_local_to_scene = true
 bone_index = 16
 bone2d_node = NodePath("Bone-16")
 target_nodepath = NodePath("Bone-6")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_gpkyx"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ownst"]
 resource_local_to_scene = true
 bone_index = 17
 bone2d_node = NodePath("Bone-17")
 target_nodepath = NodePath("Bone-26")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ownst"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4hrs0"]
 resource_local_to_scene = true
 bone_index = 18
 bone2d_node = NodePath("Bone-18")
 target_nodepath = NodePath("Bone-9")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4hrs0"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_hh6t2"]
 resource_local_to_scene = true
 bone_index = 19
 bone2d_node = NodePath("Bone-19")
 target_nodepath = NodePath("Bone-20")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_hh6t2"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ghjhq"]
 resource_local_to_scene = true
 bone_index = 2
 bone2d_node = NodePath("Bone-2")
 target_nodepath = NodePath("Bone-3")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ghjhq"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_okgt5"]
 resource_local_to_scene = true
 bone_index = 20
 bone2d_node = NodePath("Bone-20")
 target_nodepath = NodePath("Bone-22")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_okgt5"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_diedf"]
 resource_local_to_scene = true
 bone_index = 21
 bone2d_node = NodePath("Bone-21")
 target_nodepath = NodePath("Bone-22")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_diedf"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_7hjxd"]
 resource_local_to_scene = true
 bone_index = 22
 bone2d_node = NodePath("Bone-22")
 target_nodepath = NodePath("Bone-24")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_7hjxd"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_uwik5"]
 resource_local_to_scene = true
 bone_index = 23
 bone2d_node = NodePath("Bone-23")
 target_nodepath = NodePath("Bone-24")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_uwik5"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_43nme"]
 resource_local_to_scene = true
 bone_index = 24
 bone2d_node = NodePath("Bone-24")
 target_nodepath = NodePath("Bone-26")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_43nme"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_sxc58"]
 resource_local_to_scene = true
 bone_index = 25
 bone2d_node = NodePath("Bone-25")
 target_nodepath = NodePath("Bone-24")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_sxc58"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_umb7u"]
 resource_local_to_scene = true
 bone_index = 26
 bone2d_node = NodePath("Bone-26")
 target_nodepath = NodePath("Bone-28")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_umb7u"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_fwt0k"]
 resource_local_to_scene = true
 bone_index = 27
 bone2d_node = NodePath("Bone-27")
 target_nodepath = NodePath("Bone-25")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_fwt0k"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_lqelk"]
 resource_local_to_scene = true
 bone_index = 28
 bone2d_node = NodePath("Bone-28")
 target_nodepath = NodePath("Bone-27")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_lqelk"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_bf5ul"]
 resource_local_to_scene = true
 bone_index = 29
 bone2d_node = NodePath("Bone-29")
 target_nodepath = NodePath("Bone-21")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_bf5ul"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_fy0md"]
 resource_local_to_scene = true
 bone_index = 3
 bone2d_node = NodePath("Bone-3")
 target_nodepath = NodePath("Bone-4")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_fy0md"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vjsak"]
 resource_local_to_scene = true
 bone_index = 30
 bone2d_node = NodePath("Bone-30")
 target_nodepath = NodePath("Bone-23")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vjsak"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_lh0s8"]
 resource_local_to_scene = true
 bone_index = 31
 bone2d_node = NodePath("Bone-31")
 target_nodepath = NodePath("Bone-30")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_lh0s8"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_q7kc7"]
 resource_local_to_scene = true
 bone_index = 4
 bone2d_node = NodePath("Bone-4")
 target_nodepath = NodePath("Bone-2")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_q7kc7"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_w31fa"]
 resource_local_to_scene = true
 bone_index = 5
 bone2d_node = NodePath("Bone-5")
 target_nodepath = NodePath("Bone-3")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_w31fa"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_31rdf"]
 resource_local_to_scene = true
 bone_index = 6
 bone2d_node = NodePath("Bone-6")
 target_nodepath = NodePath("Bone-16")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_31rdf"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4g065"]
 resource_local_to_scene = true
 bone_index = 7
 bone2d_node = NodePath("Bone-7")
 target_nodepath = NodePath("Bone-9")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4g065"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_2xj06"]
 resource_local_to_scene = true
 bone_index = 8
 bone2d_node = NodePath("Bone-8")
 target_nodepath = NodePath("Bone-7")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_2xj06"]
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4lgu1"]
 resource_local_to_scene = true
 bone_index = 9
 bone2d_node = NodePath("Bone-9")
 target_nodepath = NodePath("Bone-10")
 editor/draw_gizmo = false
 
-[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_4lgu1"]
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_3fybj"]
 resource_local_to_scene = true
 enabled = true
 modification_count = 32
-modifications/0 = SubResource("SkeletonModification2DLookAt_jt311")
-modifications/1 = SubResource("SkeletonModification2DLookAt_twuie")
-modifications/2 = SubResource("SkeletonModification2DLookAt_hh6t2")
-modifications/3 = SubResource("SkeletonModification2DLookAt_bf5ul")
-modifications/4 = SubResource("SkeletonModification2DLookAt_lh0s8")
-modifications/5 = SubResource("SkeletonModification2DLookAt_q7kc7")
-modifications/6 = SubResource("SkeletonModification2DLookAt_w31fa")
-modifications/7 = SubResource("SkeletonModification2DLookAt_31rdf")
-modifications/8 = SubResource("SkeletonModification2DLookAt_4g065")
-modifications/9 = SubResource("SkeletonModification2DLookAt_2xj06")
-modifications/10 = SubResource("SkeletonModification2DLookAt_bciov")
-modifications/11 = SubResource("SkeletonModification2DLookAt_ufvcu")
-modifications/12 = SubResource("SkeletonModification2DLookAt_crs6c")
-modifications/13 = SubResource("SkeletonModification2DLookAt_in1do")
-modifications/14 = SubResource("SkeletonModification2DLookAt_upy7k")
-modifications/15 = SubResource("SkeletonModification2DLookAt_223en")
-modifications/16 = SubResource("SkeletonModification2DLookAt_4lrdr")
-modifications/17 = SubResource("SkeletonModification2DLookAt_gpkyx")
-modifications/18 = SubResource("SkeletonModification2DLookAt_ownst")
-modifications/19 = SubResource("SkeletonModification2DLookAt_4hrs0")
-modifications/20 = SubResource("SkeletonModification2DLookAt_ghjhq")
-modifications/21 = SubResource("SkeletonModification2DLookAt_okgt5")
-modifications/22 = SubResource("SkeletonModification2DLookAt_diedf")
-modifications/23 = SubResource("SkeletonModification2DLookAt_7hjxd")
-modifications/24 = SubResource("SkeletonModification2DLookAt_uwik5")
-modifications/25 = SubResource("SkeletonModification2DLookAt_43nme")
-modifications/26 = SubResource("SkeletonModification2DLookAt_sxc58")
-modifications/27 = SubResource("SkeletonModification2DLookAt_umb7u")
-modifications/28 = SubResource("SkeletonModification2DLookAt_fwt0k")
-modifications/29 = SubResource("SkeletonModification2DLookAt_lqelk")
-modifications/30 = SubResource("SkeletonModification2DLookAt_fy0md")
-modifications/31 = SubResource("SkeletonModification2DLookAt_vjsak")
+modifications/0 = SubResource("SkeletonModification2DLookAt_twuie")
+modifications/1 = SubResource("SkeletonModification2DLookAt_bciov")
+modifications/2 = SubResource("SkeletonModification2DLookAt_ghjhq")
+modifications/3 = SubResource("SkeletonModification2DLookAt_fy0md")
+modifications/4 = SubResource("SkeletonModification2DLookAt_q7kc7")
+modifications/5 = SubResource("SkeletonModification2DLookAt_w31fa")
+modifications/6 = SubResource("SkeletonModification2DLookAt_31rdf")
+modifications/7 = SubResource("SkeletonModification2DLookAt_4g065")
+modifications/8 = SubResource("SkeletonModification2DLookAt_2xj06")
+modifications/9 = SubResource("SkeletonModification2DLookAt_4lgu1")
+modifications/10 = SubResource("SkeletonModification2DLookAt_ufvcu")
+modifications/11 = SubResource("SkeletonModification2DLookAt_crs6c")
+modifications/12 = SubResource("SkeletonModification2DLookAt_in1do")
+modifications/13 = SubResource("SkeletonModification2DLookAt_upy7k")
+modifications/14 = SubResource("SkeletonModification2DLookAt_223en")
+modifications/15 = SubResource("SkeletonModification2DLookAt_4lrdr")
+modifications/16 = SubResource("SkeletonModification2DLookAt_gpkyx")
+modifications/17 = SubResource("SkeletonModification2DLookAt_ownst")
+modifications/18 = SubResource("SkeletonModification2DLookAt_4hrs0")
+modifications/19 = SubResource("SkeletonModification2DLookAt_hh6t2")
+modifications/20 = SubResource("SkeletonModification2DLookAt_okgt5")
+modifications/21 = SubResource("SkeletonModification2DLookAt_diedf")
+modifications/22 = SubResource("SkeletonModification2DLookAt_7hjxd")
+modifications/23 = SubResource("SkeletonModification2DLookAt_uwik5")
+modifications/24 = SubResource("SkeletonModification2DLookAt_43nme")
+modifications/25 = SubResource("SkeletonModification2DLookAt_sxc58")
+modifications/26 = SubResource("SkeletonModification2DLookAt_umb7u")
+modifications/27 = SubResource("SkeletonModification2DLookAt_fwt0k")
+modifications/28 = SubResource("SkeletonModification2DLookAt_lqelk")
+modifications/29 = SubResource("SkeletonModification2DLookAt_bf5ul")
+modifications/30 = SubResource("SkeletonModification2DLookAt_vjsak")
+modifications/31 = SubResource("SkeletonModification2DLookAt_lh0s8")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3fybj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfcx3"]
 resource_local_to_scene = true
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jt311"]
@@ -867,7 +867,7 @@ scale = Vector2(2, 2)
 gravity_scale = 0.0
 
 [node name="Skeleton2D" parent="Blob/Softbody" index="1" unique_id=1900298241]
-modification_stack = SubResource("SkeletonModificationStack2D_4lgu1")
+modification_stack = SubResource("SkeletonModificationStack2D_3fybj")
 
 [node name="Bone-0" parent="Blob/Softbody/Skeleton2D" index="0" unique_id=1768979970]
 position = Vector2(32.171265, 34.259827)
@@ -890,7 +890,7 @@ position = Vector2(29.791931, 117.91461)
 
 [node name="Bone-6" parent="Blob/Softbody/Skeleton2D" index="6" unique_id=1833565332]
 position = Vector2(34.124115, 140.75192)
-scale = Vector2(0.99999934, 0.9999993)
+scale = Vector2(0.99999934, 0.9999992)
 
 [node name="Bone-7" parent="Blob/Softbody/Skeleton2D" index="7" unique_id=1542246631]
 position = Vector2(79.13489, 12.788635)
@@ -915,7 +915,6 @@ position = Vector2(55.676514, 75.799194)
 
 [node name="Bone-13" parent="Blob/Softbody/Skeleton2D" index="13" unique_id=364937635]
 position = Vector2(80.35129, 87.06116)
-scale = Vector2(0.9999998, 0.99999976)
 
 [node name="Bone-14" parent="Blob/Softbody/Skeleton2D" index="14" unique_id=1813950122]
 position = Vector2(55.064575, 102.80658)
@@ -969,199 +968,199 @@ position = Vector2(147.16962, 75.3981)
 
 [node name="Bone-31" parent="Blob/Softbody/Skeleton2D" index="31" unique_id=485505377]
 position = Vector2(147.68915, 103.7626)
-scale = Vector2(0.9999951, 0.9999952)
+scale = Vector2(0.99999505, 0.9999951)
 
 [node name="Bone-0" parent="Blob/Softbody" index="2" unique_id=702735613]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-0" index="0" unique_id=1992622751]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-1" parent="Blob/Softbody" index="3" unique_id=1632438338]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-1" index="0" unique_id=1457066510]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-2" parent="Blob/Softbody" index="4" unique_id=735552098]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-2" index="0" unique_id=1564156268]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-3" parent="Blob/Softbody" index="5" unique_id=880128140]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-3" index="0" unique_id=1856331488]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-4" parent="Blob/Softbody" index="6" unique_id=538275186]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-4" index="0" unique_id=1732142940]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-5" parent="Blob/Softbody" index="7" unique_id=594221422]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-5" index="0" unique_id=1324788324]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-6" parent="Blob/Softbody" index="8" unique_id=1692126504]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-6" index="0" unique_id=1406557558]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-7" parent="Blob/Softbody" index="9" unique_id=796366436]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-7" index="0" unique_id=182535498]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-8" parent="Blob/Softbody" index="10" unique_id=1691678269]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-8" index="0" unique_id=321236776]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-9" parent="Blob/Softbody" index="11" unique_id=633470577]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-9" index="0" unique_id=1219352423]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-10" parent="Blob/Softbody" index="12" unique_id=976681936]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-10" index="0" unique_id=1777584596]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-11" parent="Blob/Softbody" index="13" unique_id=491479993]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-11" index="0" unique_id=1743054035]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-12" parent="Blob/Softbody" index="14" unique_id=1290178918]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-12" index="0" unique_id=1350588960]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-13" parent="Blob/Softbody" index="15" unique_id=1049192900]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-13" index="0" unique_id=1056323482]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-14" parent="Blob/Softbody" index="16" unique_id=46187058]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-14" index="0" unique_id=1279852801]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-15" parent="Blob/Softbody" index="17" unique_id=589796549]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-15" index="0" unique_id=2098750712]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-16" parent="Blob/Softbody" index="18" unique_id=1494543206]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-16" index="0" unique_id=1876446731]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-17" parent="Blob/Softbody" index="19" unique_id=1588850553]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-17" index="0" unique_id=592662774]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-18" parent="Blob/Softbody" index="20" unique_id=601220103]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-18" index="0" unique_id=773318401]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-19" parent="Blob/Softbody" index="21" unique_id=546942901]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-19" index="0" unique_id=1431380641]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-20" parent="Blob/Softbody" index="22" unique_id=1271591776]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-20" index="0" unique_id=186948764]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-21" parent="Blob/Softbody" index="23" unique_id=886472550]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-21" index="0" unique_id=399670289]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-22" parent="Blob/Softbody" index="24" unique_id=797007160]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-22" index="0" unique_id=241505623]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-23" parent="Blob/Softbody" index="25" unique_id=1237810849]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-23" index="0" unique_id=563543073]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-24" parent="Blob/Softbody" index="26" unique_id=1072820302]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-24" index="0" unique_id=1383343793]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-25" parent="Blob/Softbody" index="27" unique_id=761609922]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-25" index="0" unique_id=687015337]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-26" parent="Blob/Softbody" index="28" unique_id=780097487]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-26" index="0" unique_id=1816752937]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-27" parent="Blob/Softbody" index="29" unique_id=309386522]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-27" index="0" unique_id=962736651]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-28" parent="Blob/Softbody" index="30" unique_id=506876040]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-28" index="0" unique_id=2082477460]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-29" parent="Blob/Softbody" index="31" unique_id=383813882]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-29" index="0" unique_id=1835988961]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-30" parent="Blob/Softbody" index="32" unique_id=1792511220]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-30" index="0" unique_id=492504136]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="Bone-31" parent="Blob/Softbody" index="33" unique_id=2050010841]
 gravity_scale = 0.0
 
 [node name="CircleShape2D" parent="Blob/Softbody/Bone-31" index="0" unique_id=624285503]
-shape = SubResource("CircleShape2D_3fybj")
+shape = SubResource("CircleShape2D_qfcx3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=380061469]
 position = Vector2(965, 766)

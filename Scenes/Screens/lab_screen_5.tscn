@@ -10,7 +10,7 @@ bounce = 0.2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25nty"]
 radius = 19.022644
-height = 602.0835
+height = 500.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
@@ -23,7 +23,7 @@ position = Vector2(1284, 725)
 position = Vector2(996, 560)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Flap" index="0" unique_id=94659899]
-position = Vector2(302, -71)
+position = Vector2(252, -62)
 rotation = -0.19721392
 collision_mask = 3
 mass = 2.0
@@ -34,7 +34,7 @@ rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_25nty")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flap/RigidBody2D" index="1" unique_id=25767550]
-scale = Vector2(4.712473, 0.2989527)
+scale = Vector2(3.822, 0.299)
 texture = ExtResource("2_25nty")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Flap" index="1" unique_id=1088460728]
