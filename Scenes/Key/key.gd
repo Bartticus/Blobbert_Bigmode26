@@ -1,9 +1,11 @@
+@tool
 class_name Key
-extends Node2D
+extends CanvasItem
 
 @onready var snap_timer: Timer = %SnapTimer
 @onready var point_light_2d: PointLight2D = %PointLight2D
 @onready var tug_rope: Line2D = %TugRope
+@onready var key_label: Label = %KeyLabel
 
 @export var max_tug_distance: float = 750
 # Now stored in Global
@@ -12,6 +14,17 @@ extends Node2D
 @export var max_snap_multiplier: float = 12.0
 @export var snap_timer_wait_time: float = 1.0
 @export var max_tuggers: float = 25.0
+
+@export var snap_keys_to_position: bool = false:
+	set(value):
+		snap_keys_to_position = value
+		if snap_keys_to_position and Engine.is_editor_hint():
+			set_key_positions()
+
+func set_key_positions():
+	print(key_label.text)
+	print(name)
+	set_key_label(str(name))
 
 var current_bone: Bone : set = set_current_bone
 var dist_to_current_bone: float
@@ -28,6 +41,9 @@ var status: Status = Status.IDLE : set = set_status
 
 func _ready() -> void:
 	tug_rope.parent_key = self
+
+func set_key_label(new_value):
+	key_label.text = new_value
 
 func set_status(new_status) -> void:
 	status = new_status

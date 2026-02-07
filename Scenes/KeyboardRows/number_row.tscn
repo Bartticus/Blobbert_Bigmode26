@@ -2,59 +2,322 @@
 
 [ext_resource type="Script" uid="uid://b60dkqnc6d2d7" path="res://Scenes/KeyboardRows/full_row.gd" id="1_glxqx"]
 [ext_resource type="PackedScene" uid="uid://c47774xsx4ej2" path="res://Scenes/Key/key.tscn" id="2_2p85f"]
+[ext_resource type="Shader" uid="uid://ddv75hdnifa2k" path="res://Scenes/Key/rope_shader.gdshader" id="3_xs28i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xs28i"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3h3y"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsa7n"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vpw7i"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4o6yt"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ylexq"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ug0rh"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qv6uh"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kl8vc"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgljc"]
+resource_local_to_scene = true
+shader = ExtResource("3_xs28i")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
 
 [node name="NumberRow" type="Node2D" unique_id=1030793946]
 script = ExtResource("1_glxqx")
+snap_keys_to_position = true
 
 [node name="1" parent="." unique_id=1531063233 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="1" index="0" unique_id=726858926]
 region_rect = Rect2(28, 52, 13, 12)
 
+[node name="Beam" parent="1/TugRope" parent_id_path=PackedInt32Array(1531063233, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_xs28i")
+
+[node name="KeyLabel" parent="1/Control" parent_id_path=PackedInt32Array(1531063233, 1604450388) index="0" unique_id=513862480]
+text = "1"
+
 [node name="2" parent="." unique_id=603913199 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="2" index="0" unique_id=726858926]
 region_rect = Rect2(42, 52, 13, 12)
+
+[node name="Beam" parent="2/TugRope" parent_id_path=PackedInt32Array(603913199, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_p3h3y")
+
+[node name="KeyLabel" parent="2/Control" parent_id_path=PackedInt32Array(603913199, 1604450388) index="0" unique_id=513862480]
+text = "2"
 
 [node name="3" parent="." unique_id=2117734714 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="3" index="0" unique_id=726858926]
 region_rect = Rect2(56, 52, 13, 12)
 
+[node name="Beam" parent="3/TugRope" parent_id_path=PackedInt32Array(2117734714, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_lsa7n")
+
+[node name="KeyLabel" parent="3/Control" parent_id_path=PackedInt32Array(2117734714, 1604450388) index="0" unique_id=513862480]
+text = "3"
+
 [node name="4" parent="." unique_id=1763821394 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="4" index="0" unique_id=726858926]
 region_rect = Rect2(70, 52, 13, 12)
+
+[node name="Beam" parent="4/TugRope" parent_id_path=PackedInt32Array(1763821394, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_vpw7i")
+
+[node name="KeyLabel" parent="4/Control" parent_id_path=PackedInt32Array(1763821394, 1604450388) index="0" unique_id=513862480]
+text = "4"
 
 [node name="5" parent="." unique_id=1122392763 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="5" index="0" unique_id=726858926]
 region_rect = Rect2(84, 52, 13, 12)
 
+[node name="Beam" parent="5/TugRope" parent_id_path=PackedInt32Array(1122392763, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_4o6yt")
+
+[node name="KeyLabel" parent="5/Control" parent_id_path=PackedInt32Array(1122392763, 1604450388) index="0" unique_id=513862480]
+text = "5"
+
 [node name="6" parent="." unique_id=1528212326 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="6" index="0" unique_id=726858926]
 region_rect = Rect2(0, 65, 13, 12)
+
+[node name="Beam" parent="6/TugRope" parent_id_path=PackedInt32Array(1528212326, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_ylexq")
+
+[node name="KeyLabel" parent="6/Control" parent_id_path=PackedInt32Array(1528212326, 1604450388) index="0" unique_id=513862480]
+text = "6"
 
 [node name="7" parent="." unique_id=377217101 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="7" index="0" unique_id=726858926]
 region_rect = Rect2(14, 65, 13, 12)
 
+[node name="Beam" parent="7/TugRope" parent_id_path=PackedInt32Array(377217101, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_ug0rh")
+
+[node name="KeyLabel" parent="7/Control" parent_id_path=PackedInt32Array(377217101, 1604450388) index="0" unique_id=513862480]
+text = "7"
+
 [node name="8" parent="." unique_id=1879234845 instance=ExtResource("2_2p85f")]
+snap_keys_to_position = true
 
 [node name="Sprite2D" parent="8" index="0" unique_id=726858926]
 region_rect = Rect2(28, 65, 13, 12)
+
+[node name="Beam" parent="8/TugRope" parent_id_path=PackedInt32Array(1879234845, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_qv6uh")
+
+[node name="KeyLabel" parent="8/Control" parent_id_path=PackedInt32Array(1879234845, 1604450388) index="0" unique_id=513862480]
+text = "8"
 
 [node name="9" parent="." unique_id=1187507472 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="9" index="0" unique_id=726858926]
 region_rect = Rect2(42, 65, 13, 12)
 
+[node name="Beam" parent="9/TugRope" parent_id_path=PackedInt32Array(1187507472, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_kl8vc")
+
+[node name="KeyLabel" parent="9/Control" parent_id_path=PackedInt32Array(1187507472, 1604450388) index="0" unique_id=513862480]
+text = "9"
+
 [node name="0" parent="." unique_id=662353016 instance=ExtResource("2_2p85f")]
 
 [node name="Sprite2D" parent="0" index="0" unique_id=726858926]
 region_rect = Rect2(56, 65, 13, 12)
+
+[node name="Beam" parent="0/TugRope" parent_id_path=PackedInt32Array(662353016, 300641417) index="0" unique_id=492450127]
+material = SubResource("ShaderMaterial_tgljc")
+
+[node name="KeyLabel" parent="0/Control" parent_id_path=PackedInt32Array(662353016, 1604450388) index="0" unique_id=513862480]
+text = "0"
 
 [editable path="1"]
 [editable path="2"]

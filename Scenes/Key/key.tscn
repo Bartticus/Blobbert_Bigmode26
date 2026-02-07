@@ -2,11 +2,19 @@
 
 [ext_resource type="Script" uid="uid://m5f1fqhqwv28" path="res://Scenes/Key/key.gd" id="1_b7qx2"]
 [ext_resource type="Texture2D" uid="uid://0ts8n6m43hkh" path="res://Assets/Sprites/FullKeyboardWithNumbers.png" id="2_75pei"]
-[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_ckgvi"]
 [ext_resource type="Script" uid="uid://s33vwyd1x08e" path="res://Scenes/Key/tug_rope.gd" id="4_75pei"]
 [ext_resource type="Shader" uid="uid://ddv75hdnifa2k" path="res://Scenes/Key/rope_shader.gdshader" id="4_ckgvi"]
-[ext_resource type="FontFile" uid="uid://bb40exww61xcg" path="res://Assets/Fonts/CabinSketch-Regular.ttf" id="7_d7my7"]
+[ext_resource type="FontFile" uid="uid://cw2ewkprrvw2t" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="7_d7my7"]
 [ext_resource type="Texture2D" uid="uid://b1c0ema76qlmq" path="res://Assets/Sprites/Key.png" id="7_sq4g3"]
+
+[sub_resource type="Gradient" id="Gradient_wyshb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sq4g3"]
+gradient = SubResource("Gradient_wyshb")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sq4g3"]
+light_mode = 1
 
 [sub_resource type="Curve" id="Curve_75pei"]
 _limits = [0.2, 1.0, 0.0, 1.0]
@@ -37,16 +45,19 @@ shader_parameter/noise_scale = Vector2(10, 1)
 default_font = ExtResource("7_d7my7")
 
 [sub_resource type="LabelSettings" id="LabelSettings_sq4g3"]
-font_size = 53
+font_size = 45
 font_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
-outline_size = 6
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Key" type="Node2D" unique_id=1531063233]
-modulate = Color(1, 1, 1, 0.84313726)
+show_behind_parent = true
+z_index = 20
+z_as_relative = false
 script = ExtResource("1_b7qx2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=726858926]
+visible = false
 scale = Vector2(3, 3)
 texture = ExtResource("2_75pei")
 region_enabled = true
@@ -57,14 +68,20 @@ unique_name_in_owner = true
 position = Vector2(0, -2.145767e-06)
 scale = Vector2(0.3125, 0.28124997)
 enabled = false
-energy = 4.8
-texture = ExtResource("3_ckgvi")
+energy = 0.3
+texture = SubResource("GradientTexture2D_sq4g3")
 
 [node name="SnapTimer" type="Timer" parent="." unique_id=1163911104]
 unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.5
 one_shot = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1032941284]
+material = SubResource("CanvasItemMaterial_sq4g3")
+position = Vector2(-2, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("7_sq4g3")
 
 [node name="TugRope" type="Line2D" parent="." unique_id=300641417]
 unique_name_in_owner = true
@@ -91,31 +108,25 @@ offset_bottom = 26.0
 grow_vertical = 2
 pivot_offset = Vector2(0, 25)
 
-[node name="Sprite2D2" type="Sprite2D" parent="TugRope" unique_id=1032941284]
-visible = false
-position = Vector2(-2, 0)
-scale = Vector2(0.45, 0.45)
-texture = ExtResource("7_sq4g3")
-
 [node name="Control" type="Control" parent="." unique_id=1604450388]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_ckgvi")
 
-[node name="Label" type="Label" parent="Control" unique_id=513862480]
+[node name="KeyLabel" type="Label" parent="Control" unique_id=513862480]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -37.0
-offset_top = -51.0
-offset_right = -6.0
-offset_bottom = 15.0
+offset_left = -36.0
+offset_top = -52.0
+offset_right = -5.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "A"
