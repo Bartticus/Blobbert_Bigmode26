@@ -62,8 +62,8 @@ func set_status(new_status) -> void:
 			rand_face_timer.start(randf_range(0.5, 3.0))
 		Status.STRETCHED:
 			current_face = face_dict["Argh"]
-			if !Global.audio_manager.blob_audio_player.playing:
-				Global.audio_manager.blob_audio_player.play()
+			# if !Global.audio_manager.blob_audio_player.playing:
+			# 	Global.audio_manager.blob_audio_player.play()
 		Status.FAST:
 			current_face = face_dict["Whoa"]
 		Status.SLOWING:
