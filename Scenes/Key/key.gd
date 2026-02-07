@@ -7,8 +7,8 @@ extends Node2D
 @onready var tug_rope: Line2D = %TugRope
 @onready var key_label: Label = %KeyLabel
 
-@export var max_tug_distance: float = 750
 # Now stored in Global
+# @export var Global.tug_range: float = 750
 # @export var max_tug_power: float = 4000
 @export var tug_decay: float = 3.0
 @export var max_snap_multiplier: float = 12.0
@@ -122,14 +122,14 @@ func find_and_tug_target() -> void:
 	
 
 func move_bone() -> void:
-	if (current_bone is not Bone || status == Status.IDLE || dist_to_current_bone > max_tug_distance):
+	if (current_bone is not Bone || status == Status.IDLE || dist_to_current_bone > Global.tug_range):
 		tug_rope.disable()
 		return
 	else:
 		tug_rope.enable()
 	
 	var new_force: Vector2 = current_bone.global_position.direction_to(global_position) * calculate_tugging_power()
-	var weight: float = dist_to_current_bone / max_tug_distance
+	var weight: float = dist_to_current_bone / Global.tug_range
 	match status:
 		Status.SNAPPING:
 			force_applied = -(new_force * calculate_snap_multiplier())
@@ -148,7 +148,7 @@ func snap_away() -> void:
 
 
 func calculate_tugging_power() -> float:
-	if (dist_to_current_bone >= max_tug_distance):
+	if (dist_to_current_bone >= Global.tug_range):
 		return 0
 	var tugging_power = Global.tug_power * calculate_exponential_multiplier()
 
@@ -159,7 +159,7 @@ func calculate_exponential_multiplier() -> float:
 	var number_of_tuggers = get_tree().get_nodes_in_group('tugging_keys').size()
 	var number_of_tuggers_ratio = (max_tuggers - number_of_tuggers) / max_tuggers
 
-	var power_multiplier = (dist_to_current_bone / max_tug_distance)
+	var power_multiplier = (dist_to_current_bone / Global.tug_range)
 	return exp(-tug_decay * power_multiplier) * number_of_tuggers_ratio
 
 

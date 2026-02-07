@@ -55,6 +55,7 @@ func enter_multi_screen(multi_screen):
 		if !is_in_cutscene:
 			playing_cutscene = true
 		Global.tug_power = Global.max_multi_screen_tug_power
+		Global.tug_range = Global.max_multi_screen_tug_range
 		Engine.time_scale = 0.3
 		var camera_zoom = Vector2(0.5, 0.5)
 		var keeb_scale = Vector2(2.0, 2.0)
@@ -75,6 +76,7 @@ func enter_multi_screen(multi_screen):
 func enter_single_screen(screen):
 	var is_in_cutscene = playing_cutscene
 	Global.tug_power = Global.max_tug_power
+	Global.tug_range = Global.max_tug_range
 	current_anchor = screen.screen_anchor
 	if is_multi_screen:
 		if !is_in_cutscene:

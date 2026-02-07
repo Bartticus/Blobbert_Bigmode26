@@ -7,6 +7,11 @@ var key_count: int = 0
 var max_tug_power: float = 4000
 var max_multi_screen_tug_power: float = 5750
 var tug_power: float = 4000
+
+var max_tug_range: float = 750
+var max_multi_screen_tug_range: float = 1250
+var tug_range: float = 750
+
 var current_level: String
 var should_transition: bool = false
 
