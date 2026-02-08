@@ -64,3 +64,7 @@ snap_screen_to_position = true
 
 [node name="LoadingZone" parent="." index="5" unique_id=1274508763]
 position = Vector2(13815, 0)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="7" unique_id=1937678960]
+energy = 0.3
+shadow_enabled = true

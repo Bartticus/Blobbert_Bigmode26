@@ -87,12 +87,12 @@ region_rect = Rect2(0, 0, 1920, 1080)
 position = Vector2(64, 403)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VentGeometry/StaticBody2D2" index="0" unique_id=266820637]
-polygon = PackedVector2Array(-63, 1, 602, 0, 765, -184, 1566, -184, 1566, 76, 108, 430, 0, 677, -63, 676)
+polygon = PackedVector2Array(-63, 1, -64, -403, 1, -403, 1, 1, 602, 0, 765, -184, 1566, -184, 1566, 76, 108, 430, 0, 677, -63, 676)
 
 [node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D2" index="1" unique_id=1238791430]
 clip_children = 2
 color = Color(0.35686275, 0.35686275, 0.35686275, 1)
-polygon = PackedVector2Array(-63, 1, 602, 0, 765, -184, 1566, -184, 1566, 76, 108, 430, 0, 677, -63, 676)
+polygon = PackedVector2Array(-63, 1, -64, -403, 1, -403, 1, 1, 602, 0, 765, -184, 1566, -184, 1566, 76, 108, 430, 0, 677, -63, 676)
 
 [node name="Sprite2D" type="Sprite2D" parent="VentGeometry/StaticBody2D2/Polygon2D" index="0" unique_id=1330954460]
 modulate = Color(0.7313316, 0.7313315, 0.73133147, 1)

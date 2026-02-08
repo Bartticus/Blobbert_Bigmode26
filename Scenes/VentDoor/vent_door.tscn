@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byh3j81if5jct"]
 
-[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="1_2u84e"]
 [ext_resource type="Script" uid="uid://be67gtdp0dokl" path="res://Scenes/VentDoor/vent_door.gd" id="1_kf3g2"]
+[ext_resource type="Texture2D" uid="uid://bgxawluxoy5lk" path="res://Assets/Tiles/ScrewTiles.png" id="2_kf3g2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gxxi"]
 size = Vector2(128, 528)
@@ -18,8 +18,9 @@ shape = SubResource("RectangleShape2D_3gxxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="DoorBody" unique_id=1097457276]
 modulate = Color(0.47788018, 0.47788012, 0.47788012, 1)
-scale = Vector2(1, 4.12)
-texture = ExtResource("1_2u84e")
+texture_filter = 2
+scale = Vector2(0.6666666, 2.75)
+texture = ExtResource("2_kf3g2")
 centered = false
 
 [node name="TargetPosition" type="Marker2D" parent="." unique_id=1100631167]

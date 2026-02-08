@@ -144,6 +144,15 @@ custom_data_layer_0/name = "Oil"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_346pk")
 
+[sub_resource type="Environment" id="Environment_xssm3"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 0.1
+adjustment_enabled = true
+adjustment_contrast = 1.1
+adjustment_saturation = 1.1
+
 [node name="LevelTemplate" type="Node2D" unique_id=129905935]
 script = ExtResource("1_ebu0d")
 
@@ -181,3 +190,6 @@ unique_name_in_owner = true
 [node name="LoadingZone" parent="." unique_id=1274508763 instance=ExtResource("5_346pk")]
 
 [node name="SoundManager" parent="." unique_id=269814558 instance=ExtResource("6_xssm3")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=985951133]
+environment = SubResource("Environment_xssm3")
