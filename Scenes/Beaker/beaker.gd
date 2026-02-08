@@ -9,7 +9,7 @@ extends RigidBody2D
 @onready var beaker_sprite: Sprite2D = %BeakerSprite
 @onready var explosion_timer: Timer = %ExplosionTimer
 @onready var beaker_polygon: CollisionPolygon2D = %BeakerPolygon
-
+@onready var explosion_anim: AnimationPlayer = %AnimationPlayer
 
 func _on_flame_check_area_entered(area: Area2D) -> void:
 	if area.name == 'AdjacentOilChecker':
@@ -35,4 +35,11 @@ func _on_explosion_timer_timeout() -> void:
 	exploding = false
 	for o in objects_to_explode:
 		o.trigger_action()
+	
+	beaker_polygon.disabled = true
+	beaker_sprite.visible = false
+	
+	explosion_anim.play("boom")
+	await explosion_anim.animation_finished
+	
 	queue_free()
