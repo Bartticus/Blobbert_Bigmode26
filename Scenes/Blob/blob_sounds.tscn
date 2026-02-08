@@ -33,9 +33,12 @@ fling = Array[AudioStream]([ExtResource("19_b3vh8"), ExtResource("20_to0m4"), Ex
 
 [node name="Player1" type="AudioStreamPlayer2D" parent="." unique_id=735435180]
 unique_name_in_owner = true
+bus = &"SFX"
 
 [node name="Player2" type="AudioStreamPlayer2D" parent="." unique_id=1687854210]
 unique_name_in_owner = true
+bus = &"SFX"
 
 [node name="Player3" type="AudioStreamPlayer2D" parent="." unique_id=121922309]
 unique_name_in_owner = true
+bus = &"SFX"

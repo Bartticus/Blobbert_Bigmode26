@@ -9,7 +9,6 @@ func _ready() -> void:
 	
 
 func play_blob_sound(sound_type):
-	print(sound_type)
 	var player = blob_sounds.get_player()
 	if player == null:
 		return

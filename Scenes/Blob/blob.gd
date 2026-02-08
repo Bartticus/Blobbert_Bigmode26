@@ -19,6 +19,8 @@ var newly_spawned_oil: Oil
 var face_dict: Dictionary = {}
 
 @onready var bounce_timer: Timer = %BounceTimer
+@onready var whoosh_timer: Timer = %WhooshTimer
+@onready var stretch_timer: Timer = %StretchTimer
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 @onready var blob_center: Marker2D = %BlobCenter
@@ -64,11 +66,16 @@ func set_status(new_status) -> void:
 			rand_face_timer.start(randf_range(0.5, 3.0))
 		Status.STRETCHED:
 			current_face = face_dict["Argh"]
-			Global.audio_manager.play_blob_sound('stretch')
-			Global.audio_manager.play_blob_sound('squish')
+			if status_changed:
+				if whoosh_timer.is_stopped():
+					whoosh_timer.start()
+					Global.audio_manager.play_blob_sound('stretch')
+					Global.audio_manager.play_blob_sound('squish')
 		Status.FAST:
 			current_face = face_dict["Whoa"]
-			Global.audio_manager.play_blob_sound('whoosh')
+			if whoosh_timer.is_stopped():
+				whoosh_timer.start()
+				Global.audio_manager.play_blob_sound('whoosh')
 		Status.SLOWING:
 			current_face = face_dict["Yikes"]
 		Status.HURT:
