@@ -50,4 +50,7 @@ position = Vector2(59.999996, 398.2)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_gcwcn")
 
+[node name="BGSprite" parent="." index="12" unique_id=936446513]
+visible = false
+
 [editable path="VentDoor"]

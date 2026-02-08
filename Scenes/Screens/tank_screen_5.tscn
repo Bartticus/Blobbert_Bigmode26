@@ -69,6 +69,9 @@ scale = Vector2(2, 1)
 [node name="Polygon2D" parent="WaterSpray/FastWater/Area2D" parent_id_path=PackedInt32Array(243952282, 1256834662) index="1" unique_id=1662518656]
 polygon = PackedVector2Array(-73.69194, -207.83405, -25.226515, 19.351807, 176.57863, 116.77734, 322.81708, 162.68231, 356.94077, 182.48865, 437.51315, 244.20074, 423.8085, 223.27863, 382.28455, -63.104004, 370.6644, 17.480667, 300, 0, 252.5221, -24.131653, 161.93628, -43.595352)
 
+[node name="BGSprite" parent="." index="13" unique_id=936446513]
+visible = false
+
 [node name="Sprite2D4" type="Sprite2D" parent="." index="14" unique_id=868889843]
 position = Vector2(795, 177)
 scale = Vector2(2, 2)

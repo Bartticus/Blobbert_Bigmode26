@@ -12,3 +12,6 @@ tile_map_data = PackedByteArray("AAAAAB4AIgAEAAAAAAAAAB8AIgAEAAEAAAAAACAAIgAEAAI
 visible = false
 position = Vector2(905, 490)
 scale = Vector2(1, 2.1)
+
+[node name="BGSprite" parent="." index="12" unique_id=936446513]
+visible = false
