@@ -33,6 +33,9 @@ extends Node2D
 
 
 func _ready() -> void:
+	if name == "LabLevel":
+		Global.start_time = Time.get_ticks_msec()
+	
 	Global.level = self
 	Global.blob = blob
 	if Global.should_transition:

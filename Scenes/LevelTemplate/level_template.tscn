@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ngi34or8veka" path="res://Scenes/LoadingZone/loading_zone.tscn" id="5_346pk"]
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="5_tvne3"]
 [ext_resource type="PackedScene" uid="uid://e22gobsgl87n" path="res://Scenes/SoundManager/sound_manager.tscn" id="6_xssm3"]
+[ext_resource type="PackedScene" uid="uid://moswwloabatl" path="res://Scenes/RestartScreen/restart_screen.tscn" id="7_vjku0"]
 
 [sub_resource type="Environment" id="Environment_xssm3"]
 background_mode = 3
@@ -197,5 +198,4 @@ unique_name_in_owner = true
 
 [node name="LoadingZone" parent="." unique_id=1274508763 instance=ExtResource("5_346pk")]
 
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=1145384452]
-environment = SubResource("Environment_xssm3")
+[node name="RestartScreen" parent="." unique_id=938922898 instance=ExtResource("7_vjku0")]

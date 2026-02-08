@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://moswwloabatl"]
+
+[ext_resource type="Script" uid="uid://yww8nj6uli14" path="res://Scenes/RestartScreen/restart_screen.gd" id="1_558gm"]
+[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://main_theme.tres" id="1_m4fy1"]
+[ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="2_vl6m8"]
+[ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="4_558gm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kuqwa"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yk0sc"]
+noise = SubResource("FastNoiseLite_kuqwa")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_558gm"]
+shader = ExtResource("2_vl6m8")
+shader_parameter/scale = Vector2(5, 5)
+shader_parameter/strength = 0.5
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_yk0sc")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q50df"]
+random_pitch = 2.04
+streams_count = 1
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_svfe6"]
+random_pitch = 1.33
+streams_count = 1
+
+[node name="RestartScreen" type="CanvasLayer" unique_id=938922898]
+process_mode = 3
+script = ExtResource("1_558gm")
+
+[node name="StuckButton" type="Button" parent="." unique_id=211059754]
+z_index = 100
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 65.0
+offset_bottom = 36.0
+text = "Stuck?"
+
+[node name="ResumeButton" type="Button" parent="." unique_id=530087663]
+visible = false
+material = SubResource("ShaderMaterial_558gm")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -216.0
+offset_right = 130.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m4fy1")
+theme_override_font_sizes/font_size = 70
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="." unique_id=2034093367]
+visible = false
+material = SubResource("ShaderMaterial_558gm")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 27.0
+offset_right = 130.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m4fy1")
+theme_override_font_sizes/font_size = 70
+text = "Stuck?
+Restart"
+
+[node name="uisfx" type="AudioStreamPlayer" parent="." unique_id=1005156387]
+stream = SubResource("AudioStreamRandomizer_q50df")
+bus = &"SFX"
+
+[node name="uiHoversfx" type="AudioStreamPlayer" parent="." unique_id=848912989]
+stream = SubResource("AudioStreamRandomizer_svfe6")
+bus = &"SFX"
+
+[node name="VolumeSliders" type="Control" parent="." unique_id=528806597]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1277.0
+offset_top = 41.0
+offset_right = -1237.0
+offset_bottom = 81.0
+
+[node name="Label" type="Label" parent="VolumeSliders" unique_id=1350933831]
+layout_mode = 0
+offset_left = 1340.0
+offset_top = 850.0
+offset_right = 1538.0
+offset_bottom = 886.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="VolumeSliders" unique_id=538978569]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 882.0
+offset_right = 1572.0
+offset_bottom = 898.0
+max_value = 2.0
+step = 0.1
+value = 2.0
+script = ExtResource("4_558gm")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="VolumeSliders" unique_id=1742424857]
+layout_mode = 0
+offset_left = 1346.0
+offset_top = 910.0
+offset_right = 1530.0
+offset_bottom = 946.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="VolumeSliders" unique_id=832835907]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 942.0
+offset_right = 1572.0
+offset_bottom = 958.0
+max_value = 2.0
+step = 0.1
+value = 2.0
+script = ExtResource("4_558gm")
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="VolumeSliders" unique_id=1920645473]
+layout_mode = 0
+offset_left = 1359.0
+offset_top = 970.0
+offset_right = 1518.0
+offset_bottom = 1006.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="HSlider3" type="HSlider" parent="VolumeSliders" unique_id=619692436]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 1002.0
+offset_right = 1572.0
+offset_bottom = 1018.0
+max_value = 2.0
+step = 0.1
+value = 2.0
+script = ExtResource("4_558gm")
+bus_name = "SFX"
+
+[connection signal="pressed" from="StuckButton" to="." method="_on_stuck_button_pressed"]
+[connection signal="mouse_entered" from="ResumeButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="RestartButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

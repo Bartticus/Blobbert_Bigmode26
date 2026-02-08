@@ -96,4 +96,5 @@ y_coordinate = -2
 snap_screen_to_position = true
 
 [node name="LoadingZone" parent="." index="6" unique_id=1274508763]
-position = Vector2(3837, -2141)
+position = Vector2(3716, -2093)
+scale = Vector2(1.71, 1.71)

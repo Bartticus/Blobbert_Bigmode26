@@ -143,8 +143,8 @@ func _physics_process(_delta: float) -> void:
 	
 	check_moving_fast()
 	
-	if Input.is_action_just_pressed('reset'):
-		get_tree().reload_current_scene()
+	#if Input.is_action_just_pressed('reset'):
+		#get_tree().reload_current_scene()
 
 func check_moving_fast() -> void:
 	new_vel = softbody.get_center_body().rigidbody.linear_velocity.length()

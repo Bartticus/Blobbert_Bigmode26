@@ -3,7 +3,6 @@ extends Node
 
 var blob: Blob
 var level: LevelScript = null
-var key_count: int = 0
 var max_tug_power: float = 4000
 var max_multi_screen_tug_power: float = 5750
 var tug_power: float = 4000
@@ -17,16 +16,18 @@ var should_transition: bool = false
 
 var audio_manager: Node2D
 
+var key_count: int = 0
+var start_time: float
+
 var level_order = {
 	'res://Scenes/Levels/lab_level.tscn': 'res://Scenes/Levels/vent_level.tscn',
 	'res://Scenes/Levels/vent_level.tscn': 'res://Scenes/Levels/tank_level.tscn',
 	'res://Scenes/Levels/tank_level.tscn': 'res://Scenes/Levels/bunsen_level.tscn',
-	'res://Scenes/Levels/bunsen_level.tscn': 'res://Scenes/Levels/loading_screen.tscn'
+	'res://Scenes/Levels/bunsen_level.tscn': 'res://Scenes/Levels/win_screen.tscn'
 	}
 
 func ready():
 	randomize()
-
 
 func load_next_scene():
 	should_transition = true
