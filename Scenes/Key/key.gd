@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var snap_timer: Timer = %SnapTimer
 @onready var point_light_2d: PointLight2D = %PointLight2D
+@onready var key_sprite: Sprite2D = %Sprite2D2
 @onready var tug_rope: Line2D = %TugRope
 @onready var key_label: Label = %KeyLabel
 
@@ -51,12 +52,14 @@ func set_status(new_status) -> void:
 	match status:
 		Status.IDLE:
 			point_light_2d.enabled = false
+			key_sprite.modulate = Color.LIGHT_GRAY
 			current_bone = null
 			snap_timer.stop()
 			tug_rope.disable()
 			force_applied = Vector2(0,0)
 		Status.TUGGING:
 			point_light_2d.enabled = true
+			key_sprite.modulate = Color.LIGHT_BLUE
 			snap_timer.start(snap_timer_wait_time)
 			Global.iterate_key_count()
 

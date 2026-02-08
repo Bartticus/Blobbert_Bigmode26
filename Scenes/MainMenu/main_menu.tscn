@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://b4o23ec1ofw0u"]
+
+[ext_resource type="FontFile" uid="uid://cw2ewkprrvw2t" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="1_adu2g"]
+[ext_resource type="Script" uid="uid://uqoft1ixa4u" path="res://Scenes/MainMenu/main_menu.gd" id="1_qgdf6"]
+[ext_resource type="Script" uid="uid://da3fqyglvtkvb" path="res://Scenes/MainMenu/theme_music.gd" id="2_adu2g"]
+[ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="4_adu2g"]
+[ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="5_agesy"]
+
+[sub_resource type="Theme" id="Theme_n5jej"]
+default_font = ExtResource("1_adu2g")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6upyc"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp05e"]
+noise = SubResource("FastNoiseLite_hnblv")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0l8wx"]
+shader = ExtResource("4_adu2g")
+shader_parameter/scale = Vector2(5, 5)
+shader_parameter/strength = 0.5
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sho4w"]
+random_pitch = 2.04
+streams_count = 1
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fxueo"]
+random_pitch = 1.33
+streams_count = 1
+
+[node name="MainMenu" type="Control" unique_id=1317512164]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n5jej")
+script = ExtResource("1_qgdf6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=369764833]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="MenuArt" type="TextureRect" parent="." unique_id=1149247199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1514742633]
+position = Vector2(954, 447)
+scale = Vector2(0.6462963, 0.6462963)
+
+[node name="VolumeSliders" type="Control" parent="." unique_id=1157119565]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VolumeSliders" unique_id=928059985]
+layout_mode = 0
+offset_left = 1340.0
+offset_top = 850.0
+offset_right = 1538.0
+offset_bottom = 886.0
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="VolumeSliders" unique_id=307771658]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 882.0
+offset_right = 1572.0
+offset_bottom = 898.0
+max_value = 2.0
+step = 0.1
+value = 2.0
+script = ExtResource("5_agesy")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="VolumeSliders" unique_id=1393861936]
+layout_mode = 0
+offset_left = 1346.0
+offset_top = 910.0
+offset_right = 1530.0
+offset_bottom = 946.0
+theme_override_font_sizes/font_size = 30
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="VolumeSliders" unique_id=29332375]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 942.0
+offset_right = 1572.0
+offset_bottom = 958.0
+max_value = 2.0
+step = 0.1
+value = 2.0
+script = ExtResource("5_agesy")
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="VolumeSliders" unique_id=1643226285]
+layout_mode = 0
+offset_left = 1359.0
+offset_top = 970.0
+offset_right = 1518.0
+offset_bottom = 1006.0
+theme_override_font_sizes/font_size = 30
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="HSlider3" type="HSlider" parent="VolumeSliders" unique_id=1140085404]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 1002.0
+offset_right = 1572.0
+offset_bottom = 1018.0
+max_value = 2.0
+step = 0.1
+value = 2.0
+script = ExtResource("5_agesy")
+bus_name = "SFX"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1588141477]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -227.5
+offset_top = -378.0
+offset_right = 227.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6upyc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=602675380]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Play" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1690796370]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+text = "Play"
+
+[node name="Credits" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1813840910]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+text = "Credits"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1121158123]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+text = "Quit"
+
+[node name="Credits" type="TextureRect" parent="." unique_id=437017242]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=331241884]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14262882, 0.28426626, 0.46838433, 1)
+
+[node name="Label" type="Label" parent="Credits/ColorRect" unique_id=256710086]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 0
+offset_left = 428.0
+offset_top = 323.0
+offset_right = 1595.0
+offset_bottom = 998.0
+theme_override_font_sizes/font_size = 80
+text = "Bartticus - Programmer
+Chimp Peen - Programmer
+KiDCHAIR - 2D artist
+
+
+Laboratory Tileset - ExceptRea"
+horizontal_alignment = 3
+
+[node name="TextureRect" type="TextureRect" parent="Credits" unique_id=1018608373]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Return" type="Button" parent="Credits" unique_id=2079581558]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 0
+offset_left = 16.0
+offset_top = 446.0
+offset_right = 320.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 60
+text = "Return"
+
+[node name="ThemeMusic" type="AudioStreamPlayer" parent="." unique_id=1584734868]
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_adu2g")
+
+[node name="uisfx" type="AudioStreamPlayer" parent="." unique_id=721269572]
+stream = SubResource("AudioStreamRandomizer_sho4w")
+bus = &"SFX"
+
+[node name="uiHoversfx" type="AudioStreamPlayer" parent="." unique_id=928041491]
+stream = SubResource("AudioStreamRandomizer_fxueo")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Credits/Return" to="." method="_on_return_mouse_entered"]
+[connection signal="pressed" from="Credits/Return" to="." method="_on_return_pressed"]
+[connection signal="finished" from="ThemeMusic" to="ThemeMusic" method="_on_finished"]

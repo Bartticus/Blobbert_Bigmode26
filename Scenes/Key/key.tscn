@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0ts8n6m43hkh" path="res://Assets/Sprites/FullKeyboardWithNumbers.png" id="2_75pei"]
 [ext_resource type="Script" uid="uid://s33vwyd1x08e" path="res://Scenes/Key/tug_rope.gd" id="4_75pei"]
 [ext_resource type="Shader" uid="uid://ddv75hdnifa2k" path="res://Scenes/Key/rope_shader.gdshader" id="4_ckgvi"]
+[ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="7_57k1g"]
 [ext_resource type="FontFile" uid="uid://cw2ewkprrvw2t" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="7_d7my7"]
 [ext_resource type="Texture2D" uid="uid://b1c0ema76qlmq" path="res://Assets/Sprites/Key.png" id="7_sq4g3"]
 
@@ -44,6 +45,19 @@ shader_parameter/noise_scale = Vector2(10, 1)
 [sub_resource type="Theme" id="Theme_ckgvi"]
 default_font = ExtResource("7_d7my7")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp05e"]
+noise = SubResource("FastNoiseLite_hnblv")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sq4g3"]
+shader = ExtResource("7_57k1g")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.25
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")
+
 [sub_resource type="LabelSettings" id="LabelSettings_sq4g3"]
 font_size = 45
 font_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
@@ -52,13 +66,14 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Key" type="Node2D" unique_id=1531063233]
 show_behind_parent = true
-light_mask = 0
+light_mask = 2
 z_index = 20
 z_as_relative = false
 script = ExtResource("1_b7qx2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=726858926]
 visible = false
+light_mask = 2
 scale = Vector2(3, 3)
 texture = ExtResource("2_75pei")
 region_enabled = true
@@ -67,9 +82,11 @@ region_rect = Rect2(0, 0, 13, 12)
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1584370002]
 unique_name_in_owner = true
 position = Vector2(0, -2.145767e-06)
-scale = Vector2(0.3125, 0.28124997)
+scale = Vector2(0.59374994, 0.62500006)
 enabled = false
-energy = 0.3
+color = Color(7.70092e-07, 0.3485321, 0.8427578, 1)
+energy = 16.0
+range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_sq4g3")
 
 [node name="SnapTimer" type="Timer" parent="." unique_id=1163911104]
@@ -79,6 +96,8 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1032941284]
+unique_name_in_owner = true
+light_mask = 2
 material = SubResource("CanvasItemMaterial_sq4g3")
 position = Vector2(-2, 0)
 scale = Vector2(0.45, 0.45)
@@ -98,6 +117,7 @@ script = ExtResource("4_75pei")
 [node name="Beam" type="ColorRect" parent="TugRope" unique_id=492450127]
 unique_name_in_owner = true
 visible = false
+light_mask = 0
 z_index = -1
 material = SubResource("ShaderMaterial_ckgvi")
 anchors_preset = 4
@@ -118,6 +138,8 @@ theme = SubResource("Theme_ckgvi")
 
 [node name="KeyLabel" type="Label" parent="Control" unique_id=513862480]
 unique_name_in_owner = true
+light_mask = 2
+material = SubResource("ShaderMaterial_sq4g3")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
