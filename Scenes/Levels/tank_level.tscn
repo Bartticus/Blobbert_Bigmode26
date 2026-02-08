@@ -1976,6 +1976,7 @@ y_coordinate = -1
 snap_screen_to_position = true
 
 [node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="1" unique_id=2053691136]
+visible = true
 navigation_enabled = true
 
 [node name="RigidBody2D" parent="Screens/TankScreen8/Battery" parent_id_path=PackedInt32Array(879411036, 1219371551) index="0" unique_id=1219371551 node_paths=PackedStringArray("triggerable_objects")]

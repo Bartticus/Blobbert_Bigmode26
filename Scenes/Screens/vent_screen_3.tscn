@@ -5,8 +5,99 @@
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="2_dcjee"]
 [ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="3_d2pyo"]
 [ext_resource type="PackedScene" uid="uid://byh3j81if5jct" path="res://Scenes/VentDoor/vent_door.tscn" id="3_r0mnm"]
+[ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="4_qtfl1"]
+[ext_resource type="Texture2D" uid="uid://cwpxoha2onv3w" path="res://Assets/Sprites/RustyCog.png" id="5_hh5gr"]
 [ext_resource type="PackedScene" uid="uid://bf0j3ms2oh0ia" path="res://Scenes/WindGust/wind_gust.tscn" id="5_wux2k"]
 [ext_resource type="PackedScene" uid="uid://ceybxmuaaxrkm" path="res://Scenes/WindGust/wind_gust_group.tscn" id="6_b7gho"]
+
+[sub_resource type="Gradient" id="Gradient_qfkhn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ojx3w"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ebora"]
+width = 300
+height = 300
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_ojx3w")
+color_ramp = SubResource("Gradient_qfkhn")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6c6p"]
+resource_local_to_scene = true
+shader = ExtResource("4_qtfl1")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ttfh"]
+radius = 152.44763
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ma3uf"]
+radius = 171.14322
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kwq2v"]
+resource_local_to_scene = true
+shader = ExtResource("4_qtfl1")
+shader_parameter/sensitivity = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ebora")
+shader_parameter/noise_config_size = Vector2(128, 128)
+shader_parameter/noise_seed = 0.0
+shader_parameter/replace_color = Color(0.05882353, 0.05882353, 0.101960786, 1)
+shader_parameter/edge_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/details_color = Color(1, 1, 1, 1)
+shader_parameter/details_opacity = 0.1
+shader_parameter/edge_bias_strength = 0.5
+shader_parameter/edge_remap_min = 0.0
+shader_parameter/edge_remap_max = 1.0
+
+[sub_resource type="Animation" id="Animation_ecl18"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GearSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xjfkr"]
+resource_name = "spin"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GearSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7ytk"]
+_data = {
+&"RESET": SubResource("Animation_ecl18"),
+&"spin": SubResource("Animation_xjfkr")
+}
 
 [node name="VentScreen3" unique_id=1360540123 instance=ExtResource("1_n84dt")]
 
@@ -83,12 +174,31 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="GreasableObject" parent="." index="6" unique_id=1867482040 node_paths=PackedStringArray("triggerable_objects") instance=ExtResource("3_d2pyo")]
+[node name="Gear" parent="." index="6" unique_id=1834858078 node_paths=PackedStringArray("triggerable_objects", "stain_sprite", "anim_player") instance=ExtResource("3_d2pyo")]
 position = Vector2(1842, 117)
-rotation = 0.7853982
+scale = Vector2(0.715, 0.715)
 destroy_on_greased = false
 triggerable_objects = [NodePath("../WindTunnels/WindTunnel10"), NodePath("../WindTunnels/WindTunnel9"), NodePath("../WindTunnels/WindTunnel8"), NodePath("../WindTunnels/WindTunnel7"), NodePath("../WindTunnels/WindTunnel6"), NodePath("../VentDoor"), NodePath("../WindTunnels/WindTunnel11"), NodePath("../WindTunnels/WindTunnel12"), NodePath("../WindGustGroup/WindGust2"), NodePath("../WindGustGroup/WindGust6"), NodePath("../WindGustGroup/WindGust5"), NodePath("../WindGustGroup/WindGust7"), NodePath("../WindGustGroup")]
+stain_sprite = NodePath("GearSprite")
 grease_level = 0.2
+anim_player = NodePath("AnimationPlayer")
+
+[node name="ObjectShaded" parent="Gear" index="0" unique_id=1685847717]
+material = SubResource("ShaderMaterial_u6c6p")
+
+[node name="CollisionShape2D" parent="Gear/StaticBody2D" parent_id_path=PackedInt32Array(1834858078, 481857584) index="0" unique_id=1424846631]
+shape = SubResource("CircleShape2D_0ttfh")
+
+[node name="CollisionShape2D" parent="Gear/VelocityDetector" parent_id_path=PackedInt32Array(1834858078, 446853444) index="0" unique_id=2097183210]
+shape = SubResource("CircleShape2D_ma3uf")
+
+[node name="GearSprite" type="Sprite2D" parent="Gear" index="4" unique_id=1301925012]
+material = SubResource("ShaderMaterial_kwq2v")
+position = Vector2(-1.398516, 5.5944486)
+texture = ExtResource("5_hh5gr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gear" index="5" unique_id=1279400275]
+libraries/ = SubResource("AnimationLibrary_g7ytk")
 
 [node name="VentDoor" parent="." index="7" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
 position = Vector2(881, 960)
@@ -199,3 +309,5 @@ active = false
 
 [node name="ScreenBlob" parent="." index="13" unique_id=104221436]
 position = Vector2(163, 105)
+
+[editable path="Gear"]

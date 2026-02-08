@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://bo23wjbly5ckx"]
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_70cc2"]
-[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_4px5k"]
+[ext_resource type="Texture2D" uid="uid://bgxawluxoy5lk" path="res://Assets/Tiles/ScrewTiles.png" id="2_c0yca"]
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="3_dg57d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70cc2"]
-size = Vector2(402, 764)
+size = Vector2(402, 812)
 
 [sub_resource type="Animation" id="Animation_dg57d"]
 length = 0.001
@@ -90,9 +90,10 @@ scale = Vector2(1, 0.7660578)
 shape = SubResource("RectangleShape2D_70cc2")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" index="1" unique_id=28213257]
+texture_filter = 2
 position = Vector2(0, -99.34655)
-scale = Vector2(3.1406262, 4.584377)
-texture = ExtResource("2_4px5k")
+scale = Vector2(2.0937495, 3.232777)
+texture = ExtResource("2_c0yca")
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." index="6" unique_id=1950640583]
 position = Vector2(1325, 1427)
@@ -101,8 +102,9 @@ position = Vector2(1325, 1427)
 shape = SubResource("RectangleShape2D_70cc2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="AnimatableBody2D2" index="1" unique_id=1773800720]
-scale = Vector2(3.1406255, 5.953125)
-texture = ExtResource("2_4px5k")
+texture_filter = 2
+scale = Vector2(2.104167, 4.208333)
+texture = ExtResource("2_c0yca")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7" unique_id=1627004545]
 root_node = NodePath("../AnimatableBody2D")

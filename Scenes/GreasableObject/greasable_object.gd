@@ -7,6 +7,8 @@ extends Node2D
 @export var grease_level: float = 0
 @export var glass_pane: bool
 
+@export var anim_player: AnimationPlayer
+
 var max_grease: float = 1000
 var splatter_speed: float = 0.05
 
@@ -37,6 +39,9 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		if grease_level > 1.0:
 			for trigger in triggerable_objects:
 				trigger.trigger_action()
+			
+			if anim_player:
+				anim_player.play("spin")
 		
 		if glass_pane && grease_level > 1.0:
 			queue_free()
