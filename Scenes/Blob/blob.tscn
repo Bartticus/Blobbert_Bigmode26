@@ -302,9 +302,6 @@ load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482
 [sub_resource type="CircleShape2D" id="CircleShape2D_074og"]
 radius = 83.02409
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_074og"]
-polygon = PackedVector2Array(72.73349, 29.391155, 78.31023, 7.969204, 77.51477, -12.824238, 48.254906, -48.543427, -3.643402, -75.12473, -75.038826, -36.85342, -107.02992, 50.888073, -44.27516, 104.80319, 62.670067, 70.55823)
-
 [node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "oil_timer", "face_pivot", "rand_face_timer", "set_face_timer", "default_faces")]
 script = ExtResource("1_u3aeq")
 softbody = NodePath("Softbody")
@@ -408,7 +405,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.9999988, 0.9999988)
+scale = Vector2(0.99999875, 0.99999875)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -622,7 +619,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=1360935816]
 position = Vector2(102.15682, 48.364586)
 rotation = 1.6354785
-scale = Vector2(0.9999988, 0.9999988)
+scale = Vector2(0.99999875, 0.99999875)
 rest = Transform2D(-0.06463696, 0.99790883, -0.99790883, -0.06463696, 102.15682, 48.364586)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -768,7 +765,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-31" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=485505377]
 position = Vector2(147.68915, 103.762596)
 rotation = -1.5891105
-scale = Vector2(0.9999988, 0.9999988)
+scale = Vector2(0.99999875, 0.99999875)
 rest = Transform2D(-0.018313143, -0.9998323, 0.9998323, -0.018313143, 147.68915, 103.762596)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3191,6 +3188,7 @@ metadata/joint_distance = 22.815851
 unique_name_in_owner = true
 position = Vector2(-2.9802322e-08, -5.9604645e-08)
 rotation = 2.5651665
+gizmo_extents = 0.0
 
 [node name="FacePivot" type="Node2D" parent="BlobCenter" unique_id=1412401453]
 position = Vector2(1.1920929e-07, 1.1920929e-07)
@@ -3274,7 +3272,6 @@ texture = ExtResource("11_pcdmj")
 
 [node name="BlobLevelTransitionArea" type="Area2D" parent="BlobCenter" unique_id=490246114]
 unique_name_in_owner = true
-visible = false
 collision_layer = 2
 collision_mask = 4
 
@@ -3291,17 +3288,12 @@ rotation = -2.5651665
 rect = Rect2(-50, -50, 100, 100)
 
 [node name="OilDetector" type="Area2D" parent="BlobCenter" unique_id=2050342350]
-visible = false
 rotation = -2.5651665
 collision_layer = 524288
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlobCenter/OilDetector" unique_id=1942926034]
 shape = SubResource("CircleShape2D_074og")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="BlobCenter" unique_id=1018047014]
-visible = false
-occluder = SubResource("OccluderPolygon2D_074og")
 
 [node name="RandFaceTimer" type="Timer" parent="." unique_id=252747397]
 wait_time = 2.0

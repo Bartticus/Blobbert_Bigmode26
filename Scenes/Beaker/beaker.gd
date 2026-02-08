@@ -5,12 +5,11 @@ extends RigidBody2D
 @export var exploding: bool = false
 @export var sprite_scale_mult: float = 0.05
 @export var objects_to_explode: Array[Node2D] = []
-@export var done = false
 
 @onready var beaker_sprite: Sprite2D = %BeakerSprite
 @onready var explosion_timer: Timer = %ExplosionTimer
 @onready var beaker_polygon: CollisionPolygon2D = %BeakerPolygon
-@onready var explosion_anim: AnimationPlayer = %Explode
+@onready var explosion_anim: AnimationPlayer = %AnimationPlayer
 
 
 func _on_flame_check_area_entered(area: Area2D) -> void:
@@ -30,16 +29,19 @@ func _physics_process(delta: float) -> void:
 		var sprite_scale = sprite_scale_mult * delta
 		beaker_sprite.scale += Vector2(sprite_scale, sprite_scale)
 		beaker_polygon.scale += Vector2(sprite_scale, sprite_scale)
-	if done:
-		if explosion_anim.is_playing():
-			return
-		else:
-			queue_free()
 
 
 
 func _on_explosion_timer_timeout() -> void:
 	exploding = false
-	done = true
-	explosion_anim.play('boom')
+
+	for o in objects_to_explode:
+		o.trigger_action()
+	
+	beaker_polygon.disabled = true
+	beaker_sprite.visible = false
 	Global.audio_manager.play_required_sound('explosion')
+	explosion_anim.play("boom")
+	await explosion_anim.animation_finished
+
+	queue_free()

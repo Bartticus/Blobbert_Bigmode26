@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4cdtcnd1tx86"
-path="res://.godot/imported/MetalP.png-0fc3ccc2adddf5de09a5001fe9eb1b82.ctex"
+uid="uid://b4fcdxqrpar7w"
+path="res://.godot/imported/FIRE3.png-7f2a791620167b7cc51803221129d46b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MetalP.png"
-dest_files=["res://.godot/imported/MetalP.png-0fc3ccc2adddf5de09a5001fe9eb1b82.ctex"]
+source_file="res://Assets/Sprites/FIRE3.png"
+dest_files=["res://.godot/imported/FIRE3.png-7f2a791620167b7cc51803221129d46b.ctex"]
 
 [params]
 

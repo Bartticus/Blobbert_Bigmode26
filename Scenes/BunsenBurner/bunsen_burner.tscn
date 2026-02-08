@@ -1,13 +1,29 @@
 [gd_scene format=3 uid="uid://b8aevm7ktvaqu"]
 
 [ext_resource type="Script" uid="uid://b7s2jlfdhdi10" path="res://Scenes/BunsenBurner/bunsen_burner.gd" id="1_r4oiy"]
-[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_m5rdo"]
+[ext_resource type="Texture2D" uid="uid://1tk05nt48fgb" path="res://Assets/Sprites/Bunsen.png" id="2_m5rdo"]
+[ext_resource type="Texture2D" uid="uid://b4tsoetvrsu4m" path="res://Assets/Sprites/FIRE2.png" id="2_se1t2"]
+[ext_resource type="Texture2D" uid="uid://b4fcdxqrpar7w" path="res://Assets/Sprites/FIRE3.png" id="3_yj0vg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt33f"]
 size = Vector2(200, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4oiy"]
 size = Vector2(270, 170)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjgvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_se1t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yj0vg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BunsenBurner" type="Node2D" unique_id=479197049]
 script = ExtResource("1_r4oiy")
@@ -25,8 +41,15 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireDetection" unique_id=382422036]
 shape = SubResource("RectangleShape2D_r4oiy")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771459867]
-scale = Vector2(1.6, 0.8)
+[node name="FireSprites" type="AnimatedSprite2D" parent="." unique_id=48558562]
+position = Vector2(4, -186)
+scale = Vector2(0.6097561, 0.5954546)
+sprite_frames = SubResource("SpriteFrames_qjgvk")
+autoplay = "default"
+
+[node name="BunsenSprite" type="Sprite2D" parent="." unique_id=771459867]
+position = Vector2(-25, -1)
+scale = Vector2(0.50113887, 0.51219505)
 texture = ExtResource("2_m5rdo")
 
 [connection signal="area_entered" from="FireDetection" to="." method="_on_fire_detection_area_entered"]
