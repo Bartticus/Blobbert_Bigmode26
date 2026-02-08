@@ -21,6 +21,8 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		return
 	
 	if body is RigidBody2D:
+		if glass_pane:
+			Global.audio_manager.play_general_sound('glass_break')
 		var velocity: Vector2 = body.linear_velocity
 		var new_strength: float = velocity.length() / max_grease
 		

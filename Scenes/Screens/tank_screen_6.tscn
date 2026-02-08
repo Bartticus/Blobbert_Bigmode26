@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://byh3j81if5jct" path="res://Scenes/VentDoor/vent_door.tscn" id="2_bnaxw"]
 [ext_resource type="Texture2D" uid="uid://douwtc3katgqx" path="res://Assets/Tiles/MetalTile2.png" id="3_6i8ix"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_lf7uf"]
+[ext_resource type="Texture2D" uid="uid://caowmih6c7lnd" path="res://Assets/Sprites/danger.png" id="5_gcwcn"]
 
 [node name="TankScreen6" unique_id=1360540123 instance=ExtResource("1_hqqtq")]
 
@@ -38,5 +39,15 @@ modulate = Color(1, 0, 0, 1)
 position = Vector2(64.4, 104.36894)
 scale = Vector2(1, 0.24271847)
 texture = ExtResource("3_lf7uf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="3" unique_id=976163728]
+position = Vector2(62.599995, 127.40001)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_gcwcn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="4" unique_id=253924325]
+position = Vector2(59.999996, 398.2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_gcwcn")
 
 [editable path="VentDoor"]

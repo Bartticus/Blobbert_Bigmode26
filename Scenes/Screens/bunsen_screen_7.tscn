@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d4eb5vpni2j21" path="res://Scenes/Beaker/beaker.tscn" id="2_k4c54"]
 [ext_resource type="Texture2D" uid="uid://00mmyifin173" path="res://Assets/Sprites/Flammable.png" id="3_itkvj"]
 [ext_resource type="PackedScene" uid="uid://cvvu60jpuafxs" path="res://Scenes/ExplodableObject/explodable_object.tscn" id="4_itkvj"]
+[ext_resource type="Texture2D" uid="uid://ef3hngqexvh8" path="res://Assets/Sprites/Emergency.png" id="5_qs3ku"]
 
 [node name="BunsenScreen7" unique_id=1360540123 instance=ExtResource("1_d5n2a")]
 
@@ -25,4 +26,10 @@ scale = Vector2(1.6, 1.6)
 [node name="ScreenBlob" parent="." index="10" unique_id=104221436]
 position = Vector2(1205, 767)
 
+[node name="Sprite2D5" type="Sprite2D" parent="." index="14" unique_id=973661633]
+position = Vector2(1190, 370.00006)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("5_qs3ku")
+
 [editable path="Beaker"]
+[editable path="ExplodableObject"]

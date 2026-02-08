@@ -21,4 +21,7 @@ texture = ExtResource("3_nln0y")
 [node name="ExplodableObject" parent="." index="8" unique_id=427107243 instance=ExtResource("4_7kpkv")]
 position = Vector2(1849, 503)
 
+[node name="ScreenBlob" parent="." index="10" unique_id=104221436]
+position = Vector2(516, 549)
+
 [editable path="Beaker"]

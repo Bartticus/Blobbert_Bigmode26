@@ -11,6 +11,7 @@ extends RigidBody2D
 @onready var beaker_polygon: CollisionPolygon2D = %BeakerPolygon
 @onready var explosion_anim: AnimationPlayer = %AnimationPlayer
 
+
 func _on_flame_check_area_entered(area: Area2D) -> void:
 	if area.name == 'AdjacentOilChecker':
 		if area.owner.ignited && flammable:
@@ -33,13 +34,14 @@ func _physics_process(delta: float) -> void:
 
 func _on_explosion_timer_timeout() -> void:
 	exploding = false
+
 	for o in objects_to_explode:
 		o.trigger_action()
 	
 	beaker_polygon.disabled = true
 	beaker_sprite.visible = false
-	
+	Global.audio_manager.play_required_sound('explosion')
 	explosion_anim.play("boom")
 	await explosion_anim.animation_finished
-	
+
 	queue_free()

@@ -17,7 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cg8eikmecesv4" path="res://Scenes/Screens/bunsen_screen_10.tscn" id="12_s03oc"]
 [ext_resource type="PackedScene" uid="uid://bfti1602q8a6l" path="res://Scenes/Screens/bunsen_screen_11.tscn" id="13_701ob"]
 
-[node name="BunsenLevel" unique_id=129905935 instance=ExtResource("1_28eey")]
+[node name="BunsenLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_28eey")]
+starting_screen = NodePath("Screens/BunsenScreen4")
 
 [node name="BunsenScreen12" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1720561904 instance=ExtResource("2_701ob")]
 position = Vector2(-1920, 1080)
@@ -96,5 +97,9 @@ y_coordinate = -2
 snap_screen_to_position = true
 
 [node name="LoadingZone" parent="." index="6" unique_id=1274508763]
-position = Vector2(3716, -2093)
-scale = Vector2(1.71, 1.71)
+position = Vector2(3837, -2141)
+scale = Vector2(1, 2)
+
+[editable path="Screens/MultiScreenTemplate/BunsenScreen7"]
+[editable path="Screens/MultiScreenTemplate/BunsenScreen7/Beaker"]
+[editable path="Screens/MultiScreenTemplate/BunsenScreen7/ExplodableObject"]

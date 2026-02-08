@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bkvvb7y0xgogx" path="res://Assets/Sprites/Fishy1.png" id="1_le7t0"]
 [ext_resource type="Script" uid="uid://cxirysiqel7fe" path="res://Scenes/Fish/fish.gd" id="1_rrrj0"]
+[ext_resource type="Material" uid="uid://uljbukkldo18" path="res://Scenes/Blob/squiggle_material.tres" id="3_2ykiy"]
 [ext_resource type="Shape2D" uid="uid://dg4rrh1xdqj1t" path="res://Scenes/Fish/fish_body.tres" id="3_botaw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_botaw"]
@@ -51,6 +52,7 @@ shape = ExtResource("3_botaw")
 
 [node name="FishSprite" type="Sprite2D" parent="FishBody" unique_id=308704407]
 unique_name_in_owner = true
+material = ExtResource("3_2ykiy")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_le7t0")
 
