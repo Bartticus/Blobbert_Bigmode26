@@ -1,26 +1,25 @@
-[gd_scene format=3 uid="uid://b4o23ec1ofw0u"]
+[gd_scene format=3 uid="uid://dhbgnamalge47"]
 
-[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://main_theme.tres" id="1_adu2g"]
-[ext_resource type="Script" uid="uid://uqoft1ixa4u" path="res://Scenes/MainMenu/main_menu.gd" id="1_qgdf6"]
-[ext_resource type="Script" uid="uid://da3fqyglvtkvb" path="res://Scenes/MainMenu/theme_music.gd" id="2_adu2g"]
-[ext_resource type="Texture2D" uid="uid://c3mb8mb280jkn" path="res://Assets/Sprites/Menu.png" id="3_0l8wx"]
-[ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="4_adu2g"]
-[ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="5_agesy"]
+[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://main_theme.tres" id="1_jk0b7"]
+[ext_resource type="Script" uid="uid://jnl7vkaun5v6" path="res://Scenes/Levels/win_screen.gd" id="2_h8qwa"]
+[ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="3_lhmlr"]
+[ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="4_7w54b"]
+[ext_resource type="Script" uid="uid://da3fqyglvtkvb" path="res://Scenes/MainMenu/theme_music.gd" id="5_7yvu5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6upyc"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_kuqwa"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yk0sc"]
-noise = SubResource("FastNoiseLite_kuqwa")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp05e"]
+noise = SubResource("FastNoiseLite_hnblv")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0l8wx"]
-shader = ExtResource("4_adu2g")
+shader = ExtResource("4_7w54b")
 shader_parameter/scale = Vector2(5, 5)
 shader_parameter/strength = 0.5
 shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_yk0sc")
+shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sho4w"]
 random_pitch = 2.04
@@ -30,15 +29,26 @@ streams_count = 1
 random_pitch = 1.33
 streams_count = 1
 
-[node name="MainMenu" type="Control" unique_id=1317512164]
+[sub_resource type="LabelSettings" id="LabelSettings_yk0sc"]
+font_size = 200
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kuqwa"]
+font_size = 100
+font_color = Color(0, 0, 0.9882353, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h8qwa"]
+font_size = 60
+
+[node name="WinScreen" type="Control" unique_id=1317512164]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_adu2g")
-script = ExtResource("1_qgdf6")
+theme = ExtResource("1_jk0b7")
+script = ExtResource("2_h8qwa")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=369764833]
 layout_mode = 0
@@ -54,15 +64,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Image" type="Sprite2D" parent="." unique_id=1514742633]
-position = Vector2(960, 540)
-texture = ExtResource("3_0l8wx")
+position = Vector2(954, 447)
+scale = Vector2(0.6462963, 0.6462963)
 
 [node name="VolumeSliders" type="Control" parent="." unique_id=1157119565]
 anchors_preset = 0
-offset_left = -1277.0
-offset_top = 41.0
-offset_right = -1237.0
-offset_bottom = 81.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="VolumeSliders" unique_id=928059985]
 layout_mode = 0
@@ -70,7 +78,6 @@ offset_left = 1340.0
 offset_top = 850.0
 offset_right = 1538.0
 offset_bottom = 886.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Master Volume"
 
@@ -83,7 +90,7 @@ offset_bottom = 898.0
 max_value = 2.0
 step = 0.1
 value = 2.0
-script = ExtResource("5_agesy")
+script = ExtResource("3_lhmlr")
 bus_name = "Master"
 
 [node name="Label2" type="Label" parent="VolumeSliders" unique_id=1393861936]
@@ -92,7 +99,6 @@ offset_left = 1346.0
 offset_top = 910.0
 offset_right = 1530.0
 offset_bottom = 946.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Music Volume"
 horizontal_alignment = 1
@@ -106,7 +112,7 @@ offset_bottom = 958.0
 max_value = 2.0
 step = 0.1
 value = 2.0
-script = ExtResource("5_agesy")
+script = ExtResource("3_lhmlr")
 bus_name = "Music"
 
 [node name="Label3" type="Label" parent="VolumeSliders" unique_id=1643226285]
@@ -115,7 +121,6 @@ offset_left = 1359.0
 offset_top = 970.0
 offset_right = 1518.0
 offset_bottom = 1006.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "SFX Volume"
 horizontal_alignment = 1
@@ -129,7 +134,7 @@ offset_bottom = 1018.0
 max_value = 2.0
 step = 0.1
 value = 2.0
-script = ExtResource("5_agesy")
+script = ExtResource("3_lhmlr")
 bus_name = "SFX"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1588141477]
@@ -139,10 +144,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 372.0
-offset_top = -536.0
-offset_right = 827.0
-offset_bottom = -158.0
+offset_left = -227.5
+offset_top = -378.0
+offset_right = 227.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6upyc")
@@ -157,7 +161,7 @@ material = SubResource("ShaderMaterial_0l8wx")
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 70
-text = "Play"
+text = "Play Again?"
 
 [node name="Credits" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1813840910]
 material = SubResource("ShaderMaterial_0l8wx")
@@ -172,6 +176,61 @@ layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 70
 text = "Quit"
+
+[node name="ThemeMusic" type="AudioStreamPlayer" parent="." unique_id=1584734868]
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("5_7yvu5")
+
+[node name="uisfx" type="AudioStreamPlayer" parent="." unique_id=721269572]
+stream = SubResource("AudioStreamRandomizer_sho4w")
+bus = &"SFX"
+
+[node name="uiHoversfx" type="AudioStreamPlayer" parent="." unique_id=928041491]
+stream = SubResource("AudioStreamRandomizer_fxueo")
+bus = &"SFX"
+
+[node name="Label" type="Label" parent="." unique_id=2022939988]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 0
+offset_left = 82.0
+offset_top = 109.0
+offset_right = 1905.0
+offset_bottom = 582.0
+text = "You escaped the lab
+BLOBBERT LIVES ON!"
+label_settings = SubResource("LabelSettings_yk0sc")
+
+[node name="Label2" type="Label" parent="." unique_id=1291604730]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 0
+offset_left = 166.0
+offset_top = 598.0
+offset_right = 424.0
+offset_bottom = 722.0
+text = "Stats"
+label_settings = SubResource("LabelSettings_kuqwa")
+
+[node name="LabelKeys" type="Label" parent="." unique_id=219827684]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 0
+offset_left = 54.0
+offset_top = 742.5
+offset_right = 531.0
+offset_bottom = 813.5
+text = "Keys Pressed:"
+label_settings = SubResource("LabelSettings_h8qwa")
+
+[node name="LabelTime" type="Label" parent="." unique_id=907792746]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 0
+offset_left = 56.0
+offset_top = 849.0
+offset_right = 314.0
+offset_bottom = 923.0
+text = "Time:"
+label_settings = SubResource("LabelSettings_h8qwa")
 
 [node name="Credits" type="TextureRect" parent="." unique_id=437017242]
 visible = false
@@ -222,26 +281,12 @@ offset_bottom = 520.0
 theme_override_font_sizes/font_size = 60
 text = "Return"
 
-[node name="ThemeMusic" type="AudioStreamPlayer" parent="." unique_id=1584734868]
-volume_db = -12.0
-autoplay = true
-bus = &"Music"
-script = ExtResource("2_adu2g")
-
-[node name="uisfx" type="AudioStreamPlayer" parent="." unique_id=721269572]
-stream = SubResource("AudioStreamRandomizer_sho4w")
-bus = &"SFX"
-
-[node name="uiHoversfx" type="AudioStreamPlayer" parent="." unique_id=928041491]
-stream = SubResource("AudioStreamRandomizer_fxueo")
-bus = &"SFX"
-
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="ThemeMusic" to="ThemeMusic" method="_on_finished"]
 [connection signal="mouse_entered" from="Credits/Return" to="." method="_on_return_mouse_entered"]
 [connection signal="pressed" from="Credits/Return" to="." method="_on_return_pressed"]
-[connection signal="finished" from="ThemeMusic" to="ThemeMusic" method="_on_finished"]

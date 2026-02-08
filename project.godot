@@ -15,7 +15,7 @@ universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 [application]
 
 config/name="Bigmode26"
-run/main_scene="uid://dwl5520f383c8"
+run/main_scene="uid://b4o23ec1ofw0u"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

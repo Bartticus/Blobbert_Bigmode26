@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://ctpvpev1gjabm" path="res://Audio/SlickLab.mp3" id="1_6cdme"]
 
 [node name="GlobalAudio" type="Node" unique_id=1771039779]
+process_mode = 3
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=743630901]
 stream = ExtResource("1_6cdme")

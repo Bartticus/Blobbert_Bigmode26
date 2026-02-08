@@ -34,6 +34,9 @@ extends Node2D
 
 
 func _ready() -> void:
+	if name == "LabLevel":
+		Global.start_time = Time.get_ticks_msec()
+	
 	Global.level = self
 	Global.blob = blob
 	Global.audio_manager = sound_manager
