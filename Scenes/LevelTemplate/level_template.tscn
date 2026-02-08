@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="5_tvne3"]
 [ext_resource type="PackedScene" uid="uid://e22gobsgl87n" path="res://Scenes/SoundManager/sound_manager.tscn" id="6_xssm3"]
 
+[sub_resource type="Environment" id="Environment_xssm3"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 0.1
+adjustment_enabled = true
+adjustment_contrast = 1.25
+adjustment_saturation = 1.2
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_346pk"]
 texture = ExtResource("4_fkjnc")
 0:0/0 = 0
@@ -144,17 +153,11 @@ custom_data_layer_0/name = "Oil"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_346pk")
 
-[sub_resource type="Environment" id="Environment_xssm3"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 0.5
-glow_bloom = 0.1
-adjustment_enabled = true
-adjustment_contrast = 1.1
-adjustment_saturation = 1.1
-
 [node name="LevelTemplate" type="Node2D" unique_id=129905935]
 script = ExtResource("1_ebu0d")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=985951133]
+environment = SubResource("Environment_xssm3")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1077410475]
 unique_name_in_owner = true
@@ -190,6 +193,3 @@ unique_name_in_owner = true
 [node name="LoadingZone" parent="." unique_id=1274508763 instance=ExtResource("5_346pk")]
 
 [node name="SoundManager" parent="." unique_id=269814558 instance=ExtResource("6_xssm3")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=985951133]
-environment = SubResource("Environment_xssm3")

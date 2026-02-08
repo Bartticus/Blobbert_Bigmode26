@@ -9,8 +9,9 @@ noise = SubResource("FastNoiseLite_hnblv")
 seamless = true
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_7b40t")
 shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 1.5
+shader_parameter/strength = 1.0
 shader_parameter/fps = 6.0
 shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")

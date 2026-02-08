@@ -12,14 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dynmdxhcng4d3" path="res://Scenes/Screens/lab_screen_3b.tscn" id="10_or0mv"]
 [ext_resource type="PackedScene" uid="uid://ckw00ti8a1el6" path="res://Scenes/Screens/vent_screen_6.tscn" id="11_l487u"]
 
-[sub_resource type="Environment" id="Environment_l487u"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 0.5
-glow_bloom = 0.1
-adjustment_enabled = true
-adjustment_saturation = 1.2
-
 [node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
@@ -70,12 +62,9 @@ position = Vector2(13440, 0)
 x_coordinate = 7
 snap_screen_to_position = true
 
-[node name="LoadingZone" parent="." index="5" unique_id=1274508763]
-position = Vector2(13815, 0)
+[node name="LoadingZone" parent="." index="6" unique_id=1274508763]
+position = Vector2(13438, 68)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="7" unique_id=1937678960]
 energy = 0.3
 shadow_enabled = true
-
-[node name="WorldEnvironment" parent="." index="8" unique_id=985951133]
-environment = SubResource("Environment_l487u")
