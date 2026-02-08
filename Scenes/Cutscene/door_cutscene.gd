@@ -10,6 +10,7 @@ func _ready():
 func trigger_action():
 	Global.level.playing_cutscene = true
 	await Global.level.enter_multi_screen(door)
+	# await get_tree().create_timer(2.0).timeout
 	for to in tank_glass.triggerable_objects:
 		to.trigger_action()
 	await get_tree().create_timer(3.0).timeout

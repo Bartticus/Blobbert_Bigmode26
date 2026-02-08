@@ -1849,11 +1849,12 @@ position = Vector2(1920, 0)
 x_coordinate = 1
 snap_screen_to_position = true
 
-[node name="ScreenTileMapLayer" parent="Screens/Tank/TankScreen2" index="1" unique_id=2053691136]
+[node name="ScreenTileMapLayer" parent="Screens/Tank/TankScreen2" index="2" unique_id=2053691136]
 navigation_enabled = true
 
-[node name="TankGlass" parent="Screens/Tank/TankScreen2" index="7" unique_id=2026173093 node_paths=PackedStringArray("triggerable_objects")]
-triggerable_objects = [NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater3"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater2"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater"), NodePath("../../../DoorAndPanel/TankScreen6/VentDoor")]
+[node name="TankGlass" parent="Screens/Tank/TankScreen2" index="7" unique_id=2026173093 node_paths=PackedStringArray("triggerable_objects", "cutscene")]
+triggerable_objects = [NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater3"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater2"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater"), NodePath("../../../DoorAndPanel/TankScreen6/VentDoor"), NodePath("GlassPanes3/Pane7"), NodePath("GlassPanes3/Pane8"), NodePath("GlassPanes3/Pane9")]
+cutscene = NodePath("../../../../DoorCutscene")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane7" parent_id_path=PackedInt32Array(1459908369, 936546553, 25629605) index="4" unique_id=1071639836]
 material = SubResource("ShaderMaterial_2u67o")
@@ -1975,7 +1976,7 @@ position = Vector2(0, -1080)
 y_coordinate = -1
 snap_screen_to_position = true
 
-[node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="1" unique_id=2053691136]
+[node name="ScreenTileMapLayer" parent="Screens/TankScreen8" index="2" unique_id=2053691136]
 navigation_enabled = true
 
 [node name="RigidBody2D" parent="Screens/TankScreen8/Battery" parent_id_path=PackedInt32Array(879411036, 1219371551) index="0" unique_id=1219371551 node_paths=PackedStringArray("triggerable_objects")]

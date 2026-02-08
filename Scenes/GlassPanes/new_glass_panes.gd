@@ -23,7 +23,7 @@ func _ready() -> void:
 	for i in children.size():
 		var child = children[i]
 		if child is GreasableObject:
-			if unbreakable && i > 2:
+			if unbreakable:
 				child.glass_pane = false
 			all_glass_panes.append(child)
 			child.connect("tree_exiting", _on_pane_exiting.bind(child))

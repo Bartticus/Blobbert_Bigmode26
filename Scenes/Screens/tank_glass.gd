@@ -1,9 +1,10 @@
 extends Node2D
 
 @export var groups_broken: int = 0
-@export var required_groups: int = 17
+@export var required_groups: int = 14
 @export var triggerable_objects: Array[Node2D] = []
 @export var cutscene : Node2D
+@export var triggered: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,9 +14,9 @@ func _ready() -> void:
 
 func iterate_groups_broken():
 	groups_broken += 1
-	if groups_broken >= required_groups:
+	if groups_broken >= required_groups && !triggered:
+		triggered = true
 		tank_broken()
 
 func tank_broken():
-	for io in triggerable_objects:
-		io.trigger_action()
+	cutscene.trigger_action()
