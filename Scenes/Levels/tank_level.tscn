@@ -1934,10 +1934,13 @@ material = SubResource("ShaderMaterial_t513a")
 [node name="ThickWallShape" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/ThickWall" parent_id_path=PackedInt32Array(1459908369, 1729898104, 89876878) index="0" unique_id=557544539]
 shape = SubResource("RectangleShape2D_lql2v")
 
+[node name="VentDoor" parent="Screens/Tank/TankScreen2" index="8" unique_id=1445567170]
+modulate = Color(1.753959, 1.753959, 1.753959, 1)
+
 [node name="Sprite2D" parent="Screens/Tank/TankScreen2/VentDoor/DoorBody" parent_id_path=PackedInt32Array(1459908369, 1445567170, 1463673896) index="2" unique_id=1097457276]
 texture_filter = 0
 
-[node name="TargetPosition" parent="Screens/Tank/TankScreen2/VentDoor" parent_id_path=PackedInt32Array(1459908369, 1445567170) index="1" unique_id=1100631167]
+[node name="TargetPosition" parent="Screens/Tank/TankScreen2/VentDoor" index="1" unique_id=1100631167]
 position = Vector2(0, -1971)
 
 [node name="TankScreen3" parent="Screens/Tank" index="3" unique_id=1596739180 instance=ExtResource("6_2qt28")]

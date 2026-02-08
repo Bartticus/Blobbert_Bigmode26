@@ -10,3 +10,6 @@ tile_map_data = PackedByteArray("AAAAABIAIgAEAAAAAAAAABMAIgAEAAEAAAAAABQAIgAEAAI
 
 [node name="BunsenBurner" parent="." index="7" unique_id=479197049 instance=ExtResource("2_bsq6w")]
 position = Vector2(303, 782)
+
+[node name="BGSprite" parent="." index="12" unique_id=936446513]
+visible = false

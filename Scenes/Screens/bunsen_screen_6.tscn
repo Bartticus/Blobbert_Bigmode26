@@ -9,3 +9,6 @@ tile_map_data = PackedByteArray("AAAAABsAIgAEAAEAAAAAABwAIgAEAAIAAAAAAB0AIgAEAAM
 
 [node name="ScreenBlob" parent="." index="8" unique_id=104221436]
 position = Vector2(969, 213)
+
+[node name="BGSprite" parent="." index="11" unique_id=936446513]
+visible = false

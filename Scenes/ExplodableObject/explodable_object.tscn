@@ -7,6 +7,7 @@
 size = Vector2(200, 1400)
 
 [node name="ExplodableObject" type="StaticBody2D" unique_id=427107243]
+modulate = Color(2.2241454, 2.2241454, 2.2241454, 1)
 script = ExtResource("1_uv7vk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1538077168]

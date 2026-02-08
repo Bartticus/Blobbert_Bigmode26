@@ -26,6 +26,9 @@ scale = Vector2(1.6, 1.6)
 [node name="ScreenBlob" parent="." index="10" unique_id=104221436]
 position = Vector2(1205, 767)
 
+[node name="BGSprite" parent="." index="13" unique_id=936446513]
+visible = false
+
 [node name="Sprite2D5" type="Sprite2D" parent="." index="14" unique_id=973661633]
 position = Vector2(1190, 370.00006)
 scale = Vector2(1.6, 1.6)
