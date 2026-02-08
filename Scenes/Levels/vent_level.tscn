@@ -16,7 +16,7 @@
 
 [node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
 
-[node name="Blob" parent="." index="1" unique_id=104221436]
+[node name="Blob" parent="." index="2" unique_id=104221436]
 position = Vector2(189, -2838)
 
 [node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_cktbt")]
@@ -99,7 +99,7 @@ x_coordinate = 1
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="LoadingZone" parent="." index="5" unique_id=1274508763]
+[node name="LoadingZone" parent="." index="6" unique_id=1274508763]
 position = Vector2(2420, 451)
 
 [editable path="Screens/LabScreen5"]
