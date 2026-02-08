@@ -30,18 +30,25 @@ x_coordinate = -1
 y_coordinate = -3
 snap_screen_to_position = true
 
-[node name="ScreenTileMapLayer" parent="Screens/LabScreen5" index="1" unique_id=2053691136]
+[node name="ScreenTileMapLayer" parent="Screens/LabScreen5" index="2" unique_id=2053691136]
 collision_enabled = true
 
+[node name="CollisionShape2D" parent="Screens/LabScreen5/Flap/StaticBody2D" parent_id_path=PackedInt32Array(1128775686, 676061831) index="0" unique_id=174936057]
+disabled = true
+
 [node name="RigidBody2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="1" unique_id=94659899]
-position = Vector2(247, -57)
-rotation = -0.15358898
+position = Vector2(245, -17)
+
+[node name="Sprite2D" parent="Screens/LabScreen5/Flap/RigidBody2D" index="1" unique_id=25767550]
+position = Vector2(-1.9999847, 2.9999943)
+rotation = 0.03032553
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="3" unique_id=931504344]
 position = Vector2(483, -66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screens/LabScreen5/Flap/StaticBody2D2" index="0" unique_id=625094102]
 shape = SubResource("CircleShape2D_e78n4")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Screens/LabScreen5/Flap/StaticBody2D2" index="1" unique_id=1531036573]
 visible = false

@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cpef1h3t5110c" path="res://Assets/Tiles/Sci-fi Tileset re-imagined.png" id="8_8bq88"]
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="8_e1wkp"]
 [ext_resource type="Texture2D" uid="uid://chujxlp0ni0m6" path="res://Assets/Tiles/lab_tileset_LITE.png" id="9_b8hnc"]
+[ext_resource type="Texture2D" uid="uid://bm5s2y1tts4r7" path="res://Assets/Sprites/SlickLaboratory.png" id="12_8bq88"]
+[ext_resource type="Shader" uid="uid://b2a8nbewgqoa2" path="res://Scenes/ScreenTemplate/blur.gdshader" id="12_xqyo6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0w323"]
 texture = ExtResource("5_3ang3")
@@ -3488,6 +3490,21 @@ tile_proxies/coords_level = [[19, Vector2i(0, 0)], [34, Vector2i(0, 0)], [19, Ve
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwi3t"]
 size = Vector2(1920, 1080)
 
+[sub_resource type="Environment" id="Environment_0w323"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 0.1
+adjustment_enabled = true
+adjustment_contrast = 1.25
+adjustment_saturation = 1.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmlxw"]
+shader = ExtResource("12_xqyo6")
+shader_parameter/radius = 1.5
+shader_parameter/steps = 32
+shader_parameter/vertex_expand = 1.0
+
 [node name="ScreenTemplate" type="Node2D" unique_id=1360540123]
 script = ExtResource("1_bxdfx")
 
@@ -3530,6 +3547,7 @@ navigation_enabled = false
 
 [node name="ScreenSpace" type="Area2D" parent="." unique_id=1231027623]
 unique_name_in_owner = true
+visible = false
 position = Vector2(960, 540)
 collision_layer = 4
 collision_mask = 2
@@ -3554,3 +3572,21 @@ position = Vector2(221, 167)
 unique_name_in_owner = true
 anchor_mode = 0
 process_callback = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1457984909]
+unique_name_in_owner = true
+environment = SubResource("Environment_0w323")
+
+[node name="BGSprite" type="Sprite2D" parent="." unique_id=936446513]
+light_mask = 0
+z_index = -10
+material = SubResource("ShaderMaterial_cmlxw")
+scale = Vector2(2, 2)
+texture = ExtResource("12_8bq88")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="BGSprite" unique_id=1526134595]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 0.4392157)

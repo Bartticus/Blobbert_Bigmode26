@@ -6,6 +6,7 @@ extends Node2D
 @onready var screen_anchor: Marker2D = %ScreenAnchor
 @onready var screen_blob: Blob = %ScreenBlob
 @onready var camera: Camera2D = %ScreenCamera
+@onready var world_env: WorldEnvironment = %WorldEnvironment
 
 @export var x_coordinate : int
 @export var y_coordinate : int
@@ -26,6 +27,7 @@ func disable_screen_elements():
 	screen_full_keeb.queue_free()
 	screen_blob.queue_free()
 	camera.queue_free()
+	world_env.queue_free()
 
 
 func set_screen_position():
