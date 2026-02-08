@@ -169,6 +169,11 @@ remote_path = NodePath("../../FullKeeb")
 update_rotation = false
 update_scale = false
 
+[node name="SoundManager" parent="Camera" unique_id=269814558 instance=ExtResource("6_xssm3")]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera" unique_id=68125943]
+current = true
+
 [node name="Blob" parent="." unique_id=104221436 instance=ExtResource("5_tvne3")]
 unique_name_in_owner = true
 clip_children = 2
@@ -192,4 +197,5 @@ unique_name_in_owner = true
 
 [node name="LoadingZone" parent="." unique_id=1274508763 instance=ExtResource("5_346pk")]
 
-[node name="SoundManager" parent="." unique_id=269814558 instance=ExtResource("6_xssm3")]
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="." unique_id=1145384452]
+environment = SubResource("Environment_xssm3")
