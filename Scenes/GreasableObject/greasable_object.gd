@@ -55,3 +55,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_CTRL):
 		grease_level = 0
 		stain_sprite.material.set_shader_parameter("sensitivity", 0)
+
+func trigger_action():
+	queue_free()

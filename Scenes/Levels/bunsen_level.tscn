@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://di7akthmm74ou" path="res://Scenes/LevelTemplate/level_template.tscn" id="1_28eey"]
 [ext_resource type="PackedScene" uid="uid://ciakm6l0e46ar" path="res://Scenes/Screens/bunsen_screen_12.tscn" id="2_701ob"]
 [ext_resource type="PackedScene" uid="uid://cs5n8erodmjq7" path="res://Scenes/Screens/bunsen_screen_0.tscn" id="2_bh3cb"]
+[ext_resource type="PackedScene" uid="uid://d3x2w60j3uq6y" path="res://Scenes/Screens/tank_screen_6.tscn" id="2_jd2x8"]
 [ext_resource type="PackedScene" uid="uid://clxrthxxdas0q" path="res://Scenes/Screens/bunsen_screen_1.tscn" id="3_n6gti"]
 [ext_resource type="PackedScene" uid="uid://bqj6mts05ai7n" path="res://Scenes/Screens/bunsen_screen_2.tscn" id="4_v4art"]
 [ext_resource type="PackedScene" uid="uid://ceddy8vpvisq1" path="res://Scenes/Screens/bunsen_screen_3.tscn" id="5_x2tag"]
@@ -16,56 +17,61 @@
 [ext_resource type="PackedScene" uid="uid://cg8eikmecesv4" path="res://Scenes/Screens/bunsen_screen_10.tscn" id="12_s03oc"]
 [ext_resource type="PackedScene" uid="uid://bfti1602q8a6l" path="res://Scenes/Screens/bunsen_screen_11.tscn" id="13_701ob"]
 
-[node name="BunsenLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_28eey")]
-starting_screen = NodePath("Screens/BunsenScreen11")
+[node name="BunsenLevel" unique_id=129905935 instance=ExtResource("1_28eey")]
 
-[node name="BunsenScreen12" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_701ob")]
+[node name="BunsenScreen12" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1720561904 instance=ExtResource("2_701ob")]
 position = Vector2(-1920, 1080)
 x_coordinate = -1
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="BunsenScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="1" unique_id=1927471875 instance=ExtResource("2_bh3cb")]
+[node name="TankScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="1" unique_id=1360540123 instance=ExtResource("2_jd2x8")]
+position = Vector2(-3840, 1080)
+x_coordinate = -2
+y_coordinate = 1
+snap_screen_to_position = true
+
+[node name="BunsenScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=1927471875 instance=ExtResource("2_bh3cb")]
 position = Vector2(0, 1080)
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="BunsenScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=1676521602 instance=ExtResource("6_52o8f")]
+[node name="BunsenScreen4" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="3" unique_id=1676521602 instance=ExtResource("6_52o8f")]
 position = Vector2(1920, 1080)
 x_coordinate = 1
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="BunsenScreen8" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="3" unique_id=162164684 instance=ExtResource("10_qjiku")]
+[node name="BunsenScreen8" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="4" unique_id=162164684 instance=ExtResource("10_qjiku")]
 position = Vector2(3840, 1080)
 x_coordinate = 2
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="BunsenScreen9" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="4" unique_id=1716462382 instance=ExtResource("11_v63sp")]
+[node name="BunsenScreen9" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="5" unique_id=1716462382 instance=ExtResource("11_v63sp")]
 position = Vector2(3840, 0)
 x_coordinate = 2
 snap_screen_to_position = true
 
-[node name="BunsenScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="5" unique_id=7999201 instance=ExtResource("7_qjiku")]
+[node name="BunsenScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="6" unique_id=7999201 instance=ExtResource("7_qjiku")]
 position = Vector2(1920, 0)
 x_coordinate = 1
 
-[node name="BunsenScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="6" unique_id=846022317 instance=ExtResource("3_n6gti")]
+[node name="BunsenScreen1" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=846022317 instance=ExtResource("3_n6gti")]
 snap_screen_to_position = true
 
-[node name="BunsenScreen10" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="7" unique_id=375251644 instance=ExtResource("12_s03oc")]
+[node name="BunsenScreen10" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="8" unique_id=375251644 instance=ExtResource("12_s03oc")]
 position = Vector2(-1920, 0)
 x_coordinate = -1
 snap_screen_to_position = true
 
-[node name="BunsenScreen11" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="8" unique_id=1082678569 instance=ExtResource("13_701ob")]
+[node name="BunsenScreen11" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=1082678569 instance=ExtResource("13_701ob")]
 position = Vector2(-1920, -1080)
 x_coordinate = -1
 y_coordinate = -1
 snap_screen_to_position = true
 
-[node name="MultiScreenTemplate" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="9" unique_id=406454839 instance=ExtResource("12_701ob")]
+[node name="MultiScreenTemplate" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="10" unique_id=406454839 instance=ExtResource("12_701ob")]
 
 [node name="BunsenScreen3" parent="Screens/MultiScreenTemplate" index="0" unique_id=283908172 instance=ExtResource("5_x2tag")]
 position = Vector2(0, -2160)
