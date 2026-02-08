@@ -31,6 +31,9 @@ x_coordinate = -2
 y_coordinate = 1
 snap_screen_to_position = true
 
+[node name="BGSprite" parent="Screens/TankScreen6" index="12" unique_id=936446513]
+visible = true
+
 [node name="BunsenScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=1927471875 instance=ExtResource("2_bh3cb")]
 position = Vector2(0, 1080)
 y_coordinate = 1
@@ -99,6 +102,8 @@ snap_screen_to_position = true
 position = Vector2(3837, -2141)
 scale = Vector2(1, 2)
 
+[editable path="Screens/TankScreen6"]
+[editable path="Screens/TankScreen6/VentDoor"]
 [editable path="Screens/MultiScreenTemplate/BunsenScreen7"]
 [editable path="Screens/MultiScreenTemplate/BunsenScreen7/Beaker"]
 [editable path="Screens/MultiScreenTemplate/BunsenScreen7/ExplodableObject"]
