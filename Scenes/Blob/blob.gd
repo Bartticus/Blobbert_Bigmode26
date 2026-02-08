@@ -18,6 +18,7 @@ var newly_spawned_oil: Oil
 @export var default_faces: Array[Sprite2D]
 var face_dict: Dictionary = {}
 
+@onready var bounce_timer: Timer = %BounceTimer
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 @onready var blob_center: Marker2D = %BlobCenter
@@ -54,6 +55,7 @@ func _ready() -> void:
 			face_dict[child.name] = child
 
 func set_status(new_status) -> void:
+	var status_changed = !(status == new_status)
 	if status == new_status: return
 	
 	status = new_status
@@ -62,14 +64,16 @@ func set_status(new_status) -> void:
 			rand_face_timer.start(randf_range(0.5, 3.0))
 		Status.STRETCHED:
 			current_face = face_dict["Argh"]
-			# if !Global.audio_manager.blob_audio_player.playing:
-			# 	Global.audio_manager.blob_audio_player.play()
+			Global.audio_manager.play_blob_sound('stretch')
+			Global.audio_manager.play_blob_sound('squish')
 		Status.FAST:
 			current_face = face_dict["Whoa"]
+			Global.audio_manager.play_blob_sound('whoosh')
 		Status.SLOWING:
 			current_face = face_dict["Yikes"]
 		Status.HURT:
 			current_face = face_dict["Angry"]
+			Global.audio_manager.play_blob_sound('fling')
 		Status.IDLE:
 			current_face = face_dict["Neutral"]
 		Status.ASLEEP:
@@ -166,7 +170,11 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	if body is CollisionObject2D:
 		if body.collision_layer != 1:
 			return
-	
+
+	if bounce_timer.is_stopped():
+		bounce_timer.start()
+		Global.audio_manager.play_blob_sound('bounce')
+
 	#change softbody physics when an oil is created, reverted when that oil area is exited
 	softbody.physics_material_override.friction = 1.0
 	#softbody.mass = 0.2
