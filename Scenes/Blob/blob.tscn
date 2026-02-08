@@ -3324,16 +3324,19 @@ autostart = true
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
+autostart = true
 
 [node name="WhooshTimer" type="Timer" parent="." unique_id=1562886527]
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
+autostart = true
 
 [node name="StretchTimer" type="Timer" parent="." unique_id=47484657]
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
+autostart = true
 
 [connection signal="area_exited" from="BlobCenter/BlobLevelTransitionArea" to="." method="_on_blob_level_transition_area_area_exited"]
 [connection signal="screen_exited" from="BlobCenter/BlobVisibilityNotifier" to="." method="_on_blob_visibility_notifier_screen_exited"]

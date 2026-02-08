@@ -5,6 +5,7 @@ extends Node2D
 @onready var blob: Blob = %Blob
 @onready var screens: Node2D = %Screens
 @onready var full_keeb: FullKeeb = %FullKeeb
+@onready var sound_manager: = %SoundManager
 
 @export var playing_cutscene: bool = false:
 	set(new_value):
@@ -35,6 +36,7 @@ extends Node2D
 func _ready() -> void:
 	Global.level = self
 	Global.blob = blob
+	Global.audio_manager = sound_manager
 	if Global.should_transition:
 		starting_screen = null
 

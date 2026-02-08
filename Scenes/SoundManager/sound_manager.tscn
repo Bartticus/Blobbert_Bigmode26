@@ -1,10 +1,45 @@
 [gd_scene format=3 uid="uid://e22gobsgl87n"]
 
 [ext_resource type="Script" uid="uid://ykxh48ns1kyp" path="res://Scenes/SoundManager/sound_manager.gd" id="1_1ipep"]
+[ext_resource type="Script" uid="uid://dx6537rrrs73d" path="res://Scenes/SoundManager/general_sounds.gd" id="3_883ge"]
 [ext_resource type="PackedScene" uid="uid://dho26e37qso4" path="res://Scenes/Blob/blob_sounds.tscn" id="3_vhw6k"]
+[ext_resource type="AudioStream" uid="uid://dhd8v8oon4v7u" path="res://Assets/SFX/glass_crack_01.wav" id="4_oo8t0"]
+[ext_resource type="AudioStream" uid="uid://doxhtfctxbigk" path="res://Assets/SFX/glass_crack_02.wav" id="5_wdgtj"]
+[ext_resource type="AudioStream" uid="uid://cqgoqhk1hl27d" path="res://Assets/SFX/glass_crack_03.wav" id="6_xia53"]
+[ext_resource type="AudioStream" uid="uid://c31l1cv7f6cei" path="res://Assets/SFX/glass_crack_04.wav" id="7_m28n0"]
+[ext_resource type="AudioStream" uid="uid://4a8pg6nmacu8" path="res://Assets/SFX/glass_crack_05.wav" id="8_1naht"]
+[ext_resource type="AudioStream" uid="uid://cyqds8i2p6omm" path="res://Assets/SFX/TubeChime1.mp3" id="9_1naht"]
+[ext_resource type="Script" uid="uid://ctkcpd0ovd8kw" path="res://Scenes/SoundManager/required_sound.gd" id="9_wdgtj"]
+[ext_resource type="AudioStream" uid="uid://54fm6x88wsn5" path="res://Assets/SFX/TubeChime2.mp3" id="10_w7wka"]
+[ext_resource type="AudioStream" uid="uid://ba4pgnl36oehm" path="res://Assets/SFX/siren_01.wav" id="10_xia53"]
+[ext_resource type="AudioStream" uid="uid://c3b4uwamvd3ic" path="res://Assets/SFX/fire_01.wav" id="11_w7wka"]
+[ext_resource type="AudioStream" uid="uid://comdckgwtl8cx" path="res://Assets/SFX/water.wav" id="12_3vcix"]
+[ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
 
 [node name="SoundManager" type="Node2D" unique_id=269814558]
 script = ExtResource("1_1ipep")
 
 [node name="BlobSounds" parent="." unique_id=2132559176 instance=ExtResource("3_vhw6k")]
 unique_name_in_owner = true
+
+[node name="GeneralSounds" type="Node2D" parent="." unique_id=1147910431]
+unique_name_in_owner = true
+script = ExtResource("3_883ge")
+glass_break = Array[AudioStream]([ExtResource("4_oo8t0"), ExtResource("5_wdgtj"), ExtResource("6_xia53"), ExtResource("7_m28n0"), ExtResource("8_1naht")])
+chime = Array[AudioStream]([ExtResource("9_1naht"), ExtResource("10_w7wka")])
+fire = Array[AudioStream]([ExtResource("11_w7wka")])
+water = Array[AudioStream]([ExtResource("12_3vcix")])
+
+[node name="GeneralSoundPlayer" type="AudioStreamPlayer2D" parent="GeneralSounds" unique_id=1228363024]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="RequiredSounds" type="Node2D" parent="." unique_id=1576784224]
+unique_name_in_owner = true
+script = ExtResource("9_wdgtj")
+siren = Array[AudioStream]([ExtResource("10_xia53")])
+explosion = Array[AudioStream]([ExtResource("14_x57cx")])
+
+[node name="RequiredSoundPlayer" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=731427517]
+unique_name_in_owner = true
+bus = &"SFX"

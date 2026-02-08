@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="8_e1wkp"]
 [ext_resource type="Texture2D" uid="uid://chujxlp0ni0m6" path="res://Assets/Tiles/lab_tileset_LITE.png" id="9_b8hnc"]
 [ext_resource type="Texture2D" uid="uid://bm5s2y1tts4r7" path="res://Assets/Sprites/SlickLaboratory.png" id="12_8bq88"]
-[ext_resource type="Shader" uid="uid://b2a8nbewgqoa2" path="res://Scenes/ScreenTemplate/blur.gdshader" id="12_xqyo6"]
+[ext_resource type="PackedScene" uid="uid://e22gobsgl87n" path="res://Scenes/SoundManager/sound_manager.tscn" id="12_cmlxw"]
+[ext_resource type="Shader" path="res://Scenes/ScreenTemplate/blur.gdshader" id="12_xqyo6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0w323"]
 texture = ExtResource("5_3ang3")
@@ -3572,6 +3573,8 @@ position = Vector2(221, 167)
 unique_name_in_owner = true
 anchor_mode = 0
 process_callback = 0
+
+[node name="SoundManager" parent="ScreenCamera" unique_id=269814558 instance=ExtResource("12_cmlxw")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1457984909]
 unique_name_in_owner = true

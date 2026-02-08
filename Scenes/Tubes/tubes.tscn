@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://bas72kl5j3j8o"]
+
+[ext_resource type="Texture2D" uid="uid://dyfv4ndtvrspm" path="res://Assets/Sprites/TubeRack.png" id="1_ad0bo"]
+[ext_resource type="Script" uid="uid://cvwdiyx8yn7ni" path="res://Scenes/Tubes/tubes.gd" id="1_g84fs"]
+[ext_resource type="Texture2D" uid="uid://drfdit7him4iy" path="res://Assets/Sprites/testtube.png" id="2_g84fs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfj18"]
+size = Vector2(1186, 108)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tc6rh"]
+radius = 25.0
+height = 106.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1kq1j"]
+bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kq1j"]
+radius = 61.0
+height = 830.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfj18"]
+radius = 26.0
+height = 138.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad0bo"]
+size = Vector2(1198, 861)
+
+[node name="Tubes" type="Node2D" unique_id=140157102]
+script = ExtResource("1_g84fs")
+
+[node name="Rack" type="StaticBody2D" parent="." unique_id=1993585028]
+position = Vector2(960, 421)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rack" unique_id=1452474945]
+position = Vector2(13, 9)
+shape = SubResource("RectangleShape2D_pfj18")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Rack" unique_id=325842974]
+position = Vector2(-552, 92)
+shape = SubResource("CapsuleShape2D_tc6rh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Rack" unique_id=1958320580]
+position = Vector2(579, 92)
+shape = SubResource("CapsuleShape2D_tc6rh")
+
+[node name="RackSprite" type="Sprite2D" parent="Rack" unique_id=1521882921]
+position = Vector2(9, 13)
+scale = Vector2(1.1777344, 1.5238096)
+texture = ExtResource("1_ad0bo")
+
+[node name="Tube1" type="RigidBody2D" parent="." unique_id=1963963810]
+position = Vector2(528, 614)
+collision_mask = 19
+physics_material_override = SubResource("PhysicsMaterial_1kq1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube1" unique_id=1595808625]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_1kq1j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tube1" unique_id=85131035]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="TubeSprite" type="Sprite2D" parent="Tube1" unique_id=376966234]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("2_g84fs")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tube1" unique_id=158853236]
+position = Vector2(1, -196)
+node_a = NodePath("../../Rack")
+node_b = NodePath("..")
+
+[node name="Tube2" type="RigidBody2D" parent="." unique_id=1869971348]
+position = Vector2(759, 616)
+collision_mask = 19
+physics_material_override = SubResource("PhysicsMaterial_1kq1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube2" unique_id=1164006198]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_1kq1j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tube2" unique_id=1213421164]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="TubeSprite" type="Sprite2D" parent="Tube2" unique_id=148167315]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("2_g84fs")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tube2" unique_id=1208263120]
+position = Vector2(1, -196)
+node_a = NodePath("../../Rack")
+node_b = NodePath("..")
+
+[node name="Tube3" type="RigidBody2D" parent="." unique_id=338398963]
+position = Vector2(960, 614)
+collision_mask = 19
+physics_material_override = SubResource("PhysicsMaterial_1kq1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube3" unique_id=880574713]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_1kq1j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tube3" unique_id=1601331491]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tube3" unique_id=1791136314]
+position = Vector2(1, -196)
+node_a = NodePath("../../Rack")
+node_b = NodePath("..")
+
+[node name="TubeSprite" type="Sprite2D" parent="Tube3" unique_id=1018363347]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("2_g84fs")
+
+[node name="Tube4" type="RigidBody2D" parent="." unique_id=392583778]
+position = Vector2(1187, 614)
+collision_mask = 19
+physics_material_override = SubResource("PhysicsMaterial_1kq1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube4" unique_id=1096864663]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_1kq1j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tube4" unique_id=852871388]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tube4" unique_id=1257416653]
+position = Vector2(1, -196)
+node_a = NodePath("../../Rack")
+node_b = NodePath("..")
+
+[node name="TubeSprite" type="Sprite2D" parent="Tube4" unique_id=518055459]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("2_g84fs")
+
+[node name="Tube5" type="RigidBody2D" parent="." unique_id=1139657224]
+position = Vector2(1408, 613)
+collision_mask = 19
+physics_material_override = SubResource("PhysicsMaterial_1kq1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube5" unique_id=1463963184]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_1kq1j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tube5" unique_id=1004196017]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tube5" unique_id=1864991048]
+position = Vector2(1, -196)
+node_a = NodePath("../../Rack")
+node_b = NodePath("..")
+
+[node name="TubeSprite" type="Sprite2D" parent="Tube5" unique_id=494183693]
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("2_g84fs")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=708855130]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=224026715]
+position = Vector2(973, 614.5)
+shape = SubResource("RectangleShape2D_ad0bo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

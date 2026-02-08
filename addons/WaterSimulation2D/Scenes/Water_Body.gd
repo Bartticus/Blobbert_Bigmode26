@@ -174,7 +174,9 @@ func splash(index, speed):
 func _on_Water_Body_Area_body_entered(body):
 	if body is Battery:
 		body.battery_wet()
-	# spawn_particles(body)
+	if body is Bone:
+		spawn_particles(body)
+		Global.audio_manager.play_general_sound('water')
 
 func spawn_particles(body):
 	
@@ -190,5 +192,7 @@ func spawn_particles(body):
 	pass # Replace with function body.
 
 
-# func _on_water_body_area_body_exited(body: Node2D) -> void:
-# 	spawn_particles(body)
+func _on_water_body_area_body_exited(body: Node2D) -> void:
+	if body is Bone:
+		spawn_particles(body)
+		Global.audio_manager.play_general_sound('water')
