@@ -25,7 +25,8 @@ func _ready() -> void:
 
 func disable_screen_elements():
 	screen_full_keeb.queue_free()
-	screen_blob.queue_free()
+	if screen_blob:
+		screen_blob.queue_free()
 	camera.queue_free()
 	world_env.queue_free()
 
