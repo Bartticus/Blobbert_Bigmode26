@@ -4,7 +4,7 @@ extends Control
 
 func _on_play_pressed() -> void:
 	sfx.play()
-	get_tree().change_scene_to_file("uid://t6j5hlf6y1hi")
+	get_tree().change_scene_to_file("uid://dwl5520f383c8")
 
 func _on_credits_pressed() -> void:
 	sfx.play()

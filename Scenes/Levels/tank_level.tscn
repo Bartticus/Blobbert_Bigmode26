@@ -1937,6 +1937,9 @@ shape = SubResource("RectangleShape2D_lql2v")
 [node name="Sprite2D" parent="Screens/Tank/TankScreen2/VentDoor/DoorBody" parent_id_path=PackedInt32Array(1459908369, 1445567170, 1463673896) index="2" unique_id=1097457276]
 texture_filter = 0
 
+[node name="TargetPosition" parent="Screens/Tank/TankScreen2/VentDoor" parent_id_path=PackedInt32Array(1459908369, 1445567170) index="1" unique_id=1100631167]
+position = Vector2(0, -1971)
+
 [node name="TankScreen3" parent="Screens/Tank" index="3" unique_id=1596739180 instance=ExtResource("6_2qt28")]
 position = Vector2(1920, 1080)
 x_coordinate = 1

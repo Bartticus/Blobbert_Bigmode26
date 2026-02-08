@@ -17,8 +17,6 @@ func _ready() -> void:
 	play_cutscene()
 
 func play_cutscene():
-
-	print('ok')
 	await get_tree().create_timer(2.0).timeout
 	Global.level.camera.global_position = bg_sprite_2.global_position
 	await get_tree().create_timer(1.0).timeout
