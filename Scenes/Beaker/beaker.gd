@@ -30,18 +30,28 @@ func _physics_process(delta: float) -> void:
 		beaker_sprite.scale += Vector2(sprite_scale, sprite_scale)
 		beaker_polygon.scale += Vector2(sprite_scale, sprite_scale)
 
-
-
 func _on_explosion_timer_timeout() -> void:
 	exploding = false
 
 	for o in objects_to_explode:
-		o.trigger_action()
+		if o:
+			o.trigger_action()
 	
-	beaker_polygon.disabled = true
+	#make beaker and oils invisible
 	beaker_sprite.visible = false
+	var all_children = get_all_children(self)
+	for child in all_children:
+		if child is Oil:
+			child.hide()
+	
 	Global.audio_manager.play_required_sound('explosion')
 	explosion_anim.play("boom")
 	await explosion_anim.animation_finished
-
+	
 	queue_free()
+
+func get_all_children(in_node,arr:=[]):
+	arr.push_back(in_node)
+	for child in in_node.get_children():
+		arr = get_all_children(child,arr)
+	return arr
