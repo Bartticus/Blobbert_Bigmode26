@@ -7,11 +7,15 @@ extends Node2D
 
 func trigger_action():
 	Global.level.playing_cutscene = true
-	await get_tree().create_timer(2.0).timeout
-	var tween_0 = Global.level.tween_camera('position', door_and_panel.screens[0].global_position, 5.0, Tween.TRANS_SINE)
+	await get_tree().create_timer(0.4).timeout
+	var tween_0 = Global.level.tween_camera('position', tank.screens[0].global_position, 1.0, Tween.TRANS_SINE)
 	await tween_0.finished
-	var tween_1 = Global.level.tween_camera('position', tank.screens[0].global_position, 5.0, Tween.TRANS_SINE, 1.0)
+	Global.level.enter_multi_screen(tank)
+	await get_tree().create_timer(1.0).timeout
+	var tween_1 = Global.level.tween_camera('position', door_and_panel.screens[0].global_position, 5.0, Tween.TRANS_SINE)
 	await tween_1.finished
+	var tween_2 = Global.level.tween_camera('position', tank.screens[0].global_position, 3.0, Tween.TRANS_SINE, 1.0)
+	await tween_2.finished
 	Global.level.playing_cutscene = false
 	
 

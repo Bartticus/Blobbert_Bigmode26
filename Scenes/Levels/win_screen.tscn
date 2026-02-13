@@ -68,9 +68,12 @@ position = Vector2(954, 447)
 scale = Vector2(0.6462963, 0.6462963)
 
 [node name="VolumeSliders" type="Control" parent="." unique_id=1157119565]
+visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 274.0
+offset_top = -26.0
+offset_right = 314.0
+offset_bottom = 14.0
 
 [node name="Label" type="Label" parent="VolumeSliders" unique_id=928059985]
 layout_mode = 0
@@ -144,9 +147,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -227.5
-offset_top = -378.0
-offset_right = 227.5
+offset_left = 398.0
+offset_top = -475.0
+offset_right = 853.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6upyc")
@@ -194,10 +198,10 @@ bus = &"SFX"
 [node name="Label" type="Label" parent="." unique_id=2022939988]
 material = SubResource("ShaderMaterial_0l8wx")
 layout_mode = 0
-offset_left = 82.0
-offset_top = 109.0
-offset_right = 1905.0
-offset_bottom = 582.0
+offset_left = 54.0
+offset_top = 43.0
+offset_right = 1877.0
+offset_bottom = 516.0
 text = "You escaped the lab
 BLOBBERT LIVES ON!"
 label_settings = SubResource("LabelSettings_yk0sc")
@@ -205,32 +209,56 @@ label_settings = SubResource("LabelSettings_yk0sc")
 [node name="Label2" type="Label" parent="." unique_id=1291604730]
 material = SubResource("ShaderMaterial_0l8wx")
 layout_mode = 0
-offset_left = 166.0
-offset_top = 598.0
-offset_right = 424.0
-offset_bottom = 722.0
-text = "Stats"
+offset_left = 187.0
+offset_top = 604.0
+offset_right = 445.0
+offset_bottom = 728.0
+text = "Score"
 label_settings = SubResource("LabelSettings_kuqwa")
 
 [node name="LabelKeys" type="Label" parent="." unique_id=219827684]
 material = SubResource("ShaderMaterial_0l8wx")
 layout_mode = 0
-offset_left = 54.0
-offset_top = 742.5
-offset_right = 531.0
-offset_bottom = 813.5
+offset_left = 75.0
+offset_top = 748.5
+offset_right = 552.0
+offset_bottom = 819.5
 text = "Keys Pressed:"
 label_settings = SubResource("LabelSettings_h8qwa")
 
 [node name="LabelTime" type="Label" parent="." unique_id=907792746]
 material = SubResource("ShaderMaterial_0l8wx")
 layout_mode = 0
-offset_left = 56.0
-offset_top = 849.0
-offset_right = 314.0
-offset_bottom = 923.0
+offset_left = 77.0
+offset_top = 855.0
+offset_right = 335.0
+offset_bottom = 929.0
 text = "Time:"
 label_settings = SubResource("LabelSettings_h8qwa")
+
+[node name="LeaderboardName" type="LineEdit" parent="." unique_id=934573301]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0l8wx")
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 747.0
+offset_top = 725.0
+offset_right = 1147.0
+offset_bottom = 792.0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Enter Name Here"
+
+[node name="PostButton" type="Button" parent="." unique_id=1501741620]
+material = SubResource("ShaderMaterial_0l8wx")
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_left = 698.0
+offset_top = 829.0
+offset_right = 1198.0
+offset_bottom = 896.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Post to Leaderboard"
 
 [node name="Credits" type="TextureRect" parent="." unique_id=437017242]
 visible = false
@@ -288,5 +316,6 @@ text = "Return"
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="finished" from="ThemeMusic" to="ThemeMusic" method="_on_finished"]
+[connection signal="pressed" from="PostButton" to="." method="_on_post_button_pressed"]
 [connection signal="mouse_entered" from="Credits/Return" to="." method="_on_return_mouse_entered"]
 [connection signal="pressed" from="Credits/Return" to="." method="_on_return_pressed"]

@@ -17,7 +17,12 @@ var should_transition: bool = false
 var audio_manager: Node2D
 
 var key_count: int = 0
+var time_score: int = 0
 var start_time: float
+
+var user_name: String = ''
+
+var posting_score: bool = false
 
 var level_order = {
 	'res://Scenes/Levels/opening_scene.tscn': 'res://Scenes/Levels/lab_level.tscn',
@@ -37,3 +42,9 @@ func load_next_scene():
 
 func iterate_key_count():
 	key_count += 1
+
+func playing_cutscene():
+	if level:
+		return level.playing_cutscene
+	else:
+		return false

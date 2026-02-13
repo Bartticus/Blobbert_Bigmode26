@@ -222,7 +222,7 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	oil_timer.start()
 
 func _on_screen_fail_safe_timeout() -> void:
-	if !blob_visibility_notifier.is_on_screen():
+	if !blob_visibility_notifier.is_on_screen() && !Global.playing_cutscene():
 		reset_screen()
 
 func _on_oil_detector_area_exited(area: Area2D) -> void:
@@ -232,7 +232,8 @@ func _on_oil_detector_area_exited(area: Area2D) -> void:
 			#softbody.mass = 0.05
 
 func _on_blob_visibility_notifier_screen_exited() -> void:
-	reset_screen()
+	if !Global.playing_cutscene():
+		reset_screen()
 
 func _on_bone_collision(body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
 	if body is TileMapLayer:

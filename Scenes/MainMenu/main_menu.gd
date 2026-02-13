@@ -30,3 +30,7 @@ func _on_quit_mouse_entered() -> void:
 
 func _on_return_mouse_entered() -> void:
 	sfx_hover.play()
+
+
+func _on_leaderboard_pressed() -> void:
+	get_tree().change_scene_to_file("uid://cppg62i68ikb7")

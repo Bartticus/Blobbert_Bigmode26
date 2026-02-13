@@ -12,18 +12,17 @@ extends Node2D
 		playing_cutscene = new_value
 		match playing_cutscene:
 			true:
-				full_keeb.process_mode = Node.PROCESS_MODE_DISABLED
 				var tween = get_tree().create_tween()
 				tween.set_ignore_time_scale()
 				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 0.0), 0.2)
 			false:
-				full_keeb.process_mode = Node.PROCESS_MODE_INHERIT
 				var tween = get_tree().create_tween()
 				tween.set_ignore_time_scale()
 				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), 0.2)
 
 @export var is_multi_screen: bool = false
 @export var zoom_time: float = 0.25
+@export var zoom_time_scale: float = 0.3
 @export var screen_render_distance_x: int = 3
 @export var screen_render_distance_y: int = 4
 @export var starting_screen: Screen
@@ -36,6 +35,7 @@ extends Node2D
 func _ready() -> void:
 	if name == "LabLevel":
 		Global.start_time = Time.get_ticks_msec()
+		Global.key_count = 0
 	
 	Global.level = self
 	Global.blob = blob
@@ -61,7 +61,7 @@ func enter_multi_screen(multi_screen):
 			playing_cutscene = true
 		Global.tug_power = Global.max_multi_screen_tug_power
 		Global.tug_range = Global.max_multi_screen_tug_range
-		Engine.time_scale = 0.3
+		Engine.time_scale = zoom_time_scale
 		var camera_zoom = Vector2(0.5, 0.5)
 		var keeb_scale = Vector2(2.0, 2.0)
 		var tween = get_tree().create_tween()
@@ -86,7 +86,7 @@ func enter_single_screen(screen):
 	if is_multi_screen:
 		if !is_in_cutscene:
 			playing_cutscene = true
-		Engine.time_scale = 0.3
+		Engine.time_scale = zoom_time_scale
 		var standard_vector = Vector2(1.0, 1.0)
 		var tween = get_tree().create_tween()
 		tween.set_parallel()

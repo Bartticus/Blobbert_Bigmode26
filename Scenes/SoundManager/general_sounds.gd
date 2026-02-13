@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var glass_break: Array[AudioStream] = []
 @export var chime: Array[AudioStream] = []
 @export var fire: Array[AudioStream] = []
 @export var water: Array[AudioStream] = []

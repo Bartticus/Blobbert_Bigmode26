@@ -73,17 +73,19 @@ func put_in_status_group():
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and !event.is_echo():
-		var key_string: String = OS.get_keycode_string(event.keycode)
-		if key_string == name && status != Status.TUGGING:
-			status = Status.TUGGING
+		if !event.is_echo() && !Global.playing_cutscene():
+			var key_string: String = OS.get_keycode_string(event.keycode)
+			if key_string == name && status != Status.TUGGING:
+				status = Status.TUGGING
 	
-	if event is InputEventKey and event.is_released():
-		var key_string: String = OS.get_keycode_string(event.keycode)
-		if key_string == name:
-			if status != Status.SNAPPING:
-				status = Status.SNAPPING
-			else:
-				status = Status.IDLE
+	if (event is InputEventKey and event.is_released()):
+		if event.is_released() || Global.playing_cutscene():
+			var key_string: String = OS.get_keycode_string(event.keycode)
+			if key_string == name:
+				if status != Status.SNAPPING:
+					status = Status.SNAPPING
+				else:
+					status = Status.IDLE
 
 
 func find_closest_bone() -> void:

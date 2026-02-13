@@ -139,10 +139,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 372.0
-offset_top = -536.0
-offset_right = 827.0
-offset_bottom = -158.0
+offset_left = 366.0
+offset_top = -543.0
+offset_right = 821.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6upyc")
@@ -158,6 +158,13 @@ layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 70
 text = "Play"
+
+[node name="Leaderboard" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1718399436]
+material = SubResource("ShaderMaterial_0l8wx")
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 70
+text = "Leaderboard"
 
 [node name="Credits" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1813840910]
 material = SubResource("ShaderMaterial_0l8wx")
@@ -238,6 +245,8 @@ bus = &"SFX"
 
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Leaderboard" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]

@@ -25,7 +25,6 @@ unique_name_in_owner = true
 [node name="GeneralSounds" type="Node2D" parent="." unique_id=1147910431]
 unique_name_in_owner = true
 script = ExtResource("3_883ge")
-glass_break = Array[AudioStream]([ExtResource("4_oo8t0"), ExtResource("5_wdgtj"), ExtResource("6_xia53"), ExtResource("7_m28n0"), ExtResource("8_1naht")])
 chime = Array[AudioStream]([ExtResource("9_1naht"), ExtResource("10_w7wka")])
 fire = Array[AudioStream]([ExtResource("11_w7wka")])
 water = Array[AudioStream]([ExtResource("12_3vcix")])
@@ -37,6 +36,7 @@ bus = &"SFX"
 [node name="RequiredSounds" type="Node2D" parent="." unique_id=1576784224]
 unique_name_in_owner = true
 script = ExtResource("9_wdgtj")
+glass_break = Array[AudioStream]([ExtResource("4_oo8t0"), ExtResource("5_wdgtj"), ExtResource("6_xia53"), ExtResource("7_m28n0"), ExtResource("8_1naht")])
 siren = Array[AudioStream]([ExtResource("10_xia53")])
 explosion = Array[AudioStream]([ExtResource("14_x57cx")])
 
