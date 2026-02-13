@@ -40,6 +40,10 @@ glass_break = Array[AudioStream]([ExtResource("4_oo8t0"), ExtResource("5_wdgtj")
 siren = Array[AudioStream]([ExtResource("10_xia53")])
 explosion = Array[AudioStream]([ExtResource("14_x57cx")])
 
-[node name="RequiredSoundPlayer" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=731427517]
+[node name="RequiredSoundPlayer1" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=731427517]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="RequiredSoundPlayer2" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=293396159]
 unique_name_in_owner = true
 bus = &"SFX"

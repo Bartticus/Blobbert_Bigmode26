@@ -4,10 +4,13 @@ extends Node2D
 @export var siren: Array[AudioStream] = []
 @export var explosion: Array[AudioStream] = []
 
-@onready var player: AudioStreamPlayer2D = %RequiredSoundPlayer
+@onready var player_1: AudioStreamPlayer2D = %RequiredSoundPlayer1
+@onready var player_2: AudioStreamPlayer2D = %RequiredSoundPlayer2
 
 func get_player():
 	var available_player = null
-	if !player.playing:
-		available_player = player
+	for player in [player_1, player_2]:
+		if !player.playing:
+			available_player = player
+	print(available_player)
 	return available_player

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_ni8rx"]
 [ext_resource type="PackedScene" uid="uid://ix8ry0y5k1ar" path="res://Scenes/GlassPanes/new_glass_panes.tscn" id="3_14qcb"]
-[ext_resource type="Shader" uid="uid://c0x8wa31e6iip" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
+[ext_resource type="Shader" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
 [ext_resource type="Texture2D" uid="uid://dptauq5wft3cf" path="res://Assets/Sprites/Contained_v2.png" id="5_yco6c"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="6_yco6c"]
 [ext_resource type="Texture2D" uid="uid://bisaren6ebhve" path="res://Assets/Sprites/Breach.png" id="7_054od"]
