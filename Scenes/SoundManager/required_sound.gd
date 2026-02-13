@@ -12,5 +12,4 @@ func get_player():
 	for player in [player_1, player_2]:
 		if !player.playing:
 			available_player = player
-	print(available_player)
 	return available_player

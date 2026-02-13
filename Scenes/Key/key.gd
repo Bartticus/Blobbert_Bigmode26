@@ -23,8 +23,6 @@ extends Node2D
 			set_key_positions()
 
 func set_key_positions():
-	print(key_label.text)
-	print(name)
 	set_key_label(str(name))
 
 var current_bone: Bone : set = set_current_bone
