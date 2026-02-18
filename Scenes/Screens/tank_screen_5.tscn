@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_f24hr"]
 [ext_resource type="PackedScene" uid="uid://d0l2vywlq76cj" path="res://Scenes/FastWater/fast_water.tscn" id="3_32c4s"]
 [ext_resource type="Texture2D" uid="uid://7sd366bijd5d" path="res://Assets/Sprites/Panel.png" id="4_1davr"]
+[ext_resource type="PackedScene" uid="uid://dhaco54b7cbem" path="res://Scenes/Battery/battery.tscn" id="5_6v554"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x11n8"]
 size = Vector2(800, 500)
@@ -77,6 +78,21 @@ position = Vector2(795, 177)
 scale = Vector2(2, 2)
 texture = ExtResource("4_1davr")
 
+[node name="Battery" parent="." index="15" unique_id=1707908979 instance=ExtResource("5_6v554")]
+position = Vector2(541, 465)
+
+[node name="BatteryBody" parent="Battery" index="0" unique_id=1219371551]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+
+[node name="WireOrigin" parent="Battery" index="1" unique_id=345071377]
+position = Vector2(1725, -3208)
+
+[node name="Wire" parent="Battery" index="2" unique_id=229488326]
+z_index = -5
+
 [editable path="WaterSpray/FastWater3"]
 [editable path="WaterSpray/FastWater2"]
 [editable path="WaterSpray/FastWater"]
+[editable path="Battery"]

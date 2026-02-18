@@ -172,8 +172,8 @@ func splash(index, speed):
 	pass
 
 func _on_Water_Body_Area_body_entered(body):
-	if body is Battery:
-		body.battery_wet()
+	if body.name == 'BatteryBody':
+		body.owner.trigger_action()
 	if body is Bone:
 		spawn_particles(body)
 		Global.audio_manager.play_general_sound('water')

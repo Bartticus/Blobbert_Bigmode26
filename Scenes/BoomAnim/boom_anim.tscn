@@ -1,24 +1,15 @@
-[gd_scene format=3 uid="uid://dhaco54b7cbem"]
+[gd_scene format=3 uid="uid://4yhh5ardl48x"]
 
-[ext_resource type="Script" uid="uid://j3ti5tmykju7" path="res://Scenes/Battery/battery.gd" id="1_vrpf4"]
-[ext_resource type="Texture2D" uid="uid://c72odowvdpis8" path="res://Assets/Sprites/BatteryAziz.png" id="2_vrpf4"]
-[ext_resource type="Texture2D" uid="uid://lu1tskqwfk3d" path="res://Assets/Sprites/BOOM1.png" id="3_wryev"]
-[ext_resource type="Texture2D" uid="uid://y363y70s24ry" path="res://Assets/Sprites/BOOM2.png" id="4_5asiw"]
-[ext_resource type="Texture2D" uid="uid://cps0r41gh8gme" path="res://Assets/Sprites/BOOM3.png" id="5_xcvvl"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imnhf"]
-friction = 0.4
-bounce = 0.4
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vrpf4"]
-radius = 100.0
+[ext_resource type="Texture2D" uid="uid://lu1tskqwfk3d" path="res://Assets/Sprites/BOOM1.png" id="1_djwmv"]
+[ext_resource type="Texture2D" uid="uid://y363y70s24ry" path="res://Assets/Sprites/BOOM2.png" id="2_pbrg2"]
+[ext_resource type="Texture2D" uid="uid://cps0r41gh8gme" path="res://Assets/Sprites/BOOM3.png" id="3_hhe35"]
 
 [sub_resource type="Animation" id="Animation_whq7r"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Boom1:visible")
+tracks/0/path = NodePath("../BoomAnim/Boom1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +21,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Boom2:visible")
+tracks/1/path = NodePath("../BoomAnim/Boom2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -42,7 +33,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Boom3:visible")
+tracks/2/path = NodePath("../BoomAnim/Boom3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -54,7 +45,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Boom3:scale")
+tracks/3/path = NodePath("../BoomAnim/Boom3:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -66,7 +57,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Boom3:modulate")
+tracks/4/path = NodePath("../BoomAnim/Boom3:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -78,7 +69,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Boom2:scale")
+tracks/5/path = NodePath("../BoomAnim/Boom2:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -90,7 +81,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Boom1:scale")
+tracks/6/path = NodePath("../BoomAnim/Boom1:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -102,7 +93,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Boom2:modulate")
+tracks/7/path = NodePath("../BoomAnim/Boom2:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -118,7 +109,7 @@ length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Boom1:visible")
+tracks/0/path = NodePath("../BoomAnim/Boom1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -130,7 +121,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Boom2:visible")
+tracks/1/path = NodePath("../BoomAnim/Boom2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -142,7 +133,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Boom3:visible")
+tracks/2/path = NodePath("../BoomAnim/Boom3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -154,7 +145,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Boom3:scale")
+tracks/3/path = NodePath("../BoomAnim/Boom3:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -166,7 +157,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Boom3:modulate")
+tracks/4/path = NodePath("../BoomAnim/Boom3:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -178,7 +169,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Boom2:scale")
+tracks/5/path = NodePath("../BoomAnim/Boom2:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -190,7 +181,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Boom1:scale")
+tracks/6/path = NodePath("../BoomAnim/Boom1:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -202,7 +193,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Boom2:modulate")
+tracks/7/path = NodePath("../BoomAnim/Boom2:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -218,66 +209,24 @@ _data = {
 &"boom": SubResource("Animation_5kxrw")
 }
 
-[node name="Battery" type="Node2D" unique_id=1707908979]
-z_index = 2
-script = ExtResource("1_vrpf4")
+[node name="BoomAnim" type="Node2D" unique_id=840938071]
 
-[node name="BatteryBody" type="RigidBody2D" parent="." unique_id=1219371551]
-unique_name_in_owner = true
-collision_layer = 17
-collision_mask = 19
-mass = 5.0
-physics_material_override = SubResource("PhysicsMaterial_imnhf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BatteryBody" unique_id=93817458]
-shape = SubResource("CircleShape2D_vrpf4")
-
-[node name="Sprite2D" type="Sprite2D" parent="BatteryBody" unique_id=1783101160]
-position = Vector2(-49, -1.9999999)
-rotation = -1.5707964
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_vrpf4")
-
-[node name="Sprite2D2" type="Sprite2D" parent="BatteryBody" unique_id=1714969541]
-rotation = -1.5707964
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_vrpf4")
-
-[node name="Sprite2D3" type="Sprite2D" parent="BatteryBody" unique_id=1674745555]
-position = Vector2(47.999996, -1.9999999)
-rotation = -1.5707964
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_vrpf4")
-
-[node name="BoomAnim" type="Node2D" parent="BatteryBody" unique_id=840938071]
-unique_name_in_owner = true
-scale = Vector2(0.2, 0.2)
-
-[node name="Boom1" type="Sprite2D" parent="BatteryBody/BoomAnim" unique_id=1907032668]
+[node name="Boom1" type="Sprite2D" parent="." unique_id=1907032668]
 visible = false
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_wryev")
+texture = ExtResource("1_djwmv")
 
-[node name="Boom2" type="Sprite2D" parent="BatteryBody/BoomAnim" unique_id=129082545]
+[node name="Boom2" type="Sprite2D" parent="." unique_id=129082545]
 visible = false
 scale = Vector2(0.90476197, 0.9047618)
-texture = ExtResource("4_5asiw")
+texture = ExtResource("2_pbrg2")
 
-[node name="Boom3" type="Sprite2D" parent="BatteryBody/BoomAnim" unique_id=48956159]
+[node name="Boom3" type="Sprite2D" parent="." unique_id=48956159]
 visible = false
 scale = Vector2(1.4634831, 1.4634831)
-texture = ExtResource("5_xcvvl")
+texture = ExtResource("3_hhe35")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BatteryBody/BoomAnim" unique_id=15599379]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=15599379]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_hgi1m")
 speed_scale = 6.0
-
-[node name="WireOrigin" type="Marker2D" parent="." unique_id=345071377]
-unique_name_in_owner = true
-position = Vector2(-300, -321)
-
-[node name="Wire" type="Line2D" parent="." unique_id=229488326]
-unique_name_in_owner = true
-width = 5.0
-default_color = Color(0.12955844, 0.12955847, 0.12955844, 1)

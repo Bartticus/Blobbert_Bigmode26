@@ -1,11 +1,14 @@
 class_name Battery
-extends RigidBody2D
+extends Node2D
 
 @onready var wire: Line2D = %Wire
 @onready var wire_origin: Marker2D = %WireOrigin
-@export var triggerable_objects: Array[Node2D]
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var battery_body: RigidBody2D = %BatteryBody
+
 @export var wet: bool = false
 @export var cutscene: Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,11 +17,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
-	wire.points = PackedVector2Array([to_local(wire_origin.global_position), to_local(global_position)])
+	wire.points = PackedVector2Array([to_local(wire_origin.global_position), to_local(battery_body.global_position)])
 
-func battery_wet():
+func trigger_action():
 	if !wet:
 		wet = true
-		cutscene.trigger_action()
+		if cutscene:
+			cutscene.trigger_action()
+		await get_tree().create_timer(0.2).timeout
+		animation_player.play("boom")
+		Global.audio_manager.play_required_sound('explosion')
 		wire.visible = false
+		modulate = Color(0.3, 0.3, 0.3)
+		await animation_player.animation_finished
+
 

@@ -10,7 +10,7 @@ func _ready():
 
 func trigger_action():
 	Global.level.playing_cutscene = true
-	var tween_0 = Global.level.tween_camera('position', door.screens[0].global_position - Vector2(250, 0), 3.0, Tween.TRANS_SINE)
+	var tween_0 = Global.level.tween_camera('position', door.screens[0].global_position - Vector2(250, 0), 2.0, Tween.TRANS_SINE)
 	await tween_0.finished
 	Global.audio_manager.play_required_sound('glass_break')
 	for to in tank_glass.triggerable_objects:
