@@ -2,12 +2,683 @@
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_k3qkj"]
 [ext_resource type="PackedScene" uid="uid://rqcw3dnc53r2" path="res://Scenes/Oil/oil.tscn" id="2_k3qkj"]
+[ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="3_lpiws"]
+[ext_resource type="Texture2D" uid="uid://dguglfpbfxtg0" path="res://Assets/Sprites/Thumbnail_v2.png" id="3_nah6m"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp05e"]
+noise = SubResource("FastNoiseLite_hnblv")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_so2oi"]
+resource_local_to_scene = true
+shader = ExtResource("3_lpiws")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.5
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_lpiws"]
+resource_local_to_scene = true
+bone_index = 0
+bone2d_node = NodePath("Bone-0")
+target_nodepath = NodePath("Bone-10")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_uscc5"]
+resource_local_to_scene = true
+bone_index = 1
+bone2d_node = NodePath("Bone-1")
+target_nodepath = NodePath("Bone-12")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ufsry"]
+resource_local_to_scene = true
+bone_index = 10
+bone2d_node = NodePath("Bone-10")
+target_nodepath = NodePath("Bone-12")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_etg7y"]
+resource_local_to_scene = true
+bone_index = 11
+bone2d_node = NodePath("Bone-11")
+target_nodepath = NodePath("Bone-12")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_j8skn"]
+resource_local_to_scene = true
+bone_index = 12
+bone2d_node = NodePath("Bone-12")
+target_nodepath = NodePath("Bone-14")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_gx811"]
+resource_local_to_scene = true
+bone_index = 13
+bone2d_node = NodePath("Bone-13")
+target_nodepath = NodePath("Bone-14")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_dysap"]
+resource_local_to_scene = true
+bone_index = 14
+bone2d_node = NodePath("Bone-14")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0g6p3"]
+resource_local_to_scene = true
+bone_index = 15
+bone2d_node = NodePath("Bone-15")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_osdaj"]
+resource_local_to_scene = true
+bone_index = 16
+bone2d_node = NodePath("Bone-16")
+target_nodepath = NodePath("Bone-6")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_f71db"]
+resource_local_to_scene = true
+bone_index = 17
+bone2d_node = NodePath("Bone-17")
+target_nodepath = NodePath("Bone-26")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_msmgh"]
+resource_local_to_scene = true
+bone_index = 18
+bone2d_node = NodePath("Bone-18")
+target_nodepath = NodePath("Bone-9")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0y5ld"]
+resource_local_to_scene = true
+bone_index = 19
+bone2d_node = NodePath("Bone-19")
+target_nodepath = NodePath("Bone-20")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ug67n"]
+resource_local_to_scene = true
+bone_index = 2
+bone2d_node = NodePath("Bone-2")
+target_nodepath = NodePath("Bone-3")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_xjedi"]
+resource_local_to_scene = true
+bone_index = 20
+bone2d_node = NodePath("Bone-20")
+target_nodepath = NodePath("Bone-22")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_peo4d"]
+resource_local_to_scene = true
+bone_index = 21
+bone2d_node = NodePath("Bone-21")
+target_nodepath = NodePath("Bone-22")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_fqfb7"]
+resource_local_to_scene = true
+bone_index = 22
+bone2d_node = NodePath("Bone-22")
+target_nodepath = NodePath("Bone-24")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ob1f2"]
+resource_local_to_scene = true
+bone_index = 23
+bone2d_node = NodePath("Bone-23")
+target_nodepath = NodePath("Bone-24")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_o24ss"]
+resource_local_to_scene = true
+bone_index = 24
+bone2d_node = NodePath("Bone-24")
+target_nodepath = NodePath("Bone-26")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_1tt84"]
+resource_local_to_scene = true
+bone_index = 25
+bone2d_node = NodePath("Bone-25")
+target_nodepath = NodePath("Bone-24")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vxaw8"]
+resource_local_to_scene = true
+bone_index = 26
+bone2d_node = NodePath("Bone-26")
+target_nodepath = NodePath("Bone-28")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vmpo4"]
+resource_local_to_scene = true
+bone_index = 27
+bone2d_node = NodePath("Bone-27")
+target_nodepath = NodePath("Bone-25")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_pq2xg"]
+resource_local_to_scene = true
+bone_index = 28
+bone2d_node = NodePath("Bone-28")
+target_nodepath = NodePath("Bone-27")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_sk7ir"]
+resource_local_to_scene = true
+bone_index = 29
+bone2d_node = NodePath("Bone-29")
+target_nodepath = NodePath("Bone-21")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_2ss1s"]
+resource_local_to_scene = true
+bone_index = 3
+bone2d_node = NodePath("Bone-3")
+target_nodepath = NodePath("Bone-4")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vg1qv"]
+resource_local_to_scene = true
+bone_index = 30
+bone2d_node = NodePath("Bone-30")
+target_nodepath = NodePath("Bone-23")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_1l6bo"]
+resource_local_to_scene = true
+bone_index = 31
+bone2d_node = NodePath("Bone-31")
+target_nodepath = NodePath("Bone-30")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_qrxjg"]
+resource_local_to_scene = true
+bone_index = 4
+bone2d_node = NodePath("Bone-4")
+target_nodepath = NodePath("Bone-2")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_x6hjf"]
+resource_local_to_scene = true
+bone_index = 5
+bone2d_node = NodePath("Bone-5")
+target_nodepath = NodePath("Bone-3")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ujfqt"]
+resource_local_to_scene = true
+bone_index = 6
+bone2d_node = NodePath("Bone-6")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rifib"]
+resource_local_to_scene = true
+bone_index = 7
+bone2d_node = NodePath("Bone-7")
+target_nodepath = NodePath("Bone-9")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_au6e8"]
+resource_local_to_scene = true
+bone_index = 8
+bone2d_node = NodePath("Bone-8")
+target_nodepath = NodePath("Bone-7")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_hlake"]
+resource_local_to_scene = true
+bone_index = 9
+bone2d_node = NodePath("Bone-9")
+target_nodepath = NodePath("Bone-10")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_bnoa6"]
+resource_local_to_scene = true
+enabled = true
+modification_count = 32
+modifications/0 = SubResource("SkeletonModification2DLookAt_lpiws")
+modifications/1 = SubResource("SkeletonModification2DLookAt_uscc5")
+modifications/2 = SubResource("SkeletonModification2DLookAt_ug67n")
+modifications/3 = SubResource("SkeletonModification2DLookAt_2ss1s")
+modifications/4 = SubResource("SkeletonModification2DLookAt_qrxjg")
+modifications/5 = SubResource("SkeletonModification2DLookAt_x6hjf")
+modifications/6 = SubResource("SkeletonModification2DLookAt_ujfqt")
+modifications/7 = SubResource("SkeletonModification2DLookAt_rifib")
+modifications/8 = SubResource("SkeletonModification2DLookAt_au6e8")
+modifications/9 = SubResource("SkeletonModification2DLookAt_hlake")
+modifications/10 = SubResource("SkeletonModification2DLookAt_ufsry")
+modifications/11 = SubResource("SkeletonModification2DLookAt_etg7y")
+modifications/12 = SubResource("SkeletonModification2DLookAt_j8skn")
+modifications/13 = SubResource("SkeletonModification2DLookAt_gx811")
+modifications/14 = SubResource("SkeletonModification2DLookAt_dysap")
+modifications/15 = SubResource("SkeletonModification2DLookAt_0g6p3")
+modifications/16 = SubResource("SkeletonModification2DLookAt_osdaj")
+modifications/17 = SubResource("SkeletonModification2DLookAt_f71db")
+modifications/18 = SubResource("SkeletonModification2DLookAt_msmgh")
+modifications/19 = SubResource("SkeletonModification2DLookAt_0y5ld")
+modifications/20 = SubResource("SkeletonModification2DLookAt_xjedi")
+modifications/21 = SubResource("SkeletonModification2DLookAt_peo4d")
+modifications/22 = SubResource("SkeletonModification2DLookAt_fqfb7")
+modifications/23 = SubResource("SkeletonModification2DLookAt_ob1f2")
+modifications/24 = SubResource("SkeletonModification2DLookAt_o24ss")
+modifications/25 = SubResource("SkeletonModification2DLookAt_1tt84")
+modifications/26 = SubResource("SkeletonModification2DLookAt_vxaw8")
+modifications/27 = SubResource("SkeletonModification2DLookAt_vmpo4")
+modifications/28 = SubResource("SkeletonModification2DLookAt_pq2xg")
+modifications/29 = SubResource("SkeletonModification2DLookAt_sk7ir")
+modifications/30 = SubResource("SkeletonModification2DLookAt_vg1qv")
+modifications/31 = SubResource("SkeletonModification2DLookAt_1l6bo")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qmwdo"]
+resource_local_to_scene = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_so2oi"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lpiws"]
+noise = SubResource("FastNoiseLite_so2oi")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uscc5"]
+resource_local_to_scene = true
+shader = ExtResource("3_lpiws")
+shader_parameter/scale = Vector2(0.2, 0.2)
+shader_parameter/strength = 0.2
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_lpiws")
 
 [node name="OilyTest" unique_id=1360540123 instance=ExtResource("1_k3qkj")]
 
-[node name="ScreenTileMapLayer" parent="." index="4" unique_id=2053691136]
+[node name="ScreenTileMapLayer" parent="." index="2" unique_id=2053691136]
 clip_children = 2
 tile_map_data = PackedByteArray("AAADAB4AAAAAAAAAAAADAB8AAAAAAAEAAAADACAAAAAAAAIAAAADACEAAAAAAAMAAAADACIAAAAAAAQAAAADACMAAAAAAAUAAAADACQAAAAAAAYAAAADACUAAAAAAAcAAAAEAB4AAAABAAAAAAAEAB8AAAABAAEAAAAEACAAAAABAAIAAAAEACEAAAABAAMAAAAEACIAAAABAAQAAAAEACMAAAABAAUAAAAEACQAAAABAAYAAAAEACUAAAABAAcAAAAFAB4AAAACAAAAAAAFAB8AAAACAAEAAAAFACAAAAACAAIAAAAFACEAAAACAAMAAAAFACIAAAACAAQAAAAFACMAAAACAAUAAAAFACQAAAACAAYAAAAFACUAAAACAAcAAAAGAB4AAAADAAAAAAAGAB8AAAADAAEAAAAGACAAAAADAAIAAAAGACEAAAADAAMAAAAGACIAAAADAAQAAAAGACMAAAADAAUAAAAGACQAAAADAAYAAAAGACUAAAADAAcAAAAHAB4AAAAEAAAAAAAHAB8AAAAEAAEAAAAHACAAAAAEAAIAAAAHACEAAAAEAAMAAAAHACIAAAAEAAQAAAAHACMAAAAEAAUAAAAHACQAAAAEAAYAAAAHACUAAAAEAAcAAAAIAB4AAAAFAAAAAAAIAB8AAAAFAAEAAAAIACAAAAAFAAIAAAAIACEAAAAFAAMAAAAIACIAAAAFAAQAAAAIACMAAAAFAAUAAAAIACQAAAAFAAYAAAAIACUAAAAFAAcAAAAJAB4AAAAGAAAAAAAJAB8AAAAGAAEAAAAJACAAAAAGAAIAAAAJACEAAAAGAAMAAAAJACIAAAAGAAQAAAAJACMAAAAGAAUAAAAJACQAAAAGAAYAAAAJACUAAAAGAAcAAAAKAB4AAAAHAAAAAAAKAB8AAAAHAAEAAAAKACAAAAAHAAIAAAAKACEAAAAHAAMAAAAKACIAAAAHAAQAAAAKACMAAAAHAAUAAAAKACQAAAAHAAYAAAAKACUAAAAHAAcAAAALAB4AAAAAAAAAAAALAB8AAAAAAAEAAAALACAAAAAAAAIAAAALACEAAAAAAAMAAAALACIAAAAAAAQAAAALACMAAAAAAAUAAAALACQAAAAAAAYAAAALACUAAAAAAAcAAAAMAB4AAAABAAAAAAAMAB8AAAABAAEAAAAMACAAAAABAAIAAAAMACEAAAABAAMAAAAMACIAAAABAAQAAAAMACMAAAABAAUAAAAMACQAAAABAAYAAAAMACUAAAABAAcAAAANAB4AAAACAAAAAAANAB8AAAACAAEAAAANACAAAAACAAIAAAANACEAAAACAAMAAAANACIAAAACAAQAAAANACMAAAACAAUAAAANACQAAAACAAYAAAANACUAAAACAAcAAAAOAB4AAAADAAAAAAAOAB8AAAADAAEAAAAOACAAAAADAAIAAAAOACEAAAADAAMAAAAOACIAAAADAAQAAAAOACMAAAADAAUAAAAOACQAAAADAAYAAAAOACUAAAADAAcAAAAPAB4AAAAEAAAAAAAPAB8AAAAEAAEAAAAPACAAAAAEAAIAAAAPACEAAAAEAAMAAAAPACIAAAAEAAQAAAAPACMAAAAEAAUAAAAPACQAAAAEAAYAAAAPACUAAAAEAAcAAAAQAB4AAAAFAAAAAAAQAB8AAAAFAAEAAAAQACAAAAAFAAIAAAAQACEAAAAFAAMAAAAQACIAAAAFAAQAAAAQACMAAAAFAAUAAAAQACQAAAAFAAYAAAAQACUAAAAFAAcAAAARAB4AAAAGAAAAAAARAB8AAAAGAAEAAAARACAAAAAGAAIAAAARACEAAAAGAAMAAAARACIAAAAGAAQAAAARACMAAAAGAAUAAAARACQAAAAGAAYAAAARACUAAAAGAAcAAAASAB4AAAAHAAAAAAASAB8AAAAHAAEAAAASACAAAAAHAAIAAAASACEAAAAHAAMAAAASACIAAAAHAAQAAAASACMAAAAHAAUAAAASACQAAAAHAAYAAAASACUAAAAHAAcAAAATAB4AAAAAAAAAAAATAB8AAAAAAAEAAAATACAAAAAAAAIAAAATACEAAAAAAAMAAAATACIAAAAAAAQAAAATACMAAAAAAAUAAAATACQAAAAAAAYAAAATACUAAAAAAAcAAAAUAB4AAAABAAAAAAAUAB8AAAABAAEAAAAUACAAAAABAAIAAAAUACEAAAABAAMAAAAUACIAAAABAAQAAAAUACMAAAABAAUAAAAUACQAAAABAAYAAAAUACUAAAABAAcAAAAVAB4AAAACAAAAAAAVAB8AAAACAAEAAAAVACAAAAACAAIAAAAVACEAAAACAAMAAAAVACIAAAACAAQAAAAVACMAAAACAAUAAAAVACQAAAACAAYAAAAVACUAAAACAAcAAAAWAB4AAAADAAAAAAAWAB8AAAADAAEAAAAWACAAAAADAAIAAAAWACEAAAADAAMAAAAWACIAAAADAAQAAAAWACMAAAADAAUAAAAWACQAAAADAAYAAAAWACUAAAADAAcAAAAXAB4AAAAEAAAAAAAXAB8AAAAEAAEAAAAXACAAAAAEAAIAAAAXACEAAAAEAAMAAAAXACIAAAAEAAQAAAAXACMAAAAEAAUAAAAXACQAAAAEAAYAAAAXACUAAAAEAAcAAAAYAB4AAAAFAAAAAAAYAB8AAAAFAAEAAAAYACAAAAAFAAIAAAAYACEAAAAFAAMAAAAYACIAAAAFAAQAAAAYACMAAAAFAAUAAAAYACQAAAAFAAYAAAAYACUAAAAFAAcAAAAZAB4AAAAGAAAAAAAZAB8AAAAGAAEAAAAZACAAAAAGAAIAAAAZACEAAAAGAAMAAAAZACIAAAAGAAQAAAAZACMAAAAGAAUAAAAZACQAAAAGAAYAAAAZACUAAAAGAAcAAAAaAB4AAAAHAAAAAAAaAB8AAAAHAAEAAAAaACAAAAAHAAIAAAAaACEAAAAHAAMAAAAaACIAAAAHAAQAAAAaACMAAAAHAAUAAAAaACQAAAAHAAYAAAAaACUAAAAHAAcAAAAbAB4AAAAAAAAAAAAbAB8AAAAAAAEAAAAbACAAAAAAAAIAAAAbACEAAAAAAAMAAAAbACIAAAAAAAQAAAAbACMAAAAAAAUAAAAbACQAAAAAAAYAAAAbACUAAAAAAAcAAAAcAB4AAAABAAAAAAAcAB8AAAABAAEAAAAcACAAAAABAAIAAAAcACEAAAABAAMAAAAcACIAAAABAAQAAAAcACMAAAABAAUAAAAcACQAAAABAAYAAAAcACUAAAABAAcAAAAdAB4AAAACAAAAAAAdAB8AAAACAAEAAAAdACAAAAACAAIAAAAdACEAAAACAAMAAAAdACIAAAACAAQAAAAdACMAAAACAAUAAAAdACQAAAACAAYAAAAdACUAAAACAAcAAAAeAB4AAAADAAAAAAAeAB8AAAADAAEAAAAeACAAAAADAAIAAAAeACEAAAADAAMAAAAeACIAAAADAAQAAAAeACMAAAADAAUAAAAeACQAAAADAAYAAAAeACUAAAADAAcAAAAfAB4AAAAEAAAAAAAfAB8AAAAEAAEAAAAfACAAAAAEAAIAAAAfACEAAAAEAAMAAAAfACIAAAAEAAQAAAAfACMAAAAEAAUAAAAfACQAAAAEAAYAAAAfACUAAAAEAAcAAAAgAB4AAAAFAAAAAAAgAB8AAAAFAAEAAAAgACAAAAAFAAIAAAAgACEAAAAFAAMAAAAgACIAAAAFAAQAAAAgACMAAAAFAAUAAAAgACQAAAAFAAYAAAAgACUAAAAFAAcAAAAhAB4AAAAGAAAAAAAhAB8AAAAGAAEAAAAhACAAAAAGAAIAAAAhACEAAAAGAAMAAAAhACIAAAAGAAQAAAAhACMAAAAGAAUAAAAhACQAAAAGAAYAAAAhACUAAAAGAAcAAAAiAB4AAAAHAAAAAAAiAB8AAAAHAAEAAAAiACAAAAAHAAIAAAAiACEAAAAHAAMAAAAiACIAAAAHAAQAAAAiACMAAAAHAAUAAAAiACQAAAAHAAYAAAAiACUAAAAHAAcAAAAjAB4AAAAAAAAAAAAjAB8AAAAAAAEAAAAjACAAAAAAAAIAAAAjACEAAAAAAAMAAAAjACIAAAAAAAQAAAAjACMAAAAAAAUAAAAjACQAAAAAAAYAAAAjACUAAAAAAAcAAAAkAB4AAAABAAAAAAAkAB8AAAABAAEAAAAkACAAAAABAAIAAAAkACEAAAABAAMAAAAkACIAAAABAAQAAAAkACMAAAABAAUAAAAkACQAAAABAAYAAAAkACUAAAABAAcAAAAlAB4AAAACAAAAAAAlAB8AAAACAAEAAAAlACAAAAACAAIAAAAlACEAAAACAAMAAAAlACIAAAACAAQAAAAlACMAAAACAAUAAAAlACQAAAACAAYAAAAlACUAAAACAAcAAAAmAB4AAAADAAAAAAAmAB8AAAADAAEAAAAmACAAAAADAAIAAAAmACEAAAADAAMAAAAmACIAAAADAAQAAAAmACMAAAADAAUAAAAmACQAAAADAAYAAAAmACUAAAADAAcAAAAnAB4AAAAEAAAAAAAnAB8AAAAEAAEAAAAnACAAAAAEAAIAAAAnACEAAAAEAAMAAAAnACIAAAAEAAQAAAAnACMAAAAEAAUAAAAnACQAAAAEAAYAAAAnACUAAAAEAAcAAAAoAB4AAAAFAAAAAAAoAB8AAAAFAAEAAAAoACAAAAAFAAIAAAAoACEAAAAFAAMAAAAoACIAAAAFAAQAAAAoACMAAAAFAAUAAAAoACQAAAAFAAYAAAAoACUAAAAFAAcAAAApAB4AAAAGAAAAAAApAB8AAAAGAAEAAAApACAAAAAGAAIAAAApACEAAAAGAAMAAAApACIAAAAGAAQAAAApACMAAAAGAAUAAAApACQAAAAGAAYAAAApACUAAAAGAAcAAAAqAB4AAAAHAAAAAAAqAB8AAAAHAAEAAAAqACAAAAAHAAIAAAAqACEAAAAHAAMAAAAqACIAAAAHAAQAAAAqACMAAAAHAAUAAAAqACQAAAAHAAYAAAAqACUAAAAHAAcAAAArAB4AAAAAAAAAAAArAB8AAAAAAAEAAAArACAAAAAAAAIAAAArACEAAAAAAAMAAAArACIAAAAAAAQAAAArACMAAAAAAAUAAAArACQAAAAAAAYAAAArACUAAAAAAAcAAAAsAB4AAAABAAAAAAAsAB8AAAABAAEAAAAsACAAAAABAAIAAAAsACEAAAABAAMAAAAsACIAAAABAAQAAAAsACMAAAABAAUAAAAsACQAAAABAAYAAAAsACUAAAABAAcAAAAtAB4AAAACAAAAAAAtAB8AAAACAAEAAAAtACAAAAACAAIAAAAtACEAAAACAAMAAAAtACIAAAACAAQAAAAtACMAAAACAAUAAAAtACQAAAACAAYAAAAtACUAAAACAAcAAAAuAB4AAAADAAAAAAAuAB8AAAADAAEAAAAuACAAAAADAAIAAAAuACEAAAADAAMAAAAuACIAAAADAAQAAAAuACMAAAADAAUAAAAuACQAAAADAAYAAAAuACUAAAADAAcAAAAvAB4AAAAEAAAAAAAvAB8AAAAEAAEAAAAvACAAAAAEAAIAAAAvACEAAAAEAAMAAAAvACIAAAAEAAQAAAAvACMAAAAEAAUAAAAvACQAAAAEAAYAAAAvACUAAAAEAAcAAAAwAB4AAAAFAAAAAAAwAB8AAAAFAAEAAAAwACAAAAAFAAIAAAAwACEAAAAFAAMAAAAwACIAAAAFAAQAAAAwACMAAAAFAAUAAAAwACQAAAAFAAYAAAAwACUAAAAFAAcAAAAxAB4AAAAGAAAAAAAxAB8AAAAGAAEAAAAxACAAAAAGAAIAAAAxACEAAAAGAAMAAAAxACIAAAAGAAQAAAAxACMAAAAGAAUAAAAxACQAAAAGAAYAAAAxACUAAAAGAAcAAAAyAB4AAAAHAAAAAAAyAB8AAAAHAAEAAAAyACAAAAAHAAIAAAAyACEAAAAHAAMAAAAyACIAAAAHAAQAAAAyACMAAAAHAAUAAAAyACQAAAAHAAYAAAAyACUAAAAHAAcAAAAzAB4AAAAAAAAAAAAzAB8AAAAAAAEAAAAzACAAAAAAAAIAAAAzACEAAAAAAAMAAAAzACIAAAAAAAQAAAAzACMAAAAAAAUAAAAzACQAAAAAAAYAAAAzACUAAAAAAAcAAAA0AB4AAAABAAAAAAA0AB8AAAABAAEAAAA0ACAAAAABAAIAAAA0ACEAAAABAAMAAAA0ACIAAAABAAQAAAA0ACMAAAABAAUAAAA0ACQAAAABAAYAAAA0ACUAAAABAAcAAAA1AB4AAAACAAAAAAA1AB8AAAACAAEAAAA1ACAAAAACAAIAAAA1ACEAAAACAAMAAAA1ACIAAAACAAQAAAA1ACMAAAACAAUAAAA1ACQAAAACAAYAAAA1ACUAAAACAAcAAAA2AB4AAAADAAAAAAA2AB8AAAADAAEAAAA2ACAAAAADAAIAAAA2ACEAAAADAAMAAAA2ACIAAAADAAQAAAA2ACMAAAADAAUAAAA2ACQAAAADAAYAAAA2ACUAAAADAAcAAAA3AB4AAAAEAAAAAAA3AB8AAAAEAAEAAAA3ACAAAAAEAAIAAAA3ACEAAAAEAAMAAAA3ACIAAAAEAAQAAAA3ACMAAAAEAAUAAAA3ACQAAAAEAAYAAAA3ACUAAAAEAAcAAAA4AB4AAAAFAAAAAAA4AB8AAAAFAAEAAAA4ACAAAAAFAAIAAAA4ACEAAAAFAAMAAAA4ACIAAAAFAAQAAAA4ACMAAAAFAAUAAAA4ACQAAAAFAAYAAAA4ACUAAAAFAAcAAAA5AB4AAAAGAAAAAAA5AB8AAAAGAAEAAAA5ACAAAAAGAAIAAAA5ACEAAAAGAAMAAAA5ACIAAAAGAAQAAAA5ACMAAAAGAAUAAAA5ACQAAAAGAAYAAAA5ACUAAAAGAAcAAAA6AB4AAAAHAAAAAAA6AB8AAAAHAAEAAAA6ACAAAAAHAAIAAAA6ACEAAAAHAAMAAAA6ACIAAAAHAAQAAAA6ACMAAAAHAAUAAAA6ACQAAAAHAAYAAAA6ACUAAAAHAAcAAAA7AB4AAAAAAAAAAAA7AB8AAAAAAAEAAAA7ACAAAAAAAAIAAAA7ACEAAAAAAAMAAAA7ACIAAAAAAAQAAAA7ACMAAAAAAAUAAAA7ACQAAAAAAAYAAAA7ACUAAAAAAAcAAAA8AB4AAAABAAAAAAA8AB8AAAABAAEAAAA8ACAAAAABAAIAAAA8ACEAAAABAAMAAAA8ACIAAAABAAQAAAA8ACMAAAABAAUAAAA8ACQAAAABAAYAAAA8ACUAAAABAAcAAAA9AB4AAAACAAAAAAA9AB8AAAACAAEAAAA9ACAAAAACAAIAAAA9ACEAAAACAAMAAAA9ACIAAAACAAQAAAA9ACMAAAACAAUAAAA9ACQAAAACAAYAAAA9ACUAAAACAAcAAAA+AB4AAAADAAAAAAA+AB8AAAADAAEAAAA+ACAAAAADAAIAAAA+ACEAAAADAAMAAAA+ACIAAAADAAQAAAA+ACMAAAADAAUAAAA+ACQAAAADAAYAAAA+ACUAAAADAAcAAAA/AB4AAAAEAAAAAAA/AB8AAAAEAAEAAAA/ACAAAAAEAAIAAAA/ACEAAAAEAAMAAAA/ACIAAAAEAAQAAAA/ACMAAAAEAAUAAAA/ACQAAAAEAAYAAAA/ACUAAAAEAAcAAABAAB4AAAAFAAAAAABAAB8AAAAFAAEAAABAACAAAAAFAAIAAABAACEAAAAFAAMAAABAACIAAAAFAAQAAABAACMAAAAFAAUAAABAACQAAAAFAAYAAABAACUAAAAFAAcAAABBAB4AAAAGAAAAAABBAB8AAAAGAAEAAABBACAAAAAGAAIAAABBACEAAAAGAAMAAABBACIAAAAGAAQAAABBACMAAAAGAAUAAABBACQAAAAGAAYAAABBACUAAAAGAAcAAABCAB4AAAAHAAAAAABCAB8AAAAHAAEAAABCACAAAAAHAAIAAABCACEAAAAHAAMAAABCACIAAAAHAAQAAABCACMAAAAHAAUAAABCACQAAAAHAAYAAABCACUAAAAHAAcAAABDAB4AAAAAAAAAAABDAB8AAAAAAAEAAABDACAAAAAAAAIAAABDACEAAAAAAAMAAABDACIAAAAAAAQAAABDACMAAAAAAAUAAABDACQAAAAAAAYAAABDACUAAAAAAAcAAABEAB4AAAABAAAAAABEAB8AAAABAAEAAABEACAAAAABAAIAAABEACEAAAABAAMAAABEACIAAAABAAQAAABEACMAAAABAAUAAABEACQAAAABAAYAAABEACUAAAABAAcAAABFAB4AAAACAAAAAABFAB8AAAACAAEAAABFACAAAAACAAIAAABFACEAAAACAAMAAABFACIAAAACAAQAAABFACMAAAACAAUAAABFACQAAAACAAYAAABFACUAAAACAAcAAABGAB4AAAADAAAAAABGAB8AAAADAAEAAABGACAAAAADAAIAAABGACEAAAADAAMAAABGACIAAAADAAQAAABGACMAAAADAAUAAABGACQAAAADAAYAAABGACUAAAADAAcAAABHAB4AAAAEAAAAAABHAB8AAAAEAAEAAABHACAAAAAEAAIAAABHACEAAAAEAAMAAABHACIAAAAEAAQAAABHACMAAAAEAAUAAABHACQAAAAEAAYAAABHACUAAAAEAAcAAABIAB4AAAAFAAAAAABIAB8AAAAFAAEAAABIACAAAAAFAAIAAABIACEAAAAFAAMAAABIACIAAAAFAAQAAABIACMAAAAFAAUAAABIACQAAAAFAAYAAABIACUAAAAFAAcAAABJAB4AAAAGAAAAAABJAB8AAAAGAAEAAABJACAAAAAGAAIAAABJACEAAAAGAAMAAABJACIAAAAGAAQAAABJACMAAAAGAAUAAABJACQAAAAGAAYAAABJACUAAAAGAAcAAABKAB4AAAAHAAAAAABKAB8AAAAHAAEAAABKACAAAAAHAAIAAABKACEAAAAHAAMAAABKACIAAAAHAAQAAABKACMAAAAHAAUAAABKACQAAAAHAAYAAABKACUAAAAHAAcAAABLAB4AAAAAAAAAAABLAB8AAAAAAAEAAABLACAAAAAAAAIAAABLACEAAAAAAAMAAABLACIAAAAAAAQAAABLACMAAAAAAAUAAABLACQAAAAAAAYAAABLACUAAAAAAAcAAABMAB4AAAABAAAAAABMAB8AAAABAAEAAABMACAAAAABAAIAAABMACEAAAABAAMAAABMACIAAAABAAQAAABMACMAAAABAAUAAABMACQAAAABAAYAAABMACUAAAABAAcAAABNAB4AAAACAAAAAABNAB8AAAACAAEAAABNACAAAAACAAIAAABNACEAAAACAAMAAABNACIAAAACAAQAAABNACMAAAACAAUAAABNACQAAAACAAYAAABNACUAAAACAAcAAABOAB4AAAADAAAAAABOAB8AAAADAAEAAABOACAAAAADAAIAAABOACEAAAADAAMAAABOACIAAAADAAQAAABOACMAAAADAAUAAABOACQAAAADAAYAAABOACUAAAADAAcAAABPAB4AAAAEAAAAAABPAB8AAAAEAAEAAABPACAAAAAEAAIAAABPACEAAAAEAAMAAABPACIAAAAEAAQAAABPACMAAAAEAAUAAABPACQAAAAEAAYAAABPACUAAAAEAAcAAABQAB4AAAAFAAAAAABQAB8AAAAFAAEAAABQACAAAAAFAAIAAABQACEAAAAFAAMAAABQACIAAAAFAAQAAABQACMAAAAFAAUAAABQACQAAAAFAAYAAABQACUAAAAFAAcAAABRAB4AAAAGAAAAAABRAB8AAAAGAAEAAABRACAAAAAGAAIAAABRACEAAAAGAAMAAABRACIAAAAGAAQAAABRACMAAAAGAAUAAABRACQAAAAGAAYAAABRACUAAAAGAAcAAABSAB4AAAAHAAAAAABSAB8AAAAHAAEAAABSACAAAAAHAAIAAABSACEAAAAHAAMAAABSACIAAAAHAAQAAABSACMAAAAHAAUAAABSACQAAAAHAAYAAABSACUAAAAHAAcAAABTAB4AAAAAAAAAAABTAB8AAAAAAAEAAABTACAAAAAAAAIAAABTACEAAAAAAAMAAABTACIAAAAAAAQAAABTACMAAAAAAAUAAABTACQAAAAAAAYAAABTACUAAAAAAAcAAABUAB4AAAABAAAAAABUAB8AAAABAAEAAABUACAAAAABAAIAAABUACEAAAABAAMAAABUACIAAAABAAQAAABUACMAAAABAAUAAABUACQAAAABAAYAAABUACUAAAABAAcAAABVAB4AAAACAAAAAABVAB8AAAACAAEAAABVACAAAAACAAIAAABVACEAAAACAAMAAABVACIAAAACAAQAAABVACMAAAACAAUAAABVACQAAAACAAYAAABVACUAAAACAAcAAABWAB4AAAADAAAAAABWAB8AAAADAAEAAABWACAAAAADAAIAAABWACEAAAADAAMAAABWACIAAAADAAQAAABWACMAAAADAAUAAABWACQAAAADAAYAAABWACUAAAADAAcAAABXAB4AAAAEAAAAAABXAB8AAAAEAAEAAABXACAAAAAEAAIAAABXACEAAAAEAAMAAABXACIAAAAEAAQAAABXACMAAAAEAAUAAABXACQAAAAEAAYAAABXACUAAAAEAAcAAABYAB4AAAAFAAAAAABYAB8AAAAFAAEAAABYACAAAAAFAAIAAABYACEAAAAFAAMAAABYACIAAAAFAAQAAABYACMAAAAFAAUAAABYACQAAAAFAAYAAABYACUAAAAFAAcAAABZAB4AAAAGAAAAAABZAB8AAAAGAAEAAABZACAAAAAGAAIAAABZACEAAAAGAAMAAABZACIAAAAGAAQAAABZACMAAAAGAAUAAABZACQAAAAGAAYAAABZACUAAAAGAAcAAABaAB4AAAAHAAAAAABaAB8AAAAHAAEAAABaACAAAAAHAAIAAABaACEAAAAHAAMAAABaACIAAAAHAAQAAABaACMAAAAHAAUAAABaACQAAAAHAAYAAABaACUAAAAHAAcAAAAjAA4AAAAAAAAAAAAjAA8AAAAAAAEAAAAjABAAAAAAAAIAAAAjABEAAAAAAAMAAAAjABIAAAAAAAQAAAAjABMAAAAAAAUAAAAjABQAAAAAAAYAAAAjABUAAAAAAAcAAAAkAA4AAAABAAAAAAAkAA8AAAABAAEAAAAkABAAAAABAAIAAAAkABEAAAABAAMAAAAkABIAAAABAAQAAAAkABMAAAABAAUAAAAkABQAAAABAAYAAAAkABUAAAABAAcAAAAlAA4AAAACAAAAAAAlAA8AAAACAAEAAAAlABAAAAACAAIAAAAlABEAAAACAAMAAAAlABIAAAACAAQAAAAlABMAAAACAAUAAAAlABQAAAACAAYAAAAlABUAAAACAAcAAAAmAA4AAAADAAAAAAAmAA8AAAADAAEAAAAmABAAAAADAAIAAAAmABEAAAADAAMAAAAmABIAAAADAAQAAAAmABMAAAADAAUAAAAmABQAAAADAAYAAAAmABUAAAADAAcAAAAnAA4AAAAEAAAAAAAnAA8AAAAEAAEAAAAnABAAAAAEAAIAAAAnABEAAAAEAAMAAAAnABIAAAAEAAQAAAAnABMAAAAEAAUAAAAnABQAAAAEAAYAAAAnABUAAAAEAAcAAAAoAA4AAAAFAAAAAAAoAA8AAAAFAAEAAAAoABAAAAAFAAIAAAAoABEAAAAFAAMAAAAoABIAAAAFAAQAAAAoABMAAAAFAAUAAAAoABQAAAAFAAYAAAAoABUAAAAFAAcAAAApAA4AAAAGAAAAAAApAA8AAAAGAAEAAAApABAAAAAGAAIAAAApABEAAAAGAAMAAAApABIAAAAGAAQAAAApABMAAAAGAAUAAAApABQAAAAGAAYAAAApABUAAAAGAAcAAAAqAA4AAAAHAAAAAAAqAA8AAAAHAAEAAAAqABAAAAAHAAIAAAAqABEAAAAHAAMAAAAqABIAAAAHAAQAAAAqABMAAAAHAAUAAAAqABQAAAAHAAYAAAAqABUAAAAHAAcAAAAjABYAAAAAAAAAAAAjABcAAAAAAAEAAAAjABgAAAAAAAIAAAAjABkAAAAAAAMAAAAjABoAAAAAAAQAAAAjABsAAAAAAAUAAAAjABwAAAAAAAYAAAAjAB0AAAAAAAcAAAAkABYAAAABAAAAAAAkABcAAAABAAEAAAAkABgAAAABAAIAAAAkABkAAAABAAMAAAAkABoAAAABAAQAAAAkABsAAAABAAUAAAAkABwAAAABAAYAAAAkAB0AAAABAAcAAAAlABYAAAACAAAAAAAlABcAAAACAAEAAAAlABgAAAACAAIAAAAlABkAAAACAAMAAAAlABoAAAACAAQAAAAlABsAAAACAAUAAAAlABwAAAACAAYAAAAlAB0AAAACAAcAAAAmABYAAAADAAAAAAAmABcAAAADAAEAAAAmABgAAAADAAIAAAAmABkAAAADAAMAAAAmABoAAAADAAQAAAAmABsAAAADAAUAAAAmABwAAAADAAYAAAAmAB0AAAADAAcAAAAnABYAAAAEAAAAAAAnABcAAAAEAAEAAAAnABgAAAAEAAIAAAAnABkAAAAEAAMAAAAnABoAAAAEAAQAAAAnABsAAAAEAAUAAAAnABwAAAAEAAYAAAAnAB0AAAAEAAcAAAAoABYAAAAFAAAAAAAoABcAAAAFAAEAAAAoABgAAAAFAAIAAAAoABkAAAAFAAMAAAAoABoAAAAFAAQAAAAoABsAAAAFAAUAAAAoABwAAAAFAAYAAAAoAB0AAAAFAAcAAAApABYAAAAGAAAAAAApABcAAAAGAAEAAAApABgAAAAGAAIAAAApABkAAAAGAAMAAAApABoAAAAGAAQAAAApABsAAAAGAAUAAAApABwAAAAGAAYAAAApAB0AAAAGAAcAAAAqABYAAAAHAAAAAAAqABcAAAAHAAEAAAAqABgAAAAHAAIAAAAqABkAAAAHAAMAAAAqABoAAAAHAAQAAAAqABsAAAAHAAUAAAAqABwAAAAHAAYAAAAqAB0AAAAHAAcAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAFAAAAAAAFAAAAAAAFAAEAAAAFAAEAAAAGAAAAAAAGAAAAAAAGAAEAAAAGAAEAAAAHAAAAAAAHAAAAAAAHAAEAAAAHAAEAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAEAAAAJAAAAAAABAAAAAAAJAAEAAAABAAEAAAAKAAAAAAACAAAAAAAKAAEAAAACAAEAAAALAAAAAAADAAAAAAALAAEAAAADAAEAAAAMAAAAAAAEAAAAAAAMAAEAAAAEAAEAAAANAAAAAAAFAAAAAAANAAEAAAAFAAEAAAAOAAAAAAAGAAAAAAAOAAEAAAAGAAEAAAAPAAAAAAAHAAAAAAAPAAEAAAAHAAEAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAEAAAARAAAAAAABAAAAAAARAAEAAAABAAEAAAASAAAAAAACAAAAAAASAAEAAAACAAEAAAATAAAAAAADAAAAAAATAAEAAAADAAEAAAAUAAAAAAAEAAAAAAAUAAEAAAAEAAEAAAAVAAAAAAAFAAAAAAAVAAEAAAAFAAEAAAAWAAAAAAAGAAAAAAAWAAEAAAAGAAEAAAAXAAAAAAAHAAAAAAAXAAEAAAAHAAEAAAAYAAAAAAAAAAAAAAAYAAEAAAAAAAEAAAAZAAAAAAABAAAAAAAZAAEAAAABAAEAAAAaAAAAAAACAAAAAAAaAAEAAAACAAEAAAAbAAAAAAADAAAAAAAbAAEAAAADAAEAAAAcAAAAAAAEAAAAAAAcAAEAAAAEAAEAAAAdAAAAAAAFAAAAAAAdAAEAAAAFAAEAAAAeAAAAAAAGAAAAAAAeAAEAAAAGAAEAAAAfAAAAAAAHAAAAAAAfAAEAAAAHAAEAAAAgAAAAAAAAAAAAAAAgAAEAAAAAAAEAAAAhAAAAAAABAAAAAAAhAAEAAAABAAEAAAAiAAAAAAACAAAAAAAiAAEAAAACAAEAAAAjAAAAAAADAAAAAAAjAAEAAAADAAEAAAAkAAAAAAAEAAAAAAAkAAEAAAAEAAEAAAAlAAAAAAAFAAAAAAAlAAEAAAAFAAEAAAAmAAAAAAAGAAAAAAAmAAEAAAAGAAEAAAAnAAAAAAAHAAAAAAAnAAEAAAAHAAEAAAAoAAAAAAAAAAAAAAAoAAEAAAAAAAEAAAApAAAAAAABAAAAAAApAAEAAAABAAEAAAAqAAAAAAACAAAAAAAqAAEAAAACAAEAAAArAAAAAAADAAAAAAArAAEAAAADAAEAAAAsAAAAAAAEAAAAAAAsAAEAAAAEAAEAAAAtAAAAAAAFAAAAAAAtAAEAAAAFAAEAAAAuAAAAAAAGAAAAAAAuAAEAAAAGAAEAAAAvAAAAAAAHAAAAAAAvAAEAAAAHAAEAAAAwAAAAAAAAAAAAAAAwAAEAAAAAAAEAAAAxAAAAAAABAAAAAAAxAAEAAAABAAEAAAAyAAAAAAACAAAAAAAyAAEAAAACAAEAAAAzAAAAAAADAAAAAAAzAAEAAAADAAEAAAA0AAAAAAAEAAAAAAA0AAEAAAAEAAEAAAA1AAAAAAAFAAAAAAA1AAEAAAAFAAEAAAA2AAAAAAAGAAAAAAA2AAEAAAAGAAEAAAA3AAAAAAAHAAAAAAA3AAEAAAAHAAEAAAA4AAAAAAAAAAAAAAA4AAEAAAAAAAEAAAA5AAAAAAABAAAAAAA5AAEAAAABAAEAAAA6AAAAAAACAAAAAAA6AAEAAAACAAEAAAA7AAAAAAADAAAAAAA7AAEAAAADAAEAAAA8AAAAAAAEAAAAAAA8AAEAAAAEAAEAAAA9AAAAAAAFAAAAAAA9AAEAAAAFAAEAAAA+AAAAAAAGAAAAAAA+AAEAAAAGAAEAAAA/AAAAAAAHAAAAAAA/AAEAAAAHAAEAAAA=")
 
 [node name="Oil" parent="." index="5" unique_id=317438472 instance=ExtResource("2_k3qkj")]
 position = Vector2(1347, 480)
+
+[node name="ScreenFullKeeb" parent="." index="7" unique_id=339941415]
+visible = false
+
+[node name="ScreenBlob" parent="." index="9" unique_id=104221436 node_paths=PackedStringArray("default_faces")]
+position = Vector2(265, 168.00002)
+rotation = 0.27564195
+scale = Vector2(1.9, 1.9)
+default_faces = [NodePath("BlobCenter/FacePivot/Yay"), NodePath("BlobCenter/FacePivot/Whoa")]
+
+[node name="Softbody" parent="ScreenBlob" index="0" unique_id=1952859083]
+material = SubResource("ShaderMaterial_so2oi")
+color = Color(0.22616392, 0.45149255, 0.9999811, 1)
+
+[node name="SwirlRect" parent="ScreenBlob/Softbody" index="0" unique_id=428050897]
+offset_left = -288.33752
+offset_top = -333.7909
+offset_right = 417.66248
+offset_bottom = 329.2091
+
+[node name="Skeleton2D" parent="ScreenBlob/Softbody" index="1" unique_id=1900298241]
+modification_stack = SubResource("SkeletonModificationStack2D_bnoa6")
+
+[node name="Bone-0" parent="ScreenBlob/Softbody/Skeleton2D" index="0" unique_id=1768979970]
+scale = Vector2(0.9999953, 0.9999953)
+
+[node name="Bone-1" parent="ScreenBlob/Softbody/Skeleton2D" index="1" unique_id=1730992985]
+position = Vector2(29.50412, 59.783257)
+scale = Vector2(0.9999989, 0.9999989)
+
+[node name="Bone-2" parent="ScreenBlob/Softbody/Skeleton2D" index="2" unique_id=2028372469]
+position = Vector2(14.945038, 75.75774)
+scale = Vector2(0.9999996, 0.9999996)
+
+[node name="Bone-3" parent="ScreenBlob/Softbody/Skeleton2D" index="3" unique_id=780418940]
+position = Vector2(29.745743, 89.485306)
+scale = Vector2(0.99999183, 0.99999183)
+
+[node name="Bone-4" parent="ScreenBlob/Softbody/Skeleton2D" index="4" unique_id=650106285]
+position = Vector2(14.801369, 102.81365)
+scale = Vector2(0.99984145, 0.99984145)
+
+[node name="Bone-5" parent="ScreenBlob/Softbody/Skeleton2D" index="5" unique_id=797085944]
+scale = Vector2(0.9999995, 0.9999995)
+
+[node name="Bone-6" parent="ScreenBlob/Softbody/Skeleton2D" index="6" unique_id=1833565332]
+position = Vector2(34.12413, 140.75192)
+scale = Vector2(0.99999887, 0.99999887)
+
+[node name="Bone-7" parent="ScreenBlob/Softbody/Skeleton2D" index="7" unique_id=1542246631]
+position = Vector2(79.1349, 12.78863)
+scale = Vector2(1.0000015, 1.0000015)
+
+[node name="Bone-8" parent="ScreenBlob/Softbody/Skeleton2D" index="8" unique_id=2084974468]
+position = Vector2(54.632156, 21.843618)
+scale = Vector2(0.9999995, 0.9999995)
+
+[node name="Bone-9" parent="ScreenBlob/Softbody/Skeleton2D" index="9" unique_id=892836411]
+position = Vector2(78.417725, 33.770138)
+scale = Vector2(1.0000014, 1.0000014)
+
+[node name="Bone-10" parent="ScreenBlob/Softbody/Skeleton2D" index="10" unique_id=1695099104]
+position = Vector2(54.470963, 47.85353)
+scale = Vector2(0.99999934, 0.99999934)
+
+[node name="Bone-11" parent="ScreenBlob/Softbody/Skeleton2D" index="11" unique_id=993361088]
+position = Vector2(79.02777, 63.641655)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Bone-12" parent="ScreenBlob/Softbody/Skeleton2D" index="12" unique_id=1281973471]
+position = Vector2(55.676514, 75.7992)
+scale = Vector2(0.99999875, 0.99999875)
+
+[node name="Bone-13" parent="ScreenBlob/Softbody/Skeleton2D" index="13" unique_id=364937635]
+position = Vector2(80.35127, 87.06117)
+scale = Vector2(0.9999993, 0.9999993)
+
+[node name="Bone-14" parent="ScreenBlob/Softbody/Skeleton2D" index="14" unique_id=1813950122]
+position = Vector2(55.064575, 102.80659)
+scale = Vector2(0.9999562, 0.9999562)
+
+[node name="Bone-15" parent="ScreenBlob/Softbody/Skeleton2D" index="15" unique_id=900498286]
+scale = Vector2(1.0000018, 1.0000018)
+
+[node name="Bone-16" parent="ScreenBlob/Softbody/Skeleton2D" index="16" unique_id=1336740352]
+scale = Vector2(0.9999989, 0.9999989)
+
+[node name="Bone-17" parent="ScreenBlob/Softbody/Skeleton2D" index="17" unique_id=1300723840]
+position = Vector2(78.31799, 144.2186)
+scale = Vector2(0.99999875, 0.99999875)
+
+[node name="Bone-18" parent="ScreenBlob/Softbody/Skeleton2D" index="18" unique_id=375866809]
+position = Vector2(102.83688, 20.524511)
+scale = Vector2(0.9999983, 0.9999983)
+
+[node name="Bone-19" parent="ScreenBlob/Softbody/Skeleton2D" index="19" unique_id=1814442704]
+position = Vector2(126.562164, 29.845364)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Bone-20" parent="ScreenBlob/Softbody/Skeleton2D" index="20" unique_id=1360935816]
+position = Vector2(102.156815, 48.364586)
+scale = Vector2(0.99998575, 0.99998575)
+
+[node name="Bone-21" parent="ScreenBlob/Softbody/Skeleton2D" index="21" unique_id=107107718]
+position = Vector2(126.4841, 61.65699)
+scale = Vector2(0.9999993, 0.9999993)
+
+[node name="Bone-22" parent="ScreenBlob/Softbody/Skeleton2D" index="22" unique_id=936226033]
+scale = Vector2(0.9999685, 0.9999685)
+
+[node name="Bone-23" parent="ScreenBlob/Softbody/Skeleton2D" index="23" unique_id=788455513]
+position = Vector2(126.16144, 89.34061)
+scale = Vector2(1.0000013, 1.0000013)
+
+[node name="Bone-24" parent="ScreenBlob/Softbody/Skeleton2D" index="24" unique_id=1221329802]
+scale = Vector2(0.9999607, 0.9999607)
+
+[node name="Bone-25" parent="ScreenBlob/Softbody/Skeleton2D" index="25" unique_id=781922508]
+position = Vector2(130.73479, 119.03063)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="Bone-26" parent="ScreenBlob/Softbody/Skeleton2D" index="26" unique_id=1437053313]
+scale = Vector2(1.0000013, 1.0000013)
+
+[node name="Bone-27" parent="ScreenBlob/Softbody/Skeleton2D" index="27" unique_id=1007880446]
+scale = Vector2(0.9999992, 0.9999992)
+
+[node name="Bone-28" parent="ScreenBlob/Softbody/Skeleton2D" index="28" unique_id=430318068]
+position = Vector2(101.573746, 150.81183)
+scale = Vector2(0.9999988, 0.9999988)
+
+[node name="Bone-29" parent="ScreenBlob/Softbody/Skeleton2D" index="29" unique_id=442180155]
+position = Vector2(144.6923, 48.50384)
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="Bone-30" parent="ScreenBlob/Softbody/Skeleton2D" index="30" unique_id=1214353729]
+position = Vector2(147.16962, 75.3981)
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="Bone-31" parent="ScreenBlob/Softbody/Skeleton2D" index="31" unique_id=485505377]
+scale = Vector2(0.9999946, 0.9999946)
+
+[node name="Bone-0" parent="ScreenBlob/Softbody" index="2" unique_id=702735613]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-0" index="2" unique_id=1992622751]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-1" parent="ScreenBlob/Softbody" index="3" unique_id=1632438338]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-1" index="2" unique_id=1457066510]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-2" parent="ScreenBlob/Softbody" index="4" unique_id=735552098]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-2" index="2" unique_id=1564156268]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-3" parent="ScreenBlob/Softbody" index="5" unique_id=880128140]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-3" index="2" unique_id=1856331488]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-4" parent="ScreenBlob/Softbody" index="6" unique_id=538275186]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-4" index="2" unique_id=1732142940]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-5" parent="ScreenBlob/Softbody" index="7" unique_id=594221422]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-5" index="2" unique_id=1324788324]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-6" parent="ScreenBlob/Softbody" index="8" unique_id=1692126504]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-6" index="2" unique_id=1406557558]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-7" parent="ScreenBlob/Softbody" index="9" unique_id=796366436]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-7" index="2" unique_id=182535498]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-8" parent="ScreenBlob/Softbody" index="10" unique_id=1691678269]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-8" index="2" unique_id=321236776]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-9" parent="ScreenBlob/Softbody" index="11" unique_id=633470577]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-9" index="2" unique_id=1219352423]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-10" parent="ScreenBlob/Softbody" index="12" unique_id=976681936]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-10" index="2" unique_id=1777584596]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-11" parent="ScreenBlob/Softbody" index="13" unique_id=491479993]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-11" index="2" unique_id=1743054035]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-12" parent="ScreenBlob/Softbody" index="14" unique_id=1290178918]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-12" index="2" unique_id=1350588960]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-13" parent="ScreenBlob/Softbody" index="15" unique_id=1049192900]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-13" index="2" unique_id=1056323482]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-14" parent="ScreenBlob/Softbody" index="16" unique_id=46187058]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-14" index="2" unique_id=1279852801]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-15" parent="ScreenBlob/Softbody" index="17" unique_id=589796549]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-15" index="2" unique_id=2098750712]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-16" parent="ScreenBlob/Softbody" index="18" unique_id=1494543206]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-16" index="2" unique_id=1876446731]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-17" parent="ScreenBlob/Softbody" index="19" unique_id=1588850553]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-17" index="2" unique_id=592662774]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-18" parent="ScreenBlob/Softbody" index="20" unique_id=601220103]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-18" index="2" unique_id=773318401]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-19" parent="ScreenBlob/Softbody" index="21" unique_id=546942901]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-19" index="2" unique_id=1431380641]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-20" parent="ScreenBlob/Softbody" index="22" unique_id=1271591776]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-20" index="2" unique_id=186948764]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-21" parent="ScreenBlob/Softbody" index="23" unique_id=886472550]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-21" index="2" unique_id=399670289]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-22" parent="ScreenBlob/Softbody" index="24" unique_id=797007160]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-22" index="2" unique_id=241505623]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-23" parent="ScreenBlob/Softbody" index="25" unique_id=1237810849]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-23" index="2" unique_id=563543073]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-24" parent="ScreenBlob/Softbody" index="26" unique_id=1072820302]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-24" index="2" unique_id=1383343793]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-25" parent="ScreenBlob/Softbody" index="27" unique_id=761609922]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-25" index="2" unique_id=687015337]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-26" parent="ScreenBlob/Softbody" index="28" unique_id=780097487]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-26" index="2" unique_id=1816752937]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-27" parent="ScreenBlob/Softbody" index="29" unique_id=309386522]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-27" index="2" unique_id=962736651]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-28" parent="ScreenBlob/Softbody" index="30" unique_id=506876040]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-28" index="2" unique_id=2082477460]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-29" parent="ScreenBlob/Softbody" index="31" unique_id=383813882]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-29" index="2" unique_id=1835988961]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-30" parent="ScreenBlob/Softbody" index="32" unique_id=1792511220]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-30" index="2" unique_id=492504136]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Bone-31" parent="ScreenBlob/Softbody" index="33" unique_id=2050010841]
+gravity_scale = 0.0
+
+[node name="CircleShape2D" parent="ScreenBlob/Softbody/Bone-31" index="2" unique_id=624285503]
+shape = SubResource("CircleShape2D_qmwdo")
+
+[node name="Neutral" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="0" unique_id=2004237043]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Argh" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="1" unique_id=648583681]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Whoa" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="2" unique_id=807118157]
+material = SubResource("ShaderMaterial_so2oi")
+position = Vector2(3.9801893, 5.3366027)
+
+[node name="Yikes" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="3" unique_id=1278610289]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Angry" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="4" unique_id=1552133866]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Laughing" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="5" unique_id=257935742]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Hi" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="6" unique_id=1261636006]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Huh" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="7" unique_id=416086205]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Sleepy" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="8" unique_id=619282157]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Yay" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="9" unique_id=954113754]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="Smile" parent="ScreenBlob/BlobCenter/FacePivot" parent_id_path=PackedInt32Array(104221436, 1412401453) index="10" unique_id=238210926]
+material = SubResource("ShaderMaterial_so2oi")
+
+[node name="SetFaceTimer" parent="ScreenBlob" index="3" unique_id=1275471261]
+wait_time = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="13" unique_id=1574293985]
+material = SubResource("ShaderMaterial_uscc5")
+position = Vector2(315, 250)
+texture = ExtResource("3_nah6m")
+
+[editable path="ScreenBlob"]

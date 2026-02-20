@@ -56,6 +56,7 @@ func _ready() -> void:
 		if child is Sprite2D:
 			face_dict[child.name] = child
 
+
 func set_status(new_status) -> void:
 	var status_changed = !(status == new_status)
 	if status == new_status: return
@@ -63,7 +64,7 @@ func set_status(new_status) -> void:
 	status = new_status
 	match status:
 		Status.DEFAULT:
-			rand_face_timer.start(randf_range(0.5, 3.0))
+			rand_face_timer.start(1.5)
 		Status.STRETCHED:
 			current_face = face_dict["Argh"]
 			if status_changed:
@@ -110,11 +111,11 @@ func check_status() -> void:
 		if number_of_tuggers >= 1:
 			start_time = Time.get_ticks_msec()
 		
-		var elapsed_time = Time.get_ticks_msec() - start_time
-		if elapsed_time > 15000:
-			new_status = Status.ASLEEP
-		elif elapsed_time > 10000:
-			new_status = Status.IDLE
+		# var elapsed_time = Time.get_ticks_msec() - start_time
+		# if elapsed_time > 15000:
+		# 	new_status = Status.ASLEEP
+		# elif elapsed_time > 10000:
+		# 	new_status = Status.IDLE
 	else:
 		start_time = Time.get_ticks_msec()
 	
@@ -128,8 +129,9 @@ func _on_rand_face_timer_timeout() -> void:
 		new_face = default_faces.pick_random()
 	
 	current_face = new_face
+	default_faces.erase(new_face)
 	
-	rand_face_timer.start(randf_range(0.5, 3.0))
+	rand_face_timer.start(1.5)
 
 func _on_set_face_timer_timeout() -> void:
 	check_status()
@@ -137,7 +139,7 @@ func _on_set_face_timer_timeout() -> void:
 func _physics_process(_delta: float) -> void:
 	var center_pos = softbody.get_bones_center_position()
 	blob_center.global_position = center_pos
-	swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
+	# swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
 	var weight = 0.05
 	blob_center.rotation = lerp_angle(blob_center.rotation, center_bone.rotation, weight)
 	
