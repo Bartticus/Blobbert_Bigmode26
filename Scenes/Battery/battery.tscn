@@ -222,6 +222,11 @@ _data = {
 z_index = 2
 script = ExtResource("1_vrpf4")
 
+[node name="Wire" type="Line2D" parent="." unique_id=229488326]
+unique_name_in_owner = true
+width = 6.0
+default_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
 [node name="BatteryBody" type="RigidBody2D" parent="." unique_id=1219371551]
 unique_name_in_owner = true
 collision_layer = 17
@@ -276,8 +281,3 @@ speed_scale = 6.0
 [node name="WireOrigin" type="Marker2D" parent="." unique_id=345071377]
 unique_name_in_owner = true
 position = Vector2(-300, -321)
-
-[node name="Wire" type="Line2D" parent="." unique_id=229488326]
-unique_name_in_owner = true
-width = 5.0
-default_color = Color(0.12955844, 0.12955847, 0.12955844, 1)

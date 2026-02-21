@@ -16,7 +16,7 @@ tile_map_data = PackedByteArray("AAAUACAAIgAAAAYAAAAUACEAIgAAAAcAAAAVACAAIgABAAY
 [node name="Battery" parent="." index="6" unique_id=1219371551 instance=ExtResource("2_aq5bq")]
 position = Vector2(381, 599)
 
-[node name="WireOrigin" parent="Battery" index="1" unique_id=345071377]
+[node name="WireOrigin" parent="Battery" index="2" unique_id=345071377]
 position = Vector2(1290, -390)
 
 [node name="ScreenBlob" parent="." index="9" unique_id=104221436]
