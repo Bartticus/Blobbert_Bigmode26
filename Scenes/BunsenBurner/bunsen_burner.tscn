@@ -57,8 +57,9 @@ scale = Vector2(0.50113887, 0.51219505)
 texture = ExtResource("2_m5rdo")
 
 [node name="Valve" type="Sprite2D" parent="." unique_id=1682169205]
+modulate = Color(0.6033247, 0.60332465, 0.6033246, 1)
 position = Vector2(1, -2)
-scale = Vector2(0.18, 0.18)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_yj0vg")
 
 [connection signal="area_entered" from="FireDetection" to="." method="_on_fire_detection_area_entered"]

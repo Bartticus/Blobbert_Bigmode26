@@ -21,7 +21,7 @@ var target_height = 0
 var index = 0
 
 #how much an external object movement will affect this spring
-var motion_factor = 0.001
+var motion_factor = 0.01
 
 #the last instance this spring collided with
 #we check so it won't collide twice
@@ -77,10 +77,10 @@ func set_collision_width(value):
 
 
 func _on_Area2D_body_entered(body):
+
 	if !(body is RigidBody2D):
 		return
 	#called when a body collides with a spring
-	
 	#if the body already collided with the spring, then do not collide
 	if body == collided_with:
 		return

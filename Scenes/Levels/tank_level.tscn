@@ -1858,8 +1858,8 @@ snap_screen_to_position = true
 visible = true
 navigation_enabled = true
 
-[node name="TankGlass" parent="Screens/Tank/TankScreen2" index="7" unique_id=2026173093 node_paths=PackedStringArray("triggerable_objects", "cutscene")]
-triggerable_objects = [NodePath("../../../DoorAndPanel/TankScreen5/Battery"), NodePath("GlassPanes3/Pane7"), NodePath("GlassPanes3/Pane8"), NodePath("GlassPanes3/Pane9"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater2"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater3"), NodePath("../../../DoorAndPanel/TankScreen6/VentDoor")]
+[node name="TankGlass" parent="Screens/Tank/TankScreen2" index="6" unique_id=2026173093 node_paths=PackedStringArray("triggerable_objects", "cutscene")]
+triggerable_objects = [NodePath("GlassPanes3/Pane7"), NodePath("GlassPanes3/Pane8"), NodePath("GlassPanes3/Pane9"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater2"), NodePath("../../../DoorAndPanel/TankScreen5/WaterSpray/FastWater3"), NodePath("../../../DoorAndPanel/TankScreen5/Battery"), NodePath("../../../DoorAndPanel/TankScreen6/VentDoor")]
 cutscene = NodePath("../../../../DoorCutscene")
 
 [node name="GlassEdgeSprite" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes/Pane7" parent_id_path=PackedInt32Array(1459908369, 936546553, 25629605) index="4" unique_id=1071639836]
@@ -1934,7 +1934,7 @@ material = SubResource("ShaderMaterial_t513a")
 [node name="ThickWallShape" parent="Screens/Tank/TankScreen2/TankGlass/GlassPanes3/ThickWall" parent_id_path=PackedInt32Array(1459908369, 1729898104, 89876878) index="0" unique_id=557544539]
 shape = SubResource("RectangleShape2D_lql2v")
 
-[node name="VentDoor" parent="Screens/Tank/TankScreen2" index="8" unique_id=1445567170]
+[node name="VentDoor" parent="Screens/Tank/TankScreen2" index="7" unique_id=1445567170]
 modulate = Color(1.753959, 1.753959, 1.753959, 1)
 
 [node name="Sprite2D" parent="Screens/Tank/TankScreen2/VentDoor/DoorBody" parent_id_path=PackedInt32Array(1459908369, 1445567170, 1463673896) index="2" unique_id=1097457276]
@@ -2019,6 +2019,9 @@ position = Vector2(-1315, 759)
 battery = NodePath("../Screens/TankScreen8/Battery")
 triggerable_objects = [NodePath("../Screens/Tank/TankScreen2/VentDoor")]
 
+[node name="Area2D" parent="BatteryCutscene" index="0" unique_id=1744263059]
+position = Vector2(2921, 339)
+
 [node name="DoorCutscene" parent="." index="10" unique_id=1570565807 node_paths=PackedStringArray("tank_glass") instance=ExtResource("18_2u67o")]
 tank_glass = NodePath("../Screens/Tank/TankScreen2/TankGlass")
 
@@ -2048,3 +2051,4 @@ texture = ExtResource("20_uuq41")
 [editable path="Screens/DoorAndPanel/TankScreen6/VentDoor"]
 [editable path="Screens/TankScreen8"]
 [editable path="Screens/TankScreen8/Battery"]
+[editable path="BatteryCutscene"]

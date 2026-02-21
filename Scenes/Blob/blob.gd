@@ -43,7 +43,9 @@ var new_vel: float
 
 func _ready() -> void:
 	Global.blob = self
-	center_bone = softbody.get_center_body().bone
+	var center_body = softbody.get_center_body()
+	center_bone = center_body.bone
+	center_body.rigidbody.set_collision_layer_value(6, true)
 	
 	for child in softbody.get_children():
 		if child is Bone:

@@ -2,5 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cbkymwb8kfisv" path="res://Scenes/Cutscene/battery_cutscene.gd" id="1_jbclc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbclc"]
+size = Vector2(800, 300)
+
 [node name="BatteryCutscene" type="Node2D" unique_id=731723262]
 script = ExtResource("1_jbclc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1744263059]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=304362558]
+shape = SubResource("RectangleShape2D_jbclc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

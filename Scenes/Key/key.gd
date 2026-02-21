@@ -137,9 +137,7 @@ func move_bone(delta) -> void:
 	var weight: float = dist_to_current_bone / Global.tug_range
 	match status:
 		Status.SNAPPING:
-			var snap_mult = calculate_snap_multiplier(delta)
-			print(snap_mult)
-			force_applied = -(new_force * snap_mult)
+			force_applied = -(new_force * calculate_snap_multiplier(delta))
 		Status.TUGGING:
 			force_applied = force_applied.lerp(new_force, weight)
 	current_bone.apply_force(force_applied)

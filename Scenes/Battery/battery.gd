@@ -22,9 +22,7 @@ func _physics_process(_delta: float) -> void:
 func trigger_action():
 	if !wet:
 		wet = true
-		if cutscene:
-			cutscene.trigger_action()
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.1).timeout
 		animation_player.play("boom")
 		Global.sound_manager.play_required_sound('explosion')
 		wire.visible = false
