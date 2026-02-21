@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b4fcdxqrpar7w" path="res://Assets/Sprites/FIRE3.png" id="3_yj0vg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt33f"]
-size = Vector2(200, 100)
+size = Vector2(95, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4oiy"]
-size = Vector2(270, 170)
+size = Vector2(400, 580)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjgvk"]
 animations = [{
@@ -32,13 +32,16 @@ script = ExtResource("1_r4oiy")
 collision_layer = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=167313570]
+position = Vector2(-0.5, 11)
 shape = SubResource("RectangleShape2D_jt33f")
 
 [node name="FireDetection" type="Area2D" parent="." unique_id=79559465]
+position = Vector2(0, -51)
 collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireDetection" unique_id=382422036]
+position = Vector2(0, -73)
 shape = SubResource("RectangleShape2D_r4oiy")
 
 [node name="FireSprites" type="AnimatedSprite2D" parent="." unique_id=48558562]

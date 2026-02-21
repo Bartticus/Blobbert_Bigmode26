@@ -14,11 +14,11 @@ extends Node2D
 			true:
 				var tween = get_tree().create_tween()
 				tween.set_ignore_time_scale()
-				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 0.0), 0.2)
+				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 0.0), 0.1)
 			false:
 				var tween = get_tree().create_tween()
 				tween.set_ignore_time_scale()
-				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), 0.2)
+				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), 0.1)
 
 @export var is_multi_screen: bool = false
 @export var zoom_time: float = 0.25
@@ -29,7 +29,10 @@ extends Node2D
 @export var current_anchor: Marker2D:
 	set(value):
 		current_anchor = value
-		camera.global_position = current_anchor.global_position
+		var tween_0 = tween_camera('global_position', current_anchor.global_position, 0.1, Tween.TRANS_SINE)
+		tween_0.set_ignore_time_scale()
+		await tween_0.finished
+		# camera.global_position = current_anchor.global_position
 
 
 func _ready() -> void:
@@ -39,7 +42,7 @@ func _ready() -> void:
 	
 	Global.level = self
 	Global.blob = blob
-	Global.audio_manager = sound_manager
+	Global.sound_manager = sound_manager
 	if Global.should_transition:
 		starting_screen = null
 
@@ -49,8 +52,9 @@ func _ready() -> void:
 	for screen in get_tree().get_nodes_in_group('screens'):
 		screen.disable_screen_elements()
 	
-	current_anchor = starting_screen.screen_anchor
 	blob.global_position = starting_screen.screen_blob.global_position
+	await get_tree().process_frame
+	Global.blob.reset_screen()
 	Fade.fade_in(0.5)
 
 func enter_multi_screen(multi_screen):

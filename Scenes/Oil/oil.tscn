@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rqcw3dnc53r2"]
 
 [ext_resource type="Script" uid="uid://duhmxupd883qo" path="res://Scenes/Oil/oil.gd" id="1_0cryj"]
-[ext_resource type="Shader" uid="uid://bioehjgso58v3" path="res://Scenes/Oil/fire.gdshader" id="2_33feg"]
+[ext_resource type="Shader" path="res://Scenes/Oil/fire.gdshader" id="2_33feg"]
 [ext_resource type="Texture2D" uid="uid://dqxnesfxqu6rx" path="res://Assets/Sprites/FIRE.png" id="2_hxxqu"]
 [ext_resource type="Texture2D" uid="uid://ckx3a45lnxext" path="res://Assets/Sprites/splat02.png" id="4_52bxo"]
 [ext_resource type="Texture2D" uid="uid://doum0ai52xyf6" path="res://Assets/Sprites/splat20.png" id="5_33feg"]

@@ -23,7 +23,7 @@ radius = 26.0
 height = 138.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad0bo"]
-size = Vector2(1198, 861)
+size = Vector2(189, 872)
 
 [node name="Tubes" type="Node2D" unique_id=140157102]
 script = ExtResource("1_g84fs")
@@ -74,6 +74,15 @@ position = Vector2(1, -196)
 node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
+[node name="Area2D" type="Area2D" parent="Tube1" unique_id=708855130]
+position = Vector2(-528, -614)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube1/Area2D" unique_id=224026715]
+position = Vector2(526.5, 620)
+shape = SubResource("RectangleShape2D_ad0bo")
+
 [node name="Tube2" type="RigidBody2D" parent="." unique_id=1869971348]
 position = Vector2(759, 616)
 collision_mask = 19
@@ -97,6 +106,15 @@ texture = ExtResource("2_g84fs")
 position = Vector2(1, -196)
 node_a = NodePath("../../Rack")
 node_b = NodePath("..")
+
+[node name="Area2D2" type="Area2D" parent="Tube2" unique_id=94131553]
+position = Vector2(-525, -616)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube2/Area2D2" unique_id=1440453672]
+position = Vector2(526.5, 620)
+shape = SubResource("RectangleShape2D_ad0bo")
 
 [node name="Tube3" type="RigidBody2D" parent="." unique_id=338398963]
 position = Vector2(960, 614)
@@ -122,6 +140,15 @@ position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")
 
+[node name="Area2D3" type="Area2D" parent="Tube3" unique_id=276441416]
+position = Vector2(-525, -614)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube3/Area2D3" unique_id=1278247621]
+position = Vector2(526.5, 620)
+shape = SubResource("RectangleShape2D_ad0bo")
+
 [node name="Tube4" type="RigidBody2D" parent="." unique_id=392583778]
 position = Vector2(1187, 614)
 collision_mask = 19
@@ -145,6 +172,15 @@ node_b = NodePath("..")
 position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")
+
+[node name="Area2D4" type="Area2D" parent="Tube4" unique_id=1541504062]
+position = Vector2(-529, -620)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube4/Area2D4" unique_id=781248936]
+position = Vector2(526.5, 620)
+shape = SubResource("RectangleShape2D_ad0bo")
 
 [node name="Tube5" type="RigidBody2D" parent="." unique_id=1139657224]
 position = Vector2(1408, 613)
@@ -170,12 +206,17 @@ position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=708855130]
+[node name="Area2D5" type="Area2D" parent="Tube5" unique_id=451668041]
+position = Vector2(-525, -619)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=224026715]
-position = Vector2(973, 614.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tube5/Area2D5" unique_id=270315630]
+position = Vector2(526.5, 620)
 shape = SubResource("RectangleShape2D_ad0bo")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Tube1/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Tube2/Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Tube3/Area2D3" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Tube4/Area2D4" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Tube5/Area2D5" to="." method="_on_area_2d_body_entered"]

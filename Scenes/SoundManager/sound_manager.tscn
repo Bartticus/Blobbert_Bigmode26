@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://c3b4uwamvd3ic" path="res://Assets/SFX/fire_01.wav" id="11_w7wka"]
 [ext_resource type="AudioStream" uid="uid://comdckgwtl8cx" path="res://Assets/SFX/water.wav" id="12_3vcix"]
 [ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
+[ext_resource type="Script" uid="uid://ctyjo3135c28x" path="res://Scenes/SoundManager/stacking_sounds.gd" id="16_myamy"]
 
 [node name="SoundManager" type="Node2D" unique_id=269814558]
 script = ExtResource("1_1ipep")
@@ -25,7 +26,6 @@ unique_name_in_owner = true
 [node name="GeneralSounds" type="Node2D" parent="." unique_id=1147910431]
 unique_name_in_owner = true
 script = ExtResource("3_883ge")
-chime = Array[AudioStream]([ExtResource("9_1naht"), ExtResource("10_w7wka")])
 fire = Array[AudioStream]([ExtResource("11_w7wka")])
 water = Array[AudioStream]([ExtResource("12_3vcix")])
 
@@ -47,3 +47,20 @@ bus = &"SFX"
 [node name="RequiredSoundPlayer2" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=293396159]
 unique_name_in_owner = true
 bus = &"SFX"
+
+[node name="StackingSounds" type="Node2D" parent="." unique_id=1774398228]
+unique_name_in_owner = true
+script = ExtResource("16_myamy")
+chime = Array[AudioStream]([ExtResource("9_1naht"), ExtResource("10_w7wka")])
+
+[node name="StackingSoundPlayer1" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=681512292]
+unique_name_in_owner = true
+
+[node name="StackingSoundPlayer2" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=313096737]
+unique_name_in_owner = true
+
+[node name="StackingSoundPlayer3" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=1509345973]
+unique_name_in_owner = true
+
+[node name="StackingSoundPlayer4" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=1403348903]
+unique_name_in_owner = true

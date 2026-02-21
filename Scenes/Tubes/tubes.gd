@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Bone:
-		Global.audio_manager.play_general_sound('chime')
+		Global.sound_manager.play_stacking_sound('chime')

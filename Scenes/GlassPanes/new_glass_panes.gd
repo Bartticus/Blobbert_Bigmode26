@@ -46,4 +46,4 @@ func _on_pane_exiting(_pane: GreasableObject) -> void:
 	if anim_player:
 		anim_player.play("breach")
 		await get_tree().create_timer(1.0).timeout
-		Global.audio_manager.play_required_sound('siren')
+		Global.sound_manager.play_required_sound('siren')

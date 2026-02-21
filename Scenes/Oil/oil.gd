@@ -47,7 +47,7 @@ func ignite() -> void:
 	if !ignited:
 		ignited = true
 		fire_sprite.show()
-		Global.audio_manager.play_general_sound('fire')
+		Global.sound_manager.play_general_sound('fire')
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Bone:

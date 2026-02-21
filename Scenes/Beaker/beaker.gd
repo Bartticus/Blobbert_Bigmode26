@@ -44,7 +44,7 @@ func _on_explosion_timer_timeout() -> void:
 		if child is Oil:
 			child.hide()
 	
-	Global.audio_manager.play_required_sound('explosion')
+	Global.sound_manager.play_required_sound('explosion')
 	explosion_anim.play("boom")
 	await explosion_anim.animation_finished
 	

@@ -26,7 +26,7 @@ func trigger_action():
 			cutscene.trigger_action()
 		await get_tree().create_timer(0.2).timeout
 		animation_player.play("boom")
-		Global.audio_manager.play_required_sound('explosion')
+		Global.sound_manager.play_required_sound('explosion')
 		wire.visible = false
 		modulate = Color(0.3, 0.3, 0.3)
 		await animation_player.animation_finished

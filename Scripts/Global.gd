@@ -14,7 +14,7 @@ var tug_range: float = 750
 var current_level: String
 var should_transition: bool = false
 
-var audio_manager: Node2D
+var sound_manager: Node2D
 
 var key_count: int = 0
 var time_score: int = 0

@@ -176,7 +176,7 @@ func _on_Water_Body_Area_body_entered(body):
 		body.owner.trigger_action()
 	if body is Bone:
 		spawn_particles(body)
-		Global.audio_manager.play_general_sound('water')
+		Global.sound_manager.play_general_sound('water')
 
 func spawn_particles(body):
 	
@@ -195,4 +195,4 @@ func spawn_particles(body):
 func _on_water_body_area_body_exited(body: Node2D) -> void:
 	if body is Bone:
 		spawn_particles(body)
-		Global.audio_manager.play_general_sound('water')
+		Global.sound_manager.play_general_sound('water')

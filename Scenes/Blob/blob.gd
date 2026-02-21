@@ -69,18 +69,18 @@ func set_status(new_status) -> void:
 			if status_changed:
 				if whoosh_timer.is_stopped():
 					whoosh_timer.start()
-					Global.audio_manager.play_blob_sound('stretch')
-					Global.audio_manager.play_blob_sound('squish')
+					Global.sound_manager.play_blob_sound('stretch')
+					Global.sound_manager.play_blob_sound('squish')
 		Status.FAST:
 			current_face = face_dict["Whoa"]
 			if whoosh_timer.is_stopped():
 				whoosh_timer.start()
-				Global.audio_manager.play_blob_sound('whoosh')
+				Global.sound_manager.play_blob_sound('whoosh')
 		Status.SLOWING:
 			current_face = face_dict["Yikes"]
 		Status.HURT:
 			current_face = face_dict["Angry"]
-			Global.audio_manager.play_blob_sound('fling')
+			Global.sound_manager.play_blob_sound('fling')
 		Status.IDLE:
 			current_face = face_dict["Neutral"]
 		Status.ASLEEP:
@@ -180,7 +180,7 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 
 	if bounce_timer.is_stopped():
 		bounce_timer.start()
-		Global.audio_manager.play_blob_sound('bounce')
+		Global.sound_manager.play_blob_sound('bounce')
 
 	#change softbody physics when an oil is created, reverted when that oil area is exited
 	softbody.physics_material_override.friction = 1.0
