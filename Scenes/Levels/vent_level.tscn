@@ -14,8 +14,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
-[node name="VentLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_qbcej")]
-starting_screen = NodePath("Screens/LabScreen2b")
+[node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
 
 [node name="Blob" parent="." index="2" unique_id=104221436]
 position = Vector2(189, -2838)

@@ -59,6 +59,7 @@ reset={
 
 common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
+2d/solver/contact_max_allowed_penetration=1.0
 common/physics_interpolation=true
 
 [rendering]

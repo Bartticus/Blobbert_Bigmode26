@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bfkx4m1118507" path="res://Scenes/Beaker/beaker.gd" id="1_18ua4"]
 [ext_resource type="Texture2D" uid="uid://pgr3e21cm7q8" path="res://Assets/Sprites/LiquidLunch.png" id="1_cdnhj"]
-[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_18ua4"]
 [ext_resource type="Material" uid="uid://h4mx1loryx85" path="res://Scenes/BunsenBurner/bunsen_burner.material" id="2_g6f45"]
 [ext_resource type="Texture2D" uid="uid://lu1tskqwfk3d" path="res://Assets/Sprites/BOOM1.png" id="5_ihqxc"]
 [ext_resource type="Texture2D" uid="uid://y363y70s24ry" path="res://Assets/Sprites/BOOM2.png" id="6_qakos"]
+[ext_resource type="PackedScene" uid="uid://bywsr3ckwvqf2" path="res://Scenes/Fire/fire.tscn" id="7_ihqxc"]
 [ext_resource type="Texture2D" uid="uid://cps0r41gh8gme" path="res://Assets/Sprites/BOOM3.png" id="7_vk8a5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imnhf"]
@@ -237,16 +237,11 @@ position = Vector2(-2, 80)
 scale = Vector2(0.33236435, 0.3960756)
 texture = ExtResource("1_cdnhj")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1310723143]
+[node name="Fire" parent="BeakerSprite" unique_id=2049499128 instance=ExtResource("7_ihqxc")]
+unique_name_in_owner = true
 visible = false
-clip_children = 1
-texture_repeat = 2
-polygon = PackedVector2Array(-148, 327, 152, 327, 182, 276, 54, -156, 54, -323, -56, -323, -56, -156, -182, 272)
-uv = PackedVector2Array(-148, 327, 152, 327, 182, 276, 55, -156, 54, -330, -56, -330, -57, -155, -182, 272)
-
-[node name="Sprite2D" type="Sprite2D" parent="Polygon2D" unique_id=2048773700]
-scale = Vector2(2.8749993, 5.1562505)
-texture = ExtResource("2_18ua4")
+position = Vector2(-6.0174923, -865.9963)
+scale = Vector2(3.819, 3.205)
 
 [node name="FlameCheck" type="Area2D" parent="." unique_id=207418067]
 unique_name_in_owner = true

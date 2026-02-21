@@ -1338,5 +1338,6 @@ func _process(delta: float) -> void:
 				mul = 4
 			if _hinges_distances_squared[joint.name] * break_distance_ratio * break_distance_ratio * mul < _hinges_bodies[rigid_body.rigidbody.name].global_position.distance_squared_to(_hinges_bodies[joint.node_b].global_position):
 				deleted_count = deleted_count + 1
-				remove_joint(rigid_body, joint)
+				rigid_body.rigidbody.return_home()
+				# remove_joint(rigid_body, joint)
 				_last_delete_time = Time.get_ticks_msec()

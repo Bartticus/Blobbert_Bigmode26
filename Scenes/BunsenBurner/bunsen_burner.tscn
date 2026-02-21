@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1tk05nt48fgb" path="res://Assets/Sprites/Bunsen.png" id="2_m5rdo"]
 [ext_resource type="Texture2D" uid="uid://b4tsoetvrsu4m" path="res://Assets/Sprites/FIRE2.png" id="2_se1t2"]
 [ext_resource type="Texture2D" uid="uid://b4fcdxqrpar7w" path="res://Assets/Sprites/FIRE3.png" id="3_yj0vg"]
+[ext_resource type="Texture2D" uid="uid://b1g0eae33mi48" path="res://Assets/Sprites/Valve.png" id="5_yj0vg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt33f"]
 size = Vector2(95, 74)
@@ -54,5 +55,10 @@ autoplay = "default"
 position = Vector2(-25, -1)
 scale = Vector2(0.50113887, 0.51219505)
 texture = ExtResource("2_m5rdo")
+
+[node name="Valve" type="Sprite2D" parent="." unique_id=1682169205]
+position = Vector2(1, -2)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("5_yj0vg")
 
 [connection signal="area_entered" from="FireDetection" to="." method="_on_fire_detection_area_entered"]

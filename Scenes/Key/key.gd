@@ -2,6 +2,8 @@
 class_name Key
 extends Node2D
 
+var physics_fps = ProjectSettings.get_setting("physics/common/physics_ticks_per_second")
+
 @onready var snap_timer: Timer = %SnapTimer
 @onready var point_light_2d: PointLight2D = %PointLight2D
 @onready var key_sprite: Sprite2D = %Sprite2D2
@@ -12,7 +14,7 @@ extends Node2D
 # @export var Global.tug_range: float = 750
 # @export var max_tug_power: float = 4000
 @export var tug_decay: float = 3.0
-@export var max_snap_multiplier: float = 12.0
+@export var max_snap_multiplier: float = 12.0 * (physics_fps * (physics_fps / 120.0))
 @export var snap_timer_wait_time: float = 1.0
 @export var max_tuggers: float = 25.0
 
@@ -119,41 +121,43 @@ func set_current_bone(new_current_bone) -> void:
 	current_bone = new_current_bone
 
 
-func find_and_tug_target() -> void:
+func find_and_tug_target(delta) -> void:
 	find_closest_bone()
-	move_bone()
+	move_bone(delta)
 	
 
-func move_bone() -> void:
+func move_bone(delta) -> void:
 	if (current_bone is not Bone || status == Status.IDLE || dist_to_current_bone > Global.tug_range):
 		tug_rope.disable()
 		return
 	else:
 		tug_rope.enable()
 	
-	var new_force: Vector2 = current_bone.global_position.direction_to(global_position) * calculate_tugging_power()
+	var new_force: Vector2 = current_bone.global_position.direction_to(global_position) * calculate_tugging_power(delta)
 	var weight: float = dist_to_current_bone / Global.tug_range
 	match status:
 		Status.SNAPPING:
-			force_applied = -(new_force * calculate_snap_multiplier())
+			var snap_mult = calculate_snap_multiplier(delta)
+			print(snap_mult)
+			force_applied = -(new_force * snap_mult)
 		Status.TUGGING:
 			force_applied = force_applied.lerp(new_force, weight)
 	current_bone.apply_force(force_applied)
 
 
-func calculate_snap_multiplier() -> float:
-	return (max_snap_multiplier * ((snap_timer.wait_time - snap_timer.time_left) / snap_timer.wait_time))
+func calculate_snap_multiplier(delta) -> float:
+	return ((max_snap_multiplier * delta) * ((snap_timer.wait_time - snap_timer.time_left) / snap_timer.wait_time))
 
 
-func snap_away() -> void:
-	move_bone()
+func snap_away(delta) -> void:
+	move_bone(delta)
 	status = Status.IDLE
 
 
-func calculate_tugging_power() -> float:
+func calculate_tugging_power(delta) -> float:
 	if (dist_to_current_bone >= Global.tug_range):
 		return 0
-	var tugging_power = Global.tug_power * calculate_exponential_multiplier()
+	var tugging_power = (Global.tug_power) * delta * calculate_exponential_multiplier()
 
 	return [tugging_power, 100].max()
 
@@ -166,9 +170,9 @@ func calculate_exponential_multiplier() -> float:
 	return exp(-tug_decay * power_multiplier) * number_of_tuggers_ratio
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	match status:
 		Status.TUGGING:
-			find_and_tug_target()
+			find_and_tug_target(delta)
 		Status.SNAPPING:
-			snap_away()
+			snap_away(delta)

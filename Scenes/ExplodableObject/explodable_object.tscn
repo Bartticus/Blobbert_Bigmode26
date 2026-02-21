@@ -2,18 +2,21 @@
 
 [ext_resource type="Script" uid="uid://bvwrga51fkax4" path="res://Scenes/ExplodableObject/explodable_object.gd" id="1_uv7vk"]
 [ext_resource type="Texture2D" uid="uid://douwtc3katgqx" path="res://Assets/Tiles/MetalTile2.png" id="2_uv7vk"]
+[ext_resource type="Texture2D" uid="uid://caowmih6c7lnd" path="res://Assets/Sprites/danger.png" id="3_ybn4s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nln0y"]
 size = Vector2(200, 1400)
 
 [node name="ExplodableObject" type="StaticBody2D" unique_id=427107243]
-modulate = Color(2.2241454, 2.2241454, 2.2241454, 1)
 script = ExtResource("1_uv7vk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1538077168]
 shape = SubResource("RectangleShape2D_nln0y")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1202608035]
+[node name="Metal" type="Node2D" parent="." unique_id=1867177813]
+modulate = Color(2.2241454, 2.2241454, 2.2241454, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Metal" unique_id=1202608035]
 texture_repeat = 2
 position = Vector2(0, -509)
 scale = Vector2(0.52631575, 1)
@@ -21,7 +24,7 @@ texture = ExtResource("2_uv7vk")
 region_enabled = true
 region_rect = Rect2(0, 0, 380, 380)
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=158082020]
+[node name="Sprite2D2" type="Sprite2D" parent="Metal" unique_id=158082020]
 texture_repeat = 2
 position = Vector2(0, -129)
 scale = Vector2(0.52631575, 1)
@@ -29,7 +32,7 @@ texture = ExtResource("2_uv7vk")
 region_enabled = true
 region_rect = Rect2(0, 0, 380, 380)
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1409755925]
+[node name="Sprite2D3" type="Sprite2D" parent="Metal" unique_id=1409755925]
 texture_repeat = 2
 position = Vector2(0.9999924, 128)
 scale = Vector2(0.52631575, 1)
@@ -37,10 +40,24 @@ texture = ExtResource("2_uv7vk")
 region_enabled = true
 region_rect = Rect2(0, 0, 380, 380)
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=296528902]
+[node name="Sprite2D4" type="Sprite2D" parent="Metal" unique_id=296528902]
 texture_repeat = 2
 position = Vector2(0.9999924, 508)
 scale = Vector2(0.52631575, 1)
 texture = ExtResource("2_uv7vk")
 region_enabled = true
 region_rect = Rect2(0, 0, 380, 380)
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1529697394]
+position = Vector2(0, -400)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_ybn4s")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=188630265]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_ybn4s")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1002567058]
+position = Vector2(0, 400)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_ybn4s")

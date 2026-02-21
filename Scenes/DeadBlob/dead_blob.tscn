@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="3_y4cjx"]
 [ext_resource type="Texture2D" uid="uid://b6gmhedvaxudm" path="res://Assets/Sprites/Bodybert.png" id="4_u3bt4"]
 [ext_resource type="Script" uid="uid://kol6k5y6rb8a" path="res://addons/softbody2d/softbody2d.gd" id="5_fj2uy"]
-[ext_resource type="PackedScene" uid="uid://y68772m0q0a4" path="res://Scenes/Blob/rigid_body_2d.tscn" id="6_ktupb"]
+[ext_resource type="PackedScene" uid="uid://y68772m0q0a4" path="res://Scenes/Blob/bone.tscn" id="6_ktupb"]
 [ext_resource type="Material" uid="uid://sbpm02fsabvw" path="res://Scenes/Blob/swirl_material.tres" id="7_iri1b"]
 [ext_resource type="Script" uid="uid://c0wp4bnwvy7ol" path="res://Scenes/Blob/bone.gd" id="8_ve5xf"]
 [ext_resource type="Texture2D" uid="uid://b2ggkqwuioqai" path="res://Assets/Sprites/AltFaces_gruntingangry.png" id="9_qnqyy"]

@@ -1552,7 +1552,7 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_s181b"]
 tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 3
 custom_data_layer_0/name = "Oil"
 custom_data_layer_0/type = 1
@@ -3478,7 +3478,7 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_3ang3"]
 occlusion_layer_0/light_mask = 1
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 3
 custom_data_layer_0/name = "Oil"
 custom_data_layer_0/type = 1

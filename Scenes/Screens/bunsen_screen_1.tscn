@@ -19,6 +19,6 @@ objects_to_explode = [NodePath("../ExplodableObject")]
 texture = ExtResource("3_v5w3j")
 
 [node name="ExplodableObject" parent="." index="8" unique_id=427107243 instance=ExtResource("4_v5w3j")]
-position = Vector2(-15, 303)
+position = Vector2(2, 224)
 
 [editable path="Beaker"]

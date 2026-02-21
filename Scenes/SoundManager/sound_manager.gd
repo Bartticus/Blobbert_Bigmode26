@@ -18,6 +18,7 @@ func play_blob_sound(sound_type):
 	var random_index = randi() % blob_sounds.get(sound_type).size()
 	player.stream = blob_sounds.get(sound_type)[random_index]
 	player.play()
+	return player
 
 func play_general_sound(sound_type):
 	var player = general_sounds.get_player()
@@ -26,6 +27,7 @@ func play_general_sound(sound_type):
 	var random_index = randi() % general_sounds.get(sound_type).size()
 	player.stream = general_sounds.get(sound_type)[random_index]
 	player.play()
+	return player
 
 func play_required_sound(sound_type):
 	var player = required_sounds.get_player()
@@ -34,6 +36,7 @@ func play_required_sound(sound_type):
 	var random_index = randi() % required_sounds.get(sound_type).size()
 	player.stream = required_sounds.get(sound_type)[random_index]
 	player.play()
+	return player
 
 func play_stacking_sound(sound_type):
 	var player = stacking_sounds.get_player()
@@ -42,4 +45,5 @@ func play_stacking_sound(sound_type):
 	var random_index = randi() % stacking_sounds.get(sound_type).size()
 	player.stream = stacking_sounds.get(sound_type)[random_index]
 	player.play()
+	return player
 

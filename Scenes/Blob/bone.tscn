@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://y68772m0q0a4"]
 
+[ext_resource type="Script" uid="uid://c0wp4bnwvy7ol" path="res://Scenes/Blob/bone.gd" id="1_7ni3a"]
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ksh0y"]
 polygon = PackedVector2Array(0, -10, 5, -9, 9, -5, 10, 0, 9, 5, 5, 9, 0, 10, -5, 9, -9, 5, -10, 0, -9, -5, -5, -9)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ksh0y"]
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=702735613]
+[node name="Bone" type="RigidBody2D" unique_id=702735613]
 continuous_cd = 2
 contact_monitor = true
-max_contacts_reported = 1
+max_contacts_reported = 2
+script = ExtResource("1_7ni3a")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1083843233]
 occluder = SubResource("OccluderPolygon2D_ksh0y")

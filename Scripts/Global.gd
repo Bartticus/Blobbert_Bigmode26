@@ -1,15 +1,16 @@
 extends Node
 
+var physics_fps = ProjectSettings.get_setting("physics/common/physics_ticks_per_second")
 
 var blob: Blob
 var level: LevelScript = null
-var max_tug_power: float = 4000
-var max_multi_screen_tug_power: float = 5750
-var tug_power: float = 4000
+var max_tug_power: float = 4000 * physics_fps
+var max_multi_screen_tug_power: float = 5750 * physics_fps
+var tug_power: float = max_tug_power
 
 var max_tug_range: float = 750
 var max_multi_screen_tug_range: float = 1250
-var tug_range: float = 750
+var tug_range: float = max_tug_range
 
 var current_level: String
 var should_transition: bool = false

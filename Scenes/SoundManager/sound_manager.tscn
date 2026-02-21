@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://ba4pgnl36oehm" path="res://Assets/SFX/siren_01.wav" id="10_xia53"]
 [ext_resource type="AudioStream" uid="uid://c3b4uwamvd3ic" path="res://Assets/SFX/fire_01.wav" id="11_w7wka"]
 [ext_resource type="AudioStream" uid="uid://comdckgwtl8cx" path="res://Assets/SFX/water.wav" id="12_3vcix"]
+[ext_resource type="AudioStream" uid="uid://05gl81m4vo4y" path="res://Assets/SFX/sizzle_01.ogg" id="14_kf56u"]
 [ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
 [ext_resource type="Script" uid="uid://ctyjo3135c28x" path="res://Scenes/SoundManager/stacking_sounds.gd" id="16_myamy"]
 
@@ -39,6 +40,7 @@ script = ExtResource("9_wdgtj")
 glass_break = Array[AudioStream]([ExtResource("4_oo8t0"), ExtResource("5_wdgtj"), ExtResource("6_xia53"), ExtResource("7_m28n0"), ExtResource("8_1naht")])
 siren = Array[AudioStream]([ExtResource("10_xia53")])
 explosion = Array[AudioStream]([ExtResource("14_x57cx")])
+sizzle = Array[AudioStream]([ExtResource("14_kf56u")])
 
 [node name="RequiredSoundPlayer1" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=731427517]
 unique_name_in_owner = true

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://rqcw3dnc53r2"]
 
 [ext_resource type="Script" uid="uid://duhmxupd883qo" path="res://Scenes/Oil/oil.gd" id="1_0cryj"]
-[ext_resource type="Shader" path="res://Scenes/Oil/fire.gdshader" id="2_33feg"]
-[ext_resource type="Texture2D" uid="uid://dqxnesfxqu6rx" path="res://Assets/Sprites/FIRE.png" id="2_hxxqu"]
+[ext_resource type="PackedScene" uid="uid://bywsr3ckwvqf2" path="res://Scenes/Fire/fire.tscn" id="2_hxxqu"]
 [ext_resource type="Texture2D" uid="uid://ckx3a45lnxext" path="res://Assets/Sprites/splat02.png" id="4_52bxo"]
 [ext_resource type="Texture2D" uid="uid://doum0ai52xyf6" path="res://Assets/Sprites/splat20.png" id="5_33feg"]
 [ext_resource type="Texture2D" uid="uid://c61eh81u1pd8p" path="res://Assets/Sprites/splat10.png" id="5_hxxqu"]
@@ -11,83 +10,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nah6m"]
 size = Vector2(206, 74)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_usf6k"]
-frequency = 0.0064
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ew2lm"]
-noise = SubResource("FastNoiseLite_usf6k")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhf8y"]
-shader = ExtResource("2_33feg")
-shader_parameter/textureNoise = SubResource("NoiseTexture2D_ew2lm")
-shader_parameter/radius = 0.478000022705
-shader_parameter/effectControl = 0.718000034105
-shader_parameter/burnSpeed = 0.83200003952
-shader_parameter/shape = 1.0
-
-[sub_resource type="Animation" id="Animation_33feg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fire:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.9752066, 0.49778768)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fire:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, -73.42919)]
-}
-
-[sub_resource type="Animation" id="Animation_usf6k"]
-resource_name = "burn"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fire:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.5176324, 2.0000002),
-"update": 0,
-"values": [Vector2(0.9752066, 0.49778768), Vector2(0.616, 0.416)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fire:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.5176324, 2.0000002),
-"update": 0,
-"values": [Vector2(-2, -73.42919), Vector2(-2, -68.139)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ew2lm"]
-_data = {
-&"RESET": SubResource("Animation_33feg"),
-&"burn": SubResource("Animation_usf6k")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0cryj"]
 size = Vector2(314, 196)
@@ -218,19 +140,8 @@ script = ExtResource("1_0cryj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620871536]
 shape = SubResource("RectangleShape2D_nah6m")
 
-[node name="Fire" type="Sprite2D" parent="." unique_id=784809416]
+[node name="Fire" parent="." unique_id=214311019 instance=ExtResource("2_hxxqu")]
 visible = false
-material = SubResource("ShaderMaterial_mhf8y")
-position = Vector2(-2, -73.42919)
-scale = Vector2(0.9752066, 0.49778768)
-texture = ExtResource("2_hxxqu")
-region_enabled = true
-region_rect = Rect2(40.700012, 14.400005, 242.40002, 388)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fire" unique_id=2132705347]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_ew2lm")
-autoplay = &"burn"
 
 [node name="IgnitionTimer" type="Timer" parent="." unique_id=1506223997]
 autostart = true

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bywsr3ckwvqf2"]
+
+[ext_resource type="Shader" uid="uid://bioehjgso58v3" path="res://Scenes/Oil/fire.gdshader" id="1_tpclu"]
+[ext_resource type="Texture2D" uid="uid://dqxnesfxqu6rx" path="res://Assets/Sprites/FIRE.png" id="2_h0xlw"]
+[ext_resource type="Script" uid="uid://dq686gv3m1aom" path="res://Scenes/Fire/fire.gd" id="3_h0xlw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_usf6k"]
+frequency = 0.0064
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ew2lm"]
+noise = SubResource("FastNoiseLite_usf6k")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhf8y"]
+shader = ExtResource("1_tpclu")
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_ew2lm")
+shader_parameter/radius = 0.478000022705
+shader_parameter/effectControl = 0.718000034105
+shader_parameter/burnSpeed = 0.83200003952
+shader_parameter/shape = 1.0
+
+[sub_resource type="Animation" id="Animation_33feg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9752066, 0.49778768)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -73.42919)]
+}
+
+[sub_resource type="Animation" id="Animation_usf6k"]
+resource_name = "burn"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5176324, 2.0000002),
+"update": 0,
+"values": [Vector2(0.7, 0.358), Vector2(0.68, 0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5176324, 2.0000002),
+"update": 0,
+"values": [Vector2(-3, -59), Vector2(-3, -57)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ew2lm"]
+_data = {
+&"RESET": SubResource("Animation_33feg"),
+&"burn": SubResource("Animation_usf6k")
+}
+
+[node name="Fire" type="Node2D" unique_id=2049499128]
+script = ExtResource("3_h0xlw")
+
+[node name="FireSprite" type="Sprite2D" parent="." unique_id=214311019]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_mhf8y")
+position = Vector2(-2, -73.42919)
+scale = Vector2(0.9752066, 0.49778768)
+texture = ExtResource("2_h0xlw")
+region_enabled = true
+region_rect = Rect2(40.700012, 14.400005, 242.40002, 388)
+
+[node name="FireAnimation" type="AnimationPlayer" parent="FireSprite" unique_id=205752940]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_ew2lm")
+autoplay = &"burn"

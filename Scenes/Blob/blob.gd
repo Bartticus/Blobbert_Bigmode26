@@ -189,7 +189,6 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#add pivot point
 	var oil_pivot: Node2D = Node2D.new()
 	body.call_deferred("add_child", oil_pivot)
-	
 	#instantiate oil
 	var oil: Oil = oil_scene.instantiate()
 	oil_pivot.call_deferred("add_child", oil)

@@ -2,7 +2,7 @@ class_name Oil
 extends Area2D
 
 @onready var splatter_sprites: AnimatedSprite2D = $Splatters
-@onready var fire_sprite: Sprite2D = $Fire
+@onready var fire: Node2D = $Fire
 @onready var adj_oil_checker: Area2D = $AdjacentOilChecker
 @onready var ignited: bool = false
 
@@ -38,7 +38,7 @@ func _on_timer_timeout() -> void:
 	for area in adj_oil_checker.get_overlapping_areas():
 		if area.owner is Oil:
 			var oil = area.owner
-			if oil.fire_sprite.visible:
+			if oil.fire.visible:
 				ignite()
 		if area.owner is Beaker && ignited:
 			area.owner.explode()
@@ -46,7 +46,8 @@ func _on_timer_timeout() -> void:
 func ignite() -> void:
 	if !ignited:
 		ignited = true
-		fire_sprite.show()
+		fire.show()
+		fire.fire_animation.play('burn')
 		Global.sound_manager.play_general_sound('fire')
 
 func _on_body_entered(body: Node2D) -> void:

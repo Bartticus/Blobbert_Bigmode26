@@ -10,6 +10,9 @@ extends RigidBody2D
 @onready var explosion_timer: Timer = %ExplosionTimer
 @onready var beaker_polygon: CollisionPolygon2D = %BeakerPolygon
 @onready var explosion_anim: AnimationPlayer = %AnimationPlayer
+@onready var fire: Node2D = %Fire
+
+var sizzle_player: AudioStreamPlayer2D = null
 
 
 func _on_flame_check_area_entered(area: Area2D) -> void:
@@ -22,28 +25,30 @@ func explode():
 	if exploding || !flammable:
 		return
 	exploding = true
+	fire.visible = true
+	sizzle_player = Global.sound_manager.play_required_sound('sizzle')
 	explosion_timer.start()
 
 func _physics_process(delta: float) -> void:
-	if exploding:
+	if exploding && is_instance_valid(beaker_sprite) && is_instance_valid(beaker_polygon):
 		var sprite_scale = sprite_scale_mult * delta
 		beaker_sprite.scale += Vector2(sprite_scale, sprite_scale)
 		beaker_polygon.scale += Vector2(sprite_scale, sprite_scale)
 
 func _on_explosion_timer_timeout() -> void:
-	exploding = false
-
 	for o in objects_to_explode:
 		if o:
 			o.trigger_action()
 	
 	#make beaker and oils invisible
-	beaker_sprite.visible = false
+	beaker_sprite.queue_free()
+	beaker_polygon.queue_free()
 	var all_children = get_all_children(self)
 	for child in all_children:
 		if child is Oil:
 			child.hide()
 	
+	sizzle_player.stop()
 	Global.sound_manager.play_required_sound('explosion')
 	explosion_anim.play("boom")
 	await explosion_anim.animation_finished

@@ -20,3 +20,15 @@ func set_status(new_status) -> void:
 	status = new_status
 	# match status:
 	# 	pass
+
+func return_home():
+	var should_return = false
+	for body in get_colliding_bodies():
+		if !(body is Bone):
+			should_return = true
+			break
+	if should_return:
+		set_collision_mask_value(1, false)
+		await get_tree().create_timer(0.1).timeout
+		set_collision_mask_value(1, true)
+
