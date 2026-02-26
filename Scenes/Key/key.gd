@@ -1,4 +1,3 @@
-@tool
 class_name Key
 extends Node2D
 
@@ -9,6 +8,7 @@ var physics_fps = ProjectSettings.get_setting("physics/common/physics_ticks_per_
 @onready var key_sprite: Sprite2D = %Sprite2D2
 @onready var tug_rope: Line2D = %TugRope
 @onready var key_label: Label = %KeyLabel
+@onready var keycode = OS.find_keycode_from_string(name)
 
 # Now stored in Global
 # @export var Global.tug_range: float = 750
@@ -17,15 +17,6 @@ var physics_fps = ProjectSettings.get_setting("physics/common/physics_ticks_per_
 @export var max_snap_multiplier: float = 12.0 * (physics_fps * (physics_fps / 120.0))
 @export var snap_timer_wait_time: float = 1.0
 @export var max_tuggers: float = 25.0
-
-@export var snap_keys_to_position: bool = false:
-	set(value):
-		snap_keys_to_position = value
-		if snap_keys_to_position and Engine.is_editor_hint():
-			set_key_positions()
-
-func set_key_positions():
-	set_key_label(str(name))
 
 var current_bone: Bone : set = set_current_bone
 var dist_to_current_bone: float
@@ -70,22 +61,6 @@ func put_in_status_group():
 	add_to_group(STATUS_GROUPS.get(status, STATUS_GROUPS[Status.IDLE]))
 	
 	Global.blob.check_status()
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and !event.is_echo():
-		if !event.is_echo() && !Global.playing_cutscene():
-			var key_string: String = OS.get_keycode_string(event.keycode)
-			if key_string == name && status != Status.TUGGING:
-				status = Status.TUGGING
-	
-	if (event is InputEventKey and event.is_released()):
-		if event.is_released() || Global.playing_cutscene():
-			var key_string: String = OS.get_keycode_string(event.keycode)
-			if key_string == name:
-				if status != Status.SNAPPING:
-					status = Status.SNAPPING
-				else:
-					status = Status.IDLE
 
 
 func find_closest_bone() -> void:
@@ -169,8 +144,20 @@ func calculate_exponential_multiplier() -> float:
 
 
 func _physics_process(delta: float) -> void:
+	handle_input()
+
 	match status:
 		Status.TUGGING:
 			find_and_tug_target(delta)
 		Status.SNAPPING:
 			snap_away(delta)
+
+func handle_input():
+	if Input.is_physical_key_pressed(keycode):
+		if status == Status.IDLE:
+			status = Status.TUGGING
+	else:
+		if status == Status.TUGGING:
+			status = Status.SNAPPING
+		elif status == Status.SNAPPING:
+			status = Status.IDLE

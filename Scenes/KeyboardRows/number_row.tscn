@@ -286,7 +286,6 @@ material = SubResource("ShaderMaterial_ug0rh")
 text = "7"
 
 [node name="8" parent="." unique_id=1879234845 instance=ExtResource("2_2p85f")]
-snap_keys_to_position = true
 
 [node name="Sprite2D" parent="8" index="0" unique_id=726858926]
 region_rect = Rect2(28, 65, 13, 12)

@@ -4,6 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://c47774xsx4ej2" path="res://Scenes/Key/key.tscn" id="2_48qus"]
 [ext_resource type="Shader" uid="uid://ddv75hdnifa2k" path="res://Scenes/Key/rope_shader.gdshader" id="3_48qus"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_48qus"]
+resource_local_to_scene = true
+shader = ExtResource("3_48qus")
+shader_parameter/beams = 2
+shader_parameter/energy = 6.0
+shader_parameter/roughness = 1
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.10000000149012
+shader_parameter/outline_thickness = 0.10000000149012
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.0
+shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
+shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
+shader_parameter/progress = 1.0
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.05
+shader_parameter/noise_scale = Vector2(10, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wv17v"]
 resource_local_to_scene = true
 shader = ExtResource("3_48qus")
@@ -184,26 +204,6 @@ shader_parameter/y_offset = 0.0
 shader_parameter/fixed_edge_size = 0.05
 shader_parameter/noise_scale = Vector2(10, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrv2f"]
-resource_local_to_scene = true
-shader = ExtResource("3_48qus")
-shader_parameter/beams = 2
-shader_parameter/energy = 6.0
-shader_parameter/roughness = 1
-shader_parameter/frequency = 10
-shader_parameter/speed = 1.0
-shader_parameter/thickness = 0.10000000149012
-shader_parameter/outline_thickness = 0.10000000149012
-shader_parameter/beam_difference = 0.0
-shader_parameter/glow = 0.0
-shader_parameter/outline_glow = 0.0
-shader_parameter/color = Color(0.9098039, 1, 1, 0.6509804)
-shader_parameter/outline_color = Color(0, 0.49411765, 0.9490196, 0.2)
-shader_parameter/progress = 1.0
-shader_parameter/y_offset = 0.0
-shader_parameter/fixed_edge_size = 0.05
-shader_parameter/noise_scale = Vector2(10, 1)
-
 [node name="ARow" type="Node2D" unique_id=1742281654]
 script = ExtResource("1_q8gbw")
 snap_keys_to_position = true
@@ -214,7 +214,7 @@ snap_keys_to_position = true
 region_rect = Rect2(56, 0, 13, 12)
 
 [node name="Beam" parent="A/TugRope" parent_id_path=PackedInt32Array(1531063233, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_wv17v")
+material = SubResource("ShaderMaterial_48qus")
 
 [node name="S" parent="." unique_id=1615329120 instance=ExtResource("2_48qus")]
 
@@ -222,7 +222,7 @@ material = SubResource("ShaderMaterial_wv17v")
 region_rect = Rect2(14, 39, 13, 12)
 
 [node name="Beam" parent="S/TugRope" parent_id_path=PackedInt32Array(1615329120, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_7off2")
+material = SubResource("ShaderMaterial_wv17v")
 
 [node name="KeyLabel" parent="S/Control" parent_id_path=PackedInt32Array(1615329120, 1604450388) index="0" unique_id=513862480]
 text = "S"
@@ -233,7 +233,7 @@ text = "S"
 region_rect = Rect2(0, 13, 13, 12)
 
 [node name="Beam" parent="D/TugRope" parent_id_path=PackedInt32Array(225352611, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_nk1g4")
+material = SubResource("ShaderMaterial_7off2")
 
 [node name="KeyLabel" parent="D/Control" parent_id_path=PackedInt32Array(225352611, 1604450388) index="0" unique_id=513862480]
 text = "D"
@@ -244,7 +244,7 @@ text = "D"
 region_rect = Rect2(28, 13, 13, 12)
 
 [node name="Beam" parent="F/TugRope" parent_id_path=PackedInt32Array(314082641, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_pjxlx")
+material = SubResource("ShaderMaterial_nk1g4")
 
 [node name="KeyLabel" parent="F/Control" parent_id_path=PackedInt32Array(314082641, 1604450388) index="0" unique_id=513862480]
 text = "F"
@@ -255,7 +255,7 @@ text = "F"
 region_rect = Rect2(42, 13, 13, 12)
 
 [node name="Beam" parent="G/TugRope" parent_id_path=PackedInt32Array(1384724601, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_gr7im")
+material = SubResource("ShaderMaterial_pjxlx")
 
 [node name="KeyLabel" parent="G/Control" parent_id_path=PackedInt32Array(1384724601, 1604450388) index="0" unique_id=513862480]
 text = "G"
@@ -266,7 +266,7 @@ text = "G"
 region_rect = Rect2(56, 13, 13, 12)
 
 [node name="Beam" parent="H/TugRope" parent_id_path=PackedInt32Array(1088535450, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_p57fk")
+material = SubResource("ShaderMaterial_gr7im")
 
 [node name="KeyLabel" parent="H/Control" parent_id_path=PackedInt32Array(1088535450, 1604450388) index="0" unique_id=513862480]
 text = "H"
@@ -277,9 +277,13 @@ text = "H"
 region_rect = Rect2(84, 13, 13, 12)
 
 [node name="Beam" parent="J/TugRope" parent_id_path=PackedInt32Array(1034136818, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_kr3wf")
+material = SubResource("ShaderMaterial_p57fk")
 
-[node name="KeyLabel" parent="J/Control" parent_id_path=PackedInt32Array(1034136818, 1604450388) index="0" unique_id=513862480]
+[node name="Control" parent="J" index="5" unique_id=1604450388]
+offset_top = -3.0
+offset_bottom = 37.0
+
+[node name="KeyLabel" parent="J/Control" index="0" unique_id=513862480]
 text = "J"
 
 [node name="K" parent="." unique_id=409903911 instance=ExtResource("2_48qus")]
@@ -288,7 +292,7 @@ text = "J"
 region_rect = Rect2(0, 26, 13, 12)
 
 [node name="Beam" parent="K/TugRope" parent_id_path=PackedInt32Array(409903911, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_p1jyr")
+material = SubResource("ShaderMaterial_kr3wf")
 
 [node name="KeyLabel" parent="K/Control" parent_id_path=PackedInt32Array(409903911, 1604450388) index="0" unique_id=513862480]
 text = "K"
@@ -299,7 +303,7 @@ text = "K"
 region_rect = Rect2(14, 26, 13, 12)
 
 [node name="Beam" parent="L/TugRope" parent_id_path=PackedInt32Array(2137765974, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_d7cak")
+material = SubResource("ShaderMaterial_p1jyr")
 
 [node name="KeyLabel" parent="L/Control" parent_id_path=PackedInt32Array(2137765974, 1604450388) index="0" unique_id=513862480]
 text = "L"
@@ -310,7 +314,7 @@ text = "L"
 region_rect = Rect2(42, 0, 13, 12)
 
 [node name="Beam" parent="Semicolon/TugRope" parent_id_path=PackedInt32Array(1417331160, 300641417) index="0" unique_id=492450127]
-material = SubResource("ShaderMaterial_rrv2f")
+material = SubResource("ShaderMaterial_d7cak")
 
 [node name="KeyLabel" parent="Semicolon/Control" parent_id_path=PackedInt32Array(1417331160, 1604450388) index="0" unique_id=513862480]
 offset_left = -35.0

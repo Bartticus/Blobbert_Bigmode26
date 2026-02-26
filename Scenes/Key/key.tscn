@@ -59,7 +59,7 @@ shader_parameter/fps = 6.0
 shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")
 
 [sub_resource type="LabelSettings" id="LabelSettings_sq4g3"]
-font_size = 45
+font_size = 40
 font_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
