@@ -9,10 +9,12 @@ func _on_play_pressed() -> void:
 func _on_credits_pressed() -> void:
 	sfx.play()
 	$Credits.show()
+	$Cutscene.hide()
 
 func _on_return_pressed() -> void:
 	sfx.play()
 	$Credits.hide()
+	$Cutscene.show()
 
 func _on_quit_pressed() -> void:
 	sfx.play()

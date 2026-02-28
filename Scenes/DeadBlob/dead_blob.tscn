@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://kol6k5y6rb8a" path="res://addons/softbody2d/softbody2d.gd" id="5_fj2uy"]
 [ext_resource type="PackedScene" uid="uid://y68772m0q0a4" path="res://Scenes/Blob/bone.tscn" id="6_ktupb"]
 [ext_resource type="Material" uid="uid://sbpm02fsabvw" path="res://Scenes/Blob/swirl_material.tres" id="7_iri1b"]
-[ext_resource type="Script" uid="uid://c0wp4bnwvy7ol" path="res://Scenes/Blob/bone.gd" id="8_ve5xf"]
 [ext_resource type="Texture2D" uid="uid://b2ggkqwuioqai" path="res://Assets/Sprites/AltFaces_gruntingangry.png" id="9_qnqyy"]
 [ext_resource type="Texture2D" uid="uid://btalktlu6ca3" path="res://Assets/Sprites/AltFaces_heehee.png" id="10_l51sc"]
 [ext_resource type="Texture2D" uid="uid://cj7euetrddfkn" path="res://Assets/Sprites/AltFaces_Hi.png" id="11_c54kh"]
@@ -422,7 +421,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Blob/Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.9999987, 0.9999987)
+scale = Vector2(0.9999986, 0.9999986)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -636,7 +635,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-20" type="Bone2D" parent="Blob/Softbody/Skeleton2D" unique_id=1360935816]
 position = Vector2(102.15682, 48.364586)
 rotation = 1.6354785
-scale = Vector2(0.9999987, 0.9999987)
+scale = Vector2(0.9999986, 0.9999986)
 rest = Transform2D(-0.06463696, 0.99790883, -0.99790883, -0.06463696, 102.15682, 48.364586)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -782,7 +781,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-31" type="Bone2D" parent="Blob/Softbody/Skeleton2D" unique_id=485505377]
 position = Vector2(147.68915, 103.762596)
 rotation = -1.5891105
-scale = Vector2(0.9999987, 0.9999987)
+scale = Vector2(0.9999986, 0.9999986)
 rest = Transform2D(-0.018313143, -0.9998323, 0.9998323, -0.018313143, 147.68915, 103.762596)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -799,7 +798,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 0
 metadata/bone_name = &"Bone-0"
 
@@ -854,7 +852,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 1
 metadata/bone_name = &"Bone-1"
 
@@ -933,7 +930,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 2
 metadata/bone_name = &"Bone-2"
 
@@ -988,7 +984,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 3
 metadata/bone_name = &"Bone-3"
 
@@ -1079,7 +1074,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 4
 metadata/bone_name = &"Bone-4"
 
@@ -1134,7 +1128,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 5
 metadata/bone_name = &"Bone-5"
 
@@ -1213,7 +1206,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 6
 metadata/bone_name = &"Bone-6"
 
@@ -1256,7 +1248,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 7
 metadata/bone_name = &"Bone-7"
 
@@ -1311,7 +1302,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 8
 metadata/bone_name = &"Bone-8"
 
@@ -1378,7 +1368,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 9
 metadata/bone_name = &"Bone-9"
 
@@ -1469,7 +1458,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 10
 metadata/bone_name = &"Bone-10"
 
@@ -1560,7 +1548,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 11
 metadata/bone_name = &"Bone-11"
 
@@ -1651,7 +1638,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 12
 metadata/bone_name = &"Bone-12"
 
@@ -1742,7 +1728,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 13
 metadata/bone_name = &"Bone-13"
 
@@ -1833,7 +1818,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 14
 metadata/bone_name = &"Bone-14"
 
@@ -1924,7 +1908,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 15
 metadata/bone_name = &"Bone-15"
 
@@ -2015,7 +1998,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 16
 metadata/bone_name = &"Bone-16"
 
@@ -2094,7 +2076,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 17
 metadata/bone_name = &"Bone-17"
 
@@ -2161,7 +2142,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 18
 metadata/bone_name = &"Bone-18"
 
@@ -2228,7 +2208,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 19
 metadata/bone_name = &"Bone-19"
 
@@ -2295,7 +2274,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 20
 metadata/bone_name = &"Bone-20"
 
@@ -2386,7 +2364,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 21
 metadata/bone_name = &"Bone-21"
 
@@ -2477,7 +2454,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 22
 metadata/bone_name = &"Bone-22"
 
@@ -2568,7 +2544,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 23
 metadata/bone_name = &"Bone-23"
 
@@ -2659,7 +2634,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 24
 metadata/bone_name = &"Bone-24"
 
@@ -2750,7 +2724,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 25
 metadata/bone_name = &"Bone-25"
 
@@ -2829,7 +2802,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 26
 metadata/bone_name = &"Bone-26"
 
@@ -2920,7 +2892,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 27
 metadata/bone_name = &"Bone-27"
 
@@ -2975,7 +2946,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 28
 metadata/bone_name = &"Bone-28"
 
@@ -3030,7 +3000,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 29
 metadata/bone_name = &"Bone-29"
 
@@ -3085,7 +3054,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 30
 metadata/bone_name = &"Bone-30"
 
@@ -3152,7 +3120,6 @@ collision_layer = 2
 collision_mask = 51
 mass = 0.05
 physics_material_override = SubResource("PhysicsMaterial_074og")
-script = ExtResource("8_ve5xf")
 metadata/idx = 31
 metadata/bone_name = &"Bone-31"
 

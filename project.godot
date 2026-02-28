@@ -17,12 +17,15 @@ universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 config/name="Blobbert_Bigmode26"
 run/main_scene="uid://b4o23ec1ofw0u"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.080783345, 0.080783345, 0.080783345, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://cfr2opumrp8tc"
 config/icon="uid://c0p8omeoyfioo"
 
 [autoload]
 
 Global="*uid://biaw0gthqe1b8"
-GlobalAudio="*uid://ca6p5hjs2q187"
+GlobalAudio="*uid://81xq4pijgsqq"
 Talo="*uid://cf5txmco4tia4"
 
 [display]
