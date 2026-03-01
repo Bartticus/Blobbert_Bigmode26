@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://difhd35lspqod"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bpn3auqt8vgl2"]
 
-[sub_resource type="Shader" id="Shader_kfdnt"]
+[sub_resource type="Shader" id="Shader_at2vw"]
 code = "shader_type canvas_item;
 render_mode world_vertex_coords;
 
@@ -40,15 +40,15 @@ void fragment() {
 	COLOR = texture(TEXTURE, squiggle_uv) * modulate;
 }"
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_kuqwa"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yk0sc"]
-noise = SubResource("FastNoiseLite_kuqwa")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp05e"]
+noise = SubResource("FastNoiseLite_hnblv")
 seamless = true
 
 [resource]
-shader = SubResource("Shader_kfdnt")
-shader_parameter/scale = Vector2(5, 5)
-shader_parameter/strength = 0.03
+shader = SubResource("Shader_at2vw")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.2
 shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_yk0sc")
+shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")

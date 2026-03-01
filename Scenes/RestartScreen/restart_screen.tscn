@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://moswwloabatl"]
 
 [ext_resource type="Script" uid="uid://yww8nj6uli14" path="res://Scenes/RestartScreen/restart_screen.gd" id="1_558gm"]
-[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://main_theme.tres" id="1_m4fy1"]
+[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://Materials/main_theme.tres" id="1_m4fy1"]
 [ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="2_vl6m8"]
 [ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="4_558gm"]
 

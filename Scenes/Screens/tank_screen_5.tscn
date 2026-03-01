@@ -9,6 +9,59 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x11n8"]
 size = Vector2(800, 500)
 
+[sub_resource type="Shader" id="Shader_6v554"]
+code = "shader_type canvas_item;
+render_mode world_vertex_coords;
+
+group_uniforms Squiggle;
+/**
+ * Noise texture scale
+ * By default, the noise texture's size in world coordinates is set by its resolution
+*/
+uniform vec2 scale = vec2(1.0);
+uniform float strength = 1.0;
+/**
+ * Number of squiggle frames per second
+*/
+uniform float fps = 6.0;
+uniform sampler2D noise : filter_linear, repeat_enable;
+group_uniforms;
+
+varying vec4 modulate;
+varying vec2 noise_uv;
+
+void vertex() {
+	modulate = COLOR;
+	
+	// Use world coordinates for scale-independent squiggles, offset by position to keep pattern attached to object
+	noise_uv = (VERTEX - MODEL_MATRIX[3].xy) / (vec2(textureSize(noise, 0)) * scale);
+}
+
+// Use irrational constants for unique squiggles every frame
+#define offset_multiplier vec2(PI, E)
+
+void fragment() {
+	vec2 noise_offset = vec2(floor(TIME * fps)) * offset_multiplier;
+	float noise_sample = texture(noise, noise_uv + noise_offset).r * 4.0 * PI;
+	vec2 direction = vec2(cos(noise_sample), sin(noise_sample));
+	vec2 squiggle_uv = UV + direction * strength * 0.005;
+	
+	COLOR = texture(TEXTURE, squiggle_uv) * modulate;
+}"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp05e"]
+noise = SubResource("FastNoiseLite_hnblv")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_or0r3"]
+shader = SubResource("Shader_6v554")
+shader_parameter/scale = Vector2(15, 15)
+shader_parameter/strength = 0.2
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")
+
 [node name="TankScreen5" unique_id=1360540123 instance=ExtResource("1_x11n8")]
 
 [node name="ScreenTileMapLayerXs" parent="." index="1" unique_id=430490676]
@@ -74,6 +127,7 @@ polygon = PackedVector2Array(-73.69194, -207.83405, -25.226515, 19.351807, 176.5
 visible = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="." index="14" unique_id=868889843]
+material = SubResource("ShaderMaterial_or0r3")
 position = Vector2(795, 177)
 scale = Vector2(2, 2)
 texture = ExtResource("4_1davr")
@@ -81,16 +135,16 @@ texture = ExtResource("4_1davr")
 [node name="Battery" parent="." index="15" unique_id=1707908979 instance=ExtResource("5_6v554")]
 position = Vector2(541, 465)
 
-[node name="BatteryBody" parent="Battery" index="0" unique_id=1219371551]
+[node name="Wire" parent="Battery" index="0" unique_id=229488326]
+z_index = -5
+
+[node name="BatteryBody" parent="Battery" index="1" unique_id=1219371551]
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 
-[node name="WireOrigin" parent="Battery" index="1" unique_id=345071377]
+[node name="WireOrigin" parent="Battery" index="2" unique_id=345071377]
 position = Vector2(1725, -3208)
-
-[node name="Wire" parent="Battery" index="2" unique_id=229488326]
-z_index = -5
 
 [editable path="WaterSpray/FastWater3"]
 [editable path="WaterSpray/FastWater2"]

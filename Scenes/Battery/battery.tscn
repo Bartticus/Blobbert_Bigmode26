@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhaco54b7cbem"]
 
 [ext_resource type="Script" uid="uid://j3ti5tmykju7" path="res://Scenes/Battery/battery.gd" id="1_vrpf4"]
+[ext_resource type="Material" uid="uid://ct0onbujk3ljn" path="res://Materials/battery_squiggle.tres" id="2_5asiw"]
 [ext_resource type="Texture2D" uid="uid://c72odowvdpis8" path="res://Assets/Sprites/BatteryAziz.png" id="2_vrpf4"]
 [ext_resource type="Texture2D" uid="uid://lu1tskqwfk3d" path="res://Assets/Sprites/BOOM1.png" id="3_wryev"]
 [ext_resource type="Texture2D" uid="uid://y363y70s24ry" path="res://Assets/Sprites/BOOM2.png" id="4_5asiw"]
@@ -238,17 +239,20 @@ physics_material_override = SubResource("PhysicsMaterial_imnhf")
 shape = SubResource("CircleShape2D_vrpf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="BatteryBody" unique_id=1783101160]
+material = ExtResource("2_5asiw")
 position = Vector2(-49, -1.9999999)
 rotation = -1.5707964
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_vrpf4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="BatteryBody" unique_id=1714969541]
+material = ExtResource("2_5asiw")
 rotation = -1.5707964
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_vrpf4")
 
 [node name="Sprite2D3" type="Sprite2D" parent="BatteryBody" unique_id=1674745555]
+material = ExtResource("2_5asiw")
 position = Vector2(47.999996, -1.9999999)
 rotation = -1.5707964
 scale = Vector2(0.8, 0.8)

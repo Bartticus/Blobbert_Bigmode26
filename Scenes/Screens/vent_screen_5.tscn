@@ -91,8 +91,5 @@ scale = Vector2(0.3, 0.3)
 position = Vector2(1866, 105)
 scale = Vector2(0.3, 0.3)
 
-[node name="ScreenSpace" parent="." index="8" unique_id=1231027623]
-visible = false
-
 [node name="ScreenBlob" parent="." index="11" unique_id=104221436]
 position = Vector2(592, 1036)

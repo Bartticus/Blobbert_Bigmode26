@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dyfv4ndtvrspm" path="res://Assets/Sprites/TubeRack.png" id="1_ad0bo"]
 [ext_resource type="Script" uid="uid://cvwdiyx8yn7ni" path="res://Scenes/Tubes/tubes.gd" id="1_g84fs"]
+[ext_resource type="Material" uid="uid://0se55cx00n8j" path="res://Materials/rack_squiggle.tres" id="2_7q53p"]
 [ext_resource type="Texture2D" uid="uid://drfdit7him4iy" path="res://Assets/Sprites/testtube.png" id="2_g84fs"]
+[ext_resource type="Material" uid="uid://j2rvkwddutb0" path="res://Materials/tube_squiggle.tres" id="4_i0hl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfj18"]
 size = Vector2(1186, 108)
@@ -46,6 +48,7 @@ position = Vector2(579, 92)
 shape = SubResource("CapsuleShape2D_tc6rh")
 
 [node name="RackSprite" type="Sprite2D" parent="Rack" unique_id=1521882921]
+material = ExtResource("2_7q53p")
 position = Vector2(9, 13)
 scale = Vector2(1.1777344, 1.5238096)
 texture = ExtResource("1_ad0bo")
@@ -65,6 +68,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pfj18")
 
 [node name="TubeSprite" type="Sprite2D" parent="Tube1" unique_id=376966234]
+material = ExtResource("4_i0hl0")
 position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")
@@ -98,6 +102,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pfj18")
 
 [node name="TubeSprite" type="Sprite2D" parent="Tube2" unique_id=148167315]
+material = ExtResource("4_i0hl0")
 position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")
@@ -136,6 +141,7 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="TubeSprite" type="Sprite2D" parent="Tube3" unique_id=1018363347]
+material = ExtResource("4_i0hl0")
 position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")
@@ -169,6 +175,7 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="TubeSprite" type="Sprite2D" parent="Tube4" unique_id=518055459]
+material = ExtResource("4_i0hl0")
 position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")
@@ -202,6 +209,7 @@ node_a = NodePath("../../Rack")
 node_b = NodePath("..")
 
 [node name="TubeSprite" type="Sprite2D" parent="Tube5" unique_id=494183693]
+material = ExtResource("4_i0hl0")
 position = Vector2(4, 58)
 scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_g84fs")

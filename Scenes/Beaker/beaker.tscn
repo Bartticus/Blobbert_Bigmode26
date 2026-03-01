@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfkx4m1118507" path="res://Scenes/Beaker/beaker.gd" id="1_18ua4"]
 [ext_resource type="Texture2D" uid="uid://pgr3e21cm7q8" path="res://Assets/Sprites/LiquidLunch.png" id="1_cdnhj"]
-[ext_resource type="Material" uid="uid://h4mx1loryx85" path="res://Scenes/BunsenBurner/bunsen_burner.material" id="2_g6f45"]
+[ext_resource type="Material" uid="uid://cpub4hbforsy" path="res://Materials/beaker_squiggle.tres" id="2_ihqxc"]
 [ext_resource type="Texture2D" uid="uid://lu1tskqwfk3d" path="res://Assets/Sprites/BOOM1.png" id="5_ihqxc"]
 [ext_resource type="Texture2D" uid="uid://y363y70s24ry" path="res://Assets/Sprites/BOOM2.png" id="6_qakos"]
 [ext_resource type="PackedScene" uid="uid://bywsr3ckwvqf2" path="res://Scenes/Fire/fire.tscn" id="7_ihqxc"]
@@ -232,7 +232,7 @@ polygon = PackedVector2Array(-148, 327, 152, 327, 176, 304, 187, 265, 62, -112, 
 
 [node name="BeakerSprite" type="Sprite2D" parent="." unique_id=1452955802]
 unique_name_in_owner = true
-material = ExtResource("2_g6f45")
+material = ExtResource("2_ihqxc")
 position = Vector2(-2, 80)
 scale = Vector2(0.33236435, 0.3960756)
 texture = ExtResource("1_cdnhj")

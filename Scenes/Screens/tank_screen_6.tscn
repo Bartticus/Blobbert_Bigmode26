@@ -2,8 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_hqqtq"]
 [ext_resource type="PackedScene" uid="uid://byh3j81if5jct" path="res://Scenes/VentDoor/vent_door.tscn" id="2_bnaxw"]
-[ext_resource type="Texture2D" uid="uid://douwtc3katgqx" path="res://Assets/Tiles/MetalTile2.png" id="3_6i8ix"]
-[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="3_lf7uf"]
 [ext_resource type="Texture2D" uid="uid://caowmih6c7lnd" path="res://Assets/Sprites/danger.png" id="5_gcwcn"]
 
 [node name="TankScreen6" unique_id=1360540123 instance=ExtResource("1_hqqtq")]
@@ -15,40 +13,19 @@ tile_map_data = PackedByteArray("AAAAAB4AIgAEAAAAAAAAAB8AIgAEAAEAAAAAACAAIgAEAAI
 position = Vector2(610, -1588)
 scale = Vector2(5, 5)
 
-[node name="Sprite2D2" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="1" unique_id=81496720]
-modulate = Color(1.685791, 1.685791, 1.685791, 1)
-texture_repeat = 2
-position = Vector2(63.4, 264.59998)
-scale = Vector2(0.9999998, 0.9999998)
-texture = ExtResource("3_6i8ix")
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 528)
-
-[node name="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="2" unique_id=1097457276]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="VentDoor/DoorBody/Sprite2D" index="0" unique_id=1113130979]
-visible = false
-modulate = Color(1, 0, 0, 1)
-position = Vector2(64.39999, 50.631058)
-scale = Vector2(1, 0.24271847)
-texture = ExtResource("3_lf7uf")
-
-[node name="Sprite2D2" type="Sprite2D" parent="VentDoor/DoorBody/Sprite2D" index="1" unique_id=116669189]
-visible = false
-modulate = Color(1, 0, 0, 1)
-position = Vector2(64.4, 104.36894)
-scale = Vector2(1, 0.24271847)
-texture = ExtResource("3_lf7uf")
-
-[node name="Sprite2D3" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="3" unique_id=976163728]
-position = Vector2(62.599995, 127.40001)
-scale = Vector2(0.5, 0.5)
+[node name="Sprite2D5" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="4" unique_id=976163728]
+position = Vector2(62.6, 84)
+scale = Vector2(0.49999997, 0.49999997)
 texture = ExtResource("5_gcwcn")
 
-[node name="Sprite2D5" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="4" unique_id=253924325]
-position = Vector2(59.999996, 398.2)
-scale = Vector2(0.5, 0.5)
+[node name="Sprite2D6" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="5" unique_id=253924325]
+position = Vector2(61.59999, 260.40002)
+scale = Vector2(0.49999997, 0.49999997)
+texture = ExtResource("5_gcwcn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="VentDoor/DoorBody" parent_id_path=PackedInt32Array(1445567170, 1463673896) index="6" unique_id=148011905]
+position = Vector2(62.800003, 435.6)
+scale = Vector2(0.49999997, 0.49999997)
 texture = ExtResource("5_gcwcn")
 
 [node name="BGSprite" parent="." index="12" unique_id=936446513]

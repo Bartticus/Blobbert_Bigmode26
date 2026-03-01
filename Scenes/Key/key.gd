@@ -22,6 +22,9 @@ var current_bone: Bone : set = set_current_bone
 var dist_to_current_bone: float
 var force_applied: Vector2
 
+var idle_color = Color(1, 1, 1, 0.6)
+var tugging_color = Color(0.6784314, 0.84705883, 0.9019608, 0.95)
+
 enum Status { IDLE, TUGGING, SNAPPING }
 const STATUS_GROUPS = {
 	Status.IDLE: 'idle_keys',
@@ -33,6 +36,7 @@ var status: Status = Status.IDLE : set = set_status
 
 func _ready() -> void:
 	tug_rope.parent_key = self
+	key_sprite.modulate = idle_color
 
 func set_key_label(new_value):
 	key_label.text = new_value
@@ -43,14 +47,14 @@ func set_status(new_status) -> void:
 	match status:
 		Status.IDLE:
 			point_light_2d.enabled = false
-			key_sprite.modulate = Color.LIGHT_GRAY
+			key_sprite.modulate = idle_color
 			current_bone = null
 			snap_timer.stop()
 			tug_rope.disable()
 			force_applied = Vector2(0,0)
 		Status.TUGGING:
 			point_light_2d.enabled = true
-			key_sprite.modulate = Color.LIGHT_BLUE
+			key_sprite.modulate = tugging_color
 			snap_timer.start(snap_timer_wait_time)
 			Global.iterate_key_count()
 

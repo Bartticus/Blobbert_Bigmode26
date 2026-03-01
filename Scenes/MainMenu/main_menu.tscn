@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://b4o23ec1ofw0u"]
 
-[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://main_theme.tres" id="1_adu2g"]
+[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://Materials/main_theme.tres" id="1_adu2g"]
 [ext_resource type="Script" uid="uid://uqoft1ixa4u" path="res://Scenes/MainMenu/main_menu.gd" id="1_qgdf6"]
 [ext_resource type="Texture2D" uid="uid://c3mb8mb280jkn" path="res://Assets/Sprites/Menu.png" id="3_0l8wx"]
 [ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="5_agesy"]
-[ext_resource type="Material" uid="uid://difhd35lspqod" path="res://doc_squiggle.tres" id="5_mtk40"]
+[ext_resource type="Material" uid="uid://difhd35lspqod" path="res://Materials/doc_squiggle.tres" id="5_mtk40"]
 [ext_resource type="Shader" path="res://Scenes/ScreenTemplate/blur.gdshader" id="7_mtk40"]
 [ext_resource type="Texture2D" uid="uid://bm5s2y1tts4r7" path="res://Assets/Sprites/SlickLaboratory.png" id="8_qy48e"]
 [ext_resource type="Texture2D" uid="uid://33ob2p00doxu" path="res://Assets/Sprites/DrSlickter_Purple.png" id="9_rg3q3"]
@@ -28,11 +28,12 @@
 [ext_resource type="Texture2D" uid="uid://d0hdrlw0wkndq" path="res://Assets/Sprites/CrackAss.png" id="27_elwfl"]
 [ext_resource type="PackedScene" uid="uid://dtnncqtocba1y" path="res://Scenes/DeadBlob/dead_blob.tscn" id="28_5xkg6"]
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="29_cu1wd"]
+[ext_resource type="Material" uid="uid://dmxtnhwp3f6yo" path="res://Materials/logo_squiggle.tres" id="29_rg3q3"]
 [ext_resource type="PackedScene" uid="uid://e22gobsgl87n" path="res://Scenes/SoundManager/sound_manager.tscn" id="30_twmpw"]
 [ext_resource type="Texture2D" uid="uid://cfr2opumrp8tc" path="res://Assets/Sprites/Blobbert_Logo_Small.png" id="31_6capf"]
 [ext_resource type="Texture2D" uid="uid://doum0ai52xyf6" path="res://Assets/Sprites/splat20.png" id="31_16jpo"]
-[ext_resource type="Material" uid="uid://1vlmbr0qutje" path="res://small_text_squiggle.tres" id="31_qy48e"]
-[ext_resource type="Material" uid="uid://304j4uixkk41" path="res://text_squiggle.tres" id="32_qy48e"]
+[ext_resource type="Material" uid="uid://1vlmbr0qutje" path="res://Materials/small_text_squiggle.tres" id="31_qy48e"]
+[ext_resource type="Material" uid="uid://304j4uixkk41" path="res://Materials/text_squiggle.tres" id="32_qy48e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6wt8f"]
 shader = ExtResource("7_mtk40")
@@ -3846,60 +3847,6 @@ adjustment_enabled = true
 adjustment_contrast = 1.25
 adjustment_saturation = 1.2
 
-[sub_resource type="Shader" id="Shader_6capf"]
-code = "shader_type canvas_item;
-render_mode world_vertex_coords;
-
-group_uniforms Squiggle;
-/**
- * Noise texture scale
- * By default, the noise texture's size in world coordinates is set by its resolution
-*/
-uniform vec2 scale = vec2(1.0);
-uniform float strength = 1.0;
-/**
- * Number of squiggle frames per second
-*/
-uniform float fps = 6.0;
-uniform sampler2D noise : filter_linear, repeat_enable;
-group_uniforms;
-
-varying vec4 modulate;
-varying vec2 noise_uv;
-
-void vertex() {
-	modulate = COLOR;
-	
-	// Use world coordinates for scale-independent squiggles, offset by position to keep pattern attached to object
-	noise_uv = (VERTEX - MODEL_MATRIX[3].xy) / (vec2(textureSize(noise, 0)) * scale);
-}
-
-// Use irrational constants for unique squiggles every frame
-#define offset_multiplier vec2(PI, E)
-
-void fragment() {
-	vec2 noise_offset = vec2(floor(TIME * fps)) * offset_multiplier;
-	float noise_sample = texture(noise, noise_uv + noise_offset).r * 4.0 * PI;
-	vec2 direction = vec2(cos(noise_sample), sin(noise_sample));
-	vec2 squiggle_uv = UV + direction * strength * 0.005;
-	
-	COLOR = texture(TEXTURE, squiggle_uv) * modulate;
-}"
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_hnblv"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp05e"]
-noise = SubResource("FastNoiseLite_hnblv")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mtk40"]
-resource_local_to_scene = true
-shader = SubResource("Shader_6capf")
-shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.2
-shader_parameter/fps = 6.0
-shader_parameter/noise = SubResource("NoiseTexture2D_dp05e")
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6upyc"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_sho4w"]
@@ -4192,7 +4139,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("31_16jpo")
 
 [node name="Logo" type="Sprite2D" parent="Cutscene" unique_id=1666775173]
-material = SubResource("ShaderMaterial_mtk40")
+material = ExtResource("29_rg3q3")
 position = Vector2(960, 250)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("31_6capf")

@@ -19,7 +19,23 @@ shape = SubResource("RectangleShape2D_3gxxi")
 [node name="Sprite2D" type="Sprite2D" parent="DoorBody" unique_id=1097457276]
 modulate = Color(0.47788018, 0.47788012, 0.47788012, 1)
 texture_filter = 2
-scale = Vector2(0.6666666, 2.75)
+scale = Vector2(0.667, 1)
+texture = ExtResource("2_kf3g2")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="DoorBody" unique_id=670214814]
+modulate = Color(0.47788018, 0.47788012, 0.47788012, 1)
+texture_filter = 2
+position = Vector2(0, 170.305)
+scale = Vector2(0.667, 1)
+texture = ExtResource("2_kf3g2")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="DoorBody" unique_id=154998056]
+modulate = Color(0.47788018, 0.47788012, 0.47788012, 1)
+texture_filter = 2
+position = Vector2(0, 340.99)
+scale = Vector2(0.667, 1)
 texture = ExtResource("2_kf3g2")
 centered = false
 

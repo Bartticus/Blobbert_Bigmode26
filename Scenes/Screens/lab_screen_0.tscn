@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_ni8rx"]
 [ext_resource type="PackedScene" uid="uid://ix8ry0y5k1ar" path="res://Scenes/GlassPanes/new_glass_panes.tscn" id="3_14qcb"]
+[ext_resource type="Material" uid="uid://difhd35lspqod" path="res://Materials/doc_squiggle.tres" id="4_f60q8"]
 [ext_resource type="Shader" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
 [ext_resource type="Texture2D" uid="uid://dptauq5wft3cf" path="res://Assets/Sprites/Contained_v2.png" id="5_yco6c"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="6_yco6c"]
@@ -378,6 +379,7 @@ shape = SubResource("RectangleShape2D_vtyri")
 [node name="ContainerSprite" type="Sprite2D" parent="." index="12" unique_id=459784128]
 show_behind_parent = true
 z_index = 5
+material = ExtResource("4_f60q8")
 position = Vector2(935.00006, 997.04926)
 scale = Vector2(1.0070103, 0.82067907)
 texture = ExtResource("5_yco6c")
@@ -476,6 +478,7 @@ texture = ExtResource("11_qi06u")
 
 [node name="BreachSprite" type="Sprite2D" parent="Breach" index="3" unique_id=443666817]
 visible = false
+material = ExtResource("4_f60q8")
 position = Vector2(4, 15.000061)
 scale = Vector2(1, 0.8405794)
 texture = ExtResource("7_054od")
