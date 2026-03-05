@@ -17,6 +17,8 @@ func play_blob_sound(sound_type):
 		return
 	var random_index = randi() % blob_sounds.get(sound_type).size()
 	player.stream = blob_sounds.get(sound_type)[random_index]
+	
+	player.pitch_scale = randf_range(0.8, 1.2)
 	player.play()
 	return player
 
@@ -26,8 +28,11 @@ func play_general_sound(sound_type, pitch_scale: float = 1.0, added_db: float = 
 		return
 	var random_index = randi() % general_sounds.get(sound_type).size()
 	player.stream = general_sounds.get(sound_type)[random_index]
+	#Fire sounds scale with their size
 	player.pitch_scale = pitch_scale
 	player.volume_db = added_db
+	
+	player.pitch_scale += randf_range(-0.2, 0.2)
 	player.play()
 	return player
 
@@ -37,6 +42,8 @@ func play_required_sound(sound_type):
 		return
 	var random_index = randi() % required_sounds.get(sound_type).size()
 	player.stream = required_sounds.get(sound_type)[random_index]
+	
+	player.pitch_scale = randf_range(0.8, 1.2)
 	player.play()
 	return player
 
@@ -46,5 +53,7 @@ func play_stacking_sound(sound_type):
 		return
 	var random_index = randi() % stacking_sounds.get(sound_type).size()
 	player.stream = stacking_sounds.get(sound_type)[random_index]
+	
+	player.pitch_scale = randf_range(0.8, 1.2)
 	player.play()
 	return player
