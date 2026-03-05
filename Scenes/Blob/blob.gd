@@ -174,26 +174,27 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#check if a new oil should spawn
 	if !oil_timer.is_stopped(): return
 	
-	if bone.in_oil_area:
-		var _bone_speed: float = bone.linear_velocity.length()
-		var _scale_ratio: float = _bone_speed / 1000
-		_scale_ratio = clampf(_scale_ratio, 0.3, 2.0) 
-		var new_scale: Vector2 = _scale_ratio * Vector2.ONE / body.scale
-		
-		for oil in bone.current_oil_overlap:
-			if oil.scale.length() > (new_scale.length() - 1):
-				return
-			else:
-				oil.queue_free()
-	
 	if body is CollisionObject2D:
 		if body.collision_layer != 1:
 			return
-
-	if bounce_timer.is_stopped():
+	
+	var bone_speed: float = bone.linear_velocity.length() / 1000
+	var scale_ratio: float = clampf(bone_speed, 0.3, 2.0)
+	
+	if bounce_timer.is_stopped() and bone_speed > 0.3:
 		bounce_timer.start()
 		Global.sound_manager.play_blob_sound('bounce')
-
+	
+	if bone.in_oil_area:
+		#if there is any existing oil that is larger, do nothing
+		for oil in bone.current_oil_overlap:
+			if (oil.scale.length() * 1.3) > scale_ratio: #At least 30% larger
+				return
+		
+		#if the existing oils are all smaller, remove them
+		for oil in bone.current_oil_overlap:
+			oil.queue_free()
+	
 	#change softbody physics when an oil is created, reverted when that oil area is exited
 	softbody.physics_material_override.friction = 1.0
 	#softbody.mass = 0.2
@@ -214,9 +215,6 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	
 	#set scale
 	oil_pivot.scale = Vector2.ONE / body.scale
-	var bone_speed: float = bone.linear_velocity.length()
-	var scale_ratio: float = bone_speed / 1000
-	scale_ratio = clampf(scale_ratio, 0.3, 2.0)
 	oil.scale = oil.scale * scale_ratio
 	
 	if oil.scale.length() > 2: # For angry face

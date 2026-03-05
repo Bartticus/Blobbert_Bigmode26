@@ -15,7 +15,7 @@ universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 [application]
 
 config/name="Blobbert_Bigmode26"
-run/main_scene="uid://t6j5hlf6y1hi"
+run/main_scene="uid://0yfv65xv4oy5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.080783345, 0.080783345, 0.080783345, 1)
 boot_splash/stretch_mode=0

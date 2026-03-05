@@ -27,7 +27,7 @@ func start_camera_shake():
 	camera_shake_noise = FastNoiseLite.new()
 	
 	var camera_tween: Tween = get_tree().create_tween()
-	camera_tween.tween_method(camera_shake_value, intensity, 0, 0.1)
+	camera_tween.tween_method(camera_shake_value, intensity, 0, 0.2)
 
 func camera_shake_value(intensity: float):
 	var camera_offset: float = camera_shake_noise.get_noise_1d(Time.get_ticks_msec()) * intensity
@@ -54,6 +54,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Bone:
 		body.oil_areas_int += 1
 		body.current_oil_overlap.append(self)
+
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Bone:
