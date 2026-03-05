@@ -20,12 +20,14 @@ func play_blob_sound(sound_type):
 	player.play()
 	return player
 
-func play_general_sound(sound_type):
+func play_general_sound(sound_type, pitch_scale: float = 1.0, added_db: float = 0.0):
 	var player = general_sounds.get_player()
 	if player == null:
 		return
 	var random_index = randi() % general_sounds.get(sound_type).size()
 	player.stream = general_sounds.get(sound_type)[random_index]
+	player.pitch_scale = pitch_scale
+	player.volume_db = added_db
 	player.play()
 	return player
 

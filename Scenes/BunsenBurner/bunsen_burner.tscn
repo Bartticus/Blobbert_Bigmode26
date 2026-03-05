@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://bpn3auqt8vgl2" path="res://Materials/bunsen_squiggle.tres" id="4_obghq"]
 [ext_resource type="Texture2D" uid="uid://b1g0eae33mi48" path="res://Assets/Sprites/Valve.png" id="5_yj0vg"]
 [ext_resource type="Material" uid="uid://xqx6bpdes0qd" path="res://Materials/valve_squiggle.tres" id="6_obghq"]
+[ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="8_0ecjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt33f"]
 size = Vector2(95, 74)
@@ -65,5 +66,12 @@ material = ExtResource("6_obghq")
 position = Vector2(1, -2)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_yj0vg")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1882488684]
+position = Vector2(1, -176)
+scale = Vector2(1.2148438, 2.5390625)
+color = Color(0.7181154, 0.67190486, 0.40757084, 1)
+shadow_enabled = true
+texture = ExtResource("8_0ecjv")
 
 [connection signal="area_entered" from="FireDetection" to="." method="_on_fire_detection_area_entered"]

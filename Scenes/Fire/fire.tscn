@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://bioehjgso58v3" path="res://Scenes/Oil/fire.gdshader" id="1_tpclu"]
 [ext_resource type="Texture2D" uid="uid://dqxnesfxqu6rx" path="res://Assets/Sprites/FIRE.png" id="2_h0xlw"]
 [ext_resource type="Script" uid="uid://dq686gv3m1aom" path="res://Scenes/Fire/fire.gd" id="3_h0xlw"]
+[ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="4_pf4h5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_usf6k"]
 frequency = 0.0064
@@ -60,7 +61,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.5176324, 2.0000002),
 "update": 0,
-"values": [Vector2(0.7, 0.358), Vector2(0.68, 0.35)]
+"values": [Vector2(0.7, 0.358), Vector2(0.855, 0.44)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -72,7 +73,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.5176324, 2.0000002),
 "update": 0,
-"values": [Vector2(-3, -59), Vector2(-3, -57)]
+"values": [Vector2(-3, -59), Vector2(-3, -78.025)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ew2lm"]
@@ -98,3 +99,13 @@ unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_ew2lm")
 autoplay = &"burn"
+speed_scale = 2.0
+
+[node name="PointLight2D" type="PointLight2D" parent="FireSprite" unique_id=1738347070]
+position = Vector2(8.367443, 1.7746735)
+scale = Vector2(2.2577052, 4.423028)
+color = Color(0.59607846, 0.28627452, 0.105882354, 1)
+energy = 1.53
+shadow_enabled = true
+texture = ExtResource("4_pf4h5")
+texture_scale = 1.64

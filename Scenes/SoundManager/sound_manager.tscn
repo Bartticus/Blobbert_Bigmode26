@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ykxh48ns1kyp" path="res://Scenes/SoundManager/sound_manager.gd" id="1_1ipep"]
 [ext_resource type="Script" uid="uid://dx6537rrrs73d" path="res://Scenes/SoundManager/general_sounds.gd" id="3_883ge"]
-[ext_resource type="PackedScene" uid="uid://dho26e37qso4" path="res://Scenes/Blob/blob_sounds.tscn" id="3_vhw6k"]
+[ext_resource type="PackedScene" path="res://Scenes/Blob/blob_sounds.tscn" id="3_vhw6k"]
 [ext_resource type="AudioStream" uid="uid://dhd8v8oon4v7u" path="res://Assets/SFX/glass_crack_01.wav" id="4_oo8t0"]
 [ext_resource type="AudioStream" uid="uid://doxhtfctxbigk" path="res://Assets/SFX/glass_crack_02.wav" id="5_wdgtj"]
 [ext_resource type="AudioStream" uid="uid://cqgoqhk1hl27d" path="res://Assets/SFX/glass_crack_03.wav" id="6_xia53"]
