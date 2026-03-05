@@ -53,7 +53,9 @@ func ignite() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Bone:
 		body.oil_areas_int += 1
+		body.current_oil_overlap.append(self)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Bone:
 		body.oil_areas_int -= 1
+		body.current_oil_overlap.erase(self)

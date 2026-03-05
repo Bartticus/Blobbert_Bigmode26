@@ -174,7 +174,17 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#check if a new oil should spawn
 	if !oil_timer.is_stopped(): return
 	
-	if bone.in_oil_area: return
+	if bone.in_oil_area:
+		var _bone_speed: float = bone.linear_velocity.length()
+		var _scale_ratio: float = _bone_speed / 1000
+		_scale_ratio = clampf(_scale_ratio, 0.3, 2.0) 
+		var new_scale: Vector2 = _scale_ratio * Vector2.ONE / body.scale
+		
+		for oil in bone.current_oil_overlap:
+			if oil.scale.length() > (new_scale.length() - 1):
+				return
+			else:
+				oil.queue_free()
 	
 	if body is CollisionObject2D:
 		if body.collision_layer != 1:

@@ -46,4 +46,3 @@ func play_stacking_sound(sound_type):
 	player.stream = stacking_sounds.get(sound_type)[random_index]
 	player.play()
 	return player
-
