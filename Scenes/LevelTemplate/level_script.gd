@@ -6,6 +6,7 @@ extends Node2D
 @onready var screens: Node2D = %Screens
 @onready var full_keeb: FullKeeb = %FullKeeb
 @onready var sound_manager: = %SoundManager
+@onready var level_name_label: Label = %LevelNameLabel
 
 @export var playing_cutscene: bool = false:
 	set(new_value):
@@ -20,6 +21,7 @@ extends Node2D
 				tween.set_ignore_time_scale()
 				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), 0.1)
 
+@export var level_name: String
 @export var is_multi_screen: bool = false
 @export var zoom_time: float = 0.25
 @export var zoom_time_scale: float = 0.3

@@ -15,6 +15,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
 [node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
+level_name = "The Vents"
 
 [node name="Blob" parent="." index="2" unique_id=104221436]
 position = Vector2(189, -2838)

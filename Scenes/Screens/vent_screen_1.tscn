@@ -282,7 +282,8 @@ region_rect = Rect2(0, 0, 1920, 1080)
 position = Vector2(512, 480)
 
 [node name="Grate" type="Node2D" parent="." index="28" unique_id=59207996]
-position = Vector2(1705, 642)
+position = Vector2(1722.0001, 656)
+scale = Vector2(0.9, 0.9)
 
 [node name="Outline" type="Sprite2D" parent="Grate" index="0" unique_id=1548227386]
 modulate = Color(0.27752772, 0.27752775, 0.27752757, 1)

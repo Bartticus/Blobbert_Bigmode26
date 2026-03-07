@@ -5,6 +5,8 @@ extends Node2D
 @onready var required_sounds: Node2D = %RequiredSounds
 @onready var stacking_sounds: Node2D = %StackingSounds
 
+var KEEP_PITCH = ['glass_break', 'siren']
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +20,7 @@ func play_blob_sound(sound_type):
 	var random_index = randi() % blob_sounds.get(sound_type).size()
 	player.stream = blob_sounds.get(sound_type)[random_index]
 	
-	player.pitch_scale = randf_range(0.8, 1.2)
+	shift_pitch(sound_type, player)
 	player.play()
 	return player
 
@@ -32,7 +34,7 @@ func play_general_sound(sound_type, pitch_scale: float = 1.0, added_db: float = 
 	player.pitch_scale = pitch_scale
 	player.volume_db = added_db
 	
-	player.pitch_scale += randf_range(-0.2, 0.2)
+	shift_pitch(sound_type, player)
 	player.play()
 	return player
 
@@ -43,7 +45,7 @@ func play_required_sound(sound_type):
 	var random_index = randi() % required_sounds.get(sound_type).size()
 	player.stream = required_sounds.get(sound_type)[random_index]
 	
-	player.pitch_scale = randf_range(0.8, 1.2)
+	shift_pitch(sound_type, player)
 	player.play()
 	return player
 
@@ -54,6 +56,11 @@ func play_stacking_sound(sound_type):
 	var random_index = randi() % stacking_sounds.get(sound_type).size()
 	player.stream = stacking_sounds.get(sound_type)[random_index]
 	
-	player.pitch_scale = randf_range(0.8, 1.2)
+	shift_pitch(sound_type, player)
 	player.play()
 	return player
+
+
+func shift_pitch(sound_type, player):
+	if !KEEP_PITCH.has(sound_type):
+		player.pitch_scale += randf_range(-0.2, 0.2)
