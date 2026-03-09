@@ -5,7 +5,7 @@ extends Node2D
 @onready var required_sounds: Node2D = %RequiredSounds
 @onready var stacking_sounds: Node2D = %StackingSounds
 
-var KEEP_PITCH = ['glass_break', 'siren', 'sizzle', 'explosion']
+var KEEP_PITCH = ['glass_break', 'siren', 'sizzle', 'explosion', 'chime']
 
 
 # Called when the node enters the scene tree for the first time.
