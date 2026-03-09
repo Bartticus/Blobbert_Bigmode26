@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bmxas480qycg7"]
+
+[ext_resource type="Texture2D" uid="uid://dh678aap5xpvd" path="res://Assets/Tiles/ScienceTexture.png" id="1_tgmr8"]
+[ext_resource type="Texture2D" uid="uid://8fxrjbsrva68" path="res://Assets/Sprites/Grate.png" id="2_0gc74"]
+
+[node name="Grate" type="Node2D" unique_id=382070669]
+scale = Vector2(0.9, 0.9)
+
+[node name="Outline" type="Sprite2D" parent="." unique_id=476162928]
+modulate = Color(0.27752772, 0.27752775, 0.27752757, 1)
+position = Vector2(88.499954, 129.5)
+scale = Vector2(1.1822913, 2.567708)
+texture = ExtResource("1_tgmr8")
+
+[node name="GrateSprite2" type="Sprite2D" parent="." unique_id=2130744360]
+modulate = Color(1.6852883, 1.6852883, 1.6852883, 1)
+position = Vector2(89, 240)
+scale = Vector2(0.8, 1)
+texture = ExtResource("2_0gc74")
+
+[node name="GrateSprite" type="Sprite2D" parent="." unique_id=1256608485]
+modulate = Color(1.6852883, 1.6852883, 1.6852883, 1)
+position = Vector2(89, 18)
+scale = Vector2(0.8, 1)
+texture = ExtResource("2_0gc74")

@@ -6,7 +6,7 @@ extends Node2D
 @onready var screens: Node2D = %Screens
 @onready var full_keeb: FullKeeb = %FullKeeb
 @onready var sound_manager: = %SoundManager
-@onready var level_name_label: Label = %LevelNameLabel
+@onready var level_title_card: Control = %LevelTitleCard
 
 @export var playing_cutscene: bool = false:
 	set(new_value):
@@ -21,7 +21,7 @@ extends Node2D
 				tween.set_ignore_time_scale()
 				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), 0.1)
 
-@export var level_name: String
+@export var displaying_title_card: bool = false
 @export var is_multi_screen: bool = false
 @export var zoom_time: float = 0.25
 @export var zoom_time_scale: float = 0.3
@@ -57,7 +57,10 @@ func _ready() -> void:
 	blob.global_position = starting_screen.screen_blob.global_position
 	await get_tree().process_frame
 	Global.blob.reset_screen()
-	Fade.fade_in(0.5)
+	full_keeb.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	await Fade.fade_in(0.5).finished
+	if !playing_cutscene:
+		display_title_card()
 
 func enter_multi_screen(multi_screen):
 	var is_in_cutscene = playing_cutscene
@@ -113,3 +116,26 @@ func tween_camera(property = 'position', target = Vector2(0,0), tween_time = 1.0
 	tween.set_ignore_time_scale()
 	tween.tween_property(camera, property, target, tween_time).set_trans(transition_type).set_delay(delay)
 	return tween
+
+func display_title_card():
+	displaying_title_card = true
+	var card_tween = level_title_card.fade_in()
+	await card_tween.finished
+	level_title_card.timer.start()
+	await level_title_card.timer.timeout
+
+func fade_title_card(fade_time = 1.0):
+	displaying_title_card = false
+	var tween = get_tree().create_tween()
+	tween.set_parallel()
+	tween.set_ignore_time_scale()
+	tween.tween_property(level_title_card, 'modulate', Color(1.0, 1.0, 1.0, 0.0), fade_time)
+	if !playing_cutscene:
+		tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), fade_time)
+	await tween.finished
+	level_title_card.visible = false
+
+func interrupt_title_card():
+	if !playing_cutscene:
+		level_title_card.timer.stop()
+		fade_title_card()

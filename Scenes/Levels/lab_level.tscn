@@ -11,9 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://ci6hjglcdc31b" path="res://Scenes/Screens/lab_screen_5.tscn" id="9_p8jpb"]
 [ext_resource type="PackedScene" uid="uid://dynmdxhcng4d3" path="res://Scenes/Screens/lab_screen_3b.tscn" id="10_or0mv"]
 
-[node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
-level_name = "The Lab"
-starting_screen = NodePath("Screens/LabScreen2")
+[node name="LabLevel" unique_id=129905935 instance=ExtResource("1_0temy")]
+
+[node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="3" unique_id=2057049144]
+level_name = "Dr Slickter's Lab"
 
 [node name="LabScreen0" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=8731453 instance=ExtResource("3_o8h5t")]
 

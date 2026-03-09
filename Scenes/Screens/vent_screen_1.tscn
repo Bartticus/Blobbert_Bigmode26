@@ -9,8 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ceybxmuaaxrkm" path="res://Scenes/WindGust/wind_gust_group.tscn" id="5_3jp2c"]
 [ext_resource type="PackedScene" uid="uid://bf0j3ms2oh0ia" path="res://Scenes/WindGust/wind_gust.tscn" id="6_am2jb"]
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="7_am2jb"]
-[ext_resource type="Texture2D" uid="uid://dh678aap5xpvd" path="res://Assets/Tiles/ScienceTexture.png" id="10_mdkld"]
-[ext_resource type="Texture2D" uid="uid://8fxrjbsrva68" path="res://Assets/Sprites/Grate.png" id="10_xjfkr"]
+[ext_resource type="PackedScene" uid="uid://bmxas480qycg7" path="res://Scenes/Grate/grate.tscn" id="10_xjfkr"]
 
 [sub_resource type="Gradient" id="Gradient_qfkhn"]
 
@@ -281,26 +280,8 @@ region_rect = Rect2(0, 0, 1920, 1080)
 [node name="VentDoor" parent="." index="27" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
 position = Vector2(512, 480)
 
-[node name="Grate" type="Node2D" parent="." index="28" unique_id=59207996]
-position = Vector2(1722.0001, 656)
-scale = Vector2(0.9, 0.9)
-
-[node name="Outline" type="Sprite2D" parent="Grate" index="0" unique_id=1548227386]
-modulate = Color(0.27752772, 0.27752775, 0.27752757, 1)
-position = Vector2(88.499954, 129.5)
-scale = Vector2(1.1822913, 2.567708)
-texture = ExtResource("10_mdkld")
-
-[node name="GrateSprite2" type="Sprite2D" parent="Grate" index="1" unique_id=1935575965]
-modulate = Color(1.6852883, 1.6852883, 1.6852883, 1)
-position = Vector2(89, 240)
-scale = Vector2(0.8, 1)
-texture = ExtResource("10_xjfkr")
-
-[node name="GrateSprite" type="Sprite2D" parent="Grate" index="2" unique_id=745110386]
-modulate = Color(1.6852883, 1.6852883, 1.6852883, 1)
-position = Vector2(89, 18)
-scale = Vector2(0.8, 1)
-texture = ExtResource("10_xjfkr")
+[node name="Grate" parent="." index="28" unique_id=382070669 instance=ExtResource("10_xjfkr")]
+position = Vector2(1773.0001, 437)
+scale = Vector2(1.3, 1.5)
 
 [editable path="Gear"]

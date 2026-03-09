@@ -13,7 +13,7 @@
 size = Vector2(95, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4oiy"]
-size = Vector2(400, 580)
+size = Vector2(400, 474)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjgvk"]
 animations = [{
@@ -45,7 +45,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireDetection" unique_id=382422036]
-position = Vector2(0, -73)
+position = Vector2(0, -126)
 shape = SubResource("RectangleShape2D_r4oiy")
 
 [node name="FireSprites" type="AnimatedSprite2D" parent="." unique_id=48558562]

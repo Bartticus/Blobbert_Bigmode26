@@ -14,9 +14,10 @@ extends LevelScript
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	play_cutscene()
+	call_deferred('play_cutscene')
 
 func play_cutscene():
+	Global.level.playing_cutscene = true
 	await get_tree().create_timer(2.0).timeout
 	Global.level.camera.global_position = bg_sprite_2.global_position
 	await get_tree().create_timer(1.0).timeout

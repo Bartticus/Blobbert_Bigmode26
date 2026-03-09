@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bgxawluxoy5lk" path="res://Assets/Tiles/ScrewTiles.png" id="3_5jc0h"]
 [ext_resource type="Texture2D" uid="uid://b6gmhedvaxudm" path="res://Assets/Sprites/Bodybert.png" id="3_e78n4"]
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="4_e78n4"]
+[ext_resource type="PackedScene" uid="uid://bmxas480qycg7" path="res://Scenes/Grate/grate.tscn" id="5_5jc0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
@@ -85,3 +86,8 @@ texture = ExtResource("4_e78n4")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="Grate" parent="." index="13" unique_id=382070669 instance=ExtResource("5_5jc0h")]
+z_index = 50
+position = Vector2(67, 144.00002)
+scale = Vector2(1.7, 0.9)

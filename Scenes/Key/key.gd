@@ -158,6 +158,8 @@ func _physics_process(delta: float) -> void:
 
 func handle_input():
 	if Input.is_physical_key_pressed(keycode):
+		if Global.level && Global.level.displaying_title_card:
+			Global.level.interrupt_title_card()
 		if status == Status.IDLE:
 			status = Status.TUGGING
 	else:

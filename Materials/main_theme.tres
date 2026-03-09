@@ -1,6 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://dqtsplxmd0xtc"]
 
+[ext_resource type="StyleBox" uid="uid://cvo8btqdullra" path="res://Materials/style_box.tres" id="1_2q2fl"]
 [ext_resource type="FontFile" uid="uid://cw2ewkprrvw2t" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="1_470mv"]
 
 [resource]
 default_font = ExtResource("1_470mv")
+PanelContainer/styles/panel = ExtResource("1_2q2fl")
