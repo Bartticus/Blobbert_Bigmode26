@@ -51,18 +51,24 @@ scale = Vector2(3.0000002, 2.0000002)
 wind_power = 15.0
 
 [node name="WindTunnel6" parent="." index="9" unique_id=727873285 instance=ExtResource("2_rk4ar")]
-position = Vector2(1127, 800)
+position = Vector2(983, 802)
 rotation = -1.5707964
 scale = Vector2(3.0000002, 2.0000002)
 wind_power = 15.0
 
 [node name="WindTunnel7" parent="." index="10" unique_id=1782669314 instance=ExtResource("2_rk4ar")]
-position = Vector2(1353, 803)
+position = Vector2(1185, 801.00006)
 rotation = -1.5707964
 scale = Vector2(3.0000002, 2.0000002)
 wind_power = 15.0
 
-[node name="WindGustGroup" parent="." index="11" unique_id=1942551771 instance=ExtResource("3_2ln6g")]
+[node name="WindTunnel8" parent="." index="11" unique_id=115934421 instance=ExtResource("2_rk4ar")]
+position = Vector2(1388, 801.00006)
+rotation = -1.5707964
+scale = Vector2(3.0000002, 2.0000002)
+wind_power = 15.0
+
+[node name="WindGustGroup" parent="." index="12" unique_id=1942551771 instance=ExtResource("3_2ln6g")]
 
 [node name="WindGust3" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("4_hu0wx")]
 position = Vector2(670, 205.99998)
@@ -75,7 +81,7 @@ position = Vector2(1407, 205)
 scale = Vector2(0.39, 0.26)
 skew = -0.03265667
 
-[node name="Flap" type="Node2D" parent="." index="12" unique_id=30362031]
+[node name="Flap" type="Node2D" parent="." index="13" unique_id=30362031]
 position = Vector2(990, 508)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Flap" index="0" unique_id=676061831]
@@ -127,10 +133,10 @@ position = Vector2(0, -10)
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("../StaticBody2D")
 
-[node name="ScreenBlob" parent="." index="16" unique_id=104221436]
+[node name="ScreenBlob" parent="." index="17" unique_id=104221436]
 position = Vector2(1284, 725)
 
-[node name="VentGeometry" type="Node2D" parent="." index="18" unique_id=1682394441]
+[node name="VentGeometry" type="Node2D" parent="." index="19" unique_id=1682394441]
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="VentGeometry" index="0" unique_id=462244085]
 
@@ -151,7 +157,7 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Grate" parent="." index="20" unique_id=286053194 instance=ExtResource("5_5jc0h")]
+[node name="Grate" parent="." index="21" unique_id=286053194 instance=ExtResource("5_5jc0h")]
 z_index = 50
 position = Vector2(67, 144.00002)
 scale = Vector2(1.7, 0.9)
