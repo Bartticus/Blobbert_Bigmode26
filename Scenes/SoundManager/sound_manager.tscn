@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://bhyjn1enccrfs" path="res://Assets/SFX/zap.ogg" id="14_mnanp"]
 [ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
 [ext_resource type="Script" uid="uid://ctyjo3135c28x" path="res://Scenes/SoundManager/stacking_sounds.gd" id="16_myamy"]
-[ext_resource type="Script" uid="uid://bmdo162hxv66m" path="res://Scenes/SoundManager/ambient_sounds.gd" id="18_c6m8x"]
+[ext_resource type="Script" path="res://Scenes/SoundManager/ambient_sounds.gd" id="18_c6m8x"]
 [ext_resource type="AudioStream" uid="uid://d2d7vb77np1lc" path="res://Assets/SFX/FishTank.ogg" id="19_mnanp"]
 [ext_resource type="AudioStream" uid="uid://mhahrm8yrlxr" path="res://Assets/SFX/VentAmbiance.ogg" id="19_u7fpq"]
 [ext_resource type="AudioStream" uid="uid://0aosyedbkplu" path="res://Assets/SFX/office_ambience.ogg" id="20_jw8au"]
