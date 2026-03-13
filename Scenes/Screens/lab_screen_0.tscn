@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bisaren6ebhve" path="res://Assets/Sprites/Breach.png" id="7_054od"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="8_f60q8"]
 [ext_resource type="Texture2D" uid="uid://d0hdrlw0wkndq" path="res://Assets/Sprites/CrackAss.png" id="9_14qcb"]
+[ext_resource type="Script" uid="uid://bkgtt14vbmuaa" path="res://Scenes/Screens/breach.gd" id="9_qi06u"]
 [ext_resource type="Texture2D" uid="uid://b88ivniwyect7" path="res://Assets/Sprites/trace_07.png" id="11_qi06u"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="12_2hu1i"]
+[ext_resource type="AudioStream" uid="uid://7bm7nmsie2q5" path="res://Assets/SFX/Siren.ogg" id="13_mgu2e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r2yta"]
 shader = ExtResource("4_gyemt")
@@ -355,15 +358,15 @@ offset_top = 85.0
 offset_right = 1502.0
 offset_bottom = 961.0
 
-[node name="GlassPanes" parent="." index="9" unique_id=936546553 node_paths=PackedStringArray("anim_player") instance=ExtResource("3_14qcb")]
+[node name="GlassPanes" parent="." index="9" unique_id=936546553 node_paths=PackedStringArray("breach") instance=ExtResource("3_14qcb")]
 position = Vector2(1500, 67)
-anim_player = NodePath("../Breach/AnimationPlayer")
+breach = NodePath("../Breach")
 
-[node name="GlassPanes2" parent="." index="10" unique_id=269417865 node_paths=PackedStringArray("anim_player") instance=ExtResource("3_14qcb")]
+[node name="GlassPanes2" parent="." index="10" unique_id=269417865 node_paths=PackedStringArray("breach") instance=ExtResource("3_14qcb")]
 position = Vector2(420, 66)
 rotation = 3.1415927
 scale = Vector2(1, -1)
-anim_player = NodePath("../Breach/AnimationPlayer")
+breach = NodePath("../Breach")
 
 [node name="AntiGrav" type="Area2D" parent="." index="11" unique_id=1168576705]
 position = Vector2(960, 540)
@@ -431,8 +434,10 @@ texture = ExtResource("11_qi06u")
 [node name="Breach" type="Node2D" parent="." index="17" unique_id=1350780541]
 z_index = 5
 position = Vector2(954, 946)
+script = ExtResource("9_qi06u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Breach" index="0" unique_id=197434859]
+[node name="BreachAnimationPlayer" type="AnimationPlayer" parent="Breach" index="0" unique_id=197434859]
+unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_14qcb")
 
@@ -487,6 +492,12 @@ texture = ExtResource("7_054od")
 position = Vector2(1.9999943, -559.1383)
 scale = Vector2(0.50439614, 0.4900874)
 texture = ExtResource("9_14qcb")
+
+[node name="BreachSoundPlayer" parent="Breach" index="4" unique_id=546449723 instance=ExtResource("12_2hu1i")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("13_mgu2e")])
+max_distance = 4000.0
+attenuation = 0.2
 
 [node name="ScreenBlob" parent="." index="18" unique_id=104221436]
 position = Vector2(961, 530)

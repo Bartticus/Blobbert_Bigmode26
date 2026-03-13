@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dyxvgxqvu542d" path="res://Scenes/GreasableObject/greasable_object.tscn" id="2_0he2g"]
 [ext_resource type="Shader" uid="uid://cssnwq6lenywl" path="res://Scenes/GreasableObject/greasing.gdshader" id="3_dctr4"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="4_c5x56"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="5_c5x56"]
+[ext_resource type="AudioStream" uid="uid://dhd8v8oon4v7u" path="res://Assets/SFX/glass_crack_01.wav" id="6_skg4y"]
+[ext_resource type="AudioStream" uid="uid://doxhtfctxbigk" path="res://Assets/SFX/glass_crack_02.wav" id="7_qsqjw"]
+[ext_resource type="AudioStream" uid="uid://cqgoqhk1hl27d" path="res://Assets/SFX/glass_crack_03.wav" id="8_kg7pp"]
+[ext_resource type="AudioStream" uid="uid://c31l1cv7f6cei" path="res://Assets/SFX/glass_crack_04.wav" id="9_j0hjj"]
+[ext_resource type="AudioStream" uid="uid://4a8pg6nmacu8" path="res://Assets/SFX/glass_crack_05.wav" id="10_i6ip8"]
 
 [sub_resource type="Gradient" id="Gradient_2neri"]
 
@@ -223,3 +229,9 @@ collision_mask = 0
 [node name="ThickWallShape" type="CollisionShape2D" parent="ThickWall" unique_id=557544539]
 unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_dcqfx")
+
+[node name="GlassSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("5_c5x56")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("6_skg4y"), ExtResource("7_qsqjw"), ExtResource("8_kg7pp"), ExtResource("9_j0hjj"), ExtResource("10_i6ip8")])
+max_distance = 4000.0
+attenuation = 0.15

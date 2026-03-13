@@ -10,7 +10,6 @@ extends Node2D
 @onready var player_2: AudioStreamPlayer2D = %Player2
 @onready var player_3: AudioStreamPlayer2D = %Player3
 
-
 func get_player():
 	var available_player = null
 	for player in [player_1, player_2, player_3]:

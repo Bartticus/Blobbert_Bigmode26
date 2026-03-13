@@ -167,7 +167,6 @@ func new_border():
 
 #this function adds a speed to a spring with this index
 func splash(index, speed):
-	print(speed)
 	if index >= 0 and index < springs.size():
 		springs[index].velocity += speed
 	pass
@@ -176,7 +175,7 @@ func _on_Water_Body_Area_body_entered(body):
 	if body.name == 'BatteryBody':
 		body.owner.trigger_action()
 	spawn_particles(body)
-	Global.sound_manager.play_general_sound('water')
+	# Global.sound_manager.play_general_sound('water')
 
 func spawn_particles(body):
 	
@@ -194,4 +193,4 @@ func spawn_particles(body):
 
 func _on_water_body_area_body_exited(body: Node2D) -> void:
 	spawn_particles(body)
-	Global.sound_manager.play_general_sound('water')
+	# Global.sound_manager.play_general_sound('water')

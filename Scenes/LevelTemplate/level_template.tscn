@@ -174,9 +174,6 @@ update_scale = false
 [node name="SoundManager" parent="Camera" unique_id=269814558 instance=ExtResource("6_xssm3")]
 unique_name_in_owner = true
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Camera" unique_id=68125943]
-current = true
-
 [node name="LevelTitleCard" parent="Camera" unique_id=2057049144 instance=ExtResource("3_6vwpt")]
 unique_name_in_owner = true
 visible = false

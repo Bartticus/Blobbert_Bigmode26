@@ -14,9 +14,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
-[node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
+[node name="VentLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_qbcej")]
+ambient_sound_name = "vents"
+starting_screen = NodePath("Screens/VentScreen1")
 
-[node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="3" unique_id=2057049144]
+[node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="2" unique_id=2057049144]
 level_name = "The Vents"
 
 [node name="Blob" parent="." index="2" unique_id=104221436]
@@ -63,7 +65,7 @@ position = Vector2(483, -67)
 node_a = NodePath("../StaticBody2D2")
 node_b = NodePath("../RigidBody2D")
 
-[node name="ScreenBlob" parent="Screens/LabScreen5" index="9" unique_id=104221436]
+[node name="ScreenBlob" parent="Screens/LabScreen5" index="17" unique_id=104221436]
 position = Vector2(1660, 436)
 
 [node name="LabScreen2b" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=755592408 instance=ExtResource("3_7dgoj")]

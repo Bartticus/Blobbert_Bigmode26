@@ -83,6 +83,7 @@ _data = {
 }
 
 [node name="Fire" type="Node2D" unique_id=2049499128]
+z_as_relative = false
 script = ExtResource("3_h0xlw")
 
 [node name="FireSprite" type="Sprite2D" parent="." unique_id=214311019]

@@ -19,7 +19,7 @@
 
 [node name="BunsenLevel" unique_id=129905935 instance=ExtResource("1_28eey")]
 
-[node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="3" unique_id=2057049144]
+[node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="2" unique_id=2057049144]
 level_name = "Flame Hazard"
 
 [node name="BunsenScreen12" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1720561904 instance=ExtResource("2_701ob")]

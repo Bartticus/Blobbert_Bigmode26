@@ -232,6 +232,7 @@ polygon = PackedVector2Array(-148, 327, 152, 327, 176, 304, 187, 265, 62, -112, 
 
 [node name="BeakerSprite" type="Sprite2D" parent="." unique_id=1452955802]
 unique_name_in_owner = true
+clip_children = 2
 material = ExtResource("2_ihqxc")
 position = Vector2(-2, 80)
 scale = Vector2(0.33236435, 0.3960756)

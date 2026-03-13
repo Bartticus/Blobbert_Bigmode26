@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b6r1ctiig2po7"]
+
+[ext_resource type="Material" uid="uid://j2rvkwddutb0" path="res://Materials/tube_squiggle.tres" id="1_10byj"]
+[ext_resource type="Script" uid="uid://wxhfii7mysf6" path="res://Scenes/Tubes/tube.gd" id="1_blxqa"]
+[ext_resource type="Texture2D" uid="uid://drfdit7him4iy" path="res://Assets/Sprites/testtube.png" id="2_blxqa"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="4_jbtfk"]
+[ext_resource type="AudioStream" uid="uid://cyqds8i2p6omm" path="res://Assets/SFX/TubeChime1.mp3" id="5_7o3xd"]
+[ext_resource type="AudioStream" uid="uid://54fm6x88wsn5" path="res://Assets/SFX/TubeChime2.mp3" id="6_n2d0i"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1kq1j"]
+bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kq1j"]
+radius = 61.0
+height = 830.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfj18"]
+radius = 26.0
+height = 138.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad0bo"]
+size = Vector2(152, 872)
+
+[node name="Tube1" type="RigidBody2D" unique_id=731428142]
+collision_mask = 19
+physics_material_override = SubResource("PhysicsMaterial_1kq1j")
+script = ExtResource("1_blxqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265961591]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_1kq1j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1911621704]
+position = Vector2(2, -389)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pfj18")
+
+[node name="TubeSprite" type="Sprite2D" parent="." unique_id=884503841]
+material = ExtResource("1_10byj")
+position = Vector2(4, 58)
+scale = Vector2(0.34302324, 0.57994187)
+texture = ExtResource("2_blxqa")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1991520904]
+position = Vector2(1, -196)
+node_a = NodePath("../../Rack")
+node_b = NodePath("..")
+
+[node name="TubeArea" type="Area2D" parent="." unique_id=1833705272]
+position = Vector2(-528, -614)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TubeArea" unique_id=583230030]
+position = Vector2(527, 620)
+shape = SubResource("RectangleShape2D_ad0bo")
+
+[node name="TubeSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("4_jbtfk")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("5_7o3xd"), ExtResource("6_n2d0i")])
+
+[connection signal="area_entered" from="TubeArea" to="." method="_on_tube_area_area_entered"]
+[connection signal="body_entered" from="TubeArea" to="." method="_on_area_2d_body_entered"]

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bf0j3ms2oh0ia" path="res://Scenes/WindGust/wind_gust.tscn" id="6_am2jb"]
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="7_am2jb"]
 [ext_resource type="PackedScene" uid="uid://bmxas480qycg7" path="res://Scenes/Grate/grate.tscn" id="10_xjfkr"]
+[ext_resource type="Script" uid="uid://dnujvyselbkme" path="res://Scenes/Screens/wind_sound.gd" id="11_mdkld"]
 
 [sub_resource type="Gradient" id="Gradient_qfkhn"]
 
@@ -117,7 +118,7 @@ collision_enabled = false
 position = Vector2(952.99994, 449.99997)
 scale = Vector2(0.715, 0.715)
 destroy_on_greased = false
-triggerable_objects = [NodePath("../VentDoor"), NodePath("../WindTunnel"), NodePath("../WindTunnel2"), NodePath("../WindTunnel3"), NodePath("../WindTunnel4"), NodePath("../WindTunnel5"), NodePath("../WindTunnel6"), NodePath("../WindTunnel7"), NodePath("../WindTunnel8"), NodePath("../WindTunnel9"), NodePath("../WindTunnel10"), NodePath("../WindGustGroup"), NodePath("../WindGustGroup2")]
+triggerable_objects = [NodePath("../VentDoor"), NodePath("../WindTunnel"), NodePath("../WindTunnel2"), NodePath("../WindTunnel3"), NodePath("../WindTunnel4"), NodePath("../WindTunnel5"), NodePath("../WindTunnel6"), NodePath("../WindTunnel7"), NodePath("../WindTunnel8"), NodePath("../WindTunnel9"), NodePath("../WindTunnel10"), NodePath("../WindGustGroup"), NodePath("../WindGustGroup2"), NodePath("../WindSound")]
 stain_sprite = NodePath("GearSprite")
 grease_level = 0.2
 anim_player = NodePath("AnimationPlayer")
@@ -283,5 +284,8 @@ position = Vector2(512, 480)
 [node name="Grate" parent="." index="28" unique_id=382070669 instance=ExtResource("10_xjfkr")]
 position = Vector2(1773.0001, 437)
 scale = Vector2(1.3, 1.5)
+
+[node name="WindSound" type="Node2D" parent="." index="29" unique_id=1346139176]
+script = ExtResource("11_mdkld")
 
 [editable path="Gear"]

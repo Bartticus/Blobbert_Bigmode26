@@ -6,6 +6,7 @@ extends Node2D
 @export var stain_sprite: Sprite2D
 @export var grease_level: float = 0
 @export var glass_pane: bool
+@export var glass_sound_player: SoundPlayer
 
 @export var anim_player: AnimationPlayer
 
@@ -22,7 +23,7 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 	
 	if body is RigidBody2D:
 		if glass_pane:
-			Global.sound_manager.play_required_sound('glass_break')
+			glass_sound_player.play_sound()
 		var velocity: Vector2 = body.linear_velocity
 		var new_strength: float = velocity.length() / max_grease
 		

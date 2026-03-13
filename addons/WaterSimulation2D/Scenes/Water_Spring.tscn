@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://watleicasutp" path="res://addons/WaterSimulation2D/Sprites/joint.png" id="1"]
 [ext_resource type="Script" uid="uid://sv2ber0sdul7" path="res://addons/WaterSimulation2D/Scenes/Water_Spring.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="3_yn368"]
+[ext_resource type="AudioStream" uid="uid://comdckgwtl8cx" path="res://Assets/SFX/water.wav" id="9_r7rko"]
+[ext_resource type="AudioStream" uid="uid://cxk3jtgj6w7xa" path="res://Assets/SFX/water_2.wav" id="10_8tpyx"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(13.594, 3)
@@ -19,5 +22,10 @@ collision_mask = 113
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2142357253]
 shape = SubResource("1")
+
+[node name="WaterSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("3_yn368")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("9_r7rko"), ExtResource("10_8tpyx")])
+random_pitch = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

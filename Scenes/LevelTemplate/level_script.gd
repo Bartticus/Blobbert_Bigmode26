@@ -21,6 +21,7 @@ extends Node2D
 				tween.set_ignore_time_scale()
 				tween.tween_property(full_keeb, 'modulate', Color(1.0, 1.0, 1.0, 1.0), 0.1)
 
+@export var ambient_sound_name: String
 @export var displaying_title_card: bool = false
 @export var is_multi_screen: bool = false
 @export var zoom_time: float = 0.25
@@ -58,6 +59,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	Global.blob.reset_screen()
 	full_keeb.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	if ambient_sound_name:
+		Global.sound_manager.play_ambient_sound(ambient_sound_name)
 	await Fade.fade_in(0.5).finished
 	if !playing_cutscene:
 		display_title_card()
@@ -109,6 +112,7 @@ func enter_single_screen(screen):
 		Engine.time_scale = 1.0
 		if !is_in_cutscene:
 			playing_cutscene = false
+		
 	is_multi_screen = false
 
 func tween_camera(property = 'position', target = Vector2(0,0), tween_time = 1.0, transition_type = Tween.TRANS_LINEAR, delay = 0.0):

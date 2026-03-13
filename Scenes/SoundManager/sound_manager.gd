@@ -1,9 +1,13 @@
 extends Node2D
 
-@onready var blob_sounds: Node2D = %BlobSounds
+@onready var blob_sounds: Node2D:
+	get:
+		return Global.blob.blob_sounds
+		
 @onready var general_sounds: Node2D = %GeneralSounds
 @onready var required_sounds: Node2D = %RequiredSounds
 @onready var stacking_sounds: Node2D = %StackingSounds
+@onready var ambient_sounds: Node2D = %AmbientSounds
 
 var KEEP_PITCH = ['glass_break', 'siren', 'sizzle', 'explosion', 'chime']
 
@@ -60,6 +64,12 @@ func play_stacking_sound(sound_type):
 	
 	player.pitch_scale = 1.0
 	shift_pitch(sound_type, player)
+	player.play()
+	return player
+
+func play_ambient_sound(sound_type):
+	var player = ambient_sounds.player
+	player.stream = ambient_sounds.get(sound_type)
 	player.play()
 	return player
 

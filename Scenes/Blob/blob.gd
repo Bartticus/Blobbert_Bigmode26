@@ -21,6 +21,7 @@ var face_dict: Dictionary = {}
 @onready var bounce_timer: Timer = %BounceTimer
 @onready var whoosh_timer: Timer = %WhooshTimer
 @onready var stretch_timer: Timer = %StretchTimer
+@onready var blob_sounds: Node2D = %BlobSounds
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 @onready var blob_center: Marker2D = %BlobCenter
@@ -169,6 +170,8 @@ func reset_screen():
 				Global.level.enter_multi_screen(overlapping_area.get_owner().multi_screen)
 			else:
 				Global.level.enter_single_screen(overlapping_area.get_owner())
+	print(Global.level.camera.get_screen_center_position())
+	Global.sound_manager.global_position = Global.level.camera.get_screen_center_position()
 
 func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	#check if a new oil should spawn
@@ -201,7 +204,10 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	
 	#add pivot point
 	var oil_pivot: Node2D = Node2D.new()
-	body.call_deferred("add_child", oil_pivot)
+	if body.get('beaker_sprite'):
+		body.beaker_sprite.call_deferred("add_child", oil_pivot)
+	else:
+		body.call_deferred("add_child", oil_pivot)
 	#instantiate oil
 	var oil: Oil = oil_scene.instantiate()
 	oil_pivot.call_deferred("add_child", oil)

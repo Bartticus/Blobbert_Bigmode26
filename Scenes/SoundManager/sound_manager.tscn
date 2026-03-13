@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ykxh48ns1kyp" path="res://Scenes/SoundManager/sound_manager.gd" id="1_1ipep"]
 [ext_resource type="Script" uid="uid://dx6537rrrs73d" path="res://Scenes/SoundManager/general_sounds.gd" id="3_883ge"]
-[ext_resource type="PackedScene" path="res://Scenes/Blob/blob_sounds.tscn" id="3_vhw6k"]
 [ext_resource type="AudioStream" uid="uid://dhd8v8oon4v7u" path="res://Assets/SFX/glass_crack_01.wav" id="4_oo8t0"]
 [ext_resource type="AudioStream" uid="uid://doxhtfctxbigk" path="res://Assets/SFX/glass_crack_02.wav" id="5_wdgtj"]
 [ext_resource type="AudioStream" uid="uid://cqgoqhk1hl27d" path="res://Assets/SFX/glass_crack_03.wav" id="6_xia53"]
@@ -17,12 +16,11 @@
 [ext_resource type="AudioStream" uid="uid://05gl81m4vo4y" path="res://Assets/SFX/sizzle_01.ogg" id="14_kf56u"]
 [ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
 [ext_resource type="Script" uid="uid://ctyjo3135c28x" path="res://Scenes/SoundManager/stacking_sounds.gd" id="16_myamy"]
+[ext_resource type="Script" uid="uid://bmdo162hxv66m" path="res://Scenes/SoundManager/ambient_sounds.gd" id="18_c6m8x"]
+[ext_resource type="AudioStream" uid="uid://mhahrm8yrlxr" path="res://Assets/SFX/VentAmbiance.ogg" id="19_u7fpq"]
 
 [node name="SoundManager" type="Node2D" unique_id=269814558]
 script = ExtResource("1_1ipep")
-
-[node name="BlobSounds" parent="." unique_id=2132559176 instance=ExtResource("3_vhw6k")]
-unique_name_in_owner = true
 
 [node name="GeneralSounds" type="Node2D" parent="." unique_id=1147910431]
 unique_name_in_owner = true
@@ -65,4 +63,12 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="StackingSoundPlayer4" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=1403348903]
+unique_name_in_owner = true
+
+[node name="AmbientSounds" type="Node2D" parent="." unique_id=1569097066]
+unique_name_in_owner = true
+script = ExtResource("18_c6m8x")
+vents = ExtResource("19_u7fpq")
+
+[node name="AmbientSoundPlayer" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=2126895229]
 unique_name_in_owner = true

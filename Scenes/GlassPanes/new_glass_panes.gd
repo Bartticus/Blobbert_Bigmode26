@@ -2,6 +2,7 @@ class_name NewGlassPanes
 extends Node2D
 
 @onready var thick_wall_shape: CollisionShape2D = %ThickWallShape
+@onready var glass_sound_player: SoundPlayer = %GlassSoundPlayer
 
 @export var all_glass_panes: Array[GreasableObject] = []
 @export var thick_wall: StaticBody2D
@@ -10,9 +11,7 @@ extends Node2D
 @export var unbreakable: bool = false
 @export var all_destroyed: bool = false
 @export var tank_glass: Node2D = null
-
-@export var anim_player: AnimationPlayer
-
+@export var breach: Node2D
 
 func set_wall_thickness():
 	thick_wall_shape.shape.size = thick_wall_dimensions
@@ -27,6 +26,7 @@ func _ready() -> void:
 				child.glass_pane = false
 			all_glass_panes.append(child)
 			child.connect("tree_exiting", _on_pane_exiting.bind(child))
+			child.glass_sound_player = glass_sound_player
 		if child is StaticBody2D:
 			thick_wall = child
 	set_wall_thickness()
@@ -43,7 +43,5 @@ func _on_pane_exiting(_pane: GreasableObject) -> void:
 		if tank_glass:
 			tank_glass.iterate_groups_broken()
 		
-	if anim_player:
-		anim_player.play("breach")
-		await get_tree().create_timer(1.0).timeout
-		Global.sound_manager.play_required_sound('siren')
+	if breach:
+		breach.play_breach()

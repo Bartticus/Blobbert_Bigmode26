@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bf0j3ms2oh0ia" path="res://Scenes/WindGust/wind_gust.tscn" id="4_hu0wx"]
 [ext_resource type="Texture2D" uid="uid://8fxrjbsrva68" path="res://Assets/Sprites/Grate.png" id="4_isg4l"]
 [ext_resource type="PackedScene" uid="uid://bmxas480qycg7" path="res://Scenes/Grate/grate.tscn" id="5_5jc0h"]
+[ext_resource type="Script" uid="uid://da8qfhr51hyfk" path="res://Scenes/Screens/vent_sound_activation.gd" id="10_2ln6g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 
@@ -18,6 +19,9 @@ friction = 0.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25nty"]
 radius = 19.022644
 height = 525.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk4ar"]
+size = Vector2(700, 700)
 
 [node name="LabScreen5" unique_id=1360540123 instance=ExtResource("1_xtv06")]
 
@@ -70,13 +74,19 @@ wind_power = 15.0
 
 [node name="WindGustGroup" parent="." index="12" unique_id=1942551771 instance=ExtResource("3_2ln6g")]
 
-[node name="WindGust3" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("4_hu0wx")]
+[node name="WindGust5" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("4_hu0wx")]
+position = Vector2(1140, 1008)
+rotation = -1.5707964
+scale = Vector2(0.39, 0.26000002)
+skew = -0.03265667
+
+[node name="WindGust3" parent="WindGustGroup" index="1" unique_id=823700046 instance=ExtResource("4_hu0wx")]
 position = Vector2(670, 205.99998)
 rotation = -0.02616883
 scale = Vector2(0.39, 0.26)
 skew = -0.03265667
 
-[node name="WindGust4" parent="WindGustGroup" index="1" unique_id=216485638 instance=ExtResource("4_hu0wx")]
+[node name="WindGust4" parent="WindGustGroup" index="2" unique_id=216485638 instance=ExtResource("4_hu0wx")]
 position = Vector2(1407, 205)
 scale = Vector2(0.39, 0.26)
 skew = -0.03265667
@@ -161,3 +171,14 @@ region_rect = Rect2(0, 0, 1920, 1080)
 z_index = 50
 position = Vector2(67, 144.00002)
 scale = Vector2(1.7, 0.9)
+activated = false
+
+[node name="VentSoundActivation" type="Area2D" parent="." index="23" unique_id=1143408020 node_paths=PackedStringArray("grate")]
+script = ExtResource("10_2ln6g")
+grate = NodePath("../Grate")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VentSoundActivation" index="0" unique_id=1116168497]
+position = Vector2(1201, 1439)
+shape = SubResource("RectangleShape2D_rk4ar")
+
+[connection signal="body_entered" from="VentSoundActivation" to="VentSoundActivation" method="_on_body_entered"]

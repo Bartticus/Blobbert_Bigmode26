@@ -15,6 +15,7 @@ var height = 0
 var target_height = 0
 
 @onready var collision = $Area2D/CollisionShape2D
+@onready var water_sound_player: SoundPlayer = %WaterSoundPlayer
 
 # the index of this spring
 #we will set it on initialize
@@ -82,11 +83,11 @@ func _on_Area2D_body_entered(body):
 		return
 	#called when a body collides with a spring
 	#if the body already collided with the spring, then do not collide
-	if body == collided_with:
-		return
+	# if body == collided_with:
+	# 	return
 	
-	#the body is the last thing this spring collided with
-	collided_with = body
+	# #the body is the last thing this spring collided with
+	# collided_with = body
 	
 	#we multiply the motion of the body by the motion factor
 	#if we didn't the speed would be huge, depending on your game
@@ -94,4 +95,4 @@ func _on_Area2D_body_entered(body):
 	
 	#emit the signal "splash" to call the splash function, at our water body script
 	emit_signal("splash",index,speed)
-	pass # Replace with function body.
+	water_sound_player.play_sound()
