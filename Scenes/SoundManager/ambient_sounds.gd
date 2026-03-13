@@ -8,4 +8,5 @@ extends Node2D
 @onready var player: AudioStreamPlayer = %AmbientSoundPlayer
 
 func crank_it():
-	player.volume_db = 4.0
+	player.volume_db = 1.5
+	player.pitch_scale = 1.3

@@ -58,13 +58,12 @@ shape = SubResource("RectangleShape2D_rb0md")
 
 [node name="VelocityDetector" type="Area2D" parent="." unique_id=446853444]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VelocityDetector" unique_id=2097183210]
 shape = SubResource("RectangleShape2D_jv26f")
 
 [node name="UngreasableTimer" type="Timer" parent="." unique_id=1926769009]
-wait_time = 2.0
 one_shot = true
 
 [connection signal="body_entered" from="VelocityDetector" to="." method="_on_velocity_detector_body_entered"]

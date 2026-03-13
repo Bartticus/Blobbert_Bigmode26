@@ -25,6 +25,8 @@ func _on_velocity_detector_body_entered(body: Node2D) -> void:
 		if glass_pane:
 			glass_sound_player.play_sound()
 		var velocity: Vector2 = body.linear_velocity
+		if body is not Bone:
+			velocity = velocity * 1000000 # lol
 		var new_strength: float = velocity.length() / max_grease
 		
 		var one_half: float = 1.0 / 2.0

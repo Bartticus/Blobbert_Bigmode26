@@ -6,6 +6,7 @@ extends Node2D
 @export var interruptable: bool = false
 @export var max_distance: float = 3000.0
 @export var attenuation: float = 0.5
+@export var volume_db: float = 0.0
 
 
 @onready var player: AudioStreamPlayer2D = %StreamPlayer
@@ -14,7 +15,7 @@ func _ready():
 	player.max_distance = max_distance
 	player.attenuation = attenuation
 
-func play_sound(pitch_scale: float = 1.0, added_db: float = 0.0):
+func play_sound(pitch_scale: float = 1.0, added_db: float = volume_db):
 	if player.playing && !interruptable:
 		return
 	player.stream = sound_files.pick_random()

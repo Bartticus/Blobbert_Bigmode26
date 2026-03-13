@@ -2,6 +2,7 @@ extends Node2D
 
 @export var fire: Array[AudioStream] = []
 @export var water: Array[AudioStream] = []
+@export var zap: Array[AudioStream] = []
 
 @onready var player: AudioStreamPlayer2D = %GeneralSoundPlayer
 

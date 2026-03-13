@@ -170,7 +170,6 @@ func reset_screen():
 				Global.level.enter_multi_screen(overlapping_area.get_owner().multi_screen)
 			else:
 				Global.level.enter_single_screen(overlapping_area.get_owner())
-	print(Global.level.camera.get_screen_center_position())
 	Global.sound_manager.global_position = Global.level.camera.get_screen_center_position()
 
 func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:

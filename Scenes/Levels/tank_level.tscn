@@ -1823,7 +1823,9 @@ shader_parameter/edge_remap_max = 1.0
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[node name="TankLevel" unique_id=129905935 instance=ExtResource("1_7hsss")]
+[node name="TankLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_7hsss")]
+ambient_sound_name = "tank"
+starting_screen = NodePath("Screens/TankScreen8")
 
 [node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="2" unique_id=2057049144]
 level_name = "The Fish Tank"
@@ -2039,6 +2041,7 @@ texture = ExtResource("20_uuq41")
 
 [editable path="Screens/Tank/TankScreen0"]
 [editable path="Screens/Tank/TankScreen0/Water_Body"]
+[editable path="Screens/Tank/TankScreen0/Water_Body/WaterSoundPlayer"]
 [editable path="Screens/Tank/TankScreen2"]
 [editable path="Screens/Tank/TankScreen2/TankGlass/GlassPanes"]
 [editable path="Screens/Tank/TankScreen2/TankGlass/GlassPanes/GlassSoundPlayer"]

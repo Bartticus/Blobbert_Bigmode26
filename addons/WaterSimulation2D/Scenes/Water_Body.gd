@@ -44,6 +44,7 @@ var bottom = target_height + depth
 
 #reference to the particle we just created
 @onready var splash_particle = preload("res://addons/WaterSimulation2D/Scenes/splash_particles.tscn")
+@onready var water_sound_player: SoundPlayer = %WaterSoundPlayer
 
 #initializes the spring array and all the springs
 func _ready():
@@ -175,7 +176,7 @@ func _on_Water_Body_Area_body_entered(body):
 	if body.name == 'BatteryBody':
 		body.owner.trigger_action()
 	spawn_particles(body)
-	# Global.sound_manager.play_general_sound('water')
+	water_sound_player.play_sound()
 
 func spawn_particles(body):
 	
@@ -193,4 +194,4 @@ func spawn_particles(body):
 
 func _on_water_body_area_body_exited(body: Node2D) -> void:
 	spawn_particles(body)
-	# Global.sound_manager.play_general_sound('water')
+	water_sound_player.play_sound()

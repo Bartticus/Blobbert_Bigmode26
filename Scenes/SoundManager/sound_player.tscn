@@ -10,3 +10,4 @@ unique_name_in_owner = true
 position = Vector2(9, 456)
 max_distance = 3000.0
 attenuation = 0.50000006
+bus = &"SFX"

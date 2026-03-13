@@ -49,7 +49,7 @@ position = Vector2(0, -126)
 shape = SubResource("RectangleShape2D_r4oiy")
 
 [node name="FireSprites" type="AnimatedSprite2D" parent="." unique_id=48558562]
-modulate = Color(1, 1, 1, 0.5411765)
+modulate = Color(1, 1, 1, 0.77254903)
 position = Vector2(4, -186)
 scale = Vector2(0.6097561, 0.5954546)
 sprite_frames = SubResource("SpriteFrames_qjgvk")
