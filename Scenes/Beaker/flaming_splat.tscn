@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ckayslsw8kg0c"]
+
+[ext_resource type="Texture2D" uid="uid://cyeobqb6ndqb1" path="res://Assets/Sprites/splat35.png" id="1_g2aqx"]
+[ext_resource type="PackedScene" uid="uid://bywsr3ckwvqf2" path="res://Scenes/Fire/fire.tscn" id="2_i58io"]
+
+[node name="FlamingSplat" type="Node2D" unique_id=288287485]
+z_index = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=423598643]
+modulate = Color(0.78431374, 0.49019608, 0.7058824, 1)
+position = Vector2(4.9999995, -8.000002)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g2aqx")
+
+[node name="Fire" parent="." unique_id=2049499128 instance=ExtResource("2_i58io")]
+z_as_relative = true
+position = Vector2(-3.999999, 13)
+scale = Vector2(0.4, 0.4)

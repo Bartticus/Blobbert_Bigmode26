@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://y363y70s24ry" path="res://Assets/Sprites/BOOM2.png" id="6_qakos"]
 [ext_resource type="PackedScene" uid="uid://bywsr3ckwvqf2" path="res://Scenes/Fire/fire.tscn" id="7_ihqxc"]
 [ext_resource type="Texture2D" uid="uid://cps0r41gh8gme" path="res://Assets/Sprites/BOOM3.png" id="7_vk8a5"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="8_qakos"]
+[ext_resource type="AudioStream" uid="uid://drpioi6iyabnl" path="res://Assets/SFX/reaction.ogg" id="9_vk8a5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imnhf"]
 friction = 0.4
@@ -232,7 +234,6 @@ polygon = PackedVector2Array(-148, 327, 152, 327, 176, 304, 187, 265, 62, -112, 
 
 [node name="BeakerSprite" type="Sprite2D" parent="." unique_id=1452955802]
 unique_name_in_owner = true
-clip_children = 2
 material = ExtResource("2_ihqxc")
 position = Vector2(-2, 80)
 scale = Vector2(0.33236435, 0.3960756)
@@ -277,6 +278,10 @@ texture = ExtResource("7_vk8a5")
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_hgi1m")
 speed_scale = 6.0
+
+[node name="ReactionSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("8_qakos")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("9_vk8a5")])
 
 [connection signal="area_entered" from="FlameCheck" to="." method="_on_flame_check_area_entered"]
 [connection signal="timeout" from="ExplosionTimer" to="." method="_on_explosion_timer_timeout"]

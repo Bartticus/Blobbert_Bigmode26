@@ -3967,15 +3967,13 @@ offset_top = 365.99982
 offset_right = 3163.0
 offset_bottom = 1241.9998
 
-[node name="GlassPanes" parent="Cutscene/BGSprite/LabScreen0" index="9" unique_id=936546553 node_paths=PackedStringArray("anim_player") instance=ExtResource("13_qgm0v")]
+[node name="GlassPanes" parent="Cutscene/BGSprite/LabScreen0" index="9" unique_id=936546553 instance=ExtResource("13_qgm0v")]
 position = Vector2(3161, 347.99982)
-anim_player = NodePath("../Breach/AnimationPlayer")
 
-[node name="GlassPanes2" parent="Cutscene/BGSprite/LabScreen0" index="10" unique_id=1757028404 node_paths=PackedStringArray("anim_player") instance=ExtResource("13_qgm0v")]
+[node name="GlassPanes2" parent="Cutscene/BGSprite/LabScreen0" index="10" unique_id=1757028404 instance=ExtResource("13_qgm0v")]
 position = Vector2(2081.0002, 346.99982)
 rotation = 3.1415927
 scale = Vector2(1, -1)
-anim_player = NodePath("../Breach/AnimationPlayer")
 
 [node name="AntiGrav" type="Area2D" parent="Cutscene/BGSprite/LabScreen0" index="11" unique_id=1009572450]
 position = Vector2(2621, 820.99976)
