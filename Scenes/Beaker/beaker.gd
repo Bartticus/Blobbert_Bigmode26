@@ -11,8 +11,10 @@ extends RigidBody2D
 @onready var beaker_polygon: CollisionPolygon2D = %BeakerPolygon
 @onready var explosion_anim: AnimationPlayer = %AnimationPlayer
 @onready var fire: Node2D = %Fire
+@onready var reaction_sound_player: SoundPlayer = %ReactionSoundPlayer
 
 var sizzle_player: AudioStreamPlayer2D = null
+var reaction_player: AudioStreamPlayer2D = null
 
 
 func _on_flame_check_area_entered(area: Area2D) -> void:
@@ -27,6 +29,7 @@ func explode():
 	exploding = true
 	fire.visible = true
 	sizzle_player = Global.sound_manager.play_required_sound('sizzle')
+	reaction_player = reaction_sound_player.play_sound()
 	explosion_timer.start()
 
 func _physics_process(delta: float) -> void:
@@ -49,6 +52,7 @@ func _on_explosion_timer_timeout() -> void:
 			child.hide()
 	
 	sizzle_player.stop()
+	reaction_player.stop()
 	Global.sound_manager.play_required_sound('explosion')
 	explosion_anim.play("boom")
 	await explosion_anim.animation_finished

@@ -6,6 +6,7 @@ extends Node2D
 @onready var q_row: Node2D = %QRow
 @onready var a_row: Node2D = %ARow
 @onready var z_row: Node2D = %ZRow
+@onready var keeb_transfer: RemoteTransform2D = %KeebTransfer
 
 @export var x_spacing: float
 @export var x_offset: float
@@ -34,3 +35,5 @@ func set_key_positions():
 
 func _ready() -> void:
 	set_key_positions()
+	if !Engine.is_editor_hint() && Global.sound_manager:
+		keeb_transfer.remote_path = keeb_transfer.get_path_to(Global.sound_manager)
