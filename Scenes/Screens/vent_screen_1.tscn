@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="7_am2jb"]
 [ext_resource type="PackedScene" uid="uid://bmxas480qycg7" path="res://Scenes/Grate/grate.tscn" id="10_xjfkr"]
 [ext_resource type="Script" uid="uid://dnujvyselbkme" path="res://Scenes/Screens/wind_sound.gd" id="11_mdkld"]
+[ext_resource type="PackedScene" uid="uid://dfbknujbshmtg" path="res://Scenes/Fan/fan.tscn" id="12_ginh1"]
 
 [sub_resource type="Gradient" id="Gradient_qfkhn"]
 
@@ -25,7 +26,7 @@ noise = SubResource("FastNoiseLite_ojx3w")
 color_ramp = SubResource("Gradient_qfkhn")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdkld"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ginh1"]
 resource_local_to_scene = true
 shader = ExtResource("3_ecl18")
 shader_parameter/sensitivity = 0.0
@@ -118,13 +119,13 @@ collision_enabled = false
 position = Vector2(952.99994, 449.99997)
 scale = Vector2(0.715, 0.715)
 destroy_on_greased = false
-triggerable_objects = [NodePath("../VentDoor"), NodePath("../WindTunnel"), NodePath("../WindTunnel2"), NodePath("../WindTunnel3"), NodePath("../WindTunnel4"), NodePath("../WindTunnel5"), NodePath("../WindTunnel6"), NodePath("../WindTunnel7"), NodePath("../WindTunnel8"), NodePath("../WindTunnel9"), NodePath("../WindTunnel10"), NodePath("../WindGustGroup"), NodePath("../WindGustGroup2"), NodePath("../WindSound")]
+triggerable_objects = [NodePath("../VentDoor"), NodePath("../WindTunnel"), NodePath("../WindTunnel2"), NodePath("../WindTunnel3"), NodePath("../WindTunnel4"), NodePath("../WindTunnel5"), NodePath("../WindTunnel6"), NodePath("../WindTunnel7"), NodePath("../WindTunnel8"), NodePath("../WindTunnel9"), NodePath("../WindTunnel10"), NodePath("../WindGustGroup"), NodePath("../WindGustGroup2"), NodePath("../WindSound"), NodePath("../Fan")]
 stain_sprite = NodePath("GearSprite")
 grease_level = 0.2
 anim_player = NodePath("AnimationPlayer")
 
 [node name="ObjectShaded" parent="Gear" index="0" unique_id=1685847717]
-material = SubResource("ShaderMaterial_mdkld")
+material = SubResource("ShaderMaterial_ginh1")
 
 [node name="CollisionShape2D" parent="Gear/StaticBody2D" parent_id_path=PackedInt32Array(1867482040, 481857584) index="0" unique_id=1424846631]
 shape = SubResource("CircleShape2D_mdkld")
@@ -144,65 +145,143 @@ libraries/ = SubResource("AnimationLibrary_mdkld")
 position = Vector2(1377, 939)
 rotation = 3.1415927
 scale = Vector2(2, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel2" parent="." index="7" unique_id=97437514 instance=ExtResource("4_mjv7u")]
 position = Vector2(1377, 838)
 rotation = 3.1415927
 scale = Vector2(2, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel3" parent="." index="8" unique_id=1659196485 instance=ExtResource("4_mjv7u")]
 position = Vector2(1377, 739)
 rotation = 3.1415927
 scale = Vector2(2, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel4" parent="." index="9" unique_id=1533143517 instance=ExtResource("4_mjv7u")]
 position = Vector2(778, 939)
 rotation = 3.1415927
 scale = Vector2(2, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel5" parent="." index="10" unique_id=939864969 instance=ExtResource("4_mjv7u")]
 position = Vector2(778, 838)
 rotation = 3.1415927
 scale = Vector2(2, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel6" parent="." index="11" unique_id=1186976802 instance=ExtResource("4_mjv7u")]
 position = Vector2(778, 739)
 rotation = 3.1415927
 scale = Vector2(2, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel7" parent="." index="12" unique_id=1471840019 instance=ExtResource("4_mjv7u")]
 position = Vector2(386.00003, 912)
 rotation = 2.5054395
 scale = Vector2(1.6, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel8" parent="." index="13" unique_id=164498307 instance=ExtResource("4_mjv7u")]
 position = Vector2(375.99997, 759)
 rotation = 2.3178139
 scale = Vector2(1.6, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel9" parent="." index="14" unique_id=1596655612 instance=ExtResource("4_mjv7u")]
 position = Vector2(212, 1054)
 rotation = 1.5707964
 scale = Vector2(1.6, 1)
+wind_power = 50.0
 active = false
 
 [node name="WindTunnel10" parent="." index="15" unique_id=1914930800 instance=ExtResource("4_mjv7u")]
 position = Vector2(115, 1056)
 rotation = 1.5707964
 scale = Vector2(1.6, 1)
+wind_power = 50.0
 active = false
 
 [node name="Oils" type="Node2D" parent="." index="16" unique_id=70454373]
 
-[node name="WindGustGroup" parent="." index="17" unique_id=1942551771 instance=ExtResource("5_3jp2c")]
+[node name="VentGeometry" type="Node2D" parent="." index="22" unique_id=2072586098]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="VentGeometry" index="0" unique_id=990701440]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VentGeometry/StaticBody2D4" index="0" unique_id=109576090]
+polygon = PackedVector2Array(-1, -1, 0, 1089, 64, 1090, 64, 816, 111, 816, 368, 560, 512, 560, 512, 485, 640, 485, 640, 560, 688, 560, 759, 513, 795, 400, 851, 340, 953.8246, 320, 1059, 339, 1092, 395, 1131, 475, 1184, 475, 1184, 240, 693, 243, 642, 292, 641, 480, 512, 480, 64, 480, 65, -1)
+
+[node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D4" index="1" unique_id=1075042533]
+clip_children = 2
+color = Color(0.3553134, 0.35531363, 0.3553135, 1)
+polygon = PackedVector2Array(-1, -1, 0, 1089, 64, 1090, 64, 816, 111, 816, 368, 560, 512, 560, 512, 485, 640, 485, 640, 560, 688, 560, 759, 513, 795, 400, 851, 340, 953.8246, 320, 1059, 339, 1092, 395, 1131, 475, 1184, 475, 1184, 240, 693, 243, 642, 292, 641, 480, 512, 480, 64, 480, 65, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="VentGeometry/StaticBody2D4/Polygon2D" index="0" unique_id=738518019]
+modulate = Color(0.7313316, 0.7313315, 0.73133147, 1)
+texture_repeat = 2
+texture = ExtResource("7_am2jb")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="VentGeometry" index="1" unique_id=1540994125]
+position = Vector2(0, 963)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VentGeometry/StaticBody2D5" index="0" unique_id=679900760]
+polygon = PackedVector2Array(256, 77, 256, 125, 1920, 117, 1920, 27, 1475, 27, 1475, -435, 1660, -602, 1921, -602, 1920, -962, 256, -963, 256, -899, 512, -900, 512, -931, 640, -931, 640, -900, 1331, -902, 1331, 29, 640, 29, 640, 45, 512, 45, 512, 29, 304, 29)
+
+[node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D5" index="1" unique_id=640798318]
+clip_children = 2
+color = Color(0.35686275, 0.35686275, 0.35686275, 1)
+polygon = PackedVector2Array(256, 77, 256, 125, 1920, 117, 1920, 27, 1475, 27, 1475, -435, 1660, -602, 1921, -602, 1920, -962, 256, -963, 256, -899, 512, -900, 512, -931, 640, -931, 640, -900, 1331, -902, 1331, 29, 640, 29, 640, 45, 512, 45, 512, 29, 304, 29)
+
+[node name="Sprite2D" type="Sprite2D" parent="VentGeometry/StaticBody2D5/Polygon2D" index="0" unique_id=557055146]
+modulate = Color(0.7313316, 0.7313315, 0.73133147, 1)
+texture_repeat = 2
+position = Vector2(0, -961)
+texture = ExtResource("7_am2jb")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="VentDoor" parent="." index="25" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
+position = Vector2(512, 480)
+
+[node name="Grate" parent="." index="26" unique_id=382070669 instance=ExtResource("10_xjfkr")]
+position = Vector2(1330, 434.00003)
+scale = Vector2(1.3, 1.5)
+
+[node name="Outline" parent="Grate" index="0" unique_id=476162928]
+position = Vector2(56.538406, 217.66669)
+scale = Vector2(0.5809301, 1.6145836)
+
+[node name="GrateSprite2" parent="Grate" index="1" unique_id=2130744360]
+visible = false
+position = Vector2(57.288383, 261.49997)
+scale = Vector2(0.5, 1)
+
+[node name="GrateSprite" parent="Grate" index="2" unique_id=1256608485]
+position = Vector2(55.392, 217.552)
+scale = Vector2(0.49665385, 1.3)
+
+[node name="WindSound" type="Node2D" parent="." index="27" unique_id=1346139176]
+script = ExtResource("11_mdkld")
+
+[node name="Fan" parent="." index="28" unique_id=86154387 instance=ExtResource("12_ginh1")]
+position = Vector2(1818, 679)
+scale = Vector2(0.68, 0.68)
+fan_speed = 0.5
+
+[node name="WindGustGroup" parent="." index="29" unique_id=1942551771 instance=ExtResource("5_3jp2c")]
 auto_start = false
 
 [node name="WindGust3" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("6_am2jb")]
@@ -220,7 +299,7 @@ position = Vector2(425.99997, 746)
 rotation = 2.3590355
 scale = Vector2(0.3, 0.3)
 
-[node name="WindGustGroup2" parent="." index="18" unique_id=356277714 instance=ExtResource("5_3jp2c")]
+[node name="WindGustGroup2" parent="." index="30" unique_id=356277714 instance=ExtResource("5_3jp2c")]
 auto_start = false
 
 [node name="WindGust6" parent="WindGustGroup2" index="0" unique_id=521127419 instance=ExtResource("6_am2jb")]
@@ -238,54 +317,5 @@ position = Vector2(400, 906)
 rotation = 2.3590355
 scale = Vector2(0.3, 0.3)
 
-[node name="VentGeometry" type="Node2D" parent="." index="24" unique_id=2072586098]
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="VentGeometry" index="0" unique_id=990701440]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VentGeometry/StaticBody2D4" index="0" unique_id=109576090]
-polygon = PackedVector2Array(-1, -1, 0, 1089, 64, 1090, 64, 816, 111, 816, 368, 560, 512, 560, 640, 560, 688, 560, 759, 513, 795, 400, 851, 340, 953.8246, 320, 1048, 334, 1106, 376, 1136, 447, 1232, 447, 1232, 288, 1184, 240, 693, 243, 642, 292, 641, 480, 512, 480, 64, 480, 65, -1)
-
-[node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D4" index="1" unique_id=1075042533]
-clip_children = 2
-color = Color(0.3553134, 0.35531363, 0.3553135, 1)
-polygon = PackedVector2Array(-1, -1, 0, 1089, 64, 1090, 64, 816, 111, 816, 368, 560, 512, 560, 512, 485, 640, 485, 640, 560, 688, 560, 759, 513, 795, 400, 851, 340, 953.8246, 320, 1048, 334, 1106, 376, 1136, 447, 1232, 447, 1232, 288, 1184, 240, 693, 243, 642, 292, 641, 480, 512, 480, 64, 480, 65, -1)
-
-[node name="Sprite2D" type="Sprite2D" parent="VentGeometry/StaticBody2D4/Polygon2D" index="0" unique_id=738518019]
-modulate = Color(0.7313316, 0.7313315, 0.73133147, 1)
-texture_repeat = 2
-texture = ExtResource("7_am2jb")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 1920, 1080)
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="VentGeometry" index="1" unique_id=1540994125]
-position = Vector2(0, 963)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VentGeometry/StaticBody2D5" index="0" unique_id=679900760]
-polygon = PackedVector2Array(256, 77, 256, 125, 1920, 117, 1920, -962, 256, -963, 256, -899, 512, -900, 512, -931, 640, -931, 640, -900, 1407, -900, 1408, -692, 1681, -419, 1680, 29, 640, 29, 640, 45, 512, 45, 512, 29, 304, 29)
-
-[node name="Polygon2D" type="Polygon2D" parent="VentGeometry/StaticBody2D5" index="1" unique_id=640798318]
-clip_children = 2
-color = Color(0.35686275, 0.35686275, 0.35686275, 1)
-polygon = PackedVector2Array(256, 77, 256, 125, 1920, 117, 1920, -962, 256, -963, 256, -899, 512, -900, 512, -931, 640, -931, 640, -900, 1407, -900, 1408, -692, 1681, -419, 1680, 29, 640, 29, 640, 45, 512, 45, 512, 29, 304, 29)
-
-[node name="Sprite2D" type="Sprite2D" parent="VentGeometry/StaticBody2D5/Polygon2D" index="0" unique_id=557055146]
-modulate = Color(0.7313316, 0.7313315, 0.73133147, 1)
-texture_repeat = 2
-position = Vector2(0, -961)
-texture = ExtResource("7_am2jb")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 1920, 1080)
-
-[node name="VentDoor" parent="." index="27" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
-position = Vector2(512, 480)
-
-[node name="Grate" parent="." index="28" unique_id=382070669 instance=ExtResource("10_xjfkr")]
-position = Vector2(1773.0001, 437)
-scale = Vector2(1.3, 1.5)
-
-[node name="WindSound" type="Node2D" parent="." index="29" unique_id=1346139176]
-script = ExtResource("11_mdkld")
-
 [editable path="Gear"]
+[editable path="Grate"]

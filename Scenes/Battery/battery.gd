@@ -10,11 +10,6 @@ extends Node2D
 @export var cutscene: Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	wire.points = PackedVector2Array([to_local(wire_origin.global_position), to_local(battery_body.global_position)])

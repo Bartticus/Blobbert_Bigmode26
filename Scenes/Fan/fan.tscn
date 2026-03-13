@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dfbknujbshmtg"]
+
+[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="1_8o708"]
+[ext_resource type="Script" uid="uid://d3jh5q2lvkgbc" path="res://Scenes/Fan/fan.gd" id="1_jitmm"]
+[ext_resource type="Texture2D" uid="uid://bh4apo28qkc44" path="res://Assets/Sprites/FanBlade.png" id="2_jitmm"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="4_kpm68"]
+[ext_resource type="AudioStream" uid="uid://dgnje2yr8swo5" path="res://Assets/SFX/high_power_fan.ogg" id="5_qy5ps"]
+
+[sub_resource type="Animation" id="Animation_c0yca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tnc0h"]
+resource_name = "spin"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2pnvy"]
+_data = {
+&"RESET": SubResource("Animation_c0yca"),
+&"spin": SubResource("Animation_tnc0h")
+}
+
+[node name="Fan" type="AnimatableBody2D" unique_id=86154387]
+scale = Vector2(1.05, 1.05)
+script = ExtResource("1_jitmm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1229722222]
+visible = false
+position = Vector2(-0.5168457, 2.8199463)
+rotation = -0.26179937
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(-14, 2, -100.078064, 35.48712, -201.24646, 65.319336, -310.0865, 46.508545, -382.96567, 67.35632, -413.0902, 156.60046, -325.00647, 241.28381, -159.20892, 248.43909, -23.243652, 154.42615, 1.0396347, 15.775215, -14, 2)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1584104814]
+visible = false
+clip_children = 1
+position = Vector2(-0.51678514, 2.8199463)
+rotation = -0.2617994
+polygon = PackedVector2Array(-14, 2, -100.078064, 35.48712, -201.24646, 65.319336, -310.0865, 46.508545, -382.96567, 67.35632, -413.0902, 156.60046, -325.00647, 241.28381, -159.20892, 248.43909, -23.243652, 154.42615, 1.0396347, 15.775215, -14, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Polygon2D" unique_id=1266481063]
+scale = Vector2(8.46875, 8.46875)
+texture = ExtResource("1_8o708")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=304040127]
+visible = false
+position = Vector2(-0.51678467, 2.8198853)
+rotation = 1.832596
+polygon = PackedVector2Array(-14, 2, -100.078064, 35.48712, -201.24646, 65.319336, -310.0865, 46.508545, -382.96567, 67.35632, -413.0902, 156.60046, -325.00647, 241.28381, -159.20892, 248.43909, -23.243652, 154.42615, 1.0396347, 15.775215, -14, 2)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1558252123]
+visible = false
+clip_children = 1
+position = Vector2(-0.51678514, 2.8199463)
+rotation = 1.8325958
+polygon = PackedVector2Array(-14, 2, -100.078064, 35.48712, -201.24646, 65.319336, -310.0865, 46.508545, -382.96567, 67.35632, -413.0902, 156.60046, -325.00647, 241.28381, -159.20892, 248.43909, -23.243652, 154.42615, 1.0396347, 15.775215, -14, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Polygon2D2" unique_id=1341023663]
+scale = Vector2(8.46875, 8.46875)
+texture = ExtResource("1_8o708")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." unique_id=1392588101]
+visible = false
+position = Vector2(-0.5168152, 2.8198242)
+rotation = -2.3561943
+scale = Vector2(0.9999999, 0.9999999)
+polygon = PackedVector2Array(-14, 2, -100.078064, 35.48712, -201.24646, 65.319336, -310.0865, 46.508545, -382.96567, 67.35632, -413.0902, 156.60046, -325.00647, 241.28381, -159.20892, 248.43909, -23.243652, 154.42615, 1.0396347, 15.775215, -14, 2)
+
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=67375981]
+visible = false
+clip_children = 1
+position = Vector2(-0.51678514, 2.8199463)
+rotation = 3.926991
+polygon = PackedVector2Array(-14, 2, -100.078064, 35.48712, -201.24646, 65.319336, -310.0865, 46.508545, -382.96567, 67.35632, -413.0902, 156.60046, -325.00647, 241.28381, -159.20892, 248.43909, -23.243652, 154.42615, 1.0396347, 15.775215, -14, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Polygon2D3" unique_id=1418629917]
+scale = Vector2(8.46875, 8.46875)
+texture = ExtResource("1_8o708")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=338411011]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_2pnvy")
+autoplay = &"spin"
+
+[node name="Blade1" type="Sprite2D" parent="." unique_id=293540216]
+position = Vector2(-78.095245, -215.2381)
+scale = Vector2(1.5088117, 1.5088116)
+texture = ExtResource("2_jitmm")
+
+[node name="Blade2" type="Sprite2D" parent="." unique_id=1393349533]
+position = Vector2(224.76193, 43.809536)
+rotation = 2.0943952
+scale = Vector2(1.5088117, 1.5088116)
+texture = ExtResource("2_jitmm")
+
+[node name="Blade3" type="Sprite2D" parent="." unique_id=786579315]
+position = Vector2(-148.57144, 179.04765)
+rotation = 4.1887903
+scale = Vector2(1.5088117, 1.5088116)
+texture = ExtResource("2_jitmm")
+
+[node name="FanSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("4_kpm68")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("5_qy5ps")])

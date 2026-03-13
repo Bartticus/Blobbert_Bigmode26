@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dynmdxhcng4d3" path="res://Scenes/Screens/lab_screen_3b.tscn" id="10_or0mv"]
 
 [node name="LabLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_0temy")]
+ambient_sound_name = "lab"
 starting_screen = NodePath("Screens/LabScreen3a")
 
 [node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="2" unique_id=2057049144]

@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bfti1602q8a6l" path="res://Scenes/Screens/bunsen_screen_11.tscn" id="13_701ob"]
 
 [node name="BunsenLevel" unique_id=129905935 instance=ExtResource("1_28eey")]
+ambient_sound_name = "bunsen"
 
 [node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="2" unique_id=2057049144]
 level_name = "Flame Hazard"
