@@ -7,13 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://dctk52n2i77y8" path="res://Assets/Tiles/MetalTileSoft.png" id="3_ipa1k"]
 [ext_resource type="Texture2D" uid="uid://dh678aap5xpvd" path="res://Assets/Tiles/ScienceTexture.png" id="4_25a0a"]
 [ext_resource type="Texture2D" uid="uid://bgxawluxoy5lk" path="res://Assets/Tiles/ScrewTiles.png" id="5_l0el5"]
+[ext_resource type="PackedScene" uid="uid://c7gdq78ve3u4a" path="res://Scenes/Doc/doc.tscn" id="6_25a0a"]
 [ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="6_g4ybr"]
 [ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="7_6ul4u"]
 [ext_resource type="Texture2D" uid="uid://chujxlp0ni0m6" path="res://Assets/Tiles/lab_tileset_LITE.png" id="8_f3die"]
 [ext_resource type="Texture2D" uid="uid://ikxur2ufin7p" path="res://Assets/Tiles/X Tiles/merge1.png" id="9_gwif4"]
 [ext_resource type="Texture2D" uid="uid://cpef1h3t5110c" path="res://Assets/Tiles/Sci-fi Tileset re-imagined.png" id="10_3ic57"]
 [ext_resource type="PackedScene" uid="uid://k4t3x6l127e8" path="res://Scenes/FullKeeb/full_keeb.tscn" id="11_imhha"]
-[ext_resource type="Shader" path="res://Scenes/Screens/glass.gdshader" id="12_la2kg"]
+[ext_resource type="Shader" uid="uid://c0x8wa31e6iip" path="res://Scenes/Screens/glass.gdshader" id="12_la2kg"]
 [ext_resource type="PackedScene" uid="uid://ix8ry0y5k1ar" path="res://Scenes/GlassPanes/new_glass_panes.tscn" id="13_qgm0v"]
 [ext_resource type="Texture2D" uid="uid://dptauq5wft3cf" path="res://Assets/Sprites/Contained_v2.png" id="14_1cgv0"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="15_14np0"]
@@ -26,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://e22gobsgl87n" path="res://Scenes/SoundManager/sound_manager.tscn" id="22_xxhf8"]
 [ext_resource type="Shader" path="res://Scenes/ScreenTemplate/blur.gdshader" id="23_7jlq2"]
 [ext_resource type="Texture2D" uid="uid://bm5s2y1tts4r7" path="res://Assets/Sprites/SlickLaboratory.png" id="24_jy1kq"]
-[ext_resource type="Texture2D" uid="uid://33ob2p00doxu" path="res://Assets/Sprites/DrSlickter_Purple.png" id="25_7ym0t"]
 [ext_resource type="Texture2D" uid="uid://8ajd2a5elsap" path="res://Assets/Sprites/DrCloseup.png" id="26_cxp7t"]
 [ext_resource type="Texture2D" uid="uid://d2w1xr4vj2lr4" path="res://Assets/Sprites/Comb.png" id="27_a1tjc"]
 [ext_resource type="Texture2D" uid="uid://doum0ai52xyf6" path="res://Assets/Sprites/splat20.png" id="30_25a0a"]
@@ -3889,11 +3889,9 @@ offset_bottom = 1080.0
 scale = Vector2(0.5, 0.5)
 color = Color(0, 0, 0, 0.4392157)
 
-[node name="Doc" type="Sprite2D" parent="Cutscene/BGSprite" index="1" unique_id=1961595606]
+[node name="Doc" parent="Cutscene/BGSprite" index="1" unique_id=2038777701 instance=ExtResource("6_25a0a")]
 unique_name_in_owner = true
 position = Vector2(246.5, 604.5)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("25_7ym0t")
 
 [node name="LabScreen0" type="Node2D" parent="Cutscene/BGSprite" index="2" unique_id=1326192318]
 scale = Vector2(0.25, 0.25)

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://djyff6tcaumtp"]
+
+[ext_resource type="Shader" uid="uid://c0x8wa31e6iip" path="res://Scenes/Screens/glass.gdshader" id="1_svr6x"]
+
+[resource]
+shader = ExtResource("1_svr6x")
+shader_parameter/u_roundness = 0.0
+shader_parameter/u_distortion_intensity = 0.2
+shader_parameter/u_blur_intensity = 0.1

@@ -5,10 +5,16 @@ extends RigidBody2D
 @export var exploding: bool = false
 @export var sprite_scale_mult: float = 0.05
 @export var objects_to_explode: Array[Node2D] = []
+@export var pin_joint: PinJoint2D = null
+@export var top_blocker: StaticBody2D = null
+@export var center_mass_type: CenterOfMassMode = CENTER_OF_MASS_MODE_AUTO:
+	set(value):
+		center_mass_type = value
+		center_of_mass_mode = center_mass_type	
 
 @onready var beaker_sprite: Sprite2D = %BeakerSprite
 @onready var explosion_timer: Timer = %ExplosionTimer
-@onready var beaker_polygon: CollisionPolygon2D = %BeakerPolygon
+@onready var beaker_collision_polygon: CollisionPolygon2D = %BeakerCollisionPolygon
 @onready var explosion_anim: AnimationPlayer = %AnimationPlayer
 @onready var fire: Node2D = %Fire
 @onready var reaction_sound_player: SoundPlayer = %ReactionSoundPlayer
@@ -33,10 +39,16 @@ func explode():
 	explosion_timer.start()
 
 func _physics_process(delta: float) -> void:
-	if exploding && is_instance_valid(beaker_sprite) && is_instance_valid(beaker_polygon):
+	if exploding && is_instance_valid(beaker_sprite) && is_instance_valid(beaker_collision_polygon):
 		var sprite_scale = sprite_scale_mult * delta
 		beaker_sprite.scale += Vector2(sprite_scale, sprite_scale)
-		beaker_polygon.scale += Vector2(sprite_scale, sprite_scale)
+		beaker_collision_polygon.scale += Vector2(sprite_scale, sprite_scale)
+	if rotation_degrees > 27.0:
+		center_of_mass_mode = CENTER_OF_MASS_MODE_AUTO
+		if pin_joint:
+			pin_joint.queue_free()
+		if top_blocker:
+			top_blocker.queue_free()
 
 func _on_explosion_timer_timeout() -> void:
 	for o in objects_to_explode:
@@ -45,7 +57,7 @@ func _on_explosion_timer_timeout() -> void:
 	
 	#make beaker and oils invisible
 	beaker_sprite.queue_free()
-	beaker_polygon.queue_free()
+	beaker_collision_polygon.queue_free()
 	var all_children = get_all_children(self)
 	for child in all_children:
 		if child is Oil:

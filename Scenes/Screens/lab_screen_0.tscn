@@ -1,24 +1,18 @@
 [gd_scene format=4 uid="uid://d2a4750wy0jqs"]
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_ni8rx"]
+[ext_resource type="Material" uid="uid://djyff6tcaumtp" path="res://Materials/glass.tres" id="2_mgu2e"]
 [ext_resource type="PackedScene" uid="uid://ix8ry0y5k1ar" path="res://Scenes/GlassPanes/new_glass_panes.tscn" id="3_14qcb"]
 [ext_resource type="Material" uid="uid://difhd35lspqod" path="res://Materials/doc_squiggle.tres" id="4_f60q8"]
-[ext_resource type="Shader" uid="uid://c0x8wa31e6iip" path="res://Scenes/Screens/glass.gdshader" id="4_gyemt"]
 [ext_resource type="Texture2D" uid="uid://dptauq5wft3cf" path="res://Assets/Sprites/Contained_v2.png" id="5_yco6c"]
 [ext_resource type="Texture2D" uid="uid://cgpkswgo3fikw" path="res://Assets/Sprites/Glass.png" id="6_yco6c"]
 [ext_resource type="Texture2D" uid="uid://bisaren6ebhve" path="res://Assets/Sprites/Breach.png" id="7_054od"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="8_f60q8"]
 [ext_resource type="Texture2D" uid="uid://d0hdrlw0wkndq" path="res://Assets/Sprites/CrackAss.png" id="9_14qcb"]
-[ext_resource type="Script" path="res://Scenes/Screens/breach.gd" id="9_qi06u"]
+[ext_resource type="Script" uid="uid://bkgtt14vbmuaa" path="res://Scenes/Screens/breach.gd" id="9_qi06u"]
 [ext_resource type="Texture2D" uid="uid://b88ivniwyect7" path="res://Assets/Sprites/trace_07.png" id="11_qi06u"]
 [ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="12_2hu1i"]
 [ext_resource type="AudioStream" uid="uid://7bm7nmsie2q5" path="res://Assets/SFX/Siren.ogg" id="13_mgu2e"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r2yta"]
-shader = ExtResource("4_gyemt")
-shader_parameter/u_roundness = 0.0
-shader_parameter/u_distortion_intensity = 0.2
-shader_parameter/u_blur_intensity = 0.1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtyri"]
 size = Vector2(1116, 960)
@@ -352,7 +346,7 @@ x_offset = 145.0
 
 [node name="GlassRect" type="ColorRect" parent="." index="8" unique_id=1367967584]
 z_index = 3
-material = SubResource("ShaderMaterial_r2yta")
+material = ExtResource("2_mgu2e")
 offset_left = 419.0
 offset_top = 85.0
 offset_right = 1502.0
@@ -406,6 +400,7 @@ position = Vector2(1173.2716, 1140.7253)
 shape = SubResource("RectangleShape2D_fpj2h")
 
 [node name="GlassSprite" type="Sprite2D" parent="." index="13" unique_id=1057729890]
+visible = false
 position = Vector2(982, 483.00003)
 scale = Vector2(1.9365082, 1.8655659)
 texture = ExtResource("6_yco6c")
