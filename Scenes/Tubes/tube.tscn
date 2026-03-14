@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6r1ctiig2po7"]
 
 [ext_resource type="Material" uid="uid://j2rvkwddutb0" path="res://Materials/tube_squiggle.tres" id="1_10byj"]
-[ext_resource type="Script" uid="uid://wxhfii7mysf6" path="res://Scenes/Tubes/tube.gd" id="1_blxqa"]
+[ext_resource type="Script" path="res://Scenes/Tubes/tube.gd" id="1_blxqa"]
 [ext_resource type="Texture2D" uid="uid://drfdit7him4iy" path="res://Assets/Sprites/testtube.png" id="2_blxqa"]
 [ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="4_jbtfk"]
 [ext_resource type="AudioStream" uid="uid://cyqds8i2p6omm" path="res://Assets/SFX/TubeChime1.mp3" id="5_7o3xd"]

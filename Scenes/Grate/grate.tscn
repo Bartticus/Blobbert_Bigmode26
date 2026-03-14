@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmxas480qycg7"]
 
-[ext_resource type="Script" uid="uid://d0i0rtqthbxq" path="res://Scenes/Grate/grate.gd" id="1_kkh4c"]
+[ext_resource type="Script" path="res://Scenes/Grate/grate.gd" id="1_kkh4c"]
 [ext_resource type="Texture2D" uid="uid://dh678aap5xpvd" path="res://Assets/Tiles/ScienceTexture.png" id="1_tgmr8"]
 [ext_resource type="Texture2D" uid="uid://8fxrjbsrva68" path="res://Assets/Sprites/Grate.png" id="2_0gc74"]
 [ext_resource type="AudioStream" uid="uid://by5e5ix8o5r5l" path="res://Assets/SFX/VentGrate.ogg" id="3_0gc74"]

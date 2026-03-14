@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bf0j3ms2oh0ia" path="res://Scenes/WindGust/wind_gust.tscn" id="4_hu0wx"]
 [ext_resource type="Texture2D" uid="uid://8fxrjbsrva68" path="res://Assets/Sprites/Grate.png" id="4_isg4l"]
 [ext_resource type="PackedScene" uid="uid://bmxas480qycg7" path="res://Scenes/Grate/grate.tscn" id="5_5jc0h"]
-[ext_resource type="Script" uid="uid://da8qfhr51hyfk" path="res://Scenes/Screens/vent_sound_activation.gd" id="10_2ln6g"]
+[ext_resource type="Script" path="res://Scenes/Screens/vent_sound_activation.gd" id="10_2ln6g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
 

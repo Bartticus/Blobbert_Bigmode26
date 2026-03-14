@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bisaren6ebhve" path="res://Assets/Sprites/Breach.png" id="7_054od"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="8_f60q8"]
 [ext_resource type="Texture2D" uid="uid://d0hdrlw0wkndq" path="res://Assets/Sprites/CrackAss.png" id="9_14qcb"]
-[ext_resource type="Script" uid="uid://bkgtt14vbmuaa" path="res://Scenes/Screens/breach.gd" id="9_qi06u"]
+[ext_resource type="Script" path="res://Scenes/Screens/breach.gd" id="9_qi06u"]
 [ext_resource type="Texture2D" uid="uid://b88ivniwyect7" path="res://Assets/Sprites/trace_07.png" id="11_qi06u"]
 [ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="12_2hu1i"]
 [ext_resource type="AudioStream" uid="uid://7bm7nmsie2q5" path="res://Assets/SFX/Siren.ogg" id="13_mgu2e"]

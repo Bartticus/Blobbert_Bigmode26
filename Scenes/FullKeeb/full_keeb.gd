@@ -29,9 +29,13 @@ func set_key_positions():
 
 		var row_keys = row.get_children()
 		for j in row_keys.size():
-			var key: Node2D = row_keys[j]
+			var key: Key = row_keys[j]
 			key.position.x = x_spacing * j + x_offset
 			key.position.y = y_spacing * i + y_offset
+			
+			#Relabel keys based on physical location
+			var phys_keycode = DisplayServer.keyboard_get_keycode_from_physical(key.keycode)
+			key.key_label.text = char(phys_keycode).to_upper()
 
 func _ready() -> void:
 	set_key_positions()

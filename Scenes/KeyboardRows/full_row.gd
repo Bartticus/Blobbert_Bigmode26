@@ -10,4 +10,5 @@ extends Node2D
 
 func set_key_positions():
 	for key in get_children():
-		key.set_key_label(str(key.name))
+		if key is Key:
+			key.set_key_label(str(key.name))
