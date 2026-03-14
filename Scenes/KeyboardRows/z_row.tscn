@@ -5,7 +5,6 @@
 
 [node name="ZRow" type="Node2D" unique_id=553454933]
 script = ExtResource("1_1sd4s")
-snap_keys_to_position = true
 
 [node name="Z" parent="." unique_id=1531063233 instance=ExtResource("2_dccxl")]
 max_snap_multiplier = 640.0
@@ -77,12 +76,9 @@ max_snap_multiplier = 640.0
 region_rect = Rect2(28, 0, 13, 12)
 
 [node name="KeyLabel" parent="Comma/Control" parent_id_path=PackedInt32Array(1211108258, 1604450388) index="0" unique_id=513862480]
-offset_top = -67.0
-offset_bottom = -1.0
 text = ","
 
 [node name="Period" parent="." unique_id=183745101 instance=ExtResource("2_dccxl")]
-visible = false
 max_snap_multiplier = 640.0
 
 [node name="Sprite2D" parent="Period" index="0" unique_id=726858926]
@@ -90,20 +86,15 @@ region_rect = Rect2(14, 0, 13, 12)
 
 [node name="KeyLabel" parent="Period/Control" parent_id_path=PackedInt32Array(183745101, 1604450388) index="0" unique_id=513862480]
 offset_left = -35.0
-offset_top = -64.0
 offset_right = -4.0
-offset_bottom = 2.0
 text = "."
 
 [node name="Slash" parent="." unique_id=1037685573 instance=ExtResource("2_dccxl")]
-visible = false
 max_snap_multiplier = 640.0
 
 [node name="KeyLabel" parent="Slash/Control" parent_id_path=PackedInt32Array(1037685573, 1604450388) index="0" unique_id=513862480]
 offset_left = -35.0
-offset_top = -53.0
 offset_right = -4.0
-offset_bottom = 13.0
 text = "/"
 
 [editable path="Z"]

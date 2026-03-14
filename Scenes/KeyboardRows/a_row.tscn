@@ -5,7 +5,6 @@
 
 [node name="ARow" type="Node2D" unique_id=1742281654]
 script = ExtResource("1_q8gbw")
-snap_keys_to_position = true
 
 [node name="A" parent="." unique_id=1531063233 instance=ExtResource("2_48qus")]
 
@@ -87,9 +86,7 @@ region_rect = Rect2(42, 0, 13, 12)
 
 [node name="KeyLabel" parent="Semicolon/Control" parent_id_path=PackedInt32Array(1417331160, 1604450388) index="0" unique_id=513862480]
 offset_left = -35.0
-offset_top = -58.0
 offset_right = -4.0
-offset_bottom = 8.0
 text = ";"
 
 [editable path="A"]

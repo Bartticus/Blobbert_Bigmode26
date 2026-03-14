@@ -21,12 +21,12 @@ extends Node2D
 
 func set_key_positions():
 	var all_rows = [number_row, q_row, a_row, z_row]
-
+	
 	for i in all_rows.size():
 		var row = all_rows[i]
 		if !(row is Node2D):
 			continue
-
+		
 		var row_keys = row.get_children()
 		for j in row_keys.size():
 			var key: Key = row_keys[j]
