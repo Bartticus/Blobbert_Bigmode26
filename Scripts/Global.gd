@@ -33,6 +33,8 @@ var level_order = {
 	'res://Scenes/Levels/bunsen_level.tscn': 'res://Scenes/Levels/win_screen.tscn'
 	}
 
+var ghost_data = []
+
 func ready():
 	randomize()
 
@@ -49,3 +51,6 @@ func playing_cutscene():
 		return level.playing_cutscene
 	else:
 		return false
+
+func add_ghost_data(pos):
+	ghost_data.append(pos)

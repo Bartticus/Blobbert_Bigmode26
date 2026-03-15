@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cr42tlugxlrv2" path="res://Scenes/Blob/blob.tscn" id="5_tvne3"]
 [ext_resource type="PackedScene" uid="uid://e22gobsgl87n" path="res://Scenes/SoundManager/sound_manager.tscn" id="6_xssm3"]
 [ext_resource type="PackedScene" uid="uid://moswwloabatl" path="res://Scenes/RestartScreen/restart_screen.tscn" id="7_vjku0"]
+[ext_resource type="Texture2D" uid="uid://dq545lkrv5tw7" path="res://Assets/Sprites/AngryGhost.png" id="9_xgt15"]
 
 [sub_resource type="Environment" id="Environment_xssm3"]
 background_mode = 3
@@ -202,3 +203,8 @@ unique_name_in_owner = true
 [node name="LoadingZone" parent="." unique_id=1274508763 instance=ExtResource("5_346pk")]
 
 [node name="RestartScreen" parent="." unique_id=938922898 instance=ExtResource("7_vjku0")]
+
+[node name="Ghost" type="Sprite2D" parent="." unique_id=821212988]
+unique_name_in_owner = true
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_xgt15")

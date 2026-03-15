@@ -7,6 +7,7 @@ extends Node2D
 @onready var full_keeb: FullKeeb = %FullKeeb
 @onready var sound_manager: = %SoundManager
 @onready var level_title_card: Control = %LevelTitleCard
+@onready var ghost: Sprite2D = %Ghost
 
 @export var playing_cutscene: bool = false:
 	set(new_value):
@@ -29,6 +30,8 @@ extends Node2D
 @export var screen_render_distance_x: int = 3
 @export var screen_render_distance_y: int = 4
 @export var starting_screen: Screen
+@export var ghost_data: Array[Vector2]
+@export var race_ghost: bool = false
 @export var current_anchor: Marker2D:
 	set(value):
 		current_anchor = value
@@ -39,6 +42,8 @@ extends Node2D
 
 
 func _ready() -> void:
+	if !race_ghost:
+		ghost.hide()
 	if name == "LabLevel":
 		Global.start_time = Time.get_ticks_msec()
 		Global.key_count = 0
@@ -143,3 +148,13 @@ func interrupt_title_card():
 	if !playing_cutscene:
 		level_title_card.timer.stop()
 		fade_title_card()
+
+var timer = 0.0
+func _physics_process(delta):
+	if !race_ghost:
+		return
+	timer += delta
+	if timer >= 0.1 && ghost_data.front():
+		timer = 0.0
+		var current_tween = create_tween()
+		current_tween.tween_property(ghost, 'global_position', ghost_data.pop_front(), 0.1)

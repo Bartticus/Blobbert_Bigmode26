@@ -5,6 +5,7 @@ extends Node2D
 @export var softbody: SoftBody2D
 @export var bodies: Array[Bone] = []
 var center_bone: Bone2D
+@export var store_ghost_data: bool = false
 
 @export_category("Oil")
 @export var oil_scene: PackedScene
@@ -137,9 +138,10 @@ func _on_rand_face_timer_timeout() -> void:
 func _on_set_face_timer_timeout() -> void:
 	check_status()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var center_pos = softbody.get_bones_center_position()
 	blob_center.global_position = center_pos
+	ghost_timer(delta)
 	swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
 	var weight = 0.05
 	blob_center.rotation = lerp_angle(blob_center.rotation, center_bone.rotation, weight)
@@ -257,3 +259,12 @@ func set_tile_oil(body: TileMapLayer, body_rid: RID):
 		body.get_cell_atlas_coords(collided_tile_coords),
 		1
 	)
+
+var timer = 0.0
+func ghost_timer(delta) -> void:
+	if !store_ghost_data:
+		return
+	timer += delta
+	if timer >= 0.1:
+		timer = 0.0
+		Global.add_ghost_data(blob_center.global_position)

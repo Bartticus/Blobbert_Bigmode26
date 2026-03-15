@@ -400,7 +400,6 @@ position = Vector2(1173.2716, 1140.7253)
 shape = SubResource("RectangleShape2D_fpj2h")
 
 [node name="GlassSprite" type="Sprite2D" parent="." index="13" unique_id=1057729890]
-visible = false
 position = Vector2(982, 483.00003)
 scale = Vector2(1.9365082, 1.8655659)
 texture = ExtResource("6_yco6c")
