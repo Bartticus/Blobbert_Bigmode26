@@ -12,6 +12,10 @@ config_version=5
 
 universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 
+[animation]
+
+warnings/check_invalid_track_paths=false
+
 [application]
 
 config/name="Blobbert_Bigmode26"

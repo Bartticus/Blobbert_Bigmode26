@@ -1,8 +1,13 @@
 [gd_resource type="Theme" format=3 uid="uid://dqtsplxmd0xtc"]
 
 [ext_resource type="StyleBox" uid="uid://cvo8btqdullra" path="res://Materials/style_box.tres" id="1_2q2fl"]
+[ext_resource type="StyleBox" uid="uid://vnm7at7tbjah" path="res://Materials/button_box.tres" id="1_5rus5"]
 [ext_resource type="FontFile" uid="uid://cw2ewkprrvw2t" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="1_470mv"]
+[ext_resource type="StyleBox" uid="uid://dmmd4r8134dmx" path="res://Materials/button_box_hover.tres" id="1_cg434"]
 
 [resource]
 default_font = ExtResource("1_470mv")
+Button/styles/hover = ExtResource("1_cg434")
+Button/styles/normal = ExtResource("1_5rus5")
+Button/styles/pressed = ExtResource("1_5rus5")
 PanelContainer/styles/panel = ExtResource("1_2q2fl")

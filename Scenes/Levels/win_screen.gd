@@ -1,8 +1,8 @@
 extends Control
 @onready var sfx : AudioStreamPlayer = $uisfx
 @onready var sfx_hover : AudioStreamPlayer = $uiHoversfx
-@onready var label_keys: Label = $LabelKeys
-@onready var label_time: Label = $LabelTime
+@onready var label_keys: Label = %LabelKeys
+@onready var label_time: Label = %LabelTime
 @onready var leaderboard_name: LineEdit = $LeaderboardName
 @onready var leader_board_scene : PackedScene = preload("uid://cppg62i68ikb7")
 

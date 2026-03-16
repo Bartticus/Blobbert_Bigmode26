@@ -3,8 +3,18 @@
 [ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://Materials/main_theme.tres" id="1_jk0b7"]
 [ext_resource type="Script" uid="uid://jnl7vkaun5v6" path="res://Scenes/Levels/win_screen.gd" id="2_h8qwa"]
 [ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="3_lhmlr"]
+[ext_resource type="Shader" path="res://Scenes/ScreenTemplate/blur.gdshader" id="3_yk0sc"]
 [ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="4_7w54b"]
+[ext_resource type="Texture2D" uid="uid://bm5s2y1tts4r7" path="res://Assets/Sprites/SlickLaboratory.png" id="4_i1mkd"]
 [ext_resource type="Script" uid="uid://da3fqyglvtkvb" path="res://Scenes/MainMenu/theme_music.gd" id="5_7yvu5"]
+[ext_resource type="Material" uid="uid://304j4uixkk41" path="res://Materials/text_squiggle.tres" id="8_i1mkd"]
+[ext_resource type="Material" uid="uid://1vlmbr0qutje" path="res://Materials/small_text_squiggle.tres" id="9_f7kym"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7kym"]
+shader = ExtResource("3_yk0sc")
+shader_parameter/radius = 1.5
+shader_parameter/steps = 32
+shader_parameter/vertex_expand = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6upyc"]
 
@@ -30,12 +40,11 @@ random_pitch = 1.33
 streams_count = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_yk0sc"]
-font_size = 200
-font_color = Color(0, 0, 0, 1)
+font_size = 120
 
 [sub_resource type="LabelSettings" id="LabelSettings_kuqwa"]
 font_size = 100
-font_color = Color(0, 0, 0.9882353, 1)
+font_color = Color(0.22639617, 0.4514426, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h8qwa"]
 font_size = 60
@@ -50,12 +59,30 @@ grow_vertical = 2
 theme = ExtResource("1_jk0b7")
 script = ExtResource("2_h8qwa")
 
+[node name="BGSprite" type="Sprite2D" parent="." unique_id=536492572]
+unique_name_in_owner = true
+light_mask = 0
+z_index = -10
+material = SubResource("ShaderMaterial_f7kym")
+scale = Vector2(2, 2)
+texture = ExtResource("4_i1mkd")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="BGSprite" unique_id=299417061]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 0.26666668)
+metadata/_edit_use_anchors_ = true
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=369764833]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="MenuArt" type="TextureRect" parent="." unique_id=1149247199]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,6 +91,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Image" type="Sprite2D" parent="." unique_id=1514742633]
+visible = false
 position = Vector2(954, 447)
 scale = Vector2(0.6462963, 0.6462963)
 
@@ -195,50 +223,63 @@ bus = &"SFX"
 stream = SubResource("AudioStreamRandomizer_fxueo")
 bus = &"SFX"
 
-[node name="Label" type="Label" parent="." unique_id=2022939988]
-material = SubResource("ShaderMaterial_0l8wx")
-layout_mode = 0
-offset_left = 54.0
-offset_top = 43.0
-offset_right = 1877.0
-offset_bottom = 516.0
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=829748328]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -589.75
+offset_top = 88.0
+offset_right = 589.75
+offset_bottom = 449.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="PanelContainer2" unique_id=2022939988]
+material = ExtResource("8_i1mkd")
+layout_mode = 2
 text = "You escaped the lab
 BLOBBERT LIVES ON!"
 label_settings = SubResource("LabelSettings_yk0sc")
+horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="." unique_id=1291604730]
-material = SubResource("ShaderMaterial_0l8wx")
-layout_mode = 0
-offset_left = 187.0
-offset_top = 604.0
-offset_right = 445.0
-offset_bottom = 728.0
+[node name="PanelContainer3" type="PanelContainer" parent="." unique_id=357812495]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -912.0
+offset_top = 629.0
+offset_right = -355.0
+offset_bottom = 958.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer3" unique_id=132218126]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label2" type="Label" parent="PanelContainer3/VBoxContainer" unique_id=1291604730]
+material = ExtResource("8_i1mkd")
+layout_mode = 2
 text = "Score"
 label_settings = SubResource("LabelSettings_kuqwa")
 
-[node name="LabelKeys" type="Label" parent="." unique_id=219827684]
-material = SubResource("ShaderMaterial_0l8wx")
-layout_mode = 0
-offset_left = 75.0
-offset_top = 748.5
-offset_right = 552.0
-offset_bottom = 819.5
+[node name="LabelKeys" type="Label" parent="PanelContainer3/VBoxContainer" unique_id=219827684]
+unique_name_in_owner = true
+material = ExtResource("9_f7kym")
+layout_mode = 2
 text = "Keys Pressed:"
 label_settings = SubResource("LabelSettings_h8qwa")
 
-[node name="LabelTime" type="Label" parent="." unique_id=907792746]
-material = SubResource("ShaderMaterial_0l8wx")
-layout_mode = 0
-offset_left = 77.0
-offset_top = 855.0
-offset_right = 335.0
-offset_bottom = 929.0
+[node name="LabelTime" type="Label" parent="PanelContainer3/VBoxContainer" unique_id=907792746]
+unique_name_in_owner = true
+material = ExtResource("9_f7kym")
+layout_mode = 2
 text = "Time:"
 label_settings = SubResource("LabelSettings_h8qwa")
 
 [node name="LeaderboardName" type="LineEdit" parent="." unique_id=934573301]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_0l8wx")
+material = ExtResource("9_f7kym")
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 0
 offset_left = 747.0
@@ -249,7 +290,7 @@ theme_override_font_sizes/font_size = 50
 placeholder_text = "Enter Name Here"
 
 [node name="PostButton" type="Button" parent="." unique_id=1501741620]
-material = SubResource("ShaderMaterial_0l8wx")
+material = ExtResource("9_f7kym")
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 0
 offset_left = 698.0
