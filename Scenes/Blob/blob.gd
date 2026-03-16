@@ -48,7 +48,8 @@ var new_vel: float
 
 func _ready() -> void:
 	Global.blob = self
-	blob_listener.current = listen_with_blob
+	if blob_listener:
+		blob_listener.current = listen_with_blob
 	var center_body = softbody.get_center_body()
 	center_bone = center_body.bone
 	center_body.rigidbody.set_collision_layer_value(6, true)
