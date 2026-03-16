@@ -4,6 +4,9 @@
 [ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://Materials/main_theme.tres" id="1_m4fy1"]
 [ext_resource type="Shader" uid="uid://b3nnwdi7f3oeo" path="res://Scenes/Blob/squiggle.gdshader" id="2_vl6m8"]
 [ext_resource type="Script" uid="uid://mqrfwjnnrrmg" path="res://Scenes/MainMenu/h_slider.gd" id="4_558gm"]
+[ext_resource type="Material" uid="uid://1vlmbr0qutje" path="res://Materials/small_text_squiggle.tres" id="4_6707y"]
+[ext_resource type="AudioStream" uid="uid://bl61mwi8o8qcv" path="res://Assets/SFX/Interface Percussion Snap.wav" id="6_kas4s"]
+[ext_resource type="AudioStream" uid="uid://b77wcss8qokmh" path="res://Assets/SFX/Interface Pop High Short.wav" id="7_q50df"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kuqwa"]
 
@@ -18,56 +21,66 @@ shader_parameter/strength = 0.5
 shader_parameter/fps = 6.0
 shader_parameter/noise = SubResource("NoiseTexture2D_yk0sc")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q50df"]
-random_pitch = 2.04
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vjbxc"]
+random_pitch = 1.1790842
 streams_count = 1
+stream_0/stream = ExtResource("6_kas4s")
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_svfe6"]
-random_pitch = 1.33
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ht3nk"]
+random_pitch = 1.3024698
 streams_count = 1
+stream_0/stream = ExtResource("7_q50df")
 
 [node name="RestartScreen" type="CanvasLayer" unique_id=938922898]
 process_mode = 3
 script = ExtResource("1_558gm")
 
-[node name="StuckButton" type="Button" parent="." unique_id=211059754]
+[node name="Buttons" type="Control" parent="." unique_id=307204655]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StuckButton" type="Button" parent="Buttons" unique_id=211059754]
 z_index = 100
+layout_mode = 0
 offset_left = 7.0
 offset_top = 5.0
 offset_right = 65.0
 offset_bottom = 36.0
 text = "Stuck?"
 
-[node name="ResumeButton" type="Button" parent="." unique_id=530087663]
-visible = false
+[node name="ResumeButton" type="Button" parent="Buttons" unique_id=530087663]
 material = SubResource("ShaderMaterial_558gm")
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.0
-offset_top = -216.0
-offset_right = 130.0
-offset_bottom = -16.0
+offset_left = 744.0
+offset_top = 304.0
+offset_right = 1136.0
+offset_bottom = 504.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_m4fy1")
 theme_override_font_sizes/font_size = 70
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="." unique_id=2034093367]
-visible = false
+[node name="RestartButton" type="Button" parent="Buttons" unique_id=2034093367]
 material = SubResource("ShaderMaterial_558gm")
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.0
-offset_top = 27.0
-offset_right = 130.0
-offset_bottom = 227.0
+offset_left = 744.0
+offset_top = 547.0
+offset_right = 1136.0
+offset_bottom = 747.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_m4fy1")
@@ -75,13 +88,42 @@ theme_override_font_sizes/font_size = 70
 text = "Stuck?
 Restart"
 
-[node name="uisfx" type="AudioStreamPlayer" parent="." unique_id=1005156387]
-stream = SubResource("AudioStreamRandomizer_q50df")
-bus = &"SFX"
+[node name="MenuButton" type="Button" parent="Buttons" unique_id=682996928]
+material = SubResource("ShaderMaterial_558gm")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 744.0
+offset_top = 789.0
+offset_right = 1136.0
+offset_bottom = 895.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m4fy1")
+theme_override_font_sizes/font_size = 70
+text = "Main Menu"
 
-[node name="uiHoversfx" type="AudioStreamPlayer" parent="." unique_id=848912989]
-stream = SubResource("AudioStreamRandomizer_svfe6")
-bus = &"SFX"
+[node name="LayoutButton" type="Button" parent="Buttons" unique_id=1294988443]
+material = SubResource("ShaderMaterial_558gm")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = 745.0
+offset_right = 256.0
+offset_bottom = 825.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m4fy1")
+theme_override_font_sizes/font_size = 30
+text = "Auto-Detect
+Keyboard Layout"
 
 [node name="VolumeSliders" type="Control" parent="." unique_id=528806597]
 visible = false
@@ -93,11 +135,13 @@ offset_right = -1237.0
 offset_bottom = 81.0
 
 [node name="Label" type="Label" parent="VolumeSliders" unique_id=1350933831]
+material = ExtResource("4_6707y")
 layout_mode = 0
 offset_left = 1340.0
 offset_top = 850.0
 offset_right = 1538.0
 offset_bottom = 886.0
+theme = ExtResource("1_m4fy1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Master Volume"
@@ -115,11 +159,13 @@ script = ExtResource("4_558gm")
 bus_name = "Master"
 
 [node name="Label2" type="Label" parent="VolumeSliders" unique_id=1742424857]
+material = ExtResource("4_6707y")
 layout_mode = 0
 offset_left = 1346.0
 offset_top = 910.0
 offset_right = 1530.0
 offset_bottom = 946.0
+theme = ExtResource("1_m4fy1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Music Volume"
@@ -138,11 +184,13 @@ script = ExtResource("4_558gm")
 bus_name = "Music"
 
 [node name="Label3" type="Label" parent="VolumeSliders" unique_id=1920645473]
+material = ExtResource("4_6707y")
 layout_mode = 0
 offset_left = 1359.0
 offset_top = 970.0
 offset_right = 1518.0
 offset_bottom = 1006.0
+theme = ExtResource("1_m4fy1")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "SFX Volume"
@@ -160,8 +208,22 @@ value = 2.0
 script = ExtResource("4_558gm")
 bus_name = "SFX"
 
-[connection signal="pressed" from="StuckButton" to="." method="_on_stuck_button_pressed"]
-[connection signal="mouse_entered" from="ResumeButton" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="mouse_entered" from="RestartButton" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[node name="uisfx" type="AudioStreamPlayer" parent="." unique_id=1640378641]
+stream = SubResource("AudioStreamRandomizer_vjbxc")
+bus = &"SFX"
+
+[node name="uiHoversfx" type="AudioStreamPlayer" parent="." unique_id=149563537]
+stream = SubResource("AudioStreamRandomizer_ht3nk")
+volume_db = -12.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="Buttons/StuckButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Buttons/StuckButton" to="." method="_on_stuck_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/ResumeButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Buttons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/RestartButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Buttons/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/MenuButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Buttons/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="mouse_entered" from="Buttons/LayoutButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Buttons/LayoutButton" to="." method="_on_layout_button_pressed"]

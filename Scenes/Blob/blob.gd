@@ -27,6 +27,7 @@ var face_dict: Dictionary = {}
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 @onready var blob_center: Marker2D = %BlobCenter
 @onready var swirl_rect: ColorRect = %SwirlRect
+@onready var zzz_anim_player: AnimationPlayer = %ZZZAnimPlayer
 @onready var current_face: Sprite2D = %Neutral:
 	set(value):
 		current_face.hide()
@@ -89,6 +90,7 @@ func set_status(new_status) -> void:
 			current_face = face_dict["Neutral"]
 		Status.ASLEEP:
 			current_face = face_dict["Sleepy"]
+			zzz_anim_player.play("snooze")
 
 func check_status() -> void:
 	if !set_face_timer.is_stopped(): return
@@ -117,10 +119,14 @@ func check_status() -> void:
 		var elapsed_time = Time.get_ticks_msec() - start_time
 		if elapsed_time > 15000:
 			new_status = Status.ASLEEP
+			zzz_anim_player.play("snooze")
 		elif elapsed_time > 10000:
 			new_status = Status.IDLE
 	else:
 		start_time = Time.get_ticks_msec()
+	
+	if status == Status.ASLEEP && new_status != Status.ASLEEP:
+		zzz_anim_player.play("burst")
 	
 	status = new_status
 

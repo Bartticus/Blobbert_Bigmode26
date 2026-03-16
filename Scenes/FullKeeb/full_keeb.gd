@@ -39,5 +39,9 @@ func set_key_positions():
 
 func _ready() -> void:
 	set_key_positions()
+	
+	if name == "FullKeeb":
+		Global.keeb = self
+	
 	if !Engine.is_editor_hint() && Global.sound_manager:
 		keeb_transfer.remote_path = keeb_transfer.get_path_to(Global.sound_manager)
