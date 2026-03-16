@@ -61,6 +61,7 @@ func _ready() -> void:
 		screen.disable_screen_elements()
 	
 	blob.global_position = starting_screen.screen_blob.global_position
+	blob.blob_listener.current = blob.listen_with_blob
 	await get_tree().process_frame
 	Global.blob.reset_screen()
 	full_keeb.modulate = Color(1.0, 1.0, 1.0, 0.0)

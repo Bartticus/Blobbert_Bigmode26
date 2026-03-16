@@ -311,6 +311,7 @@ face_pivot = NodePath("BlobCenter/FacePivot")
 rand_face_timer = NodePath("RandFaceTimer")
 set_face_timer = NodePath("SetFaceTimer")
 default_faces = [NodePath("BlobCenter/FacePivot/Laughing"), NodePath("BlobCenter/FacePivot/Hi"), NodePath("BlobCenter/FacePivot/Huh"), NodePath("BlobCenter/FacePivot/Yay"), NodePath("BlobCenter/FacePivot/Smile")]
+listen_with_blob = true
 
 [node name="Softbody" type="Polygon2D" parent="." unique_id=1952859083]
 clip_children = 2
@@ -404,7 +405,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.99999595, 0.99999595)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -764,7 +765,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-31" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=485505377]
 position = Vector2(147.68915, 103.762596)
 rotation = -1.5891105
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.99999595, 0.99999595)
 rest = Transform2D(-0.018313143, -0.9998323, 0.9998323, -0.018313143, 147.68915, 103.762596)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3113,6 +3114,9 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_074og")
 
 [node name="BlobSounds" parent="BlobCenter" unique_id=2132559176 instance=ExtResource("16_074og")]
+unique_name_in_owner = true
+
+[node name="BlobListener" type="AudioListener2D" parent="BlobCenter" unique_id=654097144]
 unique_name_in_owner = true
 
 [node name="RandFaceTimer" type="Timer" parent="." unique_id=252747397]

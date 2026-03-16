@@ -18,10 +18,12 @@ var newly_spawned_oil: Oil
 @export var set_face_timer: Timer
 @export var default_faces: Array[Sprite2D]
 var face_dict: Dictionary = {}
+@export var listen_with_blob: bool = false
 
 @onready var bounce_timer: Timer = %BounceTimer
 @onready var whoosh_timer: Timer = %WhooshTimer
 @onready var stretch_timer: Timer = %StretchTimer
+@onready var blob_listener: AudioListener2D = %BlobListener
 @onready var blob_sounds: Node2D = %BlobSounds
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
@@ -45,6 +47,7 @@ var new_vel: float
 
 func _ready() -> void:
 	Global.blob = self
+	blob_listener.current = listen_with_blob
 	var center_body = softbody.get_center_body()
 	center_bone = center_body.bone
 	center_body.rigidbody.set_collision_layer_value(6, true)
