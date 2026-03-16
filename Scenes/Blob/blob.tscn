@@ -630,7 +630,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.9999959, 0.9999959)
+scale = Vector2(0.9999958, 0.9999958)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -990,7 +990,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-31" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=485505377]
 position = Vector2(147.68915, 103.762596)
 rotation = -1.5891105
-scale = Vector2(0.9999959, 0.9999959)
+scale = Vector2(0.9999958, 0.9999958)
 rest = Transform2D(-0.018313143, -0.9998323, 0.9998323, -0.018313143, 147.68915, 103.762596)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3388,6 +3388,9 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(-35, -77)
 scale = Vector2(0.018223345, 0.018223345)
 texture = ExtResource("19_qe5pk")
+
+[node name="BlobListener" type="AudioListener2D" parent="BlobCenter" unique_id=819764577]
+unique_name_in_owner = true
 
 [node name="RandFaceTimer" type="Timer" parent="." unique_id=252747397]
 wait_time = 2.0
