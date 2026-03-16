@@ -4,6 +4,10 @@ var physics_fps = ProjectSettings.get_setting("physics/common/physics_ticks_per_
 
 var blob: Blob
 var level: LevelScript = null
+var keeb: FullKeeb:
+	set(value):
+		keeb = value
+		print(value)
 var max_tug_power: float = 4000 * physics_fps
 var max_multi_screen_tug_power: float = 5750 * physics_fps
 var tug_power: float = max_tug_power

@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://d0j753bkbmgfa" path="res://Assets/Sprites/AltFaces_smile.png" id="11_pcdmj"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="14_dp05e"]
 [ext_resource type="PackedScene" uid="uid://dho26e37qso4" path="res://Scenes/Blob/blob_sounds.tscn" id="16_074og"]
+[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://Materials/main_theme.tres" id="17_276ik"]
+[ext_resource type="Material" uid="uid://ddhsggoaexu6x" path="res://Materials/key_squiggle.tres" id="17_gtj5d"]
+[ext_resource type="Texture2D" uid="uid://dl8x870tp6a8t" path="res://Assets/Sprites/burst.png" id="19_qe5pk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_074og"]
 rough = true
@@ -302,6 +305,228 @@ load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482
 [sub_resource type="CircleShape2D" id="CircleShape2D_074og"]
 radius = 83.02409
 
+[sub_resource type="Animation" id="Animation_276ik"]
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7.499644e-09, -6.621667e-08)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Burst:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Burst:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.018223345, 0.018223345)]
+}
+
+[sub_resource type="Animation" id="Animation_8mgm3"]
+resource_name = "burst"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Burst:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2.378414, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Burst:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.1961461, 1),
+"update": 0,
+"values": [Vector2(0.078, 0.078), Vector2(0.318, 0.318)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Z3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gtj5d"]
+resource_name = "snooze"
+length = 5.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 3),
+"transitions": PackedFloat32Array(1, 2.3784146, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 3.5),
+"transitions": PackedFloat32Array(1, 1, 2.3784146, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 4),
+"transitions": PackedFloat32Array(1, 1, 2.3784146, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(0.39229202, 1),
+"update": 0,
+"values": [Vector2(7.499644e-09, -6.621667e-08), Vector2(-1.3011856, 31.357725)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qe5pk"]
+_data = {
+&"RESET": SubResource("Animation_276ik"),
+&"burst": SubResource("Animation_8mgm3"),
+&"snooze": SubResource("Animation_gtj5d")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_276ik"]
+font_size = 20
+font_color = Color(0, 0.21960784, 1, 1)
+outline_size = 4
+stacked_outline_count = 1
+stacked_outline_0/size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_qe5pk"]
+font_size = 36
+font_color = Color(0, 0.21960784, 1, 1)
+outline_size = 4
+stacked_outline_count = 1
+stacked_outline_0/size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtj5d"]
+font_size = 60
+font_color = Color(0, 0.21960784, 1, 1)
+outline_size = 4
+stacked_outline_count = 1
+stacked_outline_0/size = 6
+
 [node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "oil_timer", "face_pivot", "rand_face_timer", "set_face_timer", "default_faces")]
 script = ExtResource("1_u3aeq")
 softbody = NodePath("Softbody")
@@ -405,7 +630,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.99999595, 0.99999595)
+scale = Vector2(0.9999959, 0.9999959)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -765,7 +990,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-31" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=485505377]
 position = Vector2(147.68915, 103.762596)
 rotation = -1.5891105
-scale = Vector2(0.99999595, 0.99999595)
+scale = Vector2(0.9999959, 0.9999959)
 rest = Transform2D(-0.018313143, -0.9998323, 0.9998323, -0.018313143, 147.68915, 103.762596)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3116,8 +3341,53 @@ shape = SubResource("CircleShape2D_074og")
 [node name="BlobSounds" parent="BlobCenter" unique_id=2132559176 instance=ExtResource("16_074og")]
 unique_name_in_owner = true
 
-[node name="BlobListener" type="AudioListener2D" parent="BlobCenter" unique_id=654097144]
+[node name="ZZZAnim" type="Node2D" parent="BlobCenter" unique_id=1450175057]
+position = Vector2(7.499644e-09, -6.621667e-08)
+rotation = -2.565634
+
+[node name="ZZZAnimPlayer" type="AnimationPlayer" parent="BlobCenter/ZZZAnim" unique_id=1630013405]
 unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_qe5pk")
+speed_scale = 3.0
+
+[node name="Z1" type="Label" parent="BlobCenter/ZZZAnim" unique_id=882906414]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("17_gtj5d")
+offset_left = -33.0
+offset_top = -73.0
+offset_right = -22.0
+offset_bottom = -49.0
+theme = ExtResource("17_276ik")
+text = "Z"
+label_settings = SubResource("LabelSettings_276ik")
+
+[node name="Z2" type="Label" parent="BlobCenter/ZZZAnim" unique_id=1044010851]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("17_gtj5d")
+offset_left = -48.0
+offset_top = -112.0
+offset_right = -28.0
+offset_bottom = -69.0
+theme = ExtResource("17_276ik")
+text = "Z"
+label_settings = SubResource("LabelSettings_qe5pk")
+
+[node name="Z3" type="Label" parent="BlobCenter/ZZZAnim" unique_id=192977894]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("17_gtj5d")
+offset_left = -72.0
+offset_top = -169.0
+offset_right = -39.0
+offset_bottom = -98.0
+theme = ExtResource("17_276ik")
+text = "Z"
+label_settings = SubResource("LabelSettings_gtj5d")
+
+[node name="Burst" type="Sprite2D" parent="BlobCenter/ZZZAnim" unique_id=1550131705]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-35, -77)
+scale = Vector2(0.018223345, 0.018223345)
+texture = ExtResource("19_qe5pk")
 
 [node name="RandFaceTimer" type="Timer" parent="." unique_id=252747397]
 wait_time = 2.0

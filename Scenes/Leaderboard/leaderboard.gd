@@ -5,6 +5,8 @@ extends Control
 @onready var loading_label := %LoadingLabel as Label
 @onready var high_scores_label := %HighScoresLabel as Label
 @onready var switch : Button = %Switch
+@onready var sfx : AudioStreamPlayer = $uisfx
+@onready var sfx_hover : AudioStreamPlayer = $uiHoversfx
 
 var current_board = 'time'
 var labels_dict = {
@@ -23,6 +25,8 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
+	sfx.play()
+	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("uid://b4o23ec1ofw0u")
 
 
@@ -45,10 +49,14 @@ func get_scores():
 
 
 func _on_switch_pressed() -> void:
+	sfx.play()
 	for score in scores_container.get_children():
 		score.queue_free()
 	high_scores_label.text = labels_dict[current_board].get('label')
 	current_board = labels_dict[current_board].get('name')
 	switch.text = labels_dict[current_board].get('label')
 	get_scores()
-	
+
+
+func _on_button_mouse_entered() -> void:
+	sfx_hover.play()

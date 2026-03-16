@@ -3,9 +3,21 @@
 [ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://Materials/main_theme.tres" id="1_rn867"]
 [ext_resource type="Script" uid="uid://dbxhyxgm2xffj" path="res://Scenes/Leaderboard/leaderboard.gd" id="2_w6pbc"]
 [ext_resource type="Texture2D" uid="uid://bm5s2y1tts4r7" path="res://Assets/Sprites/SlickLaboratory.png" id="3_ilquf"]
+[ext_resource type="AudioStream" uid="uid://bl61mwi8o8qcv" path="res://Assets/SFX/Interface Percussion Snap.wav" id="4_52rut"]
+[ext_resource type="AudioStream" uid="uid://b77wcss8qokmh" path="res://Assets/SFX/Interface Pop High Short.wav" id="5_fnhgn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73eye"]
 bg_color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7crjw"]
+random_pitch = 1.1790842
+streams_count = 1
+stream_0/stream = ExtResource("4_52rut")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r0tq5"]
+random_pitch = 1.3024698
+streams_count = 1
+stream_0/stream = ExtResource("5_fnhgn")
 
 [node name="LeaderBoard" type="Control" unique_id=1539792604]
 layout_mode = 3
@@ -158,6 +170,17 @@ vertical_alignment = 1
 wait_time = 0.25
 autostart = true
 
+[node name="uisfx" type="AudioStreamPlayer" parent="." unique_id=1230747093]
+stream = SubResource("AudioStreamRandomizer_7crjw")
+bus = &"SFX"
+
+[node name="uiHoversfx" type="AudioStreamPlayer" parent="." unique_id=1242688141]
+stream = SubResource("AudioStreamRandomizer_r0tq5")
+volume_db = -12.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="MarginContainer/Panel/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Panel/Switch" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/Panel/Switch" to="." method="_on_switch_pressed"]
 [connection signal="timeout" from="MarginContainer/Panel/VBoxContainer/ScoreScrollContainer/LoadingLabel/Timer" to="." method="_on_timer_timeout"]
