@@ -51,11 +51,12 @@ position = Vector2(0, -126)
 shape = SubResource("RectangleShape2D_r4oiy")
 
 [node name="FireSprites" type="AnimatedSprite2D" parent="." unique_id=48558562]
-modulate = Color(1, 1, 1, 0.77254903)
-position = Vector2(4, -186)
+modulate = Color(0.5069206, 0.5069201, 0.5069202, 1)
+position = Vector2(4, -185)
 scale = Vector2(0.6097561, 0.5954546)
 sprite_frames = SubResource("SpriteFrames_qjgvk")
 autoplay = "default"
+frame_progress = 0.33911902
 
 [node name="BunsenSprite" type="Sprite2D" parent="." unique_id=771459867]
 material = ExtResource("4_obghq")
@@ -70,11 +71,11 @@ position = Vector2(1, -2)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_yj0vg")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1882488684]
+[node name="FireLight" type="PointLight2D" parent="." unique_id=1882488684]
 position = Vector2(1, -176)
-scale = Vector2(1.2148438, 2.5390625)
-color = Color(0.7181154, 0.67190486, 0.40757084, 1)
-energy = 2.0
+scale = Vector2(1.61, 3.364)
+color = Color(0.73261946, 0.37818834, 0.17198771, 1)
+energy = 3.0
 shadow_enabled = true
 texture = ExtResource("8_0ecjv")
 
@@ -85,3 +86,4 @@ volume_db = -1.0
 autoplay = true
 
 [connection signal="area_entered" from="FireDetection" to="." method="_on_fire_detection_area_entered"]
+[connection signal="frame_changed" from="FireSprites" to="." method="_on_fire_sprites_frame_changed"]

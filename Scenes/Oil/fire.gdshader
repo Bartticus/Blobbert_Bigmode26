@@ -20,5 +20,5 @@ void fragment() {
 
     float opacity = step(radius, mix(gradient, noiseValue, effectControl) - distToEdge);
 
-    COLOR = texture(TEXTURE, UV) * vec4(1.0, 1.0, 1.0, opacity-0.4);
+    COLOR = texture(TEXTURE, UV) * vec4(0.6, 0.6, 0.6, opacity - 0.2);
 }

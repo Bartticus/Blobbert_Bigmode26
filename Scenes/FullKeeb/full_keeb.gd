@@ -35,7 +35,8 @@ func set_key_positions():
 			
 			#Relabel keys based on physical location
 			var phys_keycode = DisplayServer.keyboard_get_keycode_from_physical(key.keycode)
-			key.key_label.text = char(phys_keycode).to_upper()
+			if phys_keycode:
+				key.key_label.text = char(phys_keycode).to_upper()
 
 func _ready() -> void:
 	set_key_positions()
