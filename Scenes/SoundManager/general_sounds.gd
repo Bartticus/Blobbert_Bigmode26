@@ -4,7 +4,7 @@ extends Node2D
 @export var water: Array[AudioStream] = []
 @export var zap: Array[AudioStream] = []
 
-@onready var player: AudioStreamPlayer2D = %GeneralSoundPlayer
+@onready var player: AudioStreamPlayer = %GeneralSoundPlayer
 
 func get_player():
 	var available_player = null

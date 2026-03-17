@@ -9,10 +9,10 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_imnhf"]
 friction = 0.4
-bounce = 0.4
+bounce = 0.3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrpf4"]
-radius = 100.0
+radius = 80.0
 
 [sub_resource type="Animation" id="Animation_whq7r"]
 length = 0.001
@@ -240,26 +240,28 @@ shape = SubResource("CircleShape2D_vrpf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="BatteryBody" unique_id=1783101160]
 material = ExtResource("2_5asiw")
-position = Vector2(-49, -1.9999999)
+position = Vector2(-49.000008, -2.9999847)
 rotation = -1.5707964
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_vrpf4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="BatteryBody" unique_id=1714969541]
 material = ExtResource("2_5asiw")
+position = Vector2(0, -0.99998474)
 rotation = -1.5707964
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_vrpf4")
 
 [node name="Sprite2D3" type="Sprite2D" parent="BatteryBody" unique_id=1674745555]
 material = ExtResource("2_5asiw")
-position = Vector2(47.999996, -1.9999999)
+position = Vector2(47.999996, -2.9999847)
 rotation = -1.5707964
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_vrpf4")
 
 [node name="BoomAnim" type="Node2D" parent="BatteryBody" unique_id=840938071]
 unique_name_in_owner = true
+position = Vector2(0, -0.99998474)
 scale = Vector2(0.2, 0.2)
 
 [node name="Boom1" type="Sprite2D" parent="BatteryBody/BoomAnim" unique_id=1907032668]
@@ -281,6 +283,18 @@ texture = ExtResource("5_xcvvl")
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_hgi1m")
 speed_scale = 6.0
+
+[node name="Wire2" type="Line2D" parent="BatteryBody" unique_id=1449101792]
+position = Vector2(0, -1.0000076)
+points = PackedVector2Array(-72, 68, 70, 71)
+width = 6.0
+default_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
+[node name="Wire3" type="Line2D" parent="BatteryBody" unique_id=2083500205]
+position = Vector2(0, -1.0000076)
+points = PackedVector2Array(-72, -33, 69, -32)
+width = 6.0
+default_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
 
 [node name="WireOrigin" type="Marker2D" parent="." unique_id=345071377]
 unique_name_in_owner = true

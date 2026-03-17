@@ -171,11 +171,9 @@ func check_moving_fast() -> void:
 		check_status()
 	previous_vel = softbody.get_center_body().rigidbody.linear_velocity.length()
 
-func _on_blob_level_transition_area_area_exited(_area: Area2D) -> void:
-	# reset_screen()
-	pass
-
 func reset_screen():
+	if !Global.level:
+		return
 	for overlapping_area in blob_level_transition_area.get_overlapping_areas():
 		if overlapping_area.name == 'ScreenSpace':
 			if overlapping_area.get_owner().multi_screen:

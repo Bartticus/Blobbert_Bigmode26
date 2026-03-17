@@ -1,12 +1,12 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://u503r1tp8xup"]
 
-[ext_resource type="Shader" uid="uid://bpl3xumlpc5tq" path="res://Materials/swirl_2.tres" id="1_nmpf2"]
+[ext_resource type="Shader" uid="uid://dca5bsjcpq8jb" path="res://Materials/swirl_2.gdshader" id="1_nmpf2"]
 
 [resource]
 shader = ExtResource("1_nmpf2")
 shader_parameter/polar_coordinates = true
 shader_parameter/polar_center = Vector2(0.835, 0.5)
-shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_zoom = 0.5
 shader_parameter/polar_repeat = 1.0
 shader_parameter/spin_rotation = 0.0
 shader_parameter/spin_speed = 10.0

@@ -491,7 +491,7 @@ texture = ExtResource("9_14qcb")
 unique_name_in_owner = true
 sound_files = Array[AudioStream]([ExtResource("13_mgu2e")])
 max_distance = 4000.0
-attenuation = 0.2
+panning_strength = 0.5
 
 [node name="ScreenBlob" parent="." index="18" unique_id=104221436]
 position = Vector2(961, 530)

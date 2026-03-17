@@ -5,8 +5,8 @@ extends Node2D
 @export var explosion: Array[AudioStream] = []
 @export var sizzle: Array[AudioStream] = []
 
-@onready var player_1: AudioStreamPlayer2D = %RequiredSoundPlayer1
-@onready var player_2: AudioStreamPlayer2D = %RequiredSoundPlayer2
+@onready var player_1: AudioStreamPlayer = %RequiredSoundPlayer1
+@onready var player_2: AudioStreamPlayer = %RequiredSoundPlayer2
 
 func get_player():
 	var available_player = null

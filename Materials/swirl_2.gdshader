@@ -1,7 +1,4 @@
-[gd_resource type="Shader" format=3 uid="uid://bpl3xumlpc5tq"]
-
-[resource]
-code = "shader_type canvas_item;
+shader_type canvas_item;
 render_mode blend_add;
 
 uniform bool polar_coordinates = false;
@@ -52,6 +49,7 @@ vec4 effect(vec2 screenSize, vec2 screen_coords){
     highp float c3p = 1. - min(1., c1p + c2p);
 	
 	
+	
 	highp vec4 ret_col = (0.3/contrast)*colour_1 + (1. - 0.3/contrast)*(colour_1*c1p + colour_2*c2p + vec4(c3p*colour_3.rgb, c3p*colour_1.a));
 	return ret_col;
 }
@@ -69,11 +67,8 @@ void fragment() {
         polarCoords = polar_coords(UV.xy, polar_center, polar_zoom, polar_repeat);
     }
 
-    // Correct: pass actual pixel size and pixel-space coordinates
     vec2 texSize = 1.0 / TEXTURE_PIXEL_SIZE;
-    COLOR *= effect(texSize, polarCoords * texSize
-);
+    COLOR *= effect(texSize, polarCoords * texSize);
 }
 
 
-"

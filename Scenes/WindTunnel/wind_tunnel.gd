@@ -21,6 +21,8 @@ func _physics_process(_delta: float) -> void:
 	for body in wind_area.get_overlapping_bodies():
 		if body is Bone:
 			body.apply_force(power / body.total_wind_forces)
+		else:
+			body.apply_force(power)
 
 
 func _on_wind_area_body_entered(body: Node2D) -> void:

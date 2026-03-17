@@ -96,10 +96,29 @@ tracks/0/keys = {
 "values": [0.0, 6.283185307179586]
 }
 
+[sub_resource type="Animation" id="Animation_ydu24"]
+resource_name = "spin_slow"
+length = 120.0
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GearSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mdkld"]
 _data = {
 &"RESET": SubResource("Animation_ecl18"),
-&"spin": SubResource("Animation_xjfkr")
+&"spin": SubResource("Animation_xjfkr"),
+&"spin_slow": SubResource("Animation_ydu24")
 }
 
 [node name="VentScreen1" unique_id=1360540123 instance=ExtResource("1_n84dt")]
@@ -141,79 +160,94 @@ texture = ExtResource("3_1qr4i")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gear" index="5" unique_id=494644863]
 libraries/ = SubResource("AnimationLibrary_mdkld")
 
-[node name="WindTunnel" parent="." index="6" unique_id=1958283733 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel11" parent="." index="6" unique_id=1802811797 instance=ExtResource("4_mjv7u")]
+position = Vector2(1391, 939)
+rotation = -3.1415925
+wind_power = 10.0
+
+[node name="WindTunnel12" parent="." index="7" unique_id=663856394 instance=ExtResource("4_mjv7u")]
+position = Vector2(1391, 840)
+rotation = -3.1415925
+wind_power = 10.0
+
+[node name="WindTunnel13" parent="." index="8" unique_id=1019544578 instance=ExtResource("4_mjv7u")]
+position = Vector2(1390, 739)
+rotation = -3.1415925
+wind_power = 10.0
+
+[node name="WindTunnel" parent="." index="9" unique_id=1958283733 instance=ExtResource("4_mjv7u")]
 position = Vector2(1377, 939)
 rotation = 3.1415927
 scale = Vector2(2, 1)
-wind_power = 50.0
+wind_power = 45.0
 active = false
 
-[node name="WindTunnel2" parent="." index="7" unique_id=97437514 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel2" parent="." index="10" unique_id=97437514 instance=ExtResource("4_mjv7u")]
 position = Vector2(1377, 838)
 rotation = 3.1415927
 scale = Vector2(2, 1)
-wind_power = 50.0
+wind_power = 45.0
 active = false
 
-[node name="WindTunnel3" parent="." index="8" unique_id=1659196485 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel3" parent="." index="11" unique_id=1659196485 instance=ExtResource("4_mjv7u")]
 position = Vector2(1377, 739)
 rotation = 3.1415927
 scale = Vector2(2, 1)
-wind_power = 50.0
+wind_power = 45.0
 active = false
 
-[node name="WindTunnel4" parent="." index="9" unique_id=1533143517 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel4" parent="." index="12" unique_id=1533143517 instance=ExtResource("4_mjv7u")]
 position = Vector2(778, 939)
 rotation = 3.1415927
 scale = Vector2(2, 1)
-wind_power = 50.0
+wind_power = 45.0
 active = false
 
-[node name="WindTunnel5" parent="." index="10" unique_id=939864969 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel5" parent="." index="13" unique_id=939864969 instance=ExtResource("4_mjv7u")]
 position = Vector2(778, 838)
 rotation = 3.1415927
 scale = Vector2(2, 1)
-wind_power = 50.0
+wind_power = 35.0
 active = false
 
-[node name="WindTunnel6" parent="." index="11" unique_id=1186976802 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel6" parent="." index="14" unique_id=1186976802 instance=ExtResource("4_mjv7u")]
 position = Vector2(778, 739)
 rotation = 3.1415927
 scale = Vector2(2, 1)
-wind_power = 50.0
+wind_power = 35.0
 active = false
 
-[node name="WindTunnel7" parent="." index="12" unique_id=1471840019 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel7" parent="." index="15" unique_id=1471840019 instance=ExtResource("4_mjv7u")]
 position = Vector2(386.00003, 912)
 rotation = 2.5054395
 scale = Vector2(1.6, 1)
-wind_power = 50.0
+wind_power = 35.0
 active = false
 
-[node name="WindTunnel8" parent="." index="13" unique_id=164498307 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel8" parent="." index="16" unique_id=164498307 instance=ExtResource("4_mjv7u")]
 position = Vector2(375.99997, 759)
 rotation = 2.3178139
 scale = Vector2(1.6, 1)
-wind_power = 50.0
+wind_power = 35.0
 active = false
 
-[node name="WindTunnel9" parent="." index="14" unique_id=1596655612 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel9" parent="." index="17" unique_id=1596655612 instance=ExtResource("4_mjv7u")]
 position = Vector2(212, 1054)
 rotation = 1.5707964
 scale = Vector2(1.6, 1)
-wind_power = 50.0
+wind_power = 35.0
 active = false
 
-[node name="WindTunnel10" parent="." index="15" unique_id=1914930800 instance=ExtResource("4_mjv7u")]
+[node name="WindTunnel10" parent="." index="18" unique_id=1914930800 instance=ExtResource("4_mjv7u")]
 position = Vector2(115, 1056)
 rotation = 1.5707964
 scale = Vector2(1.6, 1)
-wind_power = 50.0
+wind_power = 35.0
 active = false
 
-[node name="Oils" type="Node2D" parent="." index="16" unique_id=70454373]
+[node name="Oils" type="Node2D" parent="." index="19" unique_id=70454373]
 
-[node name="VentGeometry" type="Node2D" parent="." index="22" unique_id=2072586098]
+[node name="VentGeometry" type="Node2D" parent="." index="25" unique_id=2072586098]
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="VentGeometry" index="0" unique_id=990701440]
 
@@ -253,10 +287,10 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="VentDoor" parent="." index="25" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
+[node name="VentDoor" parent="." index="28" unique_id=1445567170 instance=ExtResource("3_r0mnm")]
 position = Vector2(512, 480)
 
-[node name="Grate" parent="." index="26" unique_id=382070669 instance=ExtResource("10_xjfkr")]
+[node name="Grate" parent="." index="29" unique_id=382070669 instance=ExtResource("10_xjfkr")]
 position = Vector2(1330, 434.00003)
 scale = Vector2(1.3, 1.5)
 
@@ -273,15 +307,15 @@ scale = Vector2(0.5, 1)
 position = Vector2(55.392, 217.552)
 scale = Vector2(0.49665385, 1.3)
 
-[node name="WindSound" type="Node2D" parent="." index="27" unique_id=1346139176]
+[node name="WindSound" type="Node2D" parent="." index="30" unique_id=1346139176]
 script = ExtResource("11_mdkld")
 
-[node name="Fan" parent="." index="28" unique_id=86154387 instance=ExtResource("12_ginh1")]
+[node name="Fan" parent="." index="31" unique_id=86154387 instance=ExtResource("12_ginh1")]
 position = Vector2(1818, 679)
 scale = Vector2(0.68, 0.68)
-fan_speed = 0.5
+fan_speed = 0.2
 
-[node name="WindGustGroup" parent="." index="29" unique_id=1942551771 instance=ExtResource("5_3jp2c")]
+[node name="WindGustGroup" parent="." index="32" unique_id=1942551771 instance=ExtResource("5_3jp2c")]
 auto_start = false
 
 [node name="WindGust3" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("6_am2jb")]
@@ -299,22 +333,22 @@ position = Vector2(425.99997, 746)
 rotation = 2.3590355
 scale = Vector2(0.3, 0.3)
 
-[node name="WindGustGroup2" parent="." index="30" unique_id=356277714 instance=ExtResource("5_3jp2c")]
+[node name="WindGustGroup2" parent="." index="33" unique_id=356277714 instance=ExtResource("5_3jp2c")]
 auto_start = false
 
-[node name="WindGust6" parent="WindGustGroup2" index="0" unique_id=521127419 instance=ExtResource("6_am2jb")]
-position = Vector2(1602, 979)
-rotation = 3.1023505
-scale = Vector2(0.3, 0.3)
-
-[node name="WindGust7" parent="WindGustGroup2" index="1" unique_id=1112035788 instance=ExtResource("6_am2jb")]
+[node name="WindGust7" parent="WindGustGroup2" index="0" unique_id=1112035788 instance=ExtResource("6_am2jb")]
 position = Vector2(1017, 974.00006)
 rotation = 3.1023505
 scale = Vector2(0.3, 0.3)
 
-[node name="WindGust8" parent="WindGustGroup2" index="2" unique_id=363961915 instance=ExtResource("6_am2jb")]
+[node name="WindGust8" parent="WindGustGroup2" index="1" unique_id=363961915 instance=ExtResource("6_am2jb")]
 position = Vector2(400, 906)
 rotation = 2.3590355
+scale = Vector2(0.3, 0.3)
+
+[node name="WindGust6" parent="WindGustGroup2" index="2" unique_id=521127419 instance=ExtResource("6_am2jb")]
+position = Vector2(1602, 979)
+rotation = 3.1023505
 scale = Vector2(0.3, 0.3)
 
 [editable path="Gear"]

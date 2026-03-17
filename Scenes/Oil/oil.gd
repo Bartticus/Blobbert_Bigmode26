@@ -48,7 +48,7 @@ func ignite() -> void:
 		ignited = true
 		fire.show()
 		fire.fire_animation.play('burn')
-		Global.sound_manager.play_general_sound('fire', [(1 / scale.length()), 0.6].max(), scale.length_squared())
+		Global.sound_manager.play_general_sound('fire', [(1 / scale.length()), 0.6].max(), scale.length_squared() - 5)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Bone:

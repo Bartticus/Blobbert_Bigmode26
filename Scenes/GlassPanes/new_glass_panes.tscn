@@ -233,5 +233,6 @@ shape = SubResource("RectangleShape2D_dcqfx")
 [node name="GlassSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("5_c5x56")]
 unique_name_in_owner = true
 sound_files = Array[AudioStream]([ExtResource("6_skg4y"), ExtResource("7_qsqjw"), ExtResource("8_kg7pp"), ExtResource("9_j0hjj"), ExtResource("10_i6ip8")])
+interruptable = true
 max_distance = 4000.0
 attenuation = 0.15

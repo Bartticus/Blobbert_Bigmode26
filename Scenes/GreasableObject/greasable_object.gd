@@ -15,6 +15,10 @@ var splatter_speed: float = 0.05
 
 @onready var ungrease_timer: Timer = $UngreasableTimer
 
+func _ready():
+	if anim_player:
+		anim_player.play("spin_slow")
+
 
 func _on_velocity_detector_body_entered(body: Node2D) -> void:
 	if not ungrease_timer.is_stopped(): return

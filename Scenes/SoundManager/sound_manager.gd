@@ -6,7 +6,6 @@ extends Node2D
 		
 @onready var general_sounds: Node2D = %GeneralSounds
 @onready var required_sounds: Node2D = %RequiredSounds
-@onready var stacking_sounds: Node2D = %StackingSounds
 @onready var ambient_sounds: Node2D = %AmbientSounds
 
 var KEEP_PITCH = ['glass_break', 'siren', 'sizzle', 'explosion', 'chime']
@@ -49,18 +48,6 @@ func play_required_sound(sound_type):
 		return
 	var random_index = randi() % required_sounds.get(sound_type).size()
 	player.stream = required_sounds.get(sound_type)[random_index]
-	
-	player.pitch_scale = 1.0
-	shift_pitch(sound_type, player)
-	player.play()
-	return player
-
-func play_stacking_sound(sound_type):
-	var player = stacking_sounds.get_player()
-	if player == null:
-		return
-	var random_index = randi() % stacking_sounds.get(sound_type).size()
-	player.stream = stacking_sounds.get(sound_type)[random_index]
 	
 	player.pitch_scale = 1.0
 	shift_pitch(sound_type, player)

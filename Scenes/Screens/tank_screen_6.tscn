@@ -28,6 +28,9 @@ position = Vector2(62.800003, 435.6)
 scale = Vector2(0.49999997, 0.49999997)
 texture = ExtResource("5_gcwcn")
 
+[node name="TargetPosition" parent="VentDoor" index="1" unique_id=1100631167]
+position = Vector2(0, -373.2)
+
 [node name="BGSprite" parent="." index="12" unique_id=936446513]
 visible = false
 

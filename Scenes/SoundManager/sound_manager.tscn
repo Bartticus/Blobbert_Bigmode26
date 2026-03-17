@@ -7,17 +7,14 @@
 [ext_resource type="AudioStream" uid="uid://cqgoqhk1hl27d" path="res://Assets/SFX/glass_crack_03.wav" id="6_xia53"]
 [ext_resource type="AudioStream" uid="uid://c31l1cv7f6cei" path="res://Assets/SFX/glass_crack_04.wav" id="7_m28n0"]
 [ext_resource type="AudioStream" uid="uid://4a8pg6nmacu8" path="res://Assets/SFX/glass_crack_05.wav" id="8_1naht"]
-[ext_resource type="AudioStream" uid="uid://cyqds8i2p6omm" path="res://Assets/SFX/TubeChime1.mp3" id="9_1naht"]
 [ext_resource type="Script" uid="uid://ctkcpd0ovd8kw" path="res://Scenes/SoundManager/required_sound.gd" id="9_wdgtj"]
-[ext_resource type="AudioStream" uid="uid://54fm6x88wsn5" path="res://Assets/SFX/TubeChime2.mp3" id="10_w7wka"]
 [ext_resource type="AudioStream" uid="uid://ba4pgnl36oehm" path="res://Assets/SFX/siren_01.wav" id="10_xia53"]
 [ext_resource type="AudioStream" uid="uid://c3b4uwamvd3ic" path="res://Assets/SFX/fire_01.wav" id="11_w7wka"]
 [ext_resource type="AudioStream" uid="uid://comdckgwtl8cx" path="res://Assets/SFX/water.wav" id="12_3vcix"]
 [ext_resource type="AudioStream" uid="uid://05gl81m4vo4y" path="res://Assets/SFX/sizzle_01.ogg" id="14_kf56u"]
 [ext_resource type="AudioStream" uid="uid://bhyjn1enccrfs" path="res://Assets/SFX/zap.ogg" id="14_mnanp"]
 [ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
-[ext_resource type="Script" uid="uid://ctyjo3135c28x" path="res://Scenes/SoundManager/stacking_sounds.gd" id="16_myamy"]
-[ext_resource type="Script" path="res://Scenes/SoundManager/ambient_sounds.gd" id="18_c6m8x"]
+[ext_resource type="Script" uid="uid://bmdo162hxv66m" path="res://Scenes/SoundManager/ambient_sounds.gd" id="18_c6m8x"]
 [ext_resource type="AudioStream" uid="uid://d2d7vb77np1lc" path="res://Assets/SFX/FishTank.ogg" id="19_mnanp"]
 [ext_resource type="AudioStream" uid="uid://mhahrm8yrlxr" path="res://Assets/SFX/VentAmbiance.ogg" id="19_u7fpq"]
 [ext_resource type="AudioStream" uid="uid://0aosyedbkplu" path="res://Assets/SFX/office_ambience.ogg" id="20_jw8au"]
@@ -32,8 +29,9 @@ fire = Array[AudioStream]([ExtResource("11_w7wka")])
 water = Array[AudioStream]([ExtResource("12_3vcix")])
 zap = Array[AudioStream]([ExtResource("14_mnanp")])
 
-[node name="GeneralSoundPlayer" type="AudioStreamPlayer2D" parent="GeneralSounds" unique_id=1228363024]
+[node name="GeneralSoundPlayer" type="AudioStreamPlayer" parent="GeneralSounds" unique_id=1361193748]
 unique_name_in_owner = true
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="RequiredSounds" type="Node2D" parent="." unique_id=1576784224]
@@ -44,33 +42,14 @@ siren = Array[AudioStream]([ExtResource("10_xia53")])
 explosion = Array[AudioStream]([ExtResource("14_x57cx")])
 sizzle = Array[AudioStream]([ExtResource("14_kf56u")])
 
-[node name="RequiredSoundPlayer1" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=731427517]
+[node name="RequiredSoundPlayer1" type="AudioStreamPlayer" parent="RequiredSounds" unique_id=250476937]
 unique_name_in_owner = true
+volume_db = -5.0
 bus = &"SFX"
 
-[node name="RequiredSoundPlayer2" type="AudioStreamPlayer2D" parent="RequiredSounds" unique_id=293396159]
+[node name="RequiredSoundPlayer2" type="AudioStreamPlayer" parent="RequiredSounds" unique_id=808576450]
 unique_name_in_owner = true
-bus = &"SFX"
-
-[node name="StackingSounds" type="Node2D" parent="." unique_id=1774398228]
-unique_name_in_owner = true
-script = ExtResource("16_myamy")
-chime = Array[AudioStream]([ExtResource("9_1naht"), ExtResource("10_w7wka")])
-
-[node name="StackingSoundPlayer1" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=681512292]
-unique_name_in_owner = true
-bus = &"SFX"
-
-[node name="StackingSoundPlayer2" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=313096737]
-unique_name_in_owner = true
-bus = &"SFX"
-
-[node name="StackingSoundPlayer3" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=1509345973]
-unique_name_in_owner = true
-bus = &"SFX"
-
-[node name="StackingSoundPlayer4" type="AudioStreamPlayer2D" parent="StackingSounds" unique_id=1403348903]
-unique_name_in_owner = true
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="AmbientSounds" type="Node2D" parent="." unique_id=1569097066]

@@ -19,7 +19,7 @@ extends RigidBody2D
 @onready var fire: Node2D = %Fire
 @onready var reaction_sound_player: SoundPlayer = %ReactionSoundPlayer
 
-var sizzle_player: AudioStreamPlayer2D = null
+var sizzle_player: AudioStreamPlayer = null
 var reaction_player: AudioStreamPlayer2D = null
 
 
