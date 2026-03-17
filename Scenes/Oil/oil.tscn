@@ -187,6 +187,10 @@ scale_amount_max = 0.5
 scale_amount_curve = SubResource("Curve_33feg")
 color_initial_ramp = SubResource("Gradient_ew2lm")
 
+[node name="DistCheckTimer" type="Timer" parent="." unique_id=1340902033]
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="IgnitionTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IgnitionTimer" to="." method="_on_ignition_timer_timeout"]
+[connection signal="timeout" from="DistCheckTimer" to="." method="_on_dist_check_timer_timeout"]

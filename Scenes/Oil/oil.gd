@@ -34,7 +34,7 @@ func camera_shake_value(intensity: float):
 	camera.offset.x = camera_offset
 	camera.offset.y = camera_offset
 
-func _on_timer_timeout() -> void:
+func _on_ignition_timer_timeout() -> void:
 	for area in adj_oil_checker.get_overlapping_areas():
 		if area.owner is Oil:
 			var oil = area.owner
@@ -44,19 +44,34 @@ func _on_timer_timeout() -> void:
 			area.owner.explode()
 
 func ignite() -> void:
-	if !ignited:
-		ignited = true
-		fire.show()
-		fire.fire_animation.play('burn')
-		Global.sound_manager.play_general_sound('fire', [(1 / scale.length()), 0.6].max(), scale.length_squared() - 5)
+	if ignited: return
+	
+	ignited = true
+	fire.show()
+	fire.fire_animation.play('burn')
+	Global.sound_manager.play_general_sound('fire', [(1 / scale.length()), 0.6].max(), scale.length_squared() - 5)
+	
+	Global.sound_manager.play_ambient_sound("crackling")
+	Global.sound_manager.ambient_sounds.ramp_it(scale.length() / 4.0)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Bone:
 		body.oil_areas_int += 1
 		body.current_oil_overlap.append(self)
 
-
 func _on_body_exited(body: Node2D) -> void:
 	if body is Bone:
 		body.oil_areas_int -= 1
 		body.current_oil_overlap.erase(self)
+
+var prev_dist: float = 0
+func _on_dist_check_timer_timeout() -> void:
+	var dist_to_player: float = global_position.distance_to(Global.blob.center_bone.global_position)
+	var sfx_cutoff = 1000
+	if dist_to_player < sfx_cutoff && prev_dist > sfx_cutoff: #Increase sound when entering range
+		Global.sound_manager.ambient_sounds.ramp_it(scale.length() / 4.0)
+	if dist_to_player > sfx_cutoff && prev_dist < sfx_cutoff: #Reduce sound when leaving range
+		Global.sound_manager.ambient_sounds.ramp_it(-scale.length() / 4.0)
+	
+	
+	prev_dist = dist_to_player

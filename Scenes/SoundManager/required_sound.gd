@@ -1,3 +1,4 @@
+class_name RequiredSounds
 extends Node2D
 
 @export var glass_break: Array[AudioStream] = []

@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bhyjn1enccrfs" path="res://Assets/SFX/zap.ogg" id="14_mnanp"]
 [ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
 [ext_resource type="Script" uid="uid://bmdo162hxv66m" path="res://Scenes/SoundManager/ambient_sounds.gd" id="18_c6m8x"]
+[ext_resource type="AudioStream" uid="uid://buundoe0s81tg" path="res://Assets/SFX/crackling_fire.ogg" id="19_jw8au"]
 [ext_resource type="AudioStream" uid="uid://d2d7vb77np1lc" path="res://Assets/SFX/FishTank.ogg" id="19_mnanp"]
 [ext_resource type="AudioStream" uid="uid://mhahrm8yrlxr" path="res://Assets/SFX/VentAmbiance.ogg" id="19_u7fpq"]
 [ext_resource type="AudioStream" uid="uid://0aosyedbkplu" path="res://Assets/SFX/office_ambience.ogg" id="20_jw8au"]
@@ -59,7 +60,12 @@ vents = ExtResource("19_u7fpq")
 lab = ExtResource("20_jw8au")
 tank = ExtResource("19_mnanp")
 bunsen = ExtResource("20_jw8au")
+crackling = ExtResource("19_jw8au")
 
-[node name="AmbientSoundPlayer" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=2126895229]
+[node name="AmbientSoundPlayer1" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=2126895229]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="AmbientSoundPlayer2" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=162245642]
 unique_name_in_owner = true
 bus = &"SFX"

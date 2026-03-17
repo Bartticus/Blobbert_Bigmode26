@@ -1,12 +1,13 @@
+class_name SoundManager
 extends Node2D
 
 @onready var blob_sounds: Node2D:
 	get:
 		return Global.blob.blob_sounds
 		
-@onready var general_sounds: Node2D = %GeneralSounds
-@onready var required_sounds: Node2D = %RequiredSounds
-@onready var ambient_sounds: Node2D = %AmbientSounds
+@onready var general_sounds: GeneralSounds = %GeneralSounds
+@onready var required_sounds: RequiredSounds = %RequiredSounds
+@onready var ambient_sounds: AmbientSounds = %AmbientSounds
 
 var KEEP_PITCH = ['glass_break', 'siren', 'sizzle', 'explosion', 'chime']
 
@@ -55,7 +56,9 @@ func play_required_sound(sound_type):
 	return player
 
 func play_ambient_sound(sound_type):
-	var player = ambient_sounds.player
+	var player = ambient_sounds.get_player()
+	if player == null:
+		return
 	player.stream = ambient_sounds.get(sound_type)
 	player.play()
 	return player

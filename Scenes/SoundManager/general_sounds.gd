@@ -1,3 +1,4 @@
+class_name GeneralSounds
 extends Node2D
 
 @export var fire: Array[AudioStream] = []
