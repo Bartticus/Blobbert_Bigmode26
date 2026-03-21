@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://r4qv38dnbje6"]
+
+[ext_resource type="Script" uid="uid://bexg0jw2b7614" path="res://Scenes/Blob/fire_proximity.gd" id="1_15ppo"]
+[ext_resource type="Shape2D" uid="uid://tkt6u21q8tv7" path="res://Materials/fire_proximity_circle.tres" id="3_2hifw"]
+
+[node name="FireProximity" type="Node2D" unique_id=1454029759]
+visible = false
+script = ExtResource("1_15ppo")
+
+[node name="FireProximityArea" type="Area2D" parent="." unique_id=1457987288]
+unique_name_in_owner = true
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="FireProximityShape" type="CollisionShape2D" parent="FireProximityArea" unique_id=1579406867]
+unique_name_in_owner = true
+rotation = 1.5707964
+shape = ExtResource("3_2hifw")
+
+[connection signal="area_entered" from="FireProximityArea" to="." method="_on_fire_proximity_area_area_entered"]
+[connection signal="area_exited" from="FireProximityArea" to="." method="_on_fire_proximity_area_area_exited"]

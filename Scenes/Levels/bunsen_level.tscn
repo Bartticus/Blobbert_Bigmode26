@@ -16,13 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://cmh2wlvrkccht" path="res://Scenes/MultiScreenTemplate/multi_screen_template.tscn" id="12_701ob"]
 [ext_resource type="PackedScene" uid="uid://cg8eikmecesv4" path="res://Scenes/Screens/bunsen_screen_10.tscn" id="12_s03oc"]
 [ext_resource type="PackedScene" uid="uid://bfti1602q8a6l" path="res://Scenes/Screens/bunsen_screen_11.tscn" id="13_701ob"]
+[ext_resource type="PackedScene" uid="uid://cf8m05gmrmgpo" path="res://Scenes/FireLevels/fire_levels.tscn" id="17_a2fg8"]
 
-[node name="BunsenLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_28eey")]
+[node name="BunsenLevel" unique_id=129905935 instance=ExtResource("1_28eey")]
 ambient_sound_name = "bunsen"
-starting_screen = NodePath("Screens/BunsenScreen0")
 
 [node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="2" unique_id=2057049144]
 level_name = "Flame Hazard"
+
+[node name="FireLevels" parent="." index="2" unique_id=629994088 instance=ExtResource("17_a2fg8")]
 
 [node name="BunsenScreen12" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1720561904 instance=ExtResource("2_701ob")]
 position = Vector2(-1920, 1080)
@@ -103,7 +105,7 @@ x_coordinate = 1
 y_coordinate = -2
 snap_screen_to_position = true
 
-[node name="LoadingZone" parent="." index="6" unique_id=1274508763]
+[node name="LoadingZone" parent="." index="7" unique_id=1274508763]
 position = Vector2(3837, -2141)
 scale = Vector2(1, 2)
 

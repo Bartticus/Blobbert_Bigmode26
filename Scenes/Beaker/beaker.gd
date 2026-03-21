@@ -18,8 +18,8 @@ extends RigidBody2D
 @onready var explosion_anim: AnimationPlayer = %AnimationPlayer
 @onready var fire: Node2D = %Fire
 @onready var reaction_sound_player: SoundPlayer = %ReactionSoundPlayer
+@onready var explosion_sound_player: SoundPlayer = %ExplosionSoundPlayer
 
-var sizzle_player: AudioStreamPlayer = null
 var reaction_player: AudioStreamPlayer2D = null
 
 
@@ -34,7 +34,6 @@ func explode():
 		return
 	exploding = true
 	fire.visible = true
-	sizzle_player = Global.sound_manager.play_required_sound('sizzle')
 	reaction_player = reaction_sound_player.play_sound()
 	explosion_timer.start()
 
@@ -63,9 +62,8 @@ func _on_explosion_timer_timeout() -> void:
 		if child is Oil:
 			child.hide()
 	
-	sizzle_player.stop()
 	reaction_player.stop()
-	Global.sound_manager.play_required_sound('explosion')
+	explosion_sound_player.play_sound()
 	explosion_anim.play("boom")
 	await explosion_anim.animation_finished
 	

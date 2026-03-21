@@ -4,8 +4,7 @@ extends Area2D
 @onready var splatter_sprites: AnimatedSprite2D = $Splatters
 @onready var fire: Node2D = $Fire
 @onready var adj_oil_checker: Area2D = $AdjacentOilChecker
-@onready var ignited: bool = false
-
+@export var ignited: bool = false
 @onready var particles: CPUParticles2D = $CPUParticles2D
 
 var camera: Camera2D
@@ -47,12 +46,8 @@ func ignite() -> void:
 	if ignited: return
 	
 	ignited = true
-	fire.show()
-	fire.fire_animation.play('burn')
+	fire.activate()
 	Global.sound_manager.play_general_sound('fire', [(1 / scale.length()), 0.6].max(), scale.length_squared() - 5)
-	
-	Global.sound_manager.play_ambient_sound("crackling")
-	Global.sound_manager.ambient_sounds.ramp_it(scale.length() / 4.0)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Bone:
@@ -63,15 +58,3 @@ func _on_body_exited(body: Node2D) -> void:
 	if body is Bone:
 		body.oil_areas_int -= 1
 		body.current_oil_overlap.erase(self)
-
-var prev_dist: float = 0
-func _on_dist_check_timer_timeout() -> void:
-	var dist_to_player: float = global_position.distance_to(Global.blob.center_bone.global_position)
-	var sfx_cutoff = 1000
-	if dist_to_player < sfx_cutoff && prev_dist > sfx_cutoff: #Increase sound when entering range
-		Global.sound_manager.ambient_sounds.ramp_it(scale.length() / 4.0)
-	if dist_to_player > sfx_cutoff && prev_dist < sfx_cutoff: #Reduce sound when leaving range
-		Global.sound_manager.ambient_sounds.ramp_it(-scale.length() / 4.0)
-	
-	
-	prev_dist = dist_to_player

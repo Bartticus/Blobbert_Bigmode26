@@ -26,6 +26,7 @@ var face_dict: Dictionary = {}
 @onready var blob_listener: AudioListener2D = %BlobListener
 @onready var blob_sounds: Node2D = %BlobSounds
 @onready var blob_level_transition_area: Area2D = %BlobLevelTransitionArea
+@onready var fire_proximity: FireProximity = %FireProximity
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 @onready var blob_center: Marker2D = %BlobCenter
 @onready var swirl_rect: ColorRect = %SwirlRect
@@ -152,7 +153,7 @@ func _physics_process(delta: float) -> void:
 	var center_pos = softbody.get_bones_center_position()
 	blob_center.global_position = center_pos
 	ghost_timer(delta)
-	swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
+	# swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
 	var weight = 0.05
 	blob_center.rotation = lerp_angle(blob_center.rotation, center_bone.rotation, weight)
 	
@@ -276,3 +277,11 @@ func ghost_timer(delta) -> void:
 	if timer >= 0.1:
 		timer = 0.0
 		Global.add_ghost_data(blob_center.global_position)
+
+
+
+func _on_fire_proximity_area_area_exited(area: Area2D) -> void:
+	Global.sound_manager.ramping_sounds.sources_in_proximity -= 1
+
+func _on_fire_proximity_area_area_entered(area: Area2D) -> void:
+	Global.sound_manager.ramping_sounds.sources_in_proximity += 1

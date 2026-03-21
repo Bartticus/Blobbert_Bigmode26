@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cf8m05gmrmgpo"]
+
+[ext_resource type="Script" uid="uid://77l4mp3h4pxu" path="res://Scenes/FireLevels/fire_levels.gd" id="1_jsgbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd2x8"]
+size = Vector2(6975, 1026)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2fg8"]
+size = Vector2(4080, 997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74csn"]
+size = Vector2(3853, 2215)
+
+[node name="FireLevels" type="Node2D" unique_id=629994088]
+script = ExtResource("1_jsgbl")
+
+[node name="FirstLevel" type="Area2D" parent="." unique_id=664737002]
+unique_name_in_owner = true
+position = Vector2(-1920, 1081)
+collision_layer = 4096
+collision_mask = 528384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstLevel" unique_id=1060913267]
+position = Vector2(2273.5, 557)
+shape = SubResource("RectangleShape2D_jd2x8")
+
+[node name="SecondLevel" type="Area2D" parent="." unique_id=1307405561]
+unique_name_in_owner = true
+position = Vector2(-1920, -67)
+collision_layer = 4096
+collision_mask = 528384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondLevel" unique_id=633683975]
+position = Vector2(3721, 600.5)
+shape = SubResource("RectangleShape2D_a2fg8")
+
+[node name="ThirdLevel" type="Area2D" parent="." unique_id=1940429817]
+unique_name_in_owner = true
+position = Vector2(-1920, -2411)
+collision_layer = 4096
+collision_mask = 528384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ThirdLevel" unique_id=883350537]
+position = Vector2(3834.5, 1209.5)
+shape = SubResource("RectangleShape2D_74csn")
+
+[connection signal="area_entered" from="FirstLevel" to="." method="_on_first_level_area_entered"]
+[connection signal="area_exited" from="FirstLevel" to="." method="_on_first_level_area_exited"]
+[connection signal="area_entered" from="SecondLevel" to="." method="_on_second_level_area_entered"]
+[connection signal="area_exited" from="SecondLevel" to="." method="_on_second_level_area_exited"]
+[connection signal="area_entered" from="ThirdLevel" to="." method="_on_third_level_area_entered"]
+[connection signal="area_exited" from="ThirdLevel" to="." method="_on_third_level_area_exited"]

@@ -66,6 +66,7 @@ reset={
 2d_physics/layer_7="FishNav"
 2d_physics/layer_8="Water"
 2d_physics/layer_9="Invsible Blockers"
+2d_physics/layer_13="Fire"
 2d_physics/layer_17="Water"
 
 [physics]

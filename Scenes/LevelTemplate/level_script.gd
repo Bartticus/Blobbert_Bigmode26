@@ -74,6 +74,7 @@ func _ready() -> void:
 func enter_multi_screen(multi_screen):
 	var is_in_cutscene = playing_cutscene
 	current_anchor = multi_screen.screens[0].screen_anchor
+	# blob.fire_proximity.set_circle_shape()
 	if !is_multi_screen:
 		if !is_in_cutscene:
 			playing_cutscene = true
@@ -101,6 +102,7 @@ func enter_single_screen(screen):
 	Global.tug_power = Global.max_tug_power
 	Global.tug_range = Global.max_tug_range
 	current_anchor = screen.screen_anchor
+	# blob.fire_proximity.set_capsule_shape()
 	if is_multi_screen:
 		if !is_in_cutscene:
 			playing_cutscene = true

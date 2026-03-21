@@ -11,14 +11,14 @@
 [ext_resource type="AudioStream" uid="uid://ba4pgnl36oehm" path="res://Assets/SFX/siren_01.wav" id="10_xia53"]
 [ext_resource type="AudioStream" uid="uid://c3b4uwamvd3ic" path="res://Assets/SFX/fire_01.wav" id="11_w7wka"]
 [ext_resource type="AudioStream" uid="uid://comdckgwtl8cx" path="res://Assets/SFX/water.wav" id="12_3vcix"]
-[ext_resource type="AudioStream" uid="uid://05gl81m4vo4y" path="res://Assets/SFX/sizzle_01.ogg" id="14_kf56u"]
 [ext_resource type="AudioStream" uid="uid://bhyjn1enccrfs" path="res://Assets/SFX/zap.ogg" id="14_mnanp"]
 [ext_resource type="AudioStream" uid="uid://dl6v4d6puqmba" path="res://Assets/SFX/explode_01.wav" id="14_x57cx"]
 [ext_resource type="Script" uid="uid://bmdo162hxv66m" path="res://Scenes/SoundManager/ambient_sounds.gd" id="18_c6m8x"]
-[ext_resource type="AudioStream" uid="uid://buundoe0s81tg" path="res://Assets/SFX/crackling_fire.ogg" id="19_jw8au"]
+[ext_resource type="AudioStream" uid="uid://dh7xttuekh1y6" path="res://Assets/SFX/CracklingFire.ogg" id="19_jw8au"]
 [ext_resource type="AudioStream" uid="uid://d2d7vb77np1lc" path="res://Assets/SFX/FishTank.ogg" id="19_mnanp"]
 [ext_resource type="AudioStream" uid="uid://mhahrm8yrlxr" path="res://Assets/SFX/VentAmbiance.ogg" id="19_u7fpq"]
 [ext_resource type="AudioStream" uid="uid://0aosyedbkplu" path="res://Assets/SFX/office_ambience.ogg" id="20_jw8au"]
+[ext_resource type="Script" uid="uid://noxmb7lwmo2q" path="res://Scenes/SoundManager/ramping_sounds.gd" id="20_mnanp"]
 
 [node name="SoundManager" type="Node2D" unique_id=269814558]
 script = ExtResource("1_1ipep")
@@ -41,7 +41,6 @@ script = ExtResource("9_wdgtj")
 glass_break = Array[AudioStream]([ExtResource("4_oo8t0"), ExtResource("5_wdgtj"), ExtResource("6_xia53"), ExtResource("7_m28n0"), ExtResource("8_1naht")])
 siren = Array[AudioStream]([ExtResource("10_xia53")])
 explosion = Array[AudioStream]([ExtResource("14_x57cx")])
-sizzle = Array[AudioStream]([ExtResource("14_kf56u")])
 
 [node name="RequiredSoundPlayer1" type="AudioStreamPlayer" parent="RequiredSounds" unique_id=250476937]
 unique_name_in_owner = true
@@ -60,12 +59,16 @@ vents = ExtResource("19_u7fpq")
 lab = ExtResource("20_jw8au")
 tank = ExtResource("19_mnanp")
 bunsen = ExtResource("20_jw8au")
-crackling = ExtResource("19_jw8au")
 
-[node name="AmbientSoundPlayer1" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=2126895229]
+[node name="AmbientSoundPlayer" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=2126895229]
 unique_name_in_owner = true
 bus = &"SFX"
 
-[node name="AmbientSoundPlayer2" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=162245642]
+[node name="RampingSounds" type="Node2D" parent="." unique_id=1305907291]
+unique_name_in_owner = true
+script = ExtResource("20_mnanp")
+crackling = ExtResource("19_jw8au")
+
+[node name="RampingSoundPlayer" type="AudioStreamPlayer" parent="RampingSounds" unique_id=849855510]
 unique_name_in_owner = true
 bus = &"SFX"

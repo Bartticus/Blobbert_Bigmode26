@@ -4,7 +4,6 @@ extends Node2D
 @export var glass_break: Array[AudioStream] = []
 @export var siren: Array[AudioStream] = []
 @export var explosion: Array[AudioStream] = []
-@export var sizzle: Array[AudioStream] = []
 
 @onready var player_1: AudioStreamPlayer = %RequiredSoundPlayer1
 @onready var player_2: AudioStreamPlayer = %RequiredSoundPlayer2

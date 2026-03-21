@@ -15,5 +15,5 @@ texture = ExtResource("1_g2aqx")
 
 [node name="Fire" parent="." unique_id=2049499128 instance=ExtResource("2_i58io")]
 z_as_relative = true
-position = Vector2(-3.999999, 13)
+position = Vector2(-4, -2.999999)
 scale = Vector2(0.4, 0.4)

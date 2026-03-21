@@ -8,6 +8,7 @@ extends Node2D
 @onready var general_sounds: GeneralSounds = %GeneralSounds
 @onready var required_sounds: RequiredSounds = %RequiredSounds
 @onready var ambient_sounds: AmbientSounds = %AmbientSounds
+@onready var ramping_sounds: RampingSounds = %RampingSounds
 
 var KEEP_PITCH = ['glass_break', 'siren', 'sizzle', 'explosion', 'chime']
 
@@ -56,10 +57,14 @@ func play_required_sound(sound_type):
 	return player
 
 func play_ambient_sound(sound_type):
-	var player = ambient_sounds.get_player()
-	if player == null:
-		return
+	var player = ambient_sounds.player
 	player.stream = ambient_sounds.get(sound_type)
+	player.play()
+	return player
+
+func play_ramping_sound(sound_type):
+	var player = ramping_sounds.player
+	player.stream = ramping_sounds.get(sound_type)
 	player.play()
 	return player
 

@@ -36,7 +36,7 @@ var level_order = {
 
 var ghost_data = []
 
-func ready():
+func _ready():
 	randomize()
 
 func load_next_scene():
