@@ -1832,8 +1832,9 @@ shader_parameter/edge_remap_max = 1.0
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[node name="TankLevel" unique_id=129905935 instance=ExtResource("1_7hsss")]
+[node name="TankLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_7hsss")]
 ambient_sound_name = "tank"
+starting_screen = NodePath("Screens/TankScreen8")
 
 [node name="VentAudioZone" parent="." index="0" unique_id=1864948793 instance=ExtResource("21_7ajio")]
 position = Vector2(-873, 540)
@@ -2053,12 +2054,16 @@ cutscene = NodePath("../../../BatteryCutscene")
 position = Vector2(-1315, 759)
 vent_blocker = NodePath("../Screens/Tank/TankScreen0/VentBlocker")
 
-[node name="BatteryCutscene" parent="." index="11" unique_id=731723262 node_paths=PackedStringArray("battery", "triggerable_objects") instance=ExtResource("17_2qt28")]
+[node name="BatteryCutscene" parent="." index="11" unique_id=731723262 node_paths=PackedStringArray("battery", "triggerable_objects", "fish") instance=ExtResource("17_2qt28")]
 battery = NodePath("../Screens/TankScreen8/Battery")
 triggerable_objects = [NodePath("../Screens/Tank/TankScreen2/VentDoor")]
+fish = NodePath("../NavigationRegion2D/PinkFish")
 
 [node name="Area2D" parent="BatteryCutscene" index="0" unique_id=1744263059]
 position = Vector2(2921, 339)
+
+[node name="FishSpot" parent="BatteryCutscene" index="1" unique_id=916733005]
+position = Vector2(3143, 1287)
 
 [node name="DoorCutscene" parent="." index="12" unique_id=1570565807 node_paths=PackedStringArray("tank_glass") instance=ExtResource("18_2u67o")]
 tank_glass = NodePath("../Screens/Tank/TankScreen2/TankGlass")
@@ -2097,4 +2102,5 @@ texture = ExtResource("20_uuq41")
 [editable path="Screens/TankScreen8/Battery"]
 [editable path="Screens/TankScreen8/WindTunnel"]
 [editable path="Screens/TankScreen8/WindTunnel2"]
+[editable path="NavigationRegion2D"]
 [editable path="BatteryCutscene"]

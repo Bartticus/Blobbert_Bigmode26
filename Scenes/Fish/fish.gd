@@ -14,8 +14,9 @@ extends Node2D
 @onready var bump_timer: Timer = %BumpTimer
 @onready var fish_sprite: Sprite2D = %FishSprite
 
-enum Status { WAITING, NAVIGATING, BUMPED }
+enum Status { WAITING, NAVIGATING, BUMPED, CUSTOM_ACTION }
 var status: Status = Status.WAITING : set = set_status
+var custom_target
 
 func set_status(new_status):
 	status = new_status
@@ -32,7 +33,14 @@ func set_status(new_status):
 			fish_char.velocity = Vector2(0,0)
 			bump_timer.start()
 			fish_body.process_mode = Node.PROCESS_MODE_INHERIT
-			fish_body.apply_force(bumper_velocity.direction_to(fish_body.global_position))
+		Status.CUSTOM_ACTION:
+			if !bump_timer.is_stopped():
+				bump_timer.stop()
+			fish_char.global_position = fish_body.global_position
+			fish_char.global_rotation = fish_body.global_rotation
+			fish_body.process_mode = Node.PROCESS_MODE_DISABLED
+			get_nav_point()
+
 
 
 func _ready():
@@ -40,7 +48,10 @@ func _ready():
 	nav_agent.velocity_computed.connect(velocity_computed)
 
 func get_nav_point():
-	target = NavigationServer2D.region_get_random_point(navigation_region.get_rid(), 1, true)
+	if !custom_target:
+		target = NavigationServer2D.region_get_random_point(navigation_region.get_rid(), 1, true)
+	else:
+		target = custom_target
 	nav_agent.target_position = target
 	global_position = fish_char.global_position
 	fish_char.position = Vector2(0,0)
@@ -48,7 +59,13 @@ func get_nav_point():
 func _physics_process(delta):
 	if (nav_agent.is_navigation_finished() && status == Status.NAVIGATING):
 		get_nav_point()
-	elif (status == Status.NAVIGATING):
+	if (nav_agent.is_navigation_finished() && status == Status.CUSTOM_ACTION):
+		bumper_velocity = Vector2(-1000000,1000000)
+		status = Status.BUMPED
+		fish_sprite.flip_h = false
+	if (status == Status.BUMPED && custom_target):
+		fish_body.apply_force(Vector2(1000,200), Vector2(100,10))
+	elif (status == Status.NAVIGATING || status == Status.CUSTOM_ACTION):
 		calculate_nav(delta)
 
 func calculate_nav(delta):
@@ -69,7 +86,7 @@ func handle_rotations(delta):
 	fish_sprite.rotation = lerp_angle(fish_sprite.rotation, desired_angle, (delta * 0.7))
 
 func velocity_computed(safe_velocity):
-	if status == Status.NAVIGATING:
+	if status == Status.NAVIGATING || status == Status.CUSTOM_ACTION:
 		fish_char.velocity = safe_velocity
 		fish_char.move_and_slide()
 
@@ -81,7 +98,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_bump_timer_timeout() -> void:
-	status = Status.NAVIGATING
+	if custom_target:
+		status = Status.CUSTOM_ACTION
+	else:
+		status = Status.NAVIGATING
 
 
 func _on_wiggle_timer_timeout() -> void:

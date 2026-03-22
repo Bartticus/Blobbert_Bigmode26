@@ -14,4 +14,7 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=304362558]
 shape = SubResource("RectangleShape2D_jbclc")
 
+[node name="FishSpot" type="Marker2D" parent="." unique_id=916733005]
+unique_name_in_owner = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

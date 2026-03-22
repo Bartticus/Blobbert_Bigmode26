@@ -22,7 +22,7 @@ position = Vector2(391, 494)
 position = Vector2(1347, -221)
 
 [node name="ScreenBlob" parent="." index="9" unique_id=104221436]
-position = Vector2(1292, 276)
+position = Vector2(202, 272)
 
 [node name="BGSprite" parent="." index="12" unique_id=936446513]
 visible = false
