@@ -1,5 +1,5 @@
 shader_type canvas_item;
-render_mode blend_add;
+render_mode blend_mix;
 
 uniform bool polar_coordinates = false;
 uniform vec2 polar_center = vec2(0.5);

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ckn41lw17k0l5"]
+
+[ext_resource type="Script" uid="uid://bnl76r3doia7q" path="res://Scenes/Match/match.gd" id="1_6toqk"]
+[ext_resource type="Texture2D" uid="uid://d1jyrsk0mm3fa" path="res://Assets/Sprites/Match.png" id="1_rojnw"]
+[ext_resource type="Material" uid="uid://bpn3auqt8vgl2" path="res://Materials/bunsen_squiggle.tres" id="3_hsjyf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t27o1"]
+friction = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfvml"]
+size = Vector2(16, 267.187)
+
+[node name="Match" type="RigidBody2D" unique_id=2122084232]
+scale = Vector2(0.99999994, 0.99999994)
+collision_mask = 19
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_t27o1")
+script = ExtResource("1_6toqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=673227302]
+visible = false
+position = Vector2(-4.0000005, 0)
+scale = Vector2(0.46191493, 0.6878725)
+texture = ExtResource("1_rojnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1419272510]
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_rfvml")
+
+[node name="OilParent" type="Polygon2D" parent="." unique_id=1852117307]
+unique_name_in_owner = true
+clip_children = 2
+material = ExtResource("3_hsjyf")
+scale = Vector2(0.4619148, 0.6878723)
+texture = ExtResource("1_rojnw")
+texture_offset = Vector2(82.445, 225)
+polygon = PackedVector2Array(-28.410889, -204.19551, 30.30862, -204.97992, 23.792084, 211.54614, -29.669983, 212.17114)

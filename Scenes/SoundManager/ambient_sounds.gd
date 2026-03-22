@@ -11,4 +11,3 @@ extends Node2D
 func crank_it():
 	player.volume_db = 1.8
 	player.pitch_scale = 1.4
-

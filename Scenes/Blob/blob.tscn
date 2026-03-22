@@ -301,11 +301,6 @@ load_path = "res://.godot/imported/AltFaces_Whoa.png-321c39bcb596d46764bbdbf254c
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qk7go"]
 load_path = "res://.godot/imported/AltFaces_Yikes.png-ae269757e424bba93382657482e3c06b.ctex"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_47mic"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_074og"]
-radius = 83.02409
-
 [sub_resource type="Animation" id="Animation_276ik"]
 length = 0.1
 step = 0.1
@@ -528,12 +523,16 @@ outline_size = 4
 stacked_outline_count = 1
 stacked_outline_0/size = 6
 
-[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "oil_timer", "face_pivot", "rand_face_timer", "set_face_timer", "default_faces")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_47mic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_074og"]
+radius = 83.02409
+
+[node name="Blob" type="Node2D" unique_id=104221436 node_paths=PackedStringArray("softbody", "oil_timer", "rand_face_timer", "set_face_timer", "default_faces")]
 script = ExtResource("1_u3aeq")
 softbody = NodePath("Softbody")
 oil_scene = ExtResource("2_074og")
 oil_timer = NodePath("OilCooldownTimer")
-face_pivot = NodePath("BlobCenter/FacePivot")
 rand_face_timer = NodePath("RandFaceTimer")
 set_face_timer = NodePath("SetFaceTimer")
 default_faces = [NodePath("BlobCenter/FacePivot/Laughing"), NodePath("BlobCenter/FacePivot/Hi"), NodePath("BlobCenter/FacePivot/Huh"), NodePath("BlobCenter/FacePivot/Yay"), NodePath("BlobCenter/FacePivot/Smile")]
@@ -637,7 +636,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="Softbody/Skeleton2D" unique_id=650106285]
 position = Vector2(14.801369, 102.81366)
 rotation = -1.5654861
-scale = Vector2(0.9999917, 0.9999917)
+scale = Vector2(0.99999124, 0.99999124)
 rest = Transform2D(0.0053102286, -0.9999859, 0.9999859, 0.0053102286, 14.801372, 102.81366)
 auto_calculate_length_and_angle = false
 length = 30.0
@@ -3239,6 +3238,7 @@ unique_name_in_owner = true
 gizmo_extents = 0.0
 
 [node name="FacePivot" type="Node2D" parent="BlobCenter" unique_id=1412401453]
+unique_name_in_owner = true
 position = Vector2(1.1920929e-07, 1.1920929e-07)
 
 [node name="Neutral" type="Sprite2D" parent="BlobCenter/FacePivot" unique_id=2004237043]
@@ -3317,6 +3317,53 @@ position = Vector2(2.5080566, 1.2805176)
 scale = Vector2(0.12172271, 0.12172271)
 texture = ExtResource("11_pcdmj")
 
+[node name="ZZZAnim" type="Node2D" parent="BlobCenter/FacePivot" unique_id=1450175057]
+position = Vector2(7.499644e-09, -6.621667e-08)
+
+[node name="ZZZAnimPlayer" type="AnimationPlayer" parent="BlobCenter/FacePivot/ZZZAnim" unique_id=1630013405]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_qe5pk")
+speed_scale = 3.0
+
+[node name="Z1" type="Label" parent="BlobCenter/FacePivot/ZZZAnim" unique_id=882906414]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("17_gtj5d")
+offset_left = -33.0
+offset_top = -73.0
+offset_right = -22.0
+offset_bottom = -49.0
+theme = ExtResource("17_276ik")
+text = "Z"
+label_settings = SubResource("LabelSettings_276ik")
+
+[node name="Z2" type="Label" parent="BlobCenter/FacePivot/ZZZAnim" unique_id=1044010851]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("17_gtj5d")
+offset_left = -48.0
+offset_top = -112.0
+offset_right = -28.0
+offset_bottom = -69.0
+theme = ExtResource("17_276ik")
+text = "Z"
+label_settings = SubResource("LabelSettings_qe5pk")
+
+[node name="Z3" type="Label" parent="BlobCenter/FacePivot/ZZZAnim" unique_id=192977894]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("17_gtj5d")
+offset_left = -72.0
+offset_top = -169.0
+offset_right = -39.0
+offset_bottom = -98.0
+theme = ExtResource("17_276ik")
+text = "Z"
+label_settings = SubResource("LabelSettings_gtj5d")
+
+[node name="Burst" type="Sprite2D" parent="BlobCenter/FacePivot/ZZZAnim" unique_id=1550131705]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-35, -77)
+scale = Vector2(0.018223345, 0.018223345)
+texture = ExtResource("19_qe5pk")
+
 [node name="BlobLevelTransitionArea" type="Area2D" parent="BlobCenter" unique_id=490246114]
 unique_name_in_owner = true
 collision_layer = 2
@@ -3333,6 +3380,7 @@ texture = ExtResource("14_dp05e")
 unique_name_in_owner = true
 
 [node name="OilDetector" type="Area2D" parent="BlobCenter" unique_id=2050342350]
+visible = false
 collision_layer = 524288
 collision_mask = 8
 
@@ -3342,53 +3390,6 @@ shape = SubResource("CircleShape2D_074og")
 [node name="BlobSounds" parent="BlobCenter" unique_id=2132559176 instance=ExtResource("16_074og")]
 unique_name_in_owner = true
 
-[node name="ZZZAnim" type="Node2D" parent="BlobCenter" unique_id=1450175057]
-position = Vector2(7.499644e-09, -6.621667e-08)
-
-[node name="ZZZAnimPlayer" type="AnimationPlayer" parent="BlobCenter/ZZZAnim" unique_id=1630013405]
-unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_qe5pk")
-speed_scale = 3.0
-
-[node name="Z1" type="Label" parent="BlobCenter/ZZZAnim" unique_id=882906414]
-modulate = Color(1, 1, 1, 0)
-material = ExtResource("17_gtj5d")
-offset_left = -33.0
-offset_top = -73.0
-offset_right = -22.0
-offset_bottom = -49.0
-theme = ExtResource("17_276ik")
-text = "Z"
-label_settings = SubResource("LabelSettings_276ik")
-
-[node name="Z2" type="Label" parent="BlobCenter/ZZZAnim" unique_id=1044010851]
-modulate = Color(1, 1, 1, 0)
-material = ExtResource("17_gtj5d")
-offset_left = -48.0
-offset_top = -112.0
-offset_right = -28.0
-offset_bottom = -69.0
-theme = ExtResource("17_276ik")
-text = "Z"
-label_settings = SubResource("LabelSettings_qe5pk")
-
-[node name="Z3" type="Label" parent="BlobCenter/ZZZAnim" unique_id=192977894]
-modulate = Color(1, 1, 1, 0)
-material = ExtResource("17_gtj5d")
-offset_left = -72.0
-offset_top = -169.0
-offset_right = -39.0
-offset_bottom = -98.0
-theme = ExtResource("17_276ik")
-text = "Z"
-label_settings = SubResource("LabelSettings_gtj5d")
-
-[node name="Burst" type="Sprite2D" parent="BlobCenter/ZZZAnim" unique_id=1550131705]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-35, -77)
-scale = Vector2(0.018223345, 0.018223345)
-texture = ExtResource("19_qe5pk")
-
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="BlobCenter" unique_id=952215289]
 remote_path = NodePath("../../BlobListener")
 update_rotation = false
@@ -3396,6 +3397,7 @@ update_rotation = false
 [node name="RemoteTransform2D2" type="RemoteTransform2D" parent="BlobCenter" unique_id=1702745268]
 scale = Vector2(1.0000001, 1.0000001)
 remote_path = NodePath("../../Softbody/SwirlTransform")
+update_rotation = false
 update_scale = false
 
 [node name="RemoteTransform2D3" type="RemoteTransform2D" parent="BlobCenter" unique_id=1657142972]

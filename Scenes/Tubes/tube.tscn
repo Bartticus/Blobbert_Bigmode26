@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6r1ctiig2po7"]
 
 [ext_resource type="Material" uid="uid://j2rvkwddutb0" path="res://Materials/tube_squiggle.tres" id="1_10byj"]
-[ext_resource type="Script" path="res://Scenes/Tubes/tube.gd" id="1_blxqa"]
+[ext_resource type="Script" uid="uid://wxhfii7mysf6" path="res://Scenes/Tubes/tube.gd" id="1_blxqa"]
 [ext_resource type="Texture2D" uid="uid://drfdit7him4iy" path="res://Assets/Sprites/testtube.png" id="2_blxqa"]
 [ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="4_jbtfk"]
 [ext_resource type="AudioStream" uid="uid://cyqds8i2p6omm" path="res://Assets/SFX/TubeChime1.mp3" id="5_7o3xd"]
@@ -35,11 +35,15 @@ position = Vector2(2, -389)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pfj18")
 
-[node name="TubeSprite" type="Sprite2D" parent="." unique_id=884503841]
+[node name="OilParent" type="Polygon2D" parent="." unique_id=1067047279]
+unique_name_in_owner = true
+clip_children = 2
+z_as_relative = false
 material = ExtResource("1_10byj")
-position = Vector2(4, 58)
-scale = Vector2(0.34302324, 0.57994187)
 texture = ExtResource("2_blxqa")
+texture_offset = Vector2(330.01, 729.855)
+texture_scale = Vector2(3.1, 1.75)
+polygon = PackedVector2Array(-74, -411, 77, -413, 77, -368, 66, -346, 65, 352, 46, 391, 28, 412, 6, 418, -21, 416, -40, 408, -60, 374, -66, 340, -64, -354, -74, -372)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1991520904]
 position = Vector2(1, -196)

@@ -8,19 +8,36 @@
 [ext_resource type="PackedScene" uid="uid://qhd1lorkdfqe" path="res://Scenes/Screens/vent_screen_1.tscn" id="3_c05e2"]
 [ext_resource type="PackedScene" uid="uid://bg20h0iqh4jpt" path="res://Scenes/Screens/vent_screen_3.tscn" id="3_l3jr1"]
 [ext_resource type="PackedScene" uid="uid://d3jcyrus5t5p" path="res://Scenes/Screens/lab_screen_2c.tscn" id="4_03b2i"]
-[ext_resource type="Texture2D" uid="uid://b6gmhedvaxudm" path="res://Assets/Sprites/Bodybert.png" id="4_cbqsn"]
 [ext_resource type="PackedScene" uid="uid://t8wog3lisshy" path="res://Scenes/Screens/vent_screen_4.tscn" id="4_kbane"]
 [ext_resource type="PackedScene" uid="uid://ci6hjglcdc31b" path="res://Scenes/Screens/lab_screen_5.tscn" id="10_aiug0"]
+[ext_resource type="PackedScene" uid="uid://bu5rqyk23qdk6" path="res://Scenes/AudioEffectZone/audio_effect_zone.tscn" id="12_lnj3l"]
+[ext_resource type="AudioEffectReverb" uid="uid://bvf0lxwm41r6v" path="res://Scenes/AudioEffectZone/vent_reverb.tres" id="13_lnj3l"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e78n4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v87xj"]
+size = Vector2(8000, 7000)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ln6g"]
+radius = 31.0
+height = 82.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v87xj"]
+radius = 30.0
 
 [node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
 ambient_sound_name = "vents"
 
+[node name="AudioEffectZone" parent="." index="0" unique_id=1864948793 instance=ExtResource("12_lnj3l")]
+position = Vector2(1873, -624)
+audio_effect = ExtResource("13_lnj3l")
+zone_shape = SubResource("RectangleShape2D_v87xj")
+
+[node name="ZoneCollisionShape" parent="AudioEffectZone/Area2D" parent_id_path=PackedInt32Array(1864948793, 62576937) index="0" unique_id=1329747811]
+shape = SubResource("RectangleShape2D_v87xj")
+
 [node name="LevelTitleCard" parent="Camera" parent_id_path=PackedInt32Array(1077410475) index="2" unique_id=2057049144]
 level_name = "The Vents"
 
-[node name="Blob" parent="." index="2" unique_id=104221436]
+[node name="Blob" parent="." index="3" unique_id=104221436]
 position = Vector2(189, -2838)
 
 [node name="VentScreen6" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="0" unique_id=1360540123 instance=ExtResource("2_cktbt")]
@@ -28,44 +45,31 @@ position = Vector2(0, -3240)
 y_coordinate = -3
 snap_screen_to_position = true
 
-[node name="LabScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="1" unique_id=1128775686 instance=ExtResource("10_aiug0")]
+[node name="LabScreen5" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="1" unique_id=121183925 instance=ExtResource("10_aiug0")]
 position = Vector2(-1920, -3240)
 x_coordinate = -1
 y_coordinate = -3
 snap_screen_to_position = true
 
-[node name="ScreenTileMapLayer" parent="Screens/LabScreen5" index="2" unique_id=2053691136]
-collision_enabled = true
+[node name="StaticBody2D2" type="StaticBody2D" parent="Screens/LabScreen5" index="14" unique_id=480811895]
+position = Vector2(1487, 497)
+collision_layer = 256
+collision_mask = 2
 
-[node name="CollisionShape2D" parent="Screens/LabScreen5/Flap/StaticBody2D" parent_id_path=PackedInt32Array(1128775686, 676061831) index="0" unique_id=174936057]
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screens/LabScreen5/StaticBody2D2" index="0" unique_id=233838548]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_2ln6g")
 
-[node name="RigidBody2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="1" unique_id=94659899]
-position = Vector2(245, -17)
+[node name="StaticBody2D" type="StaticBody2D" parent="Screens/LabScreen5" index="15" unique_id=1345085602]
+position = Vector2(1475, 525)
 
-[node name="Sprite2D" parent="Screens/LabScreen5/Flap/RigidBody2D" index="1" unique_id=25767550]
-position = Vector2(-1.9999847, 2.9999943)
-rotation = 0.03032553
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screens/LabScreen5/StaticBody2D" index="0" unique_id=89503270]
+shape = SubResource("CircleShape2D_v87xj")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="3" unique_id=931504344]
-position = Vector2(483, -66)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screens/LabScreen5/Flap/StaticBody2D2" index="0" unique_id=625094102]
-shape = SubResource("CircleShape2D_e78n4")
-disabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Screens/LabScreen5/Flap/StaticBody2D2" index="1" unique_id=1531036573]
-visible = false
-scale = Vector2(0.13173653, 0.13580246)
-texture = ExtResource("4_cbqsn")
-
-[node name="PinJoint2D2" type="PinJoint2D" parent="Screens/LabScreen5/Flap" parent_id_path=PackedInt32Array(1128775686, 30362031) index="4" unique_id=1337415500]
-position = Vector2(483, -67)
-node_a = NodePath("../StaticBody2D2")
-node_b = NodePath("../RigidBody2D")
-
-[node name="ScreenBlob" parent="Screens/LabScreen5" index="17" unique_id=104221436]
-position = Vector2(1660, 436)
+[node name="PinJoint2D" type="PinJoint2D" parent="Screens/LabScreen5" index="16" unique_id=1141200515]
+position = Vector2(1477, 505)
+node_a = NodePath("../Flap/RigidBody2D")
+node_b = NodePath("../StaticBody2D")
 
 [node name="LabScreen2b" parent="Screens" parent_id_path=PackedInt32Array(1130019440) index="2" unique_id=755592408 instance=ExtResource("3_7dgoj")]
 position = Vector2(1920, -3240)
@@ -103,7 +107,9 @@ x_coordinate = 1
 y_coordinate = 1
 snap_screen_to_position = true
 
-[node name="LoadingZone" parent="." index="6" unique_id=1274508763]
+[node name="LoadingZone" parent="." index="7" unique_id=1274508763]
 position = Vector2(2420, 451)
 
+[editable path="AudioEffectZone"]
 [editable path="Screens/LabScreen5"]
+[editable path="Screens/LabScreen5/Flap"]

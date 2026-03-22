@@ -12,11 +12,11 @@ extends RigidBody2D
 		center_mass_type = value
 		center_of_mass_mode = center_mass_type	
 
-@onready var beaker_sprite: Sprite2D = %BeakerSprite
 @onready var explosion_timer: Timer = %ExplosionTimer
 @onready var beaker_collision_polygon: CollisionPolygon2D = %BeakerCollisionPolygon
 @onready var explosion_anim: AnimationPlayer = %AnimationPlayer
 @onready var fire: Node2D = %Fire
+@onready var oil_parent: Polygon2D = %OilParent
 @onready var reaction_sound_player: SoundPlayer = %ReactionSoundPlayer
 @onready var explosion_sound_player: SoundPlayer = %ExplosionSoundPlayer
 
@@ -38,9 +38,9 @@ func explode():
 	explosion_timer.start()
 
 func _physics_process(delta: float) -> void:
-	if exploding && is_instance_valid(beaker_sprite) && is_instance_valid(beaker_collision_polygon):
+	if exploding && is_instance_valid(oil_parent) && is_instance_valid(beaker_collision_polygon):
 		var sprite_scale = sprite_scale_mult * delta
-		beaker_sprite.scale += Vector2(sprite_scale, sprite_scale)
+		oil_parent.scale += Vector2(sprite_scale, sprite_scale)
 		beaker_collision_polygon.scale += Vector2(sprite_scale, sprite_scale)
 	if rotation_degrees > 27.0:
 		center_of_mass_mode = CENTER_OF_MASS_MODE_AUTO
@@ -55,7 +55,7 @@ func _on_explosion_timer_timeout() -> void:
 			o.trigger_action()
 	
 	#make beaker and oils invisible
-	beaker_sprite.queue_free()
+	oil_parent.queue_free()
 	beaker_collision_polygon.queue_free()
 	var all_children = get_all_children(self)
 	for child in all_children:

@@ -1,14 +1,7 @@
 [gd_scene format=4 uid="uid://fbsi0f5icws8"]
 
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_7kw27"]
-[ext_resource type="Texture2D" uid="uid://d1jyrsk0mm3fa" path="res://Assets/Sprites/Match.png" id="2_fthtr"]
-[ext_resource type="Texture2D" uid="uid://cyknlaunbfgpd" path="res://icon.svg" id="2_rfvml"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t27o1"]
-friction = 0.5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfvml"]
-size = Vector2(10, 267.18738)
+[ext_resource type="PackedScene" uid="uid://ckn41lw17k0l5" path="res://Scenes/Match/match.tscn" id="2_c3cwc"]
 
 [node name="LabScreen2" unique_id=1360540123 instance=ExtResource("1_7kw27")]
 
@@ -21,332 +14,65 @@ tile_map_data = PackedByteArray("AAAAAB8AAQAGAAgAAAAAACAAAQAGAAkAAAAAACEAAQAGAAo
 [node name="Cards" type="Node2D" parent="." index="5" unique_id=1596980225]
 position = Vector2(0, -25)
 
-[node name="Card0" type="RigidBody2D" parent="Cards" index="0" unique_id=458877334]
+[node name="Match" parent="Cards" index="0" unique_id=2122084232 instance=ExtResource("2_c3cwc")]
 position = Vector2(686, 881)
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card0" index="0" unique_id=1406118182]
 rotation = 0.2617994
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
 
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card0" index="1" unique_id=2042239770]
-position = Vector2(-6.000001, 0)
-rotation = 0.2617994
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card1" type="RigidBody2D" parent="Cards" index="1" unique_id=1317835534]
+[node name="Match2" parent="Cards" index="1" unique_id=2065127286 instance=ExtResource("2_c3cwc")]
 position = Vector2(764, 881.00006)
 rotation = -3.403392
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card1" index="0" unique_id=796978222]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card1" index="1" unique_id=533374599]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card1" index="2" unique_id=1853722111]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card2" type="RigidBody2D" parent="Cards" index="2" unique_id=750699373]
+[node name="Match3" parent="Cards" index="2" unique_id=1536906630 instance=ExtResource("2_c3cwc")]
 position = Vector2(913, 881.00006)
 rotation = 0.2617994
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card2" index="0" unique_id=312442420]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card2" index="1" unique_id=1571277565]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card2" index="2" unique_id=486059451]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card3" type="RigidBody2D" parent="Cards" index="3" unique_id=1525617450]
+[node name="Match4" parent="Cards" index="3" unique_id=1242347116 instance=ExtResource("2_c3cwc")]
 position = Vector2(991, 881.0001)
 rotation = -0.2617994
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card3" index="0" unique_id=1430647152]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card3" index="1" unique_id=425374880]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card3" index="2" unique_id=315414154]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card4" type="RigidBody2D" parent="Cards" index="4" unique_id=1386007905]
+[node name="Match5" parent="Cards" index="4" unique_id=1094642707 instance=ExtResource("2_c3cwc")]
 position = Vector2(1133, 881.00006)
 rotation = 0.2617994
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card4" index="0" unique_id=1670790071]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card4" index="1" unique_id=648440232]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card4" index="2" unique_id=1277316693]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card5" type="RigidBody2D" parent="Cards" index="5" unique_id=519635612]
+[node name="Match6" parent="Cards" index="5" unique_id=803362526 instance=ExtResource("2_c3cwc")]
 position = Vector2(1211, 881.0001)
-rotation = 2.8797934
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
+rotation = -0.2617994
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card5" index="0" unique_id=1855522254]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card5" index="1" unique_id=1894843921]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card5" index="2" unique_id=1103122684]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card6" type="RigidBody2D" parent="Cards" index="6" unique_id=1271859325]
+[node name="Match7" parent="Cards" index="6" unique_id=556194968 instance=ExtResource("2_c3cwc")]
 position = Vector2(834, 744.00006)
 rotation = -1.5707964
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card6" index="0" unique_id=1044866776]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card6" index="1" unique_id=307099023]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card6" index="2" unique_id=1375360206]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card7" type="RigidBody2D" parent="Cards" index="7" unique_id=975595510]
+[node name="Match8" parent="Cards" index="7" unique_id=1825994421 instance=ExtResource("2_c3cwc")]
 position = Vector2(1065.0001, 735.00006)
-rotation = -4.712389
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
+rotation = 1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card7" index="0" unique_id=750284358]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card7" index="1" unique_id=912996697]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card7" index="2" unique_id=1272208171]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card8" type="RigidBody2D" parent="Cards" index="8" unique_id=138098106]
+[node name="Match9" parent="Cards" index="8" unique_id=736247664 instance=ExtResource("2_c3cwc")]
 position = Vector2(786, 607.00006)
-rotation = 0.26179937
-scale = Vector2(0.9999999, 0.9999999)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
+rotation = 0.2617994
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card8" index="0" unique_id=505757841]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card8" index="1" unique_id=1416658079]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card8" index="2" unique_id=128680890]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card9" type="RigidBody2D" parent="Cards" index="9" unique_id=1063120962]
+[node name="Match10" parent="Cards" index="9" unique_id=629090002 instance=ExtResource("2_c3cwc")]
 position = Vector2(864, 607.00006)
 rotation = -3.403392
-scale = Vector2(0.9999999, 0.9999999)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card9" index="0" unique_id=2100024314]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card9" index="1" unique_id=1050038543]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card9" index="2" unique_id=393158881]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card10" type="RigidBody2D" parent="Cards" index="10" unique_id=774016356]
+[node name="Match11" parent="Cards" index="10" unique_id=1650333325 instance=ExtResource("2_c3cwc")]
 position = Vector2(1018, 598.00006)
-rotation = 0.37420988
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
+rotation = 0.37350047
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card10" index="0" unique_id=721106936]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card10" index="1" unique_id=1979391996]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card10" index="2" unique_id=357181813]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card11" type="RigidBody2D" parent="Cards" index="11" unique_id=1667656184]
+[node name="Match12" parent="Cards" index="11" unique_id=317707304 instance=ExtResource("2_c3cwc")]
 position = Vector2(1096, 598.00006)
-rotation = -0.14938888
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
+rotation = -0.15009831
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card11" index="0" unique_id=1162432014]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card11" index="1" unique_id=768562286]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card11" index="2" unique_id=1646582931]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card12" type="RigidBody2D" parent="Cards" index="12" unique_id=656212187]
+[node name="Match13" parent="Cards" index="12" unique_id=1579732315 instance=ExtResource("2_c3cwc")]
 position = Vector2(946.9999, 462.00006)
-rotation = -1.6120653
-scale = Vector2(0.99999994, 0.99999994)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
+rotation = -1.6126842
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card12" index="0" unique_id=1626618143]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card12" index="1" unique_id=733856422]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card12" index="2" unique_id=567841181]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card13" type="RigidBody2D" parent="Cards" index="13" unique_id=1829247414]
+[node name="Match14" parent="Cards" index="13" unique_id=637297878 instance=ExtResource("2_c3cwc")]
 position = Vector2(909, 319)
-rotation = -2.8797934
-scale = Vector2(0.9999999, 0.9999999)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
+rotation = -2.8797932
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card13" index="0" unique_id=515932600]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card13" index="1" unique_id=226970793]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card13" index="2" unique_id=738500276]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
-
-[node name="Card14" type="RigidBody2D" parent="Cards" index="14" unique_id=1846660334]
+[node name="Match15" parent="Cards" index="14" unique_id=1511616714 instance=ExtResource("2_c3cwc")]
 position = Vector2(987, 319.00006)
-rotation = -0.26179937
-scale = Vector2(0.9999999, 0.9999999)
-collision_layer = 16
-collision_mask = 19
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_t27o1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cards/Card14" index="0" unique_id=751044614]
-scale = Vector2(1.0000005, 1.0000005)
-shape = SubResource("RectangleShape2D_rfvml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/Card14" index="1" unique_id=1754426285]
-scale = Vector2(0.0625, 2.0953314)
-texture = ExtResource("2_rfvml")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Cards/Card14" index="2" unique_id=181478877]
-position = Vector2(-6.000001, 0)
-scale = Vector2(0.46191493, 0.6878725)
-texture = ExtResource("2_fthtr")
+rotation = -0.2617994
 
 [node name="ScreenBlob" parent="." index="9" unique_id=104221436]
 position = Vector2(155, 777)

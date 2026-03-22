@@ -9,6 +9,7 @@ var physics_fps = ProjectSettings.get_setting("physics/common/physics_ticks_per_
 @onready var tug_rope: Line2D = %TugRope
 @onready var key_label: Label = %KeyLabel
 @onready var keycode = OS.find_keycode_from_string(name)
+@onready var tractor_beam_sound_player: SoundPlayer = %TractorBeamSoundPlayer
 
 # Now stored in Global
 # @export var Global.tug_range: float = 750
@@ -52,11 +53,14 @@ func set_status(new_status) -> void:
 			snap_timer.stop()
 			tug_rope.disable()
 			force_applied = Vector2(0,0)
+			tractor_beam_sound_player.stop_sound()
 		Status.TUGGING:
 			point_light_2d.enabled = true
 			key_sprite.modulate = tugging_color
 			snap_timer.start(snap_timer_wait_time)
 			Global.iterate_key_count()
+			if get_tree().get_nodes_in_group(STATUS_GROUPS[Status.TUGGING]).size() < 4:
+				tractor_beam_sound_player.play_sound()
 
 # Remove from all other groups, and put in the group matching current status
 func put_in_status_group():

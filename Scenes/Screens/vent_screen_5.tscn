@@ -87,9 +87,5 @@ position = Vector2(1333, 242)
 rotation = -0.5838055
 scale = Vector2(0.3, 0.3)
 
-[node name="WindGust6" parent="WindGustGroup" index="3" unique_id=1305784796 instance=ExtResource("4_d20lq")]
-position = Vector2(1866, 105)
-scale = Vector2(0.3, 0.3)
-
 [node name="ScreenBlob" parent="." index="11" unique_id=104221436]
 position = Vector2(592, 1036)

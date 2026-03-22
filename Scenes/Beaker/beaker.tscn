@@ -225,7 +225,7 @@ _data = {
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vk8a5"]
 closed = false
-polygon = PackedVector2Array(-148, 326, 122, 330, 165, 322, 183, 285, 181, 244, 61, -107, 62, -207, 98, -217, 103, -248, 92, -262, 60, -266, 79, -304, 66, -325, -72, -317, -86, -307, -75, -263, -98, -245, -103, -232, -93, -210, -62, -208, -65, -104, -181, 239, -175, 288, -148, 326)
+polygon = PackedVector2Array(-141, 333, 153, 332, 175, 304, 180, 260, 58, -111, 60, -206, 98, -219, 97, -251, 60, -261, 76, -310, 59, -323, -46, -319, -80, -309, -68, -257, -96, -236, -92, -214, -61, -201, -63, -102, -174, 261, -164, 312, -141, 333)
 
 [node name="Beaker" type="RigidBody2D" unique_id=30536693]
 collision_mask = 3
@@ -237,20 +237,13 @@ script = ExtResource("1_18ua4")
 
 [node name="BeakerCollisionPolygon" type="CollisionPolygon2D" parent="." unique_id=1465428861]
 unique_name_in_owner = true
-polygon = PackedVector2Array(-148, 327, 152, 327, 176, 304, 187, 265, 62, -112, 58, -207, 99, -219, 105, -256, 64, -266, 75, -325, -84, -317, -76, -261, -108, -242, -94, -209, -65, -207, -68, -107, -182, 272, -171, 304)
+polygon = PackedVector2Array(-152, 340, 156, 340, 178, 316, 193, 262, 64, -112, 67, -200, 106, -208, 108, -261, 74, -269, 87, -311, 69, -331, -76, -322, -91, -308, -81, -265, -107, -242, -95, -200, -65.72847, -199.7691, -70, -106, -181, 258, -178, 291)
 
-[node name="BeakerSprite" type="Sprite2D" parent="." unique_id=1452955802]
-unique_name_in_owner = true
-material = ExtResource("2_ihqxc")
-position = Vector2(-2, 80)
-scale = Vector2(0.33236435, 0.3960756)
-texture = ExtResource("1_cdnhj")
-
-[node name="Fire" parent="BeakerSprite" unique_id=2049499128 instance=ExtResource("7_ihqxc")]
+[node name="Fire" parent="BeakerCollisionPolygon" unique_id=2049499128 instance=ExtResource("7_ihqxc")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(-6.0174923, -865.9963)
-scale = Vector2(3.819, 3.205)
+position = Vector2(-4, -263)
+scale = Vector2(1.2692995, 1.2694223)
 
 [node name="FlameCheck" type="Area2D" parent="." unique_id=207418067]
 unique_name_in_owner = true
@@ -297,6 +290,15 @@ unique_name_in_owner = true
 sound_files = Array[AudioStream]([ExtResource("10_hgi1m")])
 max_distance = 5000.0
 attenuation = 0.2
+
+[node name="OilParent" type="Polygon2D" parent="." unique_id=1971733239]
+unique_name_in_owner = true
+clip_children = 2
+material = ExtResource("2_ihqxc")
+texture = ExtResource("1_cdnhj")
+texture_offset = Vector2(340.99, 463.465)
+texture_scale = Vector2(3.035, 2.5)
+polygon = PackedVector2Array(-152, 340, 156, 340, 178, 316, 193, 262, 64, -112, 67, -200, 106, -208, 108, -261, 74, -269, 87, -311, 69, -331, -76, -322, -91, -308, -81, -265, -107, -242, -95, -200, -65.72847, -199.7691, -70, -106, -181, 258, -178, 291)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1450090958]
 occluder = SubResource("OccluderPolygon2D_vk8a5")

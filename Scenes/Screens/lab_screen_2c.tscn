@@ -80,21 +80,28 @@ wind_power = 25.0
 
 [node name="WindGustGroup" parent="." index="15" unique_id=1942551771 instance=ExtResource("3_wegev")]
 
-[node name="WindGust3" parent="WindGustGroup" index="0" unique_id=384668559 instance=ExtResource("2_nnb7e")]
-position = Vector2(1089, 191)
+[node name="WindGust6" parent="WindGustGroup" index="0" unique_id=510019849 instance=ExtResource("2_nnb7e")]
+position = Vector2(19, 59)
 rotation = -0.02616883
-scale = Vector2(0.53, 0.354)
+scale = Vector2(0.53000003, 0.354)
 skew = -0.03265667
 
-[node name="WindGust5" parent="WindGustGroup" index="1" unique_id=623353375 instance=ExtResource("2_nnb7e")]
-position = Vector2(1096, 437)
+[node name="WindGust7" parent="WindGustGroup" index="1" unique_id=1380197329 instance=ExtResource("2_nnb7e")]
+position = Vector2(7.000122, 812)
 rotation = -0.026168836
 scale = Vector2(0.53000003, 0.35400003)
 skew = -0.03265667
 
-[node name="WindGust4" parent="WindGustGroup" index="2" unique_id=1967693196 instance=ExtResource("2_nnb7e")]
-position = Vector2(1106, 692.99994)
+[node name="WindGust3" parent="WindGustGroup" index="2" unique_id=384668559 instance=ExtResource("2_nnb7e")]
+position = Vector2(1089, 240)
+rotation = -0.02616883
 scale = Vector2(0.53, 0.354)
+skew = -0.03265667
+
+[node name="WindGust5" parent="WindGustGroup" index="3" unique_id=623353375 instance=ExtResource("2_nnb7e")]
+position = Vector2(1100.0001, 645)
+rotation = -0.026168836
+scale = Vector2(0.53000003, 0.35400003)
 skew = -0.03265667
 
 [node name="Grate" parent="." index="18" unique_id=382070669 instance=ExtResource("5_sg1xj")]

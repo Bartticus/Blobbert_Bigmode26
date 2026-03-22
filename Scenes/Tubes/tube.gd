@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @onready var tube_sound_player: SoundPlayer = %TubeSoundPlayer
+@onready var oil_parent: Polygon2D = %OilParent
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Bone:

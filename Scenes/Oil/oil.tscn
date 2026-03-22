@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://duhmxupd883qo" path="res://Scenes/Oil/oil.gd" id="1_0cryj"]
 [ext_resource type="PackedScene" uid="uid://bywsr3ckwvqf2" path="res://Scenes/Fire/fire.tscn" id="2_hxxqu"]
+[ext_resource type="Material" uid="uid://u503r1tp8xup" path="res://Materials/swirl_material_2.tres" id="3_33feg"]
 [ext_resource type="Texture2D" uid="uid://ckx3a45lnxext" path="res://Assets/Sprites/splat02.png" id="4_52bxo"]
 [ext_resource type="Texture2D" uid="uid://doum0ai52xyf6" path="res://Assets/Sprites/splat20.png" id="5_33feg"]
 [ext_resource type="Texture2D" uid="uid://c61eh81u1pd8p" path="res://Assets/Sprites/splat10.png" id="5_hxxqu"]
@@ -131,23 +132,28 @@ point_count = 3
 [sub_resource type="Gradient" id="Gradient_ew2lm"]
 colors = PackedColorArray(0.21176471, 0.25882354, 0.58431375, 1, 0.101960786, 0.105882354, 0.19607843, 1)
 
-[node name="Oil" type="Area2D" unique_id=317438472]
-z_index = 11
-collision_layer = 0
-collision_mask = 2
+[node name="Oil" type="Node2D" unique_id=764613026]
 script = ExtResource("1_0cryj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620871536]
+[node name="OilArea" type="Area2D" parent="." unique_id=317438472]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OilArea" unique_id=1620871536]
+visible = false
 position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_nah6m")
 
 [node name="Fire" parent="." unique_id=214311019 instance=ExtResource("2_hxxqu")]
+unique_name_in_owner = true
 visible = false
 
 [node name="IgnitionTimer" type="Timer" parent="." unique_id=1506223997]
 autostart = true
 
 [node name="AdjacentOilChecker" type="Area2D" parent="." unique_id=205327486]
+unique_name_in_owner = true
 collision_layer = 8
 collision_mask = 8
 
@@ -157,12 +163,14 @@ shape = SubResource("RectangleShape2D_0cryj")
 
 [node name="Splatters" type="AnimatedSprite2D" parent="." unique_id=2077985363]
 clip_children = 2
+material = ExtResource("3_33feg")
 position = Vector2(0, 17.000002)
 scale = Vector2(0.4921876, 0.08984373)
 sprite_frames = SubResource("SpriteFrames_usf6k")
 frame = 2
 
 [node name="SwirlRect" type="ColorRect" parent="Splatters" unique_id=1801660683]
+visible = false
 modulate = Color(1.8832343, 1.8832343, 1.8832343, 1)
 material = SubResource("ShaderMaterial_52bxo")
 offset_left = -713.14276
@@ -187,6 +195,6 @@ scale_amount_max = 0.5
 scale_amount_curve = SubResource("Curve_33feg")
 color_initial_ramp = SubResource("Gradient_ew2lm")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="OilArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="OilArea" to="." method="_on_body_exited"]
 [connection signal="timeout" from="IgnitionTimer" to="." method="_on_ignition_timer_timeout"]

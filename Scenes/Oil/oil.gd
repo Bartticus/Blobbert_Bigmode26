@@ -1,10 +1,12 @@
 class_name Oil
-extends Area2D
+extends Node2D
 
 @onready var splatter_sprites: AnimatedSprite2D = $Splatters
-@onready var fire: Node2D = $Fire
-@onready var adj_oil_checker: Area2D = $AdjacentOilChecker
+@onready var fire: Fire = %Fire
+@onready var adj_oil_checker: Area2D = %AdjacentOilChecker
 @export var ignited: bool = false
+
+@onready var oil_area: Area2D = %OilArea
 @onready var particles: CPUParticles2D = $CPUParticles2D
 
 var camera: Camera2D
@@ -12,7 +14,7 @@ var camera_shake_noise: FastNoiseLite
 
 func _ready() -> void:
 	splatter_sprites.frame = randi_range(0,3)
-	
+
 	particles.emitting = true
 	particles.scale_amount_max *= scale.length()
 	
@@ -47,7 +49,7 @@ func ignite() -> void:
 	
 	ignited = true
 	fire.activate()
-	Global.sound_manager.play_general_sound('fire', [(1 / scale.length()), 0.6].max(), scale.length_squared() - 5)
+	Global.sound_manager.play_general_sound('fire', [(1 / scale.length()), 0.6].max(), scale.length_squared())
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Bone:

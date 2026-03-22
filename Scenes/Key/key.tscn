@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://ddhsggoaexu6x" path="res://Materials/key_squiggle.tres" id="7_57k1g"]
 [ext_resource type="FontFile" uid="uid://cw2ewkprrvw2t" path="res://Assets/Fonts/CabinSketch-Bold.ttf" id="7_d7my7"]
 [ext_resource type="Texture2D" uid="uid://b1c0ema76qlmq" path="res://Assets/Sprites/Key.png" id="7_sq4g3"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="7_y4gp5"]
+[ext_resource type="AudioStream" uid="uid://l64dcnfm4026" path="res://Assets/SFX/TractorBeam.ogg" id="8_grhix"]
 
 [sub_resource type="Gradient" id="Gradient_wyshb"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -94,3 +96,10 @@ text = "A"
 label_settings = SubResource("LabelSettings_sq4g3")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TractorBeamSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("7_y4gp5")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("8_grhix")])
+attenuation = 3.0
+volume_db = 6.0
+fade_in = true

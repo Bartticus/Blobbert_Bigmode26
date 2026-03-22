@@ -13,7 +13,6 @@ var center_bone: Bone2D
 var newly_spawned_oil: Oil
 
 @export_category("Face")
-@export var face_pivot: Node2D
 @export var rand_face_timer: Timer
 @export var set_face_timer: Timer
 @export var default_faces: Array[Sprite2D]
@@ -29,6 +28,8 @@ var face_dict: Dictionary = {}
 @onready var fire_proximity: FireProximity = %FireProximity
 @onready var blob_visibility_notifier: VisibleOnScreenNotifier2D = %BlobVisibilityNotifier
 @onready var blob_center: Marker2D = %BlobCenter
+@onready var face_pivot: Node2D = %FacePivot
+@onready var swirl_transform: Node2D = %SwirlTransform
 @onready var swirl_rect: ColorRect = %SwirlRect
 @onready var zzz_anim_player: AnimationPlayer = %ZZZAnimPlayer
 @onready var current_face: Sprite2D = %Neutral:
@@ -45,6 +46,7 @@ var just_hurt: bool = false
 var moving_fast: bool = false
 var previous_vel: float
 var new_vel: float
+var initial_rotation: float
 
 
 func _ready() -> void:
@@ -53,6 +55,11 @@ func _ready() -> void:
 		blob_listener.current = listen_with_blob
 	var center_body = softbody.get_center_body()
 	center_bone = center_body.bone
+	initial_rotation = center_bone.rotation
+	if face_pivot:
+		face_pivot.rotation -= initial_rotation
+	if swirl_transform:
+		swirl_transform.rotation -= center_bone.rotation
 	center_body.rigidbody.set_collision_layer_value(6, true)
 	
 	for child in softbody.get_children():
@@ -61,10 +68,10 @@ func _ready() -> void:
 			child.connect("body_entered", _on_bone_body_entered.bind(child))
 			# Uncomment this to add oil to tilemap
 			# child.connect("body_shape_entered", _on_bone_collision)
-	
-	for child in face_pivot.get_children():
-		if child is Sprite2D:
-			face_dict[child.name] = child
+	if face_pivot:
+		for child in face_pivot.get_children():
+			if child is Sprite2D:
+				face_dict[child.name] = child
 
 func set_status(new_status) -> void:
 	var status_changed = !(status == new_status)
@@ -153,6 +160,7 @@ func _physics_process(delta: float) -> void:
 	var center_pos = softbody.get_bones_center_position()
 	blob_center.global_position = center_pos
 	ghost_timer(delta)
+	swirl_transform.rotation = blob_center.rotation - initial_rotation
 	# swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
 	var weight = 0.05
 	blob_center.rotation = lerp_angle(blob_center.rotation, center_bone.rotation, weight)
@@ -213,7 +221,11 @@ func _on_bone_body_entered(body: Node2D, bone: Bone) -> void:
 	
 	#add pivot point
 	var oil_pivot: Node2D = Node2D.new()
-	body.call_deferred("add_child", oil_pivot)
+	if 'oil_parent' in body:
+		# oil_pivot.z_index = 1
+		body.oil_parent.call_deferred("add_child", oil_pivot)
+	else:
+		body.call_deferred("add_child", oil_pivot)
 	#instantiate oil
 	var oil: Oil = oil_scene.instantiate()
 	oil_pivot.call_deferred("add_child", oil)
@@ -247,7 +259,7 @@ func _on_screen_fail_safe_timeout() -> void:
 		reset_screen()
 
 func _on_oil_detector_area_exited(area: Area2D) -> void:
-	if area is Oil:
+	if area.name == 'OilArea':
 		if area == newly_spawned_oil:
 			softbody.physics_material_override.friction = 0.2
 			#softbody.mass = 0.05

@@ -4,6 +4,7 @@ extends Node2D
 @onready var door_and_panel: MultiScreenTemplate = %DoorAndPanel
 @onready var timer: Timer = %Timer
 
+@export var vent_blocker: Node2D
 
 func trigger_action():
 	Global.level.playing_cutscene = true
@@ -17,6 +18,7 @@ func trigger_action():
 	await tween_1.finished
 	var tween_2 = Global.level.tween_camera('position', tank.screens[0].global_position, 3.0, Tween.TRANS_SINE, 1.0)
 	await tween_2.finished
+	vent_blocker.process_mode = PROCESS_MODE_INHERIT
 	Global.level.playing_cutscene = false
 
 func _on_timer_timeout() -> void:

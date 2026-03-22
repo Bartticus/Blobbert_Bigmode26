@@ -1,0 +1,8 @@
+[gd_resource type="AudioEffectReverb" format=3 uid="uid://bvf0lxwm41r6v"]
+
+[resource]
+room_size = 0.13
+damping = 0.36
+spread = 0.4
+dry = 0.8
+wet = 0.25

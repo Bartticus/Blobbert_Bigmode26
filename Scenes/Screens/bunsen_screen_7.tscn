@@ -16,7 +16,7 @@ position = Vector2(1536, 978)
 flammable = true
 objects_to_explode = [NodePath("../ExplodableObject")]
 
-[node name="BeakerSprite" parent="Beaker" index="1" unique_id=1452955802]
+[node name="OilParent" parent="Beaker" index="6" unique_id=1971733239]
 texture = ExtResource("3_itkvj")
 
 [node name="ExplodableObject" parent="." index="8" unique_id=427107243 instance=ExtResource("4_itkvj")]

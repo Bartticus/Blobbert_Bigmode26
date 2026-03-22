@@ -5,15 +5,15 @@
 [resource]
 shader = ExtResource("1_nmpf2")
 shader_parameter/polar_coordinates = true
-shader_parameter/polar_center = Vector2(0.835, 0.5)
-shader_parameter/polar_zoom = 0.5
+shader_parameter/polar_center = Vector2(1.475, 0.39)
+shader_parameter/polar_zoom = 0.295
 shader_parameter/polar_repeat = 1.0
-shader_parameter/spin_rotation = 0.0
-shader_parameter/spin_speed = 10.0
+shader_parameter/spin_rotation = 14.74
+shader_parameter/spin_speed = 5.0
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/colour_1 = Color(0.357734, 0.37440592, 0.11599128, 1)
 shader_parameter/colour_2 = Color(0.117763855, 0.16614108, 0.5212294, 1)
-shader_parameter/colour_3 = Color(0, 0, 0, 1)
-shader_parameter/contrast = 5.615
-shader_parameter/spin_amount = 0.01
+shader_parameter/colour_3 = Color(0, 0, 0.101960786, 1)
+shader_parameter/contrast = 1.8
+shader_parameter/spin_amount = 0.855
 shader_parameter/pixel_filter = 10000.0

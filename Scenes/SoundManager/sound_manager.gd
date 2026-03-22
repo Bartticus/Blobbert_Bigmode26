@@ -38,7 +38,7 @@ func play_general_sound(sound_type, pitch_scale: float = 1.0, added_db: float = 
 	player.stream = general_sounds.get(sound_type)[random_index]
 	#Fire sounds scale with their size
 	player.pitch_scale = pitch_scale
-	player.volume_db = added_db
+	player.volume_db = added_db - 7
 	
 	shift_pitch(sound_type, player)
 	player.play()

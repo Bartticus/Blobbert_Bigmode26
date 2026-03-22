@@ -10,7 +10,7 @@ extends Node2D
 		if sources_in_proximity >= 1:
 			if !player.playing:
 				Global.sound_manager.play_ramping_sound("crackling")
-			ramp_it([((starting_db - 1) + (sources_in_proximity * 0.7)), 0.0].min())
+			ramp_it([((starting_db - 1) + (sources_in_proximity * 0.7)), -4.0].min())
 		else:
 			player.stop()
 
