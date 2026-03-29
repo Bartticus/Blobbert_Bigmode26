@@ -101,5 +101,5 @@ vertical_alignment = 1
 unique_name_in_owner = true
 sound_files = Array[AudioStream]([ExtResource("8_grhix")])
 attenuation = 3.0
-volume_db = 6.0
+volume_db = 6.5
 fade_in = true

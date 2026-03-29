@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dh678aap5xpvd" path="res://Assets/Tiles/ScienceTexture.png" id="1_tgmr8"]
 [ext_resource type="Texture2D" uid="uid://8fxrjbsrva68" path="res://Assets/Sprites/Grate.png" id="2_0gc74"]
 [ext_resource type="AudioStream" uid="uid://by5e5ix8o5r5l" path="res://Assets/SFX/VentGrate.ogg" id="3_0gc74"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="5_ks2qq"]
 
 [node name="Grate" type="Node2D" unique_id=382070669]
 scale = Vector2(0.9, 0.9)
@@ -27,10 +28,10 @@ position = Vector2(89, 18)
 scale = Vector2(0.8, 1)
 texture = ExtResource("2_0gc74")
 
-[node name="GrateAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1172188610]
+[node name="GrateSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("5_ks2qq")]
 unique_name_in_owner = true
-position = Vector2(83.333336, 126.66667)
-stream = ExtResource("3_0gc74")
+position = Vector2(87.77778, 130)
+sound_files = Array[AudioStream]([ExtResource("3_0gc74")])
+attenuation = 2.0
+volume_db = 3.0
 autoplay = true
-panning_strength = 2.0
-bus = &"SFX"

@@ -81,8 +81,8 @@ texture = ExtResource("8_0ecjv")
 
 [node name="SoundPlayer" parent="." unique_id=546449723 instance=ExtResource("9_g7dej")]
 sound_files = Array[AudioStream]([ExtResource("10_b8irm")])
-max_distance = 2000.0
-volume_db = -1.0
+max_distance = 1500.0
+volume_db = 1.0
 autoplay = true
 
 [connection signal="area_entered" from="FireDetection" to="." method="_on_fire_detection_area_entered"]

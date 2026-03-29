@@ -56,10 +56,11 @@ func _ready() -> void:
 	var center_body = softbody.get_center_body()
 	center_bone = center_body.bone
 	initial_rotation = center_bone.rotation
-	if face_pivot:
-		face_pivot.rotation -= initial_rotation
-	if swirl_transform:
-		swirl_transform.rotation -= center_bone.rotation
+	if !process_mode == PROCESS_MODE_DISABLED:
+		if face_pivot:
+			face_pivot.rotation -= initial_rotation
+		if swirl_transform:
+			swirl_transform.rotation -= initial_rotation
 	center_body.rigidbody.set_collision_layer_value(6, true)
 	
 	for child in softbody.get_children():
@@ -160,11 +161,9 @@ func _physics_process(delta: float) -> void:
 	var center_pos = softbody.get_bones_center_position()
 	blob_center.global_position = center_pos
 	ghost_timer(delta)
-	swirl_transform.rotation = blob_center.rotation - initial_rotation
-	# swirl_rect.global_position = center_pos - Vector2(270 + 82, 244 + 87) # anchors, man
 	var weight = 0.05
 	blob_center.rotation = lerp_angle(blob_center.rotation, center_bone.rotation, weight)
-	
+	swirl_transform.rotation = blob_center.rotation - initial_rotation
 	check_moving_fast()
 	
 	#if Input.is_action_just_pressed('reset'):

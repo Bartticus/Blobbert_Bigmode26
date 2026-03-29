@@ -59,7 +59,7 @@ func set_status(new_status) -> void:
 			key_sprite.modulate = tugging_color
 			snap_timer.start(snap_timer_wait_time)
 			Global.iterate_key_count()
-			if get_tree().get_nodes_in_group(STATUS_GROUPS[Status.TUGGING]).size() < 4:
+			if get_tree().get_nodes_in_group(STATUS_GROUPS[Status.TUGGING]).size() < 3:
 				tractor_beam_sound_player.play_sound()
 
 # Remove from all other groups, and put in the group matching current status

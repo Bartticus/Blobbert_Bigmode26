@@ -7,9 +7,7 @@ script = ExtResource("1_8pt6q")
 
 [node name="StreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1257341329]
 unique_name_in_owner = true
-position = Vector2(9, 456)
 max_distance = 3000.0
-attenuation = 0.50000006
 bus = &"SFX"
 
 [node name="InterruptTimer" type="Timer" parent="." unique_id=1635939367]

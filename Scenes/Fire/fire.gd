@@ -6,6 +6,7 @@ extends Node2D
 @onready var fire_sprite: Sprite2D = %FireSprite
 @onready var fire_animation: AnimationPlayer = %FireAnimation
 @onready var fire_sound_area: Area2D = %FireSoundArea
+@onready var fire_sound_player: SoundPlayer = %FireSoundPlayer
 
 func _ready():
 	if visible:
@@ -21,4 +22,3 @@ func activate():
 func deactivate():
 	hide()
 	fire_sound_area.process_mode = PROCESS_MODE_DISABLED
-

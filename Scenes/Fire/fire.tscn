@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dqxnesfxqu6rx" path="res://Assets/Sprites/FIRE.png" id="2_h0xlw"]
 [ext_resource type="Script" uid="uid://dq686gv3m1aom" path="res://Scenes/Fire/fire.gd" id="3_h0xlw"]
 [ext_resource type="Texture2D" uid="uid://n08sfa70jhid" path="res://Assets/Sprites/circle_05.png" id="4_pf4h5"]
+[ext_resource type="PackedScene" uid="uid://ci7tjkdyb228t" path="res://Scenes/SoundManager/sound_player.tscn" id="5_7mggw"]
+[ext_resource type="AudioStream" uid="uid://c3b4uwamvd3ic" path="res://Assets/SFX/fire_01.wav" id="6_cfkwv"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_usf6k"]
 frequency = 0.0064
@@ -132,3 +134,7 @@ collision_mask = 4096
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireLevelArea" unique_id=1469818463]
 position = Vector2(0, -78)
 shape = SubResource("RectangleShape2D_pf4h5")
+
+[node name="FireSoundPlayer" parent="." unique_id=546449723 instance=ExtResource("5_7mggw")]
+unique_name_in_owner = true
+sound_files = Array[AudioStream]([ExtResource("6_cfkwv")])
