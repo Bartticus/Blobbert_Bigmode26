@@ -7,6 +7,8 @@ extends Node2D
 @export var waiting: bool = true
 @export var bumper_velocity: Vector2 = Vector2(0,0)
 @export var desired_angle: float = 0.0
+@export var charge_mode: bool = false
+@export var charge_spot: Marker2D
 
 @onready var nav_agent: NavigationAgent2D = %NavAgent
 @onready var fish_body: RigidBody2D = %FishBody
@@ -16,7 +18,6 @@ extends Node2D
 
 enum Status { WAITING, NAVIGATING, BUMPED, CUSTOM_ACTION }
 var status: Status = Status.WAITING : set = set_status
-var custom_target
 
 func set_status(new_status):
 	status = new_status
@@ -34,6 +35,7 @@ func set_status(new_status):
 			bump_timer.start()
 			fish_body.process_mode = Node.PROCESS_MODE_INHERIT
 		Status.CUSTOM_ACTION:
+			charge_mode = true
 			if !bump_timer.is_stopped():
 				bump_timer.stop()
 			fish_char.global_position = fish_body.global_position
@@ -48,10 +50,10 @@ func _ready():
 	nav_agent.velocity_computed.connect(velocity_computed)
 
 func get_nav_point():
-	if !custom_target:
+	if !charge_mode:
 		target = NavigationServer2D.region_get_random_point(navigation_region.get_rid(), 1, true)
 	else:
-		target = custom_target
+		target = charge_spot.global_position
 	nav_agent.target_position = target
 	global_position = fish_char.global_position
 	fish_char.position = Vector2(0,0)
@@ -63,7 +65,7 @@ func _physics_process(delta):
 		bumper_velocity = Vector2(-1000000,1000000)
 		status = Status.BUMPED
 		fish_sprite.flip_h = false
-	if (status == Status.BUMPED && custom_target):
+	if (status == Status.BUMPED && charge_mode):
 		fish_body.apply_force(Vector2(1000,200), Vector2(100,10))
 	elif (status == Status.NAVIGATING || status == Status.CUSTOM_ACTION):
 		calculate_nav(delta)
@@ -98,7 +100,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_bump_timer_timeout() -> void:
-	if custom_target:
+	if charge_mode:
 		status = Status.CUSTOM_ACTION
 	else:
 		status = Status.NAVIGATING

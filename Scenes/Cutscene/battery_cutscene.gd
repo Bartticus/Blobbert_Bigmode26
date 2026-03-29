@@ -2,10 +2,9 @@ extends Node2D
 
 @export var battery: Battery
 @export var triggerable_objects: Array[Node2D]
-@export var fish: Fish
+@export var fish: Array[Fish]
 
 @onready var tank: MultiScreenTemplate = %Tank
-@onready var fish_spot: Marker2D = %FishSpot
 
 func _ready():
 	battery.cutscene = self
@@ -21,8 +20,8 @@ func trigger_action():
 	await get_tree().create_timer(0.5).timeout
 	for to in triggerable_objects:
 		to.trigger_action()
-	fish.custom_target = fish_spot.global_position
-	fish.status = Fish.Status.CUSTOM_ACTION
+	for f in fish:
+		f.status = Fish.Status.CUSTOM_ACTION
 	await get_tree().create_timer(3.0).timeout
 	Global.level.playing_cutscene = false
 	Global.blob.reset_screen()

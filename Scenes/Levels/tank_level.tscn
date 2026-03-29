@@ -2000,10 +2000,10 @@ visible = true
 clip_children = 0
 
 [node name="Polygon2D" parent="Screens/DoorAndPanel/TankScreen5/WaterSpray/FastWater3/Area2D" parent_id_path=PackedInt32Array(1617632078, 241215555, 1256834662) index="1" unique_id=1662518656]
-polygon = PackedVector2Array(145.11719, -9.346191, 81.24707, -27.644043, 21.241943, -7.644043, 247.40259, 57.231934, 412.24707, 140.66089, 466.8755, -136.3977, 205.63403, -149.64844, 191.39014, -61.52295)
+polygon = PackedVector2Array(145.11719, -9.346191, 81.24707, -27.644043, 21.241943, -7.644043, 247.40259, 57.231934, 457.0735, 154.94849, 507.3877, -128.63354, 205.63403, -149.64844, 191.39014, -61.52295)
 
 [node name="Polygon2D" parent="Screens/DoorAndPanel/TankScreen5/WaterSpray/FastWater2/Area2D" parent_id_path=PackedInt32Array(1617632078, 1414221962, 1256834662) index="1" unique_id=1662518656]
-polygon = PackedVector2Array(0, 0, -96.73285, 81.842285, 48.70111, 96.645996, 325.3023, 64.60889, 389.97443, 114.703125, 389.75653, -4.836914, 321.63242, -82.05066, 247.59515, -56.85498)
+polygon = PackedVector2Array(0, 0, -96.73285, 81.842285, 48.70111, 96.645996, 325.3023, 64.60889, 478.66144, 103.98291, 432.65863, -32.91992, 363.30035, -178.63672, 247.59515, -56.85498)
 
 [node name="FastWater" parent="Screens/DoorAndPanel/TankScreen5/WaterSpray" parent_id_path=PackedInt32Array(1617632078, 592518852) index="2" unique_id=243952282]
 rotation = 0.6156579
@@ -2049,6 +2049,18 @@ cutscene = NodePath("../../../BatteryCutscene")
 
 [node name="NavigationRegion2D" parent="." index="9" unique_id=1180167866 instance=ExtResource("14_p7ctu")]
 
+[node name="PinkFish" parent="NavigationRegion2D" index="1" unique_id=805053468 node_paths=PackedStringArray("charge_spot")]
+charge_spot = NodePath("../../BatteryCutscene/ChargeMarker2")
+
+[node name="BlueFish" parent="NavigationRegion2D" index="2" unique_id=1109176778 node_paths=PackedStringArray("charge_spot")]
+charge_spot = NodePath("../../BatteryCutscene/ChargeMarker4")
+
+[node name="GreenFish" parent="NavigationRegion2D" index="3" unique_id=2020327147 node_paths=PackedStringArray("charge_spot")]
+charge_spot = NodePath("../../BatteryCutscene/ChargeMarker")
+
+[node name="OrangeFish" parent="NavigationRegion2D" index="4" unique_id=1786349938 node_paths=PackedStringArray("charge_spot")]
+charge_spot = NodePath("../../BatteryCutscene/ChargeMarker3")
+
 [node name="TankCutscene" parent="." index="10" unique_id=922792109 node_paths=PackedStringArray("vent_blocker") instance=ExtResource("16_iul6x")]
 position = Vector2(-1315, 759)
 vent_blocker = NodePath("../Screens/Tank/TankScreen0/VentBlocker")
@@ -2056,13 +2068,22 @@ vent_blocker = NodePath("../Screens/Tank/TankScreen0/VentBlocker")
 [node name="BatteryCutscene" parent="." index="11" unique_id=731723262 node_paths=PackedStringArray("battery", "triggerable_objects", "fish") instance=ExtResource("17_2qt28")]
 battery = NodePath("../Screens/TankScreen8/Battery")
 triggerable_objects = [NodePath("../Screens/Tank/TankScreen2/VentDoor")]
-fish = NodePath("../NavigationRegion2D/PinkFish")
+fish = [NodePath("../NavigationRegion2D/PinkFish"), NodePath("../NavigationRegion2D/BlueFish"), NodePath("../NavigationRegion2D/GreenFish"), NodePath("../NavigationRegion2D/OrangeFish")]
 
 [node name="Area2D" parent="BatteryCutscene" index="0" unique_id=1744263059]
 position = Vector2(2921, 339)
 
-[node name="FishSpot" parent="BatteryCutscene" index="1" unique_id=916733005]
-position = Vector2(3143, 1287)
+[node name="ChargeMarker" parent="BatteryCutscene" index="1" unique_id=425517225]
+position = Vector2(3123, 788)
+
+[node name="ChargeMarker2" parent="BatteryCutscene" index="2" unique_id=1097862905]
+position = Vector2(3062, 1082)
+
+[node name="ChargeMarker3" parent="BatteryCutscene" index="3" unique_id=701261365]
+position = Vector2(3108, 1365)
+
+[node name="ChargeMarker4" parent="BatteryCutscene" index="4" unique_id=703259909]
+position = Vector2(3148, 1688)
 
 [node name="DoorCutscene" parent="." index="12" unique_id=1570565807 node_paths=PackedStringArray("tank_glass") instance=ExtResource("18_2u67o")]
 tank_glass = NodePath("../Screens/Tank/TankScreen2/TankGlass")
