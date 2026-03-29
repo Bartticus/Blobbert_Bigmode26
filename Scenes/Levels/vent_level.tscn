@@ -23,8 +23,9 @@ height = 82.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_v87xj"]
 radius = 30.0
 
-[node name="VentLevel" unique_id=129905935 instance=ExtResource("1_qbcej")]
+[node name="VentLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_qbcej")]
 ambient_sound_name = "vents"
+starting_screen = NodePath("Screens/LabScreen2c")
 
 [node name="AudioEffectZone" parent="." index="0" unique_id=1864948793 instance=ExtResource("12_lnj3l")]
 position = Vector2(1873, -624)

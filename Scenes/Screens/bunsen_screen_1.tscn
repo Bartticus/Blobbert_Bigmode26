@@ -3,7 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://d0gd4e4i16yex" path="res://Scenes/ScreenTemplate/screen_template.tscn" id="1_dgqv8"]
 [ext_resource type="PackedScene" uid="uid://d4eb5vpni2j21" path="res://Scenes/Beaker/beaker.tscn" id="2_3xucc"]
 [ext_resource type="Texture2D" uid="uid://00mmyifin173" path="res://Assets/Sprites/Flammable.png" id="3_v5w3j"]
+[ext_resource type="Texture2D" uid="uid://b6gmhedvaxudm" path="res://Assets/Sprites/Bodybert.png" id="4_nol03"]
 [ext_resource type="PackedScene" uid="uid://cvvu60jpuafxs" path="res://Scenes/ExplodableObject/explodable_object.tscn" id="4_v5w3j"]
+[ext_resource type="Texture2D" uid="uid://dbig3bxr4xu2c" path="res://Assets/Tiles/Studded.png" id="5_ud2e0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o620g"]
+radius = 30.0
 
 [node name="BunsenScreen1" unique_id=1360540123 instance=ExtResource("1_dgqv8")]
 
@@ -18,7 +23,47 @@ objects_to_explode = [NodePath("../ExplodableObject")]
 [node name="OilParent" parent="Beaker" index="6" unique_id=1971733239]
 texture = ExtResource("3_v5w3j")
 
-[node name="ExplodableObject" parent="." index="8" unique_id=427107243 instance=ExtResource("4_v5w3j")]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="8" unique_id=511635398]
+position = Vector2(159, 761)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0" unique_id=2086719295]
+shape = SubResource("CircleShape2D_o620g")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" index="1" unique_id=1894117298]
+modulate = Color(0.57700837, 0.5770084, 0.57700825, 1)
+clip_children = 2
+scale = Vector2(0.29940146, 0.3086422)
+texture = ExtResource("4_nol03")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/Sprite2D" index="0" unique_id=44158692]
+texture = ExtResource("5_ud2e0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="9" unique_id=1851184799]
+position = Vector2(433, 762)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=1423504288]
+shape = SubResource("CircleShape2D_o620g")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" index="1" unique_id=974267960]
+modulate = Color(0.57700837, 0.5770084, 0.57700825, 1)
+clip_children = 2
+scale = Vector2(0.29940146, 0.3086422)
+texture = ExtResource("4_nol03")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D" index="0" unique_id=1232999750]
+texture = ExtResource("5_ud2e0")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." index="10" unique_id=608641744]
+position = Vector2(159, 761)
+node_a = NodePath("../Beaker")
+node_b = NodePath("../StaticBody2D2")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="." index="11" unique_id=382429852]
+position = Vector2(433, 762)
+node_a = NodePath("../Beaker")
+node_b = NodePath("../StaticBody2D")
+
+[node name="ExplodableObject" parent="." index="12" unique_id=427107243 instance=ExtResource("4_v5w3j")]
 position = Vector2(2, 224)
 
 [editable path="Beaker"]

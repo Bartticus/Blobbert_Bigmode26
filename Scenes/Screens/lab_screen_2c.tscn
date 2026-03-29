@@ -28,10 +28,11 @@ wind_power = 25.0
 [node name="WindTunnel2" parent="." index="6" unique_id=261730454 instance=ExtResource("2_5h82n")]
 position = Vector2(449, 907)
 scale = Vector2(3.0000002, 2.0000002)
-wind_power = 25.0
+wind_power = 30.0
 
 [node name="Fan" parent="." index="7" unique_id=86154387 instance=ExtResource("3_nnb7e")]
-position = Vector2(960, 538)
+position = Vector2(960.00006, 531)
+fan_speed = 1.5
 
 [node name="VentGeometry" type="Node2D" parent="." index="13" unique_id=182468214]
 
@@ -74,11 +75,23 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="WindTunnel3" parent="." index="14" unique_id=822771282 instance=ExtResource("2_5h82n")]
-position = Vector2(1374, 556)
-scale = Vector2(3, 4)
-wind_power = 25.0
+position = Vector2(1266, 348)
+rotation = 0.43633232
+scale = Vector2(3, 2)
+wind_power = 35.0
 
-[node name="WindGustGroup" parent="." index="15" unique_id=1942551771 instance=ExtResource("3_wegev")]
+[node name="WindTunnel4" parent="." index="15" unique_id=1685364114 instance=ExtResource("2_5h82n")]
+position = Vector2(1264, 709)
+rotation = -0.43633232
+scale = Vector2(3, 2)
+wind_power = 35.0
+
+[node name="WindTunnel5" parent="." index="16" unique_id=306388116 instance=ExtResource("2_5h82n")]
+position = Vector2(905, 536)
+scale = Vector2(3, 2)
+wind_power = 35.0
+
+[node name="WindGustGroup" parent="." index="17" unique_id=1942551771 instance=ExtResource("3_wegev")]
 
 [node name="WindGust6" parent="WindGustGroup" index="0" unique_id=510019849 instance=ExtResource("2_nnb7e")]
 position = Vector2(19, 59)
@@ -104,6 +117,6 @@ rotation = -0.026168836
 scale = Vector2(0.53000003, 0.35400003)
 skew = -0.03265667
 
-[node name="Grate" parent="." index="18" unique_id=382070669 instance=ExtResource("5_sg1xj")]
+[node name="Grate" parent="." index="20" unique_id=382070669 instance=ExtResource("5_sg1xj")]
 position = Vector2(1540, 335)
 scale = Vector2(1.7, 1.7)

@@ -15,7 +15,7 @@ tile_map_data = PackedByteArray("AAAqAB8AAQAGAAgAAAAqACAAAQAGAAkAAAArAB8AAQAHAAg
 position = Vector2(0, 14)
 
 [node name="Tubes" parent="." index="6" unique_id=140157102 instance=ExtResource("2_1kq1j")]
-position = Vector2(0, -70)
+position = Vector2(0, -64)
 
 [node name="ScreenBlob" parent="." index="9" unique_id=104221436]
 position = Vector2(233, 868)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bapq7s73qhjcf"]
+
+[ext_resource type="Texture2D" uid="uid://bh4apo28qkc44" path="res://Assets/Sprites/FanBlade.png" id="1_857fh"]
+[ext_resource type="Script" uid="uid://dryot1svg7d8a" path="res://Scenes/Fan/blade.gd" id="1_aglx0"]
+
+[node name="Blade" type="StaticBody2D" unique_id=428816799]
+script = ExtResource("1_aglx0")
+
+[node name="BladeCollisionPolygon" type="CollisionPolygon2D" parent="." unique_id=412855284]
+polygon = PackedVector2Array(-47.449387, 0.7633877, -84.27194, 17.471657, -202.97385, 61.745705, -302.89877, 44.465446, -388.54874, 67.756226, -414.8448, 157.91408, -326.9409, 242.81271, -156.39227, 250.32587, -33.927856, 161.67065, -9.873932, 25.397812, -12.215645, -9.92646)
+
+[node name="BladePolygon" type="Polygon2D" parent="." unique_id=1315975709]
+unique_name_in_owner = true
+clip_children = 2
+texture = ExtResource("1_857fh")
+texture_offset = Vector2(202.965, 449.515)
+texture_scale = Vector2(0.69, 0.69)
+texture_rotation = 1.8570303
+polygon = PackedVector2Array(-47.449387, 0.7633877, -84.27194, 17.471657, -202.97385, 61.745705, -302.89877, 44.465446, -388.54874, 67.756226, -414.8448, 157.91408, -326.9409, 242.81271, -156.39227, 250.32587, -33.927856, 161.67065, -9.873932, 25.397812, -12.215645, -9.92646)
