@@ -21,7 +21,7 @@ func trigger_action():
 	for to in triggerable_objects:
 		to.trigger_action()
 	for f in fish:
-		f.status = Fish.Status.CUSTOM_ACTION
+		f.status = Fish.Status.CHARGE_GLASS
 	await get_tree().create_timer(3.0).timeout
 	Global.level.playing_cutscene = false
 	Global.blob.reset_screen()

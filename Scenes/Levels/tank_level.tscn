@@ -1832,8 +1832,9 @@ shader_parameter/edge_remap_max = 1.0
 resource_local_to_scene = true
 size = Vector2(0, 0)
 
-[node name="TankLevel" unique_id=129905935 instance=ExtResource("1_7hsss")]
+[node name="TankLevel" unique_id=129905935 node_paths=PackedStringArray("starting_screen") instance=ExtResource("1_7hsss")]
 ambient_sound_name = "tank"
+starting_screen = NodePath("Screens/TankScreen8")
 
 [node name="VentAudioZone" parent="." index="0" unique_id=1864948793 instance=ExtResource("21_7ajio")]
 position = Vector2(-873, 540)
@@ -2047,18 +2048,19 @@ clip_children = 0
 [node name="Battery" parent="Screens/TankScreen8" index="6" unique_id=1219371551 node_paths=PackedStringArray("cutscene")]
 cutscene = NodePath("../../../BatteryCutscene")
 
-[node name="NavigationRegion2D" parent="." index="9" unique_id=1180167866 instance=ExtResource("14_p7ctu")]
+[node name="FishNavRegion" parent="." index="9" unique_id=1180167866 instance=ExtResource("14_p7ctu")]
+unique_name_in_owner = true
 
-[node name="PinkFish" parent="NavigationRegion2D" index="1" unique_id=805053468 node_paths=PackedStringArray("charge_spot")]
+[node name="PinkFish" parent="FishNavRegion" index="1" unique_id=805053468 node_paths=PackedStringArray("charge_spot")]
 charge_spot = NodePath("../../BatteryCutscene/ChargeMarker2")
 
-[node name="BlueFish" parent="NavigationRegion2D" index="2" unique_id=1109176778 node_paths=PackedStringArray("charge_spot")]
+[node name="BlueFish" parent="FishNavRegion" index="2" unique_id=1109176778 node_paths=PackedStringArray("charge_spot")]
 charge_spot = NodePath("../../BatteryCutscene/ChargeMarker4")
 
-[node name="GreenFish" parent="NavigationRegion2D" index="3" unique_id=2020327147 node_paths=PackedStringArray("charge_spot")]
+[node name="GreenFish" parent="FishNavRegion" index="3" unique_id=2020327147 node_paths=PackedStringArray("charge_spot")]
 charge_spot = NodePath("../../BatteryCutscene/ChargeMarker")
 
-[node name="OrangeFish" parent="NavigationRegion2D" index="4" unique_id=1786349938 node_paths=PackedStringArray("charge_spot")]
+[node name="OrangeFish" parent="FishNavRegion" index="4" unique_id=1786349938 node_paths=PackedStringArray("charge_spot")]
 charge_spot = NodePath("../../BatteryCutscene/ChargeMarker3")
 
 [node name="TankCutscene" parent="." index="10" unique_id=922792109 node_paths=PackedStringArray("vent_blocker") instance=ExtResource("16_iul6x")]
@@ -2068,7 +2070,7 @@ vent_blocker = NodePath("../Screens/Tank/TankScreen0/VentBlocker")
 [node name="BatteryCutscene" parent="." index="11" unique_id=731723262 node_paths=PackedStringArray("battery", "triggerable_objects", "fish") instance=ExtResource("17_2qt28")]
 battery = NodePath("../Screens/TankScreen8/Battery")
 triggerable_objects = [NodePath("../Screens/Tank/TankScreen2/VentDoor")]
-fish = [NodePath("../NavigationRegion2D/PinkFish"), NodePath("../NavigationRegion2D/BlueFish"), NodePath("../NavigationRegion2D/GreenFish"), NodePath("../NavigationRegion2D/OrangeFish")]
+fish = [NodePath("../FishNavRegion/PinkFish"), NodePath("../FishNavRegion/BlueFish"), NodePath("../FishNavRegion/GreenFish"), NodePath("../FishNavRegion/OrangeFish")]
 
 [node name="Area2D" parent="BatteryCutscene" index="0" unique_id=1744263059]
 position = Vector2(2921, 339)
@@ -2087,6 +2089,15 @@ position = Vector2(3148, 1688)
 
 [node name="DoorCutscene" parent="." index="12" unique_id=1570565807 node_paths=PackedStringArray("tank_glass") instance=ExtResource("18_2u67o")]
 tank_glass = NodePath("../Screens/Tank/TankScreen2/TankGlass")
+
+[node name="EscapeMarkerTop" parent="DoorCutscene" index="0" unique_id=262082846]
+position = Vector2(3379, 631)
+
+[node name="EscapeMarkerBottom" parent="DoorCutscene" index="1" unique_id=845446491]
+position = Vector2(4137, 2552)
+
+[node name="FishDelete" parent="DoorCutscene" index="2" unique_id=339113556]
+position = Vector2(3735, 2472)
 
 [node name="LoadingZone" parent="." index="13" unique_id=1274508763]
 position = Vector2(6629, -601)
@@ -2115,6 +2126,7 @@ texture = ExtResource("20_uuq41")
 [editable path="Screens/DoorAndPanel/TankScreen5/WaterSpray/FastWater3"]
 [editable path="Screens/DoorAndPanel/TankScreen5/WaterSpray/FastWater2"]
 [editable path="Screens/DoorAndPanel/TankScreen5/WaterSpray/FastWater"]
+[editable path="Screens/DoorAndPanel/TankScreen5/WaterSpray/FastWater4"]
 [editable path="Screens/DoorAndPanel/TankScreen5/Battery"]
 [editable path="Screens/DoorAndPanel/TankScreen6"]
 [editable path="Screens/DoorAndPanel/TankScreen6/VentDoor"]
@@ -2122,5 +2134,6 @@ texture = ExtResource("20_uuq41")
 [editable path="Screens/TankScreen8/Battery"]
 [editable path="Screens/TankScreen8/WindTunnel"]
 [editable path="Screens/TankScreen8/WindTunnel2"]
-[editable path="NavigationRegion2D"]
+[editable path="FishNavRegion"]
 [editable path="BatteryCutscene"]
+[editable path="DoorCutscene"]

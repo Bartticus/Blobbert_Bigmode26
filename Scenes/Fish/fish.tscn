@@ -9,7 +9,7 @@
 radius = 90.0
 height = 250.0
 
-[node name="Fish" type="Node2D" unique_id=805053468]
+[node name="Fish" type="Node2D" unique_id=805053468 groups=["Fish"]]
 script = ExtResource("1_rrrj0")
 
 [node name="FishCharacterBody" type="CharacterBody2D" parent="." unique_id=1051371588]

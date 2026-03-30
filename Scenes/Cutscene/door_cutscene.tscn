@@ -2,5 +2,25 @@
 
 [ext_resource type="Script" uid="uid://cx4h5mg7xungs" path="res://Scenes/Cutscene/door_cutscene.gd" id="1_5xxwr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xxwr"]
+size = Vector2(1929, 910)
+
 [node name="DoorCutscene" type="Node2D" unique_id=1570565807]
 script = ExtResource("1_5xxwr")
+
+[node name="EscapeMarkerTop" type="Marker2D" parent="." unique_id=262082846]
+unique_name_in_owner = true
+
+[node name="EscapeMarkerBottom" type="Marker2D" parent="." unique_id=845446491]
+unique_name_in_owner = true
+
+[node name="FishDelete" type="Area2D" parent="." unique_id=339113556]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 96
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishDelete" unique_id=519651888]
+position = Vector2(954.5, 445)
+shape = SubResource("RectangleShape2D_5xxwr")
+
+[connection signal="body_entered" from="FishDelete" to="." method="_on_fish_delete_body_entered"]

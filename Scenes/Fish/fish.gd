@@ -9,6 +9,8 @@ extends Node2D
 @export var desired_angle: float = 0.0
 @export var charge_mode: bool = false
 @export var charge_spot: Marker2D
+@export var escape_marker_top: Marker2D
+@export var escape_marker_bottom: Marker2D
 
 @onready var nav_agent: NavigationAgent2D = %NavAgent
 @onready var fish_body: RigidBody2D = %FishBody
@@ -16,14 +18,20 @@ extends Node2D
 @onready var bump_timer: Timer = %BumpTimer
 @onready var fish_sprite: Sprite2D = %FishSprite
 
-enum Status { WAITING, NAVIGATING, BUMPED, CUSTOM_ACTION }
+enum Status { WAITING, NAVIGATING, BUMPED, CHARGE_GLASS, ESCAPE, ESCAPE_2 }
 var status: Status = Status.WAITING : set = set_status
+var prev_status: Status
 
 func set_status(new_status):
+	if status == new_status:
+		return
+	prev_status = status
 	status = new_status
 	match status:
 		Status.WAITING:
 			fish_body.process_mode = Node.PROCESS_MODE_DISABLED
+			if !bump_timer.is_stopped():
+				bump_timer.stop()
 			pass
 		Status.NAVIGATING:
 			fish_char.global_position = fish_body.global_position
@@ -34,8 +42,27 @@ func set_status(new_status):
 			fish_char.velocity = Vector2(0,0)
 			bump_timer.start()
 			fish_body.process_mode = Node.PROCESS_MODE_INHERIT
-		Status.CUSTOM_ACTION:
+		Status.CHARGE_GLASS:
+			nav_agent.max_speed = max_speed * 2
 			charge_mode = true
+			if !bump_timer.is_stopped():
+				bump_timer.stop()
+			fish_char.global_position = fish_body.global_position
+			fish_char.global_rotation = fish_body.global_rotation
+			fish_body.process_mode = Node.PROCESS_MODE_DISABLED
+			get_nav_point()
+		Status.ESCAPE:
+			print(prev_status)
+			charge_mode = false
+			nav_agent.max_speed = max_speed * 4
+			if !bump_timer.is_stopped():
+				bump_timer.stop()
+			fish_char.global_position = fish_body.global_position
+			fish_char.global_rotation = fish_body.global_rotation
+			fish_body.process_mode = Node.PROCESS_MODE_DISABLED
+			get_nav_point()
+		Status.ESCAPE_2:
+			nav_agent.max_speed = max_speed * 6
 			if !bump_timer.is_stopped():
 				bump_timer.stop()
 			fish_char.global_position = fish_body.global_position
@@ -50,29 +77,35 @@ func _ready():
 	nav_agent.velocity_computed.connect(velocity_computed)
 
 func get_nav_point():
-	if !charge_mode:
+	if status == Status.ESCAPE:
+		target = escape_marker_top.global_position
+	elif status == Status.ESCAPE_2:
+		target = escape_marker_bottom.global_position
+	elif !charge_mode:
 		target = NavigationServer2D.region_get_random_point(navigation_region.get_rid(), 1, true)
 	else:
 		target = charge_spot.global_position
-	nav_agent.target_position = target
 	global_position = fish_char.global_position
 	fish_char.position = Vector2(0,0)
+	nav_agent.target_position = target
 
 func _physics_process(delta):
 	if (nav_agent.is_navigation_finished() && status == Status.NAVIGATING):
 		get_nav_point()
-	if (nav_agent.is_navigation_finished() && status == Status.CUSTOM_ACTION):
+	if (nav_agent.is_navigation_finished() && status == Status.CHARGE_GLASS):
 		bumper_velocity = Vector2(-1000000,1000000)
 		status = Status.BUMPED
 		fish_sprite.flip_h = false
+	if (nav_agent.is_navigation_finished() && status == Status.ESCAPE):
+		status = Status.ESCAPE_2
 	if (status == Status.BUMPED && charge_mode):
 		fish_body.apply_force(Vector2(1000,200), Vector2(100,10))
-	elif (status == Status.NAVIGATING || status == Status.CUSTOM_ACTION):
+	elif (status == Status.NAVIGATING || status == Status.CHARGE_GLASS || status == Status.ESCAPE || status == Status.ESCAPE_2):
 		calculate_nav(delta)
 
 func calculate_nav(delta):
 	var nav_direction = to_local(nav_agent.get_next_path_position()).normalized()
-	var new_velocity = nav_direction * max_speed
+	var new_velocity = nav_direction * nav_agent.max_speed
 	nav_agent.velocity = new_velocity
 	if new_velocity.x < 0:
 		fish_sprite.flip_h = true
@@ -88,7 +121,7 @@ func handle_rotations(delta):
 	fish_sprite.rotation = lerp_angle(fish_sprite.rotation, desired_angle, (delta * 0.7))
 
 func velocity_computed(safe_velocity):
-	if status == Status.NAVIGATING || status == Status.CUSTOM_ACTION:
+	if status == Status.NAVIGATING || status == Status.CHARGE_GLASS || status == Status.ESCAPE || status == Status.ESCAPE_2:
 		fish_char.velocity = safe_velocity
 		fish_char.move_and_slide()
 
@@ -101,7 +134,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_bump_timer_timeout() -> void:
 	if charge_mode:
-		status = Status.CUSTOM_ACTION
+		status = Status.CHARGE_GLASS
+	elif prev_status == Status.ESCAPE:
+		status = Status.ESCAPE
+	elif prev_status == Status.ESCAPE_2:
+		status = Status.ESCAPE_2
 	else:
 		status = Status.NAVIGATING
 

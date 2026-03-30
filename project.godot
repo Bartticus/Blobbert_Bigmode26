@@ -47,6 +47,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/softbody2d/plugin.cfg", "res://addons/talo/plugin.cfg")
 
+[global_group]
+
+Fish=""
+
 [input]
 
 reset={
