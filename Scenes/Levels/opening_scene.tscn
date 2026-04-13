@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://8ajd2a5elsap" path="res://Assets/Sprites/DrCloseup.png" id="26_cxp7t"]
 [ext_resource type="Texture2D" uid="uid://d2w1xr4vj2lr4" path="res://Assets/Sprites/Comb.png" id="27_a1tjc"]
 [ext_resource type="Texture2D" uid="uid://doum0ai52xyf6" path="res://Assets/Sprites/splat20.png" id="30_25a0a"]
+[ext_resource type="PackedScene" uid="uid://b4gjojlpqd8i2" path="res://Scenes/SkipCutscene/skip_cutscene.tscn" id="31_l0el5"]
 
 [sub_resource type="Environment" id="Environment_xssm3"]
 background_mode = 3
@@ -4163,3 +4164,7 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(598, 600)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("30_25a0a")
+
+[node name="SkipCutscene" parent="." index="11" unique_id=648587973 node_paths=PackedStringArray("cutscene") instance=ExtResource("31_l0el5")]
+unique_name_in_owner = true
+cutscene = NodePath("../Cutscene")

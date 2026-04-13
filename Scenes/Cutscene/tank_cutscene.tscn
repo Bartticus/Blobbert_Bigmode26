@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doxc3jxcsbsdt"]
 
 [ext_resource type="Script" uid="uid://dhc56mhfr0vq5" path="res://Scenes/Cutscene/tank_cutscene.gd" id="1_5sv54"]
+[ext_resource type="PackedScene" uid="uid://b4gjojlpqd8i2" path="res://Scenes/SkipCutscene/skip_cutscene.tscn" id="2_vvk17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sv54"]
 size = Vector2(300, 300)
@@ -20,6 +21,10 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene" unique_id=1004814774]
 shape = SubResource("RectangleShape2D_5sv54")
+
+[node name="SkipCutscene" parent="." unique_id=648587973 node_paths=PackedStringArray("cutscene") instance=ExtResource("2_vvk17")]
+unique_name_in_owner = true
+cutscene = NodePath("..")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="TriggerScene" to="." method="_on_trigger_scene_area_entered"]

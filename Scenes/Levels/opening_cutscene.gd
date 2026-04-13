@@ -1,4 +1,4 @@
-extends LevelScript
+extends Node2D
 
 @onready var bg_sprite = %BGSprite
 @onready var bg_sprite_2 = %BGSprite2
@@ -10,6 +10,7 @@ extends LevelScript
 @onready var dead_blob = %DeadBlob
 @onready var screen_blob = %ScreenBlob3
 @onready var loading_zone = %LoadingZone
+@onready var skip_cutscene_ui = %SkipCutscene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,7 @@ func _ready() -> void:
 	call_deferred('play_cutscene')
 
 func play_cutscene():
+	skip_cutscene_ui.start_cutscene()
 	Global.level.playing_cutscene = true
 	await get_tree().create_timer(2.0).timeout
 	Global.level.camera.global_position = bg_sprite_2.global_position
@@ -36,4 +38,7 @@ func play_cutscene():
 	dead_blob.visible = false
 	screen_blob.visible = true
 	await get_tree().create_timer(2.0).timeout
+	loading_zone.load_next()
+
+func skip_cutscene():
 	loading_zone.load_next()

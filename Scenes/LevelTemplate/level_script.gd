@@ -11,6 +11,8 @@ extends Node2D
 
 @export var playing_cutscene: bool = false:
 	set(new_value):
+		if new_value == playing_cutscene:
+			return
 		playing_cutscene = new_value
 		match playing_cutscene:
 			true:

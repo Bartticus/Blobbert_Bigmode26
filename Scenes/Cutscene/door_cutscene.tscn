@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ck7afxeci3jua"]
 
 [ext_resource type="Script" uid="uid://cx4h5mg7xungs" path="res://Scenes/Cutscene/door_cutscene.gd" id="1_5xxwr"]
+[ext_resource type="PackedScene" uid="uid://b4gjojlpqd8i2" path="res://Scenes/SkipCutscene/skip_cutscene.tscn" id="2_cypw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xxwr"]
 size = Vector2(1929, 910)
@@ -22,5 +23,9 @@ collision_mask = 96
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishDelete" unique_id=519651888]
 position = Vector2(954.5, 445)
 shape = SubResource("RectangleShape2D_5xxwr")
+
+[node name="SkipCutscene" parent="." unique_id=648587973 node_paths=PackedStringArray("cutscene") instance=ExtResource("2_cypw6")]
+unique_name_in_owner = true
+cutscene = NodePath("..")
 
 [connection signal="body_entered" from="FishDelete" to="." method="_on_fish_delete_body_entered"]

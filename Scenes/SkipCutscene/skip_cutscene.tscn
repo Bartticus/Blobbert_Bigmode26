@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b4gjojlpqd8i2"]
+
+[ext_resource type="Theme" uid="uid://dqtsplxmd0xtc" path="res://Materials/main_theme.tres" id="1_lkfs4"]
+[ext_resource type="Script" uid="uid://cpy6tu2mhqs3v" path="res://Scenes/SkipCutscene/skip_cutscene.gd" id="2_ay6yp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ay6yp"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_lkfs4"]
+device = -1
+physical_keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_ay6yp"]
+events = [SubResource("InputEventKey_lkfs4")]
+
+[node name="SkipCutscene" type="Control" unique_id=648587973]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_lkfs4")
+script = ExtResource("2_ay6yp")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1789296610]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkipButton" type="Button" parent="CenterContainer" unique_id=1882181990]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ay6yp")
+action_mode = 0
+button_mask = 0
+shortcut = SubResource("Shortcut_ay6yp")
+text = "Hold Space to Skip"
+
+[node name="HoldTimer" type="Timer" parent="." unique_id=1942501395]
+unique_name_in_owner = true
+one_shot = true
+ignore_time_scale = true
+
+[connection signal="button_down" from="CenterContainer/SkipButton" to="." method="_on_skip_button_button_down"]
+[connection signal="button_up" from="CenterContainer/SkipButton" to="." method="_on_skip_button_button_up"]
+[connection signal="timeout" from="HoldTimer" to="." method="_on_hold_timer_timeout"]

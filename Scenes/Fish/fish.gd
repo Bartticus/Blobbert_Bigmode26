@@ -52,7 +52,6 @@ func set_status(new_status):
 			fish_body.process_mode = Node.PROCESS_MODE_DISABLED
 			get_nav_point()
 		Status.ESCAPE:
-			print(prev_status)
 			charge_mode = false
 			nav_agent.max_speed = max_speed * 4
 			if !bump_timer.is_stopped():
@@ -87,6 +86,7 @@ func get_nav_point():
 		target = charge_spot.global_position
 	global_position = fish_char.global_position
 	fish_char.position = Vector2(0,0)
+	print(to_local(target))
 	nav_agent.target_position = target
 
 func _physics_process(delta):
